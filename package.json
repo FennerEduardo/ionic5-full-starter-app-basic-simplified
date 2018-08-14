@@ -9,8 +9,12 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "commitmsg": "commitlint -E GIT_PARAMS",
     "e2e": "ng e2e"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "private": true,
   "dependencies": {
     "@angular/common": "6.0.9",
@@ -33,18 +37,21 @@
     "@angular/service-worker": "6.0.9"
   },
   "devDependencies": {
-    "@angular/cli": "6.0.8",
-    "@angular/compiler": "6.0.9",
-    "@angular/compiler-cli": "6.0.9",
-    "@angular/language-service": "6.0.9",
     "@angular-devkit/architect": "0.7.0-rc.1",
     "@angular-devkit/build-angular": "0.7.0-rc.1",
     "@angular-devkit/core": "0.7.0-rc.1",
     "@angular-devkit/schematics": "0.7.0-rc.1",
+    "@angular/cli": "6.0.8",
+    "@angular/compiler": "6.0.9",
+    "@angular/compiler-cli": "6.0.9",
+    "@angular/language-service": "6.0.9",
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~10.5.2",
     "codelyzer": "~4.4.2",
+    "husky": "^0.14.3",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.2",
@@ -52,6 +59,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.0",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "pre-commit": "^1.2.2",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
