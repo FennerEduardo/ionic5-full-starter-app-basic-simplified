@@ -1,0 +1,92 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="medium" fill="clear" href="auth/login">skip</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="true">
+    <ion-slide style="background: red;">
+      <ion-grid style="height: 100%; width: 100%; /*to prevent narrow slide before image get's loaded*/ padding-bottom: 2.125rem;/*To compensate slider pager*/">
+        <ion-row style="height: 100%;">
+          <ion-col size="12">
+            <h2>What are you browsing for?</h2>
+            <form [formGroup]="radioTagsForm">
+              <ion-list>
+                <ion-radio-group formControlName="selected_option">
+                  <ion-item>
+                    <ion-label>Woman</ion-label>
+                    <ion-radio value="woman"></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Men</ion-label>
+                    <ion-radio value="men"></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Kids</ion-label>
+                    <ion-radio value="kids"></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Petit</ion-label>
+                    <ion-radio value="petit"></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Plus Size</ion-label>
+                    <ion-radio value="plus-size"></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>New In</ion-label>
+                    <ion-radio value="new-in"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-list>
+            </form>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    <ion-slide>
+      <form [formGroup]="customCheckboxForm">
+        <ion-grid style="height: 100%; width: 100%; /*to prevent narrow slide before image get's loaded*/ padding-bottom: 2.125rem;/*To compensate slider pager*/">
+          <ion-row style="height: 100%;">
+            <ion-col size="12">
+              <ion-row>
+                <ion-col size="6">
+                  <app-custom-checkbox class="custom-checkbox">
+                    <span class="spam-el">SPAM</span>
+                    <img [src]="'https://placeimg.com/100/100/any'"/>
+                    <ion-checkbox formControlName="_1"></ion-checkbox>
+                  </app-custom-checkbox>
+                </ion-col>
+                <ion-col size="6">
+                  <app-custom-checkbox class="custom-checkbox">
+                    <span>PEPE</span>
+                    <img [src]="'https://placeimg.com/100/100/any'"/>
+                    <ion-checkbox formControlName="_2"></ion-checkbox>
+                  </app-custom-checkbox>
+                </ion-col>
+                <ion-col size="6">
+                  <app-custom-checkbox class="custom-checkbox">
+                    <img [src]="'https://placeimg.com/100/100/any'"/>
+                    <ion-checkbox formControlName="_3"></ion-checkbox>
+                  </app-custom-checkbox>
+                </ion-col>
+                <ion-col size="6">
+                  <app-custom-checkbox class="custom-checkbox">
+                    <img [src]="'https://placeimg.com/100/100/any'"/>
+                    <ion-checkbox formControlName="_4"></ion-checkbox>
+                  </app-custom-checkbox>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col size="12" style="align-self: flex-end;">
+              <ion-button color="medium" expand="block" href="auth/signup">Signup</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,67 @@
+@import "~@ionic/angular/dist/themes/ionic.theme.default.md";
+@import "~@ionic/angular/dist/themes/ionic.theme.default.ios";
+
+// https://angular.io/guide/component-styles#host
+// The :host selector is the only way to target the host element. You can't reach the host element from inside the
+// component with other selectors because it's not part of the component's own template.
+:host {
+  background: orange;
+}
+
+:host-context(.ios) {
+  // ion-grid {
+  ion-slides {
+    height: calc(100vh - #{$toolbar-ios-height});
+  }
+}
+
+:host-context(.md) {
+  // ion-grid {
+  ion-slides {
+    height: calc(100vh - #{$toolbar-md-height});
+  }
+}
+
+ion-header {
+  ion-toolbar {
+    --background: transparent;
+
+    // Esto lo ignora. La unicaforma de agregar estilos es con javascript (haciendole append a la tag de <styles> que se declara adentro del shadow dom o accediendo al elemento con document.element.bla)
+    // .toolbar-background {
+    //   margin: 20px;
+    // }
+  }
+}
+
+ion-content {
+  background: transparent;
+}
+
+ion-radio {
+  &.radio-checked {
+    input[type="radio"] {
+      background: gray;
+    }
+  }
+}
+
+ion-checkbox {
+  --size: 100%;
+  --border-radius: 0px;
+  --background: transparent;
+  --background-checked: #{rgba(grey, .8)};
+}
+
+// Esto no funciona por la encapsulacion de Angular.
+// Si le pongo encapsulation: None funciona pero se rompe los estilos de :host y :host-context
+// Si le pongo encapsulation: Native (Shadow DOM) se rompe el back cuando se vuelve a la pagina de getting started
+// .custom-checkbox {
+::ng-deep .custom-checkbox {
+  .fucking-wrapper {
+    &.checkbox-checked {
+      .spam-el {
+        display: none;
+      }
+    }
+  }
+}
