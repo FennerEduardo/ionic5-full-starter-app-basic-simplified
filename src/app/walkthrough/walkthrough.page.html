@@ -1,8 +1,46 @@
-<ion-content padding>
-  <h2>walkthrough</h2>
-  <ion-anchor href="app/tabs/(home:listing)">Skip</ion-anchor>
+<ion-content>
+  <!-- <ion-anchor href="app/tabs/(home:listing)">Skip</ion-anchor>
   <br/>
   <ion-anchor href="auth/login">Login</ion-anchor>
   <br/>
-  <ion-anchor href="auth/signup">Signup</ion-anchor>
+  <ion-anchor href="auth/signup">Signup</ion-anchor> -->
+  <ion-slides pager="true">
+    <ion-slide>
+      <ion-grid style="height: 100vh; width: 100%; /*to prevent narrow slide before image get's loaded*/ padding-bottom: 2.125rem;/*To compensate slider pager*/">
+        <ion-row style="height: 100%;">
+          <ion-col size="12">
+            <ion-img [src]="'https://placeimg.com/300/500/any'"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    <ion-slide>
+      <ion-grid style="height: 100vh; width: 100%; /*to prevent narrow slide before image get's loaded*/ padding-bottom: 2.125rem;/*To compensate slider pager*/">
+        <ion-row style="height: 100%;">
+          <ion-col size="12">
+            <ion-img [src]="'https://placeimg.com/300/300/any'"></ion-img>
+          </ion-col>
+          <ion-col size="12">
+            <h3>Some text</h3>
+            <p>
+              More text
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    <ion-slide>
+      <ion-grid style="height: 100vh; width: 100%; /*to prevent narrow slide before image get's loaded*/ padding-bottom: 2.125rem;/*To compensate slider pager*/">
+        <ion-row style="height: 100%;">
+          <ion-col size="12">
+            <ion-img [src]="'https://placeimg.com/300/400/any/grayscale'"></ion-img>
+          </ion-col>
+          <ion-col size="12" style="align-self: flex-end;">
+            <ion-button color="medium" expand="block" href="getting-started">Get Started</ion-button>
+            <ion-button color="medium" expand="block" fill="clear" href="auth/login">Already have an account?</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
