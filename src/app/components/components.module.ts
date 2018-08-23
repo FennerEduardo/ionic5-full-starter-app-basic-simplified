@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
+import { ShowHidePasswordComponent } from './show-hide-password/show-hide-password.component';
 
 @NgModule({
   imports: [
@@ -12,10 +13,12 @@ import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.compo
     IonicModule.forRoot(),
   ],
   declarations: [
-    CustomCheckboxComponent
+    CustomCheckboxComponent,
+    ShowHidePasswordComponent
   ],
   exports: [
-    CustomCheckboxComponent
+    CustomCheckboxComponent,
+    ShowHidePasswordComponent
   ],
   entryComponents: [],
 })
