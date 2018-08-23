@@ -1,0 +1,14 @@
+@import "~@ionic/angular/dist/themes/ionic.theme.default.md";
+@import "~@ionic/angular/dist/themes/ionic.theme.default.ios";
+
+:host-context(.ios) {
+  ion-grid {
+    height: calc(100vh - #{$toolbar-ios-height});
+  }
+}
+
+:host-context(.md) {
+  ion-grid {
+    height: calc(100vh - #{$toolbar-md-height});
+  }
+}
