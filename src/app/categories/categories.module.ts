@@ -3,12 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
 
-const homeRoutes: Routes = [
+import { CategoriesPage } from './categories.page';
+
+const categoriesRoutes: Routes = [
   {
     path: '',
-    component: HomePage
+    component: CategoriesPage
   }
 ];
 
@@ -18,8 +19,8 @@ const homeRoutes: Routes = [
     CommonModule,
     FormsModule,
     // RouterModule.forChild([{ path: '', component: HomePage }])
-    RouterModule.forChild(homeRoutes)
+    RouterModule.forChild(categoriesRoutes)
   ],
-  declarations: [HomePage]
+  declarations: [CategoriesPage]
 })
-export class HomePageModule {}
+export class CategoriesPageModule {}

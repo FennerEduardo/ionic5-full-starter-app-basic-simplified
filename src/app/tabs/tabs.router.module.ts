@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
-import { HomePage } from '../home/home.page';
+import { CategoriesPage } from '../categories/categories.page';
 import { ProductPage } from '../product/product.page';
 import { AboutPage } from '../about/about.page';
 import { ContactPage } from '../contact/contact.page';
@@ -13,9 +13,9 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'listing',
+        path: 'categories',
         outlet: 'home',
-        component: HomePage
+        component: CategoriesPage
       },
       {
         path: 'product/:productId',
@@ -36,7 +36,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/(home:listing)',
+    redirectTo: '/tabs/(home:categories)',
     pathMatch: 'full'
   }
 ];

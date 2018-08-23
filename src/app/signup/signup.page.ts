@@ -24,7 +24,7 @@ export class SignupPage implements OnInit {
   doSignup(): void {
     console.log('redirect to home page');
     // this.router.navigateByUrl('/app/tabs/(home:listing)');
-    this.router.navigate(['app/tabs/', { outlets: {home: [ 'listing' ]} }]);
+    this.router.navigate(['app/tabs/', { outlets: {home: [ 'categories' ]} }]);
   }
 
 }
