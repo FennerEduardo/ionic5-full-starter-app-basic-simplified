@@ -7,10 +7,14 @@ import { FormsModule } from '@angular/forms';
 import { TabsPageRoutingModule } from './tabs.router.module';
 
 import { TabsPage } from './tabs.page';
-import { ContactPageModule } from '../contact/contact.module';
-import { AboutPageModule } from '../about/about.module';
+
 import { CategoriesPageModule } from '../categories/categories.module';
-import { ProductPageModule } from '../product/product.module';
+import { FashionListingPageModule } from '../fashion-listing/fashion-listing.module';
+import { FashionProductDetailsModule } from '../fashion-product-details/fashion-product-details.module';
+
+import { ContactPageModule } from '../contact/contact.module';
+
+import { AboutPageModule } from '../about/about.module';
 
 @NgModule({
   imports: [
@@ -19,7 +23,8 @@ import { ProductPageModule } from '../product/product.module';
     FormsModule,
     TabsPageRoutingModule,
     CategoriesPageModule,
-    ProductPageModule,
+    FashionListingPageModule,
+    FashionProductDetailsModule,
     AboutPageModule,
     ContactPageModule
   ],

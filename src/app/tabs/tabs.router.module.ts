@@ -2,9 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
+
 import { CategoriesPage } from '../categories/categories.page';
-import { ProductPage } from '../product/product.page';
+import { FashionListingPage } from '../fashion-listing/fashion-listing.page';
+import { FashionProductDetailsPage } from '../fashion-product-details/fashion-product-details.page';
+
 import { AboutPage } from '../about/about.page';
+
 import { ContactPage } from '../contact/contact.page';
 
 const routes: Routes = [
@@ -18,9 +22,14 @@ const routes: Routes = [
         component: CategoriesPage
       },
       {
-        path: 'product/:productId',
+        path: 'fashion',
         outlet: 'home',
-        component: ProductPage
+        component: FashionListingPage
+      },
+      {
+        path: 'fashion/:productId',
+        outlet: 'home',
+        component: FashionProductDetailsPage
       },
       {
         path: 'about',
