@@ -12,9 +12,9 @@ import { CategoriesPageModule } from '../categories/categories.module';
 import { FashionListingPageModule } from '../fashion-listing/fashion-listing.module';
 import { FashionProductDetailsModule } from '../fashion-product-details/fashion-product-details.module';
 
-import { ContactPageModule } from '../contact/contact.module';
+import { ProfilePageModule } from '../profile/profile.module';
 
-import { AboutPageModule } from '../about/about.module';
+import { NotificationsPageModule } from '../notifications/notifications.module';
 
 @NgModule({
   imports: [
@@ -25,8 +25,8 @@ import { AboutPageModule } from '../about/about.module';
     CategoriesPageModule,
     FashionListingPageModule,
     FashionProductDetailsModule,
-    AboutPageModule,
-    ContactPageModule
+    ProfilePageModule,
+    NotificationsPageModule
   ],
   declarations: [TabsPage]
 })

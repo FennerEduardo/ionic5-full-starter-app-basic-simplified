@@ -7,9 +7,9 @@ import { CategoriesPage } from '../categories/categories.page';
 import { FashionListingPage } from '../fashion-listing/fashion-listing.page';
 import { FashionProductDetailsPage } from '../fashion-product-details/fashion-product-details.page';
 
-import { AboutPage } from '../about/about.page';
+import { ProfilePage } from '../profile/profile.page';
 
-import { ContactPage } from '../contact/contact.page';
+import { NotificationsPage } from '../notifications/notifications.page';
 
 const routes: Routes = [
   {
@@ -32,14 +32,14 @@ const routes: Routes = [
         component: FashionProductDetailsPage
       },
       {
-        path: 'about',
-        outlet: 'about',
-        component: AboutPage
+        path: 'profile',
+        outlet: 'profile',
+        component: ProfilePage
       },
       {
-        path: 'contact',
-        outlet: 'contact',
-        component: ContactPage
+        path: 'notifications',
+        outlet: 'notifications',
+        component: NotificationsPage
       }
     ]
   },
