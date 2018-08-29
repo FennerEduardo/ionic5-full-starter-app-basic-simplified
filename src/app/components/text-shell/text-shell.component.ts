@@ -14,9 +14,7 @@ export class TextShellComponent implements OnChanges {
     this._data = (val !== undefined && val !== null) ? val : '';
   }
 
-  constructor(private _elementRef: ElementRef, private _renderer: Renderer2) {
-    // debugger;
-  }
+  constructor(private _elementRef: ElementRef, private _renderer: Renderer2) { }
 
   ngOnChanges() {
     this._update();
@@ -27,7 +25,6 @@ export class TextShellComponent implements OnChanges {
 
     if (this._data && this._data !== '') {
       this._loaded(true);
-      console.log('onNext: %s', this._data);
     }
   }
 
