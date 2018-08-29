@@ -1,0 +1,199 @@
+// Inspired in: https://stackoverflow.com/a/41096631/1116959
+@function randomNum($min, $max) {
+  $rand: random();
+  $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+  @return $randomNum;
+}
+
+// Inspired in: https://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+@function to-string($list, $glue: '', $is-nested: false) {
+  $result: null;
+
+  @for $i from 1 through length($list) {
+    $e: nth($list, $i);
+
+    @if type-of($e) == list {
+      $result: $result#{to-string($e, $glue, true)};
+    } @else {
+      $result: if(
+        $i != length($list) or $is-nested,
+        $result#{$e}#{$glue},
+        $result#{$e}
+      );
+    }
+  }
+
+  @return $result;
+}
+
+// @mixin text-shell-background($lines: 1, $type: 'p'){
+//   $line-height: 16px;
+//   @if ($type == 'h2') {
+//     $line-height: 24px;
+//   }
+//   $line-spacing: 3px;
+//   $bg-y-pos: 0px;
+//   $rand-width: #{randomNum(85, 95)};
+//   $bg-image: 'linear-gradient(to right, lightgrey ' + $rand-width + '% , #FFFFFF ' + $rand-width + '%)';
+//   $bg-position: '0 ' + $bg-y-pos;
+//   $bg-size: '100% ' + $line-height;
+//
+//   @if ($lines == 1) {
+//     background-image: #{$bg-image};
+//     background-position: #{$bg-position};
+//     background-size: #{$bg-size};
+//     background-repeat: no-repeat;
+//   } @else {
+//     @for $i from 2 through $lines {
+//       // Add separator between lines
+//       $bg-image: append($bg-image, linear-gradient(to right, transparent 100%, transparent 100%));
+//       // This linear-gradient as separator starts below the last line,
+//       // so we have to add $line-height to our y-pos pointer
+//       $bg-y-pos: $bg-y-pos + $line-height;
+//       $bg-position: append($bg-position, '0 ' + $bg-y-pos);
+//       $bg-size: append($bg-size, '100% ' + $line-spacing);
+//
+//       // Add new line
+//       // The last line should be narrow than the others
+//       @if ($i == $lines) {
+//         $rand-width: #{randomNum(30, 50)};
+//       } @else {
+//         $rand-width: #{randomNum(60, 80)};
+//       }
+//       $bg-image: append($bg-image, 'linear-gradient(to right, lightgrey ' + $rand-width + '% , #FFFFFF ' + $rand-width + '%)');
+//       // This new line starts below the prviously added separator,
+//       // so we have to add $line-spacing to our y-pos pointer
+//       $bg-y-pos: $bg-y-pos + $line-spacing;
+//       $bg-position: append($bg-position, '0 ' + $bg-y-pos);
+//       $bg-size: append($bg-size, '100% ' + $line-height);
+//     }
+//
+//     background-image: #{to-string($bg-image, ', ')};
+//     background-position: #{to-string($bg-position, ', ')};
+//     background-size: #{to-string($bg-size, ', ')};
+//     background-repeat: no-repeat;
+//   }
+//
+//   min-height: ($line-height * $lines) + ($line-spacing * ($lines - 1));
+// }
+
+@mixin text-shell-background($lines: 1){
+  $line-height: var(--c-line-height, 16px);
+  $line-spacing: var(--c-line-spacing, 3px);
+  $bg-color: var(--c-bg-color, #CCC);
+  $bg-y-pos: 0px;
+  $rand-width: #{randomNum(85, 95)};
+  $bg-image: 'linear-gradient(to right, ' + $bg-color + ' ' + $rand-width + '% , #FFFFFF ' + $rand-width + '%)';
+  $bg-position: '0 ' + $bg-y-pos;
+  $bg-size: '100% ' + $line-height;
+
+  @if ($lines == 1) {
+    background-image: #{$bg-image};
+    background-position: #{$bg-position};
+    background-size: #{$bg-size};
+    background-repeat: no-repeat;
+  } @else {
+    @for $i from 2 through $lines {
+      // Add separator between lines
+      $bg-image: append($bg-image, linear-gradient(to right, transparent 100%, transparent 100%));
+      // This linear-gradient as separator starts below the last line,
+      // so we have to add $line-height to our y-pos pointer
+      $bg-y-pos: calc((#{$line-height} * (#{$i} - 1)) + (#{$line-spacing} * (#{$i} - 2)));
+      $bg-position: append($bg-position, '0 ' + $bg-y-pos);
+      $bg-size: append($bg-size, '100% ' + $line-spacing);
+
+      // Add new line
+      // The last line should be narrow than the others
+      @if ($i == $lines) {
+        $rand-width: #{randomNum(30, 50)};
+      } @else {
+        $rand-width: #{randomNum(60, 80)};
+      }
+      $bg-image: append($bg-image, 'linear-gradient(to right, ' + $bg-color + ' ' + $rand-width + '% , #FFFFFF ' + $rand-width + '%)');
+      // This new line starts below the prviously added separator,
+      // so we have to add $line-spacing to our y-pos pointer
+      $bg-y-pos: calc((#{$line-height} * (#{$i} - 1)) + (#{$line-spacing} * (#{$i} - 1)));
+      $bg-position: append($bg-position, '0 ' + $bg-y-pos);
+      $bg-size: append($bg-size, '100% ' + $line-height);
+    }
+
+    background-image: #{to-string($bg-image, ', ')};
+    background-position: #{to-string($bg-position, ', ')};
+    background-size: #{to-string($bg-size, ', ')};
+    background-repeat: no-repeat;
+  }
+
+  min-height: calc((#{$line-height} * #{$lines}) + (#{$line-spacing} * (#{$lines} - 1)));
+}
+
+
+// WIP on gist: https://www.sassmeister.com/gist/fc8790761e3a6d9dc83f7326c1bc6ab4
+:host {
+  display: block;
+  color: transparent;
+
+  --c-line-height: 16px;
+  --c-line-spacing: 3px;
+  --c-bg-color: #DDD;
+
+  &[element="h1"] {
+    --c-line-height: 32px;
+    --c-bg-color: #BBB;
+  }
+
+  &[element="h2"] {
+    --c-line-height: 28px;
+    --c-bg-color: #CCC;
+  }
+
+  // Default one line text-shell
+  @include text-shell-background(1);
+
+  &[lines="1"] {
+    @include text-shell-background(1);
+  }
+
+  &[lines="2"] {
+    @include text-shell-background(2);
+  }
+
+  &[lines="3"] {
+    @include text-shell-background(3);
+  }
+
+  &[lines="4"] {
+    @include text-shell-background(4);
+  }
+
+  &.text-loaded {
+    background: none;
+    min-height: inherit;
+    color: inherit;
+  }
+
+  // background-image: linear-gradient(to right, lightgrey 65% ,#fff 65%);
+  // background-position: 0 0;
+  // background-size: 100% var(--c-line-height);
+  // background-repeat: no-repeat;
+  // min-height: var(--c-line-height);
+
+  // &[lines="3"] {
+    // background-image:
+    //   linear-gradient(to right, lightgrey 85% ,#fff 85%),
+    //   linear-gradient(to right, transparent 100%, transparent 100%),
+    //   linear-gradient(to right, lightgrey 45% ,#fff 45%),
+    //   linear-gradient(to right, transparent 100%, transparent 100%),
+    //   linear-gradient(to right, lightgrey 65% ,#fff 65%);
+    // background-position: 0 0, 0 16px, 0 19px, 0 35px, 0 38px;
+    // background-size: 100% 16px, 100% 3px, 100% 16px, 100% 3px, 100% 16px;
+    // background-repeat: no-repeat;
+    // min-height: 54px;
+
+    // Alternativa 'simple' (https://callmenick.com/dev/multi-line-padded-text-css-box-decoration-break/)
+    // -webkit-box-decoration-break: clone;
+    // background: #f00;
+    // display: inline;
+    // line-height: 1.5;
+  // }
+}

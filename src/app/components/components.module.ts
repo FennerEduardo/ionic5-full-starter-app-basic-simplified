@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
 import { ShowHidePasswordComponent } from './show-hide-password/show-hide-password.component';
 import { FillContainerComponent } from './fill-container/fill-container.component';
+import { TextShellComponent } from './text-shell/text-shell.component';
 
 @NgModule({
   imports: [
@@ -16,12 +17,14 @@ import { FillContainerComponent } from './fill-container/fill-container.componen
   declarations: [
     CustomCheckboxComponent,
     ShowHidePasswordComponent,
-    FillContainerComponent
+    FillContainerComponent,
+    TextShellComponent
   ],
   exports: [
     CustomCheckboxComponent,
     ShowHidePasswordComponent,
-    FillContainerComponent
+    FillContainerComponent,
+    TextShellComponent
   ],
   entryComponents: [],
 })
