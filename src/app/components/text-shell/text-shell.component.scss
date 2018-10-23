@@ -31,9 +31,11 @@
   $line-height: var(--c-line-height, 16px);
   $line-spacing: var(--c-line-spacing, 3px);
   $bg-color: var(--c-bg-color, #CCC);
+  $mask-color: var(--c-mask-color, #FFF);
+  $line-bg-color: var(--c-line-bg-color, #FFF);
   $bg-y-pos: 0px;
   $rand-width: #{randomNum(85, 95)};
-  $bg-image: 'linear-gradient(to right, ' + $bg-color + ' ' + $rand-width + '% , #FFFFFF ' + $rand-width + '%)';
+  $bg-image: 'linear-gradient(to right, ' + $bg-color + ' ' + $rand-width + '% , ' + $mask-color + ' ' + $rand-width + '%)';
   $bg-position: '0 ' + $bg-y-pos;
   $bg-size: '100% ' + $line-height;
 
@@ -45,7 +47,7 @@
   } @else {
     @for $i from 2 through $lines {
       // Add separator between lines
-      $bg-image: append($bg-image, linear-gradient(to right, transparent 100%, transparent 100%));
+      $bg-image: append($bg-image, linear-gradient(to right, #{$line-bg-color} 100%, #{$line-bg-color} 100%));
       // This linear-gradient as separator starts below the last line,
       // so we have to add $line-height to our y-pos pointer
       $bg-y-pos: calc((#{$line-height} * (#{$i} - 1)) + (#{$line-spacing} * (#{$i} - 2)));
@@ -59,7 +61,7 @@
       } @else {
         $rand-width: #{randomNum(60, 80)};
       }
-      $bg-image: append($bg-image, 'linear-gradient(to right, ' + $bg-color + ' ' + $rand-width + '% , #FFFFFF ' + $rand-width + '%)');
+      $bg-image: append($bg-image, 'linear-gradient(to right, ' + $bg-color + ' ' + $rand-width + '% , ' + $mask-color + ' ' + $rand-width + '%)');
       // This new line starts below the prviously added separator,
       // so we have to add $line-spacing to our y-pos pointer
       $bg-y-pos: calc((#{$line-height} * (#{$i} - 1)) + (#{$line-spacing} * (#{$i} - 1)));
@@ -78,22 +80,49 @@
 
 
 // WIP on gist: https://www.sassmeister.com/gist/fc8790761e3a6d9dc83f7326c1bc6ab4
+// Inspiration for the animation: https://cloudcannon.com/deconstructions/2014/11/15/facebook-content-placeholder-deconstruction.html
 :host {
   display: block;
   color: transparent;
+  position: relative;
 
   --c-line-height: 16px;
   --c-line-spacing: 3px;
-  --c-bg-color: #DDD;
+  // --c-bg-color: #DDD;
+  --c-bg-color: transparent;
+  --c-mask-color: #FFF;
+  --c-line-bg-color: #FFF;
+
+  --c-animation-bg-color: #EEE;
+  --c-animation-indicator-color: #DDD;
 
   &[element="h1"] {
     --c-line-height: 32px;
-    --c-bg-color: #BBB;
+    // --c-bg-color: #BBB;
+    --c-animation-bg-color: #CCC;
+    --c-animation-indicator-color: #BBB;
+    --c-bg-color: transparent;
   }
 
   &[element="h2"] {
     --c-line-height: 28px;
-    --c-bg-color: #CCC;
+    // --c-bg-color: #CCC;
+    --c-animation-bg-color: #DDD;
+    --c-animation-indicator-color: #CCC;
+    --c-bg-color: transparent;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to right, var(--c-animation-bg-color) 8%, var(--c-animation-indicator-color) 18%, var(--c-animation-bg-color) 33%);
+    background-size: 800px 104px;
+    animation: move 2s ease-in-out infinite;
+    z-index: -1;
   }
 
   // Default one line text-shell
@@ -119,5 +148,30 @@
     background: none;
     min-height: inherit;
     color: inherit;
+
+    &::after {
+      background: none;
+      // 0 is the default value (see: https://stackoverflow.com/a/15963044/1116959)
+      animation: 0;
+    }
+  }
+
+  @keyframes move {
+    0%{
+      background-position: -468px 0
+    }
+
+    100%{
+      background-position: 468px 0
+    }
+  }
+
+  @keyframes progress {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
 }
