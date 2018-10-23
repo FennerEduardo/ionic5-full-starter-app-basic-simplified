@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs/(home:categories)"></ion-back-button>
+      <ion-back-button defaultHref="app/tabs/(home:categories)"></ion-back-button>
     </ion-buttons>
     <ion-title>Fashion Listing</ion-title>
   </ion-toolbar>
@@ -11,4 +11,14 @@
   <ion-anchor class="category-item" href="app/tabs/(home:fashion/pepe)">
     Fashion product
   </ion-anchor>
+  <ng-container *ngIf="listing?.items">
+    <div class="listing-item" *ngFor="let item of listing.items">
+      <h2>
+        <app-text-shell [data]="item.title" [attr.element]="'h2'"></app-text-shell>
+      </h2>
+      <p>
+        <app-text-shell [data]="item.description" [attr.lines]="3"></app-text-shell>
+      </p>
+    </div>
+  </ng-container>
 </ion-content>
