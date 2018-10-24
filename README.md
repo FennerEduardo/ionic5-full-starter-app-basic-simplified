@@ -1,3 +1,7 @@
+# Development Workflow
+Run `ionic build` or `ionic build --prod` to build the project
+Run `ionic serve` to start a live-reload dev server
+
 # Dependencies
 
 Run `npm ls` to list all installed packages
