@@ -1,14 +1,32 @@
-@import "~@ionic/angular/dist/themes/ionic.theme.default.md";
-@import "~@ionic/angular/dist/themes/ionic.theme.default.ios";
+// TODO: Agustin [24 de Octubre de 2018]: Ionic cambio la forma en que referencia variables internas. Todavia no tengo claro como voy a hacer este tipo de cosas
+// @import "~@ionic/core/dist/collection/themes/ionic.theme.default.md";
+// @import "~@ionic/core/dist/collection/themes/ionic.theme.default.ios";
 
-:host-context(.ios) {
-  ion-grid {
-    height: calc(100vh - #{$toolbar-ios-height});
+// TODO: Fix temporario
+// $toolbar-ios-height: 44px;
+// $toolbar-md-height: 56px;
+
+// :host-context(.ios) {
+//   ion-grid {
+//     height: calc(100vh - #{$toolbar-ios-height});
+//   }
+// }
+//
+// :host-context(.md) {
+//   ion-grid {
+//     height: calc(100vh - #{$toolbar-md-height});
+//   }
+// }
+
+ion-content {
+  form {
+    height: 100%;
   }
-}
 
-:host-context(.md) {
   ion-grid {
-    height: calc(100vh - #{$toolbar-md-height});
+    // --ion-grid-padding: 0;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
   }
 }

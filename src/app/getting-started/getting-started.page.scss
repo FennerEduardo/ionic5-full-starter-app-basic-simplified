@@ -1,5 +1,10 @@
-@import "~@ionic/angular/dist/themes/ionic.theme.default.md";
-@import "~@ionic/angular/dist/themes/ionic.theme.default.ios";
+// TODO: Agustin [24 de Octubre de 2018]: Ionic cambio la forma en que referencia variables internas. Todavia no tengo claro como voy a hacer este tipo de cosas
+// @import "~@ionic/core/dist/collection/themes/ionic.theme.default.md";
+// @import "~@ionic/core/dist/collection/themes/ionic.theme.default.ios";
+
+// TODO: Fix temporario
+$toolbar-ios-height: 44px;
+$toolbar-md-height: 56px;
 
 // https://angular.io/guide/component-styles#host
 // The :host selector is the only way to target the host element. You can't reach the host element from inside the
@@ -11,14 +16,16 @@
 :host-context(.ios) {
   // ion-grid {
   ion-slides {
-    height: calc(100vh - #{$toolbar-ios-height});
+    // height: calc(100vh - #{$toolbar-ios-height});
+    height: 100%;
   }
 }
 
 :host-context(.md) {
   // ion-grid {
   ion-slides {
-    height: calc(100vh - #{$toolbar-md-height});
+    // height: calc(100vh - #{$toolbar-md-height});
+    height: 100%;
   }
 }
 
@@ -34,7 +41,8 @@ ion-header {
 }
 
 ion-content {
-  background: transparent;
+  // background: transparent;
+  --background: transparent;
 }
 
 ion-radio {
