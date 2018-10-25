@@ -1,13 +1,22 @@
 <ion-app>
   <ion-menu contentId="main-content" swipeEnabled="false">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>Open end Menu</ion-item>
+        <ion-item>
+          <ion-anchor href="/app/tabs/(home:categories)">
+            Home
+          </ion-anchor>
+        </ion-item>
+        <ion-item>
+          <ion-anchor href="forms">
+            Forms
+          </ion-anchor>
+        </ion-item>
+        <ion-item>
+          <ion-anchor href="layouts">
+            Layouts
+          </ion-anchor>
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
