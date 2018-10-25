@@ -14,26 +14,21 @@ export class SubjectFetch<T> {
   private _observable: Observable<T>;
   // private _fetch: () => Observable<any>;
 
-  // constructor(fetch: () => Observable<T>) {
   constructor(model: T, fetchData: () => Observable<T>) {
     this._subject = new ReplaySubject<T>();
     this._observable = this._subject.asObservable();
-    // this._fetch = fetch;
 
     // Send the mock
     this._subject.next(model);
     // Immediately after fetch data from endpoint
     fetchData().pipe(
-      delay(5000),
+      delay(10000),
       // Prevent the need to unsubscribe.
       // Q: Agustin: Is this because .first() completes the observable?
       first()
     ).subscribe((value: T) => {
       this._subject.next(value);
     });
-    // setTimeout(() => {
-    //   this._subject.next(new Date().toString());
-    // }, 10000);
   }
 
   // public fetch(aggregate: boolean = true): void {
