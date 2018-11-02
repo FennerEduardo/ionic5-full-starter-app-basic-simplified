@@ -85,6 +85,7 @@
   display: block;
   color: transparent;
   position: relative;
+  transform-style: preserve-3d;
 
   --c-line-height: 16px;
   --c-line-spacing: 3px;
@@ -122,7 +123,11 @@
     background: linear-gradient(to right, var(--c-animation-bg-color) 8%, var(--c-animation-indicator-color) 18%, var(--c-animation-bg-color) 33%);
     background-size: 800px 104px;
     animation: move 2s ease-in-out infinite;
-    z-index: -1;
+    // z-index: -1;
+    // To fix z-index issue caused when Ionic added background property to <ion-content>
+    //    If we set <ion-content> background:transparent, then other things break. We needed this fix
+    //    See: https://katydecorah.com/code/z-index-and-transform/
+    transform: translateZ(-1px);
   }
 
   // Default one line text-shell
