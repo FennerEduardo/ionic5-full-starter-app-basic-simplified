@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { HttpClientModule } from '@angular/common/http';
 import { TabsPage } from './tabs.page';
 
 import { CategoriesPage } from '../categories/categories.page';
@@ -11,6 +11,8 @@ import { FashionProductDetailsPage } from '../fashion-product-details/fashion-pr
 import { ProfilePage } from '../profile/profile.page';
 
 import { NotificationsPage } from '../notifications/notifications.page';
+import { NotificationsResolver } from '../notifications/notifications.resolver';
+import { NotificationsService } from '../notifications/notifications.service';
 
 const routes: Routes = [
   {
@@ -44,7 +46,10 @@ const routes: Routes = [
       {
         path: 'notifications',
         outlet: 'notifications',
-        component: NotificationsPage
+        component: NotificationsPage,
+        resolve: {
+         data: NotificationsResolver,
+       }
       }
     ]
   },
@@ -56,11 +61,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes), HttpClientModule],
   exports: [RouterModule],
   providers: [
-    FashionListingResolver
-    // FashionService
+    FashionListingResolver,
+    NotificationsResolver,
+    NotificationsService
   ]
 })
 export class TabsPageRoutingModule {}

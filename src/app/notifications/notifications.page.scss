@@ -1,1 +1,36 @@
+.notification-item {
+  padding: 12px;
+  color: grey;
+  box-shadow: inset 0 8px 2px -9px black;
 
+  ion-avatar{
+    width: 16%;
+    height: 16%;
+  }
+  .details {
+    width: 100%;
+    height: 100%;
+
+    .name {
+      margin-top: 0px;
+      font-size: 16px;
+    	font-weight: 500;
+    	letter-spacing: 0.2px;
+    	color: var(--ion-color-primary);
+    	margin-bottom: 4px;
+    }
+
+    .description {
+      font-size: 12px;
+      margin: 0px;
+    }
+
+  }
+
+  .date {
+    font-size: 12px;
+    align-self: flex-start;
+    margin: 0px;
+    padding-top: 5px;
+  }
+}

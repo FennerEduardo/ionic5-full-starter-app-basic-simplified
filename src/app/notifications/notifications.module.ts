@@ -11,7 +11,12 @@ import { NotificationsPage } from './notifications.page';
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: NotificationsPage }])
+    RouterModule.forChild([
+      {
+         path: '',
+         component: NotificationsPage
+      }
+    ])
   ],
   declarations: [NotificationsPage]
 })
