@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
   loginForm: FormGroup;
 
   constructor(public router: Router) {
@@ -16,29 +16,35 @@ export class LoginPage implements OnInit {
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ]),
-      'password': new FormControl('test', Validators.required)
+      'password': new FormControl('', Validators.required)
     });
   }
 
-  ngOnInit() {
-  }
-
   doLogin(): void {
-    console.log('redirect to home page');
-    // this.router.navigateByUrl('/app/tabs/(home:listing)');
+    console.log('do Log In');
     this.router.navigate(['app/tabs/', { outlets: {home: [ 'categories' ]} }]);
   }
 
   goToSignUp(): void {
     console.log('redirect to sign up page');
-    // this.router.navigateByUrl('/app/tabs/(home:listing)');
     this.router.navigate(['auth/signup']);
   }
 
   goToForgotPassword(): void {
     console.log('redirect to forgot-password page');
-    // this.router.navigateByUrl('/app/tabs/(home:listing)');
-    // this.router.navigate(['auth/forg']);
+  }
+
+  doFacebookLogin(): void {
+    console.log('facebook login');
+    this.router.navigate(['app/tabs/', { outlets: {home: [ 'categories' ]} }]);
+  }
+  doGoogleLogin(): void {
+    console.log('google login');
+    this.router.navigate(['app/tabs/', { outlets: {home: [ 'categories' ]} }]);
+  }
+  doTwitterLogin(): void {
+    console.log('twitter login');
+    this.router.navigate(['app/tabs/', { outlets: {home: [ 'categories' ]} }]);
   }
 
 }

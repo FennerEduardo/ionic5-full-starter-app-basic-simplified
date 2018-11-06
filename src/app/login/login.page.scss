@@ -1,15 +1,13 @@
 .login-content
 {
-	--padding-bottom: 16px;
 	--padding-end: 6%;
 	--padding-start: 6%;
-	--padding-top: 16px;
-	--background: var(--ion-color-light);
 
 	ion-item {
-		--background: var(--ion-color-light);
+		--background: var(--ion-background-color-step-50, #f2f2f2);
 	}
-	
+
+
 	ion-button {
 		--border-radius: 6px;
 		font-weight: 500;
@@ -17,7 +15,7 @@
 
 	.error-container {
 		color: var(--ion-color-danger);
-    background: var(--ion-color-light);
+    background: var(--ion-background-color-step-50, #f2f2f2);
 		padding-top: 10px;
 		padding-bottom: 10px;
 		padding-left: 16px;
@@ -25,6 +23,10 @@
 
 	.other-options
 	{
+		ion-col {
+			padding-top: 0px;
+		}
+
 		.forgot-button
 		{
 			color: var(--ion-color-medium);
@@ -36,7 +38,6 @@
 		{
 			--padding-start: 0px;
 			--padding-end: 0px;
-			font-weight: 500;
 			color: var(--ion-color-secondary);
 		}
 	}

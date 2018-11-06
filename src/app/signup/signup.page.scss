@@ -1,32 +1,53 @@
-// TODO: Agustin [24 de Octubre de 2018]: Ionic cambio la forma en que referencia variables internas. Todavia no tengo claro como voy a hacer este tipo de cosas
-// @import "~@ionic/core/dist/collection/themes/ionic.theme.default.md";
-// @import "~@ionic/core/dist/collection/themes/ionic.theme.default.ios";
+.signup-content
+{
+	--padding-end: 6%;
+	--padding-start: 6%;
 
-// TODO: Fix temporario
-// $toolbar-ios-height: 44px;
-// $toolbar-md-height: 56px;
+	ion-item {
+		--background: var(--ion-background-color-step-50, #f2f2f2);
+	}
 
-// :host-context(.ios) {
-//   ion-grid {
-//     height: calc(100vh - #{$toolbar-ios-height});
-//   }
-// }
-//
-// :host-context(.md) {
-//   ion-grid {
-//     height: calc(100vh - #{$toolbar-md-height});
-//   }
-// }
+	ion-button {
+		--border-radius: 6px;
+		font-weight: 500;
+	}
 
-ion-content {
-  form {
-    height: 100%;
-  }
+	.error-container {
+		color: var(--ion-color-danger);
+    background: var(--ion-background-color-step-50, #f2f2f2);
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 16px;
+	}
 
-  ion-grid {
-    // --ion-grid-padding: 0;
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-  }
+	.auth-divider
+	{
+		color: var(--ion-color-medium);
+		margin: 20px 0px;
+		text-align: center;
+	}
+
+	.social-buttons
+	{
+		.facebook-auth-button {
+			--background: var(--facebook-color);
+		}
+		.twitter-auth-button {
+			--margin-top: 20px;
+			--background: var(--twitter-color);
+		}
+		.google-auth-button {
+			--margin-top: 20px;
+			--background: var(--google-color);
+		}
+	}
+
+	.legal-stuff {
+		text-align: center;
+
+		.legal-action {
+			font-weight: 500;
+			color: var(--ion-color-secondary);
+		}
+	}
 }
