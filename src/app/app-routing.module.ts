@@ -8,8 +8,8 @@ const routes: Routes = [
   { path: 'auth/login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'auth/signup', loadChildren: './signup/signup.module#SignupPageModule' },
   { path: 'app', loadChildren: './tabs/tabs.module#TabsPageModule' },
-  { path: 'forms', loadChildren: './forms/forms.module#FormsPageModule' },
-  { path: 'layouts', loadChildren: './layouts/layouts.module#LayoutsPageModule' },
+  // { path: 'forms', loadChildren: './forms/forms.module#FormsPageModule' },
+  // { path: 'layouts', loadChildren: './layouts/layouts.module#LayoutsPageModule' },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
