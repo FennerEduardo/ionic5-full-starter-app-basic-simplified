@@ -8,16 +8,16 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-anchor class="category-item" href="app/tabs/(home:fashion/pepe)">
+  <!-- <ion-anchor class="category-item" href="app/tabs/(home:fashion/pepe)">
     Fashion product
-  </ion-anchor>
+  </ion-anchor> -->
   <ng-container *ngIf="listing?.items">
     <div class="listing-item" *ngFor="let item of listing.items">
       <h2>
-        <app-text-shell [data]="item.title" [attr.element]="'h2'"></app-text-shell>
+        <app-text-shell [data]="item.name" [attr.element]="'h2'"></app-text-shell>
       </h2>
       <p>
-        <app-text-shell [data]="item.description" [attr.lines]="3"></app-text-shell>
+        <app-text-shell [data]="item.price" [attr.lines]="3"></app-text-shell>
       </p>
     </div>
   </ng-container>
