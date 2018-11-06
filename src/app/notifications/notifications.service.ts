@@ -7,7 +7,7 @@ export class NotificationsService {
   constructor(private http: HttpClient) {}
 
   getData(): Promise<any> {
-    return this.http.get('./assets/data/notifications.json')
+    return this.http.get('./assets/sample-data/notifications.json')
      .toPromise()
      .catch(this.handleError);
   }
