@@ -1,0 +1,121 @@
+ion-content {
+  // --background: transparent;
+}
+
+.listing-item {
+  padding: 0px 0px 10px;
+
+  .image-row {
+    --ion-grid-column-padding: 0px;
+
+    .content-inside-item-image {
+      padding: 0px 14%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      .item-icon {
+        width: 50px;
+        align-self: center;
+      }
+
+      .item-name {
+        app-text-shell {
+          --c-bg-color: #{ rgba(#4d301c, 0.3) };
+        }
+
+        margin: 0px;
+        padding: 8px 0px;
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 900;
+        text-align: center;
+
+        .item-anchor {
+          color: #FFF;
+        }
+      }
+
+      .item-tagline {
+        app-text-shell {
+          --c-bg-color: #{ rgba(#4d301c, 0.2) };
+        }
+
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: italic;
+        margin: 12px 0px 0px;
+        text-align: center;
+      }
+    }
+  }
+
+  .info-row {
+    padding: 23px 18px 28px;
+
+    --ion-grid-column-padding: 0px;
+
+    .main-info-col {
+      padding-right: 8px;
+    }
+
+    .item-name {
+      app-text-shell {
+        --c-line-height: 18px;
+      }
+
+      color: #4d301c;
+      margin: 0px 0px 8px;
+      text-transform: capitalize;
+      font-size: 14px;
+    }
+
+    .item-description {
+      app-text-shell {
+        --c-line-height: 12px;
+      }
+
+      margin: 0px 0px 4px;
+      color: #a48d80;
+      font-size: 14px;
+    }
+
+    .item-address {
+      app-text-shell {
+        --c-line-height: 10px;
+      }
+
+      margin: 0px;
+      color: #a48d80;
+      font-size: 12px;
+    }
+
+    .item-rating {
+      text-align: center;
+      color: #a48d80;
+      justify-content: flex-end;
+
+      .rating-value {
+        font-size: 14px;
+        margin-left: 4px;
+      }
+    }
+
+    .item-reviews {
+      text-align: center;
+      color: #a48d80;
+      margin-top: 12px;
+      justify-content: flex-end;
+
+      .reviews-count {
+        font-size: 14px;
+        margin-left: 4px;
+      }
+    }
+  }
+}

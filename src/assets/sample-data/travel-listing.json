@@ -1,0 +1,37 @@
+{
+  "title": "Fashionista!",
+  "banner_title": "Sports",
+  "items": [
+    {
+      "id": 1,
+      "image": "./assets/sample-images/travel/Travel1-64.47.png",
+      "icon": "./assets/sample-images/travel/TravelIcon1.png",
+      "name": "Tristán Narvaja ",
+      "category": "Flea Market",
+      "description": "Every Sunday from early morning until three in the afternoon enjoy the biggest market in Montevideo.",
+      "rating": 4.8,
+      "address": "Cordón, Montevideo, Uruguay.",
+      "reviewsCount": 8,
+      "reviews": [
+        {
+          "comment": "Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis."
+        }
+      ]
+    }, {
+      "id": 2,
+      "image": "./assets/sample-images/travel/Travel2-64.47.png",
+      "icon": "./assets/sample-images/travel/TravelIcon2.png",
+      "name": "Rambla Montevideo",
+      "category": "Seaside Avenue",
+      "description": "22 kilometers long avenue along the coast of Rio de la Plata stretching throughout all of Montevideo.",
+      "rating": 4.7,
+      "address": "Montevideo, Uruguay",
+      "reviewsCount": 5,
+      "reviews": [
+        {
+          "comment": "Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis."
+        }
+      ]
+    }
+  ]
+}

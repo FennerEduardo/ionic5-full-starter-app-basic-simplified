@@ -4,9 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 
 import { CategoriesPage } from '../categories/categories.page';
+
 import { FashionListingPage } from '../fashion-listing/fashion-listing.page';
 import { FashionListingResolver } from '../fashion-listing/fashion-listing.resolver';
 import { FashionProductDetailsPage } from '../fashion-product-details/fashion-product-details.page';
+
+import { TravelListingPage } from '../travel-listing/travel-listing.page';
+import { TravelListingResolver } from '../travel-listing/travel-listing.resolver';
+
 
 import { ProfilePage } from '../profile/profile.page';
 
@@ -29,6 +34,15 @@ const routes: Routes = [
         // As we can't lazy load this module, we have to repeat the resolve here
         resolve: {
           data: FashionListingResolver
+        }
+      },
+      {
+        path: 'travel',
+        outlet: 'home',
+        component: TravelListingPage,
+        // As we can't lazy load this module, we have to repeat the resolve here
+        resolve: {
+          data: TravelListingResolver
         }
       },
       {
@@ -59,7 +73,8 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
   providers: [
-    FashionListingResolver
+    FashionListingResolver,
+    TravelListingResolver
     // FashionService
   ]
 })
