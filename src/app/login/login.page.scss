@@ -51,16 +51,8 @@
 
 	.social-buttons
 	{
-		.facebook-auth-button{
-			--background: var(--facebook-color);
-		}
-		.twitter-auth-button{
+		.twitter-auth-button, .google-auth-button {
 			--margin-top: 20px;
-			--background: var(--twitter-color);
-		}
-		.google-auth-button{
-			--margin-top: 20px;
-			--background: var(--google-color);
 		}
 	}
 }

@@ -66,7 +66,30 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 
-  --facebook-color: #3b5998;
-  --google-color: #cc181e;
-  --twitter-color: #00aced;
+
+}
+
+// Custom Colors
+
+:root {
+  --ion-color-facebook: #3b5998;
+  --ion-color-facebook-rgb: 59,89,152;
+  --ion-color-facebook-contrast: #ffffff;
+  --ion-color-facebook-contrast-rgb: 255,255,255;
+  --ion-color-facebook-shade: #344e86;
+  --ion-color-facebook-tint: #4f6aa2;
+
+  --ion-color-google: #cc181e;
+  --ion-color-google-rgb: 204,24,30;
+  --ion-color-google-contrast: #ffffff;
+  --ion-color-google-contrast-rgb: 255,255,255;
+  --ion-color-google-shade: #b4151a;
+  --ion-color-google-tint: #d12f35;
+
+  --ion-color-twitter: #00aced;
+  --ion-color-twitter-rgb: 0,172,237;
+  --ion-color-twitter-contrast: #ffffff;
+  --ion-color-twitter-contrast-rgb: 255,255,255;
+  --ion-color-twitter-shade: #0097d1;
+  --ion-color-twitter-tint: #1ab4ef;
 }
