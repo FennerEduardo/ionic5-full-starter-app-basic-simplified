@@ -9,8 +9,11 @@ import { TabsPageRoutingModule } from './tabs.router.module';
 import { TabsPage } from './tabs.page';
 
 import { CategoriesPageModule } from '../categories/categories.module';
+
 import { FashionListingPageModule } from '../fashion-listing/fashion-listing.module';
 import { FashionProductDetailsModule } from '../fashion-product-details/fashion-product-details.module';
+
+import { TravelListingPageModule } from '../travel-listing/travel-listing.module';
 
 import { ProfilePageModule } from '../profile/profile.module';
 
@@ -25,6 +28,7 @@ import { NotificationsPageModule } from '../notifications/notifications.module';
     CategoriesPageModule,
     FashionListingPageModule,
     FashionProductDetailsModule,
+    TravelListingPageModule,
     ProfilePageModule,
     NotificationsPageModule
   ],
