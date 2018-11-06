@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
       Notifications
     </ion-title>
@@ -10,7 +10,7 @@
   <ion-item-group>
     <ion-item-divider sticky>
       <ion-label>
-        Today
+        <ion-text color="dark">Today</ion-text>
       </ion-label>
     </ion-item-divider>
     <ion-item class="notification-item" lines="none" *ngFor="let notification of notifications.today">
@@ -28,9 +28,7 @@
   </ion-item-group>
   <ion-item-group>
     <ion-item-divider sticky>
-      <ion-label>
-        Yesterday
-      </ion-label>
+      <ion-text color="dark">Yesterday</ion-text>
     </ion-item-divider>
     <ion-item class="notification-item" lines="none" *ngFor="let notification of notifications.yesterday">
       <ion-avatar slot="start">

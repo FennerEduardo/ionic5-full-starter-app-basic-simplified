@@ -1,6 +1,6 @@
 .notification-item {
   padding: 12px;
-  color: grey;
+  color: var(--ion-color-medium);
   box-shadow: inset 0 8px 2px -9px black;
 
   ion-avatar{
@@ -16,7 +16,7 @@
       font-size: 16px;
     	font-weight: 500;
     	letter-spacing: 0.2px;
-    	color: var(--ion-color-primary);
+    	color: var(--ion-color-secondary);
     	margin-bottom: 4px;
     }
 
