@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { delay } from 'rxjs/operators';
 
-import { ListingModel } from './listing.model';
+import { FashionListingModel } from './fashion-listing.model';
 
 @Component({
   selector: 'app-fashion-listing',
@@ -11,11 +11,10 @@ import { ListingModel } from './listing.model';
   styleUrls: ['./fashion-listing.page.scss'],
 })
 export class FashionListingPage implements OnInit {
-  listing: ListingModel;
+  listing: FashionListingModel;
 
   constructor(private route: ActivatedRoute) {
-    // this._testing = route.snapshot.data['data'];
-    // debugger;
+
   }
 
   ngOnInit() {
@@ -24,11 +23,8 @@ export class FashionListingPage implements OnInit {
         const data = routeData['data'];
         console.log('data - FashionListingPage - ngOnInit()', data);
 
-        // data.pipe(
-        //   delay(3000)
-        // )
         if (data) {
-          data.subscribe((observableData: ListingModel) => {
+          data.subscribe((observableData: FashionListingModel) => {
             if (observableData && observableData.items) {
               this.listing = observableData;
             }
@@ -42,9 +38,5 @@ export class FashionListingPage implements OnInit {
     } else {
       alert('No route data');
     }
-
-    // this._testing = this.route.snapshot.data['data'];
-    // debugger;
   }
-
 }
