@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { SubjectFetch } from '../utils/subject-fetch';
 
-import { FashionListingModel } from './listing.model';
+import { FashionListingModel } from './fashion-listing.model';
 
 @Injectable()
 export class FashionService {
@@ -13,7 +13,7 @@ export class FashionService {
 
   constructor(private http: HttpClient) { }
 
-  public list(): Observable<ListingModel> {
+  public list(): Observable<FashionListingModel> {
     // Use cache if we have it.
     if (!this._documentsCache) {
       const listingShell: FashionListingModel = new FashionListingModel();
