@@ -48,9 +48,9 @@
     background-repeat: no-repeat;
 
     animation-direction: alternate;
-    animation-name: animatelines;
+    animation-name: animateLine;
 
-    @keyframes animatelines {
+    @keyframes animateLine {
       0%{
         background-size: #{$bg-size-animation-from};
       }
