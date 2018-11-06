@@ -7,6 +7,8 @@ import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.compo
 import { ShowHidePasswordComponent } from './show-hide-password/show-hide-password.component';
 import { FillContainerComponent } from './fill-container/fill-container.component';
 import { TextShellComponent } from './text-shell/text-shell.component';
+import { PreloadImageComponent } from './preload-image/preload-image.component';
+import { BackgroundImageComponent } from './background-image/background-image.component';
 
 @NgModule({
   imports: [
@@ -18,13 +20,17 @@ import { TextShellComponent } from './text-shell/text-shell.component';
     CustomCheckboxComponent,
     ShowHidePasswordComponent,
     FillContainerComponent,
-    TextShellComponent
+    TextShellComponent,
+    PreloadImageComponent,
+    BackgroundImageComponent
   ],
   exports: [
     CustomCheckboxComponent,
     ShowHidePasswordComponent,
     FillContainerComponent,
-    TextShellComponent
+    TextShellComponent,
+    PreloadImageComponent,
+    BackgroundImageComponent
   ],
   entryComponents: [],
 })
