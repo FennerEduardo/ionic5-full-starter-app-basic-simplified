@@ -12,8 +12,11 @@ export class LoginPage implements OnInit {
 
   constructor(public router: Router) {
     this.loginForm = new FormGroup({
-      email: new FormControl('aa@aa', Validators.required),
-      password: new FormControl('test', Validators.required)
+      'email': new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+      ]),
+      'password': new FormControl('test', Validators.required)
     });
   }
 
@@ -24,6 +27,18 @@ export class LoginPage implements OnInit {
     console.log('redirect to home page');
     // this.router.navigateByUrl('/app/tabs/(home:listing)');
     this.router.navigate(['app/tabs/', { outlets: {home: [ 'categories' ]} }]);
+  }
+
+  goToSignUp(): void {
+    console.log('redirect to sign up page');
+    // this.router.navigateByUrl('/app/tabs/(home:listing)');
+    this.router.navigate(['auth/signup']);
+  }
+
+  goToForgotPassword(): void {
+    console.log('redirect to forgot-password page');
+    // this.router.navigateByUrl('/app/tabs/(home:listing)');
+    // this.router.navigate(['auth/forg']);
   }
 
 }

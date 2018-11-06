@@ -5,32 +5,32 @@
     {
       "title": "Air Sports",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "image": "./assets/images/listing/300x300AirSports.png"
+      "image": "/assets/images/listing/300x300AirSports.png"
     },
     {
       "title": "Water Sports",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nam libero justo laoreet sit amet cursus.",
-      "image": "./assets/images/listing/300x300WaterSports.png"
+      "image": "/assets/images/listing/300x300WaterSports.png"
     },
     {
       "title": "Beach Sports",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor leo a diam sollicitudin tempor id eu nisl nunc.",
-      "image": "./assets/images/listing/300x300BeachSports.png"
+      "image": "/assets/images/listing/300x300BeachSports.png"
     },
     {
       "title": "Extreme Sports",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "image": "./assets/images/listing/300x300ExtremeSports.png"
+      "image": "/assets/images/listing/300x300ExtremeSports.png"
     },
     {
       "title": "Athletic Sports",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est.",
-      "image": "./assets/images/listing/300x300AthleticSports.png"
+      "image": "/assets/images/listing/300x300AthleticSports.png"
     },
     {
       "title": "Combat Sports",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat odio facilisis mauris sit amet massa vitae tortor.",
-      "image": "./assets/images/listing/300x300CombatSports.png"
+      "image": "/assets/images/listing/300x300CombatSports.png"
     }
   ]
 }
