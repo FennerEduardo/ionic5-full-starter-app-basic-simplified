@@ -1,12 +1,32 @@
-<ion-header>
-  <ion-toolbar color="primary">
+<ion-header no-border>
+  <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-text class="edit-profile" color="light">Edit</ion-text>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <h2>Hi!</h2>
+  <div class="user-info">
+    <img class="image" [src]="'./assets/sample-images/notifications/100x100Notification2.jpg'">
+    <p class="name">Dayana Jabif</p>
+    <p class="twitter">@dayujabif</p>
+    <ion-row class="likes">
+      <ion-col class="likes-icon-col">
+        <ion-icon name="heart"></ion-icon>
+      </ion-col>
+      <ion-col class="likes-value-col">
+        <span class="value">74</span>
+      </ion-col>
+    </ion-row>
+    <p class="description">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+    </p>
+  </div>
+
 </ion-content>
