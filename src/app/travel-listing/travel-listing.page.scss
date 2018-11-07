@@ -27,15 +27,15 @@ ion-content {
 
         margin: 0px;
         padding: 8px 0px;
-        color: #fff;
         border-bottom: 2px solid #fff;
         text-transform: uppercase;
         font-size: 20px;
         font-weight: 900;
         text-align: center;
 
-        .item-anchor {
+        .name-anchor {
           color: #FFF;
+          display: block;
         }
       }
 
@@ -69,10 +69,14 @@ ion-content {
         --c-line-height: 18px;
       }
 
-      color: #4d301c;
       margin: 0px 0px 8px;
       text-transform: capitalize;
       font-size: 14px;
+
+      .name-anchor {
+        color: #4d301c;
+        display: block;
+      }
     }
 
     .item-description {
