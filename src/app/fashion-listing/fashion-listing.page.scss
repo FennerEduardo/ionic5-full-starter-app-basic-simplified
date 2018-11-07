@@ -1,7 +1,103 @@
-ion-content {
-  // --background: transparent;
-}
+.items-row {
+  padding: 18px 18px 0px;
 
-.listing-item {
-  padding: 0px 0px 10px;
+  .listing-item {
+    margin-bottom: 18px;
+
+    &:nth-child(odd) {
+      padding-right: 9px;
+    }
+
+    &:nth-child(even) {
+      padding-left: 9px;
+    }
+
+    .item-image {
+      .image-anchor {
+        display: block;
+      }
+    }
+
+    .item-body {
+      --ion-grid-column-padding: 0px;
+
+      background-color: #faf2f0;
+      padding: 5px 5px;
+      text-align: center;
+
+      .main-info {
+        margin-bottom: 8px;
+
+        .item-name {
+          app-text-shell {
+            --c-line-height: 14px;
+            --c-bg-color: #{ darken(#faf2f0, 4.5%) };
+          }
+
+          margin: 0px;
+          font-size: 14px;
+          font-weight: 400;
+
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+
+          .name-anchor {
+            color: #000;
+            display: block;
+          }
+        }
+      }
+
+      .secondary-info {
+        align-items: center;
+
+        .price-col {
+          &:first-child {
+            padding-right: 8px;
+            text-align: right;
+
+            &:last-child {
+              text-align: center;
+            }
+          }
+          &:last-child {
+            padding-left: 8px;
+            text-align: left;
+          }
+        }
+
+        .separator {
+          max-width: 0px;
+          border-right: solid 2px #000;
+          align-self: stretch;
+        }
+
+        .item-sale-price {
+          app-text-shell {
+            --c-line-height: 16px;
+            --c-bg-color: #{ lighten(#faf2f0, 2.5%) };
+          }
+
+          display: block;
+          font-weight: 500;
+          color: #000;
+          font-size: 16px;
+        }
+
+        .item-original-price {
+          app-text-shell {
+            --c-line-height: 14px;
+            --c-bg-color: #{ lighten(#faf2f0, 2.5%) };
+          }
+
+          display: block;
+          text-decoration: line-through;
+          color: #4d301c80;
+          font-size: 14px;
+        }
+      }
+
+    }
+  }
 }
