@@ -7,86 +7,124 @@
 </ion-header>
 
 <ion-content>
-  <ion-slides pager="true">
-    <ion-slide style="background: red;">
-      <ion-grid style="height: 100%; width: 100%; /*to prevent narrow slide before image get's loaded*/ padding-bottom: 2.125rem;/*To compensate slider pager*/">
-        <ion-row style="height: 100%;">
-          <ion-col size="12">
-            <h2>What are you browsing for?</h2>
-            <form [formGroup]="radioTagsForm">
-              <ion-list>
-                <ion-radio-group formControlName="selected_option">
-                  <ion-item>
+  <form [formGroup]="gettingStartedForm" class="getting-started-form">
+    <ion-slides pager="true">
+      <ion-slide>
+        <ion-grid style="height: 100%; width: 100%; /*to prevent narrow slide before image get's loaded*/ padding-bottom: 2.125rem;/*To compensate slider pager*/">
+          <ion-row style="height: 100%;">
+            <ion-col size="12">
+              <h2 class="question-title">What are you browsing for?</h2>
+              <ion-list class="question-options">
+                <ion-radio-group formControlName="browsingCategory">
+                  <ion-item class="question-option">
                     <ion-label>Woman</ion-label>
                     <ion-radio value="woman"></ion-radio>
                   </ion-item>
-                  <ion-item>
+                  <ion-item class="question-option">
                     <ion-label>Men</ion-label>
                     <ion-radio value="men"></ion-radio>
                   </ion-item>
-                  <ion-item>
+                  <ion-item class="question-option">
                     <ion-label>Kids</ion-label>
                     <ion-radio value="kids"></ion-radio>
                   </ion-item>
-                  <ion-item>
+                  <ion-item class="question-option">
                     <ion-label>Petit</ion-label>
                     <ion-radio value="petit"></ion-radio>
                   </ion-item>
-                  <ion-item>
+                  <ion-item class="question-option">
                     <ion-label>Plus Size</ion-label>
                     <ion-radio value="plus-size"></ion-radio>
                   </ion-item>
-                  <ion-item>
+                  <ion-item class="question-option">
                     <ion-label>New In</ion-label>
                     <ion-radio value="new-in"></ion-radio>
                   </ion-item>
                 </ion-radio-group>
               </ion-list>
-            </form>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-slide>
-    <ion-slide>
-      <form [formGroup]="customCheckboxForm">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-slide>
+      <ion-slide class="interests-to-follow-slide">
         <ion-grid style="height: 100%; width: 100%; /*to prevent narrow slide before image get's loaded*/ padding-bottom: 2.125rem;/*To compensate slider pager*/">
-          <ion-row style="height: 100%;">
-            <ion-col size="12">
-              <ion-row>
+          <ion-row style="height: 100%; flex-flow: column; justify-content: space-between;">
+            <ion-col class="heading-col">
+              <h2 class="question-title">Pick categories to follow</h2>
+              <p class="question-paragraph">
+                You can add or change them later
+              </p>
+            </ion-col>
+            <ion-col class="question-options-col">
+              <ion-row formGroupName="followingInterests">
                 <ion-col size="6">
                   <app-custom-checkbox class="custom-checkbox">
-                    <span class="spam-el">SPAM</span>
-                    <img [src]="'https://placeimg.com/100/100/any'"/>
-                    <ion-checkbox formControlName="_1"></ion-checkbox>
+                    <app-background-image [src]="'./assets/sample-images/getting-started/category1-1.1.png'" class="add-overlay">
+                      <app-fill-container [ratio]="{w:1, h:1}">
+                        <span class="spam-el">Tops</span>
+                        <ion-checkbox formControlName="tops"></ion-checkbox>
+                      </app-fill-container>
+                    </app-background-image>
                   </app-custom-checkbox>
                 </ion-col>
                 <ion-col size="6">
                   <app-custom-checkbox class="custom-checkbox">
-                    <span>PEPE</span>
-                    <img [src]="'https://placeimg.com/100/100/any'"/>
-                    <ion-checkbox formControlName="_2"></ion-checkbox>
+                    <app-background-image [src]="'./assets/sample-images/getting-started/category2-1.1.png'" class="add-overlay">
+                      <app-fill-container [ratio]="{w:1, h:1}">
+                        <span class="spam-el">Dresses</span>
+                        <ion-checkbox formControlName="dresses"></ion-checkbox>
+                      </app-fill-container>
+                    </app-background-image>
                   </app-custom-checkbox>
                 </ion-col>
                 <ion-col size="6">
                   <app-custom-checkbox class="custom-checkbox">
-                    <img [src]="'https://placeimg.com/100/100/any'"/>
-                    <ion-checkbox formControlName="_3"></ion-checkbox>
+                    <app-background-image [src]="'./assets/sample-images/getting-started/category3-1.1.png'" class="add-overlay">
+                      <app-fill-container [ratio]="{w:1, h:1}">
+                        <span class="spam-el">Jeans</span>
+                        <ion-checkbox formControlName="jeans"></ion-checkbox>
+                      </app-fill-container>
+                    </app-background-image>
                   </app-custom-checkbox>
                 </ion-col>
                 <ion-col size="6">
                   <app-custom-checkbox class="custom-checkbox">
-                    <img [src]="'https://placeimg.com/100/100/any'"/>
-                    <ion-checkbox formControlName="_4"></ion-checkbox>
+                    <app-background-image [src]="'./assets/sample-images/getting-started/category4-1.1.png'" class="add-overlay">
+                      <app-fill-container [ratio]="{w:1, h:1}">
+                        <span class="spam-el">Jackets</span>
+                        <ion-checkbox formControlName="jackets"></ion-checkbox>
+                      </app-fill-container>
+                    </app-background-image>
+                  </app-custom-checkbox>
+                </ion-col>
+                <ion-col size="6">
+                  <app-custom-checkbox class="custom-checkbox">
+                    <app-background-image [src]="'./assets/sample-images/getting-started/category5-1.1.png'" class="add-overlay">
+                      <app-fill-container [ratio]="{w:1, h:1}">
+                        <span class="spam-el">Shoes</span>
+                        <ion-checkbox formControlName="shoes"></ion-checkbox>
+                      </app-fill-container>
+                    </app-background-image>
+                  </app-custom-checkbox>
+                </ion-col>
+                <ion-col size="6">
+                  <app-custom-checkbox class="custom-checkbox">
+                    <app-background-image [src]="'./assets/sample-images/getting-started/category6-1.1.png'" class="add-overlay">
+                      <app-fill-container [ratio]="{w:1, h:1}">
+                        <span class="spam-el">Glasses</span>
+                        <ion-checkbox formControlName="glasses"></ion-checkbox>
+                      </app-fill-container>
+                    </app-background-image>
                   </app-custom-checkbox>
                 </ion-col>
               </ion-row>
             </ion-col>
-            <ion-col size="12" style="align-self: flex-end;">
+            <ion-col class="call-to-action-col">
               <ion-button color="medium" expand="block" href="auth/signup">Signup</ion-button>
             </ion-col>
           </ion-row>
         </ion-grid>
-      </form>
-    </ion-slide>
-  </ion-slides>
+      </ion-slide>
+    </ion-slides>
+  </form>
 </ion-content>

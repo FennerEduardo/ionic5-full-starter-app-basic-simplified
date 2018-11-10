@@ -11,19 +11,21 @@ import { FormGroup, FormControl } from '@angular/forms';
   // encapsulation: ViewEncapsulation.Native // deprecated in Angular 6.1+ (Shadow Dom v0)
 })
 export class GettingStartedPage implements OnInit {
-  radioTagsForm: FormGroup;
-  customCheckboxForm: FormGroup;
+  // radioTagsForm: FormGroup;
+  // customCheckboxForm: FormGroup;
+  gettingStartedForm: FormGroup;
 
   constructor() {
-    this.radioTagsForm = new FormGroup({
-      selected_option: new FormControl('kids')
-    });
-
-    this.customCheckboxForm = new FormGroup({
-      _1: new FormControl(true),
-      _2: new FormControl(false),
-      _3: new FormControl(false),
-      _4: new FormControl(true)
+    this.gettingStartedForm = new FormGroup({
+      browsingCategory: new FormControl('kids'),
+      followingInterests: new FormGroup({
+        tops: new FormControl(true),
+        dresses: new FormControl(false),
+        jeans: new FormControl(false),
+        jackets: new FormControl(true),
+        shoes: new FormControl(false),
+        glasses: new FormControl(true)
+      })
     });
   }
 

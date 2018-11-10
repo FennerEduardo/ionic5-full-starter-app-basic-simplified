@@ -1,55 +1,86 @@
-// TODO: Agustin [24 de Octubre de 2018]: Ionic cambio la forma en que referencia variables internas. Todavia no tengo claro como voy a hacer este tipo de cosas
-// @import "~@ionic/core/dist/collection/themes/ionic.theme.default.md";
-// @import "~@ionic/core/dist/collection/themes/ionic.theme.default.ios";
-
-// TODO: Fix temporario
-$toolbar-ios-height: 44px;
-$toolbar-md-height: 56px;
-
 // https://angular.io/guide/component-styles#host
 // The :host selector is the only way to target the host element. You can't reach the host element from inside the
 // component with other selectors because it's not part of the component's own template.
 :host {
-  background: orange;
+  background-color: #FFE6DC;
 }
 
-:host-context(.ios) {
-  // ion-grid {
-  ion-slides {
-    // height: calc(100vh - #{$toolbar-ios-height});
-    height: 100%;
-  }
+.getting-started-form {
+  height: 100%;
 }
 
-:host-context(.md) {
-  // ion-grid {
-  ion-slides {
-    // height: calc(100vh - #{$toolbar-md-height});
-    height: 100%;
-  }
+ion-slides {
+  height: 100%;
+  --bullet-background: #4D301C;
+  --bullet-background-active: #4D301C;
 }
 
-ion-header {
-  ion-toolbar {
-    --background: transparent;
-
-    // Esto lo ignora. La unicaforma de agregar estilos es con javascript (haciendole append a la tag de <styles> que se declara adentro del shadow dom o accediendo al elemento con document.element.bla)
-    // .toolbar-background {
-    //   margin: 20px;
-    // }
-  }
+.question-title {
+  color: #4D301C;
+  text-align: center;
+  margin: 6px 18% 0;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
 }
 
-ion-content {
-  // background: transparent;
-  --background: transparent;
+.question-paragraph {
+  color: #4D301C;
+  text-align: center;
+  margin: 8px 9%;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 28px;
 }
 
-ion-radio {
-  &.radio-checked {
-    input[type="radio"] {
-      background: gray;
+.question-options {
+  margin: 30px 9% 0;
+  background: transparent;
+
+  .question-option {
+    --padding-start: 0px;
+    --ion-item-background: #4D301C;
+    --ion-item-color: #FFF;
+
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
     }
+
+    &.item-radio-checked {
+      --ion-item-background: #FF984C;
+    }
+
+    ion-label {
+      margin: 10px 0px;
+    }
+
+    ion-radio {
+      margin: 0px;
+
+      // To hide the .radio-icon
+      --width: 0px;
+      --border-width: 0px;
+      --height: 0px;
+    }
+  }
+}
+
+.interests-to-follow-slide {
+  .heading-col {
+    max-height: 16%;
+    max-height: fit-content;
+  }
+
+  .question-options-col {
+    overflow: scroll
+
+  }
+
+  .call-to-action-col {
+    max-height: 10%;
+    max-height: fit-content;
   }
 }
 
@@ -59,6 +90,25 @@ ion-checkbox {
   --background: transparent;
   --background-checked: #{rgba(grey, .8)};
 }
+
+.spam-el {
+  color: #FFF;
+  font-weight: 500;
+}
+
+
+// TODO: Needs refactoring
+
+ion-header {
+  ion-toolbar {
+    --background: transparent;
+  }
+}
+
+ion-content {
+  --background: transparent;
+}
+
 
 // Esto no funciona por la encapsulacion de Angular.
 // Si le pongo encapsulation: None funciona pero se rompe los estilos de :host y :host-context
