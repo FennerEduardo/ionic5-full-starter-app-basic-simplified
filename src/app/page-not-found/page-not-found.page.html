@@ -6,10 +6,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="outer-content">
 
   <app-preload-image [ratio]="{w: 1, h: 1}" [src]="'./assets/images/page-not-found.svg'"></app-preload-image>
-  <h4 padding>Uh Oh! This page is incorrect.</h4>
+  <div class="not-found-title">404</div>
+  <div class="not-found-text">Page not found</div>
   <ion-button href="/app/tabs/(home:categories)" expand="block">Go to home</ion-button>
 
 </ion-content>

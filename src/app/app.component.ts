@@ -47,6 +47,11 @@ export class AppComponent {
       title: 'Getting Started',
       url: '/getting-started',
       icon: 'color-wand'
+    },
+    {
+      title: '404 page',
+      url: '/page-not-found',
+      icon: 'warning'
     }
   ];
 
