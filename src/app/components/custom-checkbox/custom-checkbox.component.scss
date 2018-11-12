@@ -1,16 +1,16 @@
-.fucking-wrapper {
-  position: relative;
-  width: 100%;
+app-custom-checkbox {
+  display: block;
 
-  &.checkbox-checked {
-    // border: 2px solid blue;
-  }
+  .custom-checkbox-wrapper {
+    position: relative;
+    width: 100%;
 
-  ion-checkbox {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+    ion-checkbox {
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+    }
   }
 }
