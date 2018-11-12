@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, AfterContentInit, ContentChild } from '@angular/core';
+import { Component, ViewEncapsulation, AfterContentInit, ContentChild, HostBinding } from '@angular/core';
 
 // Lista de los componentes de Ionic: https://github.com/ionic-team/ionic/blob/master/angular/src/directives/proxies.ts
 import { Checkbox } from '@ionic/angular';
@@ -12,18 +12,19 @@ import { Checkbox } from '@ionic/angular';
   encapsulation: ViewEncapsulation.None
 })
 export class CustomCheckboxComponent implements AfterContentInit {
-  // @ViewChild(Checkbox) checkbox: Checkbox;
   @ContentChild(Checkbox) checkbox: Checkbox;
+
+  @HostBinding('class.checkbox-checked') isChecked: boolean;
 
   constructor() {}
 
   ngAfterContentInit() {
     // ContentChild is set
-    console.log(this.checkbox);
-    // debugger;
-  }
+    this.isChecked = this.checkbox.checked;
 
-  test(): void {
-    console.log(this.checkbox.checked);
+    // Subscribe to changes
+    this.checkbox.ionChange.subscribe(changes => {
+      this.isChecked = changes.detail.checked;
+    });
   }
 }
