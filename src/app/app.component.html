@@ -27,7 +27,7 @@
         <ion-list>
           <ion-list-header>Account</ion-list-header>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of accountPages; let i = index">
-            <ion-item button (click)="navigate(p.url)">
+            <ion-item button (click)="navigateToAccountRoutes(p.url)">
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
               <ion-label>
                 {{p.title}}

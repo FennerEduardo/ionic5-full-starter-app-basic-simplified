@@ -71,4 +71,9 @@ export class AppComponent {
   navigate(url: string) {
     return this.router.navigateByUrl(url);
   }
+
+  navigateToAccountRoutes(url: string) {
+    this.menu.enable(false);
+    return this.router.navigateByUrl(url);
+  }
 }
