@@ -7,7 +7,8 @@ import { Slides } from '@ionic/angular';
   selector: 'app-getting-started',
   templateUrl: './getting-started.page.html',
   styleUrls: ['./getting-started.page.scss'],
-  encapsulation: ViewEncapsulation.None
+  // encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class GettingStartedPage implements OnInit, AfterViewInit {
   isLastSlide = false;
