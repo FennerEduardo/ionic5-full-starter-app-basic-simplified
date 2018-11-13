@@ -1,19 +1,18 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+
+import { Slides } from '@ionic/angular';
 
 @Component({
   selector: 'app-getting-started',
   templateUrl: './getting-started.page.html',
   styleUrls: ['./getting-started.page.scss'],
-  // encapsulation: ViewEncapsulation.None
-  // TODO: when updating to Angular 6.1 un-comment this
-  // encapsulation: ViewEncapsulation.ShadowDom // introduced in Angular 6.1 (Shadow Dom v1)
-  // encapsulation: ViewEncapsulation.Native // deprecated in Angular 6.1+ (Shadow Dom v0)
+  encapsulation: ViewEncapsulation.None
 })
-export class GettingStartedPage implements OnInit {
-  // radioTagsForm: FormGroup;
-  // customCheckboxForm: FormGroup;
+export class GettingStartedPage implements OnInit, AfterViewInit {
+  isLastSlide = false;
   gettingStartedForm: FormGroup;
+  @ViewChild(Slides) slides: Slides;
 
   constructor() {
     this.gettingStartedForm = new FormGroup({
@@ -29,7 +28,15 @@ export class GettingStartedPage implements OnInit {
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
+  ngAfterViewInit() {
+    // ViewChild is set
+    // Subscribe to changes
+    this.slides.ionSlideWillChange.subscribe(changes => {
+      this.slides.isEnd().then(isEnd => {
+        this.isLastSlide = isEnd;
+      });
+    });
+  }
 }
