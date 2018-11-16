@@ -102,6 +102,8 @@ ion-content {
     flex-shrink: 0;
     min-height: auto;
     background-color: var(--background);
+    // To prevent transparent line caused by pixel fractions
+    margin-top: -1px;
   }
 }
 
