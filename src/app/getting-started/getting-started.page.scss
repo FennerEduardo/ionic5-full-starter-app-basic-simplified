@@ -33,13 +33,16 @@ ion-content {
       --bullet-background-active: #4D301C;
 
       .swiper-pagination {
-        bottom: 0px;
+        // .swiper-pagination is 18px height, .slide-inner-row has 20px of padding-bottom => bottom = (20px - 18px)/2 = 1px
+        bottom: 1px;
       }
 
       .slide-inner-row {
         height: 100%;
         width: 100%;
         padding: 5px 5px 20px;
+        // Don't know why it gets overridden by content-box if I don't add this
+        box-sizing: border-box;
       }
     }
   }
@@ -50,6 +53,11 @@ ion-content {
     padding: 8px;
 
     .signup-button {
+      --background: #863bf3;
+      --background-activated: #{ darken(#863bf3, 2%) };
+      --color: #FFF;
+      --color-activated: #e6e6e6;
+
       visibility: hidden;
     }
   }

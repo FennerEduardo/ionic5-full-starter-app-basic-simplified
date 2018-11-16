@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
-import { Slides } from '@ionic/angular';
+import { Slides, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-getting-started',
@@ -15,7 +15,7 @@ export class GettingStartedPage implements OnInit, AfterViewInit {
   gettingStartedForm: FormGroup;
   @ViewChild(Slides) slides: Slides;
 
-  constructor() {
+  constructor(public menu: MenuController) {
     this.gettingStartedForm = new FormGroup({
       browsingCategory: new FormControl('kids'),
       followingInterests: new FormGroup({
@@ -29,7 +29,9 @@ export class GettingStartedPage implements OnInit, AfterViewInit {
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.menu.enable(false);
+  }
 
   ngAfterViewInit() {
     // ViewChild is set
