@@ -1,0 +1,225 @@
+:host {
+  --swiper-pagination-space: 40px;
+  --swiper-pagination-height: 18px;
+  --pagination-bullet-size: 10px;
+  // --first-slide-background: #c4c3ff;
+  --first-slide-background: #eef3ff;
+  --second-slide-background: #fedac1;
+  --third-slide-background: #beeeff;
+  --last-slide-background: #f19399;
+}
+
+:host-context(.md) {
+  // md
+  --header-height: 56px;
+}
+
+:host-context(.ios) {
+  // ios
+  --header-height: 44px;
+}
+
+ion-header {
+  ion-toolbar {
+    --background: transparent;
+  }
+}
+
+ion-content {
+  --background: #FFF;
+
+  // To get the ion-content behind the ion-header
+  position: absolute;
+  top: 0;
+}
+
+.walkthrough-slides {
+  height: 100%;
+  --bullet-background: #4D301C;
+  --bullet-background-active: #4D301C;
+
+  .slide-inner-row {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    // Header space
+    padding-top: var(--header-height);
+    // .swiper-pagination space
+    border-bottom: var(--swiper-pagination-space) solid transparent;
+    background-clip: padding-box;
+
+    // Don't know why it gets overridden by content-box if I don't add this
+    box-sizing: border-box;
+
+    // Override <ion-slide> image styles
+    app-preload-image img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .swiper-pagination {
+    height: var(--swiper-pagination-height);
+    line-height: 1;
+    // .swiper-pagination is 18px height, .slide-inner-row has 40px of padding-bottom => bottom = (40px - 18px)/2 = 11px
+    bottom: calc((var(--swiper-pagination-space) - var(--swiper-pagination-height) ) / 2);
+
+    .swiper-pagination-bullet {
+      width: var(--pagination-bullet-size);
+      height: var(--pagination-bullet-size);
+    }
+  }
+}
+
+.illustration-and-decoration-slide {
+  .slide-inner-row {
+    --ion-grid-column-padding: 0px;
+    flex-flow: column;
+    justify-content: flex-start;
+  }
+
+  .illustration-col {
+    flex-grow: 0;
+    flex-shrink: 0;
+    min-height: auto;
+    min-height: fit-content;
+  }
+
+  .decoration-col {
+    flex-grow: 0;
+    flex-shrink: 1;
+    min-height: auto;
+    background-color: var(--background);
+
+    // To prevent transparent line caused by pixel fractions
+    .vector-decoration {
+      margin-top: -1px;
+    }
+  }
+
+  .info-col {
+    flex-grow: 1;
+    flex-shrink: 0;
+    min-height: auto;
+    background-color: var(--background);
+  }
+}
+
+.first-slide {
+  --vector-decoration-fill: var(--first-slide-background);
+
+  .slide-inner-row {
+    background-color: var(--first-slide-background);
+  }
+
+  .illustration-col {
+    padding: 0px 8%;
+  }
+
+  .info-wrapper {
+    margin: -20px 10% 0px;
+    text-align: left;
+
+    .info-title {
+      margin: 0px 0px 20px;
+      color: #333;
+    }
+
+    .info-paragraph {
+      color: #666;
+      font-size: 14px;
+      margin: 0px 0px 10px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+.second-slide {
+  --vector-decoration-fill: var(--second-slide-background);
+
+  .slide-inner-row {
+    background-color: var(--second-slide-background);
+  }
+
+  .illustration-col {
+    padding: 0px 10%;
+  }
+}
+
+.third-slide {
+  --vector-decoration-fill: var(--third-slide-background);
+
+  .slide-inner-row {
+    background-color: var(--third-slide-background);
+  }
+
+  .illustration-col {
+    padding: 0px 15%;
+  }
+}
+
+.last-slide {
+  --vector-decoration-fill: var(--last-slide-background);
+
+  .slide-inner-row {
+    background-color: var(--last-slide-background);
+    // In the last slide .swiper-pagination is hidden
+    border-width: 0px;
+  }
+
+  .illustration-col {
+    padding: 0px 10%;
+  }
+
+  .info-col {
+    padding: 20px;
+
+    .call-to-actions-wrapper {
+      height: 100%;
+      align-items: flex-end;
+    }
+
+    .get-started-button {
+      --background: #863bf3;
+      --background-activated: #{ darken(#863bf3, 2%) };
+      --color: #FFF;
+      --color-activated: #e6e6e6;
+    }
+
+    .alt-call-to-action-row {
+      align-items: center;
+      justify-content: center;
+
+      .cta-leading-text {
+        color: #666;
+        font-size: 16px;
+      }
+
+      .login-button {
+        --color: #863bf3;
+        --color-activated: #{ darken(#863bf3, 2%) };
+      }
+    }
+  }
+}
+
+:host(.first-slide-active) {
+  .skip-walkthrough-button {
+    visibility: hidden;
+  }
+}
+
+:host(.last-slide-active) {
+  .walkthrough-slides {
+    .swiper-pagination {
+      display: none;
+    }
+  }
+
+  .skip-walkthrough-button {
+    visibility: hidden;
+  }
+}
