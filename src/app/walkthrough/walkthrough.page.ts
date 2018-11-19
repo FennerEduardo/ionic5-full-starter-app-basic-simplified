@@ -10,8 +10,8 @@ import { Slides, MenuController } from '@ionic/angular';
 })
 export class WalkthroughPage implements OnInit, AfterViewInit {
   @ViewChild(Slides) slides: Slides;
-  @HostBinding('class.first-slide-active') isFirstSlide: boolean;
-  @HostBinding('class.last-slide-active') isLastSlide: boolean;
+  @HostBinding('class.first-slide-active') isFirstSlide = true;
+  @HostBinding('class.last-slide-active') isLastSlide = false;
 
   constructor(public menu: MenuController) { }
 

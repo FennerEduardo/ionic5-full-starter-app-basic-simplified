@@ -83,6 +83,11 @@ ion-content {
     flex-shrink: 0;
     min-height: auto;
     min-height: fit-content;
+
+    app-preload-image {
+      --loading-background: transparent;
+      --spinner-color: #FFF;
+    }
   }
 
   .decoration-col {
