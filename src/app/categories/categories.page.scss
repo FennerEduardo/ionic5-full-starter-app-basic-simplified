@@ -19,6 +19,14 @@ ion-content {
   }
 
   .category-item {
+    --category-loading-background: #{ rgba(#CCC, .25); };
+    --category-spinner-color: #FFF;
+
+    app-background-image {
+      --loading-background: var(--category-loading-background);
+      --spinner-color: var(--category-spinner-color);
+    }
+
     .category-anchor {
       height: 100%;
       display: flex;
@@ -43,21 +51,26 @@ ion-content {
 
   .travel-category {
     --category-background: #f5a478;
+    --category-loading-background: #{ rgba(#f5a478, .25); };
   }
 
   .fashion-category {
     --category-background: #d9453a;
+    --category-loading-background: #{ rgba(#d9453a, .25); };
   }
 
   .food-category {
     --category-background: #ebbb00;
+    --category-loading-background: #{ rgba(#ebbb00, .25); };
   }
 
   .deals-category {
     --category-background: #cb328f;
+    --category-loading-background: #{ rgba(#cb328f, .25); };
   }
 
   .real-state-category {
     --category-background: #455b3b;
+    --category-loading-background: #{ rgba(#455b3b, .25); };
   }
 }
