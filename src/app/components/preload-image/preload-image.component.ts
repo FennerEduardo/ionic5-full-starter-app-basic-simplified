@@ -1,4 +1,5 @@
-import { Component, Input, ElementRef, Renderer2, ViewEncapsulation, ViewChild, OnChanges, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, ViewEncapsulation, Input, HostBinding, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'app-preload-image',
@@ -8,41 +9,40 @@ import { Component, Input, ElementRef, Renderer2, ViewEncapsulation, ViewChild, 
   ],
   encapsulation: ViewEncapsulation.None
 })
-export class PreloadImageComponent implements OnChanges {
+export class PreloadImageComponent {
   _src = '';
   _ratio: { w: number, h: number };
 
-  constructor(
-    private _elementRef: ElementRef,
-    private _renderer: Renderer2
-  ) {}
+  @HostBinding('style.padding') ratioPadding = '0px';
+  @HostBinding('class.img-loaded') imageLoaded = false;
 
-  @Input() set src(val: string) {
-    this._src = (val !== undefined && val !== null) ? val : '';
-  }
+  @Input()
+  set ratio(ratio: { w: number, h: number }) {
+    this._ratio = (ratio !== undefined && ratio !== null) ? ratio : {w: 1, h: 1};
 
-  @Input() set ratio(ratio: { w: number, h: number }) {
-    this._ratio = ratio || {w: 1, h: 1};
-  }
-
-  ngOnChanges() {
     const ratio_height = (this._ratio.h / this._ratio.w * 100) + '%';
     // Conserve aspect ratio (see: http://stackoverflow.com/a/10441480/1116959)
-    this._renderer.setStyle(this._elementRef.nativeElement, 'padding', '0px 0px ' + ratio_height + ' 0px');
-    this._update();
+    this.ratioPadding = '0px 0px ' + ratio_height + ' 0px';
   }
 
-  _update() {
-    this._loaded(false);
-  }
+  @Input()
+  set src(val: string) {
+    this._src = (val !== undefined && val !== null) ? val : '';
 
-  _loaded(isLoaded: boolean) {
-    if (isLoaded) {
-      setTimeout(() => {
-        this._renderer.addClass(this._elementRef.nativeElement, 'img-loaded');
-      }, 1000);
+    // Show loading indicator
+    // When using SSR (Server Side Rendering), avoid the loading animation while the image resource is being loaded
+    if (isPlatformServer(this.platformId)) {
+      this.imageLoaded = true;
     } else {
-      this._renderer.removeClass(this._elementRef.nativeElement, 'img-loaded');
+      this.imageLoaded = false;
     }
+  }
+
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: string
+  ) {}
+
+  _imageLoaded() {
+    this.imageLoaded = true;
   }
 }
