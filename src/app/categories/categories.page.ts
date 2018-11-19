@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.page.html',
-  styleUrls: ['./categories.page.scss']
+  styleUrls: ['./categories.page.scss'],
+  // encapsulation: ViewEncapsulation.ShadowDom
 })
 export class CategoriesPage {}

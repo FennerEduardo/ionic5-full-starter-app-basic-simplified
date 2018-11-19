@@ -1,8 +1,63 @@
-.category-item {
-  background: gray;
-  color: white;
+ion-content {
+
+}
+
+.categories-list {
+  --categories-gutter: 5px;
+  --ion-grid-column-padding: var(--categories-gutter);
+
+  padding: var(--categories-gutter);
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: scroll;
+
+  // Hide scrollbars: https://stackoverflow.com/a/38994837/1116959
+  -ms-overflow-style: none;  // IE 10+
+  overflow: -moz-scrollbars-none;  // Firefox
+  // Safari and Chrome
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-item {
+    .category-anchor {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // Second version
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .category-title {
+        margin: 0px;
+        text-transform: uppercase;
+        color: #FFF;
+        font-weight: 500;
+        font-size: 20px;
+        letter-spacing: 2px;
+        padding: 10px;
+        background-color: var(--category-background, #808080);
+      }
+    }
+  }
+
+  .travel-category {
+    --category-background: #f5a478;
+  }
+
+  .fashion-category {
+    --category-background: #d9453a;
+  }
+
+  .food-category {
+    --category-background: #ebbb00;
+  }
+
+  .deals-category {
+    --category-background: #cb328f;
+  }
+
+  .real-state-category {
+    --category-background: #455b3b;
+  }
 }
