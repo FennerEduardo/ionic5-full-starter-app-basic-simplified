@@ -8,6 +8,7 @@ import { isPlatformServer } from '@angular/common';
     './background-image.component.scss'
   ],
   encapsulation: ViewEncapsulation.None
+  // encapsulation: ViewEncapsulation.ShadowDom
 })
 export class BackgroundImageComponent implements OnChanges {
   _src = '';
@@ -38,6 +39,7 @@ export class BackgroundImageComponent implements OnChanges {
   _loaded(isLoaded: boolean) {
     if (isLoaded) {
       this._renderer.setStyle(this._elementRef.nativeElement, 'backgroundImage', 'url(' + this._src + ')');
+      // Maybe we can refactor this and start uding @HostBinding
       this._renderer.addClass(this._elementRef.nativeElement, 'img-loaded');
     } else {
       this._renderer.removeClass(this._elementRef.nativeElement, 'img-loaded');

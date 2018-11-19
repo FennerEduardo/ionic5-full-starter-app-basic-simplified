@@ -1,15 +1,10 @@
-// TODO: Poner todo con variables CSS
-$white: #FFFFFF;
-$grey: #9e9e9e;
-
-// $preload-image-bg: rgba(#CCC, .25);
-$preload-image-bg: rgba(#4d301c, .6);
-// $preload-image-bg: #4d301c;
-
-$spinner-size: 28px;
-$spinner-color: $grey;
-
+// :host {
 app-background-image {
+  --loading-background: #{ rgba(#CCC, .25); };
+  --overlay-background: #{ rgba(#4d301c, .6); };
+  --spinner-size: 28px;
+  --spinner-color: #9e9e9e;
+
   display: block;
   position: relative;
   height: 100%;
@@ -18,34 +13,59 @@ app-background-image {
   transition: all ease-in-out .3s;
   z-index: 0;
 
-  // Background overlay
-  &::before
-  {
-    content: '';
-    background: $preload-image-bg;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    // opacity: 0.6;
-    z-index: -1;
-  }
-
   .aux-img {
     display: none;
     visibility: hidden;
   }
 
-  .spinner {
+  // Loading background
+  &::before {
+    content: '';
+    background-color: var(--loading-background);
     position: absolute;
-    top: calc(50% - #{ ($spinner-size/2) });
-    left: calc(50% - #{ ($spinner-size/2) });
-    width: $spinner-size;
-    height: $spinner-size;
-    font-size: $spinner-size;
-    line-height: $spinner-size;
-    color: $spinner-color;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  // By default, hide the spinner
+  .spinner {
+    display: none;
+  }
+
+  &.img-loaded {
+    // Hide loading background once the image has loaded
+    &::before {
+      display: none;
+    }
+  }
+}
+
+// :host(.add-overlay) {
+app-background-image.add-overlay {
+  &.img-loaded {
+    // Add background overlay after the image has loaded
+    &::before {
+      display: block;
+      background-color: var(--overlay-background);
+    }
+  }
+}
+
+// :host(.add-spinner) {
+app-background-image.add-spinner {
+  .spinner {
+    display: block;
+    position: absolute;
+    top: calc(50% - calc(var(--spinner-size) / 2));
+    left: calc(50% - calc(var(--spinner-size) / 2));
+    width: var(--spinner-size);
+    height: var(--spinner-size);
+    font-size: var(--spinner-size);
+    line-height: var(--spinner-size);
+    color: var(--spinner-color);
     z-index: -1;
   }
 
