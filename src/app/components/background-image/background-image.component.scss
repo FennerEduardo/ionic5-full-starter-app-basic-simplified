@@ -69,8 +69,7 @@ app-background-image.add-spinner {
     z-index: -1;
   }
 
-  &.img-loaded
-  {
+  &.img-loaded {
     .spinner {
       display: none;
       visibility: hidden;
