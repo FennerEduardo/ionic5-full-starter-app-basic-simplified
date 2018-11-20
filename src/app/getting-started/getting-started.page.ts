@@ -19,12 +19,12 @@ export class GettingStartedPage implements OnInit, AfterViewInit {
     this.gettingStartedForm = new FormGroup({
       browsingCategory: new FormControl('men'),
       followingInterests: new FormGroup({
-        tops: new FormControl(true),
-        dresses: new FormControl(false),
-        jeans: new FormControl(false),
-        jackets: new FormControl(true),
-        shoes: new FormControl(false),
-        glasses: new FormControl(true)
+        tops: new FormControl(),
+        dresses: new FormControl(),
+        jeans: new FormControl(),
+        jackets: new FormControl(),
+        shoes: new FormControl(),
+        glasses: new FormControl()
       })
     });
   }
