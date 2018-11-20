@@ -7,10 +7,17 @@
 		--background: var(--ion-background-color-step-50, #f2f2f2);
 	}
 
-
 	ion-button {
 		--border-radius: 6px;
 		font-weight: 500;
+	}
+
+	.form-list {
+	  background: var(--ion-background-color-step-50, #f2f2f2);
+
+		ion-input {
+		  --padding-start: 0px;
+		}
 	}
 
 	.error-container {

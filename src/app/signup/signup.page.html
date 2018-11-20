@@ -9,11 +9,11 @@
 </ion-header>
 
 <ion-content padding class="outer-content signup-content">
-  <ion-text color="secondary">
+  <!-- <ion-text color="secondary">
     <h2>Create an Account</h2>
-  </ion-text>
+  </ion-text> -->
   <form [formGroup]="signupForm" (ngSubmit)="doSignup()">
-    <ion-list lines="inset">
+    <ion-list class="form-list" lines="inset">
       <!-- Email input -->
       <ion-item>
         <ion-input type="email" placeholder="Email" formControlName="email" clearInput autocapitalize="off" inputmode="email"></ion-input>
@@ -58,6 +58,14 @@
     <ion-row>
       <ion-col>
         <ion-button [disabled]="!signupForm.valid" type="submit" expand="block">Sign Up</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="other-options">
+      <ion-col text-right>
+        <ion-button href="/auth/login" fill="clear" class="login-button">
+          Already have an account?
+        </ion-button>
       </ion-col>
     </ion-row>
 

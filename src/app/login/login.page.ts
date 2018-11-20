@@ -25,11 +25,6 @@ export class LoginPage {
     this.router.navigate(['app/tabs/', { outlets: {home: [ 'categories' ]} }]);
   }
 
-  goToSignUp(): void {
-    console.log('redirect to sign up page');
-    this.router.navigate(['auth/signup']);
-  }
-
   goToForgotPassword(): void {
     console.log('redirect to forgot-password page');
   }

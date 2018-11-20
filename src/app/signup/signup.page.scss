@@ -12,12 +12,34 @@
 		font-weight: 500;
 	}
 
+	.form-list {
+		background: var(--ion-background-color-step-50, #f2f2f2);
+
+		ion-input {
+		  --padding-start: 0px;
+		}
+	}
+
 	.error-container {
 		color: var(--ion-color-danger);
     background: var(--ion-background-color-step-50, #f2f2f2);
 		padding-top: 10px;
 		padding-bottom: 10px;
 		padding-left: 16px;
+	}
+
+	.other-options
+	{
+		ion-col {
+			padding-top: 0px;
+		}
+
+		.login-button
+		{
+			--padding-start: 0px;
+			--padding-end: 0px;
+			color: var(--ion-color-secondary);
+		}
 	}
 
 	.auth-divider

@@ -9,7 +9,7 @@
 
 <ion-content padding class="outer-content login-content">
   <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
-    <ion-list lines="inset">
+    <ion-list class="form-list" lines="inset">
       <!-- Email input -->
       <ion-item>
         <ion-input type="email" placeholder="Email" formControlName="email" clearInput autocapitalize="off" inputmode="email"></ion-input>
@@ -51,7 +51,7 @@
         </ion-button>
       </ion-col>
       <ion-col text-right>
-        <ion-button href="/auth/signup" routerDirection="forward" fill="clear" class="signup-button">
+        <ion-button href="/auth/signup" fill="clear" class="signup-button">
           Sign Up!
         </ion-button>
       </ion-col>
