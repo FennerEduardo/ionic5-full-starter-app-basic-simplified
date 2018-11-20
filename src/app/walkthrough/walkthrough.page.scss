@@ -2,11 +2,11 @@
   --swiper-pagination-space: 40px;
   --swiper-pagination-height: 18px;
   --pagination-bullet-size: 10px;
-  // --first-slide-background: #c4c3ff;
+
   --first-slide-background: #eef3ff;
-  --second-slide-background: #fedac1;
+  --second-slide-background: #f19399;
   --third-slide-background: #beeeff;
-  --last-slide-background: #f19399;
+  --last-slide-background: #fedac1;
 }
 
 :host-context(.md) {
@@ -50,12 +50,6 @@ ion-content {
 
     // Don't know why it gets overridden by content-box if I don't add this
     box-sizing: border-box;
-
-    // Override <ion-slide> image styles
-    app-preload-image img {
-      width: 100%;
-      height: 100%;
-    }
   }
 
   .swiper-pagination {
@@ -87,6 +81,12 @@ ion-content {
     app-preload-image {
       --loading-background: transparent;
       --spinner-color: #FFF;
+
+      // Override <ion-slide> image styles
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
