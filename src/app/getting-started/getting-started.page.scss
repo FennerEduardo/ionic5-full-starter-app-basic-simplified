@@ -1,3 +1,11 @@
+:host {
+  --swiper-pagination-space: 40px;
+  --swiper-pagination-height: 18px;
+  --pagination-bullet-size: 10px;
+
+  --slides-background: #fedac1;
+}
+
 // If you use ViewEncapsulation.None then add ion-header and ion-content styles here
 // app-getting-started {
 //
@@ -6,51 +14,138 @@
 // If you choose ViewEncapsulation.ShadowDom, the leave ion-header and ion-content styles here
 ion-header {
   ion-toolbar {
-    --background: #FFE6DC;
+    --background: var(--slides-background);
   }
 }
 
 ion-content {
-  --background: #FFE6DC;
+  --background: var(--slides-background);
 }
 
 .getting-started-form {
   height: 100%;
 }
 
-.getting-started-wrapper {
-  // Structural styles
-  --ion-grid-column-padding: 0px;
-
+.getting-started-slides {
   height: 100%;
-  flex-flow: column;
-  justify-content: space-between;
+  --bullet-background: #4D301C;
+  --bullet-background-active: #4D301C;
 
-  .slides-col {
-    .getting-started-slides {
-      height: 100%;
-      --bullet-background: #4D301C;
-      --bullet-background-active: #4D301C;
+  .slide-inner-row {
+    height: 100%;
+    width: 100%;
+    padding: 5px 5px 0px;
+    // .swiper-pagination space
+    border-bottom: var(--swiper-pagination-space) solid transparent;
+    background-clip: padding-box;
 
-      .swiper-pagination {
-        // .swiper-pagination is 18px height, .slide-inner-row has 20px of padding-bottom => bottom = (20px - 18px)/2 = 1px
-        bottom: 1px;
+    // Don't know why it gets overridden by content-box if I don't add this
+    box-sizing: border-box;
+  }
+
+  .swiper-pagination {
+    height: var(--swiper-pagination-height);
+    line-height: 1;
+    // .swiper-pagination is 18px height, .slide-inner-row has 40px of padding-bottom => bottom = (40px - 18px)/2 = 11px
+    bottom: calc((var(--swiper-pagination-space) - var(--swiper-pagination-height) ) / 2);
+
+    .swiper-pagination-bullet {
+      width: var(--pagination-bullet-size);
+      height: var(--pagination-bullet-size);
+    }
+  }
+}
+
+.question-slide {
+  .slide-title {
+    color: #4D301C;
+    text-align: center;
+    margin: 6px 18% 0;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+
+  .slide-subtitle {
+    color: #4D301C;
+    text-align: center;
+    margin: 8px 9%;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 28px;
+  }
+}
+
+.browsing-categories-slide {
+  .question-options-list {
+    margin: 30px 6% 0;
+    background: transparent;
+
+    .question-option {
+      --padding-start: 0px;
+      --ion-item-background: #4D301C;
+      --ion-item-color: #FFF;
+
+      text-align: center;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
       }
 
-      .slide-inner-row {
-        height: 100%;
-        width: 100%;
-        padding: 5px 5px 20px;
-        // Don't know why it gets overridden by content-box if I don't add this
-        box-sizing: border-box;
+      &.item-radio-checked {
+        --ion-item-background: #FF984C;
       }
+
+      ion-label {
+        margin: 10px 0px;
+      }
+
+      ion-radio {
+        margin: 0px;
+
+        // To hide the .radio-icon
+        --width: 0px;
+        --border-width: 0px;
+        --height: 0px;
+        // We cant set width and height for .radio-icon .radio-inner, so lets hide it changing its color
+        --color-checked: transparent;
+      }
+    }
+  }
+}
+
+.interests-to-follow-slide {
+  .slide-inner-row {
+    flex-flow: column;
+    justify-content: space-between;
+
+    // In the last slide .swiper-pagination is hidden
+    border-width: 0px;
+    padding: 5px;
+  }
+
+  .heading-col {
+    max-height: 16%;
+    max-height: fit-content;
+  }
+
+  .question-options-col {
+    --ion-grid-column-padding: 5px;
+
+    overflow: scroll;
+
+    // Hide scrollbars: https://stackoverflow.com/a/38994837/1116959
+    -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox
+    // Safari and Chrome
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 
   .call-to-action-col {
     max-height: 10%;
     max-height: fit-content;
-    padding: 8px;
 
     .signup-button {
       --background: #863bf3;
@@ -58,144 +153,50 @@ ion-content {
       --color: #FFF;
       --color-activated: #e6e6e6;
 
-      visibility: hidden;
+      margin: 5px;
     }
   }
 
-  &.last-slide {
-    .getting-started-slides {
-      .swiper-pagination {
-        display: none;
-      }
-    }
-
-    .signup-button {
-      visibility: inherit;
-    }
-  }
-
-  // Slides details styles
-  .getting-started-slides {
-    .slide-title {
-      color: #4D301C;
-      text-align: center;
-      margin: 6px 18% 0;
+  .custom-checkbox {
+    .checkbox-title {
+      font-weight: 600;
+      text-transform: uppercase;
       font-size: 22px;
-      font-weight: 400;
-      line-height: 30px;
-    }
-
-    .slide-subtitle {
-      color: #4D301C;
+      color: #FFF;
       text-align: center;
-      margin: 8px 9%;
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 28px;
-    }
-  }
+      word-break: break-word;
+      overflow: visible;
 
-  .browsing-categories-slide {
-    .question-options-list {
-      margin: 30px 6% 0;
-      background: transparent;
-
-      .question-option {
-        --padding-start: 0px;
-        --ion-item-background: #4D301C;
-        --ion-item-color: #FFF;
-
-        text-align: center;
-
-        &:not(:last-child) {
-          margin-bottom: 20px;
-        }
-
-        &.item-radio-checked {
-          --ion-item-background: #FF984C;
-        }
-
-        ion-label {
-          margin: 10px 0px;
-        }
-
-        ion-radio {
-          margin: 0px;
-
-          // To hide the .radio-icon
-          --width: 0px;
-          --border-width: 0px;
-          --height: 0px;
-          // We cant set width and height for .radio-icon .radio-inner, so lets hide it changing its color
-          --color-checked: transparent;
-        }
-      }
-    }
-  }
-
-  .interests-to-follow-slide {
-    .slide-inner-row {
-      flex-flow: column;
-      justify-content: space-between;
+      position: absolute;
+      width: 70%;
+      left: 15%;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
-    .heading-col {
-      max-height: 16%;
-      max-height: fit-content;
-    }
-
-    .question-options-col {
-      --ion-grid-column-padding: 5px;
-
-      overflow: scroll;
-
-      // Hide scrollbars: https://stackoverflow.com/a/38994837/1116959
-      -ms-overflow-style: none;  // IE 10+
-      overflow: -moz-scrollbars-none;  // Firefox
-      // Safari and Chrome
-      &::-webkit-scrollbar {
+    &.checkbox-checked {
+      .checkbox-title {
         display: none;
       }
     }
 
-    .call-to-action-col {
-      max-height: 10%;
-      max-height: fit-content;
+    ion-checkbox {
+      --size: 100%;
+      --border-radius: 0px;
+      --border-width: 0px;
+      --background: transparent;
+      --background-checked: #{ rgba(#FF984C, .6) };
+
+      // Note: We cannote change the styles of the .checkbox-icon because it's inside the shadow dom.
+      // An alternative would be to set --size to 0px and add a custom overlay and icon in the <custom-checkbox> html
     }
+  }
+}
 
-    .custom-checkbox {
-      .checkbox-title {
-        font-weight: 600;
-        text-transform: uppercase;
-        font-size: 22px;
-        color: #FFF;
-        text-align: center;
-        word-break: break-word;
-        overflow: visible;
-
-        position: absolute;
-        width: 70%;
-        left: 15%;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-
-      &.checkbox-checked {
-        .checkbox-title {
-          display: none;
-        }
-      }
-
-      ion-checkbox {
-        --size: 100%;
-        --border-radius: 0px;
-        --border-width: 0px;
-        --background: transparent;
-        --background-checked: #{ rgba(#FF984C, .6) };
-
-        // Note: We cannote change the styles of the .checkbox-icon because it's inside the shadow dom.
-        // An alternative would be to set --size to 0px and add a custom overlay and icon in the <custom-checkbox> html
-      }
+:host(.last-slide-active) {
+  .getting-started-slides {
+    .swiper-pagination {
+      display: none;
     }
   }
 }
