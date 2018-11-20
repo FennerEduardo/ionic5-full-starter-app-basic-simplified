@@ -3,7 +3,7 @@
   --swiper-pagination-height: 18px;
   --pagination-bullet-size: 10px;
 
-  --slides-background: #fedac1;
+  --slides-background: var(--ion-color-primary);
 }
 
 // If you use ViewEncapsulation.None then add ion-header and ion-content styles here
@@ -15,6 +15,8 @@
 ion-header {
   ion-toolbar {
     --background: var(--slides-background);
+    // For the skip button
+    --color: var(--ion-color-tertiary);
   }
 }
 
@@ -28,8 +30,8 @@ ion-content {
 
 .getting-started-slides {
   height: 100%;
-  --bullet-background: #4D301C;
-  --bullet-background-active: #4D301C;
+  --bullet-background: var(--ion-color-tertiary);
+  --bullet-background-active: var(--ion-color-tertiary);
 
   .slide-inner-row {
     height: 100%;
@@ -58,7 +60,7 @@ ion-content {
 
 .question-slide {
   .slide-title {
-    color: #4D301C;
+    color: var(--ion-color-tertiary);
     text-align: center;
     margin: 6px 18% 0;
     font-size: 22px;
@@ -67,7 +69,7 @@ ion-content {
   }
 
   .slide-subtitle {
-    color: #4D301C;
+    color: var(--ion-color-tertiary);
     text-align: center;
     margin: 8px 9%;
     font-size: 14px;
@@ -83,8 +85,8 @@ ion-content {
 
     .question-option {
       --padding-start: 0px;
-      --ion-item-background: #4D301C;
-      --ion-item-color: #FFF;
+      --ion-item-background: var(--ion-color-tertiary);
+      --ion-item-color: var(--ion-color-primary);
 
       text-align: center;
 
@@ -93,7 +95,8 @@ ion-content {
       }
 
       &.item-radio-checked {
-        --ion-item-background: #FF984C;
+        --ion-item-background: var(--ion-color-secondary);
+        --ion-item-color: var(--ion-color-tertiary);
       }
 
       ion-label {
@@ -148,8 +151,8 @@ ion-content {
     max-height: fit-content;
 
     .signup-button {
-      --background: #863bf3;
-      --background-activated: #{ darken(#863bf3, 2%) };
+      --background: var(--ion-color-secondary);
+      --background-activated: var(--ion-color-secondary);
       --color: #FFF;
       --color-activated: #e6e6e6;
 
@@ -185,7 +188,7 @@ ion-content {
       --border-radius: 0px;
       --border-width: 0px;
       --background: transparent;
-      --background-checked: #{ rgba(#FF984C, .6) };
+      --background-checked: #{ rgba(#e00056, .4) };
 
       // Note: We cannote change the styles of the .checkbox-icon because it's inside the shadow dom.
       // An alternative would be to set --size to 0px and add a custom overlay and icon in the <custom-checkbox> html

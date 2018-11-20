@@ -22,6 +22,8 @@
 ion-header {
   ion-toolbar {
     --background: transparent;
+    // For the skip button
+    --color: var(--ion-color-tertiary);
   }
 }
 
@@ -35,8 +37,8 @@ ion-content {
 
 .walkthrough-slides {
   height: 100%;
-  --bullet-background: #4D301C;
-  --bullet-background-active: #4D301C;
+  --bullet-background: var(--ion-color-primary);
+  --bullet-background-active: var(--ion-color-primary);
 
   .slide-inner-row {
     height: 100%;
@@ -190,10 +192,12 @@ ion-content {
     }
 
     .get-started-button {
-      --background: #863bf3;
-      --background-activated: #{ darken(#863bf3, 2%) };
-      --color: #FFF;
-      --color-activated: #e6e6e6;
+      --background: var(--ion-color-primary);
+      --background-activated: var(--ion-color-primary-shade);
+      --background-focused: var(--ion-color-primary-shade);
+      --color: var(--ion-color-primary-contrast);
+      --color-activated: var(--ion-color-primary-contrast);
+      --color-focused: var(--ion-color-primary-contrast);
     }
 
     .alt-call-to-action-row {
@@ -201,13 +205,12 @@ ion-content {
       justify-content: center;
 
       .cta-leading-text {
-        color: #666;
+        color: var(--ion-color-medium);
         font-size: 16px;
       }
 
       .login-button {
-        --color: #863bf3;
-        --color-activated: #{ darken(#863bf3, 2%) };
+        --color: var(--ion-color-secondary);
       }
     }
   }

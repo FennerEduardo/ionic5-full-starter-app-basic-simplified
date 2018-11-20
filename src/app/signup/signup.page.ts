@@ -18,7 +18,7 @@ export class SignupPage {
     public modalController: ModalController
   ) {
     this.signupForm = new FormGroup({
-      'email': new FormControl('', [
+      'email': new FormControl('test@test.com', [
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ]),

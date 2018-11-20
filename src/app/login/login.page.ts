@@ -12,7 +12,7 @@ export class LoginPage {
 
   constructor(public router: Router) {
     this.loginForm = new FormGroup({
-      'email': new FormControl('', [
+      'email': new FormControl('test@test.com', [
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ]),
