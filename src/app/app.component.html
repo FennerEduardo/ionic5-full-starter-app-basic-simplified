@@ -24,10 +24,7 @@
         <ion-list>
           <ion-list-header>Layouts</ion-list-header>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-          <!-- <ion-item button (click)="navigate(p.url)"> -->
-          <!-- <ion-item [href]="p.url" *ngFor="let p of appPages; let i = index"> -->
-            <!-- <ion-item [href]="p.url"> -->
-            <ion-item [routerLink]="['/app/tabs/', '(home:categories)']" routerLinkActive="active-link">
+            <ion-item [href]="p.url">
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
               <ion-label>
                 {{p.title}}
@@ -38,7 +35,7 @@
         <ion-list>
           <ion-list-header>Account</ion-list-header>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of accountPages; let i = index">
-            <ion-item button (click)="navigateToAccountRoutes(p.url)">
+            <ion-item [href]="p.url">
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
               <ion-label>
                 {{p.title}}

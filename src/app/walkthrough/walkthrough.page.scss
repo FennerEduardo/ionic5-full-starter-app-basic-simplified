@@ -3,10 +3,10 @@
   --swiper-pagination-height: 18px;
   --pagination-bullet-size: 10px;
 
-  --first-slide-background: #eef3ff;
-  --second-slide-background: #f19399;
-  --third-slide-background: #beeeff;
-  --last-slide-background: #fedac1;
+  --first-slide-background: #{ rgba(#00AFFF, .25); };
+  --second-slide-background:#{ rgba(#38d39f, .45); };
+  --third-slide-background: #{ rgba(#cb328f, .25); };
+  --last-slide-background: #eef3ff;
 }
 
 :host-context(.md) {
@@ -99,9 +99,9 @@ ion-content {
     background-color: var(--background);
 
     // To prevent transparent line caused by pixel fractions
-    .vector-decoration {
-      margin-top: -1px;
-    }
+    // .vector-decoration {
+      // margin-top: -1px;
+    // }
   }
 
   .info-col {
@@ -111,6 +111,26 @@ ion-content {
     background-color: var(--background);
     // To prevent transparent line caused by pixel fractions
     margin-top: -1px;
+
+    .info-wrapper {
+      margin: -20px 20px 0px;
+      text-align: left;
+
+      .info-title {
+        margin: 0px 0px 20px;
+        color: #333;
+      }
+
+      .info-paragraph {
+        color: #666;
+        font-size: 14px;
+        margin: 0px 0px 10px;
+
+        &:last-child {
+          margin-bottom: 0px;
+        }
+      }
+    }
   }
 }
 
@@ -123,26 +143,6 @@ ion-content {
 
   .illustration-col {
     padding: 0px 8%;
-  }
-
-  .info-wrapper {
-    margin: -20px 10% 0px;
-    text-align: left;
-
-    .info-title {
-      margin: 0px 0px 20px;
-      color: #333;
-    }
-
-    .info-paragraph {
-      color: #666;
-      font-size: 14px;
-      margin: 0px 0px 10px;
-
-      &:last-child {
-        margin-bottom: 0px;
-      }
-    }
   }
 }
 
@@ -186,9 +186,18 @@ ion-content {
   .info-col {
     padding: 20px;
 
-    .call-to-actions-wrapper {
+    .info-outer {
       height: 100%;
       align-items: flex-end;
+      flex-direction: column;
+
+      .info-wrapper {
+        margin: -20px 0px 0px;
+      }
+
+      .call-to-actions-wrapper {
+        max-height: fit-content;
+      }
     }
 
     .get-started-button {

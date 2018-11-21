@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage {
+export class LoginPage implements OnInit {
   loginForm: FormGroup;
 
-  constructor(public router: Router) {
+  constructor(
+    public router: Router,
+    public menu: MenuController
+  ) {
     this.loginForm = new FormGroup({
       'email': new FormControl('test@test.com', [
         Validators.required,
@@ -18,6 +22,10 @@ export class LoginPage {
       ]),
       'password': new FormControl('', Validators.required)
     });
+  }
+
+  ngOnInit() {
+    this.menu.enable(false);
   }
 
   doLogin(): void {

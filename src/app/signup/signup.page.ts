@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ModalController } from '@ionic/angular';
+import { ModalController, MenuController } from '@ionic/angular';
 import { TermsOfServicePage } from '../terms-of-service/terms-of-service.page';
 import { PrivacyPolicyPage } from '../privacy-policy/privacy-policy.page';
 
@@ -10,12 +10,13 @@ import { PrivacyPolicyPage } from '../privacy-policy/privacy-policy.page';
   templateUrl: './signup.page.html',
   styleUrls: ['./signup.page.scss']
 })
-export class SignupPage {
+export class SignupPage implements OnInit {
   signupForm: FormGroup;
 
   constructor(
     public router: Router,
-    public modalController: ModalController
+    public modalController: ModalController,
+    public menu: MenuController
   ) {
     this.signupForm = new FormGroup({
       'email': new FormControl('test@test.com', [
@@ -26,6 +27,11 @@ export class SignupPage {
       'confirm_password': new FormControl('', Validators.required)
     });
   }
+
+  ngOnInit() {
+    this.menu.enable(false);
+  }
+
 
   async showTermsModal() {
    const modal = await this.modalController.create({
