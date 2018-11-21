@@ -9,16 +9,6 @@
   --last-slide-background: #eef3ff;
 }
 
-:host-context(.md) {
-  // md
-  --header-height: 56px;
-}
-
-:host-context(.ios) {
-  // ios
-  --header-height: 44px;
-}
-
 ion-header {
   ion-toolbar {
     --background: transparent;
@@ -99,9 +89,11 @@ ion-content {
     background-color: var(--background);
 
     // To prevent transparent line caused by pixel fractions
-    // .vector-decoration {
+    .vector-decoration {
       // margin-top: -1px;
-    // }
+      shape-rendering: geometricprecision;
+      overflow: visible;
+    }
   }
 
   .info-col {
@@ -110,7 +102,7 @@ ion-content {
     min-height: auto;
     background-color: var(--background);
     // To prevent transparent line caused by pixel fractions
-    margin-top: -1px;
+    // margin-top: -1px;
 
     .info-wrapper {
       margin: -20px 20px 0px;

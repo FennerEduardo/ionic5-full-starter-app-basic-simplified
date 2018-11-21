@@ -1,6 +1,5 @@
 .app-sidemenu {
   ion-content {
-    // --background: var(--ion-color-primary-tint);
     --background: var(--ion-color-primary-shade);
   }
 
@@ -9,6 +8,11 @@
     color: var(--ion-color-primary-contrast);
     padding: 10px;
     align-items: center;
+
+    &:first-child {
+      // padding-top: var(--ion-safe-area-top, 10px);
+      padding-top: var(--ion-statusbar-padding, 10px);
+    }
 
     & + .user-details-wrapper {
       padding-top: 0px;
@@ -53,13 +57,12 @@
     --ion-text-color: var(--ion-color-light-shade);
     --ion-text-color-rgb: var(--ion-color-light-shade-rgb);
     --ion-item-background: var(--ion-color-primary-shade);
-    // --ion-item-border-color: var(--ion-color-primary-tint);
     --ion-item-border-color: transparent;
 
     ion-list-header {
-      --ion-text-color: rgba(var(--ion-color-light-shade-rgb), 0.6);
+      --color: rgba(var(--ion-color-light-shade-rgb), 0.6);
       text-transform: uppercase;
-      box-shadow: inset 0px -4px 8px -2px rgba(var(--ion-color-darkest-rgb), 0.4);
+      box-shadow: inset 0px -4px 8px -2px rgba(0,0,0, 0.4);
     }
 
     ion-item {
