@@ -4,110 +4,54 @@
       <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button>
-        <ion-text class="edit-profile" color="light">Edit</ion-text>
-      </ion-button>
+      <ion-button class="edit-profile-button" color="light" fill="clear">Edit</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="outer-content profile-page-content">
-  <div class="user-info">
-    <img class="image" [src]="'./assets/sample-images/notifications/100x100Notification2.jpg'">
-    <p class="name">Claire Hale</p>
-    <p class="twitter">@clairehale</p>
-    <ion-row class="likes">
-      <ion-col class="likes-icon-col">
-        <ion-icon name="heart"></ion-icon>
-      </ion-col>
-      <ion-col class="likes-value-col">
-        <span class="value">74</span>
-      </ion-col>
-    </ion-row>
-    <p class="description">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-    </p>
-  </div>
-  <div class="user-list">
-    <ion-list>
-      <ion-item button>
-        <ion-label>Following</ion-label>
-        <span slot="end">47</span>
-      </ion-item>
-      <ion-item button>
-        <ion-label>Followers</ion-label>
-        <span slot="end">108</span>
-      </ion-item>
-      <ion-item button>
-        <ion-label>Blocked</ion-label>
-        <span slot="end">2</span>
-      </ion-item>
-      <ion-item button>
-        <ion-label>Rate the app</ion-label>
-        <ion-icon slot="end" color="primary" size="small" name="star"></ion-icon>
-      </ion-item>
-    </ion-list>
-  </div>
-
-  <div class="user-posts">
-    <ion-item-group>
-      <ion-item-divider sticky>
-        <h5 class="section-title">Recent Posts</h5>
-      </ion-item-divider>
-
-      <ion-card class="card">
-        <ion-item>
-          <ion-icon name="create" slot="start"></ion-icon>
-          <ion-label>Start something new!</ion-label>
-          <ion-button fill="outline" slot="end" color="secondary">Draft</ion-button>
-        </ion-item>
-        <ion-card-content>
-          What is happiness--and what is it not? People have agonized over this question for centuries, but only recently has science begun to weigh in on the debate...
-        </ion-card-content>
-      </ion-card>
-
-      <ion-card class="card">
-        <ion-item>
-          <ion-label>This post is already published</ion-label>
-        </ion-item>
-        <ion-card-content>
-          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.
-        </ion-card-content>
-        <ion-row no-padding justify-content-center>
-          <ion-col size="4">
-            <ion-button fill="clear" size="small" color="secondary">
-              <ion-icon name="logo-twitter" slot="start"></ion-icon>
-              Tweet
-            </ion-button>
-          </ion-col>
-          <ion-col size="4">
-            <ion-button fill="clear" size="small" color="secondary">
-              <ion-icon name="share-alt" slot="start"></ion-icon>
-              Share
-            </ion-button>
-          </ion-col>
-          <ion-col size="4">
-            <ion-button fill="clear" size="small" color="danger">
-              <ion-icon name="trash" slot="start"></ion-icon>
-              Delete
-            </ion-button>
-          </ion-col>
-        </ion-row>
-      </ion-card>
-
-      <ion-card class="card">
-        <app-background-image [src]="'./assets/sample-images/travel/Travel2-64.47.png'">
-          <app-fill-container [ratio]="{w:3, h:2}">
-          </app-fill-container>
-        </app-background-image>
-        <ion-card-header>
-            <ion-card-title>La Rambla</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          The Rambla of Montevideo is the avenue that goes all along the coastline of Montevideo, Uruguay, and also the longest continuous sidewalk in the world.
-        </ion-card-content>
-      </ion-card>
-
-    </ion-item-group>
-  </div>
+<ion-content>
+  <ion-row class="user-details-wrapper">
+    <ion-col size="4">
+      <app-preload-image class="user-avatar add-spinner" [ratio]="{w:1, h:1}" [src]="'./assets/sample-images/notifications/100x100Notification2.jpg'"></app-preload-image>
+    </ion-col>
+    <ion-col class="user-info-wrapper" size="8">
+      <h3 class="user-name">Claire Hale</h3>
+      <h5 class="user-handle">@clairehale</h5>
+    </ion-col>
+    <ion-col class="user-stats-wrapper" size="6">
+      <span class="user-stat-value">1553</span>
+      <span class="user-stat-name">Following</span>
+    </ion-col>
+    <ion-col class="user-stats-wrapper" size="6">
+      <span class="user-stat-value">537</span>
+      <span class="user-stat-name">Followers</span>
+    </ion-col>
+    <ion-col size="12">
+      <p class="user-bio">
+        I am a product and visual designer based in San Francisco. I have designed at Google, Amazon and Microsoft.
+      </p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="user-preferences-wrapper">
+    <ion-col size="12">
+      <h4 class="preference-name">Mobile</h4>
+      <p class="preference-value">
+        +1-202-555-0102
+      </p>
+    </ion-col>
+    <ion-col size="12">
+      <h4 class="preference-name">Membership</h4>
+      <p class="preference-value">
+        Gold
+      </p>
+    </ion-col>
+    <ion-col size="12">
+      <h4 class="preference-name">Address</h4>
+      <p class="preference-value">
+        921 Church St, San Francisco, CA
+        <br/>
+        94114, USA
+      </p>
+    </ion-col>
+  </ion-row>
 </ion-content>

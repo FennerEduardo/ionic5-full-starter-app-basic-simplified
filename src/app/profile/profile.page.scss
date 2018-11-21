@@ -2,67 +2,74 @@ ion-header {
   ion-toolbar {
     --background: var(--ion-color-secondary-tint);
 
-    .edit-profile {
-      font-weight: bold;
+    .edit-profile-button {
+      font-weight: 600;
     }
   }
 }
 
-.user-info {
-  padding-bottom: 20px;
-  min-height: 250px;
-  text-align: center;
+ion-content {
+  --background: var(--ion-color-light-tint);
+}
+
+.user-details-wrapper {
+  padding: 0px 20px 20px;
   background-color: var(--ion-color-secondary-tint);
   color: var(--ion-color-light);
+  align-items: center;
 
-  .image {
-    max-width: 120px;
+  .user-avatar {
     border-radius: 50%;
     border: solid 3px var(--ion-color-light);
   }
-  .name {
-    font-weight: bold;
-    margin: 6px 0px;
-    font-size: 18px;
-  }
-  .twitter {
-    margin: 6px 0px;
-    color: var(--ion-color-light-shade);
-  }
-  .description {
-    padding: 0px 20px;
-  }
-  .likes {
-    align-items: center;
-    justify-content: flex-end;
 
-    .likes-icon-col {
-      text-align: right;
-      font-size: 20px;
+  .user-info-wrapper {
+    padding-left: 10px;
 
-      ion-icon {
-        vertical-align: middle;
-      }
+    .user-name {
+      margin: 0px 0px 5px;
     }
-    .likes-value-col {
-      text-align: left;
-      font-weight: bold;
-      vertical-align: middle;
 
-      .value {
-        vertical-align: middle;
-      }
+    .user-handle {
+      margin: 0px;
+      font-weight: 400;
     }
+  }
+
+  .user-stats-wrapper {
+    text-align: center;
+    padding-top: 10px;
+
+    .user-stat-value {
+      margin-right: 5px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .user-stat-name {
+      font-size: 16px;
+    }
+  }
+
+  .user-bio {
+    margin: 10px 0px 0px;
+    line-height: 1.2;
+    font-size: 14px;
   }
 }
 
-.user-posts {
-  .card {
-    --background: #FFF;
+.user-preferences-wrapper {
+  padding: 20px;
+
+  .preference-name {
+    margin: 0px 0px 6px;
+    font-size: 16px;
   }
-  .section-title {
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--ion-color-secondary);
+
+  .preference-value {
+    margin: 0px 0px 6px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--ion-color-dark-tint);
   }
 }
