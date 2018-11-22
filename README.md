@@ -5,6 +5,15 @@ The most advanced and complete Mobile & PWA starter app template
 Run `ionic build` or `ionic build --prod` to build the project
 Run `ionic serve` to start a live-reload dev server
 
+## iOS Platform
+Run `ionic cordova prepare ios` to add the iOS platform to the project
+Read more in https://beta.ionicframework.com/docs/building/ios
+
+## Android Platform
+Run `ionic cordova prepare android` to add the Android platform to the project
+Read more in https://beta.ionicframework.com/docs/building/android
+
+
 ### Committing code
 To ensure code quality, we follow and enforce the [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines)
 These guidelines define a Commit Message Format and certain rules that will help teams achieve consistency with version control and source code management practices.
