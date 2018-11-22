@@ -14,10 +14,10 @@ export class SubjectFetch<T> {
     // Immediately after fetch data from endpoint
     fetchData().pipe(
       delay(2000),
-      // Prevent the need to unsubscribe.
-      // Q: Agustin: Is this because .first() completes the observable?
+      // Prevent the need to unsubscribe because .first() completes the observable
       first()
     ).subscribe((value: T) => {
+      // To debug shell styles, comment this line to prevent the second value from being emmited by the hot observable
       this._subject.next(value);
     });
   }

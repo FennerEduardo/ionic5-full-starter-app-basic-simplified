@@ -7,11 +7,9 @@ import { CategoriesPage } from '../categories/categories.page';
 
 import { FashionListingPage } from '../fashion-listing/fashion-listing.page';
 import { FashionListingResolver } from '../fashion-listing/fashion-listing.resolver';
-import { FashionProductDetailsPage } from '../fashion-product-details/fashion-product-details.page';
 
 import { TravelListingPage } from '../travel-listing/travel-listing.page';
 import { TravelListingResolver } from '../travel-listing/travel-listing.resolver';
-
 
 import { ProfilePage } from '../profile/profile.page';
 
@@ -33,7 +31,6 @@ const routes: Routes = [
         path: 'fashion',
         outlet: 'home',
         component: FashionListingPage,
-        // As we can't lazy load this module, we have to repeat the resolve here
         resolve: {
           data: FashionListingResolver
         }
@@ -42,15 +39,9 @@ const routes: Routes = [
         path: 'travel',
         outlet: 'home',
         component: TravelListingPage,
-        // As we can't lazy load this module, we have to repeat the resolve here
         resolve: {
           data: TravelListingResolver
         }
-      },
-      {
-        path: 'fashion/:productId',
-        outlet: 'home',
-        component: FashionProductDetailsPage
       },
       {
         path: 'profile',
