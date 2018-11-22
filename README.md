@@ -1,19 +1,15 @@
-# Development Workflow
+# Ionic 4 Full App
+The most advanced and complete Mobile & PWA starter app template
+
+## Development Workflow
 Run `ionic build` or `ionic build --prod` to build the project
 Run `ionic serve` to start a live-reload dev server
 
-# Dependencies
+### Committing code
+To ensure code quality, we follow and enforce the [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines)
+These guidelines define a Commit Message Format and certain rules that will help teams achieve consistency with version control and source code management practices.
 
-Run `npm ls` to list all installed packages
-
-To find the installed version of a specific package run `npm list package_name`
-
-To find out which packages need to be updated, you can use `npm outdated -g --depth=0`
-
-## Start Using Angular Commit Message Guidelines
-See: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines
-
-### Commit Message Format
+#### Commit Message Format
 Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special
 format that includes a **type**, a **scope** and a **subject**:
 
@@ -43,10 +39,10 @@ fix(release): need to depend on latest rxjs and zone.js
 The version in our package.json gets copied to the one we publish, and users need the latest of these.
 ```
 
-### Revert
+#### Revert
 If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
 
-### Type
+#### Type
 Must be one of the following:
 
 * **build**: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
@@ -59,7 +55,7 @@ Must be one of the following:
 * **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 * **test**: Adding missing tests or correcting existing tests
 
-### Scope
+#### Scope
 The scope should be the name of the npm package affected (as perceived by the person reading the changelog generated from commit messages.
 
 The following is the list of supported scopes:
@@ -78,19 +74,29 @@ There are currently a few exceptions:
   packages (e.g. `style: add missing semicolons`) and for docs changes that are not related to a
   specific package (e.g. `docs: fix typo in tutorial`).
 
-### Subject
+#### Subject
 The subject contains a succinct description of the change:
 
 * use the imperative, present tense: "change" not "changed" nor "changes"
 * don't capitalize the first letter
 * no dot (.) at the end
 
-### Body
+#### Body
 Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes".
 The body should include the motivation for the change and contrast this with previous behavior.
 
-### Footer
+#### Footer
 The footer should contain any information about **Breaking Changes** and is also the place to
 reference GitHub issues that this commit **Closes**.
 
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
+
+
+## Troubleshooting
+### See what dependencies and versions you have installed in your project
+This is useful to track compilation ERRORS
+
+- Run `npm ls` to list all installed packages
+- To find the installed version of a specific package run `npm list package_name`
+- To find out which packages need to be updated, you can use `npm outdated -g --depth=0`
+- In particular, run `ng version` to output Angular CLI version and all Angular related installed packages and versions
