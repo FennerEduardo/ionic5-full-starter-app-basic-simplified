@@ -1,0 +1,10 @@
+.listing-item {
+  --shell-color: #455b3b;
+  --shell-color-rgb: 69,91,59;
+
+  app-background-image {
+    --loading-background: rgba(var(--shell-color-rgb), .10);
+    --spinner-color: rgba(var(--shell-color-rgb), .25);
+  }
+
+}
