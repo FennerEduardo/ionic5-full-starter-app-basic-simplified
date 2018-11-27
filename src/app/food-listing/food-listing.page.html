@@ -11,81 +11,47 @@
   <ng-container *ngIf="listing?.items">
     <div class="listing-item" *ngFor="let item of listing.items">
       <ion-row class="info-row">
-        <ion-col size="3">
+        <ion-col class="icon-col" size="2">
           <ion-anchor class="icon-anchor" href="coming-soon">
             <app-preload-image class="add-spinner" [ratio]="{w: 1, h: 1}" [src]="item.icon"></app-preload-image>
           </ion-anchor>
         </ion-col>
-        <ion-col>
-          <h4 class="item-name">
-            <ion-anchor class="name-anchor" href="coming-soon">
-              <app-text-shell [data]="item.name" [attr.element]="'h4'"></app-text-shell>
-            </ion-anchor>
-          </h4>
-          <p class="item-address">
-            <app-text-shell [data]="item.address" [attr.lines]="1"></app-text-shell>
-          </p>
-          <ion-row class="item-tags">
-            <ion-col *ngFor="let tag of item.tags">
-              <span class="item-tag">
-                <app-text-shell [data]="tag" class="no-animation"></app-text-shell>
-              </span>
-            </ion-col>
+        <ion-col class="description-col">
+          <ion-row class="description-wrapper">
+            <h4 class="item-name">
+              <ion-anchor class="name-anchor" href="coming-soon">
+                <app-text-shell [data]="item.name" [attr.element]="'h4'"></app-text-shell>
+              </ion-anchor>
+            </h4>
+            <p class="item-address">
+              <app-text-shell [data]="item.address" [attr.lines]="1"></app-text-shell>
+            </p>
+            <ion-row class="item-tags">
+              <ion-col class="tag-wrapper" *ngFor="let tag of item.tags">
+                <span class="item-tag">
+                  <app-text-shell [data]="tag" class="no-animation"></app-text-shell>
+                </span>
+              </ion-col>
+            </ion-row>
           </ion-row>
         </ion-col>
-        <ion-col size="2">
-          <span [attr.ratingIndicator]="item.rating | floor">{{ item.rating }}</span>
+        <ion-col class="stats-col" size="2">
+          <span class="item-rating" [attr.ratingBase]="item.rating | floor">
+            <app-text-shell [data]="item.rating" class="no-animation"></app-text-shell>
+          </span>
           <div class="item-price-range">
             <span class="" *ngFor="let price of [].constructor(item.priceRange)">$</span>
           </div>
         </ion-col>
       </ion-row>
       <ion-row class="pictures-row">
-        <ion-col size="2" *ngFor="let picture of item.pictures.slice(0, 5); let i = index">
-          <app-preload-image class="add-spinner" [ratio]="{w: 1, h: 1}" [src]="picture"></app-preload-image>
-          <div class="has-more-pictures" *ngIf="i == 4 && item.pictures.length > 5">
+        <ion-col class="picture-wrapper" size="2" *ngFor="let picture of item.pictures.slice(0, 5); let i = index">
+          <app-preload-image [ratio]="{w: 1, h: 1}" [src]="picture"></app-preload-image>
+          <ion-anchor class="has-more-pictures" href="coming-soon" *ngIf="i == 4 && item.pictures.length > 5">
             <span class="pictures-count">{{ item.pictures.length - 5 }}</span>
-          </div>
+          </ion-anchor>
         </ion-col>
       </ion-row>
-      <!-- <div class="row info-row">
-        <div class="col logo-col">
-          <a class="product-anchor" ui-sref="main.app.feed.food.content({productId: product.id})">
-            <pre-img ratio="_1_1">
-              <img class="logo-image" ng-src="{{ product.image }}" spinner-on-load>
-            </pre-img>
-          </a>
-        </div>
-        <div class="col description-col">
-          <div class="row">
-            <div class="col data-col">
-              <h5 class="product-title">
-                <a class="product-anchor" ui-sref="main.app.feed.food.content({productId: product.id})">{{product.name}}</a>
-              </h5>
-              <p class="address-and-price-container">
-                <span class="product-address">{{product.address}}</span>
-                <span class="product-price-range" ng-repeat="price in [].constructor(product.price_range) track by $index">$</span>
-              </p>
-              <p class="product-tags-container">
-                <span class="product-tag" ng-repeat="tag in product.tags">{{tag}}</span>
-              </p>
-            </div>
-            <div class="col col-20 actions-col">
-              <span class="product-rating rating-{{ product.rating | floor }}">{{product.rating}}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row row-center images-row">
-        <div class="col col-20 image-wrapper" ng-repeat="picture in product.pictures.slice(0, 5) track by $index">
-          <pre-img ratio="_1_1">
-            <img class="product-image" ng-src="{{ picture }}" spinner-on-load>
-          </pre-img>
-          <div class="has-more-images" ng-if="$index == 4 && product.pictures.length > 5">
-            <span class="images-count">{{ product.pictures.length - 5 }}</span>
-          </div>
-        </div>
-      </div> -->
     </div>
   </ng-container>
 </ion-content>

@@ -12,6 +12,8 @@ export class FoodItemModel {
   pictures: Array<string> = [
     '',
     '',
+    '',
+    '',
     ''
   ];
 }
