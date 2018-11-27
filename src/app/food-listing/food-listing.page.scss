@@ -1,0 +1,13 @@
+.listing-item {
+  --shell-color: #ebbb00;
+  --shell-color-rgb: 235,187,0;
+
+  app-preload-image {
+    --loading-background: rgba(var(--shell-color-rgb), .10);
+    --spinner-color: rgba(var(--shell-color-rgb), .25);
+  }
+
+  .pictures-row {
+    --ion-grid-columns: 10;
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "priceRange": 3,
+      "icon": "./assets/sample-images/food/foodlogo1.png",
+      "name": "NomNom",
+      "rating": 4.3,
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "desserts"
+      ],
+      "pictures": [
+        "./assets/sample-images/food/Cat1Foto1-1.1.png",
+        "./assets/sample-images/food/Cat1Foto2-1.1.png",
+        "./assets/sample-images/food/Cat1Foto3-1.1.png",
+        "./assets/sample-images/food/Cat1Foto4-1.1.png",
+        "./assets/sample-images/food/Cat1Foto5-1.1.png",
+        "./assets/sample-images/food/Cat1Foto1-1.1.png",
+        "./assets/sample-images/food/Cat1Foto2-1.1.png",
+        "./assets/sample-images/food/Cat1Foto3-1.1.png"
+      ],
+      "address": "6782 Bobwhite Crossing"
+    }, {
+      "id": 2,
+      "priceRange": 1,
+      "icon": "./assets/sample-images/food/foodlogo2.png",
+      "name": "HappyFoods",
+      "rating": 3.7,
+      "tags": [
+        "mexican",
+        "sushi",
+        "vegetarian"
+      ],
+      "pictures": [
+        "./assets/sample-images/food/Cat2Foto1-1.1.png",
+        "./assets/sample-images/food/Cat2Foto2-1.1.png",
+        "./assets/sample-images/food/Cat2Foto3-1.1.png",
+        "./assets/sample-images/food/Cat2Foto4-1.1.png",
+        "./assets/sample-images/food/Cat2Foto5-1.1.png",
+        "./assets/sample-images/food/Cat2Foto1-1.1.png",
+        "./assets/sample-images/food/Cat2Foto2-1.1.png"
+      ],
+      "address": "1 Buhler Parkway"
+    }, {
+      "id": 3,
+      "priceRange": 2,
+      "icon": "./assets/sample-images/food/foodlogo3.png",
+      "name": "Tasty",
+      "rating": 2.5,
+      "tags": [
+        "meats",
+        "indian",
+        "currys",
+        "desserts"
+      ],
+      "pictures": [
+        "./assets/sample-images/food/Cat3Foto1-1.1.png",
+        "./assets/sample-images/food/Cat3Foto2-1.1.png",
+        "./assets/sample-images/food/Cat3Foto3-1.1.png",
+        "./assets/sample-images/food/Cat3Foto4-1.1.png"
+      ],
+      "address": "7104 Burning Wood Park"
+    }, {
+      "id": 4,
+      "priceRange": 2,
+      "icon": "./assets/sample-images/food/foodlogo4.png",
+      "name": "Debbie’s",
+      "rating": 5,
+      "tags": [
+        "fish",
+        "gluten free",
+        "pizza"
+      ],
+      "pictures": [
+        "./assets/sample-images/food/Cat4Foto1-1.1.png",
+        "./assets/sample-images/food/Cat4Foto2-1.1.png",
+        "./assets/sample-images/food/Cat4Foto3-1.1.png",
+        "./assets/sample-images/food/Cat4Foto4-1.1.png",
+        "./assets/sample-images/food/Cat4Foto5-1.1.png",
+        "./assets/sample-images/food/Cat4Foto4-1.1.png",
+        "./assets/sample-images/food/Cat4Foto3-1.1.png"
+      ],
+      "address": "4362 Wandsworth Street"
+    }
+  ]
+}
