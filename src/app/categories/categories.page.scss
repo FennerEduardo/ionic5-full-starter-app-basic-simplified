@@ -47,26 +47,31 @@
 
   .travel-category {
     --category-background: #00AFFF;
-    --category-loading-background: #{ rgba(#00AFFF, .25); };
+    --category-background-rgb: 0,175,255;
+    --category-loading-background: rgba(var(--category-background-rgb), .25);
   }
 
   .fashion-category {
     --category-background: #cb328f;
-    --category-loading-background: #{ rgba(#cb328f, .25); };
+    --category-background-rgb: 203,50,143;
+    --category-loading-background: rgba(var(--category-background-rgb), .25);
   }
 
   .food-category {
     --category-background: #ebbb00;
-    --category-loading-background: #{ rgba(#ebbb00, .25); };
+    --category-background-rgb: 235,187,0;
+    --category-loading-background: rgba(var(--category-background-rgb), .25);
   }
 
   .deals-category {
     --category-background: #d9453a;
-    --category-loading-background: #{ rgba(#d9453a, .25); };
+    --category-background-rgb: 217,69,58;
+    --category-loading-background: rgba(var(--category-background-rgb), .25);
   }
 
   .real-state-category {
     --category-background: #455b3b;
-    --category-loading-background: #{ rgba(#455b3b, .25); };
+    --category-background-rgb: 69,91,59;
+    --category-loading-background: rgba(var(--category-background-rgb), .25);
   }
 }
