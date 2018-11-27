@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 
-import { Observable, of } from 'rxjs';
-import { first, delay } from 'rxjs/operators';
+import { first } from 'rxjs/operators';
 
 import { FashionService } from './fashion.service';
 

@@ -20,6 +20,7 @@
 
       app-preload-image {
         --loading-background: rgba(var(--shell-color-rgb), .10);
+        --spinner-color: rgba(var(--shell-color-rgb), .25);
       }
 
       .image-anchor {
