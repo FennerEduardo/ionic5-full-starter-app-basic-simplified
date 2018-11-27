@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="app/tabs/(home:categories)"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Deals Listing</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="listing?.items">
+    <div class="listing-item" *ngFor="let item of listing.items">
+      <ion-row>
+        <ion-col>
+          <app-preload-image class="add-spinner" [ratio]="{w: 128, h: 32}" [src]="item.logo"></app-preload-image>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button class="claim-button" expand="block" href="coming-soon">CLAIM</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h4 class="item-name">
+            <ion-anchor class="name-anchor" href="coming-soon">
+              <app-text-shell [data]="item.name" [attr.element]="'h4'"></app-text-shell>
+            </ion-anchor>
+          </h4>
+          <p class="item-description">
+            <app-text-shell [data]="item.description" [attr.lines]="3"></app-text-shell>
+          </p>
+        </ion-col>
+        <ion-col size="3">
+          <ion-button class="bookmark-button">
+            <ion-icon slot="icon-only" name="pricetag"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <span class="item-code">
+            <app-text-shell [data]="item.code" class="no-animation"></app-text-shell>
+          </span>
+        </ion-col>
+        <ion-col size="3">
+          <!-- <span class="deal-time-left" ng-class="{'days-left-1': ((product.expiration_date | amDifference : null : 'hours') <= 10) && ((product.expiration_date | amDifference : null : 'hours') > 0), 'days-left-0': (product.expiration_date | amDifference : null : 'hours') < 0}" am-time-ago="product.expiration_date"></span> -->
+          <ion-icon name="clock"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ng-container>
+</ion-content>
+
+
+<!--
+<div class="row row-center top-row">
+  <div class="col col-66 logo-col">
+    <img class="deal-logo" ng-src="{{product.picture}}"/>
+  </div>
+  <div class="col shop-col">
+    <button class="button shop-button">
+      CLAIM
+    </button>
+  </div>
+</div>
+<div class="row middle-row">
+  <div class="col col-75">
+    <h5 class="product-title">
+      <a class="product-anchor">{{product.name}}</a>
+    </h5>
+    <p class="product-description">
+      {{product.description}}
+    </p>
+  </div>
+  <div class="col bookmark-col">
+    <a class="button button-icon icon ion-pricetag bookmark-button"></a>
+  </div>
+</div>
+<div class="row bottom-row">
+  <div class="col col-75">
+    <span class="deal-code">{{product.code}}</span>
+  </div>
+  <div class="col time-col">
+    <div class="time-left-container">
+      <span class="deal-time-left" ng-class="{'days-left-1': ((product.expiration_date | amDifference : null : 'hours') <= 10) && ((product.expiration_date | amDifference : null : 'hours') > 0), 'days-left-0': (product.expiration_date | amDifference : null : 'hours') < 0}" am-time-ago="product.expiration_date"></span>
+      <i class="icon ion-android-time"></i>
+    </div>
+  </div>
+</div>
+-->

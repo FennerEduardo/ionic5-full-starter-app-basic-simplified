@@ -1,0 +1,9 @@
+.listing-item {
+  --shell-color: #d9453a;
+  --shell-color-rgb: 217,69,58;
+
+  app-preload-image {
+    --loading-background: rgba(var(--shell-color-rgb), .10);
+    --spinner-color: rgba(var(--shell-color-rgb), .25);
+  }
+}
