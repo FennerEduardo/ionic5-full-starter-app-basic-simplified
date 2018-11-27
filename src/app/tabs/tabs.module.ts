@@ -11,6 +11,9 @@ import { TabsPage } from './tabs.page';
 import { CategoriesPageModule } from '../categories/categories.module';
 import { FashionListingPageModule } from '../fashion-listing/fashion-listing.module';
 import { TravelListingPageModule } from '../travel-listing/travel-listing.module';
+import { FoodListingPageModule } from '../food-listing/food-listing.module';
+import { DealsListingPageModule } from '../deals-listing/deals-listing.module';
+import { RealStateListingPageModule } from '../real-state-listing/real-state-listing.module';
 
 import { ProfilePageModule } from '../profile/profile.module';
 
@@ -21,12 +24,17 @@ import { NotificationsPageModule } from '../notifications/notifications.module';
     IonicModule,
     CommonModule,
     FormsModule,
+
     TabsPageRoutingModule,
     CategoriesPageModule,
+    ProfilePageModule,
+    NotificationsPageModule,
+
     FashionListingPageModule,
     TravelListingPageModule,
-    ProfilePageModule,
-    NotificationsPageModule
+    FoodListingPageModule,
+    DealsListingPageModule,
+    RealStateListingPageModule
   ],
   declarations: [TabsPage]
 })

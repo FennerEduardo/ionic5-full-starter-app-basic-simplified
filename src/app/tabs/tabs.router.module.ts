@@ -11,6 +11,15 @@ import { FashionListingResolver } from '../fashion-listing/fashion-listing.resol
 import { TravelListingPage } from '../travel-listing/travel-listing.page';
 import { TravelListingResolver } from '../travel-listing/travel-listing.resolver';
 
+import { FoodListingPage } from '../food-listing/food-listing.page';
+import { FoodListingResolver } from '../food-listing/food-listing.resolver';
+
+import { DealsListingPage } from '../deals-listing/deals-listing.page';
+import { DealsListingResolver } from '../deals-listing/deals-listing.resolver';
+
+import { RealStateListingPage } from '../real-state-listing/real-state-listing.page';
+import { RealStateListingResolver } from '../real-state-listing/real-state-listing.resolver';
+
 import { ProfilePage } from '../profile/profile.page';
 
 import { NotificationsPage } from '../notifications/notifications.page';
@@ -44,6 +53,30 @@ const routes: Routes = [
         }
       },
       {
+        path: 'food',
+        outlet: 'home',
+        component: FoodListingPage,
+        resolve: {
+          data: FoodListingResolver
+        }
+      },
+      {
+        path: 'deals',
+        outlet: 'home',
+        component: DealsListingPage,
+        resolve: {
+          data: DealsListingResolver
+        }
+      },
+      {
+        path: 'real-state',
+        outlet: 'home',
+        component: RealStateListingPage,
+        resolve: {
+          data: RealStateListingResolver
+        }
+      },
+      {
         path: 'profile',
         outlet: 'profile',
         component: ProfilePage
@@ -71,6 +104,10 @@ const routes: Routes = [
   providers: [
     FashionListingResolver,
     TravelListingResolver,
+    FoodListingResolver,
+    DealsListingResolver,
+    RealStateListingResolver,
+
     NotificationsResolver,
     NotificationsService
   ]
