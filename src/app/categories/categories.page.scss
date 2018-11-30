@@ -64,14 +64,14 @@
   }
 
   .deals-category {
-    --category-background: #d9453a;
-    --category-background-rgb: 217,69,58;
+    --category-background: #70df70;
+    --category-background-rgb: 112,223,112;
     --category-loading-background: rgba(var(--category-background-rgb), .25);
   }
 
   .real-state-category {
-    --category-background: #455b3b;
-    --category-background-rgb: 69,91,59;
+    --category-background: #d9453a;
+    --category-background-rgb: 217,69,58;
     --category-loading-background: rgba(var(--category-background-rgb), .25);
   }
 }
