@@ -60,7 +60,7 @@ ion-content {
 
         app-text-shell {
           --c-bg-color: rgba(var(--shell-color-rgb), .25);
-          --c-line-height: 16px;
+          --c-line-height: 14px;
         }
       }
 
@@ -71,7 +71,7 @@ ion-content {
 
         app-text-shell {
           --c-bg-color: rgba(var(--shell-color-rgb), .20);
-          --c-line-height: 14px;
+          --c-line-height: 12px;
         }
       }
 
@@ -98,7 +98,7 @@ ion-content {
 
           app-text-shell {
             --c-bg-color: rgba(var(--shell-color-rgb), .15);
-            --c-line-height: 12px;
+            --c-line-height: 10px;
             min-width: 30px;
 
             &.text-loaded {
@@ -140,7 +140,7 @@ ion-content {
 
         app-text-shell {
           --c-bg-color: rgba(var(--shell-color-rgb), .15);
-          --c-line-height: 14px;
+          --c-line-height: 12px;
         }
 			}
 
