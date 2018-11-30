@@ -40,11 +40,6 @@ ion-content {
   border-radius: 6px;
   box-shadow: 1px 1px 4px 1px rgba(var(--ion-color-dark-rgb), .1);
 
-  app-preload-image {
-    --loading-background: rgba(var(--shell-color-rgb), .10);
-    --spinner-color: rgba(var(--shell-color-rgb), .25);
-  }
-
   .top-row {
     --ion-grid-column-padding: 0px;
 
@@ -52,6 +47,11 @@ ion-content {
     padding: 10px;
     justify-content: space-between;
     align-items: flex-start;
+
+    app-preload-image {
+      --loading-background: rgba(var(--shell-color-rgb), .10);
+      --spinner-color: rgba(var(--shell-color-rgb), .25);
+    }
 
     .logo-col {
       align-self: center;
