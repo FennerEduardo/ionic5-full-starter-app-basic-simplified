@@ -1,9 +1,192 @@
+// TODO: pasar este mixin a un shared mixins.scss
+@mixin custom-button-color($color){
+  @content;
+
+  .ion-color-#{$color} {
+    --ion-color-base: var(--ion-color-#{$color}) !important;
+    --ion-color-base-rgb: var(--ion-color-#{$color}-rgb) !important;
+    --ion-color-contrast: var(--ion-color-#{$color}-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-#{$color}-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-#{$color}-shade) !important;
+    --ion-color-tint: var(--ion-color-#{$color}-tint) !important;
+  }
+}
+
+:host {
+  @include custom-button-color('claim') {
+    --ion-color-claim: #70df70;
+    --ion-color-claim-rgb: 112,223,112;
+    --ion-color-claim-contrast: #ffffff;
+    --ion-color-claim-contrast-rgb: 255,255,255;
+    --ion-color-claim-shade: #63c463;
+    --ion-color-claim-tint: #7ee27e;
+  }
+}
+
+ion-content {
+  --background: var(--app-background-color-step-50);
+}
+
 .listing-item {
-  --shell-color: #d9453a;
-  --shell-color-rgb: 217,69,58;
+  --shell-color: #70df70;
+  --shell-color-rgb: 112,223,112;
+
+  --deal-ended-color: #d9453a;
+  --deal-ends-soon-color: #ffab6b;
+  --deal-distant-end-color: #70df70;
+
+  background-color: var(--ion-color-lightest);
+  margin: 15px 20px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 4px 1px rgba(var(--ion-color-dark-rgb), .1);
 
   app-preload-image {
     --loading-background: rgba(var(--shell-color-rgb), .10);
     --spinner-color: rgba(var(--shell-color-rgb), .25);
+  }
+
+  .top-row {
+    --ion-grid-column-padding: 0px;
+
+    border-bottom: 2px dashed rgba(var(--ion-color-dark-rgb), .1);
+    padding: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .logo-col {
+      align-self: center;
+    }
+
+    .claim-button {
+      --margin-top: 0px;
+      --margin-bottom: 0px;
+      --box-shadow: none;
+    }
+  }
+
+  .middle-row {
+    --ion-grid-column-padding: 0px;
+
+    padding: 15px 10px;
+
+    .info-col {
+      padding-right: 15px;
+    }
+
+    .item-name {
+      margin: 0px;
+			margin-bottom: 10px;
+      color: var(--ion-color-dark-tint);
+      font-size: 16px;
+
+      .name-anchor {
+        display: block;
+      }
+
+      app-text-shell {
+        --c-bg-color: rgba(var(--shell-color-rgb), .25);
+        --c-line-height: 16px;
+      }
+    }
+
+    .item-description {
+      margin: 0px;
+      color: var(--ion-color-medium-tint);
+      font-size: 14px;
+
+      app-text-shell {
+        --c-bg-color: rgba(var(--shell-color-rgb), .20);
+        --c-line-height: 14px;
+      }
+    }
+
+    .bookmark-button {
+      --margin-top: 0px;
+      --margin-bottom: 0px;
+      --padding-start: 5px;
+      --padding-end: 5px;
+
+      font-size: 16px;
+    }
+  }
+
+  .bottom-row {
+    --ion-grid-column-padding: 0px;
+
+    padding: 0px 10px 10px;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .code-wrapper {
+      max-width: fit-content;
+    }
+
+    .item-code {
+      color: var(--shell-color);
+      text-transform: uppercase;
+      padding: 7px 10px;
+      border: 2px solid var(--shell-color);
+      display: block;
+      font-size: 14px;
+      line-height: 1;
+      border-radius: 14px;
+
+      app-text-shell {
+        --c-bg-color: rgba(var(--shell-color-rgb), .15);
+        --c-line-height: 14px;
+        min-width: 60px;
+
+        &.text-loaded {
+          min-width: 0px;
+        }
+      }
+    }
+
+    .time-left-wrapper {
+      justify-content: center;
+      align-items: flex-end;
+      flex-flow: column;
+      --deal-color: var(--ion-color-medium);
+
+      &.ended {
+        --deal-color: var(--deal-ended-color);
+      }
+
+      &.ends-soon {
+        --deal-color: var(--deal-ends-soon-color);
+      }
+
+      &.distant-end {
+        --deal-color: var(--deal-distant-end-color);
+      }
+    }
+
+    .time-icon {
+      color: var(--deal-color);
+      font-size: 20px;
+    }
+
+    .item-time-left {
+      color: var(--deal-color);
+      font-size: 12px;
+
+      app-text-shell {
+        --c-bg-color: rgba(var(--shell-color-rgb), .10);
+        --c-line-height: 12px;
+        min-width: 100px;
+
+        &.text-loaded {
+          min-width: 0px;
+        }
+      }
+    }
+
+    app-countdown-timer {
+      --countdown-contrast: var(--deal-ends-soon-color);
+      --countdown-background: transparent;
+      --countdown-color: var(--deal-ends-soon-color);
+      --countdown-border: 2px solid var(--deal-ends-soon-color);
+      --countdown-text-shadow: none;
+    }
   }
 }
