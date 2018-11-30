@@ -1,0 +1,43 @@
+app-countdown-timer {
+  --countdown-contrast: #808080;
+  --countdown-background: #808080;
+  --countdown-color: #FFFFFF;
+  --countdown-border: none;
+  --countdown-text-shadow: 1px 1px #000;
+
+  display: block;
+
+  .time-col {
+    min-width: 34px;
+    max-width: fit-content;
+  }
+
+  .time-wrapper {
+    padding: 12px 4px;
+    border: var(--countdown-border);
+    border-radius: 4px;
+    text-align: center;
+    margin: 0px 3px;
+    position: relative;
+    background-color: var(--countdown-background);
+
+    .time-left {
+      font-size: 14px;
+      font-weight: 500;
+      min-height: 14px;
+      color: var(--countdown-color);
+      position: relative;
+      display: block;
+      text-shadow: var(--countdown-text-shadow);
+    }
+  }
+
+  .time-alt-text {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--countdown-contrast);
+    display: block;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+}

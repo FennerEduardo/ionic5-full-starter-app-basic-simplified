@@ -1,0 +1,38 @@
+<ion-row>
+  <ion-col class="time-col" *ngIf="_initialUnit === 'day'">
+    <span class="time-alt-text">D</span>
+    <div class="time-wrapper">
+      <span class="time-left">{{ _daysLeft }}</span>
+      <!-- <span class="time-left">
+        <app-text-shell [data]="_daysLeft" class="no-animation"></app-text-shell>
+      </span> -->
+    </div>
+  </ion-col>
+  <ion-col class="time-col" *ngIf="_initialUnit === 'day' || _initialUnit === 'hour'">
+    <span class="time-alt-text">H</span>
+    <div class="time-wrapper">
+      <span class="time-left">{{ _hoursLeft }}</span>
+      <!-- <span class="time-left">
+        <app-text-shell [data]="_hoursLeft" class="no-animation"></app-text-shell>
+      </span> -->
+    </div>
+  </ion-col>
+  <ion-col class="time-col" *ngIf="_initialUnit === 'day' || _initialUnit === 'hour' || _initialUnit === 'minute'">
+    <span class="time-alt-text">M</span>
+    <div class="time-wrapper">
+      <span class="time-left">{{ _minutesLeft }}</span>
+      <!-- <span class="time-left">
+        <app-text-shell [data]="_minutesLeft" class="no-animation"></app-text-shell>
+      </span> -->
+    </div>
+  </ion-col>
+  <ion-col class="time-col">
+    <span class="time-alt-text">S</span>
+    <div class="time-wrapper">
+      <span class="time-left">{{ _secondsLeft }}</span>
+      <!-- <span class="time-left">
+        <app-text-shell [data]="_secondsLeft" class="no-animation"></app-text-shell>
+      </span> -->
+    </div>
+  </ion-col>
+</ion-row>

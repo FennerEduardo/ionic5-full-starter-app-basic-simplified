@@ -9,6 +9,7 @@ import { FillContainerComponent } from './fill-container/fill-container.componen
 import { TextShellComponent } from './text-shell/text-shell.component';
 import { PreloadImageComponent } from './preload-image/preload-image.component';
 import { BackgroundImageComponent } from './background-image/background-image.component';
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { BackgroundImageComponent } from './background-image/background-image.co
     FillContainerComponent,
     TextShellComponent,
     PreloadImageComponent,
-    BackgroundImageComponent
+    BackgroundImageComponent,
+    CountdownTimerComponent
   ],
   exports: [
     CustomCheckboxComponent,
@@ -30,7 +32,8 @@ import { BackgroundImageComponent } from './background-image/background-image.co
     FillContainerComponent,
     TextShellComponent,
     PreloadImageComponent,
-    BackgroundImageComponent
+    BackgroundImageComponent,
+    CountdownTimerComponent
   ],
   entryComponents: [],
 })
