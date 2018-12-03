@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { RealStateListingModel } from './real-state-listing.model';
@@ -10,6 +10,11 @@ import { RealStateListingModel } from './real-state-listing.model';
 })
 export class RealStateListingPage implements OnInit {
   listing: RealStateListingModel;
+  // You can add a class to know when the shell has finish loading to the entire page or by using [ngClass] in the html
+  //    <ion-content [ngClass]="{'is-shell': (listing.isShell)}">
+  @HostBinding('class.is-shell') get isShell() {
+    return (this.listing && this.listing.isShell) ? true : false;
+}
 
   constructor(private route: ActivatedRoute) {
 

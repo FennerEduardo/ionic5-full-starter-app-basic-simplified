@@ -16,7 +16,8 @@ export class RealStateService {
   public list(): Observable<RealStateListingModel> {
     // Use cache if we have it.
     if (!this._documentsCache) {
-      const listingShell: RealStateListingModel = new RealStateListingModel();
+      // Initialize the model specifying that it is a shell model
+      const listingShell: RealStateListingModel = new RealStateListingModel(true);
       this._documentsCache = new SubjectFetch(
         listingShell,
         () => this.http.get<RealStateListingModel>('./assets/sample-data/real-state-listing.json')

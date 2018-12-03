@@ -2,8 +2,22 @@ export class RealStateItemModel {
   picture: string;
   address: string;
   price: string;
-  bedrooms: number;
-  bathrooms: number;
+  accommodations: {
+    guests: number,
+    bedrooms: number,
+    beds: number,
+    bathrooms: number
+  };
+  amenities: Array<{name: string, icon: string}> = [
+    {
+      name: '',
+      icon: ''
+    },
+    {
+      name: '',
+      icon: ''
+    }
+  ];
 }
 
 export class RealStateListingModel {
@@ -13,4 +27,6 @@ export class RealStateListingModel {
     new RealStateItemModel(),
     new RealStateItemModel()
   ];
+
+  constructor(readonly isShell: boolean) { }
 }
