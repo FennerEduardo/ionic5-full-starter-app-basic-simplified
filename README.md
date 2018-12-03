@@ -13,6 +13,9 @@ Read more in https://beta.ionicframework.com/docs/building/ios
 Run `ionic cordova prepare android` to add the Android platform to the project
 Read more in https://beta.ionicframework.com/docs/building/android
 
+## Acknowledgements
+This template uses some icons from [Flaticon](https://www.flaticon.com/). Please make sure you grab a new license that fit your use case when modifying this template.
+We currently use the `Free for commercial use WITH ATTRIBUTION` license in this template as a way to showcase and promote the awesome work and [designs by **catkuro** from Flaticon](https://www.flaticon.com/packs/home-decor).
 
 ### Committing code
 To ensure code quality, we follow and enforce the [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines)
