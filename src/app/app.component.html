@@ -33,6 +33,17 @@
           </ion-menu-toggle>
         </ion-list>
         <ion-list>
+          <ion-list-header>Forms</ion-list-header>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item href="forms">
+              <ion-icon slot="start" name="clipboard"></ion-icon>
+              <ion-label>
+                Forms
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+        <ion-list>
           <ion-list-header>Account</ion-list-header>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of accountPages; let i = index">
             <ion-item [href]="p.url">

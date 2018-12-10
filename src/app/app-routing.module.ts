@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'auth/login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'auth/signup', loadChildren: './signup/signup.module#SignupPageModule' },
   { path: 'app', loadChildren: './tabs/tabs.module#TabsPageModule' },
+  { path: 'forms', loadChildren: './forms/forms.module#FormsPageModule' },
   { path: 'coming-soon', loadChildren: './coming-soon/coming-soon.module#ComingSoonPageModule' },
   { path: 'page-not-found', loadChildren: './page-not-found/page-not-found.module#PageNotFoundModule' },
   { path: '**', redirectTo: 'page-not-found' }
