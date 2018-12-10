@@ -3,7 +3,7 @@ import { Resolve } from '@angular/router';
 
 import { first } from 'rxjs/operators';
 
-import { RealStateService } from './real-state.service';
+import { RealStateService } from '../real-state.service';
 
 @Injectable()
 export class RealStateListingResolver implements Resolve<any> {

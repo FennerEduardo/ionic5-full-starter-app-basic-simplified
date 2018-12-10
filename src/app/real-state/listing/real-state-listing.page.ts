@@ -16,9 +16,7 @@ export class RealStateListingPage implements OnInit {
     return (this.listing && this.listing.isShell) ? true : false;
 }
 
-  constructor(private route: ActivatedRoute) {
-
-  }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     if (this.route && this.route.data) {

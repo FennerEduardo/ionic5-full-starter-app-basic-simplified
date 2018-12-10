@@ -1,4 +1,5 @@
 export class RealStateItemModel {
+  slug: string;
   picture: string;
   address: string;
   price: string;

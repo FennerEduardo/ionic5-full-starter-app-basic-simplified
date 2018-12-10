@@ -13,7 +13,7 @@
     <div class="listing-item" *ngFor="let item of listing.items">
       <ion-row class="image-row">
         <ion-col size="12">
-          <ion-anchor class="image-anchor" href="coming-soon">
+          <ion-anchor class="image-anchor" href="app/tabs/(home:real-state/{{ item.slug }})">
             <app-background-image class="add-spinner" [src]="item.picture">
               <app-fill-container [ratio]="{w:365, h:125}">
               </app-fill-container>
@@ -24,7 +24,7 @@
       <ion-row class="description-row">
         <ion-col size="12">
           <h4 class="item-price">
-            <ion-anchor class="price-anchor" href="coming-soon">
+            <ion-anchor class="price-anchor" href="app/tabs/(home:real-state/{{ item.slug }})">
               <app-text-shell [data]="item.price" [attr.element]="'h4'" class="no-animation"></app-text-shell>
             </ion-anchor>
           </h4>
@@ -74,69 +74,9 @@
                 <span class="amenities-count">+{{ item.amenities.length - 4 }}</span>
               </ion-col>
             </ng-container>
-
-
-
-
-
-            <!-- <ion-col class="item-amenity" size="4" *ngIf="item.amenities?.airConditioner">
-              <ion-icon class="amenity-icon" src="./assets/sample-icons/real-state/air-conditioner.svg"></ion-icon>
-              <span class="amenity-value">
-                <app-text-shell [data]="'Air conditioning'" class="no-animation"></app-text-shell>
-              </span>
-            </ion-col>
-            <ion-col class="item-amenity" size="4" *ngIf="item.amenities?.washingMachine">
-              <ion-icon class="amenity-icon" src="./assets/sample-icons/real-state/washing-machine.svg"></ion-icon>
-              <span class="amenity-value">
-                <app-text-shell [data]="'Washer'" class="no-animation"></app-text-shell>
-              </span>
-            </ion-col>
-            <ion-col class="item-amenity" size="4" *ngIf="item.amenities?.microwave">
-              <ion-icon class="amenity-icon" src="./assets/sample-icons/real-state/microwave.svg"></ion-icon>
-              <span class="amenity-value">
-                <app-text-shell [data]="'Microwave'" class="no-animation"></app-text-shell>
-              </span>
-            </ion-col>
-            <ion-col class="item-amenity" size="4" *ngIf="item.amenities?.refrigerator">
-              <ion-icon class="amenity-icon" src="./assets/sample-icons/real-state/refrigerator.svg"></ion-icon>
-              <span class="amenity-value">
-                <app-text-shell [data]="'Refrigerator'" class="no-animation"></app-text-shell>
-              </span>
-            </ion-col>
-            <ion-col class="item-amenity" size="4" *ngIf="item.amenities?.television">
-              <ion-icon class="amenity-icon" src="./assets/sample-icons/real-state/television.svg"></ion-icon>
-              <span class="amenity-value">
-                <app-text-shell [data]="'Cable TV'" class="no-animation"></app-text-shell>
-              </span>
-            </ion-col> -->
           </ion-row>
         </ion-col>
       </ion-row>
     </div>
   </ng-container>
 </ion-content>
-
-<!--
-<div class="row image-row">
-  <div class="col product-image-container">
-    <div multi-bg="[product.picture]" interval="3000">
-    </div>
-  </div>
-</div>
-<div class="row description-row">
-  <div class="col">
-    <h2 class="product-price">
-      <a class="product-anchor">$ {{product.price}}</a>
-    </h2>
-    <p class="product-address">
-      {{product.address}}
-    </p>
-  </div>
-  <div class="col col-33 amenities-col">
-    <i class="theme-icon icon-bed"></i>
-    <span>{{product.bedrooms}}</span>
-    <i class="theme-icon icon-toilet"></i>
-    <span>{{product.bathrooms}}</span>
-  </div>
-</div>
--->
