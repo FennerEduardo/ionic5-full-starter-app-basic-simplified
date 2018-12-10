@@ -4,21 +4,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { TabsPage } from './tabs.page';
 
 import { CategoriesPage } from '../categories/categories.page';
-
+// Fashion
 import { FashionListingPage } from '../fashion-listing/fashion-listing.page';
 import { FashionListingResolver } from '../fashion-listing/fashion-listing.resolver';
-
+// Travel
 import { TravelListingPage } from '../travel-listing/travel-listing.page';
 import { TravelListingResolver } from '../travel-listing/travel-listing.resolver';
-
+// Food
 import { FoodListingPage } from '../food-listing/food-listing.page';
 import { FoodListingResolver } from '../food-listing/food-listing.resolver';
-
+// Deals
 import { DealsListingPage } from '../deals-listing/deals-listing.page';
 import { DealsListingResolver } from '../deals-listing/deals-listing.resolver';
-
-import { RealStateListingPage } from '../real-state-listing/real-state-listing.page';
-import { RealStateListingResolver } from '../real-state-listing/real-state-listing.resolver';
+// Real State
+import { RealStateListingPage } from '../real-state/listing/real-state-listing.page';
+import { RealStateListingResolver } from '../real-state/listing/real-state-listing.resolver';
+import { RealStateDetailsPage } from '../real-state/details/real-state-details.page';
+import { RealStateDetailsResolver } from '../real-state/details/real-state-details.resolver';
 
 import { ProfilePage } from '../profile/profile.page';
 
@@ -74,6 +76,14 @@ const routes: Routes = [
         component: RealStateListingPage,
         resolve: {
           data: RealStateListingResolver
+        }
+      },
+      {
+        path: 'real-state/:productId',
+        outlet: 'home',
+        component: RealStateDetailsPage,
+        resolve: {
+          data: RealStateDetailsResolver
         }
       },
       {

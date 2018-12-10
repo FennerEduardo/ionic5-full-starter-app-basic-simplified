@@ -1,0 +1,26 @@
+{
+  "id": 1,
+  "picture": "./assets/sample-images/real-state/RealState1-64.25.png",
+  "address": "1900 Powell Street, SF",
+  "price": "1919 x ppm",
+  "accommodations": {
+    "guests": 4,
+    "bedrooms": 2,
+    "beds": 4,
+    "bathrooms": 2
+  },
+  "amenities": [
+    {
+      "name": "Air conditioning",
+      "icon": "./assets/sample-icons/real-state/air-conditioner.svg"
+    },
+    {
+      "name": "Refrigerator",
+      "icon": "./assets/sample-icons/real-state/refrigerator.svg"
+    },
+    {
+      "name": "Cable TV",
+      "icon": "./assets/sample-icons/real-state/television.svg"
+    }
+  ]
+}

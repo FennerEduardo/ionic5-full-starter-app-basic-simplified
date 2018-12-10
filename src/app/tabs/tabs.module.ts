@@ -9,11 +9,17 @@ import { TabsPageRoutingModule } from './tabs.router.module';
 import { TabsPage } from './tabs.page';
 
 import { CategoriesPageModule } from '../categories/categories.module';
+// Fashion
 import { FashionListingPageModule } from '../fashion-listing/fashion-listing.module';
+// Travel
 import { TravelListingPageModule } from '../travel-listing/travel-listing.module';
+// Food
 import { FoodListingPageModule } from '../food-listing/food-listing.module';
+// Deals
 import { DealsListingPageModule } from '../deals-listing/deals-listing.module';
-import { RealStateListingPageModule } from '../real-state-listing/real-state-listing.module';
+// Real State
+import { RealStateListingPageModule } from '../real-state/listing/real-state-listing.module';
+import { RealStateDetailsPageModule } from '../real-state/details/real-state-details.module';
 
 import { ProfilePageModule } from '../profile/profile.module';
 
@@ -34,7 +40,8 @@ import { NotificationsPageModule } from '../notifications/notifications.module';
     TravelListingPageModule,
     FoodListingPageModule,
     DealsListingPageModule,
-    RealStateListingPageModule
+    RealStateListingPageModule,
+    RealStateDetailsPageModule
   ],
   declarations: [TabsPage]
 })
