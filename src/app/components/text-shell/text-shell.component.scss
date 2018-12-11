@@ -175,6 +175,14 @@
     @include text-shell-background(4);
   }
 
+  &[lines="5"] {
+    @include text-shell-background(5);
+  }
+
+  &[lines="6"] {
+    @include text-shell-background(6);
+  }
+
   &.text-loaded {
     background: none;
     min-height: inherit;
