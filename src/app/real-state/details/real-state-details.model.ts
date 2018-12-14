@@ -1,6 +1,11 @@
 export class RealStateDetailsModel {
   picture: string;
-  address: string;
+  location: {
+    address: string,
+    city: string,
+    latlng: string
+  };
+  description: string;
   price: string;
   accommodations: {
     guests: number,
@@ -9,6 +14,22 @@ export class RealStateDetailsModel {
     bathrooms: number
   };
   amenities: Array<{name: string, icon: string}> = [
+    {
+      name: '',
+      icon: ''
+    },
+    {
+      name: '',
+      icon: ''
+    },
+    {
+      name: '',
+      icon: ''
+    },
+    {
+      name: '',
+      icon: ''
+    },
     {
       name: '',
       icon: ''

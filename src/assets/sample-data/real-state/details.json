@@ -1,7 +1,12 @@
 {
   "id": 1,
   "picture": "./assets/sample-images/real-state/RealState1-64.25.png",
-  "address": "1900 Powell Street, SF",
+  "location": {
+    "address": "1900 Powell Street",
+    "city": "San Fransisco, CA, United States",
+    "latlng": "37.8021216,-122.4134178"
+  },
+  "description": "Enjoy luxury living like a local in the heart of the City, Hayes Valley District. Stroll, shop and eat at the best restaurants and boutiques within in blocks. Fitness center to stay fit & landscaped rooftop terraces with outdoor seating and bbq to lounge.",
   "price": "1919 x ppm",
   "accommodations": {
     "guests": 4,
@@ -21,6 +26,30 @@
     {
       "name": "Cable TV",
       "icon": "./assets/sample-icons/real-state/television.svg"
+    },
+    {
+      "name": "Washer",
+      "icon": "./assets/sample-icons/real-state/washing-machine.svg"
+    },
+    {
+      "name": "Microwave",
+      "icon": "./assets/sample-icons/real-state/microwave.svg"
+    },
+    {
+      "name": "Elevator in Building",
+      "icon": ""
+    },
+    {
+      "name": "Iron",
+      "icon": ""
+    },
+    {
+      "name": "Gym",
+      "icon": ""
+    },
+    {
+      "name": "Pet friendly",
+      "icon": ""
     }
   ]
 }

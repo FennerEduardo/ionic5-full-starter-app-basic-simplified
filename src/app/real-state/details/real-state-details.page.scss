@@ -1,3 +1,278 @@
+.real-state-details-content {
+  --shell-color: #d9453a;
+  --shell-color-rgb: 217,69,58;
+
+  .image-row {
+    --ion-grid-column-padding: 0px;
+
+    app-background-image {
+      --loading-background: rgba(var(--shell-color-rgb), .10);
+      --spinner-color: rgba(var(--shell-color-rgb), .25);
+    }
+
+    .bookmark-icon {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      font-size: 32px;
+      color: var(--shell-color);
+    }
+  }
+
+  .description-row {
+    --ion-grid-column-padding: 0px;
+
+    padding: 10px 20px 20px;
+
+    .details-price {
+      margin: 0px 0px 10px;
+			font-size: 18px;
+			font-weight: 600;
+      color: var(--ion-color-dark-tint);
+
+      app-text-shell {
+        --c-bg-color: rgba(var(--shell-color-rgb), .25);
+        --c-line-height: 18px;
+        max-width: 100px;
+
+        &.text-loaded {
+          max-width: inherit;
+        }
+      }
+    }
+
+    .details-address {
+      margin: 0px;
+      font-size: 14px;
+      color: var(--ion-color-medium-tint);
+
+      app-text-shell {
+        --c-bg-color: rgba(var(--shell-color-rgb), .20);
+        --c-line-height: 14px;
+        max-width: 60%;
+
+        &.text-loaded {
+          max-width: inherit;
+        }
+      }
+
+      & + .details-address {
+        margin-top: 2px;
+
+        app-text-shell {
+          max-width: 80%;
+
+          &.text-loaded {
+            max-width: inherit;
+          }
+        }
+      }
+    }
+
+    .details-description {
+      margin: 20px 0px 0px;
+      font-size: 14px;
+      color: var(--ion-color-medium-shade);
+
+      app-text-shell {
+        --c-bg-color: rgba(var(--shell-color-rgb), .10);
+        --c-line-height: 14px;
+      }
+    }
+  }
+
+  .detail-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ion-color-dark-tint);
+    margin: 0px 0px 20px;
+  }
+
+  .accommodations-wrapper {
+    padding: 10px 20px 20px;
+
+    .accommodation-row {
+      --ion-grid-column-padding: 0px;
+
+      align-items: center;
+
+      & + .accommodation-row {
+        padding-top: 10px;
+      }
+
+      .icon-wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      .accommodation-icon {
+        font-size: 20px;
+        color: var(--ion-color-medium-shade);
+      }
+
+      .accommodation-name {
+        display: block;
+        font-size: 14px;
+        color: var(--ion-color-medium-tint);
+      }
+
+      .accommodation-value {
+        display: block;
+        font-size: 16px;
+        color: var(--ion-color-medium-tint);
+
+        app-text-shell {
+          --c-bg-color: rgba(var(--shell-color-rgb), .10);
+          --c-line-height: 14px;
+          min-width: 30px;
+
+          &.text-loaded {
+            min-width: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .location-wrapper {
+    padding: 10px 0px 20px;
+
+    .location-header {
+      padding: 0px 20px 0px;
+      margin-bottom: 10px;
+    }
+
+    .detail-title {
+      margin-bottom: 5px;
+    }
+
+    .location-address {
+      display: block;
+      font-size: 14px;
+      color: var(--ion-color-medium-tint);
+
+      app-text-shell {
+        --c-bg-color: rgba(var(--shell-color-rgb), .10);
+        --c-line-height: 14px;
+        max-width: 60%;
+
+        &.text-loaded {
+          max-width: inherit;
+        }
+      }
+    }
+
+    app-preload-image {
+      --loading-background: rgba(var(--shell-color-rgb), .10);
+      --spinner-color: rgba(var(--shell-color-rgb), .25);
+    }
+  }
+
+  .amenities-wrapper {
+    padding: 10px 20px 20px;
+
+    .amenities-tags {
+      --ion-grid-column-padding: 0px;
+
+      justify-content: center;
+      margin-top: -2px;
+
+      .tag-wrapper {
+        padding: 2px 4px 2px 0px;
+        flex-grow: 0;
+        min-width: fit-content;
+
+        &:last-child {
+          padding-right: 0px;
+        }
+      }
+
+      .amenity-tag {
+        display: block;
+        border-radius: 2px;
+        border: 1px solid var(--ion-color-light-shade);
+        padding: 2px 4px;
+        font-size: 14px;
+        color: var(--ion-color-medium-tint);
+
+        app-text-shell {
+          --c-bg-color: rgba(var(--shell-color-rgb), .15);
+          --c-line-height: 14px;
+          min-width: 50px;
+
+          &.text-loaded {
+            min-width: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .safety-features-wrapper {
+    padding: 10px 20px 20px;
+
+    .features-list {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+
+      .feature-item {
+        font-size: 14px;
+        color: var(--ion-color-medium-tint);
+
+        & + .feature-item {
+          margin-top: 10px;
+        }
+
+        app-text-shell {
+          --c-bg-color: rgba(var(--shell-color-rgb), .10);
+          --c-line-height: 14px;
+          max-width: 80%;
+
+          &.text-loaded {
+            max-width: inherit;
+          }
+        }
+      }
+    }
+  }
+
+  .availability-wrapper {
+    padding: 10px 20px 20px;
+
+    .availability-row {
+      --ion-grid-column-padding: 0px;
+
+      justify-content: space-between;
+      align-items: center;
+
+      .availability-description,
+      .availability-value {
+        font-size: 14px;
+        color: var(--ion-color-medium-tint);
+
+        app-text-shell {
+          --c-bg-color: rgba(var(--shell-color-rgb), .10);
+          --c-line-height: 14px;
+        }
+      }
+
+      .availability-description {
+        color: var(--ion-color-medium-tint);
+      }
+
+      .availability-value {
+        color: var(--shell-color);
+      }
+    }
+
+    .book-now-btn {
+      margin-top: 20px;
+    }
+  }
+}
+
+
 
 :host(.is-shell) {
   // .amenity-icon {
