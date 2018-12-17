@@ -1,0 +1,18 @@
+.deals-details-content {
+  --shell-color: #70df70;
+  --shell-color-rgb: 112,223,112;
+
+  --deal-ended-color: #d9453a;
+  --deal-ends-soon-color: #ffab6b;
+  --deal-distant-end-color: #70df70;
+
+
+}
+
+
+
+:host(.is-shell) {
+  // .amenity-icon {
+  //   background-color: rgba(var(--shell-color-rgb), .05);
+  // }
+}

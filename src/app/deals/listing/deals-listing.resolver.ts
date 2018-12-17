@@ -3,7 +3,7 @@ import { Resolve } from '@angular/router';
 
 import { first } from 'rxjs/operators';
 
-import { DealsService } from './deals.service';
+import { DealsService } from '../deals.service';
 
 @Injectable()
 export class DealsListingResolver implements Resolve<any> {

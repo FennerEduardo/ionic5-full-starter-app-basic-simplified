@@ -7,22 +7,25 @@ import * as dayjs from 'dayjs';
 
 import { SubjectFetch } from '../utils/subject-fetch';
 
-import { DealsItemModel, DealsListingModel } from './deals-listing.model';
+import { DealsListingModel, DealsItemModel } from './listing/deals-listing.model';
+import { DealsDetailsModel } from './details/deals-details.model';
 
 @Injectable()
 export class DealsService {
-  private _documentsCache: SubjectFetch<DealsListingModel>;
+  private _listingCache: SubjectFetch<DealsListingModel>;
+  private _detailsCache: SubjectFetch<DealsDetailsModel>;
 
   constructor(private http: HttpClient) { }
 
   public list(): Observable<DealsListingModel> {
     // Use cache if we have it.
-    if (!this._documentsCache) {
-      const listingShell: DealsListingModel = new DealsListingModel();
-      this._documentsCache = new SubjectFetch(
+    if (!this._listingCache) {
+      // Initialize the model specifying that it is a shell model
+      const listingShell: DealsListingModel = new DealsListingModel(true);
+      this._listingCache = new SubjectFetch(
         listingShell,
         // Simple approach: get data from json
-        // () => this.http.get<DealsListingModel>('./assets/sample-data/deals-listing.json')
+        // () => this.http.get<DealsListingModel>('./assets/sample-data/deals/listing.json')
 
         // Alternate approach: I opted to create this model here so I can always show fresh dates (relative to now, not hardcoded ones)
         () => {
@@ -67,6 +70,20 @@ export class DealsService {
       );
     }
 
-    return this._documentsCache.observable;
+    return this._listingCache.observable;
+  }
+
+  public details(): Observable<DealsDetailsModel> {
+    // Use cache if we have it.
+    if (!this._detailsCache) {
+      // Initialize the model specifying that it is a shell model
+      const detailsShell: DealsDetailsModel = new DealsDetailsModel(true);
+      this._detailsCache = new SubjectFetch(
+        detailsShell,
+        () => this.http.get<DealsDetailsModel>('./assets/sample-data/deals/details.json')
+      );
+    }
+
+    return this._detailsCache.observable;
   }
 }

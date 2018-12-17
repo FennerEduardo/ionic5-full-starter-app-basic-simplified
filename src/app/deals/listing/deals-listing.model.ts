@@ -13,4 +13,6 @@ export class DealsListingModel {
     new DealsItemModel(),
     new DealsItemModel()
   ];
+
+  constructor(readonly isShell: boolean) { }
 }
