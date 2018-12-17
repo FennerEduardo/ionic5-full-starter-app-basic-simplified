@@ -6,11 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ComponentsModule } from '../components/components.module';
+import { ComponentsModule } from '../../components/components.module';
 
 import { TravelListingPage } from './travel-listing.page';
 import { TravelListingResolver } from './travel-listing.resolver';
-import { TravelService } from './travel.service';
+import { TravelService } from '../travel.service';
 
 const routes: Routes = [
   {

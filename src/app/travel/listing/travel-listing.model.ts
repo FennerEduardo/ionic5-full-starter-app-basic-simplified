@@ -16,4 +16,6 @@ export class TravelListingModel {
     new TravelItemModel(),
     new TravelItemModel()
   ];
+
+  constructor(readonly isShell: boolean) { }
 }
