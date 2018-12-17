@@ -16,4 +16,6 @@ export class FashionListingModel {
     new FashionItemModel(),
     new FashionItemModel()
   ];
+
+  constructor(readonly isShell: boolean) { }
 }

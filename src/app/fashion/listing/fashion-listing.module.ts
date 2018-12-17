@@ -6,11 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ComponentsModule } from '../components/components.module';
+import { ComponentsModule } from '../../components/components.module';
 
 import { FashionListingPage } from './fashion-listing.page';
 import { FashionListingResolver } from './fashion-listing.resolver';
-import { FashionService } from './fashion.service';
+import { FashionService } from '../fashion.service';
 
 const routes: Routes = [
   {
