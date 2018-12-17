@@ -3,7 +3,7 @@ import { Resolve } from '@angular/router';
 
 import { first } from 'rxjs/operators';
 
-import { FoodService } from './food.service';
+import { FoodService } from '../food.service';
 
 @Injectable()
 export class FoodListingResolver implements Resolve<any> {

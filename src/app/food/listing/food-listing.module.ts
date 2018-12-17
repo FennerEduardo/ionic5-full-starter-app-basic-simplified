@@ -8,11 +8,11 @@ import { IonicModule } from '@ionic/angular';
 
 import { FloorPipe } from 'angular-pipes';
 
-import { ComponentsModule } from '../components/components.module';
+import { ComponentsModule } from '../../components/components.module';
 
 import { FoodListingPage } from './food-listing.page';
 import { FoodListingResolver } from './food-listing.resolver';
-import { FoodService } from './food.service';
+import { FoodService } from '../food.service';
 
 const routes: Routes = [
   {

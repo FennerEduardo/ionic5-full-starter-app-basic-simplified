@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { SubjectFetch } from '../utils/subject-fetch';
 
-import { FoodListingModel } from './food-listing.model';
+import { FoodListingModel } from './listing/food-listing.model';
 
 @Injectable()
 export class FoodService {
@@ -16,10 +16,10 @@ export class FoodService {
   public list(): Observable<FoodListingModel> {
     // Use cache if we have it.
     if (!this._documentsCache) {
-      const listingShell: FoodListingModel = new FoodListingModel();
+      const listingShell: FoodListingModel = new FoodListingModel(true);
       this._documentsCache = new SubjectFetch(
         listingShell,
-        () => this.http.get<FoodListingModel>('./assets/sample-data/food-listing.json')
+        () => this.http.get<FoodListingModel>('./assets/sample-data/food/listing.json')
       );
     }
 

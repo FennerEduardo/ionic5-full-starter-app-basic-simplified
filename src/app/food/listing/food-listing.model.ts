@@ -25,4 +25,6 @@ export class FoodListingModel {
     new FoodItemModel(),
     new FoodItemModel()
   ];
+
+  constructor(readonly isShell: boolean) { }
 }
