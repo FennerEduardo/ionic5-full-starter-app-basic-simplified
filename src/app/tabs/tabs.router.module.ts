@@ -5,17 +5,19 @@ import { TabsPage } from './tabs.page';
 
 import { CategoriesPage } from '../categories/categories.page';
 // Fashion
-import { FashionListingPage } from '../fashion-listing/fashion-listing.page';
-import { FashionListingResolver } from '../fashion-listing/fashion-listing.resolver';
+import { FashionListingPage } from '../fashion/listing/fashion-listing.page';
+import { FashionListingResolver } from '../fashion/listing/fashion-listing.resolver';
 // Travel
-import { TravelListingPage } from '../travel-listing/travel-listing.page';
-import { TravelListingResolver } from '../travel-listing/travel-listing.resolver';
+import { TravelListingPage } from '../travel/listing/travel-listing.page';
+import { TravelListingResolver } from '../travel/listing/travel-listing.resolver';
 // Food
-import { FoodListingPage } from '../food-listing/food-listing.page';
-import { FoodListingResolver } from '../food-listing/food-listing.resolver';
+import { FoodListingPage } from '../food/listing/food-listing.page';
+import { FoodListingResolver } from '../food/listing/food-listing.resolver';
 // Deals
-import { DealsListingPage } from '../deals-listing/deals-listing.page';
-import { DealsListingResolver } from '../deals-listing/deals-listing.resolver';
+import { DealsListingPage } from '../deals/listing/deals-listing.page';
+import { DealsListingResolver } from '../deals/listing/deals-listing.resolver';
+import { DealsDetailsPage } from '../deals/details/deals-details.page';
+import { DealsDetailsResolver } from '../deals/details/deals-details.resolver';
 // Real State
 import { RealStateListingPage } from '../real-state/listing/real-state-listing.page';
 import { RealStateListingResolver } from '../real-state/listing/real-state-listing.resolver';
@@ -68,6 +70,14 @@ const routes: Routes = [
         component: DealsListingPage,
         resolve: {
           data: DealsListingResolver
+        }
+      },
+      {
+        path: 'deals/:productId',
+        outlet: 'home',
+        component: DealsDetailsPage,
+        resolve: {
+          data: DealsDetailsResolver
         }
       },
       {

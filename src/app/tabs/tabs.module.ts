@@ -10,13 +10,14 @@ import { TabsPage } from './tabs.page';
 
 import { CategoriesPageModule } from '../categories/categories.module';
 // Fashion
-import { FashionListingPageModule } from '../fashion-listing/fashion-listing.module';
+import { FashionListingPageModule } from '../fashion/listing/fashion-listing.module';
 // Travel
-import { TravelListingPageModule } from '../travel-listing/travel-listing.module';
+import { TravelListingPageModule } from '../travel/listing/travel-listing.module';
 // Food
-import { FoodListingPageModule } from '../food-listing/food-listing.module';
+import { FoodListingPageModule } from '../food/listing/food-listing.module';
 // Deals
-import { DealsListingPageModule } from '../deals-listing/deals-listing.module';
+import { DealsListingPageModule } from '../deals/listing/deals-listing.module';
+import { DealsDetailsPageModule } from '../deals/details/deals-details.module';
 // Real State
 import { RealStateListingPageModule } from '../real-state/listing/real-state-listing.module';
 import { RealStateDetailsPageModule } from '../real-state/details/real-state-details.module';
@@ -40,6 +41,7 @@ import { NotificationsPageModule } from '../notifications/notifications.module';
     TravelListingPageModule,
     FoodListingPageModule,
     DealsListingPageModule,
+    DealsDetailsPageModule,
     RealStateListingPageModule,
     RealStateDetailsPageModule
   ],
