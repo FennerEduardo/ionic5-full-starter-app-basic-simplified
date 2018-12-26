@@ -40,7 +40,7 @@ ion-content {
     border-bottom: var(--swiper-pagination-space) solid transparent;
     background-clip: padding-box;
 
-    // Don't know why it gets overridden by content-box if I don't add this
+    // As we set ViewEncapsulation.ShadowDom, box-sizing get's resetted to content-box if I don't add this
     box-sizing: border-box;
   }
 
