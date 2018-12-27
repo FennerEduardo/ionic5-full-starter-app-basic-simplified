@@ -32,6 +32,7 @@ export class DealsService {
           const dealsListingModel = {
             items: [
               {
+                slug: '50-off-lindt',
                 code: 'CHOC4LIFE',
                 description: 'Lindt Excellence 70% Cocoa Chocolate Diamonds 60ct Box with Lancaster for $10.26',
                 name: '50% OFF Lindt',
@@ -42,6 +43,7 @@ export class DealsService {
                 logo: './assets/sample-images/deals/Deals1-4.1.png'
               } as DealsItemModel,
               {
+                slug: '20-off-landscape-lighting',
                 code: '20LIGHT25',
                 description: '20% off Landscape Lighting and 25% off Outdoor Wall Light Fixtures with Coupon Code',
                 name: '20% OFF Landscape Lighting',
@@ -49,6 +51,7 @@ export class DealsService {
                 logo: './assets/sample-images/deals/Deals2-4.1.png'
               } as DealsItemModel,
               {
+                slug: '3-months-free-trial',
                 code: 'MORETVPLZ3',
                 description: 'Starz HD free trial extended for 3 months, in time for the new seasons of your favourite shows',
                 name: '3 Months FREE (Trial)',
@@ -56,6 +59,7 @@ export class DealsService {
                 logo: './assets/sample-images/deals/Deals3-4.1.png'
               } as DealsItemModel,
               {
+                slug: 'cat-limited-time-offer',
                 code: 'GETTHATPHONE212',
                 description: 'Free 4 Month Notevault Subscription With Cat® Phones worth $578',
                 name: 'CAT Limited Time Offer',

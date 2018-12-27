@@ -1,3 +1,28 @@
+// TODO: pasar este mixin a un shared mixins.scss
+@mixin custom-button-color($color){
+  @content;
+
+  .ion-color-#{$color} {
+    --ion-color-base: var(--ion-color-#{$color}) !important;
+    --ion-color-base-rgb: var(--ion-color-#{$color}-rgb) !important;
+    --ion-color-contrast: var(--ion-color-#{$color}-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-#{$color}-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-#{$color}-shade) !important;
+    --ion-color-tint: var(--ion-color-#{$color}-tint) !important;
+  }
+}
+
+:host {
+  @include custom-button-color('claim') {
+    --ion-color-claim: #70df70;
+    --ion-color-claim-rgb: 112,223,112;
+    --ion-color-claim-contrast: #ffffff;
+    --ion-color-claim-contrast-rgb: 255,255,255;
+    --ion-color-claim-shade: #63c463;
+    --ion-color-claim-tint: #7ee27e;
+  }
+}
+
 .deals-details-content {
   --shell-color: #70df70;
   --shell-color-rgb: 112,223,112;
@@ -6,6 +31,268 @@
   --deal-ends-soon-color: #ffab6b;
   --deal-distant-end-color: #70df70;
 
+  --swiper-pagination-space: 30px;
+  --swiper-pagination-height: 18px;
+  --pagination-bullet-size: 10px;
+
+  --background: var(--app-background-color-step-50);
+
+  .expiration-countdown {
+    background-color: var(--deal-ended-color);
+    padding: 10px 30px;
+    text-align: center;
+    color: var(--ion-color-lightest);
+  }
+
+  .details-wrapper {
+    margin: 20px;
+    border-radius: 15px;
+    background-color: var(--ion-color-lightest);
+
+    .slider-row {
+      .details-slides {
+        height: 100%;
+        width: 100%;
+        border-radius: 15px 15px 0px 0px;
+
+        --bullet-background: var(--ion-color-primary);
+        --bullet-background-active: var(--ion-color-primary);
+
+        .slide-inner-row {
+          height: 100%;
+          width: 100%;
+          padding: 0px;
+          // .swiper-pagination space
+          padding-bottom: var(--swiper-pagination-space);
+          // As we set ViewEncapsulation.ShadowDom, box-sizing get's resetted to content-box if I don't add this
+          box-sizing: border-box;
+        }
+
+        .swiper-pagination {
+          height: var(--swiper-pagination-height);
+          line-height: 1;
+          // .swiper-pagination is 18px height, .slide-inner-row has 40px of padding-bottom => bottom = (40px - 18px)/2 = 11px
+          bottom: calc((var(--swiper-pagination-space) - var(--swiper-pagination-height) ) / 2);
+
+          .swiper-pagination-bullet {
+            width: var(--pagination-bullet-size);
+            height: var(--pagination-bullet-size);
+          }
+        }
+      }
+
+      app-preload-image.showcase-image {
+        --loading-background: rgba(var(--shell-color-rgb), .10);
+        --spinner-color: rgba(var(--shell-color-rgb), .25);
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .description-row {
+      --ion-grid-column-padding: 0px;
+
+      padding: 10px 15px 30px;
+      border-bottom: 2px dashed rgba(var(--ion-color-dark-rgb), .1);
+      align-items: center;
+
+      .logo-col {
+        padding-bottom: 10px;
+
+        app-preload-image {
+          --loading-background: rgba(var(--shell-color-rgb), .10);
+          --spinner-color: rgba(var(--shell-color-rgb), .30);
+          --spinner-size: 18px;
+        }
+      }
+
+      .info-col {
+        padding-right: 15px;
+
+        .details-name {
+          margin: 0px;
+    			margin-bottom: 10px;
+          color: var(--ion-color-dark-tint);
+          font-size: 16px;
+
+          app-text-shell {
+            --c-bg-color: rgba(var(--shell-color-rgb), .30);
+            --c-line-height: 16px;
+          }
+        }
+
+        .details-description {
+          margin: 0px;
+          color: var(--ion-color-medium-tint);
+          font-size: 14px;
+
+          app-text-shell {
+            --c-bg-color: rgba(var(--shell-color-rgb), .20);
+            --c-line-height: 14px;
+          }
+        }
+      }
+
+      .preview-image-col {
+        app-preload-image {
+          --loading-background: rgba(var(--shell-color-rgb), .10);
+          --spinner-color: rgba(var(--shell-color-rgb), .30);
+          --spinner-size: 18px;
+        }
+      }
+    }
+
+    .promo-row {
+      --ion-grid-column-padding: 0px;
+
+      padding: 30px 15px 20px;
+      text-align: center;
+      justify-content: center;
+
+      .promo-title {
+        font-size: 22px;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: var(--ion-color-dark-tint);
+        margin: 0px;
+
+        &::before,
+        &::after {
+          content: '·';
+          color: var(--ion-color-dark-tint);
+        }
+      }
+
+      .promo-description {
+        margin: 20px 0px;
+        color: var(--ion-color-medium-tint);
+        font-size: 14px;
+      }
+
+      .promo-code {
+        display: block;
+        font-size: 14px;
+        line-height: 1;
+
+        app-text-shell {
+          --c-bg-color: rgba(var(--shell-color-rgb), .15);
+          --c-line-height: 14px;
+          min-width: 80px;
+
+          &.text-loaded {
+            min-width: 0px;
+          }
+        }
+      }
+
+      .promo-instructions {
+        margin: 20px 0px 0px;
+        color: var(--ion-color-medium-tint);
+        font-size: 12px;
+        line-height: 1.4;
+
+        .instructions-anchor {
+          color: var(--shell-color);
+        }
+      }
+    }
+
+    .expiration-notice {
+      background-color: var(--deal-distant-end-color);
+      padding: 10px 30px;
+      color: var(--ion-color-lightest);
+      border-radius: 0px 0px 15px 15px;
+      display: flex;
+      justify-content: center;
+
+      .notice-message {
+        display: block;
+        margin-right: 5px;
+      }
+
+      .notice-value {
+        display: block;
+
+        app-text-shell {
+          --c-bg-color: rgba(var(--ion-color-lightest-rgb), .20);
+          --c-line-height: 18px;
+          min-width: 60px;
+
+          &.text-loaded {
+            min-width: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .related-deals-wrapper {
+    margin: 60px 20px 20px;
+
+    .related-deals-title {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: var(--ion-color-dark-shade);
+      margin: 0px 0px 20px;
+    }
+
+    .related-deal {
+      --ion-grid-column-padding: 0px;
+
+      border-radius: 15px;
+      background-color: var(--ion-color-lightest);
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+
+      .deal-logo-wrapper {
+        padding: 8px 20px 8px 10px;
+        border-right: 2px dashed rgba(var(--ion-color-dark-rgb), .1);
+
+        app-preload-image {
+          --loading-background: rgba(var(--shell-color-rgb), .10);
+          --spinner-color: rgba(var(--shell-color-rgb), .30);
+          --spinner-size: 18px;
+        }
+      }
+
+      .deal-info-wrapper {
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .deal-title {
+          margin: 0px;
+          margin-bottom: 5px;
+          color: var(--ion-color-dark-tint);
+          font-size: 20px;
+
+          app-text-shell {
+            --c-bg-color: rgba(var(--shell-color-rgb), .30);
+            --c-line-height: 20px;
+          }
+        }
+
+        .deal-description {
+          margin: 0px;
+          color: var(--ion-color-medium-tint);
+          font-size: 16px;
+
+          app-text-shell {
+            --c-bg-color: rgba(var(--shell-color-rgb), .20);
+            --c-line-height: 16px;
+          }
+        }
+      }
+    }
+  }
 
 }
 

@@ -8,5 +8,80 @@
 </ion-header>
 
 <ion-content class="deals-details-content">
-  <h1>Deal details</h1>
+  <div class="expiration-countdown">
+    <ion-icon class="time-icon" name="md-time"></ion-icon>
+    <span>Deal expires in</span>
+    <span>2h 15m</span>
+  </div>
+
+  <div class="details-wrapper">
+    <ion-row class="slider-row">
+      <ion-slides class="details-slides" pager="true">
+        <ion-slide class="" *ngFor="let image of details?.showcaseImages">
+          <ion-row class="slide-inner-row">
+            <app-preload-image class="showcase-image add-spinner" [ratio]="{w: 56, h: 40}" [src]="image"></app-preload-image>
+          </ion-row>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+    <ion-row class="description-row">
+      <ion-col class="logo-col" size="6">
+        <app-preload-image class="add-spinner" [ratio]="{w: 128, h: 32}" [src]="details?.logo"></app-preload-image>
+      </ion-col>
+      <ion-col class="info-col" size="9">
+        <h4 class="details-name">
+          <app-text-shell [data]="details?.name" [attr.element]="'h4'"></app-text-shell>
+        </h4>
+        <p class="details-description">
+          <app-text-shell [data]="details?.description" [attr.lines]="3"></app-text-shell>
+        </p>
+      </ion-col>
+      <ion-col class="preview-image-col" size="3">
+        <app-preload-image class="add-spinner" [ratio]="{w: 1, h: 1}" [src]="details?.previewImage"></app-preload-image>
+      </ion-col>
+    </ion-row>
+    <ion-row class="promo-row">
+      <h3 class="promo-title">Copy the Code</h3>
+      <ion-col size="8">
+        <p class="promo-description">
+          Paste this code at checkout to get an extra 50% off
+        </p>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button class="promo-code-btn" expand="block" shape="round" fill="outline" color="claim">
+          <span class="promo-code">
+            <app-text-shell [data]="details?.code" class="no-animation"></app-text-shell>
+          </span>
+        </ion-button>
+      </ion-col>
+      <ion-col size="8">
+        <p class="promo-instructions">
+          Go to <ion-anchor class="instructions-anchor" href="https://google.com/search?q=chocolate">lancasternutcandy.com</ion-anchor> and paste the code at checkout.
+        </p>
+      </ion-col>
+    </ion-row>
+    <div class="expiration-notice">
+      <span class="notice-message">CUPON EXPIRES ON:</span>
+      <span class="notice-value">
+        <app-text-shell [data]="details?.expirationDate" class="no-animation"></app-text-shell>
+      </span>
+    </div>
+  </div>
+
+  <div class="related-deals-wrapper" *ngIf="details?.relatedDeals && details.relatedDeals.length > 0">
+    <h3 class="related-deals-title">More hot deals</h3>
+    <ion-row class="related-deal" *ngFor="let deal of details.relatedDeals">
+      <ion-col class="deal-logo-wrapper" size="4">
+        <app-preload-image class="add-spinner" [ratio]="{w: 1, h: 1}" [src]="deal.logo"></app-preload-image>
+      </ion-col>
+      <ion-col class="deal-info-wrapper" size="8">
+        <h4 class="deal-title">
+          <app-text-shell [data]="deal?.name" [attr.element]="'h4'"></app-text-shell>
+        </h4>
+        <p class="deal-description">
+          <app-text-shell [data]="deal?.description" [attr.lines]="1"></app-text-shell>
+        </p>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>

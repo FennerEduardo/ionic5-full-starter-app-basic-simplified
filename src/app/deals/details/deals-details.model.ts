@@ -1,42 +1,30 @@
 export class DealsDetailsModel {
-  picture: string;
-  location: {
-    address: string,
-    city: string,
-    latlng: string
-  };
+  showcaseImages: Array<string> = [
+    '',
+    '',
+    ''
+  ];
+  previewImage: string;
+  logo: string;
+  name: string;
+  code: string;
   description: string;
-  price: string;
-  accommodations: {
-    guests: number,
-    bedrooms: number,
-    beds: number,
-    bathrooms: number
-  };
-  amenities: Array<{name: string, icon: string}> = [
+  expirationDate: string;
+  relatedDeals: Array<{logo: string, name: string, description: string}> = [
     {
+      logo: '',
       name: '',
-      icon: ''
+      description: ''
     },
     {
+      logo: '',
       name: '',
-      icon: ''
+      description: ''
     },
     {
+      logo: '',
       name: '',
-      icon: ''
-    },
-    {
-      name: '',
-      icon: ''
-    },
-    {
-      name: '',
-      icon: ''
-    },
-    {
-      name: '',
-      icon: ''
+      description: ''
     }
   ];
 
