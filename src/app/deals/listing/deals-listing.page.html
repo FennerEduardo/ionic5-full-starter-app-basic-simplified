@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="app/tabs/(home:categories)"></ion-back-button>
+      <ion-back-button defaultHref="app/tabs/categories"></ion-back-button>
     </ion-buttons>
     <ion-title>Deals Listing</ion-title>
   </ion-toolbar>
@@ -15,15 +15,15 @@
           <app-preload-image class="add-spinner" [ratio]="{w: 128, h: 32}" [src]="item.logo"></app-preload-image>
         </ion-col>
         <ion-col size="3">
-          <ion-button class="claim-button" expand="block" shape="round" color="claim" href="coming-soon">CLAIM</ion-button>
+          <ion-button class="claim-button" expand="block" shape="round" color="claim" [routerLink]="['/coming-soon']">CLAIM</ion-button>
         </ion-col>
       </ion-row>
       <ion-row class="middle-row">
         <ion-col class="info-col">
           <h4 class="item-name">
-            <ion-anchor class="name-anchor" href="coming-soon">
+            <a class="name-anchor" [routerLink]="['/coming-soon']">
               <app-text-shell [data]="item.name" [attr.element]="'h4'"></app-text-shell>
-            </ion-anchor>
+            </a>
           </h4>
           <p class="item-description">
             <app-text-shell [data]="item.description" [attr.lines]="3"></app-text-shell>

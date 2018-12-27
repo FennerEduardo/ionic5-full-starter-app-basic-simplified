@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="app/tabs/(home:categories)"></ion-back-button>
+      <ion-back-button defaultHref="app/tabs/categories"></ion-back-button>
     </ion-buttons>
     <ion-title>Real State Listing</ion-title>
   </ion-toolbar>
@@ -13,20 +13,20 @@
     <div class="listing-item" *ngFor="let item of listing.items">
       <ion-row class="image-row">
         <ion-col size="12">
-          <ion-anchor class="image-anchor" href="app/tabs/(home:real-state/{{ item.slug }})">
+          <a class="image-anchor" [routerLink]="['/app/tabs/real-state/', item.slug]">
             <app-background-image class="add-spinner" [src]="item.picture">
               <app-fill-container [ratio]="{w:365, h:125}">
               </app-fill-container>
             </app-background-image>
-          </ion-anchor>
+          </a>
         </ion-col>
       </ion-row>
       <ion-row class="description-row">
         <ion-col size="12">
           <h4 class="item-price">
-            <ion-anchor class="price-anchor" href="app/tabs/(home:real-state/{{ item.slug }})">
+            <a class="price-anchor" [routerLink]="['/app/tabs/real-state/', item.slug]">
               <app-text-shell [data]="item.price" [attr.element]="'h4'" class="no-animation"></app-text-shell>
-            </ion-anchor>
+            </a>
           </h4>
           <p class="item-address">
             <app-text-shell [data]="item.address" [attr.lines]="1"></app-text-shell>

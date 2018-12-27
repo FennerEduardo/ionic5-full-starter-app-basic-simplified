@@ -58,8 +58,10 @@ ion-content {
     }
 
     .claim-button {
-      --margin-top: 0px;
-      --margin-bottom: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      // --margin-top: 0px;
+      // --margin-bottom: 0px;
       --box-shadow: none;
     }
   }
@@ -81,6 +83,7 @@ ion-content {
 
       .name-anchor {
         display: block;
+        text-decoration: none;
       }
 
       app-text-shell {
@@ -101,8 +104,10 @@ ion-content {
     }
 
     .bookmark-button {
-      --margin-top: 0px;
-      --margin-bottom: 0px;
+      margin-top: 0px;
+      // --margin-top: 0px;
+      margin-bottom: 0px;
+      // --margin-bottom: 0px;
       --padding-start: 5px;
       --padding-end: 5px;
 

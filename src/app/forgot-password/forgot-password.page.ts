@@ -23,7 +23,7 @@ export class ForgotPasswordPage {
 
   recoverPassword() {
     console.log(this.forgotPasswordForm.value);
-    this.router.navigate(['app/tabs/', { outlets: {home: [ 'categories' ]} }]);
+    this.router.navigate(['app/tabs/categories']);
   }
 
 }
