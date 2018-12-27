@@ -1,4 +1,5 @@
 export class DealsItemModel {
+  slug: string;
   logo: string;
   name: string;
   code: string;
