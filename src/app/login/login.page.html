@@ -46,12 +46,12 @@
 
     <ion-row class="other-options">
       <ion-col text-left>
-        <ion-button fill="clear" class="forgot-button" (click)="goToForgotPassword()">
+        <ion-button fill="clear" class="forgot-button" [routerLink]="['/auth/forgot-password']">
           Forgot Password?
         </ion-button>
       </ion-col>
       <ion-col text-right>
-        <ion-button href="/auth/signup" fill="clear" class="signup-button">
+        <ion-button [routerLink]="['/auth/signup']" fill="clear" class="signup-button">
           Sign Up!
         </ion-button>
       </ion-col>

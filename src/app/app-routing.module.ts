@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'getting-started', loadChildren: './getting-started/getting-started.module#GettingStartedPageModule' },
   { path: 'auth/login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'auth/signup', loadChildren: './signup/signup.module#SignupPageModule' },
+  { path: 'auth/forgot-password', loadChildren: './forgot-password/forgot-password.module#ForgotPasswordPageModule' },
   { path: 'app', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'forms', loadChildren: './forms/forms.module#FormsPageModule' },
   { path: 'coming-soon', loadChildren: './coming-soon/coming-soon.module#ComingSoonPageModule' },

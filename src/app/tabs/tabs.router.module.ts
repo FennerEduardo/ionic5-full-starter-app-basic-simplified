@@ -3,30 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { TabsPage } from './tabs.page';
 
-import { CategoriesPage } from '../categories/categories.page';
-// Fashion
-import { FashionListingPage } from '../fashion/listing/fashion-listing.page';
 import { FashionListingResolver } from '../fashion/listing/fashion-listing.resolver';
-// Travel
-import { TravelListingPage } from '../travel/listing/travel-listing.page';
 import { TravelListingResolver } from '../travel/listing/travel-listing.resolver';
-// Food
-import { FoodListingPage } from '../food/listing/food-listing.page';
 import { FoodListingResolver } from '../food/listing/food-listing.resolver';
-// Deals
-import { DealsListingPage } from '../deals/listing/deals-listing.page';
 import { DealsListingResolver } from '../deals/listing/deals-listing.resolver';
-import { DealsDetailsPage } from '../deals/details/deals-details.page';
 import { DealsDetailsResolver } from '../deals/details/deals-details.resolver';
-// Real State
-import { RealStateListingPage } from '../real-state/listing/real-state-listing.page';
 import { RealStateListingResolver } from '../real-state/listing/real-state-listing.resolver';
-import { RealStateDetailsPage } from '../real-state/details/real-state-details.page';
 import { RealStateDetailsResolver } from '../real-state/details/real-state-details.resolver';
-
-import { ProfilePage } from '../profile/profile.page';
-
-import { NotificationsPage } from '../notifications/notifications.page';
 import { NotificationsResolver } from '../notifications/notifications.resolver';
 import { NotificationsService } from '../notifications/notifications.service';
 
@@ -37,83 +20,128 @@ const routes: Routes = [
     children: [
       {
         path: 'categories',
-        outlet: 'home',
-        component: CategoriesPage
+        children: [
+          {
+            path: '',
+            loadChildren: '../categories/categories.module#CategoriesPageModule'
+          }
+        ]
       },
       {
         path: 'fashion',
-        outlet: 'home',
-        component: FashionListingPage,
+        children: [
+          {
+            path: '',
+            loadChildren: '../fashion/listing/fashion-listing.module#FashionListingPageModule'
+          }
+        ],
         resolve: {
           data: FashionListingResolver
         }
       },
       {
         path: 'travel',
-        outlet: 'home',
-        component: TravelListingPage,
+        children: [
+          {
+            path: '',
+            loadChildren: '../travel/listing/travel-listing.module#TravelListingPageModule'
+          }
+        ],
         resolve: {
           data: TravelListingResolver
         }
       },
       {
         path: 'food',
-        outlet: 'home',
-        component: FoodListingPage,
+        children: [
+          {
+            path: '',
+            loadChildren: '../food/listing/food-listing.module#FoodListingPageModule'
+          }
+        ],
         resolve: {
           data: FoodListingResolver
         }
       },
       {
         path: 'deals',
-        outlet: 'home',
-        component: DealsListingPage,
+        children: [
+          {
+            path: '',
+            loadChildren: '../deals/listing/deals-listing.module#DealsListingPageModule'
+          }
+        ],
         resolve: {
           data: DealsListingResolver
         }
       },
       {
         path: 'deals/:productId',
-        outlet: 'home',
-        component: DealsDetailsPage,
+        children: [
+          {
+            path: '',
+            loadChildren: '../deals/details/deals-details.module#DealsDetailsPageModule'
+          }
+        ],
         resolve: {
           data: DealsDetailsResolver
         }
       },
       {
         path: 'real-state',
-        outlet: 'home',
-        component: RealStateListingPage,
+        children: [
+          {
+            path: '',
+            loadChildren: '../real-state/listing/real-state-listing.module#RealStateListingPageModule'
+          }
+        ],
         resolve: {
           data: RealStateListingResolver
         }
       },
       {
         path: 'real-state/:productId',
-        outlet: 'home',
-        component: RealStateDetailsPage,
+        children: [
+          {
+            path: '',
+            loadChildren: '../real-state/details/real-state-details.module#RealStateDetailsPageModule'
+          }
+        ],
         resolve: {
           data: RealStateDetailsResolver
         }
       },
       {
         path: 'profile',
-        outlet: 'profile',
-        component: ProfilePage
+        children: [
+          {
+            path: '',
+            loadChildren: '../profile/profile.module#ProfilePageModule'
+          }
+        ]
       },
       {
         path: 'notifications',
-        outlet: 'notifications',
-        component: NotificationsPage,
+        children: [
+          {
+            path: '',
+            loadChildren: '../notifications/notifications.module#NotificationsPageModule'
+          }
+        ],
         resolve: {
-         data: NotificationsResolver,
-       }
+         data: NotificationsResolver
+        }
+      },
+      {
+        path: '',
+        redirectTo: 'app/tabs/categories',
+        pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/(home:categories)',
+    redirectTo: 'app/tabs/categories',
     pathMatch: 'full'
   }
 ];
@@ -127,7 +155,6 @@ const routes: Routes = [
     FoodListingResolver,
     DealsListingResolver,
     RealStateListingResolver,
-
     NotificationsResolver,
     NotificationsService
   ]
