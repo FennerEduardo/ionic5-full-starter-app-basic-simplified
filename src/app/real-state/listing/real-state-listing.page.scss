@@ -26,6 +26,10 @@
 			font-weight: 600;
       color: var(--ion-color-dark-tint);
 
+      .price-anchor {
+        text-decoration: none;
+      }
+
       app-text-shell {
         --c-bg-color: rgba(var(--shell-color-rgb), .25);
         --c-line-height: 16px;

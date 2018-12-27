@@ -1,7 +1,7 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button class="skip-getting-started-button" color="medium" fill="clear" href="auth/login">skip</ion-button>
+      <ion-button class="skip-getting-started-button" color="medium" fill="clear" [routerLink]="['/auth/login']">skip</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -118,7 +118,7 @@
             </ion-row>
           </ion-col>
           <ion-col class="call-to-action-col">
-            <ion-button class="signup-button" expand="block" href="auth/signup">Signup</ion-button>
+            <ion-button class="signup-button" expand="block" [routerLink]="['/auth/signup']">Signup</ion-button>
           </ion-col>
         </ion-row>
       </ion-slide>
