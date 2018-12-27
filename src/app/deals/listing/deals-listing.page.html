@@ -15,13 +15,13 @@
           <app-preload-image class="add-spinner" [ratio]="{w: 128, h: 32}" [src]="item.logo"></app-preload-image>
         </ion-col>
         <ion-col size="3">
-          <ion-button class="claim-button" expand="block" shape="round" color="claim" [routerLink]="['app/tabs/deals', item.slug]">CLAIM</ion-button>
+          <ion-button class="claim-button" expand="block" shape="round" color="claim" [routerLink]="['/app/tabs/deals/', item.slug]">CLAIM</ion-button>
         </ion-col>
       </ion-row>
       <ion-row class="middle-row">
         <ion-col class="info-col">
           <h4 class="item-name">
-            <a class="name-anchor" [routerLink]="['app/tabs/deals', item.slug]">
+            <a class="name-anchor" [routerLink]="['/app/tabs/deals/', item.slug]">
               <app-text-shell [data]="item.name" [attr.element]="'h4'"></app-text-shell>
             </a>
           </h4>
