@@ -21,8 +21,16 @@ const routes: Routes = [
             loadChildren: '../fashion/listing/fashion-listing.module#FashionListingPageModule'
           },
           {
+            path: 'fashion/:productId',
+            loadChildren: '../fashion/details/fashion-details.module#FashionDetailsPageModule'
+          },
+          {
             path: 'food',
             loadChildren: '../food/listing/food-listing.module#FoodListingPageModule'
+          },
+          {
+            path: 'food/:productId',
+            loadChildren: '../food/details/food-details.module#FoodDetailsPageModule'
           },
           {
             path: 'travel',
