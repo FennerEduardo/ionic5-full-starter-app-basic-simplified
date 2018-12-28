@@ -17,7 +17,10 @@ import { FoodService } from '../food.service';
 const routes: Routes = [
   {
     path: '',
-    component: FoodListingPage
+    component: FoodListingPage,
+    resolve: {
+      data: FoodListingResolver
+    }
   }
 ];
 

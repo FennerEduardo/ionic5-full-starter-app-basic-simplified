@@ -15,7 +15,10 @@ import { FashionService } from '../fashion.service';
 const routes: Routes = [
   {
     path: '',
-    component: FashionListingPage
+    component: FashionListingPage,
+    resolve: {
+      data: FashionListingResolver
+    }
   }
 ];
 

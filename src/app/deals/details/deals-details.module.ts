@@ -15,7 +15,10 @@ import { DealsService } from '../deals.service';
 const routes: Routes = [
   {
     path: '',
-    component: DealsDetailsPage
+    component: DealsDetailsPage,
+    resolve: {
+      data: DealsDetailsResolver
+    }
   }
 ];
 

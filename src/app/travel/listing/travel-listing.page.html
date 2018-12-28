@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="app/tabs/categories"></ion-back-button>
+      <ion-back-button defaultHref="app/categories"></ion-back-button>
     </ion-buttons>
     <ion-title>Travel Listing</ion-title>
   </ion-toolbar>
@@ -19,7 +19,7 @@
                   <app-preload-image [ratio]="{w: 1, h: 1}" [src]="item.icon"></app-preload-image>
                 </div>
                 <h2 class="item-name">
-                  <a class="name-anchor" [routerLink]="['/coming-soon']">
+                  <a class="name-anchor" [routerLink]="['/app/categories/travel/', item.slug]">
                     <app-text-shell [data]="item.name" [attr.element]="'h2'"></app-text-shell>
                   </a>
                 </h2>
@@ -34,7 +34,7 @@
       <ion-row class="info-row">
         <ion-col class="main-info-col" size="10">
           <h3 class="item-name">
-            <a class="name-anchor" [routerLink]="['/coming-soon']">
+            <a class="name-anchor" [routerLink]="['/app/categories/travel/', item.slug]">
               <app-text-shell [data]="(item?.name && item?.category) ? (item.name + ' - ' + item.category) : (item.name)" [attr.element]="'h3'"></app-text-shell>
             </a>
           </h3>

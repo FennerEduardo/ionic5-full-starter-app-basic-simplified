@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { NotificationsPage } from './notifications.page';
+import { NotificationsResolver } from '../notifications/notifications.resolver';
+import { NotificationsService } from '../notifications/notifications.service';
 
 @NgModule({
   imports: [
@@ -13,11 +15,18 @@ import { NotificationsPage } from './notifications.page';
     FormsModule,
     RouterModule.forChild([
       {
-         path: '',
-         component: NotificationsPage
+        path: '',
+        component: NotificationsPage,
+        resolve: {
+          data: NotificationsResolver
+        }
       }
     ])
   ],
-  declarations: [NotificationsPage]
+  declarations: [ NotificationsPage ],
+  providers: [
+    NotificationsResolver,
+    NotificationsService
+  ]
 })
 export class NotificationsPageModule {}

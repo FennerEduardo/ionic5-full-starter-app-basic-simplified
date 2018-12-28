@@ -15,7 +15,10 @@ import { RealStateService } from '../real-state.service';
 const routes: Routes = [
   {
     path: '',
-    component: RealStateListingPage
+    component: RealStateListingPage,
+    resolve: {
+      data: RealStateListingResolver
+    }
   }
 ];
 

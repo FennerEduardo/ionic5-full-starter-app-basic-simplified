@@ -15,7 +15,10 @@ import { TravelService } from '../travel.service';
 const routes: Routes = [
   {
     path: '',
-    component: TravelListingPage
+    component: TravelListingPage,
+    resolve: {
+      data: TravelListingResolver
+    }
   }
 ];
 
