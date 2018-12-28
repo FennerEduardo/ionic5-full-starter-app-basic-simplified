@@ -12,14 +12,14 @@
     <div class="listing-item" *ngFor="let item of listing.items">
       <ion-row class="info-row">
         <ion-col class="icon-col" size="2">
-          <a class="icon-anchor" [routerLink]="['/auth/coming-soon']">
+          <a class="icon-anchor" [routerLink]="['/app/categories/food/', item.slug]">
             <app-preload-image class="add-spinner" [ratio]="{w: 1, h: 1}" [src]="item.icon"></app-preload-image>
           </a>
         </ion-col>
         <ion-col class="description-col">
           <ion-row class="description-wrapper">
             <h4 class="item-name">
-              <a class="name-anchor" [routerLink]="['/auth/coming-soon']">
+              <a class="name-anchor" [routerLink]="['/app/categories/food/', item.slug]">
                 <app-text-shell [data]="item.name" [attr.element]="'h4'"></app-text-shell>
               </a>
             </h4>
@@ -47,7 +47,7 @@
       <ion-row class="pictures-row">
         <ion-col class="picture-wrapper" size="2" *ngFor="let picture of item.pictures.slice(0, 5); let i = index">
           <app-preload-image [ratio]="{w: 1, h: 1}" [src]="picture"></app-preload-image>
-          <a class="has-more-pictures" [routerLink]="['/auth/coming-soon']" *ngIf="i == 4 && item.pictures.length > 5">
+          <a class="has-more-pictures" [routerLink]="['/app/categories/food/', item.slug]" *ngIf="i == 4 && item.pictures.length > 5">
             <span class="pictures-count">{{ item.pictures.length - 5 }}</span>
           </a>
         </ion-col>

@@ -12,14 +12,14 @@
     <ion-row class="items-row">
       <ion-col size="6" class="listing-item" *ngFor="let item of listing.items">
         <div class="item-image">
-          <a class="image-anchor" [routerLink]="['/coming-soon']">
+          <a class="image-anchor" [routerLink]="['/app/categories/fashion/', item.slug]">
             <app-preload-image class="add-spinner" [ratio]="{w: 3, h: 4}" [src]="item.image"></app-preload-image>
           </a>
         </div>
         <ion-row class="item-body">
           <ion-col size="12" class="main-info">
             <h4 class="item-name">
-              <a class="name-anchor" [routerLink]="['/coming-soon']">
+              <a class="name-anchor" [routerLink]="['/app/categories/fashion/', item.slug]">
                 <app-text-shell [data]="item.name" [attr.element]="'h4'"></app-text-shell>
               </a>
             </h4>
