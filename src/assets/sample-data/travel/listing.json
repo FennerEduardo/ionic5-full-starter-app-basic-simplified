@@ -2,6 +2,7 @@
   "items": [
     {
       "id": 1,
+      "slug": "tristan-narvaja",
       "image": "./assets/sample-images/travel/Travel1-64.47.png",
       "icon": "./assets/sample-images/travel/TravelIcon1.png",
       "name": "Tristán Narvaja ",
@@ -13,6 +14,7 @@
     },
     {
       "id": 2,
+      "slug": "rambla-montevideo",
       "image": "./assets/sample-images/travel/Travel2-64.47.png",
       "icon": "./assets/sample-images/travel/TravelIcon2.png",
       "name": "Rambla Montevideo",
@@ -24,6 +26,7 @@
     },
     {
       "id": 3,
+      "slug": "legislative-palace-bistro",
       "image": "./assets/sample-images/travel/Travel3-64.47.png",
       "icon": "./assets/sample-images/travel/TravelIcon3.png",
       "name": "Legislative Palace Bistro",
@@ -35,6 +38,7 @@
     },
     {
       "id": 4,
+      "slug": "colonia",
       "image": "./assets/sample-images/travel/Travel4-64.47.png",
       "icon": "./assets/sample-images/travel/TravelIcon4.png",
       "name": "Colonia",
@@ -46,6 +50,7 @@
     },
     {
       "id": 5,
+      "slug": "casapueblo",
       "image": "./assets/sample-images/travel/Travel5-64.47.png",
       "icon": "./assets/sample-images/travel/TravelIcon5.png",
       "name": "Casapueblo",

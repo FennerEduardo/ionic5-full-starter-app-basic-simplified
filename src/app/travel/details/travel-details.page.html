@@ -9,4 +9,59 @@
 
 <ion-content class="travel-details-content">
   <h2>Travel details</h2>
+  Image: {{ details?.image }}
+  <br/>
+  <br/>
+  Icon: {{ details?.icon }}
+  <br/>
+  <br/>
+  Name: {{ details?.name }}
+  <br/>
+  <br/>
+  Category: {{ details?.category }}
+  <br/>
+  <br/>
+  Short Description: {{ details?.shortDescription }}
+  <br/>
+  <br/>
+  Rating: {{ details?.rating }}
+  <br/>
+  <br/>
+  Reviews Count: {{ details?.reviewsCount }}
+  <br/>
+  <br/>
+  <ng-container *ngFor="let tag of details?.tags">
+    Tag: {{ tag }}
+    <br/>
+  </ng-container>
+  <br/>
+  <br/>
+  Full Description: {{ details?.fullDescription }}
+  <br/>
+  <br/>
+  <ng-container *ngFor="let openHour of details?.openHours">
+    Open Hour: {{ openHour.day }} - {{ openHour.hourFrom }} - {{ openHour.hourTo }}
+    <br/>
+  </ng-container>
+  <br/>
+  <br/>
+  Location: {{ details?.location?.address }} - {{ details?.location?.city }} - {{ details?.location?.latlng }}
+  <br/>
+  <br/>
+  <ng-container *ngFor="let placeToStay of details?.whereToStay">
+    Place to stay: {{ placeToStay.picture }} - {{ placeToStay.name }} - {{ placeToStay.rating }}
+    <br/>
+  </ng-container>
+  <br/>
+  <br/>
+  <ng-container *ngFor="let placeToEat of details?.whereToEat">
+    Place to eat: {{ placeToEat.picture }} - {{ placeToEat.name }} - {{ placeToEat.rating }}
+    <br/>
+  </ng-container>
+  <br/>
+  <br/>
+  <ng-container *ngFor="let relatedActivity of details?.relatedActivities">
+    Related Activity: {{ relatedActivity.picture }} - {{ relatedActivity.name }} - {{ relatedActivity.category }} - {{ relatedActivity.rating }}
+    <br/>
+  </ng-container>
 </ion-content>

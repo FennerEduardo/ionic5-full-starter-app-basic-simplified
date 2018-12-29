@@ -1,42 +1,76 @@
 export class TravelDetailsModel {
-  picture: string;
+  image: string;
+  icon: string;
+  name: string;
+  category: string;
+  shortDescription: string;
+  rating: number;
+  reviewsCount: number;
+  tags: Array<string> = new Array(3).fill('');
+  fullDescription: string;
+  openHours: Array<{day: string, hourFrom: string, hourTo: string}> = [
+    {
+      day: '',
+      hourFrom: '',
+      hourTo: ''
+    },
+    {
+      day: '',
+      hourFrom: '',
+      hourTo: ''
+    }
+  ];
   location: {
     address: string,
     city: string,
     latlng: string
   };
-  description: string;
-  price: string;
-  accommodations: {
-    guests: number,
-    bedrooms: number,
-    beds: number,
-    bathrooms: number
-  };
-  amenities: Array<{name: string, icon: string}> = [
+  whereToStay: Array<{picture: string, name: string, rating: number}> = [
     {
+      picture: '',
       name: '',
-      icon: ''
+      rating: null
     },
     {
+      picture: '',
       name: '',
-      icon: ''
+      rating: null
     },
     {
+      picture: '',
       name: '',
-      icon: ''
+      rating: null
+    }
+  ];
+  whereToEat: Array<{picture: string, name: string, rating: number}> = [
+    {
+      picture: '',
+      name: '',
+      rating: null
     },
     {
+      picture: '',
       name: '',
-      icon: ''
+      rating: null
     },
     {
+      picture: '',
       name: '',
-      icon: ''
+      rating: null
+    }
+  ];
+  relatedActivities: Array<{picture: string, name: string, category: string, rating: number}> = [
+    {
+      picture: '',
+      name: '',
+      category: '',
+      rating: null
     },
     {
+      picture: '',
       name: '',
-      icon: ''
+      category: '',
+      rating: null
     }
   ];
 

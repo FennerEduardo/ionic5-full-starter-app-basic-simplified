@@ -1,55 +1,76 @@
 {
   "id": 1,
-  "picture": "./assets/sample-images/real-state/RealState1-64.25.png",
+  "image": "./assets/sample-images/travel/Travel1-64.47.png",
+  "icon": "./assets/sample-images/travel/TravelIcon1.png",
+  "name": "Tristán Narvaja ",
+  "category": "Flea Market",
+  "shortDescription": "A neat little market on Sunday morning.",
+  "rating": 4.8,
+  "reviewsCount": 17,
+  "tags": [
+    "vegetarian",
+    "vegan",
+    "desserts"
+  ],
+  "fullDescription": "La Feria de Tristán Narvaja is the famous Montevideo street market. Sometimes it’s called “flea market”, but I would refrain from this description simply because it is so much more than just a place to sell secondhand goods. When the day is just about to start, the area transforms into a strange universe. Greengrocers screaming at the top of their lungs vying for potential customers attention. Exotic birds chirping not from the trees, but from cages stacked in multiple layers. Puppies yapping or impatiently waiting for some kid to convince an unlucky parent to get a pet right away. Foreigners and some Uruguayans come there in search of rare objects sometimes hidden among less prized old knickknacks. Flocks of tourists wondering around antiques and books stalls. The market is a fantastic motley of myriad things not expected to be found next to each other. Old newspapers and posters, coins and stamps, pets and antiques rub shoulders with new clothes, counterfeit “luxuries” and fruits and vegetables. It is easy to lose track of time browsing the market. The crowd gets thicker closer to noon, there are so many fascinating objects to admire and too many stall rows to check. After a couple hours everything starting to blur into an endless kaleidoscope of colors and sounds. Time to leave and come back next Sunday for another excursion into the world of curiosities.",
+  "openHours": [
+    {
+      "day": "6",
+      "hourFrom": "09:00",
+      "hourTo": "15:30"
+    }
+  ],
   "location": {
-    "address": "1900 Powell Street",
-    "city": "San Fransisco, CA, United States",
+    "address": "Tristán Narvaja st, from Av. 18 de Julio to La Paz",
+    "city": "Montevideo, Uruguay",
     "latlng": "37.8021216,-122.4134178"
   },
-  "description": "Enjoy luxury living like a local in the heart of the City, Hayes Valley District. Stroll, shop and eat at the best restaurants and boutiques within in blocks. Fitness center to stay fit & landscaped rooftop terraces with outdoor seating and bbq to lounge.",
-  "price": "1919 x ppm",
-  "accommodations": {
-    "guests": 4,
-    "bedrooms": 2,
-    "beds": 4,
-    "bathrooms": 2
-  },
-  "amenities": [
+  "whereToStay": [
     {
-      "name": "Air conditioning",
-      "icon": "./assets/sample-icons/real-state/air-conditioner.svg"
+      "picture": "",
+      "name": "FOUR POINTS by Sheraton",
+      "rating": 4.1
     },
     {
-      "name": "Refrigerator",
-      "icon": "./assets/sample-icons/real-state/refrigerator.svg"
+      "picture": "",
+      "name": "IBIS Palermo",
+      "rating": 3.8
     },
     {
-      "name": "Cable TV",
-      "icon": "./assets/sample-icons/real-state/television.svg"
+      "picture": "",
+      "name": "CONTRA LUZ Hostel",
+      "rating": 4.6
+    }
+  ],
+  "whereToEat": [
+    {
+      "picture": "",
+      "name": "EL VERDE Resopub",
+      "rating": 4.1
     },
     {
-      "name": "Washer",
-      "icon": "./assets/sample-icons/real-state/washing-machine.svg"
+      "picture": "",
+      "name": "LA TORTUGUITA Bar",
+      "rating": 4.5
     },
     {
-      "name": "Microwave",
-      "icon": "./assets/sample-icons/real-state/microwave.svg"
+      "picture": "",
+      "name": "QUO Pide House",
+      "rating": 4.8
+    }
+  ],
+  "relatedActivities": [
+    {
+      "picture": "",
+      "name": "MAM",
+      "category": "Greengrocer’s Market",
+      "rating": 4.1
     },
     {
-      "name": "Elevator in Building",
-      "icon": ""
-    },
-    {
-      "name": "Iron",
-      "icon": ""
-    },
-    {
-      "name": "Gym",
-      "icon": ""
-    },
-    {
-      "name": "Pet friendly",
-      "icon": ""
+      "picture": "",
+      "name": "Parque Rodó",
+      "category": "Atractions Park",
+      "rating": 3.6
     }
   ]
 }
