@@ -1,55 +1,72 @@
 {
-  "id": 1,
-  "picture": "./assets/sample-images/real-state/RealState1-64.25.png",
-  "location": {
-    "address": "1900 Powell Street",
-    "city": "San Fransisco, CA, United States",
-    "latlng": "37.8021216,-122.4134178"
-  },
-  "description": "Enjoy luxury living like a local in the heart of the City, Hayes Valley District. Stroll, shop and eat at the best restaurants and boutiques within in blocks. Fitness center to stay fit & landscaped rooftop terraces with outdoor seating and bbq to lounge.",
-  "price": "1919 x ppm",
-  "accommodations": {
-    "guests": 4,
-    "bedrooms": 2,
-    "beds": 4,
-    "bathrooms": 2
-  },
-  "amenities": [
+  "id": 7,
+  "showcaseImages": [
     {
-      "name": "Air conditioning",
-      "icon": "./assets/sample-icons/real-state/air-conditioner.svg"
+      "type": "square",
+      "source": "./assets/sample-images/fashion/Fashion7-1.1.png"
     },
     {
-      "name": "Refrigerator",
-      "icon": "./assets/sample-icons/real-state/refrigerator.svg"
+      "type": "fill",
+      "source": "./assets/sample-images/fashion/Fashion7_2-3.4.png"
     },
     {
-      "name": "Cable TV",
-      "icon": "./assets/sample-icons/real-state/television.svg"
+      "type": "fill",
+      "source": "./assets/sample-images/fashion/Fashion7_3-3.4.png"
+    }
+  ],
+  "name": "Badass Leather Jacket",
+  "brand": "Topshop",
+  "price": 200,
+  "salePrice": 145,
+  "colorVariants": [
+    {
+      "name": "White",
+      "value": "white"
     },
     {
-      "name": "Washer",
-      "icon": "./assets/sample-icons/real-state/washing-machine.svg"
+      "name": "Navy",
+      "value": "navy"
     },
     {
-      "name": "Microwave",
-      "icon": "./assets/sample-icons/real-state/microwave.svg"
+      "name": "Coral",
+      "value": "coral"
     },
     {
-      "name": "Elevator in Building",
-      "icon": ""
+      "name": "Lime",
+      "value": "lime"
+    }
+  ],
+  "sizeVariants": [
+    {
+      "name": "XS",
+      "value": "xs"
     },
     {
-      "name": "Iron",
-      "icon": ""
+      "name": "S",
+      "value": "xs"
     },
     {
-      "name": "Gym",
-      "icon": ""
+      "name": "M",
+      "value": "m"
     },
     {
-      "name": "Pet friendly",
-      "icon": ""
+      "name": "L",
+      "value": "l"
+    },
+    {
+      "name": "XL",
+      "value": "xl"
+    }
+  ],
+  "description": "Give basics a romantic update with styles like this lace poet top. Cut with a high neckline it comes with an intricate lace detail to the bust and flowing hemline. Perfect worn with jeans for casual chic.",
+  "careInstructions": "100% Viscose. Machine wash according to instructions on care label",
+  "upc": "8726543D",
+  "relatedProducts": [
+    {
+      "id": 2
+    },
+    {
+      "id": 1
     }
   ]
 }

@@ -9,4 +9,47 @@
 
 <ion-content class="fashion-details-content">
   <h2>Fashion details</h2>
+  <ng-container *ngFor="let image of details?.showcaseImages">
+    Showcase Image: {{ image.type }} - {{ image.source }}
+    <br/>
+  </ng-container>
+  <br/>
+  <br/>
+  Name: {{ details?.name }}
+  <br/>
+  <br/>
+  Brand: {{ details?.brand }}
+  <br/>
+  <br/>
+  Price: {{ details?.price }}
+  <br/>
+  <br/>
+  Sale Price: {{ details?.salePrice }}
+  <br/>
+  <br/>
+  <ng-container *ngFor="let colorVariant of details?.colorVariants">
+    Color Variant: {{ colorVariant.name }} - {{ colorVariant.value }}
+    <br/>
+  </ng-container>
+  <br/>
+  <br/>
+  <ng-container *ngFor="let sizeVariant of details?.sizeVariants">
+    Size Variant: {{ sizeVariant.name }} - {{ sizeVariant.value }}
+    <br/>
+  </ng-container>
+  <br/>
+  <br/>
+  Description: {{ details?.description }}
+  <br/>
+  <br/>
+  Care Instructions: {{ details?.careInstructions }}
+  <br/>
+  <br/>
+  Product Code: {{ details?.upc }}
+  <br/>
+  <br/>
+  <ng-container *ngFor="let relatedProduct of details?.relatedProducts">
+    Related Product: {{ relatedProduct.id }}
+    <br/>
+  </ng-container>
 </ion-content>

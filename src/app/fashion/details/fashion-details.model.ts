@@ -1,42 +1,59 @@
 export class FashionDetailsModel {
-  picture: string;
-  location: {
-    address: string,
-    city: string,
-    latlng: string
-  };
+  showcaseImages: Array<{type: string, source: string}> = [
+    {
+      type: '',
+      source: ''
+    },
+    {
+      type: '',
+      source: ''
+    },
+    {
+      type: '',
+      source: ''
+    }
+  ];
+  name: string;
+  brand: string;
+  price: number;
+  salePrice: number;
+  colorVariants: Array<{name: string, value: string}> = [
+    {
+      name: '',
+      value: ''
+    },
+    {
+      name: '',
+      value: ''
+    },
+    {
+      name: '',
+      value: ''
+    }
+  ];
+  sizeVariants: Array<{name: string, value: string}> = [
+    {
+      name: '',
+      value: ''
+    },
+    {
+      name: '',
+      value: ''
+    },
+    {
+      name: '',
+      value: ''
+    }
+  ];
   description: string;
-  price: string;
-  accommodations: {
-    guests: number,
-    bedrooms: number,
-    beds: number,
-    bathrooms: number
-  };
-  amenities: Array<{name: string, icon: string}> = [
+  careInstructions: string;
+  upc: string;
+  relatedProducts: Array<{id: number}> = [
     {
-      name: '',
-      icon: ''
+      id: null
     },
     {
-      name: '',
-      icon: ''
-    },
-    {
-      name: '',
-      icon: ''
-    },
-    {
-      name: '',
-      icon: ''
-    },
-    {
-      name: '',
-      icon: ''
-    },
-    {
-      name: '',
-      icon: ''
+      id: null
     }
   ];
 
