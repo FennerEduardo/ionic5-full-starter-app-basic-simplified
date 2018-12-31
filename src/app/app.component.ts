@@ -18,24 +18,24 @@ export class AppComponent {
     },
     {
       title: 'Profile',
-      url: 'app/profile',
+      url: '/app/profile',
       icon: 'person'
     },
     {
       title: 'Notifications',
-      url: 'app/notifications',
+      url: '/app/notifications',
       icon: 'notifications'
     }
   ];
   accountPages = [
     {
       title: 'Log In',
-      url: 'auth/login',
+      url: '/auth/login',
       icon: 'log-in'
     },
     {
       title: 'Sign Up',
-      url: 'auth/signup',
+      url: '/auth/signup',
       icon: 'person-add'
     },
     {
