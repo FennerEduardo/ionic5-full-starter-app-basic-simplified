@@ -9,4 +9,75 @@
 
 <ion-content class="food-details-content">
   <h2>Food details</h2>
+  Icon: {{ details?.icon }}
+  <br/>
+  <br/>
+  Showcase Image: {{ details?.showcaseImage }}
+  <br/>
+  <br/>
+  Name: {{ details?.name }}
+  <br/>
+  <br/>
+  Short Name: {{ details?.shortName }}
+  <br/>
+  <br/>
+  Style: {{ details?.style }}
+  <br/>
+  <br/>
+  Price Range: {{ details?.priceRange }}
+  <br/>
+  <br/>
+  <ng-container *ngFor="let rating of details?.ratings">
+    Rating: {{ rating.concept }} - {{ rating.rate }}
+    <br/>
+  </ng-container>
+  <br/>
+  <br/>
+  Reviews Count: {{ details?.reviewsCount }}
+  <br/>
+  <br/>
+  <ng-container *ngFor="let openHour of details?.openHours">
+    Open Hour: {{ openHour.day }} - {{ openHour.hourFrom }} - {{ openHour.hourTo }}
+    <br/>
+  </ng-container>
+  <br/>
+  <br/>
+  Location: {{ details?.location?.address }} - {{ details?.location?.city }} - {{ details?.location?.latlng }}
+  <br/>
+  <br/>
+  <ng-container *ngFor="let tag of details?.tags">
+    Tag: {{ tag }}
+    <br/>
+  </ng-container>
+  <br/>
+  <br/>
+  <ng-container *ngFor="let picture of details?.usersPictures">
+    User Picture: {{ picture }}
+    <br/>
+  </ng-container>
+  <br/>
+  <br/>
+  <ng-container *ngFor="let dish of details?.popularDishes">
+    Popular Dish: {{ dish.name }} - {{ dish.rate }} - {{ dish.votesCount }}
+    <br/>
+  </ng-container>
+  <br/>
+  <br/>
+  <ng-container *ngFor="let review of details?.reviews">
+    Review: {{ review.publishedAt }} - {{ review.message }}
+    <br/>
+    Review - User: {{ review?.user?.image }} - {{ review?.user?.name }} - {{ review?.user?.reviewsCount }} - {{ review?.user?.points }}
+    <br/>
+    <ng-container *ngFor="let rating of review?.ratings">
+      Review - Rating: {{ rating.concept }} - {{ rating.rate }}
+      <br/>
+    </ng-container>
+    <br/>
+  </ng-container>
+  <br/>
+  <br/>
+  <ng-container *ngFor="let recipe of details?.popularRecipes">
+    Popular Recipe: {{ recipe.name }} - {{ recipe.chef }} - {{ recipe.dificulty }} - {{ recipe.time }} - {{ recipe.calories }} - {{ recipe.chefExtract }}
+    <br/>
+  </ng-container>
 </ion-content>

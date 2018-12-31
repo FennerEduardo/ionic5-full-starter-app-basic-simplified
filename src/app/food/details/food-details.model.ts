@@ -1,42 +1,154 @@
 export class FoodDetailsModel {
-  picture: string;
+  icon: string;
+  showcaseImage: string;
+  name: string;
+  shortName: string;
+  style: string;
+  priceRange: number;
+  ratings: Array<{concept: string, rate: number}> = [
+    {
+      concept: '',
+      rate: null
+    },
+    {
+      concept: '',
+      rate: null
+    },
+    {
+      concept: '',
+      rate: null
+    }
+  ];
+  reviewsCount: number;
+  openHours: Array<{day: string, hourFrom: string, hourTo: string}> = [
+    {
+      day: '',
+      hourFrom: '',
+      hourTo: ''
+    },
+    {
+      day: '',
+      hourFrom: '',
+      hourTo: ''
+    }
+  ];
   location: {
     address: string,
     city: string,
     latlng: string
   };
-  description: string;
-  price: string;
-  accommodations: {
-    guests: number,
-    bedrooms: number,
-    beds: number,
-    bathrooms: number
-  };
-  amenities: Array<{name: string, icon: string}> = [
+  tags: Array<string> = [
+    '',
+    '',
+    ''
+  ];
+  usersPictures: Array<string> = [
+    '',
+    '',
+    '',
+    '',
+    '',
+    ''
+  ];
+  popularDishes: Array<{name: string, rate: number, votesCount: number}> = [
     {
       name: '',
-      icon: ''
+      rate: null,
+      votesCount: null
     },
     {
       name: '',
-      icon: ''
+      rate: null,
+      votesCount: null
+    }
+  ];
+  reviews: Array<{
+    user: {image: string, name: string, reviewsCount: number, points: number},
+    ratings: Array<{concept: string, rate: number}>,
+    publishedAt: string,
+    message: string
+  }> = [
+    {
+      user: {
+        image: '',
+        name: '',
+        reviewsCount: null,
+        points: null
+      },
+      ratings: [
+        {
+          concept: '',
+          rate: null
+        },
+        {
+          concept: '',
+          rate: null
+        },
+        {
+          concept: '',
+          rate: null
+        }
+      ],
+      publishedAt: null,
+      message: ''
     },
     {
-      name: '',
-      icon: ''
+      user: {
+        image: '',
+        name: '',
+        reviewsCount: null,
+        points: null
+      },
+      ratings: [
+        {
+          concept: '',
+          rate: null
+        },
+        {
+          concept: '',
+          rate: null
+        },
+        {
+          concept: '',
+          rate: null
+        }
+      ],
+      publishedAt: null,
+      message: ''
     },
     {
-      name: '',
-      icon: ''
-    },
+      user: {
+        image: '',
+        name: '',
+        reviewsCount: null,
+        points: null
+      },
+      ratings: [
+        {
+          concept: '',
+          rate: null
+        },
+        {
+          concept: '',
+          rate: null
+        },
+        {
+          concept: '',
+          rate: null
+        }
+      ],
+      publishedAt: null,
+      message: ''
+    }
+  ];
+  popularRecipes: Array<{name: string, chef: string, dificulty: string, time: string, calories: string, chefExtract: string}> = [
     {
       name: '',
-      icon: ''
-    },
-    {
-      name: '',
-      icon: ''
+      chef: '',
+      dificulty: '',
+      time: '',
+      calories: '',
+      chefExtract: ''
     }
   ];
 

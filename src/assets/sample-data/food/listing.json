@@ -2,6 +2,7 @@
   "items": [
     {
       "id": 1,
+      "slug": "nom-nom",
       "priceRange": 3,
       "icon": "./assets/sample-images/food/foodlogo1.png",
       "name": "NomNom",
@@ -22,8 +23,10 @@
         "./assets/sample-images/food/Cat1Foto3-1.1.png"
       ],
       "address": "6782 Bobwhite Crossing"
-    }, {
+    },
+    {
       "id": 2,
+      "slug": "happy-foods",
       "priceRange": 1,
       "icon": "./assets/sample-images/food/foodlogo2.png",
       "name": "HappyFoods",
@@ -43,8 +46,10 @@
         "./assets/sample-images/food/Cat2Foto2-1.1.png"
       ],
       "address": "1 Buhler Parkway"
-    }, {
+    },
+    {
       "id": 3,
+      "slug": "tasty",
       "priceRange": 2,
       "icon": "./assets/sample-images/food/foodlogo3.png",
       "name": "Tasty",
@@ -62,8 +67,10 @@
         "./assets/sample-images/food/Cat3Foto4-1.1.png"
       ],
       "address": "7104 Burning Wood Park"
-    }, {
+    },
+    {
       "id": 4,
+      "slug": "debbies",
       "priceRange": 2,
       "icon": "./assets/sample-images/food/foodlogo4.png",
       "name": "Debbie’s",
