@@ -156,6 +156,11 @@
     --c-bg-color: #DDD;
   }
 
+  &[element="h5"] {
+    --c-line-height: 18px;
+    --c-bg-color: #DDD;
+  }
+
   // Default one line text-shell
   @include text-shell-background(1);
 
