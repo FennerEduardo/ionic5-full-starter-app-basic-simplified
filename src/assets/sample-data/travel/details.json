@@ -66,47 +66,47 @@
   },
   "whereToStay": [
     {
-      "picture": "",
+      "picture": "./assets/sample-images/travel/travel-details-place-1.png",
       "name": "FOUR POINTS by Sheraton",
       "rating": 4.1
     },
     {
-      "picture": "",
+      "picture": "./assets/sample-images/travel/travel-details-place-2.png",
       "name": "IBIS Palermo",
       "rating": 3.8
     },
     {
-      "picture": "",
+      "picture": "./assets/sample-images/travel/travel-details-place-3.png",
       "name": "CONTRA LUZ Hostel",
       "rating": 4.6
     }
   ],
   "whereToEat": [
     {
-      "picture": "",
+      "picture": "./assets/sample-images/travel/travel-details-eat-1.png",
       "name": "EL VERDE Resopub",
       "rating": 4.1
     },
     {
-      "picture": "",
+      "picture": "./assets/sample-images/travel/travel-details-eat-2.png",
       "name": "LA TORTUGUITA Bar",
       "rating": 4.5
     },
     {
-      "picture": "",
+      "picture": "./assets/sample-images/travel/travel-details-eat-3.png",
       "name": "QUO Pide House",
       "rating": 4.8
     }
   ],
   "relatedActivities": [
     {
-      "picture": "",
+      "picture": "./assets/sample-images/travel/travel-details-activity-1.png",
       "name": "MAM",
       "category": "Greengrocer’s Market",
       "rating": 4.1
     },
     {
-      "picture": "",
+      "picture": "./assets/sample-images/travel/travel-details-activity-2.png",
       "name": "Parque Rodó",
       "category": "Atractions Park",
       "rating": 3.6
