@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
+import { FloorPipe } from 'angular-pipes';
+
 import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
 import { ShowHidePasswordComponent } from './show-hide-password/show-hide-password.component';
 import { FillContainerComponent } from './fill-container/fill-container.component';
@@ -18,6 +20,7 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
     IonicModule.forRoot(),
   ],
   declarations: [
+    FloorPipe,
     CustomCheckboxComponent,
     ShowHidePasswordComponent,
     FillContainerComponent,
@@ -27,6 +30,7 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
     CountdownTimerComponent
   ],
   exports: [
+    FloorPipe,
     CustomCheckboxComponent,
     ShowHidePasswordComponent,
     FillContainerComponent,
