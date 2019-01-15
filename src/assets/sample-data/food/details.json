@@ -105,7 +105,7 @@
   "reviews": [
     {
       "user": {
-        "image": "",
+        "image": "./assets/sample-images/food/user-image-1.png",
         "name": "John Smith",
         "reviewsCount": 2,
         "points": 26
@@ -130,7 +130,7 @@
     },
     {
       "user": {
-        "image": "",
+        "image": "./assets/sample-images/food/user-image-2.png",
         "name": "Clair James",
         "reviewsCount": 1,
         "points": 4
@@ -155,7 +155,7 @@
     },
     {
       "user": {
-        "image": "",
+        "image": "./assets/sample-images/food/user-image-3.png",
         "name": "Tina Johnson",
         "reviewsCount": 5,
         "points": 30
@@ -181,8 +181,12 @@
   ],
   "popularRecipes": [
     {
+      "showcaseImage": "./assets/sample-images/food/recipe-showcase-image.png",
       "name": "Indian Pumkin Soup",
-      "chef": "Rocío Lazarczuk",
+      "chef": {
+        "name": "Rocío Lazarczuk",
+        "image": "./assets/sample-images/food/recipe-chef-image.png"
+      },
       "dificulty": "easy",
       "time": "45",
       "calories": "355 kcal",

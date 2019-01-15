@@ -154,10 +154,22 @@ export class FoodDetailsModel {
       message: ''
     }
   ];
-  popularRecipes: Array<{name: string, chef: string, dificulty: string, time: string, calories: string, chefExtract: string}> = [
+  popularRecipes: Array<{
+    showcaseImage: string,
+    name: string,
+    chef: {name: string, image: string},
+    dificulty: string,
+    time: string,
+    calories: string,
+    chefExtract: string
+  }> = [
     {
+      showcaseImage: '',
       name: '',
-      chef: '',
+      chef: {
+        name: '',
+        image: ''
+      },
       dificulty: '',
       time: '',
       calories: '',

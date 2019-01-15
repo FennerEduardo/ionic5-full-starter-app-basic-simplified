@@ -194,12 +194,12 @@
     </div>
     <div class="recipes-list">
       <div class="recipe-item" *ngFor="let recipe of details?.popularRecipes">
-        <app-background-image [src]="">
+        <app-background-image [src]="recipe.showcaseImage">
           <app-fill-container [ratio]="{w:64, h:30}">
           </app-fill-container>
         </app-background-image>
         <div class="chef-picture-wrapper">
-          <app-preload-image [ratio]="{w: 1, h: 1}" [src]=""></app-preload-image>
+          <app-preload-image [ratio]="{w: 1, h: 1}" [src]="recipe?.chef?.image"></app-preload-image>
         </div>
         <h4 class="recipe-title">RECIPE</h4>
         <hr class="details-divider">
@@ -211,7 +211,7 @@
             <app-text-shell [data]="recipe.name" class="no-animation"></app-text-shell>
           </h3>
           <span class="recipe-chef">
-            <app-text-shell [data]="(recipe.chef) ? 'By chef'.concat(' ', recipe?.chef) : null" class="no-animation"></app-text-shell>
+            <app-text-shell [data]="(recipe.chef) ? 'By chef'.concat(' ', recipe?.chef?.name) : null" class="no-animation"></app-text-shell>
            </span>
         </div>
         <hr class="details-divider">
