@@ -147,11 +147,18 @@ ion-content {
 
       .item-price-range {
         margin-top: 5px;
-        color: var(--shell-color);
         font-size: 12px;
         letter-spacing: 1px;
         font-weight: 500;
         text-align: center;
+
+        .price {
+          color: var(--shell-color);
+        }
+
+        .no-price {
+          color: rgba(var(--ion-color-light-shade-rgb), .40);
+        }
       }
     }
 	}

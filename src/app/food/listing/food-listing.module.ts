@@ -6,8 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FloorPipe } from 'angular-pipes';
-
 import { ComponentsModule } from '../../components/components.module';
 
 import { FoodListingPage } from './food-listing.page';
@@ -34,8 +32,7 @@ const routes: Routes = [
     HttpClientModule
   ],
   declarations: [
-    FoodListingPage,
-    FloorPipe
+    FoodListingPage
   ],
   providers: [
     FoodListingResolver,

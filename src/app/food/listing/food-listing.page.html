@@ -40,7 +40,8 @@
             <app-text-shell [data]="item.rating" class="no-animation"></app-text-shell>
           </span>
           <div class="item-price-range">
-            <span class="" *ngFor="let price of [].constructor(item.priceRange)">$</span>
+            <span class="price" *ngFor="let price of [].constructor(item.priceRange)">$</span>
+            <span class="no-price" *ngFor="let price of [].constructor(5 - (item.priceRange || 1))">$</span>
           </div>
         </ion-col>
       </ion-row>
