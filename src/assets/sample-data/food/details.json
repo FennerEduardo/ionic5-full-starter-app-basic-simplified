@@ -24,43 +24,43 @@
   "reviewsCount": 8,
   "openHours": [
     {
-      "day": "0",
+      "day": "Monday",
       "open": true,
       "hourFrom": "12:00",
       "hourTo": "22:00"
     },
     {
-      "day": "1",
+      "day": "Tuesday",
       "open": true,
       "hourFrom": "12:00",
       "hourTo": "22:00"
     },
     {
-      "day": "2",
+      "day": "Wednesday",
       "open": true,
       "hourFrom": "12:00",
       "hourTo": "22:00"
     },
     {
-      "day": "3",
+      "day": "Thursday",
       "open": true,
       "hourFrom": "12:00",
       "hourTo": "24:00"
     },
     {
-      "day": "4",
+      "day": "Friday",
       "open": true,
       "hourFrom": "12:00",
       "hourTo": "24:00"
     },
     {
-      "day": "5",
+      "day": "Saturday",
       "open": true,
       "hourFrom": "12:00",
       "hourTo": "24:00"
     },
     {
-      "day": "6",
+      "day": "Sunday",
       "open": false,
       "hourFrom": "00:00",
       "hourTo": "00:00"

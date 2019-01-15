@@ -17,43 +17,43 @@
   "fullDescription": "La Feria de Tristán Narvaja is the famous Montevideo street market. Sometimes it’s called “flea market”, but I would refrain from this description simply because it is so much more than just a place to sell secondhand goods. When the day is just about to start, the area transforms into a strange universe. Greengrocers screaming at the top of their lungs vying for potential customers attention. Exotic birds chirping not from the trees, but from cages stacked in multiple layers. Puppies yapping or impatiently waiting for some kid to convince an unlucky parent to get a pet right away. Foreigners and some Uruguayans come there in search of rare objects sometimes hidden among less prized old knickknacks. Flocks of tourists wondering around antiques and books stalls. The market is a fantastic motley of myriad things not expected to be found next to each other. Old newspapers and posters, coins and stamps, pets and antiques rub shoulders with new clothes, counterfeit “luxuries” and fruits and vegetables. It is easy to lose track of time browsing the market. The crowd gets thicker closer to noon, there are so many fascinating objects to admire and too many stall rows to check. After a couple hours everything starting to blur into an endless kaleidoscope of colors and sounds. Time to leave and come back next Sunday for another excursion into the world of curiosities.",
   "openHours": [
     {
-      "day": "0",
+      "day": "Monday",
       "open": true,
       "hourFrom": "12:00",
       "hourTo": "22:00"
     },
     {
-      "day": "1",
+      "day": "Tuesday",
       "open": true,
       "hourFrom": "12:00",
       "hourTo": "22:00"
     },
     {
-      "day": "2",
+      "day": "Wednesday",
       "open": true,
       "hourFrom": "12:00",
       "hourTo": "22:00"
     },
     {
-      "day": "3",
+      "day": "Thursday",
       "open": true,
       "hourFrom": "12:00",
       "hourTo": "24:00"
     },
     {
-      "day": "4",
+      "day": "Friday",
       "open": true,
       "hourFrom": "12:00",
       "hourTo": "24:00"
     },
     {
-      "day": "5",
+      "day": "Saturday",
       "open": true,
       "hourFrom": "12:00",
       "hourTo": "24:00"
     },
     {
-      "day": "6",
+      "day": "Sunday",
       "open": false,
       "hourFrom": "00:00",
       "hourTo": "00:00"
