@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'auth/signup', loadChildren: './signup/signup.module#SignupPageModule' },
   { path: 'auth/forgot-password', loadChildren: './forgot-password/forgot-password.module#ForgotPasswordPageModule' },
   { path: 'app', loadChildren: './tabs/tabs.module#TabsPageModule' },
-  { path: 'forms', loadChildren: './forms/forms.module#FormsPageModule' },
+  { path: 'forms-and-validations', loadChildren: './forms/forms.module#FormsPageModule' },
+  { path: 'filters', loadChildren: './filters/filters.module#FiltersPageModule' },
   { path: 'coming-soon', loadChildren: './coming-soon/coming-soon.module#ComingSoonPageModule' },
   { path: 'page-not-found', loadChildren: './page-not-found/page-not-found.module#PageNotFoundModule' },
   { path: '**', redirectTo: 'page-not-found' }

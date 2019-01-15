@@ -12,6 +12,9 @@ import { TextShellComponent } from './text-shell/text-shell.component';
 import { PreloadImageComponent } from './preload-image/preload-image.component';
 import { BackgroundImageComponent } from './background-image/background-image.component';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { CounterInputComponent } from './counter-input/counter-input.component';
+import { RatingComponent } from './rating/rating.component';
+import { ColorRadioDirective } from './color-radio/color-radio.directive';
 
 @NgModule({
   imports: [
@@ -27,7 +30,10 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
     TextShellComponent,
     PreloadImageComponent,
     BackgroundImageComponent,
-    CountdownTimerComponent
+    CountdownTimerComponent,
+    CounterInputComponent,
+    RatingComponent,
+    ColorRadioDirective
   ],
   exports: [
     FloorPipe,
@@ -37,7 +43,10 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
     TextShellComponent,
     PreloadImageComponent,
     BackgroundImageComponent,
-    CountdownTimerComponent
+    CountdownTimerComponent,
+    CounterInputComponent,
+    RatingComponent,
+    ColorRadioDirective
   ],
   entryComponents: [],
 })
