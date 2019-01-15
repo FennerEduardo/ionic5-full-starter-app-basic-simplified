@@ -8,14 +8,22 @@ export class TravelDetailsModel {
   reviewsCount: number;
   tags: Array<string> = new Array(3).fill('');
   fullDescription: string;
-  openHours: Array<{day: string, hourFrom: string, hourTo: string}> = [
+  openHours: Array<{day: string, open: boolean, hourFrom: string, hourTo: string}> = [
     {
       day: '',
+      open: true,
       hourFrom: '',
       hourTo: ''
     },
     {
       day: '',
+      open: true,
+      hourFrom: '',
+      hourTo: ''
+    },
+    {
+      day: '',
+      open: false,
       hourFrom: '',
       hourTo: ''
     }
