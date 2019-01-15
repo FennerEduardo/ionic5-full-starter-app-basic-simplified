@@ -1,11 +1,12 @@
 {
   "id": 1,
-  "icon": "./assets/sample-images/food/foodlogo1.png",
-  "showcaseImage": "./assets/sample-images/food/Cat1Foto1-1.1.png",
+  "icon": "./assets/sample-images/food/food-details-icon.png",
+  "showcaseImage": "./assets/sample-images/food/food-details-showcase.png",
   "name": "La Olla Rincón Gourmet",
   "shortName": "La Olla",
   "style": "Homemade style",
   "priceRange": 3,
+  "avgRating": 4.2,
   "ratings": [
     {
       "concept": "dishes",
@@ -24,36 +25,43 @@
   "openHours": [
     {
       "day": "0",
+      "open": true,
       "hourFrom": "12:00",
       "hourTo": "22:00"
     },
     {
       "day": "1",
+      "open": true,
       "hourFrom": "12:00",
       "hourTo": "22:00"
     },
     {
       "day": "2",
+      "open": true,
       "hourFrom": "12:00",
       "hourTo": "22:00"
     },
     {
       "day": "3",
+      "open": true,
       "hourFrom": "12:00",
       "hourTo": "24:00"
     },
     {
       "day": "4",
+      "open": true,
       "hourFrom": "12:00",
       "hourTo": "24:00"
     },
     {
       "day": "5",
+      "open": true,
       "hourFrom": "12:00",
       "hourTo": "24:00"
     },
     {
       "day": "6",
+      "open": false,
       "hourFrom": "00:00",
       "hourTo": "00:00"
     }
@@ -102,6 +110,7 @@
         "reviewsCount": 2,
         "points": 26
       },
+      "avgRating": 4.2,
       "ratings": [
         {
           "concept": "dishes",
@@ -126,7 +135,8 @@
         "reviewsCount": 1,
         "points": 4
       },
-      "rating": [
+      "avgRating": 1.5,
+      "ratings": [
         {
           "concept": "dishes",
           "rate": 2.0
@@ -150,7 +160,8 @@
         "reviewsCount": 5,
         "points": 30
       },
-      "rating": [
+      "avgRating": 5,
+      "ratings": [
         {
           "concept": "dishes",
           "rate": 5.0

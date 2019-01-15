@@ -5,6 +5,7 @@ export class FoodDetailsModel {
   shortName: string;
   style: string;
   priceRange: number;
+  avgRating: number;
   ratings: Array<{concept: string, rate: number}> = [
     {
       concept: '',
@@ -20,14 +21,22 @@ export class FoodDetailsModel {
     }
   ];
   reviewsCount: number;
-  openHours: Array<{day: string, hourFrom: string, hourTo: string}> = [
+  openHours: Array<{day: string, open: boolean, hourFrom: string, hourTo: string}> = [
     {
       day: '',
+      open: true,
       hourFrom: '',
       hourTo: ''
     },
     {
       day: '',
+      open: true,
+      hourFrom: '',
+      hourTo: ''
+    },
+    {
+      day: '',
+      open: false,
       hourFrom: '',
       hourTo: ''
     }
@@ -64,6 +73,7 @@ export class FoodDetailsModel {
   ];
   reviews: Array<{
     user: {image: string, name: string, reviewsCount: number, points: number},
+    avgRating: number,
     ratings: Array<{concept: string, rate: number}>,
     publishedAt: string,
     message: string
@@ -75,6 +85,7 @@ export class FoodDetailsModel {
         reviewsCount: null,
         points: null
       },
+      avgRating: null,
       ratings: [
         {
           concept: '',
@@ -99,6 +110,7 @@ export class FoodDetailsModel {
         reviewsCount: null,
         points: null
       },
+      avgRating: null,
       ratings: [
         {
           concept: '',
@@ -123,6 +135,7 @@ export class FoodDetailsModel {
         reviewsCount: null,
         points: null
       },
+      avgRating: null,
       ratings: [
         {
           concept: '',
