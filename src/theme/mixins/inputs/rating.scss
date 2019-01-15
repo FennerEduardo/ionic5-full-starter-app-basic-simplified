@@ -1,0 +1,20 @@
+@mixin rating-item-styles($text-color, $value-color){
+	.rating-item
+	{
+		padding: 0px;
+		border: none !important;
+
+		rating {
+			flex: 1;
+			padding-right: 11px;
+
+			.rating-icon {
+				--color: var(--ion-color-#{$value-color});
+
+				&ion-icon {
+					--color: var(--ion-color-#{$value-color});
+				}
+			}
+		}
+	}
+}

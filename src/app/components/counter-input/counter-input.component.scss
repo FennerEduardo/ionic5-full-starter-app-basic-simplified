@@ -1,0 +1,27 @@
+counter-input {
+  &[basic]
+  {
+    .counter-inner
+    {
+      display: none;
+    }
+
+    .counter-icon
+    {
+      &:first-child
+      {
+        --border-radius: 12px 0px 0px 12px !important;
+      }
+
+      &:last-child
+      {
+        --border-radius: 0px 12px 12px 0px !important;
+      }
+    }
+  }
+
+  .counter-icon
+  {
+    --box-shadow: none;
+  }
+}
