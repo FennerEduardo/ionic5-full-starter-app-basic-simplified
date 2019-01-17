@@ -44,7 +44,8 @@ export class FoodDetailsModel {
   location: {
     address: string,
     city: string,
-    latlng: string
+    latlng: string,
+    mapImage: string
   };
   tags: Array<string> = [
     '',

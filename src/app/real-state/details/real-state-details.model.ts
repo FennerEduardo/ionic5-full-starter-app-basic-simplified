@@ -3,7 +3,8 @@ export class RealStateDetailsModel {
   location: {
     address: string,
     city: string,
-    latlng: string
+    latlng: string,
+    mapImage: string
   };
   description: string;
   price: string;

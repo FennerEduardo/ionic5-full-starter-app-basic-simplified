@@ -69,7 +69,8 @@
   "location": {
     "address": "1900 Powell Street",
     "city": "San Fransisco, CA, United States",
-    "latlng": "37.8021216,-122.4134178"
+    "latlng": "37.8021216,-122.4134178",
+    "mapImage": "./assets/sample-images/food/food-details-map.png"
   },
   "tags": [
     "Gluten free",

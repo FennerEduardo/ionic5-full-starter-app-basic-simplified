@@ -62,7 +62,8 @@
   "location": {
     "address": "Tristán Narvaja st, from Av. 18 de Julio to La Paz",
     "city": "Montevideo, Uruguay",
-    "latlng": "37.8021216,-122.4134178"
+    "latlng": "-34.9026348,-56.1814708",
+    "mapImage": "./assets/sample-images/travel/travel-map.png"
   },
   "whereToStay": [
     {
