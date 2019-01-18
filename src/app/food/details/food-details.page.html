@@ -88,8 +88,8 @@
         <app-text-shell [data]="details.location?.address" class="no-animation"></app-text-shell>
       </span>
     </div>
-    <!-- <app-preload-image [ratio]="{w: 64, h: 20}" [src]="'https://maps.googleapis.com/maps/api/staticmap?center=' + details.location?.latlng + '&zoom=15&size=640x200&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xd9453a%7C' + details.location?.latlng + '&key=AIzaSyD7xjQgbz02giZTx22rD0NFI7sfZB3fQP8'"></app-preload-image> -->
-    <app-preload-image class="add-spinner" [ratio]="{w: 64, h: 20}" [src]="''"></app-preload-image>
+    <!-- <app-preload-image [ratio]="{w: 64, h: 20}" [src]="'https://maps.googleapis.com/maps/api/staticmap?center=' + details.location?.latlng + '&zoom=15&size=640x200&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xd9453a%7C' + details.location?.latlng + '&key=YOUR_KEY_HERE'"></app-preload-image> -->
+    <app-preload-image class="add-spinner" [ratio]="{w: 64, h: 20}" [src]="details.location?.mapImage"></app-preload-image>
   </div>
   <ion-row class="details-tags">
     <ion-col class="tag-wrapper" *ngFor="let tag of details?.tags">

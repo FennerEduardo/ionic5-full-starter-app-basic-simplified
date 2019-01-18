@@ -87,7 +87,8 @@ ion-content {
       --padding-start: 0px;
       --ion-item-background: var(--ion-color-tertiary);
       --ion-item-color: var(--ion-color-primary);
-
+      --inner-border-width: 0px;
+      
       text-align: center;
 
       &:not(:last-child) {

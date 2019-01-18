@@ -4,7 +4,8 @@
   "location": {
     "address": "1900 Powell Street",
     "city": "San Fransisco, CA, United States",
-    "latlng": "37.8021216,-122.4134178"
+    "latlng": "37.8383976,-122.3019787",
+    "mapImage": "./assets/sample-images/real-state/real-state-map.png"
   },
   "description": "Enjoy luxury living like a local in the heart of the City, Hayes Valley District. Stroll, shop and eat at the best restaurants and boutiques within in blocks. Fitness center to stay fit & landscaped rooftop terraces with outdoor seating and bbq to lounge.",
   "price": "1919 x ppm",
