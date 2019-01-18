@@ -91,7 +91,7 @@
 
           display: block;
           font-weight: 400;
-          color: var(--ion-color-secondary);
+          color: var(--shell-color);
           font-size: 16px;
         }
 
@@ -103,6 +103,7 @@
 
           display: block;
           text-decoration: line-through;
+          color: var(--ion-color-medium-shade);
           font-size: 14px;
         }
       }
