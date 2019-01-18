@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { DealsDetailsModel } from './deals-details.model';
@@ -6,8 +6,7 @@ import { DealsDetailsModel } from './deals-details.model';
 @Component({
   selector: 'app-deals-details',
   templateUrl: './deals-details.page.html',
-  styleUrls: ['./deals-details.page.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  styleUrls: ['./deals-details.page.scss']
 })
 export class DealsDetailsPage implements OnInit {
   details: DealsDetailsModel;

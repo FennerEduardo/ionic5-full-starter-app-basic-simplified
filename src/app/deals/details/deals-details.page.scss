@@ -67,18 +67,6 @@
           // As we set ViewEncapsulation.ShadowDom, box-sizing get's resetted to content-box if I don't add this
           box-sizing: border-box;
         }
-
-        .swiper-pagination {
-          height: var(--swiper-pagination-height);
-          line-height: 1;
-          // .swiper-pagination is 18px height, .slide-inner-row has 40px of padding-bottom => bottom = (40px - 18px)/2 = 11px
-          bottom: calc((var(--swiper-pagination-space) - var(--swiper-pagination-height) ) / 2);
-
-          .swiper-pagination-bullet {
-            width: var(--pagination-bullet-size);
-            height: var(--pagination-bullet-size);
-          }
-        }
       }
 
       app-preload-image.showcase-image {
@@ -294,13 +282,27 @@
       }
     }
   }
-
 }
-
-
 
 :host(.is-shell) {
   // .amenity-icon {
   //   background-color: rgba(var(--shell-color-rgb), .05);
   // }
+}
+
+// ISSUE: .swiper-paggination gets rendered dynamically. That prevents styling the elements when using the default Angular ViewEncapsulation.None
+//        (Angular doesn't add an '_ngcontent' attribute to the .swiper-paggination because it's dynamically rendered)
+// FIX:   See: https://stackoverflow.com/a/36265072/1116959
+:host ::ng-deep .details-slides {
+  .swiper-pagination {
+    height: var(--swiper-pagination-height);
+    line-height: 1;
+    // .swiper-pagination is 18px height, .slide-inner-row has 40px of padding-bottom => bottom = (40px - 18px)/2 = 11px
+    bottom: calc((var(--swiper-pagination-space) - var(--swiper-pagination-height) ) / 2);
+
+    .swiper-pagination-bullet {
+      width: var(--pagination-bullet-size);
+      height: var(--pagination-bullet-size);
+    }
+  }
 }
