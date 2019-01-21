@@ -7,7 +7,6 @@
   </ion-toolbar>
 </ion-header>
 
-<!-- <ion-content [ngClass]="{'shell': (listing.isShell)}"> -->
 <ion-content>
   <ng-container *ngIf="listing?.items">
     <div class="listing-item" *ngFor="let item of listing.items">
@@ -65,7 +64,7 @@
           <ion-row class="amenities-wrapper">
             <ng-container>
               <ion-col class="item-amenity" size="4" *ngFor="let amenity of item.amenities.slice(0, 4); let i = index">
-                <ion-icon class="amenity-icon" [src]="amenity.icon"></ion-icon>
+                <ion-icon *ngIf="amenity.icon" class="amenity-icon" [src]="amenity.icon"></ion-icon>
                 <span class="amenity-value">
                   <app-text-shell [data]="amenity.name" class="no-animation"></app-text-shell>
                 </span>
