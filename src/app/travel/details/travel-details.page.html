@@ -31,13 +31,13 @@
     <ion-col size="12">
       <div class="details-score">
         <div class="score-item">
-          <ion-icon class="score-icon" name="star"></ion-icon>
+          <ion-icon class="score-icon" name="star-outline"></ion-icon>
           <div class="score-value">
             <app-text-shell [data]="details?.rating" class="no-animation"></app-text-shell>
           </div>
         </div>
         <div class="score-item">
-          <ion-icon class="score-icon" name="chatbubbles"></ion-icon>
+          <ion-icon class="score-icon" src="./assets/sample-icons/travel/reviews.svg"></ion-icon>
           <div class="score-value">
             <app-text-shell [data]="details?.reviewsCount" class="no-animation"></app-text-shell>
           </div>
@@ -105,7 +105,7 @@
             <app-text-shell [data]="placeToStay.name" [attr.element]="'h5'" class="no-animation"></app-text-shell>
           </h5>
           <div class="place-rating">
-            <ion-icon class="rating-icon" name="star"></ion-icon>
+            <ion-icon class="rating-icon" name="star-outline"></ion-icon>
             <div class="rating-value">
               <app-text-shell [data]="placeToStay.rating" class="no-animation"></app-text-shell>
             </div>
@@ -124,7 +124,7 @@
             <app-text-shell [data]="placeToEat.name" [attr.element]="'h5'" class="no-animation"></app-text-shell>
           </h5>
           <div class="place-rating">
-            <ion-icon class="rating-icon" name="star"></ion-icon>
+            <ion-icon class="rating-icon" name="star-outline"></ion-icon>
             <div class="rating-value">
               <app-text-shell [data]="placeToEat.rating" class="no-animation"></app-text-shell>
             </div>
@@ -150,7 +150,7 @@
           <app-text-shell [data]="relatedActivity.category" class="no-animation"></app-text-shell>
         </span>
         <div class="activity-rating">
-          <ion-icon class="rating-icon" name="star"></ion-icon>
+          <ion-icon class="rating-icon" name="star-outline"></ion-icon>
           <div class="rating-value">
             <app-text-shell [data]="relatedActivity.rating" [attr.lines]="1" class="no-animation"></app-text-shell>
           </div>
