@@ -9,11 +9,11 @@
   "avgRating": 4.2,
   "ratings": [
     {
-      "concept": "dishes",
+      "concept": "food",
       "rate": 4.2
     },
     {
-      "concept": "timing",
+      "concept": "service",
       "rate": 4.4
     },
     {
@@ -114,11 +114,11 @@
       "avgRating": 4.2,
       "ratings": [
         {
-          "concept": "dishes",
+          "concept": "food",
           "rate": 4.2
         },
         {
-          "concept": "timing",
+          "concept": "service",
           "rate": 4.4
         },
         {
@@ -139,11 +139,11 @@
       "avgRating": 1.5,
       "ratings": [
         {
-          "concept": "dishes",
+          "concept": "food",
           "rate": 2.0
         },
         {
-          "concept": "timing",
+          "concept": "service",
           "rate": 0.5
         },
         {
@@ -164,11 +164,11 @@
       "avgRating": 5,
       "ratings": [
         {
-          "concept": "dishes",
+          "concept": "food",
           "rate": 5.0
         },
         {
-          "concept": "timing",
+          "concept": "service",
           "rate": 5.0
         },
         {
@@ -188,7 +188,7 @@
         "name": "Rocío Lazarczuk",
         "image": "./assets/sample-images/food/recipe-chef-image.png"
       },
-      "dificulty": "easy",
+      "difficulty": "easy",
       "time": "45",
       "calories": "355 kcal",
       "chefExtract": "It’s the perfect appetizer for a lovely dinner: sweet and spice."

@@ -159,7 +159,7 @@ export class FoodDetailsModel {
     showcaseImage: string,
     name: string,
     chef: {name: string, image: string},
-    dificulty: string,
+    difficulty: string,
     time: string,
     calories: string,
     chefExtract: string
@@ -171,7 +171,7 @@ export class FoodDetailsModel {
         name: '',
         image: ''
       },
-      dificulty: '',
+      difficulty: '',
       time: '',
       calories: '',
       chefExtract: ''
