@@ -17,41 +17,24 @@ export class FashionDetailsModel {
   brand: string;
   price: number;
   salePrice: number;
-  colorVariants: Array<{name: string, value: string}> = [
+  colorVariants: Array<{name: string, value: string, default: boolean}> = [
     {
       name: '',
-      value: ''
-    },
-    {
-      name: '',
-      value: ''
-    },
-    {
-      name: '',
-      value: ''
+      value: '',
+      default: false
     }
   ];
-  sizeVariants: Array<{name: string, value: string}> = [
+  sizeVariants: Array<{name: string, value: string, default: boolean}> = [
     {
       name: '',
-      value: ''
-    },
-    {
-      name: '',
-      value: ''
-    },
-    {
-      name: '',
-      value: ''
+      value: '',
+      default: false
     }
   ];
   description: string;
   careInstructions: string;
   upc: string;
   relatedProducts: Array<{id: number}> = [
-    {
-      id: null
-    },
     {
       id: null
     }
