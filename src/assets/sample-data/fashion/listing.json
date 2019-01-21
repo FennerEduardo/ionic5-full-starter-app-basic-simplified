@@ -2,19 +2,19 @@
   "items": [
     {
       "id": 1,
-      "slug": "cute-jean-shirt",
-      "price": 0,
-      "salePrice": 16.35,
-      "image": "./assets/sample-images/fashion/Fashion1-3.4.png",
-      "name": "Cute Jean Shirt"
+      "slug": "badass-leather-jacket",
+      "price": 200,
+      "salePrice": 145,
+      "image": "./assets/sample-images/fashion/Fashion7-3.4.png",
+      "name": "Badass Leather Jacket"
     },
     {
       "id": 2,
-      "slug": "dark-red-blouse",
-      "price": 0,
-      "salePrice": 14.22,
-      "image": "./assets/sample-images/fashion/Fashion2-3.4.png",
-      "name": "Dark Red Blouse"
+      "slug": "washed-skinny-jeans",
+      "price": 45.95,
+      "salePrice": 35.15,
+      "image": "./assets/sample-images/fashion/Fashion5-3.4.png",
+      "name": "Washed Skinny Jeans"
     },
     {
       "id": 3,
@@ -34,11 +34,11 @@
     },
     {
       "id": 5,
-      "slug": "washed-skinny-jeans",
-      "price": 45.95,
-      "salePrice": 35.15,
-      "image": "./assets/sample-images/fashion/Fashion5-3.4.png",
-      "name": "Washed Skinny Jeans"
+      "slug": "dark-red-blouse",
+      "price": 0,
+      "salePrice": 14.22,
+      "image": "./assets/sample-images/fashion/Fashion2-3.4.png",
+      "name": "Dark Red Blouse"
     },
     {
       "id": 6,
@@ -50,19 +50,19 @@
     },
     {
       "id": 7,
-      "slug": "badass-leather-jacket",
-      "price": 200,
-      "salePrice": 145,
-      "image": "./assets/sample-images/fashion/Fashion7-3.4.png",
-      "name": "Badass Leather Jacket"
+      "slug": "cute-jean-shirt",
+      "price": 0,
+      "salePrice": 16.35,
+      "image": "./assets/sample-images/fashion/Fashion1-3.4.png",
+      "name": "Cute Jean Shirt"
     },
     {
       "id": 8,
-      "slug": "summer-yellow-dress",
+      "slug": "summer-black-dress",
       "price": 50.45,
       "salePrice": 35,
       "image": "./assets/sample-images/fashion/Fashion8-3.4.png",
-      "name": "Summer Yellow Dress"
+      "name": "Summer Black Dress"
     }
   ]
 }

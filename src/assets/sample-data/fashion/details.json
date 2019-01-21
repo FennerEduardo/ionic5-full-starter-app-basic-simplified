@@ -65,10 +65,20 @@
   "upc": "8726543D",
   "relatedProducts": [
     {
-      "id": 2
+      "id": 6,
+      "slug": "feather-dark-shoes",
+      "price": 130.55,
+      "salePrice": 95.99,
+      "image": "./assets/sample-images/fashion/Fashion6-3.4.png",
+      "name": "Feather Dark Shoes"
     },
     {
-      "id": 1
+      "id": 2,
+      "slug": "washed-skinny-jeans",
+      "price": 45.95,
+      "salePrice": 35.15,
+      "image": "./assets/sample-images/fashion/Fashion5-3.4.png",
+      "name": "Washed Skinny Jeans"
     }
   ]
 }
