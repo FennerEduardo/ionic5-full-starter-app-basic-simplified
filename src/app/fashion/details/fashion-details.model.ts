@@ -22,9 +22,29 @@ export class FashionDetailsModel {
       name: '',
       value: '',
       default: false
+    },
+    {
+      name: '',
+      value: '',
+      default: false
+    },
+    {
+      name: '',
+      value: '',
+      default: false
     }
   ];
   sizeVariants: Array<{name: string, value: string, default: boolean}> = [
+    {
+      name: '',
+      value: '',
+      default: false
+    },
+    {
+      name: '',
+      value: '',
+      default: false
+    },
     {
       name: '',
       value: '',
@@ -35,6 +55,9 @@ export class FashionDetailsModel {
   careInstructions: string;
   upc: string;
   relatedProducts: Array<{id: number}> = [
+    {
+      id: null
+    },
     {
       id: null
     }
