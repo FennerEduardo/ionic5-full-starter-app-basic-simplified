@@ -40,7 +40,7 @@
           <app-text-shell [data]="details?.avgRating" class="no-animation"></app-text-shell>
         </div>
         <ion-col class="score-item" *ngFor="let rating of details?.ratings">
-          <ion-icon class="score-icon" src="./assets/sample-icons/food/{{ rating.concept }}-rate.svg"></ion-icon>
+          <ion-icon *ngIf="rating.concept" class="score-icon" [src]="(rating.concept) ? './assets/sample-icons/food/' + rating.concept + '-rate.svg' : ''"></ion-icon>
           <div class="score-value">
             <app-text-shell [data]="rating.rate" class="no-animation"></app-text-shell>
           </div>
@@ -171,7 +171,7 @@
         </p>
         <ion-row class="review-scores">
           <ion-col class="score-item" *ngFor="let rating of review.ratings">
-            <ion-icon class="score-icon" src="./assets/sample-icons/food/{{ rating.concept }}-rate.svg"></ion-icon>
+            <ion-icon *ngIf="rating.concept" class="score-icon" [src]="(rating.concept) ? './assets/sample-icons/food/' + rating.concept + '-rate.svg' : ''"></ion-icon>
             <div class="score-value">
               <app-text-shell [data]="rating.rate" class="no-animation"></app-text-shell>
             </div>
