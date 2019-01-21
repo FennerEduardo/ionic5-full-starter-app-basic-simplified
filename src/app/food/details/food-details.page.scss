@@ -48,6 +48,7 @@
       margin-top: 5px;
       margin-bottom: 15px;
       font-size: 16px;
+      color: var(--ion-color-dark-tint);
 
       app-text-shell {
         --c-bg-color: rgba(var(--shell-color-rgb), .10);
@@ -91,11 +92,12 @@
         }
 
         .score-icon {
-          color: var(--shell-color);
+          color: var(--ion-color-medium-tint);
+          font-size: 24px;
         }
 
         .score-value {
-          color: var(--shell-color);
+          color: var(--ion-color-medium-tint);
           font-size: 14px;
           margin-left: 4px;
 
@@ -265,10 +267,10 @@
 
     padding: 0px 20px 20px;
     justify-content: center;
-    margin-top: -2px;
+    margin-top: -3px;
 
     .tag-wrapper {
-      padding: 2px 4px 2px 0px;
+      padding: 3px 6px 3px 0px;
       flex-grow: 0;
       min-width: fit-content;
 
@@ -280,7 +282,7 @@
     .item-tag {
       display: block;
       border-radius: 2px;
-      border: 1px solid var(--ion-color-light-shade);
+      border: 1px solid var(--ion-color-medium-tint);
       padding: 2px 4px;
       font-size: 14px;
       color: var(--ion-color-medium-tint);
@@ -379,11 +381,11 @@
         justify-content: flex-end;
 
         .votes-icon {
-          color: var(--shell-color);
+          color: var(--ion-color-medium-tint);
         }
 
         .votes-value {
-          color: var(--shell-color);
+          color: var(--ion-color-medium-tint);
           font-size: 14px;
           margin-right: 4px;
 
@@ -446,11 +448,12 @@
                 align-items: center;
 
                 .score-icon {
-                  color: var(--shell-color);
+                  color: var(--ion-color-medium-tint);
+                  font-size: 24px;
                 }
 
                 .score-value {
-                  color: var(--shell-color);
+                  color: var(--ion-color-medium-tint);
                   font-size: 12px;
                   margin-left: 4px;
 
@@ -466,7 +469,7 @@
                 }
 
                 .score-title {
-                  color: var(--shell-color);
+                  color: var(--ion-color-medium-tint);
                   font-size: 12px;
                   margin-left: 4px;
                 }
@@ -484,7 +487,7 @@
             flex-grow: 0;
 
             .review-date {
-              color: var(--ion-color-light-shade);
+              color: var(--ion-color-medium-tint);
               font-size: 11px;
               display: block;
               width: 100%;
@@ -557,11 +560,12 @@
             }
 
             .score-icon {
-              color: var(--shell-color);
+              color: var(--ion-color-medium-tint);
+              font-size: 24px;
             }
 
             .score-value {
-              color: var(--shell-color);
+              color: var(--ion-color-medium-tint);
               font-size: 14px;
               margin-left: 4px;
 
@@ -643,8 +647,9 @@
 
           .recipe-author {
             display: block;
-            font-size: 14px;
+            font-size: 16px;
             min-width: 30%;
+            color: var(--ion-color-dark-tint);
           }
 
           .recipe-name {
@@ -657,8 +662,9 @@
 
           .recipe-chef {
             display: block;
-            font-size: 12px;
+            font-size: 14px;
             min-width: 60%;
+            color: var(--ion-color-dark-tint);
           }
         }
 
@@ -680,11 +686,12 @@
             }
 
             .score-icon {
-              color: var(--shell-color);
+              color: var(--ion-color-medium-tint);
+              font-size: 26px;
             }
 
             .score-value {
-              color: var(--shell-color);
+              color: var(--ion-color-medium-tint);
               text-transform: capitalize;
               font-size: 14px;
               margin-left: 4px;
