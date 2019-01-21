@@ -29,7 +29,8 @@
     },
     {
       "name": "Coral",
-      "value": "coral"
+      "value": "coral",
+      "default": true
     },
     {
       "name": "Lime",
@@ -42,15 +43,16 @@
       "value": "xs"
     },
     {
-      "name": "S",
+      "name": "S - Out of stock",
       "value": "xs"
     },
     {
       "name": "M",
-      "value": "m"
+      "value": "m",
+      "default": true
     },
     {
-      "name": "L",
+      "name": "L - Only 3 left",
       "value": "l"
     },
     {
