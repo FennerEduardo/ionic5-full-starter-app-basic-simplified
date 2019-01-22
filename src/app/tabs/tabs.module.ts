@@ -24,6 +24,8 @@ import { RealStateDetailsPageModule } from '../real-state/details/real-state-det
 
 import { ProfilePageModule } from '../profile/profile.module';
 
+import { ContactCardPageModule } from '../contact-card/contact-card.module';
+
 import { NotificationsPageModule } from '../notifications/notifications.module';
 
 @NgModule({
@@ -35,6 +37,7 @@ import { NotificationsPageModule } from '../notifications/notifications.module';
     TabsPageRoutingModule,
     CategoriesPageModule,
     ProfilePageModule,
+    ContactCardPageModule,
     NotificationsPageModule,
 
     FashionListingPageModule,

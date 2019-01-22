@@ -19,7 +19,12 @@ export class AppComponent {
     {
       title: 'Profile',
       url: '/app/profile',
-      icon: 'person'
+      icon: 'contact'
+    },
+    {
+      title: 'Contact Card',
+      url: '/contact-card',
+      icon: 'briefcase'
     },
     {
       title: 'Notifications',
