@@ -189,8 +189,8 @@
         "image": "./assets/sample-images/food/recipe-chef-image.png"
       },
       "difficulty": "easy",
-      "time": "45",
-      "calories": "355 kcal",
+      "time": "45'",
+      "calories": "355 kcal.",
       "chefExtract": "It’s the perfect appetizer for a lovely dinner: sweet and spice."
     }
   ]
