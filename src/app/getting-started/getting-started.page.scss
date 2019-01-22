@@ -40,21 +40,6 @@ ion-content {
     // .swiper-pagination space
     border-bottom: var(--swiper-pagination-space) solid transparent;
     background-clip: padding-box;
-
-    // Don't know why it gets overridden by content-box if I don't add this
-    box-sizing: border-box;
-  }
-
-  .swiper-pagination {
-    height: var(--swiper-pagination-height);
-    line-height: 1;
-    // .swiper-pagination is 18px height, .slide-inner-row has 40px of padding-bottom => bottom = (40px - 18px)/2 = 11px
-    bottom: calc((var(--swiper-pagination-space) - var(--swiper-pagination-height) ) / 2);
-
-    .swiper-pagination-bullet {
-      width: var(--pagination-bullet-size);
-      height: var(--pagination-bullet-size);
-    }
   }
 }
 
@@ -88,7 +73,7 @@ ion-content {
       --ion-item-background: var(--ion-color-tertiary);
       --ion-item-color: var(--ion-color-primary);
       --inner-border-width: 0px;
-      
+
       text-align: center;
 
       &:not(:last-child) {
@@ -208,9 +193,26 @@ ion-content {
 }
 
 :host(.last-slide-active) {
-  .getting-started-slides {
+  ::ng-deep .getting-started-slides {
     .swiper-pagination {
       display: none;
+    }
+  }
+}
+
+// ISSUE: .swiper-paggination gets rendered dynamically. That prevents styling the elements when using the default Angular ViewEncapsulation.None
+//        (Angular doesn't add an '_ngcontent' attribute to the .swiper-paggination because it's dynamically rendered)
+// FIX:   See: https://stackoverflow.com/a/36265072/1116959
+:host ::ng-deep .getting-started-slides {
+  .swiper-pagination {
+    height: var(--swiper-pagination-height);
+    line-height: 1;
+    // .swiper-pagination is 18px height, .slide-inner-row has 40px of padding-bottom => bottom = (40px - 18px)/2 = 11px
+    bottom: calc((var(--swiper-pagination-space) - var(--swiper-pagination-height) ) / 2);
+
+    .swiper-pagination-bullet {
+      width: var(--pagination-bullet-size);
+      height: var(--pagination-bullet-size);
     }
   }
 }

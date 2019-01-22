@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, OnInit, AfterViewInit, ViewChild, HostBinding } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, HostBinding } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { IonSlides, MenuController } from '@ionic/angular';
@@ -6,8 +6,7 @@ import { IonSlides, MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-getting-started',
   templateUrl: './getting-started.page.html',
-  styleUrls: ['./getting-started.page.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  styleUrls: ['./getting-started.page.scss']
 })
 export class GettingStartedPage implements OnInit, AfterViewInit {
   @ViewChild(IonSlides) slides: IonSlides;

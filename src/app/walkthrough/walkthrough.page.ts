@@ -1,12 +1,11 @@
-import { Component, ViewEncapsulation, OnInit, AfterViewInit, ViewChild, HostBinding } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, HostBinding } from '@angular/core';
 
 import { IonSlides, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-walkthrough',
   templateUrl: './walkthrough.page.html',
-  styleUrls: ['./walkthrough.page.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  styleUrls: ['./walkthrough.page.scss']
 })
 export class WalkthroughPage implements OnInit, AfterViewInit {
   @ViewChild(IonSlides) slides: IonSlides;
