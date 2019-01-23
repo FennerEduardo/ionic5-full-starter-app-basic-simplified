@@ -13,7 +13,8 @@ export class SubjectFetch<T> {
     this._subject.next(model);
     // Immediately after fetch data from endpoint
     fetchData().pipe(
-      delay(2000),
+      delay(2000), // we wait on purpose 2 secs on local environment where fetching from json
+      // data is immediate. However, in production you should remove this delay.
       // Prevent the need to unsubscribe because .first() completes the observable
       first()
     ).subscribe((value: T) => {

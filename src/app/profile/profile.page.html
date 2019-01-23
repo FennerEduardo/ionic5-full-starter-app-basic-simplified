@@ -7,5 +7,80 @@
 </ion-header>
 
 <ion-content>
-  New Profile Here
+  <ion-row class="user-details-section">
+    <ion-col class="user-image-wrapper">
+      <app-preload-image class="user-image add-spinner" [ratio]="{w:1, h:1}" [src]="profile.userImage"></app-preload-image>
+    </ion-col>
+    <ion-col class="user-info-wrapper">
+      <ion-row>
+        <h3 class="user-name">
+          <app-text-shell [data]="profile.name" [attr.element]="'h3'"></app-text-shell>
+        </h3>
+        <span class="user-membership">
+          <app-text-shell [data]="profile.membership" class="no-animation"></app-text-shell>
+        </span>
+      </ion-row>
+      <h5 class="user-job">
+        <app-text-shell [data]="profile.job" [attr.element]="'h5'"></app-text-shell>
+      </h5>
+      <ion-row class="actions-wrapper">
+        <ion-button size="small" color="primary">Follow</ion-button>
+        <ion-button size="small" color="medium">Message</ion-button>
+        <ion-button size="small" color="medium">...</ion-button>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-row class="user-stats-section">
+    <ion-col class="user-stats-wrapper" size="4">
+      <span class="user-stat-value">
+        <app-text-shell [data]="profile.likes" class="no-animation"></app-text-shell>
+      </span>
+      <span class="user-stat-name">Likes</span>
+    </ion-col>
+    <ion-col class="user-stats-wrapper" size="4">
+      <span class="user-stat-value">
+        <app-text-shell [data]="profile.followers" class="no-animation"></app-text-shell>
+      </span>
+      <span class="user-stat-name">Followers</span>
+    </ion-col>
+    <ion-col class="user-stats-wrapper" size="4">
+      <span class="user-stat-value">
+        <app-text-shell [data]="profile.following" class="no-animation"></app-text-shell>
+      </span>
+      <span class="user-stat-name">Following</span>
+    </ion-col>
+  </ion-row>
+
+  <div class="user-about-section">
+    <h3>About</h3>
+    <p class="user-about">
+      <app-text-shell [data]="profile.about" [attr.lines]="6"></app-text-shell>
+    </p>
+  </div>
+
+  <div class="user-friends-section">
+    <ion-row class="section-title">
+      <h3>Friends</h3>
+      <a href="#" class="right-link">See all</a>
+    </ion-row>
+    <ion-row class="pictures-row">
+      <ion-col class="picture-wrapper" size="2" *ngFor="let friend of profile.friends">
+        <app-preload-image class="friend-picture" [ratio]="{w:1, h:1}" [src]="friend.image"></app-preload-image>
+        <p class="friend-name">{{friend.name}}</p>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div class="user-photos-section">
+    <ion-row class="section-title">
+      <h3>Photos</h3>
+      <a href="#" class="right-link">See all</a>
+    </ion-row>
+    <ion-row class="pictures-row">
+      <ion-col class="picture-wrapper" size="2" *ngFor="let photo of profile.photos">
+        <app-preload-image class="picture" [ratio]="{w:1, h:1}" [src]="photo.image"></app-preload-image>
+      </ion-col>
+    </ion-row>
+  </div>
+
 </ion-content>
