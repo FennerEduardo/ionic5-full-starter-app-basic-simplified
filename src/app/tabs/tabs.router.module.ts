@@ -59,11 +59,15 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'profile',
+        path: 'user',
         children: [
           {
             path: '',
-            loadChildren: '../profile/profile.module#ProfilePageModule'
+            loadChildren: '../user/user-profile/user-profile.module#UserProfilePageModule'
+          },
+          {
+            path: 'friends',
+            loadChildren: '../user/user-friends/user-friends.module#UserFriendsPageModule'
           }
         ]
       },

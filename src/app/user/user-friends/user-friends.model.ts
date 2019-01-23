@@ -1,4 +1,4 @@
-export class ProfileModel {
+export class UserFriendsModel {
   userImage: string;
   name: string;
   membership: string;

@@ -1,15 +1,16 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { ProfileModel } from './profile.model';
+import { UserProfileModel } from './user-profile.model';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.page.html',
-  styleUrls: ['./profile.page.scss'],
+  selector: 'app-user-profile',
+  templateUrl: './user-profile.page.html',
+  styleUrls: ['./user-profile.page.scss'],
 })
-export class ProfilePage implements OnInit {
-  profile: ProfileModel;
+export class UserProfilePage implements OnInit {
+  
+  profile: UserProfileModel;
   @HostBinding('class.is-shell') get isShell() {
     return (this.profile && this.profile.isShell) ? true : false;
   }
@@ -20,15 +21,15 @@ export class ProfilePage implements OnInit {
     if (this.route && this.route.data) {
       this.route.data.subscribe(routeData => {
         const data = routeData['data'];
-        console.log('data - ProfilePage - ngOnInit()', data);
+        console.log('data - UserProfilePage - ngOnInit()', data);
 
         if (data) {
-          data.subscribe((observableData: ProfileModel) => {
+          data.subscribe((observableData: UserProfileModel) => {
             if (observableData) {
               this.profile = observableData;
             }
 
-            console.log('observableData - ProfilePage - ngOnInit()', observableData);
+            console.log('observableData - UserProfilePage - ngOnInit()', observableData);
           });
         } else {
           alert('No route data 2');

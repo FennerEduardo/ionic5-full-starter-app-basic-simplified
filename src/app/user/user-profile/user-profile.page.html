@@ -24,9 +24,15 @@
         <app-text-shell [data]="profile.job" [attr.element]="'h5'"></app-text-shell>
       </h5>
       <ion-row class="actions-wrapper">
-        <ion-button size="small" color="primary">Follow</ion-button>
-        <ion-button size="small" color="medium">Message</ion-button>
-        <ion-button size="small" color="medium">...</ion-button>
+        <ion-col size="4">
+          <ion-button expand="block" size="small" color="primary">Follow</ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button expand="block" size="small" color="medium">Message</ion-button>
+        </ion-col>
+        <ion-col size="2">
+          <ion-button expand="block" size="small" color="medium">...</ion-button>
+        </ion-col>
       </ion-row>
     </ion-col>
   </ion-row>
@@ -61,7 +67,7 @@
   <div class="user-friends-section">
     <ion-row class="section-title">
       <h3>Friends</h3>
-      <a href="#" class="right-link">See all</a>
+      <a [routerLink]="['/app/user/friends']" class="right-link">See all</a>
     </ion-row>
     <ion-row class="pictures-row">
       <ion-col class="picture-wrapper" size="2" *ngFor="let friend of profile.friends">

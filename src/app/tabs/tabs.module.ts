@@ -22,7 +22,7 @@ import { DealsDetailsPageModule } from '../deals/details/deals-details.module';
 import { RealStateListingPageModule } from '../real-state/listing/real-state-listing.module';
 import { RealStateDetailsPageModule } from '../real-state/details/real-state-details.module';
 
-import { ProfilePageModule } from '../profile/profile.module';
+import { UserProfilePageModule } from '../user/user-profile/user-profile.module';
 
 import { ContactCardPageModule } from '../contact-card/contact-card.module';
 
@@ -36,7 +36,7 @@ import { NotificationsPageModule } from '../notifications/notifications.module';
 
     TabsPageRoutingModule,
     CategoriesPageModule,
-    ProfilePageModule,
+    UserProfilePageModule,
     ContactCardPageModule,
     NotificationsPageModule,
 

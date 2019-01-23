@@ -2,21 +2,21 @@ import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 
 import { first } from 'rxjs/operators';
-import { ProfileService } from './profile.service';
+import { UserService } from '../user.service';
 
 @Injectable()
-export class ProfileResolver implements Resolve<any> {
+export class UserFriendsResolver implements Resolve<any> {
 
-  constructor(private profileService: ProfileService) { }
+  constructor(private userService: UserService) { }
 
   resolve() {
     return new Promise((resolve, reject) => {
-      const documentObservable = this.profileService.getData();
+      const documentObservable = this.userService.getFriendsData();
 
       documentObservable.pipe(
         first()
       ).subscribe((data: any) => {
-        console.log('data - ProfileRsolver - resolve()', data);
+        console.log('data - UserFriendsRsolver - resolve()', data);
         resolve(documentObservable);
       });
     });

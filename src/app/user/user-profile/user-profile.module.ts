@@ -4,17 +4,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { ProfilePage } from './profile.page';
-import { ProfileService } from './profile.service';
-import { ProfileResolver } from './profile.resolver';
-import { ComponentsModule } from '../components/components.module';
+import { UserProfilePage } from './user-profile.page';
+import { UserService } from '../user.service';
+import { UserProfileResolver } from './user-profile.resolver';
+import { ComponentsModule } from '../../components/components.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: ProfilePage,
+    component: UserProfilePage,
     resolve: {
-      data: ProfileResolver
+      data: UserProfileResolver
     }
   }
 ];
@@ -27,10 +27,10 @@ const routes: Routes = [
     ComponentsModule,
     RouterModule.forChild(routes),
   ],
-  declarations: [ProfilePage],
+  declarations: [UserProfilePage],
   providers: [
-    ProfileResolver,
-    ProfileService
+    UserProfileResolver,
+    UserService
   ]
 })
-export class ProfilePageModule {}
+export class UserProfilePageModule {}
