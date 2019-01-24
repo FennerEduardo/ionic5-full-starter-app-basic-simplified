@@ -38,10 +38,21 @@
   --background: var(--app-background-color-step-50);
 
   .expiration-countdown {
+    color: var(--ion-color-lightest);
     background-color: var(--deal-ended-color);
     padding: 10px 30px;
     text-align: center;
-    color: var(--ion-color-lightest);
+    justify-content: center;
+    align-items: center;
+
+    .time-icon {
+      font-size: 24px;
+    }
+
+    .expiration-lead {
+      margin: 0px 10px 0px 15px;
+      text-transform: uppercase;
+    }
   }
 
   .details-wrapper {

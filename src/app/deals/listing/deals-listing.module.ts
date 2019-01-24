@@ -7,9 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
 
 import { ComponentsModule } from '../../components/components.module';
-
-import { TimeDifferencePipe } from '../../utils/time-difference.pipe';
-import { TimeAgoPipe } from '../../utils/time-ago.pipe';
+import { PipesModule } from '../../pipes/pipes.module';
 
 import { DealsListingPage } from './deals-listing.page';
 import { DealsListingResolver } from './deals-listing.resolver';
@@ -32,12 +30,11 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     ComponentsModule,
+    PipesModule,
     HttpClientModule
   ],
   declarations: [
-    DealsListingPage,
-    TimeDifferencePipe,
-    TimeAgoPipe
+    DealsListingPage
   ],
   providers: [
     DealsListingResolver,
