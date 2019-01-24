@@ -1,30 +1,22 @@
 import { Component, forwardRef, Input, ViewEncapsulation, OnInit } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
-const noop = () => {};
-
-export const RATING_CONTROL_VALUE_ACCESSOR: any = {
-  provide: NG_VALUE_ACCESSOR,
-  // tslint:disable-next-line:no-use-before-declare
-  useExisting: forwardRef(() => RatingComponent),
-  multi: true
-};
-
 @Component({
-  selector: 'rating',
-  templateUrl: './rating.component.html',
-  styleUrls: ['./rating.component.scss'],
-  providers: [RATING_CONTROL_VALUE_ACCESSOR],
+  selector: 'app-rating-input',
+  templateUrl: './rating-input.component.html',
+  styleUrls: ['./rating-input.component.scss'],
+  providers: [
+    { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => RatingInputComponent), multi: true }
+  ],
   encapsulation: ViewEncapsulation.None
 })
-export class RatingComponent implements ControlValueAccessor, OnInit {
-
+export class RatingInputComponent implements ControlValueAccessor, OnInit {
   @Input() max = 5;
   @Input() readOnly = false;
 
   range: Array<number>;
   innerValue: any;
-  propagateChange: any = noop;
+  propagateChange: any = () => {}; // Noop function
 
   ngOnInit() {
     const states: Array<number> = [];

@@ -6,7 +6,7 @@ import { counterRangeValidator } from '../components/counter-input/counter-input
   selector: 'filters-page',
   templateUrl: './filters.page.html',
   styleUrls: ['./filters.page.scss'],
-  encapsulation: ViewEncapsulation.None
+  // encapsulation: ViewEncapsulation.None
 })
 export class FiltersPage {
   rangeForm: any;
@@ -73,7 +73,7 @@ export class FiltersPage {
   }
 
   rangeChange(range: Range) {
-    // console.log(`range, change, ratio: ${range.ratio}, value: ${range.value}`);
+    console.log('range change', range);
   }
 
 }

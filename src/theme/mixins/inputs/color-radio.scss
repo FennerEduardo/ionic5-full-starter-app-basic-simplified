@@ -1,12 +1,12 @@
-@mixin color-radio-styles($text-color, $active-border){
-	.radio-tag[appColorRadio]
-	{
-		border-radius: 50%;
-		--border-radius: 50%;
-		flex: 0 0 16%;
-		max-width: 16%;
-		margin: 2%;
-		--padding-bottom: 0px;
+@mixin color-radio() {
+  // Default values
+  --color-radio-color: #FFF;
+  --color-radio-active-border-rgb: 255,255,255;
+  --color-radio-border-radius: 50%;
+
+	.color-radio[appColorRadio] {
+    // Reset values from Ionic (ion-item) styles
+    --padding-bottom: 0px;
 		--padding-end: 0px;
 		--padding-top: 0px;
 		--padding-start: 0px;
@@ -17,46 +17,45 @@
 		--inner-padding-end: 0px;
 		--inner-border-width: 0px;
 		--min-height: initial;
+    // Both the ion-item and it's shadow dom inners have border-radius properties applied
+    // This is for the .item-inner .input-wrapper element inside the ion-item shadow root
+    --border-radius: var(--color-radio-border-radius);
+    // This is for the ion-item element
+		border-radius: var(--color-radio-border-radius);
 
-		&.item-radio-checked
-		{
-			--border-color: rgba(var(--ion-color-#{$active-border}-rgb), .3) !important;
+		&.item-radio-checked {
+			--border-color: rgba(var(--color-radio-active-border-rgb), .3) !important;
 			--box-shadow: none;
 
-			ion-label {
-				--color: var(--ion-color-#{$text-color});
+			.color-label {
+        opacity: 1;
 			}
 		}
 
-		&.item-interactive-disabled
-		{
-			opacity: 0.3;
+		&.item-interactive-disabled {
+			opacity: 0.5;
+
+      .color-label {
+        // Override Ionic default style
+        opacity: 1;
+      }
 		}
 
-		app-fill-container {
-			.container-content-wrapper{
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
+    .color-label {
+      --color: var(--color-radio-color);
 
-			ion-label {
-				margin: 0px 2px;
-				--color: rgba(var(--ion-color-#{$text-color}-rgb), .7);
-				font-size: 12px;
-			}
+      font-size: 12px;
+      opacity: 0.7;
+    }
 
-			ion-radio {
-				// unset values
-				margin: 0px;
-				width: 0px;
-				height: 0px;
-				--border-width: 0px;
-				// We cant set width and height for .radio-icon .radio-inner, so lets hide it changing its color
-				--color-checked: transparent;
-			}
-
-
-		}
+    ion-radio {
+      margin: 0px;
+			// To hide the .radio-icon
+			width: 0px;
+			--border-width: 0px;
+			height: 0px;
+			// We cant set width and height for .radio-icon .radio-inner, so lets hide it changing its color
+			--color-checked: transparent;
+    }
 	}
 }

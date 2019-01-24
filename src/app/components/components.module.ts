@@ -13,7 +13,7 @@ import { PreloadImageComponent } from './preload-image/preload-image.component';
 import { BackgroundImageComponent } from './background-image/background-image.component';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 import { CounterInputComponent } from './counter-input/counter-input.component';
-import { RatingComponent } from './rating/rating.component';
+import { RatingInputComponent } from './rating-input/rating-input.component';
 import { ColorRadioDirective } from './color-radio/color-radio.directive';
 
 @NgModule({
@@ -32,7 +32,7 @@ import { ColorRadioDirective } from './color-radio/color-radio.directive';
     BackgroundImageComponent,
     CountdownTimerComponent,
     CounterInputComponent,
-    RatingComponent,
+    RatingInputComponent,
     ColorRadioDirective
   ],
   exports: [
@@ -45,7 +45,7 @@ import { ColorRadioDirective } from './color-radio/color-radio.directive';
     BackgroundImageComponent,
     CountdownTimerComponent,
     CounterInputComponent,
-    RatingComponent,
+    RatingInputComponent,
     ColorRadioDirective
   ],
   entryComponents: [],
