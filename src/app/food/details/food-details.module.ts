@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
 
 import { ComponentsModule } from '../../components/components.module';
+import { PipesModule } from '../../pipes/pipes.module';
 
 import { FoodDetailsPage } from './food-details.page';
 import { FoodDetailsResolver } from './food-details.resolver';
@@ -29,6 +30,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     ComponentsModule,
+    PipesModule,
     HttpClientModule
   ],
   declarations: [
