@@ -9,7 +9,6 @@ import { UserProfileModel } from './user-profile.model';
   styleUrls: ['./user-profile.page.scss'],
 })
 export class UserProfilePage implements OnInit {
-  
   profile: UserProfileModel;
   @HostBinding('class.is-shell') get isShell() {
     return (this.profile && this.profile.isShell) ? true : false;

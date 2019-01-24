@@ -1,14 +1,16 @@
 <ion-header no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button>
+
+      </ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!-- <ion-segment (ionChange)="segmentChanged($event)"> -->
-  <ion-segment>
+  <!-- <ion-searchbar animated></ion-searchbar> -->
+  <ion-segment (ionChange)="segmentChanged($event)">
     <ion-segment-button value="friends">
       <ion-label>Friends</ion-label>
     </ion-segment-button>
@@ -20,5 +22,69 @@
     </ion-segment-button>
   </ion-segment>
 
+  <ng-container *ngIf="segmentValue === 'friends'">
+    <ion-list lines="none">
+      <ion-item class="user-details-wrapper" *ngFor="let friend of data.friends">
+        <ion-row class="user-details-section">
+          <ion-col class="user-image-wrapper">
+            <app-preload-image class="user-image add-spinner" [ratio]="{w:1, h:1}" [src]="friend.image"></app-preload-image>
+          </ion-col>
+          <ion-col class="user-info-wrapper">
+            <ion-row>
+              <h3 class="user-name">
+                <app-text-shell [data]="friend.name" [attr.element]="'h3'"></app-text-shell>
+              </h3>
+            </ion-row>
+            <h5 class="user-job">
+              <app-text-shell [data]="friend.job" [attr.element]="'h5'"></app-text-shell>
+            </h5>
+            <ion-row class="user-stats">
+              <ion-col size="5">
+                <span>{{ friend.followers }} Followers</span>
+              </ion-col>
+              <ion-col size="1" class="stats-separator-wrapper">
+                <div class="stats-separator"></div>
+              </ion-col>
+              <ion-col size="5">
+                  <span>{{ friend.following }} Following</span>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+          <ion-col class="user-actions-wrapper">
+            <ion-button class="user-action" expand="block" size="small">Follow</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+
+
+  <ng-container *ngIf="segmentValue === 'followers'">
+    <ion-item class="notification-item" lines="none" *ngFor="let friend of data.followers">
+      <ion-avatar slot="start">
+        <img [src]="friend.image">
+      </ion-avatar>
+      <ion-row class="details">
+        <ion-col size="12" class="details-col">
+          <h2 class="name">{{friend.name}}</h2>
+          <p class="description">{{friend.job}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ng-container>
+  <ng-container *ngIf="segmentValue === 'following'">
+    <ion-item class="notification-item" lines="none" *ngFor="let friend of data.following">
+      <ion-avatar slot="start">
+        <img [src]="friend.image">
+      </ion-avatar>
+      <ion-row class="details">
+        <ion-col size="12" class="details-col">
+          <h2 class="name">{{friend.name}}</h2>
+          <p class="description">{{friend.job}}</p>
+        </ion-col>
+      </ion-row>
+      <!-- <h3 class="date" slot="end">{{friend.date}}</h3> -->
+    </ion-item>
+  </ng-container>
 
 </ion-content>

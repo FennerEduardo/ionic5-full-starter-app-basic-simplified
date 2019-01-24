@@ -9,10 +9,11 @@ import { UserFriendsModel } from './user-friends.model';
   styleUrls: ['./user-friends.page.scss'],
 })
 export class UserFriendsPage implements OnInit {
-  friends: UserFriendsModel;
+  data: UserFriendsModel;
+  segmentValue = 'friends';
 
   @HostBinding('class.is-shell') get isShell() {
-    return (this.friends && this.friends.isShell) ? true : false;
+    return (this.data && this.data.isShell) ? true : false;
   }
 
   constructor(private route: ActivatedRoute) { }
@@ -26,7 +27,7 @@ export class UserFriendsPage implements OnInit {
         if (data) {
           data.subscribe((observableData: UserFriendsModel) => {
             if (observableData) {
-              this.friends = observableData;
+              this.data = observableData;
             }
 
             console.log('observableData - UserFriendsPage - ngOnInit()', observableData);
@@ -38,5 +39,9 @@ export class UserFriendsPage implements OnInit {
     } else {
       alert('No route data');
     }
+  }
+
+  segmentChanged(ev) {
+    this.segmentValue = ev.detail.value;
   }
 }

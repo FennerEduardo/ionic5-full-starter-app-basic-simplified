@@ -1,53 +1,120 @@
 {
-  "userImage": "./assets/sample-images/notifications/100x100Notification4.jpg",
-  "name": "Stefano Rey",
-  "membership": "PRO",
-  "job": "Product Manager",
-  "likes": "1553",
-  "followers": "537K",
-  "following": "636",
-  "about": "I am a product manager based in Brazil. I guide new product strategy and launch initial prototype build-outs. I also work with strategic partners to establish and develop new market opportunities.",
   "friends": [
     {
       "image": "./assets/sample-images/notifications/100x100Notification1.jpg",
-      "name": "Martin"
+      "name": "Martin Spencer",
+      "job": "UI Designer",
+      "followers": "24",
+      "following": "120"
     },
     {
       "image": "./assets/sample-images/notifications/100x100Notification2.jpg",
-      "name": "Jessica"
+      "name": "Jessica Siri",
+      "job": "UI Designer",
+      "followers": "300",
+      "following": "120K"
     },
     {
       "image": "./assets/sample-images/notifications/100x100Notification3.jpg",
-      "name": "Judith"
+      "name": "Judith Katz",
+      "job": "UI Designer",
+      "followers": "65",
+      "following": "30"
     },
     {
       "image": "./assets/sample-images/notifications/100x100Notification5.jpg",
-      "name": "Kirsten"
+      "name": "Kirsten",
+      "job": "UI Designer",
+      "followers": "24",
+      "following": "120"
     },
     {
       "image": "./assets/sample-images/notifications/100x100Notification6.jpg",
-      "name": "Phillip"
+      "name": "Phillip",
+      "job": "UI Designer",
+      "followers": "24",
+      "following": "120"
     },
     {
       "image": "./assets/sample-images/notifications/100x100Notification7.jpg",
-      "name": "Diane"
+      "name": "Diane",
+      "job": "UI Designer",
+      "followers": "24",
+      "following": "120"
     }
   ],
-  "photos": [
+  "followers": [
     {
-      "image": "./assets/sample-images/travel/Travel2-64.47.png"
+      "image": "./assets/sample-images/notifications/100x100Notification6.jpg",
+      "name": "Phillip",
+      "job": "UI Designer",
+      "followers": "24",
+      "following": "120"
     },
     {
-      "image": "./assets/sample-images/travel/Travel3-64.47.png"
+      "image": "./assets/sample-images/notifications/100x100Notification7.jpg",
+      "name": "Diane",
+      "job": "UI Designer",
+      "followers": "24",
+      "following": "120"
     },
     {
-      "image": "./assets/sample-images/travel/Travel4-64.47.png"
+      "image": "./assets/sample-images/notifications/100x100Notification3.jpg",
+      "name": "Judith",
+      "job": "UI Designer",
+      "followers": "24",
+      "following": "120"
     },
     {
-      "image": "./assets/sample-images/travel/Travel5-64.47.png"
+      "image": "./assets/sample-images/notifications/100x100Notification5.jpg",
+      "name": "Kirsten",
+      "job": "UI Designer",
+      "followers": "24",
+      "following": "120"
+    }
+  ],
+  "following": [
+    {
+      "image": "./assets/sample-images/notifications/100x100Notification3.jpg",
+      "name": "Judith",
+      "job": "UI Designer",
+      "followers": "24",
+      "following": "120"
     },
     {
-      "image": "./assets/sample-images/travel/Travel1-64.47.png"
+      "image": "./assets/sample-images/notifications/100x100Notification5.jpg",
+      "name": "Kirsten",
+      "job": "UI Designer",
+      "followers": "24",
+      "following": "120"
+    },
+    {
+      "image": "./assets/sample-images/notifications/100x100Notification6.jpg",
+      "name": "Phillip",
+      "job": "UI Designer",
+      "followers": "24",
+      "following": "120"
+    },
+    {
+      "image": "./assets/sample-images/notifications/100x100Notification1.jpg",
+      "name": "Martin",
+      "job": "UI Designer",
+      "followers": "24",
+      "following": "120"
+    },
+    {
+      "image": "./assets/sample-images/notifications/100x100Notification2.jpg",
+      "name": "Jessica",
+      "job": "UI Designer",
+      "followers": "24",
+      "following": "120"
+    },
+    {
+      "image": "./assets/sample-images/notifications/100x100Notification7.jpg",
+      "name": "Diane",
+      "job": "UI Designer",
+      "followers": "24",
+      "following": "120"
     }
   ]
 }

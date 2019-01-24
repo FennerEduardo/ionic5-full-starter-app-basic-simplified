@@ -1,36 +1,93 @@
 export class UserFriendsModel {
-  userImage: string;
-  name: string;
-  membership: string;
-  job: string;
-  likes: string;
-  followers: string;
-  following: string;
-  about: string;
-  friends: Array<{image: string, name: string}> = [
+  friends: Array<{image: string, name: string, job: string,  followers: string,  following: string}> = [
     {
       image: '',
-      name: ''
+      name: '',
+      job: '',
+      followers: '',
+      following: ''
     },
     {
       image: '',
-      name: ''
+      name: '',
+      job: '',
+      followers: '',
+      following: ''
     },
     {
       image: '',
-      name: ''
+      name: '',
+      job: '',
+      followers: '',
+      following: ''
     },
     {
       image: '',
-      name: ''
+      name: '',
+      job: '',
+      followers: '',
+      following: ''
     }
   ];
-  photos: Array<string> = [
-    '',
-    '',
-    '',
-    '',
-    ''
+  followers: Array<{image: string, name: string, job: string,  followers: string,  following: string}> = [
+    {
+      image: '',
+      name: '',
+      job: '',
+      followers: '',
+      following: ''
+    },
+    {
+      image: '',
+      name: '',
+      job: '',
+      followers: '',
+      following: ''
+    },
+    {
+      image: '',
+      name: '',
+      job: '',
+      followers: '',
+      following: ''
+    },
+    {
+      image: '',
+      name: '',
+      job: '',
+      followers: '',
+      following: ''
+    }
+  ];
+  following: Array<{image: string, name: string, job: string,  followers: string,  following: string}> = [
+    {
+      image: '',
+      name: '',
+      job: '',
+      followers: '',
+      following: ''
+    },
+    {
+      image: '',
+      name: '',
+      job: '',
+      followers: '',
+      following: ''
+    },
+    {
+      image: '',
+      name: '',
+      job: '',
+      followers: '',
+      following: ''
+    },
+    {
+      image: '',
+      name: '',
+      job: '',
+      followers: '',
+      following: ''
+    }
   ];
 
   constructor(readonly isShell: boolean) { }

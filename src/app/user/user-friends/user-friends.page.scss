@@ -1,166 +1,63 @@
-.user-details-section {
-  margin: 0px 15px 15px;
+.user-details-wrapper {
+  padding: 14px 0px;
 
-  .user-image-wrapper {
-    max-width: 33%;
+  .user-details-section {
+    width: 100%;
 
-    .user-image {
-      border-radius: 12%;
-    }
-  }
+    .user-image-wrapper {
+      max-width: 22%;
+      padding-left: 0px;
 
-  .user-info-wrapper {
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .user-name {
-      margin: 0px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      flex: 1;
-    }
-
-    .user-membership {
-      border-radius: 4px;
-      padding: 4px 8px;
-      background-color: var(--ion-color-secondary);
-      margin-left: 10px;
-      color: #FFF;
-      font-weight: bold;
-      flex: 0 0 40px;
-
-      app-text-shell {
-        --c-bg-color: var(--ion-color-secondary);
-      }
-    }
-
-    .user-job {
-      margin-top: 6px;
-      color: var(--ion-color-medium);
-    }
-
-    .actions-wrapper {
-      justify-content: space-between;
-
-      &:first-child
-      {
-        margin-left: 0px;
-      }
-
-      &:last-child
-      {
-        margin-right: 0px;
-      }
-    }
-  }
-}
-
-.user-stats-section {
-  margin: 0px 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid var(--ion-color-light-shade);
-
-  .user-stats-wrapper {
-    text-align: center;
-    padding-top: 10px;
-
-    .user-stat-value {
-      font-weight: bold;
-      font-size: 24px;
-      display: block;
-      padding: 6px 0px;
-      color: var(--ion-color-primary-tint);
-    }
-
-    .user-stat-name {
-      font-size: 18px;
-      color: var(--ion-color-medium);
-    }
-  }
-}
-
-.user-about-section {
-  margin: 0px 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid var(--ion-color-light-shade);
-
-  .user-about {
-    color: var(--ion-color-primary-tint);
-    line-height: 1.4;
-    font-size: 15px;
-    text-align: justify;
-    margin: 10px 0px;
-  }
-}
-.user-friends-section {
-  margin: 0px 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid var(--ion-color-light-shade);
-
-  .section-title {
-    justify-content: space-between;
-    align-items: center;
-
-    .right-link {
-      vertical-align: middle;
-      margin-top: 16px;
-      margin-bottom: 10px;
-      text-decoration: none;
-      color: var(--ion-color-secondary);
-    }
-  }
-
-  .pictures-row {
-    --ion-grid-columns: 7;
-    --ion-grid-column-padding: 0px;
-    flex-wrap: nowrap;
-    overflow: scroll;
-    margin: 0px -5px;
-
-    .picture-wrapper {
-      padding: 0px 8px;
-
-      .friend-picture {
+      .user-image {
         border-radius: 12%;
       }
+    }
 
-      .friend-name {
-        text-align: center;
-        margin: 10px 0px;
+    .user-actions-wrapper {
+      max-width: 18%;
+      padding: 0px;
+      margin: auto;
+
+      .user-action {
+
       }
     }
-  }
-}
-.user-photos-section {
-  margin: 0px 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid var(--ion-color-light-shade);
 
-  .section-title {
-    justify-content: space-between;
-    align-items: center;
+    .user-info-wrapper {
+      padding-left: 8px;
+      display: flex;
+      flex-direction: column;
 
-    .right-link {
-      vertical-align: middle;
-      margin-top: 16px;
-      margin-bottom: 10px;
-      text-decoration: none;
-      color: var(--ion-color-secondary);
-    }
-  }
+      .user-name {
+        margin: 0px;
+        font-weight: 600;
+        flex: 1;
+        font-size: 1rem;
+      }
 
-  .pictures-row {
-    --ion-grid-columns: 4;
-    --ion-grid-column-padding: 0px;
-    margin: 0px -5px;
+      .user-job {
+        margin-top: 6px;
+        color: var(--ion-color-medium);
+        font-size: 0.9rem;
+      }
 
-    .picture-wrapper {
-      padding: 8px 8px;
+      .user-stats {
+        color: var(--ion-color-medium);
+        justify-content: space-between;
+        --ion-grid-columns: 11;
+        --ion-grid-column-padding: 0px;
+        font-size: 0.75rem;
 
-      .picture {
-        border-radius: 12%;
+        .stats-separator-wrapper {
+          margin:auto;
+
+          .stats-separator {
+            width: 6px;
+            height: 6px;
+            background-color: var(--ion-color-medium);
+            border-radius: 50%;
+          }
+        }
       }
     }
   }
