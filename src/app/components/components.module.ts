@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
-import { FloorPipe } from 'angular-pipes';
+// import { FloorPipe } from 'angular-pipes';
 
 import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
 import { ShowHidePasswordComponent } from './show-hide-password/show-hide-password.component';
@@ -23,7 +23,7 @@ import { ColorRadioDirective } from './color-radio/color-radio.directive';
     IonicModule.forRoot(),
   ],
   declarations: [
-    FloorPipe,
+    // FloorPipe,
     CustomCheckboxComponent,
     ShowHidePasswordComponent,
     FillContainerComponent,
@@ -36,7 +36,7 @@ import { ColorRadioDirective } from './color-radio/color-radio.directive';
     ColorRadioDirective
   ],
   exports: [
-    FloorPipe,
+    // FloorPipe,
     CustomCheckboxComponent,
     ShowHidePasswordComponent,
     FillContainerComponent,
