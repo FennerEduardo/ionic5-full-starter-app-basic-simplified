@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 
-import { UsernameValidator } from '../components/validators/username.validator';
-import { PasswordValidator } from '../components/validators/password.validator';
-import { PhoneValidator } from '../components/validators/phone.validator';
+import { UsernameValidator } from '../validators/username.validator';
+import { PasswordValidator } from '../validators/password.validator';
+import { PhoneValidator } from '../validators/phone.validator';
 
 import { Country } from './forms.model';
 
