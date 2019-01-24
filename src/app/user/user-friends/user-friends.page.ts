@@ -11,6 +11,9 @@ import { UserFriendsModel } from './user-friends.model';
 export class UserFriendsPage implements OnInit {
   data: UserFriendsModel;
   segmentValue = 'friends';
+  friendsList;
+  followersList;
+  followingList;
 
   @HostBinding('class.is-shell') get isShell() {
     return (this.data && this.data.isShell) ? true : false;
@@ -28,6 +31,9 @@ export class UserFriendsPage implements OnInit {
           data.subscribe((observableData: UserFriendsModel) => {
             if (observableData) {
               this.data = observableData;
+              this.friendsList = this.data.friends;
+              this.followersList = this.data.followers;
+              this.followingList = this.data.following;
             }
 
             console.log('observableData - UserFriendsPage - ngOnInit()', observableData);
@@ -43,5 +49,21 @@ export class UserFriendsPage implements OnInit {
 
   segmentChanged(ev) {
     this.segmentValue = ev.detail.value;
+  }
+
+  searchList(ev) {
+    const searchText = ev.detail.value;
+
+    if (this.segmentValue === 'friends') {
+      this.friendsList = this.filterList(this.data.friends, searchText);
+    } else if (this.segmentValue === 'followers') {
+      this.followersList = this.filterList(this.data.followers, searchText);
+    } else if (this.segmentValue === 'following') {
+      this.followingList = this.filterList(this.data.following, searchText);
+    }
+  }
+
+  filterList(list, searchText) {
+    return list.filter(friend => friend.name.trim().toLowerCase().includes(searchText));
   }
 }

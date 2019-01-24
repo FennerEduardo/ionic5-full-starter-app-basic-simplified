@@ -1,92 +1,122 @@
 export class UserFriendsModel {
-  friends: Array<{image: string, name: string, job: string,  followers: string,  following: string}> = [
+  friends: Array<{
+    image: string,
+    name: string,
+    job: string,
+    followers: string,
+    followings: string,
+    following: boolean}> = [
     {
       image: '',
       name: '',
       job: '',
       followers: '',
-      following: ''
+      followings: '',
+      following: false
     },
     {
       image: '',
       name: '',
       job: '',
       followers: '',
-      following: ''
+      followings: '',
+      following: true
     },
     {
       image: '',
       name: '',
       job: '',
       followers: '',
-      following: ''
+      followings: '',
+      following: false
     },
     {
       image: '',
       name: '',
       job: '',
       followers: '',
-      following: ''
+      followings: '',
+      following: false
     }
   ];
-  followers: Array<{image: string, name: string, job: string,  followers: string,  following: string}> = [
+  followers: Array<{
+    image: string,
+    name: string,
+    job: string,
+    followers: string,
+    followings: string,
+    following: boolean}> = [
     {
       image: '',
       name: '',
       job: '',
       followers: '',
-      following: ''
+      followings: '',
+      following: false
     },
     {
       image: '',
       name: '',
       job: '',
       followers: '',
-      following: ''
+      followings: '',
+      following: false
     },
     {
       image: '',
       name: '',
       job: '',
       followers: '',
-      following: ''
+      followings: '',
+      following: false
     },
     {
       image: '',
       name: '',
       job: '',
       followers: '',
-      following: ''
+      followings: '',
+      following: true
     }
   ];
-  following: Array<{image: string, name: string, job: string,  followers: string,  following: string}> = [
+  following: Array<{
+    image: string,
+    name: string,
+    job: string,
+    followers: string,
+    followings: string,
+    following: boolean}> = [
     {
       image: '',
       name: '',
       job: '',
       followers: '',
-      following: ''
+      followings: '',
+      following: false
     },
     {
       image: '',
       name: '',
       job: '',
       followers: '',
-      following: ''
+      followings: '',
+      following: false
     },
     {
       image: '',
       name: '',
       job: '',
       followers: '',
-      following: ''
+      followings: '',
+      following: false
     },
     {
       image: '',
       name: '',
       job: '',
       followers: '',
-      following: ''
+      followings: '',
+      following: false
     }
   ];
 
