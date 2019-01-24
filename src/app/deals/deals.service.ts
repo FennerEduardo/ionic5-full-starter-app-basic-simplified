@@ -84,7 +84,46 @@ export class DealsService {
       const detailsShell: DealsDetailsModel = new DealsDetailsModel(true);
       this._detailsCache = new SubjectFetch(
         detailsShell,
-        () => this.http.get<DealsDetailsModel>('./assets/sample-data/deals/details.json')
+        // Simple approach: get data from json
+        // () => this.http.get<DealsDetailsModel>('./assets/sample-data/deals/details.json')
+
+        // Alternate approach: I opted to create this model here so I can always show fresh dates (relative to now, not hardcoded ones)
+        () => {
+          const dealsDetailsModel = {
+            showcaseImages: [
+              './assets/sample-images/deals/Deal-Details-showcase-1.jpg',
+              './assets/sample-images/deals/Deal-Details-showcase-2.jpg'
+            ],
+            previewImage: './assets/sample-images/deals/Deal-Details-preview.png',
+            logo: './assets/sample-images/deals/Deals1-4.1.png',
+            name: '50% OFF Lindt',
+            code: 'CHOC4LIFE',
+            description: 'Lindt Excellence 70% Cocoa Chocolate Diamonds 60ct Box with Lancaster for $10.26',
+            // Relative date (better to showcase UI micro-interactions)
+            expirationDate: dayjs().add(1, 'day').add(8, 'hour').add(10, 'second').format('MM/DD/YYYY HH:mm:ss') as string,
+            // Instead of hardcoded one
+            // expirationDate: '12/01/2018',
+            relatedDeals: [
+              {
+                logo: './assets/sample-images/deals/Deal-Details-related-1.jpg',
+                name: '35% off',
+                description: 'Candy buffet!'
+              },
+              {
+                logo: './assets/sample-images/deals/Deal-Details-related-2.jpg',
+                name: '15% off',
+                description: 'Breakfast'
+              },
+              {
+                logo: './assets/sample-images/deals/Deal-Details-related-3.jpg',
+                name: '60% off',
+                description: 'Speciality bars'
+              }
+            ]
+          } as DealsDetailsModel;
+
+          return of(dealsDetailsModel);
+        }
       );
     }
 
