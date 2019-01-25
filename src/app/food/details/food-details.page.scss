@@ -618,7 +618,7 @@
 
           app-preload-image {
             --loading-background: var(--shell-color);
-            border-radius: 50%;
+            --image-border-radius: 50%;
             z-index: 3;
           }
         }
