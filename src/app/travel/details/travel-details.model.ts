@@ -31,7 +31,8 @@ export class TravelDetailsModel {
   location: {
     address: string,
     city: string,
-    latlng: string
+    latlng: string,
+    mapImage: string
   };
   whereToStay: Array<{picture: string, name: string, rating: number}> = [
     {
