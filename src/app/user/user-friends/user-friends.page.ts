@@ -63,6 +63,6 @@ export class UserFriendsPage implements OnInit {
   }
 
   filterList(list) {
-    return list.filter(friend => friend.name.toLowerCase().includes(this.searchText));
+    return list.filter(friend => friend.name.toLowerCase().includes(this.searchText.toLowerCase()));
   }
 }
