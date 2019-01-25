@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
+import { NgMathPipesModule } from 'angular-pipes';
 import { FloorPipe } from 'angular-pipes';
 
 import { TimeDifferencePipe } from './time-difference.pipe';
@@ -11,9 +12,9 @@ import { TimeAgoPipe } from './time-ago.pipe';
   imports: [
     CommonModule,
     IonicModule.forRoot(),
+    NgMathPipesModule
   ],
   declarations: [
-    FloorPipe,
     TimeDifferencePipe,
     TimeAgoPipe
   ],
