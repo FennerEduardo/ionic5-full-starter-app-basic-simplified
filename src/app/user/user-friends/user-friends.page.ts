@@ -14,6 +14,7 @@ export class UserFriendsPage implements OnInit {
   friendsList;
   followersList;
   followingList;
+  searchText = '';
 
   @HostBinding('class.is-shell') get isShell() {
     return (this.data && this.data.isShell) ? true : false;
@@ -51,19 +52,17 @@ export class UserFriendsPage implements OnInit {
     this.segmentValue = ev.detail.value;
   }
 
-  searchList(ev) {
-    const searchText = ev.detail.value;
-
+  searchList() {
     if (this.segmentValue === 'friends') {
-      this.friendsList = this.filterList(this.data.friends, searchText);
+      this.friendsList = this.filterList(this.data.friends);
     } else if (this.segmentValue === 'followers') {
-      this.followersList = this.filterList(this.data.followers, searchText);
+      this.followersList = this.filterList(this.data.followers);
     } else if (this.segmentValue === 'following') {
-      this.followingList = this.filterList(this.data.following, searchText);
+      this.followingList = this.filterList(this.data.following);
     }
   }
 
-  filterList(list, searchText) {
-    return list.filter(friend => friend.name.trim().toLowerCase().includes(searchText));
+  filterList(list) {
+    return list.filter(friend => friend.name.toLowerCase().includes(this.searchText));
   }
 }

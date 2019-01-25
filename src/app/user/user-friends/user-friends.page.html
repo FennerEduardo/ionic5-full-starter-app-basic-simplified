@@ -20,7 +20,8 @@
     </ion-segment-button>
   </ion-segment>
 
-  <ion-searchbar animated (ionChange)="searchList($event)"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="searchText" (ionChange)="searchList()"></ion-searchbar>
+  <!-- <ion-searchbar [(ngModel)]="searchText" animated (ionChange)="searchList($event)"></ion-searchbar> -->
 
   <ng-template #friendItem let-friend="friend">
     <ion-row class="user-details-section">
