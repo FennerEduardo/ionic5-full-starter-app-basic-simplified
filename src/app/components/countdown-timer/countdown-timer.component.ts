@@ -24,6 +24,7 @@ const dayjs: any = _dayjs;
 export class CountdownTimerComponent implements OnInit, OnDestroy {
   _endingTime: any;
   _initialUnit = 'hour';
+  _endingUnit = 'second';
 
   _updateInterval: Observable<any> = interval(1000);
   private _unsubscribeSubject: Subject<void> = new Subject();
@@ -60,9 +61,12 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
   }
 
   @Input()
-  set unit(initialUnit: string) {
-    // 'day', 'hour, 'minute'
-    this._initialUnit = (initialUnit !== undefined && initialUnit !== null) ? initialUnit : 'hour';
+  set units(units: {from: string, to: string}) {
+    // 'day', 'hour, 'minute', 'second'
+    this._initialUnit = (units !== undefined && (units.from !== undefined && units.from !== null)) ? units.from : 'hour';
+    this._endingUnit = (units !== undefined && (units.to !== undefined && units.to !== null)) ? units.to : 'second';
+
+    // For 'day' unit, use the default modulus
 
     // Adjust modulus depending on the unit
     if (this._initialUnit === 'hour') {
@@ -78,6 +82,15 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
       this._hourModulus = (secondsLeft) => 1;
       // Neutral modulus
       this._minuteModulus = (secondsLeft) => secondsLeft;
+    }
+
+    if (this._initialUnit === 'second') {
+      // Cancelation modulus
+      this._dayModulus = (secondsLeft) => 1;
+      this._hourModulus = (secondsLeft) => 1;
+      this._minuteModulus = (secondsLeft) => 1;
+      // Neutral modulus
+      this._secondModulus = (secondsLeft) => secondsLeft;
     }
   }
 

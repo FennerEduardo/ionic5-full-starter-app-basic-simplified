@@ -1,43 +1,59 @@
 app-countdown-timer {
-  --countdown-contrast: #808080;
-  --countdown-background: #808080;
-  --countdown-color: #FFFFFF;
-  --countdown-border: none;
-  --countdown-text-shadow: 1px 1px #000;
+  --countdown-time-margin: 2px;
+  --countdown-time-padding: 0px;
+  --countdown-time-border: none;
+  --countdown-time-border-radius: 0px;
+  --countdown-time-background: transparent;
+  --countdown-time-color: #808080;
+  --countdown-time-text-shadow: none;
+  --countdown-time-flex-direction: row-reverse;
+
+  --countdown-alt-color: #808080;
 
   display: block;
 
-  .time-col {
-    min-width: 34px;
-    max-width: fit-content;
+  .countdown-row {
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    .time-col {
+      display: flex;
+      flex-direction: var(--countdown-time-flex-direction);
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .time-wrapper {
-    padding: 12px 4px;
-    border: var(--countdown-border);
-    border-radius: 4px;
-    text-align: center;
-    margin: 0px 3px;
-    position: relative;
-    background-color: var(--countdown-background);
+    margin: var(--countdown-time-margin);
+    padding: var(--countdown-time-padding);
+    border: var(--countdown-time-border);
+    border-radius: var(--countdown-time-border-radius);
+    background-color: var(--countdown-time-background);
 
     .time-left {
-      font-size: 14px;
-      font-weight: 500;
-      min-height: 14px;
-      color: var(--countdown-color);
-      position: relative;
       display: block;
-      text-shadow: var(--countdown-text-shadow);
+      color: var(--countdown-time-color);
+      text-shadow: var(--countdown-time-text-shadow);
+      text-align: center;
+      font-size: 1em;
+      line-height: 1em;
+      min-height: 1em;
+
+      // Make sure we always have space for two characters
+      // As ch (width of the character '0') unit is not 100% supported, we will use ex (height of the 'x' character) as a fallback
+      // See: https://www.quirksmode.org/css/units-values/
+      min-width: 2.2ex; // The 'x' character is semi-square char, that's why we set 2.2ex
+      min-width: 2.1ch; // ch is the only font unit based on the width of characters
     }
   }
 
   .time-alt-text {
-    font-size: 10px;
-    text-transform: uppercase;
-    color: var(--countdown-contrast);
     display: block;
+    color: var(--countdown-alt-color);
+    font-size: 0.7em;
     text-align: center;
-    margin-bottom: 4px;
+    text-transform: uppercase;
+    width: 2ex;
   }
 }
