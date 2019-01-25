@@ -38,9 +38,12 @@
   --background: var(--app-background-color-step-50);
 
   .expiration-countdown {
+    --ion-grid-column-padding: 3px;
+
     color: var(--ion-color-lightest);
     background-color: var(--deal-ended-color);
-    padding: 10px 30px;
+    padding: 10px 20px;
+
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -50,8 +53,24 @@
     }
 
     .expiration-lead {
-      margin: 0px 10px 0px 15px;
+      padding: 0px 10px;
       text-transform: uppercase;
+    }
+
+    app-countdown-timer.item-countdown {
+      --countdown-time-margin: 0px 4px 0px 0px;
+      --countdown-time-padding: 0px;
+      --countdown-time-border: none;
+      --countdown-time-border-radius: 0px;
+      --countdown-time-background: transparent;
+      --countdown-time-color: var(--ion-color-lightest);
+      --countdown-time-text-shadow: none;
+      --countdown-alt-color: var(--ion-color-lightest);
+
+      border: 2px solid var(--ion-color-lightest);
+      border-radius: 10px;
+      padding: 0px 4px;
+      font-size: 15px;
     }
   }
 
@@ -304,16 +323,25 @@
 // ISSUE: .swiper-paggination gets rendered dynamically. That prevents styling the elements when using the default Angular ViewEncapsulation.None
 //        (Angular doesn't add an '_ngcontent' attribute to the .swiper-paggination because it's dynamically rendered)
 // FIX:   See: https://stackoverflow.com/a/36265072/1116959
-:host ::ng-deep .details-slides {
-  .swiper-pagination {
-    height: var(--swiper-pagination-height);
-    line-height: 1;
-    // .swiper-pagination is 18px height, .slide-inner-row has 40px of padding-bottom => bottom = (40px - 18px)/2 = 11px
-    bottom: calc((var(--swiper-pagination-space) - var(--swiper-pagination-height) ) / 2);
+:host ::ng-deep {
+  .details-slides {
+    .swiper-pagination {
+      height: var(--swiper-pagination-height);
+      line-height: 1;
+      // .swiper-pagination is 18px height, .slide-inner-row has 40px of padding-bottom => bottom = (40px - 18px)/2 = 11px
+      bottom: calc((var(--swiper-pagination-space) - var(--swiper-pagination-height) ) / 2);
 
-    .swiper-pagination-bullet {
-      width: var(--pagination-bullet-size);
-      height: var(--pagination-bullet-size);
+      .swiper-pagination-bullet {
+        width: var(--pagination-bullet-size);
+        height: var(--pagination-bullet-size);
+      }
+    }
+  }
+
+  app-countdown-timer.item-countdown {
+    .time-alt-text {
+      text-transform: lowercase;
+      font-size: 1em;
     }
   }
 }

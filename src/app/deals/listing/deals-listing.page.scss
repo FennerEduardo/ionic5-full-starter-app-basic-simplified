@@ -190,11 +190,18 @@ ion-content {
     }
 
     app-countdown-timer {
-      --countdown-contrast: var(--deal-ends-soon-color);
-      --countdown-background: transparent;
-      --countdown-color: var(--deal-ends-soon-color);
-      --countdown-border: 2px solid var(--deal-ends-soon-color);
-      --countdown-text-shadow: none;
+      --countdown-time-margin: 3px 3px 0px;
+      --countdown-time-padding: 12px 4px;;
+      --countdown-time-border: 2px solid var(--deal-ends-soon-color);
+      --countdown-time-border-radius: 4px;
+      --countdown-time-background: transparent;
+      --countdown-time-color: var(--deal-ends-soon-color);
+      --countdown-time-text-shadow: none;
+      --countdown-time-flex-direction: column;
+      --countdown-alt-color: var(--deal-ends-soon-color);
+
+      font-weight: 500;
+      font-size: 14px;
     }
   }
 }
