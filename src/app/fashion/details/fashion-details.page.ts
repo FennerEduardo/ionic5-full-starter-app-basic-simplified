@@ -7,7 +7,11 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-fashion-details',
   templateUrl: './fashion-details.page.html',
-  styleUrls: ['./fashion-details.page.scss']
+  styleUrls: [
+    './fashion-details.page.scss',
+    './fashion-details.page.ios.scss',
+    './fashion-details.page.md.scss'
+  ]
 })
 export class FashionDetailsPage implements OnInit {
   details: FashionDetailsModel;
@@ -66,14 +70,11 @@ export class FashionDetailsPage implements OnInit {
     }
   }
 
-
-
-
   async openColorChooser() {
     const alert = await this.alertController.create({
       header: 'Color',
       inputs: this.colorVariants,
-      cssClass: 'color-alert',
+      cssClass: 'variant-alert color-chooser',
       buttons: [
         {
           text: 'Cancel',
@@ -97,7 +98,7 @@ export class FashionDetailsPage implements OnInit {
     const alert = await this.alertController.create({
       header: 'Size',
       inputs: this.sizeVariants,
-      cssClass: 'size-alert',
+      cssClass: 'variant-alert size-chooser',
       buttons: [
         {
           text: 'Cancel',

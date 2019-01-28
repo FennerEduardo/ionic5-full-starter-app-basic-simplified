@@ -1,0 +1,27 @@
+:host-context(.plt-mobile.md) {
+  // Custom platform styles here
+}
+
+// Custom platform styles for alert should be placed here as they are outside the :host-context scope
+::ng-deep {
+  .alert-wrapper.sc-ion-alert-md {
+    .alert-message {
+      display: none;
+    }
+
+    .alert-title {
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .alert-button {
+      --padding-top: 0;
+      --padding-start: 0.9em;
+      --padding-end: 0.9em;
+      --padding-bottom: 0;
+
+      height: 2.1em;
+      font-size: 13px;
+    }
+  }
+}

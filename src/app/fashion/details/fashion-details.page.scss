@@ -269,17 +269,26 @@
   }
 }
 
-// for the size and color chooser.
-// alerts and in general all overlays are attaches to the body or ion-app directly
-// so we need to use ::ng-deep to access it from here
+// Alerts and in general all overlays are attached to the body or ion-app directly
+// We need to use ::ng-deep to access it from here
+::ng-deep .variant-alert {
+  .alert-head {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-inline-start: 15px;
+    padding-inline-end: 15px;
+  }
 
-::ng-deep .color-alert,
-::ng-deep .size-alert 
-{
+  .alert-message {
+    display: none;
+  }
+
   .alert-title {
     color: #FFF;
   }
-  .alert-head, .alert-message {
+
+  .alert-head,
+  .alert-message {
     background-color: var(--ion-color-primary);
   }
 }
