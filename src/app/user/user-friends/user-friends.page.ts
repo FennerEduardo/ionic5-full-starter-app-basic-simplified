@@ -11,10 +11,11 @@ import { UserFriendsModel } from './user-friends.model';
 export class UserFriendsPage implements OnInit {
   data: UserFriendsModel;
   segmentValue = 'friends';
-  friendsList;
-  followersList;
-  followingList;
-  searchText = '';
+  friendsList: Array<any>;
+  followersList: Array<any>;
+  followingList: Array<any>;
+  searchQuery = '';
+  showFilters = false;
 
   @HostBinding('class.is-shell') get isShell() {
     return (this.data && this.data.isShell) ? true : false;
@@ -48,21 +49,30 @@ export class UserFriendsPage implements OnInit {
     }
   }
 
-  segmentChanged(ev) {
+  segmentChanged(ev): void {
     this.segmentValue = ev.detail.value;
+
+    // Check if there's any filter and apply it
+    this.searchList();
   }
 
-  searchList() {
+  searchList(): void {
+    const query = (this.searchQuery && this.searchQuery !== null) ? this.searchQuery : '';
+
     if (this.segmentValue === 'friends') {
-      this.friendsList = this.filterList(this.data.friends);
+      this.friendsList = this.filterList(this.data.friends, query);
     } else if (this.segmentValue === 'followers') {
-      this.followersList = this.filterList(this.data.followers);
+      this.followersList = this.filterList(this.data.followers, query);
     } else if (this.segmentValue === 'following') {
-      this.followingList = this.filterList(this.data.following);
+      this.followingList = this.filterList(this.data.following, query);
     }
   }
 
-  filterList(list) {
-    return list.filter(friend => friend.name.toLowerCase().includes(this.searchText.toLowerCase()));
+  filterList(list, query): Array<any> {
+    return list.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
+  }
+
+  toggleFilters(): void {
+    this.showFilters = !this.showFilters;
   }
 }
