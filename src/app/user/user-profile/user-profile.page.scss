@@ -1,8 +1,10 @@
 .user-details-section {
-  margin: 0px 15px 15px;
+  --ion-grid-column-padding: 0px;
+
+  margin: 10px 12px;
 
   .user-image-wrapper {
-    max-width: 33%;
+    max-width: 26%;
 
     app-preload-image.user-image {
       --image-border-radius: 8px;
@@ -15,51 +17,89 @@
     flex-direction: column;
     justify-content: space-between;
 
-    .user-name {
-      margin: 0px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      flex: 1;
-      font-size: 1.35rem;
-    }
+    .user-data-row {
+      padding-bottom: 10px;
+      flex-wrap: nowrap;
 
-    .user-membership {
-      border-radius: 4px;
-      padding: 4px 8px;
-      background-color: var(--ion-color-secondary);
-      margin-left: 10px;
-      color: #FFF;
-      font-weight: bold;
-      flex: 0 0 40px;
-      font-size: 0.9rem;
+      .user-name {
+        margin: 0px 0px 5px;
+        font-size: 20px;
+        letter-spacing: 0.5px;
 
-      app-text-shell {
-        --c-bg-color: var(--ion-color-secondary);
-      }
-    }
-
-    .user-job {
-      margin-top: 6px;
-      color: var(--ion-color-medium);
-      font-size: 1.11rem;
-    }
-
-    .actions-wrapper {
-      justify-content: space-between;
-      --ion-grid-columns: 10;
-      --ion-grid-column-padding: 0px;
-
-      ion-col:first-child
-      {
-        ion-button {
-          margin-left: 0px;
+        app-text-shell {
+          --c-line-height: 20px;
         }
       }
 
-      ion-col:last-child
-      {
-        ion-button {
-          margin-right: 0px;
+      .user-title {
+        margin: 0px;
+        color: var(--ion-color-medium);
+        font-size: 16px;
+
+        app-text-shell {
+          --c-line-height: 16px;
+        }
+      }
+
+      .membership-col {
+        padding-left: 10px;
+        flex-grow: 0;
+      }
+
+      .user-membership {
+        display: block;
+        background-color: var(--ion-color-secondary);
+        color: var(--ion-color-lightest);
+        border-radius: 4px;
+        padding: 4px 8px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 14px;
+
+        app-text-shell {
+          --c-bg-color: var(--ion-color-secondary);
+          --c-line-height: 14px;
+          min-width: 30px;
+
+          &.text-loaded {
+            min-width: 0px;
+          }
+        }
+      }
+    }
+
+    .actions-row {
+      --ion-grid-columns: 10;
+      --ion-grid-column-padding: 5px;
+
+      justify-content: space-between;
+      margin-left: -5px;
+      margin-right: -5px;
+
+      .main-actions {
+        flex-grow: 0;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-left: -5px;
+        margin-right: -5px;
+        display: flex;
+
+        .call-to-action-btn {
+          padding: 0px 5px;
+          margin: 0px;
+        }
+      }
+
+      .secondary-actions {
+        flex-grow: 0;
+        padding-top: 0px;
+        padding-bottom: 0px;
+
+        .more-btn {
+          --padding-start: 4px;
+          --padding-end: 4px;
+
+          margin: 0px;
         }
       }
     }
@@ -67,68 +107,107 @@
 }
 
 .user-stats-section {
-  margin: 0px 20px;
-  padding-bottom: 15px;
+  --ion-grid-column-padding: 5px;
+
+  margin: 30px 12px 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--ion-color-light-shade);
 
   .user-stats-wrapper {
     text-align: center;
-    padding-top: 10px;
 
-    .user-stat-value {
-      font-weight: bold;
-      font-size: 1.5rem;
+    .stat-value {
       display: block;
-      padding: 6px 0px;
+      padding-bottom: 5px;
       color: var(--ion-color-primary-tint);
+      font-weight: 500;
+      font-size: 18px;
+
+      app-text-shell {
+        --c-line-height: 18px;
+        min-width: 30px;
+
+        &.text-loaded {
+          min-width: 0px;
+        }
+      }
     }
 
-    .user-stat-name {
-      font-size: 18px;
+    .stat-name {
+      font-size: 16px;
       color: var(--ion-color-medium);
     }
   }
 }
 
+.details-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ion-color-dark-tint);
+  margin: 0px 0px 15px;
+}
+
 .user-about-section {
-  margin: 0px 20px;
-  padding-bottom: 15px;
+  margin: 20px 12px 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--ion-color-light-shade);
 
-  .user-about {
+  .user-description {
     color: var(--ion-color-primary-tint);
-    line-height: 1.4;
-    font-size: 15px;
     text-align: justify;
     margin: 10px 0px;
+    font-size: 14px;
+    line-height: 1.3;
+
+    app-text-shell {
+      --c-line-height: 14px;
+    }
   }
 }
+
 .user-friends-section {
-  margin: 0px 20px;
-  padding-bottom: 15px;
+  margin: 20px 12px 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid var(--ion-color-light-shade);
 
-  .section-title {
+  .heading-row {
+    margin-bottom: 15px;
     justify-content: space-between;
     align-items: center;
 
-    .right-link {
-      vertical-align: middle;
-      margin-top: 16px;
-      margin-bottom: 10px;
+    .details-section-title {
+      margin: 0px;
+    }
+
+    .heading-call-to-action {
+      padding: 6px 3px;
       text-decoration: none;
       color: var(--ion-color-secondary);
     }
   }
 
-  .pictures-row {
-    --ion-grid-columns: 7;
+  .friends-row {
+    --ion-grid-columns: 7; // We want to show three friends and a half. Each friend fills 2 cols => (3.5 * 2 = 7 cols)
     --ion-grid-column-padding: 0px;
-    flex-wrap: nowrap;
-    overflow: scroll;
-    margin: 0px -5px;
 
-    .picture-wrapper {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    will-change: scroll-position;
+    margin-left: -12px;
+    margin-right: -12px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      // .friend-item has 8px of side padding, we need an extra 4px at the beginning and end to fill the 12px side margin of the view
+      flex: 0 0 4px;
+    }
+
+    .friend-item {
       padding: 0px 8px;
 
       app-preload-image.friend-picture {
@@ -136,25 +215,34 @@
       }
 
       .friend-name {
+        display: block;
         text-align: center;
         margin: 10px 0px;
+        font-size: 14px;
+
+        app-text-shell {
+          --c-line-height: 14px;
+        }
       }
     }
   }
 }
-.user-photos-section {
-  margin: 0px 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid var(--ion-color-light-shade);
 
-  .section-title {
+.user-photos-section {
+  margin: 20px 12px 10px;
+  padding-bottom: 20px;
+
+  .heading-row {
+    margin-bottom: 15px;
     justify-content: space-between;
     align-items: center;
 
-    .right-link {
-      vertical-align: middle;
-      margin-top: 16px;
-      margin-bottom: 10px;
+    .details-section-title {
+      margin: 0px;
+    }
+
+    .heading-call-to-action {
+      padding: 6px 3px;
       text-decoration: none;
       color: var(--ion-color-secondary);
     }
@@ -163,10 +251,11 @@
   .pictures-row {
     --ion-grid-columns: 4;
     --ion-grid-column-padding: 0px;
-    margin: 0px -5px;
 
-    .picture-wrapper {
-      padding: 8px 8px;
+    margin: 0px -8px;
+
+    .picture-item {
+      padding: 0px 8px 16px;
 
       app-preload-image.picture {
         --image-border-radius: 8px;

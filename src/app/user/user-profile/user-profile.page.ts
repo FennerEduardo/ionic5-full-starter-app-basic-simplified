@@ -6,7 +6,11 @@ import { UserProfileModel } from './user-profile.model';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.page.html',
-  styleUrls: ['./user-profile.page.scss'],
+  styleUrls: [
+    './user-profile.page.scss',
+    './user-profile.page.ios.scss',
+    './user-profile.page.md.scss'
+  ],
 })
 export class UserProfilePage implements OnInit {
   profile: UserProfileModel;
