@@ -7,6 +7,7 @@
   --second-slide-background:#{ rgba(#38d39f, .45); };
   --third-slide-background: #{ rgba(#cb328f, .25); };
   --last-slide-background: #eef3ff;
+
 }
 
 ion-header {
@@ -18,17 +19,16 @@ ion-header {
 }
 
 ion-content {
-  --background: #FFF;
-
   // To get the ion-content behind the ion-header
   position: absolute;
   top: 0;
 }
 
 .walkthrough-slides {
-  height: 100%;
   --bullet-background: var(--ion-color-primary);
   --bullet-background-active: var(--ion-color-primary);
+
+  height: 100%;
 
   .slide-inner-row {
     height: 100%;
@@ -43,6 +43,11 @@ ion-content {
 }
 
 .illustration-and-decoration-slide {
+  // To prevent vertical pixel line in the sides
+  // margin-right: -1px;
+  // margin-left: -1px;
+  // width: calc(100% + 2px);
+
   .slide-inner-row {
     --ion-grid-column-padding: 0px;
     flex-flow: column;
@@ -70,14 +75,18 @@ ion-content {
   .decoration-col {
     flex-grow: 0;
     flex-shrink: 1;
-    min-height: auto;
-    background-color: var(--background);
-
+    min-height: 99px;
     // To prevent transparent line caused by pixel fractions
+    transform: translate3d(0px, 0px, 0px);
+
     .vector-decoration {
-      // margin-top: -1px;
+      fill: currentColor;
+      color: var(--vector-decoration-fill);
+      background-color: var(--background);
+      padding-bottom: 4px;
+      // To prevent transparent line caused by pixel fractions
+      transform: translate3d(0px, 0px, 0px);
       shape-rendering: geometricprecision;
-      overflow: visible;
     }
   }
 
@@ -86,8 +95,11 @@ ion-content {
     flex-shrink: 0;
     min-height: auto;
     background-color: var(--background);
+
     // To prevent transparent line caused by pixel fractions
-    // margin-top: -1px;
+    margin-bottom: -1px;
+    // Prevent .info-wrapper text to blink as it's over the previous element (Safari issue)
+    transform: translate3d(0px, 0px, 0px);
 
     .info-wrapper {
       margin: -20px 20px 0px;
@@ -177,6 +189,7 @@ ion-content {
       }
     }
 
+    // TODO: Set this button color using the button-color mixin
     .get-started-button {
       --background: var(--ion-color-primary);
       --background-activated: var(--ion-color-primary-shade);

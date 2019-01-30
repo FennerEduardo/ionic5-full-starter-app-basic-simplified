@@ -12,6 +12,12 @@ export class WalkthroughPage implements OnInit, AfterViewInit {
   @HostBinding('class.first-slide-active') isFirstSlide = true;
   @HostBinding('class.last-slide-active') isLastSlide = false;
 
+  slidesOptions: any = {
+    zoom: {
+      toggle: false // Disable zooming to prevent weird double tap zomming on slide images
+    }
+  };
+
   constructor(public menu: MenuController) { }
 
   ngOnInit() {
