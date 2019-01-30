@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ComponentsModule } from '../components/components.module';
 import { MenuController } from '@ionic/angular';
 
 @Component({
