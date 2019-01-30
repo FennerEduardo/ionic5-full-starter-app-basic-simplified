@@ -1,7 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <!-- <ion-back-button text="Back" defaultHref="/auth/login"></ion-back-button> -->
       <ion-back-button text="Back"></ion-back-button>
     </ion-buttons>
     <ion-title>Sign Up</ion-title>
@@ -9,9 +8,6 @@
 </ion-header>
 
 <ion-content padding class="outer-content signup-content">
-  <!-- <ion-text color="secondary">
-    <h2>Create an Account</h2>
-  </ion-text> -->
   <form [formGroup]="signupForm" (ngSubmit)="doSignup()">
     <ion-list class="form-list" lines="inset">
       <!-- Email input -->

@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, AfterContentInit, ContentChild, HostBinding } from '@angular/core';
 
-// Lista de los componentes de Ionic: https://github.com/ionic-team/ionic/blob/master/angular/src/directives/proxies.ts
+// Reference to the @ionic/angular Components List:
+// https://github.com/ionic-team/ionic/blob/master/angular/src/directives/proxies.ts
 import { IonCheckbox } from '@ionic/angular';
 
 @Component({

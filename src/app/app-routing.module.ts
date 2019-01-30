@@ -12,7 +12,6 @@ const routes: Routes = [
   { path: 'contact-card', loadChildren: './contact-card/contact-card.module#ContactCardPageModule' },
   { path: 'forms-and-validations', loadChildren: './forms/forms.module#FormsPageModule' },
   { path: 'filters', loadChildren: './filters/filters.module#FiltersPageModule' },
-  { path: 'coming-soon', loadChildren: './coming-soon/coming-soon.module#ComingSoonPageModule' },
   { path: 'page-not-found', loadChildren: './page-not-found/page-not-found.module#PageNotFoundModule' },
   { path: '**', redirectTo: 'page-not-found' }
 ];
