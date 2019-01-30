@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'forms-and-validations', loadChildren: './forms/forms.module#FormsPageModule' },
   { path: 'filters', loadChildren: './filters/filters.module#FiltersPageModule' },
   { path: 'page-not-found', loadChildren: './page-not-found/page-not-found.module#PageNotFoundModule' },
+  { path: 'showcase', loadChildren: './showcase/showcase.module#ShowcaseModule' },
   { path: '**', redirectTo: 'page-not-found' }
 ];
 @NgModule({
