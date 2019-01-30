@@ -9,7 +9,7 @@
 
 <ion-content class="fashion-details-content">
   <ion-row class="slider-row">
-    <ion-slides class="details-slides" pager="true">
+    <ion-slides class="details-slides" pager="true" [options]="slidesOptions">
       <ion-slide class="" *ngFor="let image of details?.showcaseImages">
         <ion-row class="slide-inner-row">
           <app-background-image class="add-spinner" [ngClass]="{'centered-image': (image.type === 'square'), 'fill-image': (image.type === 'fill')}" [src]="image.source">
