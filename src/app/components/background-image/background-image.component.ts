@@ -11,6 +11,7 @@ import { isPlatformServer } from '@angular/common';
 })
 export class BackgroundImageComponent {
   _src = '';
+  _alt = '';
 
   @HostBinding('style.backgroundImage') backgroundImage: string;
   @HostBinding('class.img-loaded') imageLoaded = false;
@@ -26,6 +27,10 @@ export class BackgroundImageComponent {
     } else {
       this.imageLoaded = false;
     }
+  }
+  @Input()
+  set alt(val: string) {
+    this._alt = (val !== undefined && val !== null) ? val : '';
   }
 
   constructor(

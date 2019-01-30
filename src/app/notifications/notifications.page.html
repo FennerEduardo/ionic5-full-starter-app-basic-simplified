@@ -18,7 +18,7 @@
     </ion-item-divider>
     <ion-item class="notification-item" lines="none" *ngFor="let notification of notifications.today">
       <ion-avatar slot="start">
-        <img [src]="notification.image">
+        <img [src]="notification.image" alt="user image">
       </ion-avatar>
       <ion-row class="details">
         <ion-col size="12" class="details-col">
@@ -37,7 +37,7 @@
     </ion-item-divider>
     <ion-item class="notification-item" lines="none" *ngFor="let notification of notifications.yesterday">
       <ion-avatar slot="start">
-        <img [src]="notification.image">
+        <img [src]="notification.image" alt="user image">
       </ion-avatar>
       <ion-row class="details">
         <ion-col size="12" class="details-col">

@@ -13,7 +13,7 @@
       <ion-row class="info-row">
         <ion-col class="icon-col" size="2">
           <a class="icon-anchor" [routerLink]="['/app/categories/food/', item.slug]">
-            <app-preload-image class="add-spinner" [ratio]="{w: 1, h: 1}" [src]="item.icon"></app-preload-image>
+            <app-preload-image class="add-spinner" [ratio]="{w: 1, h: 1}" [src]="item.icon" [alt]="'restauran image'"></app-preload-image>
           </a>
         </ion-col>
         <ion-col class="description-col">
@@ -47,7 +47,7 @@
       </ion-row>
       <ion-row class="pictures-row">
         <ion-col class="picture-wrapper" size="2" *ngFor="let picture of item.pictures.slice(0, 5); let i = index">
-          <app-preload-image [ratio]="{w: 1, h: 1}" [src]="picture"></app-preload-image>
+          <app-preload-image [ratio]="{w: 1, h: 1}" [src]="picture" [alt]="'food image'"></app-preload-image>
           <a class="has-more-pictures" [routerLink]="['/app/categories/food/', item.slug]" *ngIf="i == 4 && item.pictures.length > 5">
             <span class="pictures-count">{{ item.pictures.length - 5 }}</span>
           </a>

@@ -11,6 +11,7 @@ import { isPlatformServer } from '@angular/common';
 })
 export class PreloadImageComponent {
   _src = '';
+  _alt = '';
   _ratio: { w: number, h: number };
 
   @HostBinding('style.padding') ratioPadding = '0px';
@@ -36,6 +37,11 @@ export class PreloadImageComponent {
     } else {
       this.imageLoaded = false;
     }
+  }
+
+  @Input()
+  set alt(val: string) {
+    this._alt = (val !== undefined && val !== null) ? val : '';
   }
 
   constructor(
