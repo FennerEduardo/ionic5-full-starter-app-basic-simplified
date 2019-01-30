@@ -10,6 +10,12 @@ import { DealsDetailsModel } from './deals-details.model';
 })
 export class DealsDetailsPage implements OnInit {
   details: DealsDetailsModel;
+  slidesOptions: any = {
+    zoom: {
+      toggle: false // Disable zooming to prevent weird double tap zomming on slide images
+    }
+  };
+
   @HostBinding('class.is-shell') get isShell() {
     return (this.details && this.details.isShell) ? true : false;
   }
