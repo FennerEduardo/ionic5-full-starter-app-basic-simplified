@@ -7,6 +7,7 @@
   --second-slide-background:#{ rgba(#38d39f, .45); };
   --third-slide-background: #{ rgba(#cb328f, .25); };
   --last-slide-background: #eef3ff;
+
 }
 
 ion-header {
@@ -26,6 +27,7 @@ ion-content {
 }
 
 .walkthrough-slides {
+  touch-action: manipulation;
   height: 100%;
   --bullet-background: var(--ion-color-primary);
   --bullet-background-active: var(--ion-color-primary);
@@ -43,6 +45,11 @@ ion-content {
 }
 
 .illustration-and-decoration-slide {
+  // To prevent vertical pixel line in the sides
+  // margin-right: -1px;
+  // margin-left: -1px;
+  // width: calc(100% + 2px);
+
   .slide-inner-row {
     --ion-grid-column-padding: 0px;
     flex-flow: column;
@@ -70,14 +77,25 @@ ion-content {
   .decoration-col {
     flex-grow: 0;
     flex-shrink: 1;
-    min-height: auto;
-    background-color: var(--background);
+    // min-height: auto;
+    min-height: 99px;
+    // background-color: var(--background);
+
+    transform: translate3d(0px, 0px, 0px);
+    // background-color: var(--background);
 
     // To prevent transparent line caused by pixel fractions
+    // background-clip: content-box;
+    // padding-top: 2px;
     .vector-decoration {
+      transform: translate3d(0px, 0px, 0px);
+      background-color: var(--background);
+      fill: currentColor;
+      color: var(--vector-decoration-fill);
       // margin-top: -1px;
       shape-rendering: geometricprecision;
-      overflow: visible;
+      // overflow: visible;
+      padding-bottom: 4px;
     }
   }
 
@@ -86,8 +104,12 @@ ion-content {
     flex-shrink: 0;
     min-height: auto;
     background-color: var(--background);
+
     // To prevent transparent line caused by pixel fractions
     // margin-top: -1px;
+    margin-bottom: -1px;
+    // Prevent .info-wrapper text to blink as it's over the previous element (Safari issue)
+    transform: translate3d(0px, 0px, 0px);
 
     .info-wrapper {
       margin: -20px 20px 0px;
@@ -121,6 +143,11 @@ ion-content {
   .illustration-col {
     padding: 0px 9%;
   }
+
+  // .info-col {
+  //   // To prevent transparent line caused by pixel fractions
+  //   margin-top: -1px;
+  // }
 }
 
 .second-slide {
@@ -133,6 +160,11 @@ ion-content {
   .illustration-col {
     padding: 0px 10%;
   }
+
+  // .info-col {
+  //   // To prevent transparent line caused by pixel fractions
+  //   margin-top: -1px;
+  // }
 }
 
 .third-slide {
