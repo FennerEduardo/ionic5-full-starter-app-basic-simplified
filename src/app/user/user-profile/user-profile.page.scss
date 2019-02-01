@@ -197,6 +197,10 @@
     margin-left: -12px;
     margin-right: -12px;
 
+    // Hide scrollbars: https://stackoverflow.com/a/38994837/1116959
+    -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox
+    // Safari and Chrome
     &::-webkit-scrollbar {
       display: none;
     }
