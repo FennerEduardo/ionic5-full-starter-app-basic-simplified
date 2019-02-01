@@ -1,16 +1,19 @@
 .app-sidemenu {
+  --side-menu-margin: var(--app-fair-margin);
+
   ion-content {
     --background: var(--ion-color-primary-shade);
   }
 
   .user-details-wrapper {
+    --ion-grid-column-padding: 0px;
+
     background-color: var(--ion-color-primary-tint);
     color: var(--ion-color-primary-contrast);
-    padding: 10px;
+    padding: var(--side-menu-margin);
     align-items: center;
 
     &:first-child {
-      // padding-top: var(--ion-safe-area-top, 10px);
       padding-top: var(--ion-statusbar-padding, 10px);
     }
 
@@ -24,7 +27,7 @@
   }
 
   .user-info-wrapper {
-    padding-left: 10px;
+    padding-left: var(--side-menu-margin);
 
     .user-name {
       margin: 0px 0px 5px;
@@ -62,12 +65,16 @@
     ion-list-header {
       --color: rgba(var(--ion-color-light-shade-rgb), 0.6);
       --shadow-color: rgba(var(--ion-color-darkest-rgb), 0.4);
+
       text-transform: uppercase;
       box-shadow: inset 0px -4px 8px -2px var(--shadow-color);
+      padding-inline-start: var(--side-menu-margin);
     }
 
     ion-item {
       --border-width: 0px !important;
+      --padding-start: var(--side-menu-margin);
+
       font-weight: 500;
     }
   }

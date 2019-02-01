@@ -1,6 +1,8 @@
 .categories-list {
-  --categories-gutter: calc(var(--app-narrow-margin) / 2);
+  --categories-margin: var(--app-narrow-margin);
   --categories-radius: var(--app-fair-radius);
+  --categories-gutter: calc(var(--categories-margin) / 2);
+
   --ion-grid-column-padding: var(--categories-gutter);
 
   padding: var(--categories-gutter);
