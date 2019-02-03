@@ -45,6 +45,15 @@
   <ion-item-divider sticky="true">
     <ion-label>Preload Image</ion-label>
   </ion-item-divider>
+  <p>
+    This component enables to preload an image with an elegant shell that mantains a specified aspect ratio. By doing so, it prevents content from jumping around the page while assets (images) are loading
+  </p>
+  <p>
+    The <code>app-preload-image</code> component must be surrounded by a container element with a defined with, as this component will fill the parents width.
+  </p>
+  <div style="width:30%; margin: 0px auto;">
+    <app-preload-image class="add-spinner" [ratio]="{w:1, h:1}" [src]="'https://via.placeholder.com/150x150'" [alt]="'Sample Image'"></app-preload-image>
+  </div>
   <br/>
   <br/>
   <br/>
