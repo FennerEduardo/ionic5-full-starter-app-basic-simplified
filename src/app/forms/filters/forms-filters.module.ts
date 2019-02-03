@@ -4,13 +4,14 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { ComponentsModule } from '../components/components.module';
-import { FormsPage } from './forms.page';
+
+import { ComponentsModule } from '../../components/components.module';
+import { FormsFiltersPage } from './forms-filters.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: FormsPage
+    component: FormsFiltersPage
   }
 ];
 
@@ -23,6 +24,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ComponentsModule
   ],
-  declarations: [FormsPage]
+  declarations: [FormsFiltersPage]
 })
-export class FormsPageModule {}
+export class FormsFiltersPageModule {}

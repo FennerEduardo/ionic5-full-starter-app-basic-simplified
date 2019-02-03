@@ -1,14 +1,14 @@
 import { Component , ViewEncapsulation} from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { counterRangeValidator } from '../components/counter-input/counter-input.component';
+
+import { counterRangeValidator } from '../../components/counter-input/counter-input.component';
 
 @Component({
-  selector: 'filters-page',
-  templateUrl: './filters.page.html',
-  styleUrls: ['./filters.page.scss'],
-  // encapsulation: ViewEncapsulation.None
+  selector: 'forms-filters-page',
+  templateUrl: './forms-filters.page.html',
+  styleUrls: ['./forms-filters.page.scss']
 })
-export class FiltersPage {
+export class FormsFiltersPage {
   rangeForm: any;
   checkboxForm: FormGroup;
   radioForm: FormGroup;

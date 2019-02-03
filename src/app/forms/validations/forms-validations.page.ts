@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 
-import { UsernameValidator } from '../validators/username.validator';
-import { PasswordValidator } from '../validators/password.validator';
-import { PhoneValidator } from '../validators/phone.validator';
+import { UsernameValidator } from '../../validators/username.validator';
+import { PasswordValidator } from '../../validators/password.validator';
+import { PhoneValidator } from '../../validators/phone.validator';
 
-import { Country } from './forms.model';
+import { CountryPhone } from './country-phone.model';
 
 
 @Component({
-  selector: 'app-forms',
-  templateUrl: './forms.page.html',
-  styleUrls: ['./forms.page.scss'],
+  selector: 'forms-validations-page',
+  templateUrl: './forms-validations.page.html',
+  styleUrls: ['./forms-validations.page.scss'],
 })
-export class FormsPage implements OnInit {
+export class FormsValidationsPage implements OnInit {
 
   validationsForm: FormGroup;
   matching_passwords_group: FormGroup;
   country_phone_group: FormGroup;
-  countries: Array<Country>;
+  countries: Array<CountryPhone>;
   genders: Array<string>;
 
   validation_messages = {
@@ -63,9 +63,9 @@ export class FormsPage implements OnInit {
 
   ngOnInit() {
     this.countries = [
-      new Country('UY', 'Uruguay'),
-      new Country('US', 'United States'),
-      new Country('AR', 'Argentina')
+      new CountryPhone('UY', 'Uruguay'),
+      new CountryPhone('US', 'United States'),
+      new CountryPhone('AR', 'Argentina')
     ];
 
     this.genders = [

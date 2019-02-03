@@ -1,6 +1,6 @@
 import libphonenumber from 'google-libphonenumber';
 
-export class Country {
+export class CountryPhone {
   iso: string;
   name: string;
   code: string;

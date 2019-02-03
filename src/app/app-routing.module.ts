@@ -10,8 +10,8 @@ const routes: Routes = [
   { path: 'auth/forgot-password', loadChildren: './forgot-password/forgot-password.module#ForgotPasswordPageModule' },
   { path: 'app', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'contact-card', loadChildren: './contact-card/contact-card.module#ContactCardPageModule' },
-  { path: 'forms-and-validations', loadChildren: './forms/forms.module#FormsPageModule' },
-  { path: 'filters', loadChildren: './filters/filters.module#FiltersPageModule' },
+  { path: 'forms-and-validations', loadChildren: './forms/validations/forms-validations.module#FormsValidationsPageModule' },
+  { path: 'forms-filters', loadChildren: './forms/filters/forms-filters.module#FormsFiltersPageModule' },
   { path: 'page-not-found', loadChildren: './page-not-found/page-not-found.module#PageNotFoundModule' },
   { path: 'showcase', loadChildren: './showcase/showcase.module#ShowcaseModule' },
   { path: '**', redirectTo: 'page-not-found' }
