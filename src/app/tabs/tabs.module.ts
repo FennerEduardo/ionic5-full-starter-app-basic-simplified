@@ -8,6 +8,7 @@ import { TabsPageRoutingModule } from './tabs.router.module';
 
 import { TabsPage } from './tabs.page';
 
+// TODO: por que tenemos estos modulos aca?
 import { CategoriesPageModule } from '../categories/categories.module';
 // Fashion
 import { FashionListingPageModule } from '../fashion/listing/fashion-listing.module';
@@ -22,7 +23,7 @@ import { DealsDetailsPageModule } from '../deals/details/deals-details.module';
 import { RealStateListingPageModule } from '../real-state/listing/real-state-listing.module';
 import { RealStateDetailsPageModule } from '../real-state/details/real-state-details.module';
 
-import { UserProfilePageModule } from '../user/user-profile/user-profile.module';
+import { UserProfilePageModule } from '../user/profile/user-profile.module';
 
 import { ContactCardPageModule } from '../contact-card/contact-card.module';
 

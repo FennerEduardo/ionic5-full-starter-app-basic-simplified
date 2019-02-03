@@ -63,11 +63,11 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../user/user-profile/user-profile.module#UserProfilePageModule'
+            loadChildren: '../user/profile/user-profile.module#UserProfilePageModule'
           },
           {
             path: 'friends',
-            loadChildren: '../user/user-friends/user-friends.module#UserFriendsPageModule'
+            loadChildren: '../user/friends/user-friends.module#UserFriendsPageModule'
           }
         ]
       },

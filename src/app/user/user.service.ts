@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 
 import { SubjectFetch } from '../utils/subject-fetch';
 
-import { UserProfileModel } from './user-profile/user-profile.model';
-import { UserFriendsModel } from './user-friends/user-friends.model';
+import { UserProfileModel } from './profile/user-profile.model';
+import { UserFriendsModel } from './friends/user-friends.model';
 
 @Injectable()
 export class UserService {
