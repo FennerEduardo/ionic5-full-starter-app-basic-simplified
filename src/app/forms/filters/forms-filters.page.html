@@ -19,15 +19,14 @@
           <span class="range-label">Quantity</span>
           <span class="range-value">{{ rangeForm.controls.dual.value.upper }}</span>
         </div>
-        <ion-item>
+        <ion-item class="range-item">
           <ion-range formControlName="dual" color="secondary" dualKnobs="true" (ionChange)="rangeChange($event)" min="1" max="40" step="1"></ion-range>
         </ion-item>
-
         <div class="range-header">
           <span class="range-label">Amount</span>
           <span class="range-value">{{ rangeForm.controls.single.value }}</span>
         </div>
-        <ion-item>
+        <ion-item class="range-item">
           <ion-range formControlName="single" color="secondary" (ionChange)="rangeChange($event)" min="0" max="50" step="1"></ion-range>
         </ion-item>
       </ion-list>
