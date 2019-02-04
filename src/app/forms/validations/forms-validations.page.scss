@@ -1,45 +1,53 @@
-.form-content
-{
-	--padding-end: 6%;
-	--padding-start: 6%;
+.forms-validations-content {
+  --forms-validations-margin: var(--app-fair-margin);
+  --forms-validations-background: var(--ion-background-color-step-50, #f2f2f2);
+  --background: var(--forms-validations-background);
 
-	ion-item {
-		--background: var(--ion-background-color-step-50, #f2f2f2);
-	}
+  .validations-form {
+    margin-bottom: calc(var(--forms-validations-margin) * 2);
 
-	ion-button {
-		--border-radius: 6px;
-		font-weight: 500;
-	}
+    .inputs-list {
+      --ion-item-background: var(--forms-validations-background);
 
-	.section-title {
-		text-transform: uppercase;
-		font-size: 16px;
-		color: var(--ion-color-secondary);
-	}
+      padding: var(--forms-validations-margin) var(--forms-validations-margin) calc(var(--forms-validations-margin) * 2);
 
-	.form-list {
-	  background: var(--ion-background-color-step-50, #f2f2f2);
+      ion-list-header {
+        padding-inline-start: 0px;
 
-		ion-input {
-		  --padding-start: 0px;
-		}
-	}
-
-	.error-container {
-
-    .error-message {
-      color: var(--ion-color-danger);
-      background: var(--ion-background-color-step-50, #f2f2f2);
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 16px;
-
-      &:first-child
-      {
-        margin-top: 10px;
+        .header-title {
+          text-transform: uppercase;
+      		font-size: 16px;
+      		color: var(--ion-color-secondary);
+        }
       }
-    }
-	}
 
+      .input-item {
+        --padding-start: 0px;
+        --padding-end: 0px;
+      }
+
+      .terms-item {
+        --border-width: 0px;
+        --inner-padding-end: 0px;
+      }
+
+      .error-container {
+        .error-message {
+          margin: calc(var(--forms-validations-margin) / 2) 0px;
+          display: flex;
+          align-items: center;
+          color: var(--ion-color-danger);
+          font-size: 14px;
+
+          ion-icon {
+            padding-inline-end: calc(var(--forms-validations-margin) / 2);
+          }
+        }
+    	}
+    }
+
+    .submit-btn {
+      margin: var(--forms-validations-margin)
+    }
+  }
 }
