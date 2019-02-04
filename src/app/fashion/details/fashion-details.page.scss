@@ -1,3 +1,5 @@
+@import "../../../theme/mixins/inputs/inputs";
+
 .fashion-details-content {
   --shell-color: #cb328f;
   --shell-color-rgb: 203,50,143;
@@ -272,23 +274,14 @@
 // Alerts and in general all overlays are attached to the body or ion-app directly
 // We need to use ::ng-deep to access it from here
 ::ng-deep .variant-alert {
-  .alert-head {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-inline-start: 15px;
-    padding-inline-end: 15px;
-  }
+  @include select-alert();
+
+  // Variables should be in a deeper selector or after the mixin include to override default values
+  --select-alert-color: var(--ion-color-lightest);
+  --select-alert-background: var(--ion-color-primary);
+  --select-alert-margin: 16px;
 
   .alert-message {
     display: none;
-  }
-
-  .alert-title {
-    color: #FFF;
-  }
-
-  .alert-head,
-  .alert-message {
-    background-color: var(--ion-color-primary);
   }
 }

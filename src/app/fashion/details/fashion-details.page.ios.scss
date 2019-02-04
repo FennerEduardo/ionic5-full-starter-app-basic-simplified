@@ -5,12 +5,6 @@
 // Custom platform styles for alert should be placed here as they are outside the :host-context scope
 ::ng-deep {
   .alert-wrapper.sc-ion-alert-ios {
-    .alert-message {
-      display: none;
-    }
-
-    .alert-title {
-      margin: 0px;
-    }
+    // Custom platform styles for the select-alert here
   }
 }

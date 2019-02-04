@@ -1,3 +1,5 @@
+@import "../../../theme/mixins/inputs/inputs";
+
 .forms-validations-content {
   --forms-validations-margin: var(--app-fair-margin);
   --forms-validations-background: var(--ion-background-color-step-50, #f2f2f2);
@@ -49,5 +51,20 @@
     .submit-btn {
       margin: var(--forms-validations-margin)
     }
+  }
+}
+
+// Alerts and in general all overlays are attached to the body or ion-app directly
+// We need to use ::ng-deep to access it from here
+::ng-deep .select-alert {
+  @include select-alert();
+
+  // Variables should be in a deeper selector or after the mixin include to override default values
+  --select-alert-color: var(--ion-color-lightest);
+  --select-alert-background: var(--ion-color-primary);
+  --select-alert-margin: 16px;
+
+  .alert-message {
+    display: none;
   }
 }
