@@ -27,7 +27,7 @@ export class FormsValidationsPage implements OnInit {
       { type: 'minlength', message: 'Username must be at least 5 characters long.' },
       { type: 'maxlength', message: 'Username cannot be more than 25 characters long.' },
       { type: 'pattern', message: 'Your username must contain only numbers and letters.' },
-      { type: 'validUsername', message: 'Your username has already been taken.' }
+      { type: 'usernameNotAvailable', message: 'Your username has already been taken.' }
     ],
     'name': [
       { type: 'required', message: 'Name is required.' }
@@ -41,7 +41,7 @@ export class FormsValidationsPage implements OnInit {
     ],
     'phone': [
       { type: 'required', message: 'Phone is required.' },
-      { type: 'validCountryPhone', message: 'Phone incorrect for the country selected' }
+      { type: 'invalidCountryPhone', message: 'Phone incorrect for the country selected' }
     ],
     'password': [
       { type: 'required', message: 'Password is required.' },
@@ -52,7 +52,7 @@ export class FormsValidationsPage implements OnInit {
       { type: 'required', message: 'Confirm password is required' }
     ],
     'matching_passwords': [
-      { type: 'areEqual', message: 'Password mismatch' }
+      { type: 'areNotEqual', message: 'Password mismatch' }
     ],
     'terms': [
       { type: 'pattern', message: 'You must accept terms and conditions.' }
@@ -81,14 +81,14 @@ export class FormsValidationsPage implements OnInit {
       ])),
       confirm_password: new FormControl('', Validators.required)
     }, (formGroup: FormGroup) => {
-      return PasswordValidator.areEqual(formGroup);
+      return PasswordValidator.areNotEqual(formGroup);
     });
 
     const country = new FormControl(this.countries[0], Validators.required);
 
     const phone = new FormControl('', Validators.compose([
       Validators.required,
-      PhoneValidator.validCountryPhone(country)
+      PhoneValidator.invalidCountryPhone(country)
     ]));
     this.country_phone_group = new FormGroup({
       country: country,
@@ -97,7 +97,7 @@ export class FormsValidationsPage implements OnInit {
 
     this.validationsForm = new FormGroup({
       'username': new FormControl('', Validators.compose([
-        UsernameValidator.validUsername,
+        UsernameValidator.usernameNotAvailable,
         Validators.maxLength(25),
         Validators.minLength(5),
         Validators.pattern('^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$'),

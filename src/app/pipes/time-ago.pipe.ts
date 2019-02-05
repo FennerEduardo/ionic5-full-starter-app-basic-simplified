@@ -5,10 +5,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 import * as _dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 
-// TODO:  dayjs esta tirando este ERROR:
+// TODO:  dayjs is throiwing this ERROR:
 //        error TS2339: Property 'to' does not exist on type 'Dayjs'.
-// Por suerte ya hay un PR que lo soluciona (https://github.com/iamkun/dayjs/issues/297#issuecomment-442748858)
-// When fixed, remove this
+// Luckily there is a PR which solves it (https://github.com/iamkun/dayjs/issues/297#issuecomment-442748858)
+// When fixed, remove this line:
 const dayjs: any = _dayjs;
 
 @Pipe({ name: 'appTimeAgo' })

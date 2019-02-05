@@ -3,8 +3,10 @@ import libphonenumber from 'google-libphonenumber';
 
 export class PhoneValidator {
 
-  // Inspired on: https://github.com/yuyang041060120/ng2-validation/blob/master/src/equal-to/validator.ts
-  static validCountryPhone = (countryControl: AbstractControl): ValidatorFn => {
+  // If our validation fails, we return an object with a key for the error name and a value of true.
+  // Otherwise, if the validation passes, we simply return null because there is no error.
+
+  static invalidCountryPhone = (countryControl: AbstractControl): ValidatorFn => {
     let subscribe = false;
 
     return (phoneControl: AbstractControl): {[key: string]: boolean} => {
@@ -27,14 +29,13 @@ export class PhoneValidator {
             return null;
           }
         } catch (e) {
-          // console.log(e);
           return {
-            validCountryPhone: true
+            invalidCountryPhone: true
           };
         }
 
         return {
-          validCountryPhone: true
+          invalidCountryPhone: true
         };
       } else {
         return null;
