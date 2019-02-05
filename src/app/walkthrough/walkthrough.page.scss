@@ -2,6 +2,8 @@
   --swiper-pagination-space: 40px;
   --swiper-pagination-height: 18px;
   --pagination-bullet-size: 10px;
+  --walkthrough-margin: var(--app-broad-margin);
+  --walkthrough-background: var(--ion-color-lightest);
 
   --first-slide-background: #c1ebff;
   --second-slide-background: #a9ebd2;
@@ -11,9 +13,14 @@
 
 ion-header {
   ion-toolbar {
-    --background: transparent;
+    // --background: transparent;
+    --ion-toolbar-background: transparent;
     // For the skip button
-    --color: var(--ion-color-tertiary);
+    // TODO: hacerlo como hacemos los otros botones
+    // --ion-toolbar-color: var(--ion-color-lightest);
+    ion-button {
+      --color: var(--ion-color-lightest);
+    }
   }
 }
 
@@ -34,7 +41,7 @@ ion-content {
     width: 100%;
     padding: 0px;
     // Header space
-    padding-top: var(--header-height);
+    padding-top: var(--app-header-height);
     // .swiper-pagination space
     border-bottom: var(--swiper-pagination-space) solid transparent;
     background-clip: padding-box;
@@ -42,13 +49,9 @@ ion-content {
 }
 
 .illustration-and-decoration-slide {
-  // To prevent vertical pixel line in the sides
-  // margin-right: -1px;
-  // margin-left: -1px;
-  // width: calc(100% + 2px);
-
   .slide-inner-row {
     --ion-grid-column-padding: 0px;
+
     flex-flow: column;
     justify-content: flex-start;
   }
@@ -61,7 +64,7 @@ ion-content {
 
     app-preload-image {
       --loading-background: transparent;
-      --spinner-color: #FFF;
+      --spinner-color: var(--ion-color-lightest);
 
       // Override <ion-slide> image styles
       img {
@@ -81,7 +84,7 @@ ion-content {
     .vector-decoration {
       fill: currentColor;
       color: var(--vector-decoration-fill);
-      background-color: var(--background);
+      background-color: var(--walkthrough-background);
       padding-bottom: 4px;
       // To prevent transparent line caused by pixel fractions
       transform: translate3d(0px, 0px, 0px);
@@ -93,7 +96,7 @@ ion-content {
     flex-grow: 1;
     flex-shrink: 0;
     min-height: auto;
-    background-color: var(--background);
+    background-color: var(--walkthrough-background);
 
     // To prevent transparent line caused by pixel fractions
     margin-bottom: -1px;
@@ -101,18 +104,18 @@ ion-content {
     transform: translate3d(0px, 0px, 0px);
 
     .info-wrapper {
-      margin: -20px 20px 0px;
+      margin: calc(var(--walkthrough-margin) * -1) var(--walkthrough-margin) 0px;
       text-align: left;
 
       .info-title {
-        margin: 0px 0px 20px;
-        color: #333;
+        margin: 0px 0px var(--walkthrough-margin);
+        color: var(--ion-color-primary-tint);
       }
 
       .info-paragraph {
-        color: #666;
+        color: var(--ion-color-medium-shade);
         font-size: 14px;
-        margin: 0px 0px 10px;
+        margin: 0px 0px calc(var(--walkthrough-margin) / 2);
 
         &:last-child {
           margin-bottom: 0px;
@@ -172,7 +175,7 @@ ion-content {
   }
 
   .info-col {
-    padding: 20px;
+    padding: var(--walkthrough-margin);
 
     .info-outer {
       height: 100%;
@@ -180,7 +183,7 @@ ion-content {
       flex-direction: column;
 
       .info-wrapper {
-        margin: -20px 0px 0px;
+        margin: calc(var(--walkthrough-margin) * -1) 0px 0px;
       }
 
       .call-to-actions-wrapper {
@@ -210,6 +213,7 @@ ion-content {
         font-size: 16px;
       }
 
+      // TODO: pasar estos estilos como hacemos con los otros botones
       .login-button {
         --color: var(--ion-color-secondary);
 
