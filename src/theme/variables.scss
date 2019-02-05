@@ -76,7 +76,7 @@
 }
 
 :root {
-  --app-background-color-step-50: #f2f2f2;
+  --app-background-color: var(--ion-background-color-step-50, #f2f2f2);
 
   --app-narrow-margin: 12px;
   --app-fair-margin: 16px;
