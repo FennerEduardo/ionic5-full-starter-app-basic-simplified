@@ -2,21 +2,19 @@
   --swiper-pagination-space: 40px;
   --swiper-pagination-height: 18px;
   --pagination-bullet-size: 10px;
-
   --slides-background: var(--ion-color-primary);
+  --getting-started-margin: var(--app-broad-margin);
 }
 
-// If you use ViewEncapsulation.None then add ion-header and ion-content styles here
-// app-getting-started {
-//
-// }
-
-// If you choose ViewEncapsulation.ShadowDom, the leave ion-header and ion-content styles here
 ion-header {
   ion-toolbar {
     --background: var(--slides-background);
     // For the skip button
-    --color: var(--ion-color-tertiary);
+    // TODO: hacerlo como hacemos los otros botones
+    // --ion-toolbar-color: var(--ion-color-lightest);
+    ion-button {
+      --color: var(--ion-color-lightest);
+    }
   }
 }
 
@@ -24,23 +22,22 @@ ion-content {
   --background: var(--slides-background);
 }
 
-ion-checkbox.checkbox-checked + .pepe {
-  display: none;
-}
-
 .getting-started-form {
   height: 100%;
 }
 
 .getting-started-slides {
-  height: 100%;
   --bullet-background: var(--ion-color-tertiary);
   --bullet-background-active: var(--ion-color-tertiary);
 
+  height: 100%;
+
   .slide-inner-row {
+    --ion-grid-column-padding: 0px;
+
     height: 100%;
     width: 100%;
-    padding: 5px 5px 0px;
+    padding: var(--getting-started-margin);
     // .swiper-pagination space
     border-bottom: var(--swiper-pagination-space) solid transparent;
     background-clip: padding-box;
@@ -51,7 +48,7 @@ ion-checkbox.checkbox-checked + .pepe {
   .slide-title {
     color: var(--ion-color-tertiary);
     text-align: center;
-    margin: 6px 18% 0;
+    margin: calc(var(--getting-started-margin) / 2) calc(var(--getting-started-margin) * 2) 0px;
     font-size: 22px;
     font-weight: 400;
     line-height: 30px;
@@ -60,7 +57,7 @@ ion-checkbox.checkbox-checked + .pepe {
   .slide-subtitle {
     color: var(--ion-color-tertiary);
     text-align: center;
-    margin: 8px 9%;
+    margin: calc(var(--getting-started-margin) / 2) var(--getting-started-margin);
     font-size: 14px;
     font-weight: 300;
     line-height: 28px;
@@ -69,7 +66,7 @@ ion-checkbox.checkbox-checked + .pepe {
 
 .browsing-categories-slide {
   .question-options-list {
-    margin: 30px 6% 0;
+    margin: var(--getting-started-margin) 0px 0px;
     background: transparent;
 
     .question-option {
@@ -77,11 +74,12 @@ ion-checkbox.checkbox-checked + .pepe {
       --ion-item-background: var(--ion-color-tertiary);
       --ion-item-color: var(--ion-color-primary);
       --inner-border-width: 0px;
+      --inner-padding-end: 0px;
 
       text-align: center;
 
       &:not(:last-child) {
-        margin-bottom: 20px;
+        margin-bottom: var(--getting-started-margin);
       }
 
       &.item-radio-checked {
@@ -90,7 +88,7 @@ ion-checkbox.checkbox-checked + .pepe {
       }
 
       ion-label {
-        margin: 10px 0px;
+        margin: calc(var(--getting-started-margin) / 2) 0px;
       }
 
       ion-radio {
@@ -107,37 +105,67 @@ ion-checkbox.checkbox-checked + .pepe {
 }
 
 .interests-to-follow-slide {
+  --max-heading-height: 16%;
+  --max-call-to-actions-height: 10%;
+
   .slide-inner-row {
     flex-flow: column;
     justify-content: space-between;
 
     // In the last slide .swiper-pagination is hidden
     border-width: 0px;
-    padding: 5px;
   }
 
   .heading-col {
-    max-height: 16%;
+    flex: 0 1 auto;
+    max-height: var(--max-heading-height);
     max-height: fit-content;
   }
 
   .question-options-col {
-    --ion-grid-column-padding: 5px;
+    --options-gutter: 5px;
 
     overflow: scroll;
-
     // Hide scrollbars: https://stackoverflow.com/a/38994837/1116959
     -ms-overflow-style: none;  // IE 10+
-    overflow: -moz-scrollbars-none;  // Firefox
+    // Firefox
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
     // Safari and Chrome
     &::-webkit-scrollbar {
       display: none;
     }
+
+    .options-list-row {
+      --ion-grid-column-padding: 0px;
+
+      padding-top: var(--options-gutter);
+      padding-bottom: var(--options-gutter);
+
+      ion-col {
+        padding-top: var(--options-gutter);
+        padding-bottom: var(--options-gutter);
+
+        &:nth-child(odd) {
+          padding-right: var(--options-gutter);
+        }
+
+        &:nth-child(even) {
+          padding-left: var(--options-gutter);
+        }
+      }
+    }
   }
 
   .call-to-action-col {
-    max-height: 10%;
+    flex: 0 1 auto;
+    max-height: var(--max-call-to-actions-height);
     max-height: fit-content;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding-top: calc(var(--getting-started-margin) / 2);
 
     .signup-button {
       --background: var(--ion-color-secondary);
@@ -145,7 +173,8 @@ ion-checkbox.checkbox-checked + .pepe {
       --color: #FFF;
       --color-activated: #e6e6e6;
 
-      margin: 5px;
+      margin: 0px;
+      flex: 1 0 100%;
     }
   }
 
@@ -159,7 +188,7 @@ ion-checkbox.checkbox-checked + .pepe {
       font-weight: 600;
       text-transform: uppercase;
       font-size: 22px;
-      color: #FFF;
+      color: var(--ion-color-lightest);
       text-align: center;
       word-break: break-word;
       overflow: visible;
@@ -167,6 +196,7 @@ ion-checkbox.checkbox-checked + .pepe {
       position: absolute;
       width: 70%;
       left: 15%;
+      // vertically centered
       top: 50%;
       transform: translateY(-50%);
     }
@@ -178,8 +208,6 @@ ion-checkbox.checkbox-checked + .pepe {
     }
 
     ion-checkbox {
-      height: 100%;
-      width: 100%;
       --border-radius: 0px;
       --border-width: 10vw;
       --border-color: transparent;
@@ -188,6 +216,8 @@ ion-checkbox.checkbox-checked + .pepe {
       --background-checked: var(--ion-color-secondary-rgb);
       --background-checked: rgba(var(--ion-color-secondary-rgb), .4);
 
+      height: 100%;
+      width: 100%;
       // Note: We cannote change the styles of the .checkbox-icon because it's inside the shadow dom.
       // An alternative would be to set --width and --height to 0px and add a custom overlay and icon in the <custom-checkbox> html
     }
