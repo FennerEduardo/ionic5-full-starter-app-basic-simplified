@@ -2,68 +2,76 @@
 // TODO:  Poner la variable --ion-background-color-step-50 en nuestro archivo de variables
 //        asi no dependemos de sus cambios
 
-.login-content
-{
-	--padding-end: 6%;
-	--padding-start: 6%;
+.login-content {
+  --auth-login-margin: var(--app-broad-margin);
+  --auth-login-background: var(--app-background-color);
 
-	ion-item {
-		--background: var(--ion-background-color-step-50, #f2f2f2);
-	}
+  --background: var(--auth-login-background);
+  --padding-start: var(--auth-login-margin);
+  --padding-end: var(--auth-login-margin);
+  --padding-top: var(--auth-login-margin);
+  --padding-bottom: var(--auth-login-margin);
 
-	ion-button {
-		--border-radius: 6px;
-		font-weight: 500;
-	}
+  .inputs-list {
+    --ion-item-background: var(--auth-login-background);
 
-	.form-list {
-	  background: var(--ion-background-color-step-50, #f2f2f2);
+    .input-item {
+      --padding-start: 0px;
+      --padding-end: 0px;
+      --inner-padding-end: 0px;
+    }
 
-		ion-input {
-		  --padding-start: 0px;
-		}
-	}
+    .error-container {
+      .error-message {
+        margin: calc(var(--auth-login-margin) / 2) 0px;
+        display: flex;
+        align-items: center;
+        color: var(--ion-color-danger);
+        font-size: 14px;
 
-	.error-container {
-		color: var(--ion-color-danger);
-    background: var(--ion-background-color-step-50, #f2f2f2);
-		padding-top: 10px;
-		padding-bottom: 10px;
-		padding-left: 16px;
-	}
+        ion-icon {
+          padding-inline-end: calc(var(--auth-login-margin) / 2);
+        }
+      }
+    }
+  }
 
-	.other-options
-	{
-		ion-col {
-			padding-top: 0px;
-		}
+  .login-btn {
+    margin: calc(var(--auth-login-margin) / 2) 0px;
+  }
 
-		.forgot-button
-		{
-			color: var(--ion-color-medium);
-			--padding-start: 0px;
-			--padding-end: 0px;
-		}
+  .other-auth-options-row {
+    justify-content: space-between;
+    align-items: center;
 
-		.signup-button
-		{
-			--padding-start: 0px;
-			--padding-end: 0px;
-			color: var(--ion-color-secondary);
-		}
-	}
+    // TODO: pasar estos estilos como hacemos con los otros botones
+    .forgot-btn {
+      --color: var(--ion-color-medium);
 
-	.auth-divider
-	{
-		color: var(--ion-color-medium);
-		margin: 20px 0px;
-		text-align: center;
-	}
+      margin: 0px;
+    }
 
-	.social-buttons
-	{
-		.twitter-auth-button, .google-auth-button {
-			margin-top: 20px;
-		}
-	}
+    // TODO: pasar estos estilos como hacemos con los otros botones
+    .signup-btn {
+      --color: var(--ion-color-secondary);
+
+      margin: 0px;
+    }
+  }
+
+  .social-auth-options {
+    .options-divider {
+      color: var(--ion-color-medium);
+  		margin: 20px 0px;
+  		text-align: center;
+    }
+
+    .social-auth-btn {
+      margin: 0px;
+
+      &:not(:first-child) {
+        margin-top: var(--auth-login-margin);
+      }
+    }
+  }
 }
