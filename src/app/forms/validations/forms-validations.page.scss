@@ -2,7 +2,8 @@
 
 .forms-validations-content {
   --forms-validations-margin: var(--app-fair-margin);
-  --forms-validations-background: var(--ion-background-color-step-50, #f2f2f2);
+  --forms-validations-background: var(--app-background-color);
+
   --background: var(--forms-validations-background);
 
   .validations-form {
@@ -26,6 +27,7 @@
       .input-item {
         --padding-start: 0px;
         --padding-end: 0px;
+        --inner-padding-end: 0px;
       }
 
       .terms-item {
