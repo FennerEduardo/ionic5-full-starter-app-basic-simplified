@@ -3,6 +3,7 @@ import libphonenumber from 'google-libphonenumber';
 
 export class PhoneValidator {
 
+  // Validate if a phone number belongs to a certain country.
   // If our validation fails, we return an object with a key for the error name and a value of true.
   // Otherwise, if the validation passes, we simply return null because there is no error.
 

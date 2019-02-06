@@ -27,7 +27,7 @@ export class FormsValidationsPage implements OnInit {
       { type: 'minlength', message: 'Username must be at least 5 characters long.' },
       { type: 'maxlength', message: 'Username cannot be more than 25 characters long.' },
       { type: 'pattern', message: 'Your username must contain only numbers and letters.' },
-      { type: 'usernameNotAvailable', message: 'Your username has already been taken.' }
+      { type: 'usernameNotAvailable', message: 'Your username is already taken.' }
     ],
     'name': [
       { type: 'required', message: 'Name is required.' }
@@ -41,7 +41,7 @@ export class FormsValidationsPage implements OnInit {
     ],
     'phone': [
       { type: 'required', message: 'Phone is required.' },
-      { type: 'invalidCountryPhone', message: 'Phone incorrect for the country selected' }
+      { type: 'invalidCountryPhone', message: 'Phone is incorrect for the selected country.' }
     ],
     'password': [
       { type: 'required', message: 'Password is required.' },
@@ -49,7 +49,7 @@ export class FormsValidationsPage implements OnInit {
       { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
     ],
     'confirm_password': [
-      { type: 'required', message: 'Confirm password is required' }
+      { type: 'required', message: 'Password confirmation is required.' }
     ],
     'matching_passwords': [
       { type: 'areNotEqual', message: 'Password mismatch' }
@@ -62,15 +62,20 @@ export class FormsValidationsPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    //  We just use a few random countries, however, you can use the countries you need by just adding them to this list.
+    // also you can use a library to get all the countries from the world.
     this.countries = [
       new CountryPhone('UY', 'Uruguay'),
       new CountryPhone('US', 'United States'),
-      new CountryPhone('AR', 'Argentina')
+      new CountryPhone('ES', 'España'),
+      new CountryPhone('BR', 'Brasil'),
+      new CountryPhone('FR', 'France')
     ];
 
     this.genders = [
+      'Female',
       'Male',
-      'Female'
+      'Other'
     ];
 
     this.matching_passwords_group = new FormGroup({
