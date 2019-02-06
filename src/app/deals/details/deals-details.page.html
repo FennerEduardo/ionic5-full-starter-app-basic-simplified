@@ -65,7 +65,7 @@
     <div class="expiration-notice">
       <span class="notice-message">CUPON EXPIRES ON:</span>
       <span class="notice-value">
-        <app-text-shell [data]="details?.expirationDate" class="no-animation"></app-text-shell>
+        <app-text-shell [data]="details?.expirationDate | date:'mediumDate'" class="no-animation"></app-text-shell>
       </span>
     </div>
   </div>
