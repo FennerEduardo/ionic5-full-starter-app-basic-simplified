@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ModalController, MenuController } from '@ionic/angular';
+
 import { TermsOfServicePage } from '../terms-of-service/terms-of-service.page';
 import { PrivacyPolicyPage } from '../privacy-policy/privacy-policy.page';
+import { PasswordValidator } from '../validators/password.validator';
 
 @Component({
   selector: 'app-signup',
@@ -12,19 +14,46 @@ import { PrivacyPolicyPage } from '../privacy-policy/privacy-policy.page';
 })
 export class SignupPage implements OnInit {
   signupForm: FormGroup;
+  matching_passwords_group: FormGroup;
+
+  validation_messages = {
+    'email': [
+      { type: 'required', message: 'Email is required.' },
+      { type: 'pattern', message: 'Enter a valid email.' }
+    ],
+    'password': [
+      { type: 'required', message: 'Password is required.' },
+      { type: 'minlength', message: 'Password must be at least 5 characters long.' }
+    ],
+    'confirm_password': [
+      { type: 'required', message: 'Confirm password is required' }
+    ],
+    'matching_passwords': [
+      { type: 'areNotEqual', message: 'Password mismatch' }
+    ],
+  };
 
   constructor(
     public router: Router,
     public modalController: ModalController,
     public menu: MenuController
   ) {
+    this.matching_passwords_group = new FormGroup({
+      'password': new FormControl('', Validators.compose([
+        Validators.minLength(5),
+        Validators.required
+      ])),
+      'confirm_password': new FormControl('', Validators.required)
+    }, (formGroup: FormGroup) => {
+      return PasswordValidator.areNotEqual(formGroup);
+    });
+
     this.signupForm = new FormGroup({
       'email': new FormControl('test@test.com', [
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ]),
-      'password': new FormControl('', Validators.required),
-      'confirm_password': new FormControl('', Validators.required)
+      'matching_passwords': this.matching_passwords_group
     });
   }
 
@@ -32,37 +61,37 @@ export class SignupPage implements OnInit {
     this.menu.enable(false);
   }
 
-
   async showTermsModal() {
-   const modal = await this.modalController.create({
-     component: TermsOfServicePage
-   });
-   return await modal.present();
- }
+    const modal = await this.modalController.create({
+      component: TermsOfServicePage
+    });
+    return await modal.present();
+  }
 
   async showPrivacyModal() {
-   const modal = await this.modalController.create({
-     component: PrivacyPolicyPage
-   });
-   return await modal.present();
- }
+    const modal = await this.modalController.create({
+      component: PrivacyPolicyPage
+    });
+    return await modal.present();
+  }
 
   doSignup(): void {
     console.log('do sign up');
     this.router.navigate(['app/categories']);
   }
 
-  doFacebookLogin(): void {
-    console.log('facebook login');
-    this.router.navigate(['app/categories']);
-  }
-  doGoogleLogin(): void {
-    console.log('google login');
-    this.router.navigate(['app/categories']);
-  }
-  doTwitterLogin(): void {
-    console.log('twitter login');
+  doFacebookSignup(): void {
+    console.log('facebook signup');
     this.router.navigate(['app/categories']);
   }
 
+  doGoogleSignup(): void {
+    console.log('google signup');
+    this.router.navigate(['app/categories']);
+  }
+
+  doTwitterSignup(): void {
+    console.log('twitter signup');
+    this.router.navigate(['app/categories']);
+  }
 }
