@@ -62,7 +62,7 @@
   .social-auth-options {
     .options-divider {
       color: var(--ion-color-medium);
-  		margin: 20px 0px;
+  		margin: var(--auth-login-margin) 0px;
   		text-align: center;
     }
 
