@@ -10,7 +10,7 @@
 <ion-content class="travel-details-content">
   <ion-row class="image-row">
     <ion-col size="12">
-      <app-background-image class="add-spinner" [src]="details?.image">
+      <app-background-image class="add-overlay add-spinner" [src]="details?.image">
         <app-fill-container [ratio]="{w:64, h:50}">
           <div class="icon-wrapper">
             <app-preload-image [ratio]="{w: 47, h: 25}" [src]="details?.icon"></app-preload-image>
