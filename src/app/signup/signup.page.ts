@@ -30,7 +30,7 @@ export class SignupPage implements OnInit {
     ],
     'matching_passwords': [
       { type: 'areNotEqual', message: 'Password mismatch' }
-    ],
+    ]
   };
 
   constructor(
@@ -49,10 +49,10 @@ export class SignupPage implements OnInit {
     });
 
     this.signupForm = new FormGroup({
-      'email': new FormControl('test@test.com', [
+      'email': new FormControl('test@test.com', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ]),
+      ])),
       'matching_passwords': this.matching_passwords_group
     });
   }

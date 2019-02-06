@@ -9,16 +9,30 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./forgot-password.page.scss'],
 })
 
-export class ForgotPasswordPage {
+export class ForgotPasswordPage implements OnInit {
   forgotPasswordForm: FormGroup;
 
-  constructor(public router: Router) {
+  validation_messages = {
+    'email': [
+      { type: 'required', message: 'Email is required.' },
+      { type: 'pattern', message: 'Enter a valid email.' }
+    ]
+  };
+
+  constructor(
+    public router: Router,
+    public menu: MenuController
+  ) {
     this.forgotPasswordForm = new FormGroup({
-      'email': new FormControl('test@test.com', [
+      'email': new FormControl('test@test.com', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ])
+      ]))
     });
+  }
+
+  ngOnInit() {
+    this.menu.enable(false);
   }
 
   recoverPassword() {
