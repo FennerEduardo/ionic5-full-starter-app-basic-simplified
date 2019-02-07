@@ -22,7 +22,7 @@ export class FormsValidationsPage implements OnInit {
   countries: Array<CountryPhone>;
   genders: Array<string>;
 
-  validation_messages = {
+  validations = {
     'username': [
       { type: 'required', message: 'Username is required.' },
       { type: 'minlength', message: 'Username must be at least 5 characters long.' },
@@ -63,7 +63,7 @@ export class FormsValidationsPage implements OnInit {
     ],
     'terms': [
       { type: 'pattern', message: 'You must accept terms and conditions.' }
-    ],
+    ]
   };
 
   constructor() { }

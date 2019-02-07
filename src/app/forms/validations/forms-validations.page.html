@@ -19,7 +19,7 @@
         <ion-input type="text" formControlName="username" clearInput required></ion-input>
       </ion-item>
       <div class="error-container">
-        <ng-container *ngFor="let validation of validation_messages.username">
+        <ng-container *ngFor="let validation of validations.username">
           <div class="error-message" *ngIf="validationsForm.get('username').hasError(validation.type) && (validationsForm.get('username').dirty || validationsForm.get('username').touched)">
             <ion-icon name="information-circle-outline"></ion-icon>
             <span>{{ validation.message }}</span>
@@ -32,7 +32,7 @@
         <ion-input type="text" formControlName="name" clearInput></ion-input>
       </ion-item>
       <div class="error-container">
-        <ng-container *ngFor="let validation of validation_messages.name">
+        <ng-container *ngFor="let validation of validations.name">
           <div class="error-message" *ngIf="validationsForm.get('name').hasError(validation.type) && (validationsForm.get('name').dirty || validationsForm.get('name').touched)">
             <ion-icon name="information-circle-outline"></ion-icon>
             <span>{{ validation.message }}</span>
@@ -45,7 +45,7 @@
         <ion-input type="text" formControlName="lastname" clearInput></ion-input>
       </ion-item>
       <div class="error-container">
-        <ng-container *ngFor="let validation of validation_messages.lastname">
+        <ng-container *ngFor="let validation of validations.lastname">
           <div class="error-message" *ngIf="validationsForm.get('lastname').hasError(validation.type) && (validationsForm.get('lastname').dirty || validationsForm.get('lastname').touched)">
             <ion-icon name="information-circle-outline"></ion-icon>
             <span>{{ validation.message }}</span>
@@ -58,7 +58,7 @@
         <ion-input type="text" formControlName="email" clearInput inputmode="email"></ion-input>
       </ion-item>
       <div class="error-container">
-        <ng-container *ngFor="let validation of validation_messages.email">
+        <ng-container *ngFor="let validation of validations.email">
           <div class="error-message" *ngIf="validationsForm.get('email').hasError(validation.type) && (validationsForm.get('email').dirty || validationsForm.get('email').touched)">
             <ion-icon name="information-circle-outline"></ion-icon>
             <span>{{ validation.message }}</span>
@@ -91,7 +91,7 @@
           <ion-input clearInput placeholder="{{ validationsForm.value.country_phone.country.sample_phone }}" type="text" formControlName="phone"></ion-input>
         </ion-item>
         <div class="error-container">
-          <ng-container *ngFor="let validation of validation_messages.phone">
+          <ng-container *ngFor="let validation of validations.phone">
             <div class="error-message" *ngIf="validationsForm.get('country_phone').get('phone').hasError(validation.type) && (validationsForm.get('country_phone').get('phone').dirty || validationsForm.get('country_phone').get('phone').touched)">
               <ion-icon name="information-circle-outline"></ion-icon>
               <span>{{ validation.message }}</span>
@@ -112,7 +112,7 @@
           <ion-input type="password" formControlName="password"></ion-input>
         </ion-item>
         <div class="error-container">
-          <ng-container *ngFor="let validation of validation_messages.password">
+          <ng-container *ngFor="let validation of validations.password">
             <div class="error-message" *ngIf="validationsForm.get('matching_passwords').get('password').hasError(validation.type) && (validationsForm.get('matching_passwords').get('password').dirty || validationsForm.get('matching_passwords').get('password').touched)">
               <ion-icon name="information-circle-outline"></ion-icon>
               <span>{{ validation.message }}</span>
@@ -125,7 +125,7 @@
           <ion-input type="password" formControlName="confirm_password"></ion-input>
         </ion-item>
         <div class="error-container">
-          <ng-container *ngFor="let validation of validation_messages.confirm_password">
+          <ng-container *ngFor="let validation of validations.confirm_password">
             <div class="error-message" *ngIf="validationsForm.get('matching_passwords').get('confirm_password').hasError(validation.type) && (validationsForm.get('matching_passwords').get('confirm_password').dirty || validationsForm.get('matching_passwords').get('confirm_password').touched)">
               <ion-icon name="information-circle-outline"></ion-icon>
               <span>{{ validation.message }}</span>
@@ -134,7 +134,7 @@
         </div>
       </div>
       <div class="error-container">
-        <ng-container *ngFor="let validation of validation_messages.matching_passwords">
+        <ng-container *ngFor="let validation of validations.matching_passwords">
           <div class="error-message" *ngIf="validationsForm.get('matching_passwords').hasError(validation.type) && (validationsForm.get('matching_passwords').get('confirm_password').dirty || validationsForm.get('matching_passwords').get('confirm_password').touched)">
             <ion-icon name="information-circle-outline"></ion-icon>
             <span>{{ validation.message }}</span>
@@ -152,7 +152,7 @@
         <app-counter-input formControlName="guests"></app-counter-input>
       </ion-item>
       <div class="error-container">
-        <ng-container *ngFor="let validation of validation_messages.guests">
+        <ng-container *ngFor="let validation of validations.guests">
           <div class="error-message" *ngIf="validationsForm.get('guests').hasError(validation.type) && (validationsForm.get('guests').dirty || validationsForm.get('guests').touched)">
             <ion-icon name="information-circle-outline"></ion-icon>
             <span>{{ validation.message }} {{ validationsForm.get('guests').getError(validation.type).min }} and {{ validationsForm.get('guests').getError(validation.type).max }}</span>
@@ -165,7 +165,7 @@
         <app-counter-input formControlName="bedrooms" basic></app-counter-input>
       </ion-item>
       <div class="error-container">
-        <ng-container *ngFor="let validation of validation_messages.bedrooms">
+        <ng-container *ngFor="let validation of validations.bedrooms">
           <div class="error-message" *ngIf="validationsForm.get('bedrooms').hasError(validation.type) && (validationsForm.get('bedrooms').dirty || validationsForm.get('bedrooms').touched)">
             <ion-icon name="information-circle-outline"></ion-icon>
             <span>{{ validation.message }} {{ validationsForm.get('bedrooms').getError(validation.type).min }} and {{ validationsForm.get('bedrooms').getError(validation.type).max }}</span>
@@ -184,7 +184,7 @@
         <ion-checkbox formControlName="terms"></ion-checkbox>
       </ion-item>
       <div class="error-container">
-        <ng-container *ngFor="let validation of validation_messages.terms">
+        <ng-container *ngFor="let validation of validations.terms">
           <div class="error-message" *ngIf="validationsForm.get('terms').hasError(validation.type) && (validationsForm.get('terms').dirty || validationsForm.get('terms').touched)">
             <ion-icon name="information-circle-outline"></ion-icon>
             <span>{{ validation.message }}</span>
