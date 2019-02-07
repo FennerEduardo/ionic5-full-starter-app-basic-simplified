@@ -1,12 +1,17 @@
 .travel-details-content {
   --shell-color: #00AFFF;
   --shell-color-rgb: 0,175,255;
+  --travel-details-margin: var(--app-fair-margin);
+  --travel-details-background: var(--ion-color-lightest);
+
+  --background: var(--travel-details-background);
 
   .image-row {
     --ion-grid-column-padding: 0px;
 
     app-background-image {
       --loading-background: rgba(var(--shell-color-rgb), .10);
+      --overlay-background: rgba(var(--ion-color-dark-rgb), .40);
       --spinner-color: rgba(var(--shell-color-rgb), .25);
     }
 
@@ -26,7 +31,7 @@
   .description-row {
     --ion-grid-column-padding: 0px;
 
-    padding: 20px;
+    padding: var(--travel-details-margin) var(--travel-details-margin) calc(var(--travel-details-margin) * 2);
 
     .details-name {
       margin: 0px;
@@ -39,8 +44,8 @@
     }
 
     .details-short-description {
-      margin-top: 10px;
-      margin-bottom: 15px;
+      margin-top: calc(var(--travel-details-margin) / 2);
+      margin-bottom: var(--travel-details-margin);
       font-size: 14px;
 
       app-text-shell {
@@ -52,14 +57,14 @@
     .details-score {
       display: flex;
       justify-content: flex-start;
-      margin-bottom: 15px;
+      margin-bottom: var(--travel-details-margin);
 
       .score-item {
         display: flex;
         align-items: center;
 
         &:not(:last-child) {
-          padding-right: 15px;
+          padding-right: var(--travel-details-margin);
         }
 
         .score-icon {
@@ -87,11 +92,14 @@
     .details-tags {
       --ion-grid-column-padding: 0px;
 
+      --tags-vertical-gutter: 2px;
+      --tags-horizontal-gutter: 4px;
+
       justify-content: center;
-      margin-top: -2px;
+      margin-top: calc(var(--tags-vertical-gutter) * -1);
 
       .tag-wrapper {
-        padding: 2px 4px 2px 0px;
+        padding: var(--tags-vertical-gutter) var(--tags-horizontal-gutter) var(--tags-vertical-gutter) 0px;
         flex-grow: 0;
         min-width: fit-content;
 
@@ -102,9 +110,9 @@
 
       .item-tag {
         display: block;
-        border-radius: 2px;
+        border-radius: var(--app-narrow-radius);
         border: 1px solid var(--ion-color-light-shade);
-        padding: 2px 4px;
+        padding: var(--tags-vertical-gutter) var(--tags-horizontal-gutter);
         font-size: 14px;
         color: var(--ion-color-medium-tint);
 
@@ -121,7 +129,7 @@
     }
 
     .details-description {
-      margin: 30px 0px;
+      margin: calc(var(--travel-details-margin) * 2) 0px 0px;
       line-height: 1.3;
       font-size: 14px;
 
@@ -136,11 +144,11 @@
     font-size: 16px;
     font-weight: 600;
     color: var(--ion-color-dark-tint);
-    margin: 0px 0px 20px;
+    margin: 0px 0px var(--travel-details-margin);
   }
 
   .open-hours-wrapper {
-    padding: 0px 20px 20px;
+    padding: 0px var(--travel-details-margin) calc(var(--travel-details-margin) * 2);
 
     .schedules-list {
       list-style: none;
@@ -152,7 +160,7 @@
         color: var(--ion-color-medium-tint);
 
         & + .open-hour-item {
-          margin-top: 10px;
+          margin-top: calc(var(--travel-details-margin) / 2);
         }
 
         .schedule-outer {
@@ -163,7 +171,7 @@
 
           .schedule-day {
             display: block;
-            padding-right: 20px;
+            padding-right: var(--travel-details-margin);
             width: 40%;
             font-size: 14px;
 
@@ -184,7 +192,7 @@
             justify-content: flex-end;
 
             .schedule-separator {
-              margin: 0px 15px;
+              margin: 0px var(--travel-details-margin);
               line-height: 1;
             }
 
@@ -214,11 +222,11 @@
   }
 
   .location-wrapper {
-    padding: 0px 0px 40px;
+    padding: 0px 0px calc(var(--travel-details-margin) * 2);
 
     .location-header {
-      padding: 0px 20px 0px;
-      margin-bottom: 10px;
+      padding: 0px var(--travel-details-margin) 0px;
+      margin-bottom: calc(var(--travel-details-margin) / 2);
     }
 
     .detail-title {
@@ -253,19 +261,24 @@
     font-weight: 400;
     text-transform: uppercase;
     color: var(--ion-color-dark-shade);
-    margin: 0px 0px 20px;
+    margin: 0px 0px var(--travel-details-margin);
   }
 
   .suggested-places-wrapper {
-    padding: 0px 20px 40px;
+    padding: 0px var(--travel-details-margin) calc(var(--travel-details-margin) * 2);
 
     .suggested-places-row {
-      margin-left: -5px;
-      margin-right: -5px;
+      --places-gutter: 5px;
+      --ion-grid-column-padding: var(--places-gutter);
+
+      margin-left: calc(var(--places-gutter) * -1);
+      margin-right: calc(var(--places-gutter) * -1);
 
       .suggested-place {
         display: flex;
         flex-direction: column;
+        padding-top: 0px;
+        padding-bottom: 0px;
 
         app-preload-image {
           --loading-background: rgba(var(--shell-color-rgb), .05);
@@ -281,7 +294,7 @@
           .place-name {
             font-size: 12px;
             font-weight: 400;
-            margin: 10px 0px 5px;
+            margin: calc(var(--travel-details-margin) / 2) 0px 5px;
             text-align: center;
 
             app-text-shell {
@@ -321,13 +334,13 @@
   }
 
   .related-activities-wrapper {
-    padding: 0px 0px 20px;
+    padding: 0px 0px calc(var(--travel-details-margin) * 2);
 
     .related-activity {
       --ion-grid-column-padding: 0px;
 
       &:not(:last-child) {
-        margin-bottom: 20px;
+        margin-bottom: var(--travel-details-margin);
       }
 
       app-background-image {
@@ -380,7 +393,7 @@
           top: 0;
           right: 0;
           margin-top: 5px;
-          margin-right: 20px;
+          margin-right: var(--travel-details-margin);
 
           display: flex;
           justify-content: center;
@@ -409,11 +422,8 @@
       }
     }
   }
-
 }
 
 :host(.is-shell) {
-  // .amenity-icon {
-  //   background-color: rgba(var(--shell-color-rgb), .05);
-  // }
+
 }
