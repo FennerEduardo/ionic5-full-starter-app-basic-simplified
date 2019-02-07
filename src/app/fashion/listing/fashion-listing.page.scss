@@ -1,18 +1,33 @@
+:host {
+  --shell-color: #cb328f;
+  --shell-color-rgb: 203,50,143;
+  --fashion-listing-margin: var(--app-fair-margin);
+  --fashion-listing-background: var(--ion-color-lightest);
+}
+
+.fashion-listing-content {
+  --background: var(--fashion-listing-background);
+  --padding-start: var(--fashion-listing-margin);
+  --padding-end: var(--fashion-listing-margin);
+  --padding-top: var(--fashion-listing-margin);
+  --padding-bottom: var(--fashion-listing-margin);
+}
+
 .items-row {
-  padding: 18px 18px 0px;
+  --ion-grid-column-padding: 0;
+  --items-gutter: calc(var(--fashion-listing-margin) / 2);
 
+  // TODO: quizas podemos extraer estos estilos ya que son iguales a los de details
+  // Aunque hay nombres de clases y markup un poco diferente
   .listing-item {
-    --shell-color: #cb328f;
-    --shell-color-rgb: 203,50,143;
-
-    margin-bottom: 18px;
+    margin-bottom: calc(var(--fashion-listing-margin) * 2);
 
     &:nth-child(odd) {
-      padding-right: 9px;
+      padding-right: var(--items-gutter);
     }
 
     &:nth-child(even) {
-      padding-left: 9px;
+      padding-left: var(--items-gutter);
     }
 
     .item-image {
@@ -31,18 +46,13 @@
     .item-body {
       --ion-grid-column-padding: 0px;
 
-      padding: 5px 5px;
+      padding: 5px 5px 0px;
       text-align: center;
 
       .main-info {
-        margin-bottom: 8px;
+        margin-bottom: calc(var(--fashion-listing-margin) / 2);
 
         .item-name {
-          app-text-shell {
-            --c-line-height: 14px;
-            --c-bg-color: rgba(var(--shell-color-rgb), .25);
-          }
-
           margin: 0px;
           font-size: 14px;
           font-weight: 400;
@@ -56,6 +66,11 @@
             display: block;
             text-decoration: none;
           }
+
+          app-text-shell {
+            --c-line-height: 14px;
+            --c-bg-color: rgba(var(--shell-color-rgb), .25);
+          }
         }
       }
 
@@ -64,15 +79,16 @@
 
         .price-col {
           &:first-child {
-            padding-right: 8px;
+            padding-right: calc(var(--fashion-listing-margin) / 2);
             text-align: right;
 
             &:last-child {
               text-align: center;
             }
           }
+
           &:last-child {
-            padding-left: 8px;
+            padding-left: calc(var(--fashion-listing-margin) / 2);
             text-align: left;
           }
         }
@@ -84,30 +100,29 @@
         }
 
         .item-sale-price {
-          app-text-shell {
-            --c-line-height: 16px;
-            --c-bg-color: rgba(var(--shell-color-rgb), .20);
-          }
-
           display: block;
           font-weight: 400;
           color: var(--shell-color);
           font-size: 16px;
-        }
 
-        .item-original-price {
           app-text-shell {
             --c-line-height: 16px;
             --c-bg-color: rgba(var(--shell-color-rgb), .20);
           }
+        }
 
+        .item-original-price {
           display: block;
           text-decoration: line-through;
           color: var(--ion-color-medium-shade);
           font-size: 14px;
+
+          app-text-shell {
+            --c-line-height: 16px;
+            --c-bg-color: rgba(var(--shell-color-rgb), .20);
+          }
         }
       }
-
     }
   }
 }
