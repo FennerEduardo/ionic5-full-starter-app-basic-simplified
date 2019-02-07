@@ -45,9 +45,20 @@
 
           ion-icon {
             padding-inline-end: calc(var(--forms-validations-margin) / 2);
+            flex-shrink: 0;
           }
         }
     	}
+      .counter-item {
+        app-counter-input {
+          --counter-background: transparent;
+          --counter-color: var(--ion-color-primary);
+          --counter-border-color: var(--ion-color-primary);
+        }
+        .counter-value {
+          text-align: center;
+        }
+      }
     }
 
     .submit-btn {

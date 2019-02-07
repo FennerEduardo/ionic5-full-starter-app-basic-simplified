@@ -145,6 +145,37 @@
 
     <ion-list class="inputs-list" lines="full">
       <ion-list-header>
+        <ion-label class="header-title">Counter Validations</ion-label>
+      </ion-list-header>
+      <ion-item class="counter-item input-item">
+        <ion-label>Guests</ion-label>
+        <app-counter-input formControlName="guests"></app-counter-input>
+      </ion-item>
+      <div class="error-container">
+        <ng-container *ngFor="let validation of validation_messages.guests">
+          <div class="error-message" *ngIf="validationsForm.get('guests').hasError(validation.type) && (validationsForm.get('guests').dirty || validationsForm.get('guests').touched)">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            <span>{{ validation.message }} {{ validationsForm.get('guests').getError(validation.type).min }} and {{ validationsForm.get('guests').getError(validation.type).max }}</span>
+          </div>
+        </ng-container>
+      </div>
+      <ion-item class="counter-item input-item">
+        <ion-label class="counter-label">Bedrooms</ion-label>
+        <ion-label class="counter-value">{{validationsForm.controls.bedrooms.value}}</ion-label>
+        <app-counter-input formControlName="bedrooms" basic></app-counter-input>
+      </ion-item>
+      <div class="error-container">
+        <ng-container *ngFor="let validation of validation_messages.bedrooms">
+          <div class="error-message" *ngIf="validationsForm.get('bedrooms').hasError(validation.type) && (validationsForm.get('bedrooms').dirty || validationsForm.get('bedrooms').touched)">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            <span>{{ validation.message }} {{ validationsForm.get('bedrooms').getError(validation.type).min }} and {{ validationsForm.get('bedrooms').getError(validation.type).max }}</span>
+          </div>
+        </ng-container>
+      </div>
+    </ion-list>
+
+    <ion-list class="inputs-list" lines="full">
+      <ion-list-header>
         <ion-label class="header-title">Terms and Conditions</ion-label>
       </ion-list-header>
 

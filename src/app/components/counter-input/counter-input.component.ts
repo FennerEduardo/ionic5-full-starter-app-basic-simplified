@@ -1,13 +1,13 @@
 import { Component, forwardRef, Input, OnChanges, ViewEncapsulation } from '@angular/core';
 import { FormControl, ControlValueAccessor, NG_VALUE_ACCESSOR, NG_VALIDATORS } from '@angular/forms';
 
-export function counterRangeValidator(maxValue, minValue) {
+export function counterRangeValidator(minValue, maxValue) {
   return (c: FormControl) => {
     const err = {
       rangeError: {
         given: c.value,
-        max: maxValue || 10,
-        min: minValue || 0
+        min: minValue || 0,
+        max: maxValue || 10
       }
     };
 
@@ -47,7 +47,7 @@ export class CounterInputComponent implements ControlValueAccessor, OnChanges {
 
   ngOnChanges(inputs) {
     if (inputs.counterRangeMax || inputs.counterRangeMin) {
-      this.validateFn = counterRangeValidator(this.counterRangeMax, this.counterRangeMin);
+      this.validateFn = counterRangeValidator(this.counterRangeMin, this.counterRangeMax);
     }
   }
 

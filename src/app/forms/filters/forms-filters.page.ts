@@ -58,8 +58,8 @@ export class FormsFiltersPage {
     });
 
     this.counterForm = new FormGroup({
-      counter: new FormControl(5, counterRangeValidator(7, 1)),
-      counter2: new FormControl(2, counterRangeValidator(5, 1))
+      counter: new FormControl(5, counterRangeValidator(1, 7)),
+      counter2: new FormControl(2, counterRangeValidator(1, 5))
     });
 
     this.ratingForm = new FormGroup({

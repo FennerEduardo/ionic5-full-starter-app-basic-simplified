@@ -5,6 +5,7 @@ import { UsernameValidator } from '../../validators/username.validator';
 import { PasswordValidator } from '../../validators/password.validator';
 import { PhoneValidator } from '../../validators/phone.validator';
 
+import { counterRangeValidator } from '../../components/counter-input/counter-input.component';
 import { CountryPhone } from './country-phone.model';
 
 
@@ -46,13 +47,19 @@ export class FormsValidationsPage implements OnInit {
     'password': [
       { type: 'required', message: 'Password is required.' },
       { type: 'minlength', message: 'Password must be at least 5 characters long.' },
-      { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
+      { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase and one number.' }
     ],
     'confirm_password': [
       { type: 'required', message: 'Password confirmation is required.' }
     ],
     'matching_passwords': [
       { type: 'areNotEqual', message: 'Password mismatch' }
+    ],
+    'guests': [
+      { type: 'rangeError', message: 'Number must be between: ' }
+    ],
+    'bedrooms': [
+      { type: 'rangeError', message: 'Number must be between: ' }
     ],
     'terms': [
       { type: 'pattern', message: 'You must accept terms and conditions.' }
@@ -117,6 +124,8 @@ export class FormsValidationsPage implements OnInit {
       'gender': new FormControl(this.genders[0], Validators.required),
       'country_phone': this.country_phone_group,
       'matching_passwords': this.matching_passwords_group,
+      'guests': new FormControl(6, counterRangeValidator(1, 12)),
+      'bedrooms': new FormControl(3, counterRangeValidator(1, 5)),
       'terms': new FormControl(true, Validators.pattern('true'))
     });
   }
