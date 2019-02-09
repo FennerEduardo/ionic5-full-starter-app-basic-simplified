@@ -1,4 +1,4 @@
-.food-details-content {
+:host {
   --shell-color: #ebbb00;
   --shell-color-rgb: 235,187,0;
   --rating-5-color: #7ce198;
@@ -6,6 +6,13 @@
   --rating-3-color: #cee07c;
   --rating-2-color: #e0c77c;
   --rating-1-color: #e07c7c;
+
+  --food-details-margin: var(--app-fair-margin);
+  --food-details-background: var(--ion-color-lightest);
+}
+
+.food-details-content {
+  --background: var(--food-details-background);
 
   .image-row {
     --ion-grid-column-padding: 0px;
@@ -32,7 +39,8 @@
   .description-row {
     --ion-grid-column-padding: 0px;
 
-    padding: 10px 20px 20px;
+    padding: var(--food-details-margin);
+    padding-bottom: calc(var(--food-details-margin) * 2);
 
     .details-name {
       margin: 0px;
@@ -46,7 +54,7 @@
 
     .details-style {
       margin-top: 5px;
-      margin-bottom: 15px;
+      margin-bottom: var(--food-details-margin);
       font-size: 16px;
       color: var(--ion-color-dark-tint);
 
@@ -78,11 +86,11 @@
         justify-content: center;
 
         &:not(:first-child) {
-          padding-left: 6px;
+          padding-left: calc(var(--food-details-margin) / 2);
         }
 
         &:not(:last-child) {
-          padding-right: 6px;
+          padding-right: calc(var(--food-details-margin) / 2);
           border-right: 1px solid var(--ion-color-light-shade);
         }
 
@@ -115,13 +123,17 @@
 
       .details-rating {
 				color: var(--ion-color-lightest);
-				border-radius: 2px;
-				padding: 3px 6px;
+				border-radius: var(--app-narrow-radius);
+				padding: calc(var(--food-details-margin) / 4) calc(var(--food-details-margin) / 2);
 			  font-size: 12px;
 			  font-weight: 600;
-			  display: block;
 			  text-align: center;
         min-width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // Default color (for shell)
+        background-color: var(--ion-color-medium-tint);
 
 				&[ratingBase="1"] {
 					background-color: var(--rating-1-color);
@@ -142,6 +154,11 @@
         app-text-shell {
           --c-bg-color: rgba(var(--shell-color-rgb), .15);
           --c-line-height: 12px;
+          min-width: 20px;
+
+          &.text-loaded {
+            min-width: 0px;
+          }
         }
       }
     }
@@ -151,11 +168,12 @@
     font-size: 16px;
     font-weight: 600;
     color: var(--ion-color-dark-tint);
-    margin: 0px 0px 20px;
+    margin: 0px;
+    margin-bottom: var(--food-details-margin);
   }
 
   .open-hours-wrapper {
-    padding: 0px 20px 20px;
+    padding: 0px var(--food-details-margin) var(--food-details-margin);
 
     .schedules-list {
       list-style: none;
@@ -167,7 +185,7 @@
         color: var(--ion-color-medium-tint);
 
         & + .open-hour-item {
-          margin-top: 10px;
+          margin-top: calc(var(--food-details-margin) / 2);
         }
 
         .schedule-outer {
@@ -178,7 +196,7 @@
 
           .schedule-day {
             display: block;
-            padding-right: 20px;
+            padding-right: var(--food-details-margin);
             width: 40%;
             font-size: 14px;
 
@@ -197,9 +215,10 @@
             flex: 1;
             display: flex;
             justify-content: flex-end;
+            align-items: center;
 
             .schedule-separator {
-              margin: 0px 15px;
+              margin: 0px var(--food-details-margin);
               line-height: 1;
             }
 
@@ -229,11 +248,11 @@
   }
 
   .location-wrapper {
-    padding: 0px 0px 20px;
+    padding: 0px 0px var(--food-details-margin);
 
     .location-header {
-      padding: 0px 20px 0px;
-      margin-bottom: 10px;
+      padding: 0px var(--food-details-margin) 0px;
+      margin-bottom: calc(var(--food-details-margin) / 2);
     }
 
     .detail-title {
@@ -264,13 +283,15 @@
 
   .details-tags {
     --ion-grid-column-padding: 0px;
+    --tags-vertical-gutter: calc(var(--food-details-margin) / 4);
+    --tags-horizontal-gutter: calc(var(--food-details-margin) / 2);
 
-    padding: 0px 20px 20px;
+    padding: 0px var(--food-details-margin) var(--food-details-margin);
     justify-content: center;
-    margin-top: -3px;
+    margin-top: calc(var(--tags-vertical-gutter) * 2 * -1);
 
     .tag-wrapper {
-      padding: 3px 6px 3px 0px;
+      padding: calc(var(--tags-vertical-gutter) * 2) var(--tags-horizontal-gutter) 0px 0px;
       flex-grow: 0;
       min-width: fit-content;
 
@@ -281,9 +302,9 @@
 
     .item-tag {
       display: block;
-      border-radius: 2px;
+      border-radius: var(--app-narrow-radius);
       border: 1px solid var(--ion-color-medium-tint);
-      padding: 2px 4px;
+      padding: var(--tags-vertical-gutter) var(--tags-horizontal-gutter);
       font-size: 14px;
       color: var(--ion-color-medium-tint);
 
@@ -300,21 +321,22 @@
   }
 
   .details-divider {
-    margin: 0px 20px 20px;
+    margin: 0px var(--food-details-margin) calc(var(--food-details-margin) * 2);
     border-top: 2px solid rgba(var(--ion-color-light-shade-rgb), .4);
   }
 
   .users-pictures-wrapper {
-    padding: 0px 20px 20px;
+    padding: 0px var(--food-details-margin) var(--food-details-margin);
 
     .pictures-row {
       --ion-grid-columns: 10;
       --ion-grid-column-padding: 0px;
+      --pictures-gutter: calc(var(--food-details-margin) / 4);
 
-      margin: 0px -3px;
+      margin: 0px calc(var(--pictures-gutter) * -1);
 
       .picture-wrapper {
-        padding: 0px 3px;
+        padding: 0px var(--pictures-gutter);
 
         .has-more-pictures {
   				position: absolute;
@@ -322,7 +344,7 @@
   				bottom: 0px;
   				left: 0px;
   				right: 0px;
-          margin: 0px 3px;
+          margin: 0px var(--pictures-gutter);
   				background-color: rgba(var(--shell-color-rgb), .70);
   				display: flex;
   				align-items: center;
@@ -346,18 +368,18 @@
     }
 
     .upload-picture-btn {
-      margin: 10px 0px 0px;
+      margin: calc(var(--food-details-margin) / 2) 0px 0px;
     }
   }
 
   .popular-dishes-wrapper {
-    padding: 0px 20px 20px;
+    padding: 0px var(--food-details-margin) var(--food-details-margin);
 
     .popular-dish {
       --ion-grid-column-padding: 0px;
 
       &:not(:last-child) {
-        padding-bottom: 15px;
+        padding-bottom: var(--food-details-margin);
       }
 
       .dish-name {
@@ -370,9 +392,10 @@
       .dish-score {
         --buffer-background: rgba(var(--shell-color-rgb), .20);
         --progress-background: rgba(var(--shell-color-rgb), 1);
+        --score-height: 6px;
 
-        height: 6px;
-        border-radius: 3px;
+        height: var(--score-height);
+        border-radius: calc(var(--score-height) / 2);
       }
 
       .dish-votes-count {
@@ -404,19 +427,19 @@
   }
 
   .reviews-wrapper {
-    padding: 0px 20px 20px;
+    padding: 0px var(--food-details-margin) var(--food-details-margin);
 
     .reviews-list {
-      margin-bottom: 10px;
+      margin-bottom: calc(var(--food-details-margin) / 2);
 
       .review-item {
         &:not(:last-child) {
-          padding-bottom: 20px;
+          padding-bottom: var(--food-details-margin);
 
           &::after {
             content: '';
             display: block;
-            margin: 5px 20px;
+            margin: 5px var(--food-details-margin);
             border-top: 2px solid rgba(var(--ion-color-light-shade-rgb), .4);
           }
         }
@@ -426,7 +449,7 @@
           --ion-grid-column-padding: 0px;
 
           .user-image-wrapper {
-            padding-right: 10px;
+            padding-right: calc(var(--food-details-margin) / 2);
           }
 
           .user-brief-wrapper {
@@ -434,7 +457,7 @@
             flex-direction: column;
             justify-content: space-between;
 
-            padding-right: 10px;
+            padding-right: calc(var(--food-details-margin) / 2);
 
             .user-name {
               font-size: 16px;
@@ -503,8 +526,8 @@
               width: 34px;
 
               color: var(--ion-color-lightest);
-      				border-radius: 2px;
-      				padding: 3px 6px;
+      				border-radius: var(--app-narrow-radius);
+      				padding: calc(var(--food-details-margin) / 4) calc(var(--food-details-margin) / 2);
       			  font-size: 12px;
       			  font-weight: 600;
       			  display: block;
@@ -538,11 +561,11 @@
           font-size: 14px;
           font-weight: 300;
           line-height: 18px;
-          margin: 15px 0px;
+          margin: var(--food-details-margin) 0px;
         }
 
         .review-scores {
-          padding: 0px 20px 20px;
+          padding: 0px var(--food-details-margin) var(--food-details-margin);
           justify-content: space-between;
 
           .score-item {
@@ -551,11 +574,11 @@
             justify-content: center;
 
             &:not(:first-child) {
-              padding-left: 6px;
+              padding-left: calc(var(--food-details-margin) / 2);
             }
 
             &:not(:last-child) {
-              padding-right: 6px;
+              padding-right: calc(var(--food-details-margin) / 2);
               border-right: 1px solid var(--ion-color-light-shade);
             }
 
@@ -593,15 +616,15 @@
     }
 
     .write-reviews-btn {
-      margin: 15px 0px 0px;
+      margin: var(--food-details-margin) 0px 0px;
     }
   }
 
   .recipes-wrapper {
-    padding: 40px 0px;
+    padding: calc(var(--food-details-margin) * 3) 0px;
 
     .recipes-header {
-      padding: 0px 20px 0px;
+      padding: 0px var(--food-details-margin) 0px;
 
       .detail-title {
         text-transform: capitalize;
@@ -614,7 +637,7 @@
           width: 20%;
           margin: 0px auto;
           margin-top: -10%;
-          margin-bottom: 10px;
+          margin-bottom: calc(var(--food-details-margin) / 2);
 
           app-preload-image {
             --loading-background: var(--shell-color);
@@ -623,9 +646,13 @@
           }
         }
 
+        .details-divider {
+          margin-bottom: 0px;
+        }
+
         .recipe-title {
           text-align: center;
-          margin: 0px 0px 10px;
+          margin: 0px 0px calc(var(--food-details-margin) / 2);
           font-weight: 400;
           letter-spacing: 3px;
           font-size: 18px;
@@ -640,7 +667,7 @@
 
         .recipe-call-to-action {
           text-align: center;
-          margin: 20px 40px;
+          margin: var(--food-details-margin) calc(var(--food-details-margin) * 2);
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -656,7 +683,7 @@
             text-transform: uppercase;
             font-weight: 300;
             letter-spacing: 1px;
-            margin: 10px 0px;
+            margin: calc(var(--food-details-margin) / 2) 0px;
             min-width: 90%;
           }
 
@@ -669,7 +696,8 @@
         }
 
         .recipe-attributes {
-          padding: 0px 20px;
+          padding: 0px var(--food-details-margin);
+          margin-top: var(--food-details-margin);
           justify-content: center;
 
           .score-item {
@@ -678,11 +706,11 @@
             justify-content: center;
 
             &:not(:first-child) {
-              padding-left: 6px;
+              padding-left: calc(var(--food-details-margin) / 2);
             }
 
             &:not(:last-child) {
-              padding-right: 6px;
+              padding-right: calc(var(--food-details-margin) / 2);
             }
 
             .score-icon {
@@ -711,12 +739,8 @@
       }
     }
   }
-
-
 }
 
 :host(.is-shell) {
-  // .amenity-icon {
-  //   background-color: rgba(var(--shell-color-rgb), .05);
-  // }
+
 }
