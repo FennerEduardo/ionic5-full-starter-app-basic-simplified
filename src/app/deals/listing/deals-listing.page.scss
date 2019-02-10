@@ -13,40 +13,43 @@
 }
 
 :host {
-  @include custom-button-color('claim') {
-    --ion-color-claim: #70df70;
-    --ion-color-claim-rgb: 112,223,112;
-    --ion-color-claim-contrast: #ffffff;
-    --ion-color-claim-contrast-rgb: 255,255,255;
-    --ion-color-claim-shade: #63c463;
-    --ion-color-claim-tint: #7ee27e;
-  }
-}
-
-ion-content {
-  --background: var(--app-background-color);
-}
-
-.listing-item {
-  --shell-color: #70df70;
+  --shell-color: #70DF70;
   --shell-color-rgb: 112,223,112;
 
-  --deal-ended-color: #d9453a;
-  --deal-ends-soon-color: #ffab6b;
-  --deal-distant-end-color: #70df70;
+  --deal-ended-color: #D9453A;
+  --deal-ends-soon-color: #FFAB6B;
+  --deal-distant-end-color: #70DF70;
 
   --shadow-color: rgba(var(--ion-color-dark-rgb), .1);
 
+  --deals-listing-margin: var(--app-broad-margin);
+  --deals-listing-background: var(--app-background-color);
+
+  @include custom-button-color('claim') {
+    --ion-color-claim: #70DF70;
+    --ion-color-claim-rgb: 112,223,112;
+    --ion-color-claim-contrast: #FFFFFF;
+    --ion-color-claim-contrast-rgb: 255,255,255;
+    --ion-color-claim-shade: #63C463;
+    --ion-color-claim-tint: #7EE27E;
+  }
+}
+
+.deals-listing-content {
+  --background: var(--deals-listing-background);
+}
+
+.listing-item {
   background-color: var(--ion-color-lightest);
-  margin: 15px 20px;
-  border-radius: 6px;
+  margin: var(--deals-listing-margin);
+  border-radius: var(--app-fair-radius);
   box-shadow: 1px 1px 4px 1px var(--shadow-color);
 
   .top-row {
     --ion-grid-column-padding: 0px;
 
     border-bottom: 2px dashed rgba(var(--ion-color-dark-rgb), .1);
-    padding: 10px;
+    padding: calc(var(--deals-listing-margin) / 2);
     justify-content: space-between;
     align-items: flex-start;
 
@@ -61,26 +64,24 @@ ion-content {
     }
 
     .claim-button {
-      margin-top: 0px;
-      margin-bottom: 0px;
-      // --margin-top: 0px;
-      // --margin-bottom: 0px;
       --box-shadow: none;
+
+      margin: 0px;
     }
   }
 
   .middle-row {
     --ion-grid-column-padding: 0px;
 
-    padding: 15px 10px;
+    padding: calc(var(--deals-listing-margin) / 2);
 
     .info-col {
-      padding-right: 15px;
+      padding-right: calc(var(--deals-listing-margin) / 2);
     }
 
     .item-name {
       margin: 0px;
-			margin-bottom: 10px;
+			margin-bottom: calc(var(--deals-listing-margin) / 2);
       color: var(--ion-color-dark-tint);
       font-size: 16px;
 
@@ -107,21 +108,19 @@ ion-content {
     }
 
     .bookmark-button {
-      margin-top: 0px;
-      // --margin-top: 0px;
-      margin-bottom: 0px;
-      // --margin-bottom: 0px;
       --padding-start: 5px;
       --padding-end: 5px;
 
+      margin: 0px;
       font-size: 16px;
     }
   }
 
   .bottom-row {
+    --countdown-gutter: 3px;
     --ion-grid-column-padding: 0px;
 
-    padding: 0px 10px 10px;
+    padding: 0px calc(var(--deals-listing-margin) / 2) calc(var(--deals-listing-margin) / 2);
     justify-content: space-between;
     align-items: flex-end;
 
@@ -130,14 +129,19 @@ ion-content {
     }
 
     .item-code {
+      --code-height: 30px;
+
+      height: var(--code-height);
       color: var(--shell-color);
       text-transform: uppercase;
-      padding: 7px 10px;
+      padding: calc(var(--deals-listing-margin) / 4) calc(var(--deals-listing-margin) / 2);
       border: 2px solid var(--shell-color);
-      display: block;
       font-size: 14px;
       line-height: 1;
-      border-radius: 14px;
+      border-radius: calc(var(--code-height) / 2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       app-text-shell {
         --c-bg-color: rgba(var(--shell-color-rgb), .15);
@@ -190,10 +194,10 @@ ion-content {
     }
 
     app-countdown-timer {
-      --countdown-time-margin: 3px 3px 0px;
-      --countdown-time-padding: 12px 4px;;
+      --countdown-time-margin: var(--countdown-gutter) var(--countdown-gutter) 0px;
+      --countdown-time-padding: calc(var(--deals-listing-margin) / 2) calc(var(--deals-listing-margin) / 4);
       --countdown-time-border: 2px solid var(--deal-ends-soon-color);
-      --countdown-time-border-radius: 4px;
+      --countdown-time-border-radius: var(--app-narrow-radius);
       --countdown-time-background: transparent;
       --countdown-time-color: var(--deal-ends-soon-color);
       --countdown-time-text-shadow: none;
@@ -202,6 +206,7 @@ ion-content {
 
       font-weight: 500;
       font-size: 14px;
+      margin-right: calc(var(--countdown-gutter) * -1);
     }
   }
 }
