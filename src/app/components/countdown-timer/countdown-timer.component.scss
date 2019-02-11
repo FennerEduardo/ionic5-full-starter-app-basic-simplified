@@ -1,6 +1,7 @@
 app-countdown-timer {
   --countdown-time-margin: 2px;
   --countdown-time-padding: 0px;
+  --countdown-time-inner-padding: 0px;
   --countdown-time-border: none;
   --countdown-time-border-radius: 0px;
   --countdown-time-background: transparent;
@@ -13,6 +14,8 @@ app-countdown-timer {
   display: block;
 
   .countdown-row {
+    --ion-grid-column-padding: var(--countdown-time-inner-padding);
+
     justify-content: center;
     flex-wrap: nowrap;
 
