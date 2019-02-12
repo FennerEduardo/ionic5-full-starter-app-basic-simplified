@@ -1,7 +1,16 @@
-.listing-item {
+:host {
   --shell-color: #d9453a;
   --shell-color-rgb: 217,69,58;
 
+  --real-state-listing-margin: var(--app-broad-margin);
+  --real-state-listing-background: var(--app-background-color);
+}
+
+.real-state-listing-content {
+  --background: var(--real-state-listing-background);
+}
+
+.listing-item {
   .image-row {
     --ion-grid-column-padding: 0px;
 
@@ -18,7 +27,7 @@
   .description-row {
     --ion-grid-column-padding: 0px;
 
-    padding: 10px 20px 20px;
+    padding: calc(var(--real-state-listing-margin) / 2) var(--real-state-listing-margin) var(--real-state-listing-margin);
 
     .item-price {
       margin: 0px 0px 5px;
@@ -58,7 +67,7 @@
     }
 
     .accommodations-wrapper {
-      padding-top: 10px;
+      padding-top: calc(var(--real-state-listing-margin) / 2);
       justify-content: space-between;
     }
 
@@ -68,7 +77,7 @@
       max-width: fit-content;
 
       & + .item-accommodation {
-        padding-left: 10px;
+        padding-left: calc(var(--real-state-listing-margin) / 2);
       }
 
       .accommodation-value {
@@ -76,7 +85,7 @@
         font-weight: 500;
         font-size: 14px;
         color: var(--ion-color-medium-tint);
-        margin-right: 6px;
+        margin-right: 5px;
 
         app-text-shell {
           --c-bg-color: rgba(var(--shell-color-rgb), .10);
@@ -101,7 +110,7 @@
     }
 
     .amenities-title {
-      margin: 15px 0px 10px;
+      margin: var(--real-state-listing-margin) 0px calc(var(--real-state-listing-margin) / 2);
       font-size: 12px;
 			font-weight: 300;
       text-transform: uppercase;
@@ -110,37 +119,40 @@
     }
 
     .amenities-wrapper {
-      margin: 0px -4px;
-    }
+      --amenity-vertical-gutter: 6px;
+      --amenity-horizontal-gutter: 4px;
 
-    .item-amenity {
-      display: flex;
-      align-items: center;
-      padding: 6px 4px;
+      margin: 0px calc(var(--amenity-horizontal-gutter) * -1);
 
-      .amenity-icon {
-        color: var(--ion-color-medium-tint);
-        font-size: 24px;
-        flex-shrink: 0;
-      }
+      .item-amenity {
+        display: flex;
+        align-items: center;
+        padding: var(--amenity-vertical-gutter) var(--amenity-horizontal-gutter);
 
-      .amenity-value {
-        display: block;
-        font-weight: 300;
-        font-size: 12px;
-        color: var(--ion-color-medium-tint);
-        margin-left: 6px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        .amenity-icon {
+          color: var(--ion-color-medium-tint);
+          font-size: 24px;
+          flex-shrink: 0;
+        }
 
-        app-text-shell {
-          --c-bg-color: rgba(var(--shell-color-rgb), .05);
-          --c-line-height: 12px;
-          min-width: 50px;
+        .amenity-value {
+          display: block;
+          font-weight: 300;
+          font-size: 12px;
+          color: var(--ion-color-medium-tint);
+          margin-left: calc(var(--amenity-horizontal-gutter) * 2);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
 
-          &.text-loaded {
-            min-width: 0px;
+          app-text-shell {
+            --c-bg-color: rgba(var(--shell-color-rgb), .05);
+            --c-line-height: 12px;
+            min-width: 50px;
+
+            &.text-loaded {
+              min-width: 0px;
+            }
           }
         }
       }
