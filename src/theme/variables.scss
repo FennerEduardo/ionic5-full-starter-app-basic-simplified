@@ -78,12 +78,20 @@
 :root {
   --app-background-color: var(--ion-background-color-step-50, #f2f2f2);
 
+  /* Set the font family of the entire app */
+  --ion-font-family: 'Rubik', sans-serif;
+
   --app-narrow-margin: 12px;
   --app-fair-margin: 16px;
   --app-broad-margin: 20px;
 
   --app-narrow-radius: 4px;
   --app-fair-radius: 8px;
+}
+
+ion-title {
+  font-weight: 400;
+  letter-spacing: 0.4px;
 }
 
 html.ios {

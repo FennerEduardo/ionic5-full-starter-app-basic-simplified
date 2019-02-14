@@ -12,6 +12,14 @@
   --padding-top: var(--auth-login-margin);
   --padding-bottom: var(--auth-login-margin);
 
+  .auth-title {
+    color: var(--ion-color-primary);
+    font-weight: bold;
+    margin-top: calc(var(--auth-login-margin) / 2);
+    margin-bottom: calc(var(--auth-login-margin) * (3/2));
+    letter-spacing: 0.6px;
+  }
+
   .inputs-list {
     --ion-item-background: var(--auth-login-background);
 
