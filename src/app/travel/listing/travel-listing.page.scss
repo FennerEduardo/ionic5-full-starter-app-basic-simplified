@@ -6,6 +6,7 @@
 
   padding: 0px 0px var(--travel-listing-margin);
   background-color: var(--travel-listing-background);
+  border-bottom: calc(var(--travel-listing-margin) / 2) solid var(--shell-color);
 
   .image-row {
     --ion-grid-column-padding: 0px;
@@ -22,15 +23,16 @@
     }
 
     .content-inside-item-image {
-      padding: 0px 14%;
+      padding: 0px 12%;
       height: 100%;
       display: flex;
       justify-content: center;
       flex-direction: column;
 
       .item-icon {
-        width: 50px;
+        width: 54px;
         align-self: center;
+        margin-bottom: 24px;
 
         app-preload-image {
           --loading-background: rgba(var(--shell-color-rgb), .15);
@@ -38,15 +40,22 @@
       }
 
       .item-name {
-        margin: 0px;
-        padding: calc(var(--travel-listing-margin) / 2) 0px;
-        border-bottom: 2px solid var(--ion-color-lightest);
+        margin: 0px auto;
+        padding: calc(var(--travel-listing-margin) / 2) calc(var(--travel-listing-margin));
         text-transform: uppercase;
         font-size: 20px;
         font-weight: 900;
         text-align: center;
         color: var(--ion-color-light);
-        display: block;
+        display: flex;
+        align-items: center;
+        background-color: var(--shell-color);
+        border-radius: 8px;
+
+        .arrow-icon {
+          font-size: 26px;
+          margin-left: 6px;
+        }
 
         app-text-shell {
           --c-bg-color: rgba(var(--shell-color-rgb), .25);
@@ -74,7 +83,8 @@
   .info-row {
     --ion-grid-column-padding: 0px;
 
-    padding: var(--travel-listing-margin);    
+    padding: var(--travel-listing-margin);
+    padding-bottom: calc(var(--travel-listing-margin) / 2);
 
     .main-info-col {
       padding-right: calc(var(--travel-listing-margin) / 2);
@@ -116,34 +126,47 @@
         --c-line-height: 12px;
       }
     }
+  }
+
+  .stats-row {
+    --ion-grid-column-padding: 0px;
+
+    padding: 0px var(--travel-listing-margin);
+    justify-content: flex-end;
+
+    .stats-icon {
+      font-size: 24px;
+    }
 
     .item-rating {
+      display: inline-flex;
       text-align: center;
-      color: var(--shell-color);
       justify-content: flex-end;
+      margin-right: 10px;
 
       .rating-value {
-        font-size: 14px;
-        margin-left: 4px;
+        font-size: 16px;
+        margin-right: 5px;
+        margin: auto;
 
         app-text-shell {
-          --c-line-height: 14px;
+          --c-line-height: 16px;
         }
       }
     }
 
     .item-reviews {
+      display: inline-flex;
       text-align: center;
-      color: var(--shell-color);
-      margin-top: calc(var(--travel-listing-margin) / 2);
       justify-content: flex-end;
 
       .reviews-count {
-        font-size: 14px;
-        margin-left: 4px;
+        font-size: 16px;
+        margin-right: 5px;
+        margin: auto;
 
         app-text-shell {
-          --c-line-height: 14px;
+          --c-line-height: 16px;
         }
       }
     }
