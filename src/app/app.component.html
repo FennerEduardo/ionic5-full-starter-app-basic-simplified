@@ -25,7 +25,7 @@
           <ion-list-header>Layouts</ion-list-header>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item [routerLink]="p.url">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-icon slot="start" [src]="p.icon"></ion-icon>
               <ion-label>
                 {{p.title}}
               </ion-label>
@@ -36,7 +36,7 @@
           <ion-list-header>Forms</ion-list-header>
           <ion-menu-toggle auto-hide="false">
             <ion-item [routerLink]="['/forms-and-validations']">
-              <ion-icon slot="start" name="clipboard"></ion-icon>
+              <ion-icon slot="start" src="./assets/sample-icons/side-menu/forms.svg"></ion-icon>
               <ion-label>
                 Forms & Validations
               </ion-label>
@@ -53,7 +53,7 @@
           <ion-list-header>Account</ion-list-header>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of accountPages; let i = index">
             <ion-item [routerLink]="p.url">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-icon slot="start" [src]="p.icon"></ion-icon>
               <ion-label>
                 {{p.title}}
               </ion-label>

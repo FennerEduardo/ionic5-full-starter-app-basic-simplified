@@ -14,49 +14,49 @@ export class AppComponent {
     {
       title: 'Categories',
       url: '/app/categories',
-      icon: 'list-box'
+      icon: './assets/sample-icons/side-menu/categories.svg'
     },
     {
       title: 'Profile',
       url: '/app/user',
-      icon: 'contact'
+      icon: './assets/sample-icons/side-menu/profile.svg'
     },
     {
       title: 'Contact Card',
       url: '/contact-card',
-      icon: 'briefcase'
+      icon: './assets/sample-icons/side-menu/contact-card.svg'
     },
     {
       title: 'Notifications',
       url: '/app/notifications',
-      icon: 'notifications'
+      icon: './assets/sample-icons/side-menu/notification.svg'
     }
   ];
   accountPages = [
     {
       title: 'Log In',
       url: '/auth/login',
-      icon: 'log-in'
+      icon: './assets/sample-icons/side-menu/login.svg'
     },
     {
       title: 'Sign Up',
       url: '/auth/signup',
-      icon: 'person-add'
+      icon: './assets/sample-icons/side-menu/signup.svg'
     },
     {
       title: 'Tutorial',
       url: '/walkthrough',
-      icon: 'hammer'
+      icon: './assets/sample-icons/side-menu/tutorial.svg'
     },
     {
       title: 'Getting Started',
       url: '/getting-started',
-      icon: 'color-wand'
+      icon: './assets/sample-icons/side-menu/getting-started.svg'
     },
     {
       title: '404 page',
       url: '/page-not-found',
-      icon: 'warning'
+      icon: './assets/sample-icons/side-menu/warning.svg'
     }
   ];
 
