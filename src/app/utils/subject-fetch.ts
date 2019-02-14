@@ -1,9 +1,16 @@
 import { Observable, ReplaySubject } from 'rxjs';
 import { first, delay } from 'rxjs/operators';
 
+import { environment } from '../../environments/environment';
+
 export class SubjectFetch<T> {
   private _subject: ReplaySubject<T>;
   private _observable: Observable<T>;
+  // We wait on purpose 2 secs on local environment when fetching from json to simulate the backend roundtrip.
+  // However, in production you should remove this delay.
+  private networkDelay = (environment && environment.shell && environment.shell.networkDelay) ? environment.shell.networkDelay : 0;
+  // To debug shell styles, change configuration in the environment.ts file
+  private debugMode = (environment && environment.shell && environment.shell.debug) ? environment.shell.debug : false;
 
   constructor(model: T, fetchData: () => Observable<T>) {
     this._subject = new ReplaySubject<T>();
@@ -13,13 +20,13 @@ export class SubjectFetch<T> {
     this._subject.next(model);
     // Immediately after fetch data from endpoint
     fetchData().pipe(
-      delay(2000), // we wait on purpose 2 secs on local environment where fetching from json
-      // data is immediate. However, in production you should remove this delay.
+      delay(this.networkDelay),
       // Prevent the need to unsubscribe because .first() completes the observable
       first()
     ).subscribe((value: T) => {
-      // To debug shell styles, comment this line to prevent the second value from being emmited by the hot observable
-      this._subject.next(value);
+      if (!this.debugMode) {
+        this._subject.next(value);
+      }
     });
   }
 

@@ -1,6 +1,13 @@
-.real-state-details-content {
+:host {
   --shell-color: #d9453a;
   --shell-color-rgb: 217,69,58;
+
+  --real-state-details-margin: var(--app-broad-margin);
+  --real-state-details-background: var(--app-background-color);
+}
+
+.real-state-details-content {
+  --background: var(--real-state-details-background);
 
   .image-row {
     --ion-grid-column-padding: 0px;
@@ -12,8 +19,8 @@
 
     .bookmark-icon {
       position: absolute;
-      right: 15px;
-      top: 15px;
+      right: var(--real-state-details-margin);
+      top: var(--real-state-details-margin);
       font-size: 32px;
       color: var(--shell-color);
     }
@@ -22,10 +29,10 @@
   .description-row {
     --ion-grid-column-padding: 0px;
 
-    padding: 10px 20px 20px;
+    padding: var(--real-state-details-margin);
 
     .details-price {
-      margin: 0px 0px 10px;
+      margin: 0px 0px calc(var(--real-state-details-margin) / 2);
 			font-size: 18px;
 			font-weight: 600;
       color: var(--ion-color-dark-tint);
@@ -70,7 +77,7 @@
     }
 
     .details-description {
-      margin: 20px 0px 0px;
+      margin: var(--real-state-details-margin) 0px 0px;
       font-size: 14px;
       color: var(--ion-color-medium-shade);
 
@@ -85,11 +92,12 @@
     font-size: 16px;
     font-weight: 600;
     color: var(--ion-color-dark-tint);
-    margin: 0px 0px 20px;
+    margin: 0px 0px var(--real-state-details-margin);
   }
 
   .accommodations-wrapper {
-    padding: 10px 20px 20px;
+    padding: var(--real-state-details-margin);
+    padding-top: calc(var(--real-state-details-margin) / 2);
 
     .accommodation-row {
       --ion-grid-column-padding: 0px;
@@ -97,7 +105,7 @@
       align-items: center;
 
       & + .accommodation-row {
-        padding-top: 10px;
+        padding-top: calc(var(--real-state-details-margin) / 2);
       }
 
       .icon-wrapper {
@@ -135,11 +143,11 @@
   }
 
   .location-wrapper {
-    padding: 10px 0px 20px;
+    padding: calc(var(--real-state-details-margin) / 2) 0px var(--real-state-details-margin);
 
     .location-header {
-      padding: 0px 20px 0px;
-      margin-bottom: 10px;
+      padding: 0px var(--real-state-details-margin) 0px;
+      margin-bottom: calc(var(--real-state-details-margin) / 2);
     }
 
     .detail-title {
@@ -169,16 +177,18 @@
   }
 
   .amenities-wrapper {
-    padding: 10px 20px 20px;
+    padding: calc(var(--real-state-details-margin) / 2) var(--real-state-details-margin) var(--real-state-details-margin);
 
     .amenities-tags {
+      --amenity-vertical-gutter: 2px;
+      --amenity-horizontal-gutter: 4px;
       --ion-grid-column-padding: 0px;
 
       justify-content: center;
-      margin-top: -2px;
+      margin-top: calc(var(--amenity-vertical-gutter) * -1);
 
       .tag-wrapper {
-        padding: 2px 4px 2px 0px;
+        padding: var(--amenity-vertical-gutter) var(--amenity-horizontal-gutter) var(--amenity-vertical-gutter) 0px;
         flex-grow: 0;
         min-width: fit-content;
 
@@ -189,9 +199,9 @@
 
       .amenity-tag {
         display: block;
-        border-radius: 2px;
+        border-radius: var(--app-narrow-radius);
         border: 1px solid var(--ion-color-light-shade);
-        padding: 2px 4px;
+        padding: var(--amenity-vertical-gutter) var(--amenity-horizontal-gutter);
         font-size: 14px;
         color: var(--ion-color-medium-tint);
 
@@ -209,7 +219,7 @@
   }
 
   .safety-features-wrapper {
-    padding: 10px 20px 20px;
+    padding: calc(var(--real-state-details-margin) / 2) var(--real-state-details-margin) var(--real-state-details-margin);
 
     .features-list {
       list-style: none;
@@ -221,7 +231,7 @@
         color: var(--ion-color-medium-tint);
 
         & + .feature-item {
-          margin-top: 10px;
+          margin-top: calc(var(--real-state-details-margin) / 2);
         }
 
         app-text-shell {
@@ -238,7 +248,7 @@
   }
 
   .availability-wrapper {
-    padding: 10px 20px 20px;
+    padding: calc(var(--real-state-details-margin) / 2) var(--real-state-details-margin) var(--real-state-details-margin);
 
     .availability-row {
       --ion-grid-column-padding: 0px;
@@ -267,15 +277,11 @@
     }
 
     .book-now-btn {
-      margin: 20px 0px 0px;
+      margin: var(--real-state-details-margin) 0px 0px;
     }
   }
 }
 
-
-
 :host(.is-shell) {
-  // .amenity-icon {
-  //   background-color: rgba(var(--shell-color-rgb), .05);
-  // }
+
 }
