@@ -29,7 +29,7 @@ export class AppComponent {
     {
       title: 'Notifications',
       url: '/app/notifications',
-      icon: './assets/sample-icons/side-menu/notification.svg'
+      icon: './assets/sample-icons/side-menu/notifications.svg'
     }
   ];
   accountPages = [
