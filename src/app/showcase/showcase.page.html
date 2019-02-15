@@ -334,16 +334,16 @@ app-text-shell &#123;
     </p>
     <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
       <ion-col size="12">
-        <app-background-image class="add-overlay add-spinner" [src]="">
+        <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="">
           <app-fill-container [ratio]="{w:2, h:1}">
-            <h4 style="margin: 10px; text-align: center;">
-              Image set as a background cover
-            </h4>
+            <h4 style="margin: 10px; text-align: center;">Text on top of a background-image container</h4>
           </app-fill-container>
-        </app-background-image>
+        </app-image-shell>
       </ion-col>
       <ion-col size="4">
-        <app-preload-image class="add-spinner" [ratio]="{w:1, h:1}" [src]="" [alt]="'Sample Image'"></app-preload-image>
+        <app-fill-container [ratio]="{w:1, h:1}">
+          <app-image-shell class="add-spinner" [src]="" [alt]="'Sample Image'"></app-image-shell>
+        </app-fill-container>
       </ion-col>
       <ion-col size="8">
         <h3 style="margin-top: 0px;">
@@ -354,9 +354,9 @@ app-text-shell &#123;
         </p>
       </ion-col>
     </ion-row>
-    <br/>
-    <br/>
-    <br/>
+  </section>
+  <section class="showcase-section">
+    <h5>Fetch data with the HttpClient</h5>
     <p>
       Let's set a timeout and fetch data using the HttpClient
     </p>
@@ -365,7 +365,7 @@ app-text-shell &#123;
     </p>
     <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
       <ion-col size="12">
-        <app-image-shell class="add-overlay add-spinner" [mode]="'cover'" [src]="simpleFetchData?.cover" [alt]="'Sample Image Cover'">
+        <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="simpleFetchData?.cover" [alt]="'Sample Image Cover'">
           <app-fill-container [ratio]="{w:2, h:1}">
             <h4 style="margin: 10px; text-align: center;">Heading on top of a cover image</h4>
           </app-fill-container>
@@ -373,10 +373,7 @@ app-text-shell &#123;
       </ion-col>
       <ion-col size="4">
         <app-fill-container [ratio]="{w:1, h:1}">
-          <!-- <app-preload-image class="add-spinner" [ratio]="{w:1, h:1}" [src]="simpleFetchData?.image" [alt]="'Sample Image'"></app-preload-image> -->
-          <app-image-shell class="add-spinner" [src]="simpleFetchData?.image" [alt]="'Sample Image'">
-            PEPE
-          </app-image-shell>
+          <app-image-shell class="add-spinner" [src]="simpleFetchData?.image" [alt]="'Sample Image'"></app-image-shell>
         </app-fill-container>
       </ion-col>
       <ion-col size="8">
@@ -389,21 +386,24 @@ app-text-shell &#123;
       </ion-col>
     </ion-row>
     <ion-button (click)="showcaseShellSimpleFetch(3)" [disabled]="simpleFetchButtonDisabled">Fetch more Data</ion-button>
-    <br/>
-    <br/>
-    <br/>
+  </section>
+  <section class="showcase-section">
+    <h5>Fetch data using SubjectFetch</h5>
     <p>
-      Using the SubjectFetch utility you can reduce the amount of boilerplate from the previous example and achieve the same behavior
+      Using the SubjectFetch utility you can reduce the amount of boilerplate from the previous example and achieve the same behavior.
     </p>
     <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
       <ion-col size="12">
-        <app-background-image class="add-overlay add-spinner" [src]="(subjectFetchData | async)?.cover">
+        <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="(subjectFetchData | async)?.cover" [alt]="'Sample Image Cover'">
           <app-fill-container [ratio]="{w:2, h:1}">
+            <h4 style="margin: 10px; text-align: center;">Heading on top of a cover image</h4>
           </app-fill-container>
-        </app-background-image>
+        </app-image-shell>
       </ion-col>
       <ion-col size="4">
-        <app-preload-image class="add-spinner" [ratio]="{w:1, h:1}" [src]="(subjectFetchData | async)?.image" [alt]="'Sample Image'"></app-preload-image>
+        <app-fill-container [ratio]="{w:1, h:1}">
+          <app-image-shell class="add-spinner" [src]="(subjectFetchData | async)?.image" [alt]="'Sample Image'"></app-image-shell>
+        </app-fill-container>
       </ion-col>
       <ion-col size="8">
         <h3 style="margin-top: 0px;">
@@ -415,21 +415,24 @@ app-text-shell &#123;
       </ion-col>
     </ion-row>
     <ion-button (click)="showcaseShellSubjectFetch()" [disabled]="subjectFetchButtonDisabled">Fetch more Data</ion-button>
-    <br/>
-    <br/>
-    <br/>
+  </section>
+  <section class="showcase-section">
+    <h5>Display data from Route Resolvers</h5>
     <p>
       SubjectFetch can also be easily plugged in Angular Route Resolvers
     </p>
     <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
       <ion-col size="12">
-        <app-background-image class="add-overlay add-spinner" [src]="routeResolveData?.cover">
+        <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="routeResolveData?.cover" [alt]="'Sample Image Cover'">
           <app-fill-container [ratio]="{w:2, h:1}">
+            <h4 style="margin: 10px; text-align: center;">Heading on top of a cover image</h4>
           </app-fill-container>
-        </app-background-image>
+        </app-image-shell>
       </ion-col>
       <ion-col size="4">
-        <app-preload-image class="add-spinner" [ratio]="{w:1, h:1}" [src]="routeResolveData?.image" [alt]="'Sample Image'"></app-preload-image>
+        <app-fill-container [ratio]="{w:1, h:1}">
+          <app-image-shell class="add-spinner" [src]="routeResolveData?.image" [alt]="'Sample Image'"></app-image-shell>
+        </app-fill-container>
       </ion-col>
       <ion-col size="8">
         <h3 style="margin-top: 0px;">
