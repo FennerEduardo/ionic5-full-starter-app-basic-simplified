@@ -26,19 +26,20 @@
     <p>
       <b>Note:</b> The <code>&lt;app-fill-container&gt;</code> component must be surrounded by a container element with a defined with, as this component will fill the parents width.
     </p>
-    <pre>
+<pre>
 <b>&lt;div style="width:80%; margin: 0px auto;"&gt;</b>
   &lt;app-fill-container [ratio]="&#123;w:2, h:1&#125;"&gt;
     &lt;span&gt;This container will always have a 2:1 ratio&lt;/span&gt;
   &lt;/app-fill-container&gt;
 <b>&lt;/div&gt;</b>
-    </pre>
+</pre>
     <div style="width:80%; margin: 0px auto;">
       <app-fill-container [ratio]="{w:2, h:1}" style="background-color: #e91e63;">
         <span style="margin: 10px; display: block;">This container will always have a 2:1 ratio</span>
       </app-fill-container>
     </div>
   </section>
+
   <ion-item-divider sticky="true">
     <ion-label>Image Shell</ion-label>
   </ion-item-divider>
@@ -55,9 +56,9 @@
       You can add/remove the following <b>Clasess</b> to adjust the shell element behavior
     </p>
     <h5>Spinner</h5>
-    <pre>
+<pre>
 &lt;app-image-shell class="add-spinner" [src]="" [alt]=""&gt;&lt;/app-image-shell&gt;
-    </pre>
+</pre>
     <div style="width:30%; margin: 0px auto;">
       <app-fill-container [ratio]="{w:1, h:1}">
         <app-image-shell class="add-spinner" [src]="" [alt]=""></app-image-shell>
@@ -67,9 +68,9 @@
     <p>
       This class adds a background overlay after the image has loaded
     </p>
-    <pre>
+<pre>
 &lt;app-image-shell class="add-spinner add-overlay" [src]="'https://via.placeholder.com/150x150'" [alt]=""&gt;&lt;/app-image-shell&gt;
-    </pre>
+</pre>
     <div style="width:30%; margin: 0px auto;">
       <app-fill-container [ratio]="{w:1, h:1}">
         <app-image-shell class="add-spinner add-overlay" [src]="'https://via.placeholder.com/150x150'" [alt]=""></app-image-shell>
@@ -79,37 +80,45 @@
       You can also override these <b>CSS 4 variables</b> to adjust the shell element style
     </p>
     <h5>Background</h5>
-    <pre>
---image-shell-loading-background: rgba(233, 30, 99, .25);
-    </pre>
+<pre>
+app-image-shell &#123;
+  --image-shell-loading-background: rgba(233, 30, 99, .25);
+&#125;
+</pre>
     <div style="width:30%; margin: 0px auto;">
       <app-fill-container [ratio]="{w:1, h:1}">
         <app-image-shell style="--image-shell-loading-background: rgba(233, 30, 99, .25);" class="add-spinner" [src]="" [alt]=""></app-image-shell>
       </app-fill-container>
     </div>
     <h5>Overlay</h5>
-    <pre>
---image-shell-overlay-background: rgba(103, 58, 183, .40);
-    </pre>
+<pre>
+app-image-shell &#123;
+  --image-shell-overlay-background: rgba(103, 58, 183, .40);
+&#125;
+</pre>
     <div style="width:30%; margin: 0px auto;">
       <app-fill-container [ratio]="{w:1, h:1}">
         <app-image-shell style="--image-shell-overlay-background: rgba(103, 58, 183, .40);" class="add-spinner add-overlay" [src]="'https://via.placeholder.com/150x150'" [alt]=""></app-image-shell>
       </app-fill-container>
     </div>
     <h5>Spinner</h5>
-    <pre>
---image-shell-spinner-size: 40px;
---image-shell-spinner-color: #000000;
-    </pre>
+<pre>
+app-image-shell &#123;
+  --image-shell-spinner-size: 40px;
+  --image-shell-spinner-color: #000000;
+&#125;
+</pre>
     <div style="width:30%; margin: 0px auto;">
       <app-fill-container [ratio]="{w:1, h:1}">
         <app-image-shell style="--image-shell-spinner-size: 40px; --image-shell-spinner-color: #000000;" class="add-spinner" [src]="" [alt]=""></app-image-shell>
       </app-fill-container>
     </div>
     <h5>Border Radius</h5>
-    <pre>
---image-shell-border-radius: 10px;
-    </pre>
+<pre>
+app-image-shell &#123;
+  --image-shell-border-radius: 10px;
+&#125;
+</pre>
     <div style="width:30%; margin: 0px auto;">
       <app-fill-container [ratio]="{w:1, h:1}">
         <app-image-shell style="--image-shell-border-radius: 10px;" class="add-spinner" [src]="" [alt]=""></app-image-shell>
@@ -124,13 +133,13 @@
     <p>
       This is different from the default mode in that this one is designed to contain content (for example some text)
     </p>
-    <pre>
+<pre>
 <b>&lt;app-image-shell [mode]="'cover'" class="add-spinner add-overlay" [src]=""&gt;</b>
   &lt;app-fill-container [ratio]="&#123;w:3, h:2&#125;"&gt;
     Some Text
   &lt;/app-fill-container&gt;
 <b>&lt;/app-image-shell&gt;</b>
-    </pre>
+</pre>
     <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="">
       <app-fill-container [ratio]="{w:3, h:2}">
         <h4 style="margin: 10px;">Text on top of a background-image container</h4>
@@ -149,11 +158,11 @@
     <p>
       Just surroun the <code>&lt;app-image-shell&gt;</code> with an <code>&lt;app-fill-container&gt;</code> element
     </p>
-    <pre>
+<pre>
 <b>&lt;app-fill-container [ratio]="&#123;w:3, h:2&#125;"&gt;</b>
   &lt;app-image-shell class="add-spinner" [src]="" [alt]=""&gt;&lt;/app-image-shell&gt;
 <b>&lt;/app-fill-container&gt;</b>
-    </pre>
+</pre>
     <div style="width:60%; margin: 0px auto;">
       <app-fill-container [ratio]="{w:3, h:2}">
         <app-image-shell class="add-spinner" [src]="" [alt]=""></app-image-shell>
@@ -163,56 +172,159 @@
     <p>
       When using the <b>cover</b> mode we need to include the <code>&lt;app-fill-container&gt;</code> inside the <code>&lt;app-image-shell&gt;</code> element instead of surrounding it.
     </p>
-    <pre>
+<pre>
 &lt;app-image-shell [mode]="'cover'" class="add-spinner add-overlay" [src]=""&gt;
   <b>&lt;app-fill-container [ratio]="&#123;w:3, h:2&#125;"&gt;</b>
     Some Text
   <b>&lt;/app-fill-container&gt;</b>
 &lt;/app-image-shell&gt;
-    </pre>
+</pre>
     <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="">
       <app-fill-container [ratio]="{w:3, h:2}">
         <h4 style="margin: 10px;">Text on top of a background-image container</h4>
       </app-fill-container>
     </app-image-shell>
   </section>
+
   <ion-item-divider sticky="true">
     <ion-label>Text Shell</ion-label>
   </ion-item-divider>
   <section class="showcase-section">
     <p>
-      This component is useful when ...
+      This component is useful when you want to show a loading indicator while fetching text data from the server.
     </p>
     <p>
-      The shell basically works by setting a default (empty / null) value while you are fetching data.
+      The <code>&lt;app-text-shell&gt;</code> basically works by wrapping the text node with a loading indicator while you are fetching data.
+    </p>
+    <p>
+      While there are empty values the component adds some 'loading' styles and animations.
     </p>
     <p>
       You can reset the 'loading' state by re-assigning the data to the empty/null value.
+    </p>
+    <p>
       Empty data will cause the shell to never change it's 'loading' state
     </p>
     <p>
-      the text-shell element can be used standalone or wrapped by a text tag (h1, h2, h3, p, etc).
+      The <code>&lt;app-text-shell&gt;</code> element can be used alone or wrapped by a text tag (<b>h1</b>, <b>h2</b>, <b>h3</b>, <b>p</b>, etc).
     </p>
     <p>
-      We included basic styles to match the different heading styles (mainly line height associated to each heading).
+      In case you wrap it with a heading element, we included basic styles to match the different heading styles (mainly line height associated to each heading).
+    </p>
+    <p>
       By matching the line-height of the text-shell with the line height of the wrapper element, we avoid page height bumps after the data gets loaded into the shells.
     </p>
+<pre>
+&lt;h1&gt;
+  &lt;app-text-shell [data]=""&gt;&lt;/app-text-shell&gt;
+&lt;/h1&gt;
+
+&lt;h2&gt;
+  &lt;app-text-shell [data]=""&gt;&lt;/app-text-shell&gt;
+&lt;/h2&gt;
+
+&lt;h3&gt;
+  &lt;app-text-shell [data]=""&gt;&lt;/app-text-shell&gt;
+&lt;/h3&gt;
+
+&lt;h4&gt;
+  &lt;app-text-shell [data]=""&gt;&lt;/app-text-shell&gt;
+&lt;/h4&gt;
+
+&lt;h5&gt;
+  &lt;app-text-shell [data]=""&gt;&lt;/app-text-shell&gt;
+&lt;/h5&gt;
+</pre>
+    <h1>
+      <app-text-shell [data]=""></app-text-shell>
+    </h1>
+    <h2>
+      <app-text-shell [data]=""></app-text-shell>
+    </h2>
     <h3>
-      <app-text-shell [data]="" [attr.element]="'h3'"></app-text-shell>
+      <app-text-shell [data]=""></app-text-shell>
     </h3>
+    <h4>
+      <app-text-shell [data]=""></app-text-shell>
+    </h4>
+    <h5>
+      <app-text-shell [data]=""></app-text-shell>
+    </h5>
     <p>
-      Multi-line support (up-to 6 lines)
+      You can add/remove the following <b>Classes</b> to adjust the shell element behavior
     </p>
+    <h5>Disable animation</h5>
     <p>
-      <app-text-shell [data]="" [attr.lines]="6"></app-text-shell>
+      You can disable the line animation by adding the <b>no-animation</b> class.
     </p>
+<pre>
+&lt;p&gt;
+  <b>&lt;app-text-shell class="no-animation" [data]="" [attr.lines]="3"&gt;&lt;/app-text-shell&gt;</b>
+&lt;/p&gt;
+</pre>
+  <p>
+    <app-text-shell style="--text-shell-line-color: #DDD;" class="no-animation" [data]="" [attr.lines]="3"></app-text-shell>
+  </p>
     <p>
-      Disable animation
+      You can add/remove the following <b>Attributes</b> to adjust the shell element behavior
     </p>
+    <h5>Multi-line support</h5>
     <p>
-      <app-text-shell [data]="" [attr.lines]="3" class="no-animation"></app-text-shell>
+      You can set up-to 6 lines
+    </p>
+<pre>
+&lt;p&gt;
+  <b>&lt;app-text-shell [attr.lines]="6" [data]=""&gt;&lt;/app-text-shell&gt;</b>
+&lt;/p&gt;
+</pre>
+  <p>
+    <app-text-shell style="--text-shell-line-color: #DDD;" [data]="" [attr.lines]="6"></app-text-shell>
+  </p>
+    <p>
+      You can also override these <b>CSS 4 variables</b> to adjust the shell element style
+    </p>
+    <h5>Line color</h5>
+<pre>
+app-text-shell &#123;
+  --text-shell-line-color: rgba(233, 30, 99, .25);
+&#125;
+</pre>
+    <h3>
+      <app-text-shell style="--text-shell-line-color: rgba(233, 30, 99, .25);" [data]=""></app-text-shell>
+    </h3>
+    <h5>Background</h5>
+    <p>
+      Background by default is set to <b>transparent</b>.
+    </p>
+<pre>
+app-text-shell &#123;
+  --text-shell-line-color: #FFFFFF;
+  --text-shell-background: #000000;
+&#125;
+</pre>
+    <p style="padding: 5px; background: #000000;">
+      <app-text-shell style="--text-shell-line-color: #FFFFFF; --text-shell-background: #000000;" [data]="" [attr.lines]="3"></app-text-shell>
+    </p>
+    <h5>Line height</h5>
+<pre>
+app-text-shell &#123;
+  --text-shell-line-height: 40px;
+&#125;
+</pre>
+    <h3>
+      <app-text-shell style="--text-shell-line-height: 40px;" [data]=""></app-text-shell>
+    </h3>
+    <h5>Line gutter</h5>
+<pre>
+app-text-shell &#123;
+  --text-shell-line-gutter: 10px;
+&#125;
+</pre>
+    <p>
+      <app-text-shell style="--text-shell-line-gutter: 10px; --text-shell-line-color: #CCC;" [data]="" [attr.lines]="4"></app-text-shell>
     </p>
   </section>
+
   <ion-item-divider sticky="true">
     <ion-label>Binding Data to Shell Elements</ion-label>
   </ion-item-divider>
@@ -235,7 +347,7 @@
       </ion-col>
       <ion-col size="8">
         <h3 style="margin-top: 0px;">
-          <app-text-shell [data]="" [attr.element]="'h3'"></app-text-shell>
+          <app-text-shell [data]=""></app-text-shell>
         </h3>
         <p>
           <app-text-shell [data]="" [attr.lines]="3"></app-text-shell>
@@ -269,7 +381,7 @@
       </ion-col>
       <ion-col size="8">
         <h3 style="margin-top: 0px;">
-          <app-text-shell [data]="simpleFetchData?.title" [attr.element]="'h3'"></app-text-shell>
+          <app-text-shell [data]="simpleFetchData?.title"></app-text-shell>
         </h3>
         <p>
           <app-text-shell [data]="simpleFetchData?.description" [attr.lines]="3"></app-text-shell>
@@ -295,7 +407,7 @@
       </ion-col>
       <ion-col size="8">
         <h3 style="margin-top: 0px;">
-          <app-text-shell [data]="(subjectFetchData | async)?.title" [attr.element]="'h3'"></app-text-shell>
+          <app-text-shell [data]="(subjectFetchData | async)?.title"></app-text-shell>
         </h3>
         <p>
           <app-text-shell [data]="(subjectFetchData | async)?.description" [attr.lines]="3"></app-text-shell>
@@ -321,7 +433,7 @@
       </ion-col>
       <ion-col size="8">
         <h3 style="margin-top: 0px;">
-          <app-text-shell [data]="routeResolveData?.title" [attr.element]="'h3'"></app-text-shell>
+          <app-text-shell [data]="routeResolveData?.title"></app-text-shell>
         </h3>
         <p>
           <app-text-shell [data]="routeResolveData?.description" [attr.lines]="3"></app-text-shell>
@@ -329,7 +441,11 @@
       </ion-col>
     </ion-row>
   </section>
-  <!-- <section class="showcase-section">
 
-  </section> -->
+  <ion-item-divider sticky="true">
+    <ion-label>Other Component</ion-label>
+  </ion-item-divider>
+  <section class="showcase-section">
+
+  </section>
 </ion-content>
