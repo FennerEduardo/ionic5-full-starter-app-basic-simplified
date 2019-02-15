@@ -12,6 +12,7 @@ interface IShell {
   cover: string;
   image: string;
   title: string;
+  description: string;
 }
 
 // You can also use a Class object as a shell model
@@ -27,7 +28,8 @@ export class ShowcasePage implements OnInit {
   simpleFetchData: {
     cover: string,
     image: string,
-    title: string
+    title: string,
+    description: string
   };
   // You can also define the type of the property using the IShell interface or the ShowcaseShellModel class
   // simpleFetchData: IShell;
@@ -38,7 +40,8 @@ export class ShowcasePage implements OnInit {
   subjectFetchData: Observable<{
     cover: string,
     image: string,
-    title: string
+    title: string,
+    description: string
   }>;
   // You can also define the type of the property using the IShell interface or the ShowcaseShellModel class
   // subjectFetchData: Observable<IShell>;
@@ -118,7 +121,8 @@ export class ShowcasePage implements OnInit {
         this.http.get<{
           cover: string,
           image: string,
-          title: string
+          title: string,
+          description: string
         }>('./assets/sample-data/showcase/shell.json')
         .pipe(
           take(1) // Force Observable to complete
@@ -137,7 +141,8 @@ export class ShowcasePage implements OnInit {
     const shellObject: {
       cover: string,
       image: string,
-      title: string
+      title: string,
+      description: string
     } = null;
 
     const subjectFetch = new SubjectFetch(
@@ -145,7 +150,8 @@ export class ShowcasePage implements OnInit {
       () => this.http.get<{
         cover: string,
         image: string,
-        title: string
+        title: string,
+        description: string
       }>('./assets/sample-data/showcase/shell.json')
       // You can also define the type of the property using the IShell interface or the ShowcaseShellModel class
       // () => this.http.get<IShell>('./assets/sample-data/showcase/shell.json');
