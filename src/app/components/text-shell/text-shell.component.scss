@@ -122,6 +122,27 @@
 // WIP on gist: https://www.sassmeister.com/gist/fc8790761e3a6d9dc83f7326c1bc6ab4
 // Inspiration for the animation: https://cloudcannon.com/deconstructions/2014/11/15/facebook-content-placeholder-deconstruction.html
 :host {
+  --c-line-height: 16px;
+  --c-line-spacing: 3px;
+  --c-bg-color: #EEE;
+  --c-mask-color: transparent;
+  --c-line-bg-color: transparent;
+
+  --text-shell-background: transparent;
+  --c-mask-color: var(--text-shell-background);
+  --c-line-bg-color: var(--text-shell-background);
+
+  --text-shell-line-color: #EEE;
+  --c-bg-color: var(--text-shell-line-color);
+
+  --text-shell-line-height: 16px;
+  --c-line-height: var(--text-shell-line-height);
+
+  --text-shell-line-gutter: 3px;
+  --c-line-spacing: var(--text-shell-line-gutter);
+
+  background-color: var(--text-shell-background);
+
   display: block;
   color: transparent;
   position: relative;
@@ -130,36 +151,30 @@
   // (I also noticed that if I set the color to a solid color instead of having opacity, the issue doesn't happen)
   background-clip: content-box;
 
-  --c-line-height: 16px;
-  --c-line-spacing: 3px;
-  --c-bg-color: #EEE;
-  --c-mask-color: transparent;
-  --c-line-bg-color: transparent;
-
-  &[element="h1"] {
-    --c-line-height: 32px;
-    --c-bg-color: #CCC;
-  }
-
-  &[element="h2"] {
-    --c-line-height: 28px;
-    --c-bg-color: #DDD;
-  }
-
-  &[element="h3"] {
-    --c-line-height: 24px;
-    --c-bg-color: #DDD;
-  }
-
-  &[element="h4"] {
-    --c-line-height: 20px;
-    --c-bg-color: #DDD;
-  }
-
-  &[element="h5"] {
-    --c-line-height: 18px;
-    --c-bg-color: #DDD;
-  }
+  // &[element="h1"] {
+  //   --c-line-height: 32px;
+  //   --c-bg-color: #CCC;
+  // }
+  //
+  // &[element="h2"] {
+  //   --c-line-height: 28px;
+  //   --c-bg-color: #DDD;
+  // }
+  //
+  // &[element="h3"] {
+  //   --c-line-height: 24px;
+  //   --c-bg-color: #DDD;
+  // }
+  //
+  // &[element="h4"] {
+  //   --c-line-height: 20px;
+  //   --c-bg-color: #DDD;
+  // }
+  //
+  // &[element="h5"] {
+  //   --c-line-height: 18px;
+  //   --c-bg-color: #DDD;
+  // }
 
   // Default one line text-shell
   @include text-shell-background(1);
