@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
-// import { FloorPipe } from 'angular-pipes';
-
 import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
 import { ShowHidePasswordComponent } from './show-hide-password/show-hide-password.component';
 import { FillContainerComponent } from './fill-container/fill-container.component';
+
 import { TextShellComponent } from './text-shell/text-shell.component';
+import { ImageShellComponent } from './image-shell/image-shell.component';
+
 import { PreloadImageComponent } from './preload-image/preload-image.component';
 import { BackgroundImageComponent } from './background-image/background-image.component';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
@@ -23,11 +24,13 @@ import { ColorRadioDirective } from './color-radio/color-radio.directive';
     IonicModule.forRoot(),
   ],
   declarations: [
-    // FloorPipe,
     CustomCheckboxComponent,
     ShowHidePasswordComponent,
     FillContainerComponent,
+
     TextShellComponent,
+    ImageShellComponent,
+
     PreloadImageComponent,
     BackgroundImageComponent,
     CountdownTimerComponent,
@@ -36,11 +39,13 @@ import { ColorRadioDirective } from './color-radio/color-radio.directive';
     ColorRadioDirective
   ],
   exports: [
-    // FloorPipe,
     CustomCheckboxComponent,
     ShowHidePasswordComponent,
     FillContainerComponent,
+
     TextShellComponent,
+    ImageShellComponent,
+
     PreloadImageComponent,
     BackgroundImageComponent,
     CountdownTimerComponent,
