@@ -9,239 +9,327 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="outer-content">
+<ion-content class="showcase-content">
   <ion-item-divider sticky="true">
-    <ion-label>Background Image Shell</ion-label>
+    <ion-label>Aspect Ratio</ion-label>
   </ion-item-divider>
-  <p>
-    Set a background image as a cover
-  </p>
-  <p>
-    This element is different from preload-image in that this one is designed to contain content (for example some text)
-  </p>
-  <div style="width:100%;">
-    <app-background-image class="add-overlay add-spinner" [src]="">
-      <app-fill-container [ratio]="{w:2, h:1}">
-        <h2>Text on top of a background image cover</h2>
+  <section class="showcase-section">
+    <p>
+      The <code>&lt;app-fill-container&gt;</code> is a simple component that ensures a block will maintain the specified aspect ratio.
+    </p>
+    <p>
+      It uses an <a href="http://stackoverflow.com/a/10441480/1116959" target="_blank">old CSS technique</a> to adjust the height of the element based on its width (using padding-bottom).
+    </p>
+    <p>
+      This is a very handy component to prevent content from jumping around while the page is loading.
+    </p>
+    <p>
+      <b>Note:</b> The <code>&lt;app-fill-container&gt;</code> component must be surrounded by a container element with a defined with, as this component will fill the parents width.
+    </p>
+    <pre>
+<b>&lt;div style="width:80%; margin: 0px auto;"&gt;</b>
+  &lt;app-fill-container [ratio]="&#123;w:2, h:1&#125;"&gt;
+    &lt;span&gt;This container will always have a 2:1 ratio&lt;/span&gt;
+  &lt;/app-fill-container&gt;
+<b>&lt;/div&gt;</b>
+    </pre>
+    <div style="width:80%; margin: 0px auto;">
+      <app-fill-container [ratio]="{w:2, h:1}" style="background-color: #e91e63;">
+        <span style="margin: 10px; display: block;">This container will always have a 2:1 ratio</span>
       </app-fill-container>
-    </app-background-image>
-  </div>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
+    </div>
+  </section>
   <ion-item-divider sticky="true">
     <ion-label>Image Shell</ion-label>
   </ion-item-divider>
-  <p>
-    This component enables to preload an image with an elegant shell that mantains a specified aspect ratio. By doing so, it prevents content from jumping around the page while assets (images) are loading
-  </p>
-  <p>
-    The <code>app-preload-image</code> component must be surrounded by a container element with a defined with, as this component will fill the parents width.
-  </p>
-  <div style="width:30%; margin: 0px auto;">
-    <app-preload-image class="add-spinner" [ratio]="{w:1, h:1}" [src]="" [alt]="'Sample Image'"></app-preload-image>
-  </div>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
+  <section class="showcase-section">
+    <p>
+      This component enables to preload an image with an elegant shell.
+    </p>
+    <div style="width:30%; margin: 0px auto;">
+      <app-fill-container [ratio]="{w:1, h:1}">
+        <app-image-shell [src]="" [alt]=""></app-image-shell>
+      </app-fill-container>
+    </div>
+    <p>
+      You can add/remove the following <b>Clasess</b> to adjust the shell element behavior
+    </p>
+    <h5>Spinner</h5>
+    <pre>
+&lt;app-image-shell class="add-spinner" [src]="" [alt]=""&gt;&lt;/app-image-shell&gt;
+    </pre>
+    <div style="width:30%; margin: 0px auto;">
+      <app-fill-container [ratio]="{w:1, h:1}">
+        <app-image-shell class="add-spinner" [src]="" [alt]=""></app-image-shell>
+      </app-fill-container>
+    </div>
+    <h5>Overlay</h5>
+    <p>
+      This class adds a background overlay after the image has loaded
+    </p>
+    <pre>
+&lt;app-image-shell class="add-spinner add-overlay" [src]="'https://via.placeholder.com/150x150'" [alt]=""&gt;&lt;/app-image-shell&gt;
+    </pre>
+    <div style="width:30%; margin: 0px auto;">
+      <app-fill-container [ratio]="{w:1, h:1}">
+        <app-image-shell class="add-spinner add-overlay" [src]="'https://via.placeholder.com/150x150'" [alt]=""></app-image-shell>
+      </app-fill-container>
+    </div>
+    <p>
+      You can also override these <b>CSS 4 variables</b> to adjust the shell element style
+    </p>
+    <h5>Background</h5>
+    <pre>
+--image-shell-loading-background: rgba(233, 30, 99, .25);
+    </pre>
+    <div style="width:30%; margin: 0px auto;">
+      <app-fill-container [ratio]="{w:1, h:1}">
+        <app-image-shell style="--image-shell-loading-background: rgba(233, 30, 99, .25);" class="add-spinner" [src]="" [alt]=""></app-image-shell>
+      </app-fill-container>
+    </div>
+    <h5>Overlay</h5>
+    <pre>
+--image-shell-overlay-background: rgba(103, 58, 183, .40);
+    </pre>
+    <div style="width:30%; margin: 0px auto;">
+      <app-fill-container [ratio]="{w:1, h:1}">
+        <app-image-shell style="--image-shell-overlay-background: rgba(103, 58, 183, .40);" class="add-spinner add-overlay" [src]="'https://via.placeholder.com/150x150'" [alt]=""></app-image-shell>
+      </app-fill-container>
+    </div>
+    <h5>Spinner</h5>
+    <pre>
+--image-shell-spinner-size: 40px;
+--image-shell-spinner-color: #000000;
+    </pre>
+    <div style="width:30%; margin: 0px auto;">
+      <app-fill-container [ratio]="{w:1, h:1}">
+        <app-image-shell style="--image-shell-spinner-size: 40px; --image-shell-spinner-color: #000000;" class="add-spinner" [src]="" [alt]=""></app-image-shell>
+      </app-fill-container>
+    </div>
+    <h5>Border Radius</h5>
+    <pre>
+--image-shell-border-radius: 10px;
+    </pre>
+    <div style="width:30%; margin: 0px auto;">
+      <app-fill-container [ratio]="{w:1, h:1}">
+        <app-image-shell style="--image-shell-border-radius: 10px;" class="add-spinner" [src]="" [alt]=""></app-image-shell>
+      </app-fill-container>
+    </div>
+  </section>
+  <section class="showcase-section">
+    <h2>Cover Image mode</h2>
+    <p>
+      Apart from the default <code>&lt;app-image-shell&gt;</code> you can specify a <b>cover</b> mode if you want to display your image as a background-image instead.
+    </p>
+    <p>
+      This is different from the default mode in that this one is designed to contain content (for example some text)
+    </p>
+    <pre>
+<b>&lt;app-image-shell [mode]="'cover'" class="add-spinner add-overlay" [src]=""&gt;</b>
+  &lt;app-fill-container [ratio]="&#123;w:3, h:2&#125;"&gt;
+    Some Text
+  &lt;/app-fill-container&gt;
+<b>&lt;/app-image-shell&gt;</b>
+    </pre>
+    <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="">
+      <app-fill-container [ratio]="{w:3, h:2}">
+        <h4 style="margin: 10px;">Text on top of a background-image container</h4>
+      </app-fill-container>
+    </app-image-shell>
+  </section>
+  <section class="showcase-section">
+    <h2>Maintain Aspect Ratio</h2>
+    <p>
+      We can use the handy <code>&lt;app-fill-container&gt;</code> to ensure the image shell mantains a specified aspect ratio.
+    </p>
+    <p>
+      By doing so, we prevent content from jumping around the page while assets (images) are loading.
+    </p>
+    <h5>Default mode</h5>
+    <p>
+      Just surroun the <code>&lt;app-image-shell&gt;</code> with an <code>&lt;app-fill-container&gt;</code> element
+    </p>
+    <pre>
+<b>&lt;app-fill-container [ratio]="&#123;w:3, h:2&#125;"&gt;</b>
+  &lt;app-image-shell class="add-spinner" [src]="" [alt]=""&gt;&lt;/app-image-shell&gt;
+<b>&lt;/app-fill-container&gt;</b>
+    </pre>
+    <div style="width:60%; margin: 0px auto;">
+      <app-fill-container [ratio]="{w:3, h:2}">
+        <app-image-shell class="add-spinner" [src]="" [alt]=""></app-image-shell>
+      </app-fill-container>
+    </div>
+    <h5>Cover mode</h5>
+    <p>
+      When using the <b>cover</b> mode we need to include the <code>&lt;app-fill-container&gt;</code> inside the <code>&lt;app-image-shell&gt;</code> element instead of surrounding it.
+    </p>
+    <pre>
+&lt;app-image-shell [mode]="'cover'" class="add-spinner add-overlay" [src]=""&gt;
+  <b>&lt;app-fill-container [ratio]="&#123;w:3, h:2&#125;"&gt;</b>
+    Some Text
+  <b>&lt;/app-fill-container&gt;</b>
+&lt;/app-image-shell&gt;
+    </pre>
+    <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="">
+      <app-fill-container [ratio]="{w:3, h:2}">
+        <h4 style="margin: 10px;">Text on top of a background-image container</h4>
+      </app-fill-container>
+    </app-image-shell>
+  </section>
   <ion-item-divider sticky="true">
     <ion-label>Text Shell</ion-label>
   </ion-item-divider>
-  <p>
-    This component is useful when ...
-  </p>
-  <p>
-    The shell basically works by setting a default (empty / null) value while you are fetching data.
-  </p>
-  <p>
-    You can reset the 'loading' state by re-assigning the data to the empty/null value.
-    Empty data will cause the shell to never change it's 'loading' state
-  </p>
-  <p>
-    the text-shell element can be used standalone or wrapped by a text tag (h1, h2, h3, p, etc).
-  </p>
-  <p>
-    We included basic styles to match the different heading styles (mainly line height associated to each heading).
-    By matching the line-height of the text-shell with the line height of the wrapper element, we avoid page height bumps after the data gets loaded into the shells.
-  </p>
-  <h3>
-    <app-text-shell [data]="" [attr.element]="'h3'"></app-text-shell>
-  </h3>
-  <p>
-    Multi-line support (up-to 6 lines)
-  </p>
-  <p>
-    <app-text-shell [data]="" [attr.lines]="6"></app-text-shell>
-  </p>
-  <p>
-    Disable animation
-  </p>
-  <p>
-    <app-text-shell [data]="" [attr.lines]="3" class="no-animation"></app-text-shell>
-  </p>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
+  <section class="showcase-section">
+    <p>
+      This component is useful when ...
+    </p>
+    <p>
+      The shell basically works by setting a default (empty / null) value while you are fetching data.
+    </p>
+    <p>
+      You can reset the 'loading' state by re-assigning the data to the empty/null value.
+      Empty data will cause the shell to never change it's 'loading' state
+    </p>
+    <p>
+      the text-shell element can be used standalone or wrapped by a text tag (h1, h2, h3, p, etc).
+    </p>
+    <p>
+      We included basic styles to match the different heading styles (mainly line height associated to each heading).
+      By matching the line-height of the text-shell with the line height of the wrapper element, we avoid page height bumps after the data gets loaded into the shells.
+    </p>
+    <h3>
+      <app-text-shell [data]="" [attr.element]="'h3'"></app-text-shell>
+    </h3>
+    <p>
+      Multi-line support (up-to 6 lines)
+    </p>
+    <p>
+      <app-text-shell [data]="" [attr.lines]="6"></app-text-shell>
+    </p>
+    <p>
+      Disable animation
+    </p>
+    <p>
+      <app-text-shell [data]="" [attr.lines]="3" class="no-animation"></app-text-shell>
+    </p>
+  </section>
   <ion-item-divider sticky="true">
     <ion-label>Binding Data to Shell Elements</ion-label>
   </ion-item-divider>
-  <p>
-    You can combine the different shell elements in multiple ways to fit your needs
-  </p>
-  <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
-    <ion-col size="12">
-      <app-background-image class="add-overlay add-spinner" [src]="">
-        <app-fill-container [ratio]="{w:2, h:1}">
-          <h4 style="margin: 10px; text-align: center;">
-            Image set as a background cover
-          </h4>
+  <section class="showcase-section">
+    <p>
+      You can combine the different shell elements in multiple ways to fit your needs
+    </p>
+    <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
+      <ion-col size="12">
+        <app-background-image class="add-overlay add-spinner" [src]="">
+          <app-fill-container [ratio]="{w:2, h:1}">
+            <h4 style="margin: 10px; text-align: center;">
+              Image set as a background cover
+            </h4>
+          </app-fill-container>
+        </app-background-image>
+      </ion-col>
+      <ion-col size="4">
+        <app-preload-image class="add-spinner" [ratio]="{w:1, h:1}" [src]="" [alt]="'Sample Image'"></app-preload-image>
+      </ion-col>
+      <ion-col size="8">
+        <h3 style="margin-top: 0px;">
+          <app-text-shell [data]="" [attr.element]="'h3'"></app-text-shell>
+        </h3>
+        <p>
+          <app-text-shell [data]="" [attr.lines]="3"></app-text-shell>
+        </p>
+      </ion-col>
+    </ion-row>
+    <br/>
+    <br/>
+    <br/>
+    <p>
+      Let's set a timeout and fetch data using the HttpClient
+    </p>
+    <p>
+      Data coming in <b>{{ simpleFetchCountdown }} seconds</b>
+    </p>
+    <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
+      <ion-col size="12">
+        <app-image-shell class="add-overlay add-spinner" [mode]="'cover'" [src]="simpleFetchData?.cover" [alt]="'Sample Image Cover'">
+          <app-fill-container [ratio]="{w:2, h:1}">
+            <h4 style="margin: 10px; text-align: center;">Heading on top of a cover image</h4>
+          </app-fill-container>
+        </app-image-shell>
+      </ion-col>
+      <ion-col size="4">
+        <app-fill-container [ratio]="{w:1, h:1}">
+          <!-- <app-preload-image class="add-spinner" [ratio]="{w:1, h:1}" [src]="simpleFetchData?.image" [alt]="'Sample Image'"></app-preload-image> -->
+          <app-image-shell class="add-spinner" [src]="simpleFetchData?.image" [alt]="'Sample Image'">
+            PEPE
+          </app-image-shell>
         </app-fill-container>
-      </app-background-image>
-    </ion-col>
-    <ion-col size="4">
-      <app-preload-image class="add-spinner" [ratio]="{w:1, h:1}" [src]="" [alt]="'Sample Image'"></app-preload-image>
-    </ion-col>
-    <ion-col size="8">
-      <h3 style="margin-top: 0px;">
-        <app-text-shell [data]="" [attr.element]="'h3'"></app-text-shell>
-      </h3>
-      <p>
-        <app-text-shell [data]="" [attr.lines]="3"></app-text-shell>
-      </p>
-    </ion-col>
-  </ion-row>
-  <br/>
-  <br/>
-  <br/>
-  <p>
-    Let's set a timeout and fetch data using the HttpClient
-  </p>
-  <p>
-    Data coming in <b>{{ simpleFetchCountdown }} seconds</b>
-  </p>
-  <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
-    <ion-col size="12">
-      <app-background-image class="add-overlay add-spinner" [src]="simpleFetchData?.cover">
-        <app-fill-container [ratio]="{w:2, h:1}">
-        </app-fill-container>
-      </app-background-image>
-    </ion-col>
-    <ion-col size="4">
-      <app-fill-container [ratio]="{w:1, h:1}">
-        <app-preload-image class="add-spinner" [ratio]="{w:1, h:1}" [src]="simpleFetchData?.image" [alt]="'Sample Image'"></app-preload-image>
-      </app-fill-container>
-    </ion-col>
-    <ion-col size="8">
-      <h3 style="margin-top: 0px;">
-        <app-text-shell [data]="simpleFetchData?.title" [attr.element]="'h3'"></app-text-shell>
-      </h3>
-      <p>
-        <app-text-shell [data]="simpleFetchData?.description" [attr.lines]="3"></app-text-shell>
-      </p>
-    </ion-col>
-  </ion-row>
-  <ion-button (click)="showcaseShellSimpleFetch(3)" [disabled]="simpleFetchButtonDisabled">Fetch more Data</ion-button>
-  <br/>
-  <br/>
-  <br/>
-  <p>
-    Using the SubjectFetch utility you can reduce the amount of boilerplate from the previous example and achieve the same behavior
-  </p>
-  <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
-    <ion-col size="12">
-      <app-background-image class="add-overlay add-spinner" [src]="(subjectFetchData | async)?.cover">
-        <app-fill-container [ratio]="{w:2, h:1}">
-        </app-fill-container>
-      </app-background-image>
-    </ion-col>
-    <ion-col size="4">
-      <app-preload-image class="add-spinner" [ratio]="{w:1, h:1}" [src]="(subjectFetchData | async)?.image" [alt]="'Sample Image'"></app-preload-image>
-    </ion-col>
-    <ion-col size="8">
-      <h3 style="margin-top: 0px;">
-        <app-text-shell [data]="(subjectFetchData | async)?.title" [attr.element]="'h3'"></app-text-shell>
-      </h3>
-      <p>
-        <app-text-shell [data]="(subjectFetchData | async)?.description" [attr.lines]="3"></app-text-shell>
-      </p>
-    </ion-col>
-  </ion-row>
-  <ion-button (click)="showcaseShellSubjectFetch()" [disabled]="subjectFetchButtonDisabled">Fetch more Data</ion-button>
-  <br/>
-  <br/>
-  <br/>
-  <p>
-    SubjectFetch can also be easily plugged in Angular Route Resolvers
-  </p>
-  <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
-    <ion-col size="12">
-      <app-background-image class="add-overlay add-spinner" [src]="routeResolveData?.cover">
-        <app-fill-container [ratio]="{w:2, h:1}">
-        </app-fill-container>
-      </app-background-image>
-    </ion-col>
-    <ion-col size="4">
-      <app-preload-image class="add-spinner" [ratio]="{w:1, h:1}" [src]="routeResolveData?.image" [alt]="'Sample Image'"></app-preload-image>
-    </ion-col>
-    <ion-col size="8">
-      <h3 style="margin-top: 0px;">
-        <app-text-shell [data]="routeResolveData?.title" [attr.element]="'h3'"></app-text-shell>
-      </h3>
-      <p>
-        <app-text-shell [data]="routeResolveData?.description" [attr.lines]="3"></app-text-shell>
-      </p>
-    </ion-col>
-  </ion-row>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
-  <br/>
+      </ion-col>
+      <ion-col size="8">
+        <h3 style="margin-top: 0px;">
+          <app-text-shell [data]="simpleFetchData?.title" [attr.element]="'h3'"></app-text-shell>
+        </h3>
+        <p>
+          <app-text-shell [data]="simpleFetchData?.description" [attr.lines]="3"></app-text-shell>
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-button (click)="showcaseShellSimpleFetch(3)" [disabled]="simpleFetchButtonDisabled">Fetch more Data</ion-button>
+    <br/>
+    <br/>
+    <br/>
+    <p>
+      Using the SubjectFetch utility you can reduce the amount of boilerplate from the previous example and achieve the same behavior
+    </p>
+    <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
+      <ion-col size="12">
+        <app-background-image class="add-overlay add-spinner" [src]="(subjectFetchData | async)?.cover">
+          <app-fill-container [ratio]="{w:2, h:1}">
+          </app-fill-container>
+        </app-background-image>
+      </ion-col>
+      <ion-col size="4">
+        <app-preload-image class="add-spinner" [ratio]="{w:1, h:1}" [src]="(subjectFetchData | async)?.image" [alt]="'Sample Image'"></app-preload-image>
+      </ion-col>
+      <ion-col size="8">
+        <h3 style="margin-top: 0px;">
+          <app-text-shell [data]="(subjectFetchData | async)?.title" [attr.element]="'h3'"></app-text-shell>
+        </h3>
+        <p>
+          <app-text-shell [data]="(subjectFetchData | async)?.description" [attr.lines]="3"></app-text-shell>
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-button (click)="showcaseShellSubjectFetch()" [disabled]="subjectFetchButtonDisabled">Fetch more Data</ion-button>
+    <br/>
+    <br/>
+    <br/>
+    <p>
+      SubjectFetch can also be easily plugged in Angular Route Resolvers
+    </p>
+    <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
+      <ion-col size="12">
+        <app-background-image class="add-overlay add-spinner" [src]="routeResolveData?.cover">
+          <app-fill-container [ratio]="{w:2, h:1}">
+          </app-fill-container>
+        </app-background-image>
+      </ion-col>
+      <ion-col size="4">
+        <app-preload-image class="add-spinner" [ratio]="{w:1, h:1}" [src]="routeResolveData?.image" [alt]="'Sample Image'"></app-preload-image>
+      </ion-col>
+      <ion-col size="8">
+        <h3 style="margin-top: 0px;">
+          <app-text-shell [data]="routeResolveData?.title" [attr.element]="'h3'"></app-text-shell>
+        </h3>
+        <p>
+          <app-text-shell [data]="routeResolveData?.description" [attr.lines]="3"></app-text-shell>
+        </p>
+      </ion-col>
+    </ion-row>
+  </section>
+  <!-- <section class="showcase-section">
+
+  </section> -->
 </ion-content>

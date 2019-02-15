@@ -1,12 +1,7 @@
-.not-found-title {
-  text-align: center;
-  font-size: 30px;
-  font-weight: 500;
-}
+.showcase-content {
+  --background: var(--app-background-shade);
 
-.not-found-text {
-  text-align: center;
-  font-size: 22px;
-  margin-bottom: 40px;
-  font-weight: 500;
+  .showcase-section {
+    margin: 20px 20px 100px;
+  }
 }
