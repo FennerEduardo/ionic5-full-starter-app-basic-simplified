@@ -19,6 +19,8 @@ export class BackgroundImageComponent {
   @Input()
   set src(val: string) {
     this._src = (val !== undefined && val !== null) ? val : '';
+    // Unset the background-image
+    this.backgroundImage = 'unset';
 
     // Show loading indicator
     // When using SSR (Server Side Rendering), avoid the loading animation while the image resource is being loaded
