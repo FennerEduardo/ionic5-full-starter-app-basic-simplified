@@ -7,6 +7,7 @@ import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.compo
 import { ShowHidePasswordComponent } from './show-hide-password/show-hide-password.component';
 import { FillContainerComponent } from './fill-container/fill-container.component';
 
+import { AspectRatioComponent } from './aspect-ratio/aspect-ratio.component';
 import { TextShellComponent } from './text-shell/text-shell.component';
 import { ImageShellComponent } from './image-shell/image-shell.component';
 
@@ -28,6 +29,7 @@ import { ColorRadioDirective } from './color-radio/color-radio.directive';
     ShowHidePasswordComponent,
     FillContainerComponent,
 
+    AspectRatioComponent,
     TextShellComponent,
     ImageShellComponent,
 
@@ -43,6 +45,7 @@ import { ColorRadioDirective } from './color-radio/color-radio.directive';
     ShowHidePasswordComponent,
     FillContainerComponent,
 
+    AspectRatioComponent,
     TextShellComponent,
     ImageShellComponent,
 
