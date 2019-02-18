@@ -490,7 +490,17 @@ app-checkbox-wrapper.custom-checkbox &#123;
     <ion-label>Show/Hide Password</ion-label>
   </ion-item-divider>
   <section class="showcase-section">
-
+    <p>
+      By wrapping an <code>&lt;ion-input&gt;</code> element with this component, you can enhance the UX and add a show/hide password funtionality.
+    </p>
+<pre>
+&lt;app-show-hide-password&gt;
+  &lt;ion-input type="password" placeholder="Try setting a password" value="It's a secret!"&gt;&lt;/ion-input&gt;
+&lt;/app-show-hide-password&gt;
+</pre>
+    <app-show-hide-password>
+      <ion-input type="password" placeholder="Try setting a password" value="It's a secret!"></ion-input>
+    </app-show-hide-password>
   </section>
 
   <ion-item-divider sticky="true">

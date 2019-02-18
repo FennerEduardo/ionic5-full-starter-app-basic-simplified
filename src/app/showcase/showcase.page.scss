@@ -46,4 +46,14 @@
     margin-bottom: 40px;
     background-color: #FFF;
   }
+
+  app-show-hide-password {
+    background-color: #FFF;
+    padding: 0px 15px;
+
+    ion-input {
+      --padding-start: 0px;
+      --padding-end: 0px;
+    }
+  }
 }
