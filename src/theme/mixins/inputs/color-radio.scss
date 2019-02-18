@@ -1,10 +1,11 @@
 @mixin color-radio() {
   // Default values
   --color-radio-color: #FFF;
+  --color-radio-background: #CCC;
   --color-radio-active-border-rgb: 255,255,255;
   --color-radio-border-radius: 50%;
 
-	.color-radio[appColorRadio] {
+	ion-item.color-radio {
     // Reset values from Ionic (ion-item) styles
     --padding-bottom: 0px;
 		--padding-end: 0px;
@@ -12,8 +13,8 @@
 		--padding-start: 0px;
 		--border-width: 4px;
 		--border-style: solid;
-		--border-color: transparent;
-		--background: transparent;
+		--border-color: var(--color-radio-background);
+		--background: var(--color-radio-background);
 		--inner-padding-end: 0px;
 		--inner-border-width: 0px;
 		--min-height: initial;
