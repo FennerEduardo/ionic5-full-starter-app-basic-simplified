@@ -34,7 +34,7 @@
 <b>&lt;/div&gt;</b>
 </pre>
     <div style="width:80%; margin: 0px auto;">
-      <app-aspect-ratio [ratio]="{w:2, h:1}" style="background-color: #e91e63;">
+      <app-aspect-ratio [ratio]="{w:2, h:1}" style="background-color: #00AFFF;">
         <span style="margin: 10px; display: block;">This container will always have a <b>2:1</b> aspect ratio</span>
       </app-aspect-ratio>
     </div>
@@ -56,7 +56,7 @@
       </app-aspect-ratio>
     </div>
     <p>
-      You can add/remove the following <b>Clasess</b> to adjust the shell element behavior
+      You can add/remove the following <b>Clasess</b> to adjust the shell element behavior:
     </p>
     <h5>Spinner</h5>
 <pre>
@@ -69,14 +69,14 @@
     </div>
     <h5>Overlay</h5>
     <p>
-      This class adds a background overlay after the image has loaded
+      This class adds a background overlay after the image has loaded.
     </p>
 <pre>
-&lt;app-image-shell class="add-spinner add-overlay" [src]="'https://picsum.photos/300/300'" [alt]=""&gt;&lt;/app-image-shell&gt;
+&lt;app-image-shell class="add-spinner add-overlay" [src]="''./assets/sample-images/travel/Travel2-64.47.png''" [alt]=""&gt;&lt;/app-image-shell&gt;
 </pre>
     <div style="width:30%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:1, h:1}">
-        <app-image-shell class="add-spinner add-overlay" [src]="'https://picsum.photos/300/300'" [alt]=""></app-image-shell>
+        <app-image-shell class="add-spinner add-overlay" [src]="'./assets/sample-images/travel/Travel2-64.47.png'" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
     <p>
@@ -101,7 +101,7 @@ app-image-shell &#123;
 </pre>
     <div style="width:30%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:1, h:1}">
-        <app-image-shell style="--image-shell-overlay-background: rgba(103, 58, 183, .40);" class="add-spinner add-overlay" [src]="'https://picsum.photos/300/300'" [alt]=""></app-image-shell>
+        <app-image-shell style="--image-shell-overlay-background: rgba(103, 58, 183, .40);" class="add-spinner add-overlay" [src]="'./assets/sample-images/travel/Travel2-64.47.png'" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
     <h5>Spinner</h5>
@@ -378,7 +378,7 @@ app-text-shell &#123;
       <ion-col size="12">
         <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="simpleFetchData?.cover" [alt]="'Sample Image Cover'">
           <app-aspect-ratio [ratio]="{w:2, h:1}">
-            <h4 style="margin: 10px; text-align: center;">Heading on top of a cover image</h4>
+            <h4 style="margin: 10px; text-align: center; color: #FFF;">Heading on top of a cover image</h4>
           </app-aspect-ratio>
         </app-image-shell>
       </ion-col>
@@ -407,7 +407,7 @@ app-text-shell &#123;
       <ion-col size="12">
         <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="(subjectFetchData | async)?.cover" [alt]="'Sample Image Cover'">
           <app-aspect-ratio [ratio]="{w:2, h:1}">
-            <h4 style="margin: 10px; text-align: center;">Heading on top of a cover image</h4>
+            <h4 style="margin: 10px; text-align: center; color: #FFF;">Heading on top of a cover image</h4>
           </app-aspect-ratio>
         </app-image-shell>
       </ion-col>
@@ -436,7 +436,7 @@ app-text-shell &#123;
       <ion-col size="12">
         <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="routeResolveData?.cover" [alt]="'Sample Image Cover'">
           <app-aspect-ratio [ratio]="{w:2, h:1}">
-            <h4 style="margin: 10px; text-align: center;">Heading on top of a cover image</h4>
+            <h4 style="margin: 10px; text-align: center; color: #FFF;">Heading on top of a cover image</h4>
           </app-aspect-ratio>
         </app-image-shell>
       </ion-col>
