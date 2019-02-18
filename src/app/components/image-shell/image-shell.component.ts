@@ -20,7 +20,6 @@ export class ImageShellComponent {
   @HostBinding('attr.mode')
   @Input()
   set mode(val: string) {
-    console.log('attr.mode', val);
     this._mode = (val !== undefined && val !== null) ? val : '';
   }
   get mode(): string {
