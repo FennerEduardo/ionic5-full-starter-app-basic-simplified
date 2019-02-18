@@ -78,8 +78,6 @@
 :root {
   --app-background: #FFFFFF;
   --app-background-shade: var(--ion-background-color-step-50, #F2F2F2);
-  // TODO: renombrar a --app-background-shade y sustituir en todos lados en los que se usa
-  --app-background-color: var(--ion-background-color-step-50, #f2f2f2);
 
   /* Set the font family of the entire app */
   --ion-font-family: 'Rubik', sans-serif;

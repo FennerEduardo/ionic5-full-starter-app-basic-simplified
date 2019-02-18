@@ -23,7 +23,7 @@
   --shadow-color: rgba(var(--ion-color-dark-rgb), .1);
 
   --deals-listing-margin: var(--app-broad-margin);
-  --deals-listing-background: var(--app-background-color);
+  --deals-listing-background: var(--app-background-shade);
 
   @include custom-button-color('claim') {
     --ion-color-claim: #70DF70;

@@ -68,12 +68,11 @@
         }
 
         .score-icon {
-          color: var(--shell-color);
+          font-size: 24px;
         }
 
         .score-value {
-          color: var(--shell-color);
-          font-size: 14px;
+          font-size: 16px;
           margin-left: 4px;
 
           app-text-shell {
