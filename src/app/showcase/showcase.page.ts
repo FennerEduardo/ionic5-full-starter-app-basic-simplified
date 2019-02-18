@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, timer, interval } from 'rxjs';
 import { first, takeUntil, finalize, take } from 'rxjs/operators';
 
+import * as dayjs from 'dayjs';
+
 import { SubjectFetch } from '../utils/subject-fetch';
 
 // You can use a plain interface as a shell model
@@ -58,24 +60,33 @@ export class ShowcasePage implements OnInit {
   // Aux properties for the SubjectFetch showcase
   subjectFetchButtonDisabled = true;
 
+  // Relative date (better to showcase UI micro-interactions)
+  countdownDate: string = dayjs().add(1, 'day').add(8, 'hour').add(10, 'second').format('MM/DD/YYYY HH:mm:ss') as string;
+  // Instead of hardcoded one
+  // countdownDate = '12/01/2018';
+
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    console.log('ShowcasePage - ngOnInit()');
+
     if (this.route && this.route.data) {
       this.route.data.subscribe(routeData => {
-        const data = routeData['data'];
-        console.log('data - ShowcasePage - ngOnInit()', data);
+        const resolvedHotObservable = routeData['data'];
+        console.log('ShowcasePage - Subscribe to Route Resolve Observable => HotObservable: ', resolvedHotObservable);
 
-        if (data) {
-          data.subscribe((observableData: ShowcaseShellModel) => {
-            if (observableData) {
-              this.routeResolveData = observableData;
+        if (resolvedHotObservable) {
+          resolvedHotObservable.subscribe((pageData: ShowcaseShellModel) => {
+            // tslint:disable-next-line:max-line-length
+            console.log('ShowcasePage - Subscribe to HotObservable (can emmit multiple values) => PageData (' + ((pageData && pageData.isShell) ? 'SHELL' : 'REAL') + '): ', pageData);
+            // As we are implementing an App Shell architecture, pageData will be firstly an empty shell model,
+            // and the real remote data once it gets fetched
+            if (pageData) {
+              this.routeResolveData = pageData;
             }
-
-            console.log('observableData - ShowcasePage - ngOnInit()', observableData);
           });
         } else {
           alert('No route data 2');
