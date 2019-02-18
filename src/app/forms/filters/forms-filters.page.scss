@@ -1,11 +1,11 @@
 @import "../../../theme/mixins/inputs/inputs";
 
 .filters-content {
-  --background: var(--app-background-color);
+  --background: var(--app-background-shade);
   --forms-filters-margin: var(--app-fair-margin);
 
 	ion-item-divider {
-		--background: var(--app-background-color);
+		--background: var(--app-background-shade);
 		--padding-bottom: calc(var(--forms-filters-margin) / 2);
 		--padding-top: calc(var(--forms-filters-margin) / 2);
 		--padding-start: var(--forms-filters-margin);

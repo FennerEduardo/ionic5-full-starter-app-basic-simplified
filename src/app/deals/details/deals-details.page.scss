@@ -25,7 +25,7 @@
   --pagination-bullet-size: 10px;
 
   --deals-details-margin: var(--app-broad-margin);
-  --deals-details-background: var(--app-background-color);
+  --deals-details-background: var(--app-background-shade);
 
   @include custom-button-color('claim') {
     --ion-color-claim: #70DF70;
