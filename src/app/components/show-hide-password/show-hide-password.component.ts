@@ -8,9 +8,6 @@ import { IonInput } from '@ionic/angular';
   styleUrls: [
     './show-hide-password.component.scss'
   ]
-  // host: {
-  //   'class': 'show-hide-password'
-  // }
 })
 export class ShowHidePasswordComponent {
   show = false;
