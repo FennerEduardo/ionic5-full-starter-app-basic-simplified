@@ -10,19 +10,19 @@
 <ion-content class="travel-details-content">
   <ion-row class="image-row">
     <ion-col size="12">
-      <app-background-image class="add-overlay add-spinner" [src]="details?.image">
-        <app-fill-container [ratio]="{w:64, h:50}">
+      <app-image-shell mode="cover" class="add-overlay add-spinner" [src]="details?.image">
+        <app-aspect-ratio [ratio]="{w:64, h:50}">
           <div class="icon-wrapper">
             <app-preload-image [ratio]="{w: 47, h: 25}" [src]="details?.icon"></app-preload-image>
           </div>
-        </app-fill-container>
-      </app-background-image>
+        </app-aspect-ratio>
+      </app-image-shell>
     </ion-col>
   </ion-row>
   <ion-row class="description-row">
     <ion-col size="12">
       <h3 class="details-name">
-        <app-text-shell [data]="details?.name?.concat(' - ', details?.category)" [attr.element]="'h3'"></app-text-shell>
+        <app-text-shell [data]="details?.name?.concat(' - ', details?.category)"></app-text-shell>
       </h3>
       <p class="details-short-description">
         <app-text-shell [data]="details?.shortDescription"></app-text-shell>
@@ -121,7 +121,7 @@
         <app-preload-image class="add-spinner" [ratio]="{w: 18, h: 23}" [src]="placeToEat.picture"></app-preload-image>
         <div class="place-details">
           <h5 class="place-name">
-            <app-text-shell [data]="placeToEat.name" [attr.element]="'h5'" class="no-animation"></app-text-shell>
+            <app-text-shell [data]="placeToEat.name" class="no-animation"></app-text-shell>
           </h5>
           <div class="place-rating">
             <ion-icon class="rating-icon" name="star-outline"></ion-icon>
