@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
-import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
 import { FillContainerComponent } from './fill-container/fill-container.component';
 import { PreloadImageComponent } from './preload-image/preload-image.component';
 import { BackgroundImageComponent } from './background-image/background-image.component';
@@ -25,7 +24,6 @@ import { RatingInputComponent } from './rating-input/rating-input.component';
     IonicModule.forRoot(),
   ],
   declarations: [
-    CustomCheckboxComponent,
     FillContainerComponent,
     PreloadImageComponent,
     BackgroundImageComponent,
@@ -41,7 +39,6 @@ import { RatingInputComponent } from './rating-input/rating-input.component';
     RatingInputComponent
   ],
   exports: [
-    CustomCheckboxComponent,
     FillContainerComponent,
     PreloadImageComponent,
     BackgroundImageComponent,
