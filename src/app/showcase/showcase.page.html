@@ -460,7 +460,30 @@ app-text-shell &#123;
     <ion-label>Checkbox Wrapper</ion-label>
   </ion-item-divider>
   <section class="showcase-section">
+    <p>
+      This is a super straightforward component whose purpose is to wrap an <code>&lt;ion-checkbox&gt;</code> element to enable accessing the checkbox state from its parents.
+    </p>
+<pre>
+&lt;app-checkbox-wrapper class="custom-checkbox"&gt;
+  &lt;ion-checkbox checked=true&gt;&lt;/ion-checkbox&gt;
+  &lt;ion-label&gt;Sample Checkbox&lt;/ion-label&gt;
+&lt;/app-checkbox-wrapper&gt;
+</pre>
+<pre>
+app-checkbox-wrapper.custom-checkbox &#123;
+  background: #CCC;
+  color: #000;
 
+  &.checkbox-checked &#123;
+    background: #00AFFF;
+    color: #FFF;
+  &#125;
+&#125;
+</pre>
+    <app-checkbox-wrapper class="custom-checkbox">
+      <ion-checkbox checked=true></ion-checkbox>
+      <ion-label>Sample Checkbox</ion-label>
+    </app-checkbox-wrapper>
   </section>
 
   <ion-item-divider sticky="true">
@@ -474,6 +497,56 @@ app-text-shell &#123;
     <ion-label>Countdown Timer</ion-label>
   </ion-item-divider>
   <section class="showcase-section">
-
+    <p>
+      This components shows the remaining time (in days, hours, minutes or seconds) to a given date.
+    </p>
+    <p>
+      A few examples on how to use this component:
+    </p>
+    <h5>From days to seconds</h5>
+<pre>
+&lt;app-countdown-timer <b>[units]="&#123;from: 'day', to: 'second'&#125;"</b> [end]="countdownDate"&gt;&lt;/app-countdown-timer&gt;
+</pre>
+    <app-countdown-timer [end]="countdownDate" [units]="{from: 'day', to: 'second'}"></app-countdown-timer>
+    <h5>From days to minutes</h5>
+<pre>
+&lt;app-countdown-timer <b>[units]="&#123;from: 'day', to: 'minute'&#125;"</b> [end]="countdownDate"&gt;&lt;/app-countdown-timer&gt;
+</pre>
+    <app-countdown-timer [end]="countdownDate" [units]="{from: 'day', to: 'minute'}"></app-countdown-timer>
+    <h5>From hours to seconds</h5>
+<pre>
+&lt;app-countdown-timer <b>[units]="&#123;from: 'hour', to: 'second'&#125;"</b> [end]="countdownDate"&gt;&lt;/app-countdown-timer&gt;
+</pre>
+    <app-countdown-timer [end]="countdownDate" [units]="{from: 'hour', to: 'second'}"></app-countdown-timer>
+    <h5>From hours to minutes</h5>
+<pre>
+&lt;app-countdown-timer <b>[units]="&#123;from: 'hour', to: 'minute'&#125;"</b> [end]="countdownDate"&gt;&lt;/app-countdown-timer&gt;
+</pre>
+    <app-countdown-timer [end]="countdownDate" [units]="{from: 'hour', to: 'minute'}"></app-countdown-timer>
+    <h5>From minutes to seconds</h5>
+<pre>
+&lt;app-countdown-timer <b>[units]="&#123;from: 'minute', to: 'second'&#125;"</b> [end]="countdownDate"&gt;&lt;/app-countdown-timer&gt;
+</pre>
+    <app-countdown-timer [end]="countdownDate" [units]="{from: 'minute', to: 'second'}"></app-countdown-timer>
+    <h5>Just days</h5>
+<pre>
+&lt;app-countdown-timer <b>[units]="&#123;from: 'day', to: 'day'&#125;"</b> [end]="countdownDate"&gt;&lt;/app-countdown-timer&gt;
+</pre>
+    <app-countdown-timer [end]="countdownDate" [units]="{from: 'day', to: 'day'}"></app-countdown-timer>
+    <h5>Just hours</h5>
+<pre>
+&lt;app-countdown-timer <b>[units]="&#123;from: 'hour', to: 'hour'&#125;"</b> [end]="countdownDate"&gt;&lt;/app-countdown-timer&gt;
+</pre>
+    <app-countdown-timer [end]="countdownDate" [units]="{from: 'hour', to: 'hour'}"></app-countdown-timer>
+    <h5>Just minutes</h5>
+<pre>
+&lt;app-countdown-timer <b>[units]="&#123;from: 'minute', to: 'minute'&#125;"</b> [end]="countdownDate"&gt;&lt;/app-countdown-timer&gt;
+</pre>
+    <app-countdown-timer [end]="countdownDate" [units]="{from: 'minute', to: 'minute'}"></app-countdown-timer>
+    <h5>Just seconds</h5>
+<pre>
+&lt;app-countdown-timer <b>[units]="&#123;from: 'second', to: 'second'&#125;"</b> [end]="countdownDate"&gt;&lt;/app-countdown-timer&gt;
+</pre>
+    <app-countdown-timer [end]="countdownDate" [units]="{from: 'second', to: 'second'}"></app-countdown-timer>
   </section>
 </ion-content>
