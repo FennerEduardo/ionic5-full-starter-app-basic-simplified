@@ -218,6 +218,7 @@
     // Add a deeper selector to override default colors
     .color-radio {
       --color-radio-color: #FFF;
+      --color-radio-background: #CCC;
       --color-radio-active-border-rgb: var(--ion-color-darkest-rgb);
       --color-radio-border-radius: 40%;
 
