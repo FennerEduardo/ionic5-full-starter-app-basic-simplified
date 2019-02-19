@@ -62,6 +62,17 @@
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
+        <ion-list>
+          <ion-list-header>Showcase</ion-list-header>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerLink]="['/showcase']">
+              <ion-icon slot="start" name="color-wand"></ion-icon>
+              <ion-label>
+                Custom Components
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
       </ion-content>
     </ion-menu>
     <!-- Main app content get's rendered in this router-outlet -->
