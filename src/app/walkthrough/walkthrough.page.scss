@@ -62,9 +62,9 @@ ion-content {
     min-height: auto;
     min-height: fit-content;
 
-    app-preload-image {
-      --loading-background: transparent;
-      --spinner-color: var(--ion-color-lightest);
+    app-image-shell {
+      --image-shell-loading-background: transparent;
+      --image-shell-spinner-color: var(--ion-color-lightest);
 
       // Override <ion-slide> image styles
       img {

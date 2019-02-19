@@ -11,9 +11,9 @@
   .image-row {
     --ion-grid-column-padding: 0px;
 
-    app-background-image {
-      --loading-background: rgba(var(--shell-color-rgb), .10);
-      --overlay-background: rgba(var(--ion-color-dark-rgb), .60);
+    app-image-shell.item-image {
+      --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
+      --image-shell-overlay-background: rgba(var(--ion-color-dark-rgb), .60);
 
       cursor: pointer;
 
@@ -34,8 +34,8 @@
         align-self: center;
         margin-bottom: 24px;
 
-        app-preload-image {
-          --loading-background: rgba(var(--shell-color-rgb), .15);
+        app-image-shell {
+          --image-shell-loading-background: rgba(var(--shell-color-rgb), .15);
         }
       }
 

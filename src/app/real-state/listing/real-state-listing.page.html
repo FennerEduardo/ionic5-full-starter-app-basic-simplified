@@ -13,10 +13,10 @@
       <ion-row class="image-row">
         <ion-col size="12">
           <a class="image-anchor" [routerLink]="['/app/categories/real-state/', item.slug]">
-            <app-background-image class="add-spinner" [src]="item.picture">
-              <app-fill-container [ratio]="{w:365, h:125}">
-              </app-fill-container>
-            </app-background-image>
+            <app-image-shell [mode]="'cover'" class="add-spinner" [src]="item.picture">
+              <app-aspect-ratio [ratio]="{w:365, h:125}">
+              </app-aspect-ratio>
+            </app-image-shell>
           </a>
         </ion-col>
       </ion-row>
@@ -24,7 +24,7 @@
         <ion-col size="12">
           <h4 class="item-price">
             <a class="price-anchor" [routerLink]="['/app/categories/real-state/', item.slug]">
-              <app-text-shell [data]="item.price" [attr.element]="'h4'" class="no-animation"></app-text-shell>
+              <app-text-shell [data]="item.price" class="no-animation"></app-text-shell>
             </a>
           </h4>
           <p class="item-address">

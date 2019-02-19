@@ -53,10 +53,10 @@
     justify-content: space-between;
     align-items: flex-start;
 
-    app-preload-image {
-      --loading-background: rgba(var(--shell-color-rgb), .10);
-      --spinner-color: rgba(var(--shell-color-rgb), .30);
-      --spinner-size: 18px;
+    app-image-shell {
+      --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
+      --image-shell-spinner-color: rgba(var(--shell-color-rgb), .30);
+      --image-shell-spinner-size: 18px;
     }
 
     .logo-col {

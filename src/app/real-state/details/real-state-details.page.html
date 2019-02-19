@@ -10,17 +10,17 @@
 <ion-content class="real-state-details-content">
   <ion-row class="image-row">
     <ion-col size="12">
-      <app-background-image class="add-spinner" [src]="details.picture">
-        <app-fill-container [ratio]="{w:64, h:40}">
+      <app-image-shell [mode]="'cover'" class="add-spinner details-picture" [src]="details.picture">
+        <app-aspect-ratio [ratio]="{w:64, h:40}">
           <ion-icon class="bookmark-icon" name="heart"></ion-icon>
-        </app-fill-container>
-      </app-background-image>
+        </app-aspect-ratio>
+      </app-image-shell>
     </ion-col>
   </ion-row>
   <ion-row class="description-row">
     <ion-col size="12">
       <h4 class="details-price">
-        <app-text-shell [data]="details.price" [attr.element]="'h4'" class="no-animation"></app-text-shell>
+        <app-text-shell [data]="details.price" class="no-animation"></app-text-shell>
       </h4>
       <p class="details-address">
         <app-text-shell [data]="details.location?.address" [attr.lines]="1"></app-text-shell>
@@ -98,7 +98,9 @@
       </span>
     </div>
     <!-- <app-preload-image [ratio]="{w: 64, h: 30}" [src]="'https://maps.googleapis.com/maps/api/staticmap?center=' + details.location?.latlng + '&zoom=15&size=640x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xd9453a%7C' + details.location?.latlng + '&key=YOUR_KEY_HERE'"></app-preload-image> -->
-    <app-preload-image class="add-spinner" [ratio]="{w: 64, h: 30}" [src]="details.location?.mapImage"></app-preload-image>
+    <app-aspect-ratio [ratio]="{w:64, h:30}">
+      <app-image-shell class="add-spinner" [src]="details.location?.mapImage" [alt]="'location map'"></app-image-shell>
+    </app-aspect-ratio>
   </div>
   <div class="amenities-wrapper">
     <h3 class="detail-title">Amenities</h3>

@@ -17,14 +17,14 @@
   .image-row {
     --ion-grid-column-padding: 0px;
 
-    app-background-image {
-      --loading-background: rgba(var(--shell-color-rgb), .10);
-      --spinner-color: rgba(var(--shell-color-rgb), .25);
-      --overlay-background: rgba(var(--ion-color-dark-rgb), .60);
+    app-image-shell {
+      --image-shell-loading-background: transparent;
     }
 
-    app-preload-image {
-      --loading-background: transparent;
+    app-image-shell.showcase-image {
+      --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
+      --image-shell-spinner-color: rgba(var(--shell-color-rgb), .25);
+      --image-shell-overlay-background: rgba(var(--ion-color-dark-rgb), .60);
     }
 
     .icon-wrapper {
@@ -275,9 +275,9 @@
       }
     }
 
-    app-preload-image {
-      --loading-background: rgba(var(--shell-color-rgb), .10);
-      --spinner-color: rgba(var(--shell-color-rgb), .25);
+    app-image-shell {
+      --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
+      --image-shell-spinner-color: rgba(var(--shell-color-rgb), .25);
     }
   }
 
@@ -350,6 +350,7 @@
   				align-items: center;
   				justify-content: center;
           text-decoration: none;
+          z-index: 2;
 
   				.pictures-count {
   					font-size: 22px;
@@ -523,7 +524,7 @@
             }
 
             .review-rating {
-              width: 34px;
+              width: 36px;
 
               color: var(--ion-color-lightest);
       				border-radius: var(--app-narrow-radius);
@@ -639,9 +640,9 @@
           margin-top: -10%;
           margin-bottom: calc(var(--food-details-margin) / 2);
 
-          app-preload-image {
-            --loading-background: var(--shell-color);
-            --image-border-radius: 50%;
+          app-image-shell {
+            --image-shell-loading-background: var(--shell-color);
+            --image-shell-border-radius: 50%;
             z-index: 3;
           }
         }

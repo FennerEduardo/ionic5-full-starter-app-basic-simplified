@@ -12,10 +12,10 @@
     <ion-slides class="details-slides" pager="true" [options]="slidesOptions">
       <ion-slide class="" *ngFor="let image of details?.showcaseImages">
         <ion-row class="slide-inner-row">
-          <app-background-image class="add-spinner" [ngClass]="{'centered-image': (image.type === 'square'), 'fill-image': (image.type === 'fill')}" [src]="image.source">
-            <app-fill-container [ratio]="{w:64, h:50}">
-            </app-fill-container>
-          </app-background-image>
+          <app-image-shell [mode]="'cover'" class="add-spinner" [ngClass]="{'centered-image': (image.type === 'square'), 'fill-image': (image.type === 'fill')}" [src]="image.source">
+            <app-aspect-ratio [ratio]="{w:64, h:50}">
+            </app-aspect-ratio>
+          </app-image-shell>
         </ion-row>
       </ion-slide>
     </ion-slides>
@@ -73,7 +73,9 @@
       <ion-col size="6" class="related-product-item" *ngFor="let relatedProduct of details?.relatedProducts">
         <div class="item-image">
           <a class="image-anchor">
-            <app-preload-image class="add-spinner" [ratio]="{w: 3, h: 4}" [src]="relatedProduct.image" [alt]="'related image'"></app-preload-image>
+            <app-aspect-ratio class="add-spinner" [ratio]="{w: 3, h: 4}">
+              <app-image-shell [src]="relatedProduct.image" [alt]="'related image'"></app-image-shell>
+            </app-aspect-ratio>
           </a>
         </div>
         <div class="item-details-wrapper">

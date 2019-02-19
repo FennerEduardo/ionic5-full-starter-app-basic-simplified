@@ -31,9 +31,9 @@
       }
     }
 
-    app-background-image {
-      --loading-background: rgba(var(--shell-color-rgb), .10);
-      --spinner-color: rgba(var(--shell-color-rgb), .25);
+    app-image-shell {
+      --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
+      --image-shell-spinner-color: rgba(var(--shell-color-rgb), .25);
 
       width: 100%;
 
@@ -226,9 +226,9 @@
         .item-image {
           border: 1px solid var(--ion-color-light-shade);
 
-          app-preload-image {
-            --loading-background: rgba(var(--shell-color-rgb), .10);
-            --spinner-color: rgba(var(--shell-color-rgb), .25);
+          app-image-shell {
+            --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
+            --image-shell-spinner-color: rgba(var(--shell-color-rgb), .25);
           }
 
           .image-anchor {

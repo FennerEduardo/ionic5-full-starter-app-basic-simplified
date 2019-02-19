@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
-import { FillContainerComponent } from './fill-container/fill-container.component';
-import { PreloadImageComponent } from './preload-image/preload-image.component';
-import { BackgroundImageComponent } from './background-image/background-image.component';
+// import { FillContainerComponent } from './fill-container/fill-container.component';
+// import { PreloadImageComponent } from './preload-image/preload-image.component';
+// import { BackgroundImageComponent } from './background-image/background-image.component';
 
 import { AspectRatioComponent } from './aspect-ratio/aspect-ratio.component';
 import { TextShellComponent } from './text-shell/text-shell.component';
@@ -24,9 +24,9 @@ import { RatingInputComponent } from './rating-input/rating-input.component';
     IonicModule.forRoot(),
   ],
   declarations: [
-    FillContainerComponent,
-    PreloadImageComponent,
-    BackgroundImageComponent,
+    // FillContainerComponent,
+    // PreloadImageComponent,
+    // BackgroundImageComponent,
 
     AspectRatioComponent,
     TextShellComponent,
@@ -39,9 +39,9 @@ import { RatingInputComponent } from './rating-input/rating-input.component';
     RatingInputComponent
   ],
   exports: [
-    FillContainerComponent,
-    PreloadImageComponent,
-    BackgroundImageComponent,
+    // FillContainerComponent,
+    // PreloadImageComponent,
+    // BackgroundImageComponent,
 
     AspectRatioComponent,
     TextShellComponent,

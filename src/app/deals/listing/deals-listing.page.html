@@ -12,7 +12,9 @@
     <div class="listing-item" *ngFor="let item of listing.items">
       <ion-row class="top-row">
         <ion-col class="logo-col" size="6">
-          <app-preload-image class="add-spinner" [ratio]="{w: 128, h: 32}" [src]="item.logo" [alt]="'deals logo'"></app-preload-image>
+          <app-aspect-ratio [ratio]="{w: 128, h: 32}">
+            <app-image-shell [src]="item.logo" [alt]="'deals logo'" class="add-spinner"></app-image-shell>
+          </app-aspect-ratio>
         </ion-col>
         <ion-col size="3">
           <ion-button class="claim-button" expand="block" shape="round" color="claim" [routerLink]="['/app/categories/deals/', item.slug]">CLAIM</ion-button>
@@ -22,7 +24,7 @@
         <ion-col class="info-col">
           <h4 class="item-name">
             <a class="name-anchor" [routerLink]="['/app/categories/deals/', item.slug]">
-              <app-text-shell [data]="item.name" [attr.element]="'h4'"></app-text-shell>
+              <app-text-shell [data]="item.name"></app-text-shell>
             </a>
           </h4>
           <p class="item-description">

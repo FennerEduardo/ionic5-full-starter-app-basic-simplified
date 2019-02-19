@@ -9,7 +9,9 @@
 <ion-content class="contact-card-content">
   <ion-row class="user-details-wrapper">
     <ion-col size="4">
-      <app-preload-image class="user-avatar add-spinner" [ratio]="{w:1, h:1}" [src]="'./assets/sample-images/notifications/100x100Notification2.jpg'" [alt]="'notification image'"></app-preload-image>
+      <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+        <app-image-shell class="user-avatar add-spinner" [src]="'./assets/sample-images/notifications/100x100Notification2.jpg'" [alt]="'notification image'"></app-image-shell>
+      </app-aspect-ratio>
     </ion-col>
     <ion-col class="user-info-wrapper" size="8">
       <h3 class="user-name">Claire Hale</h3>
@@ -25,7 +27,7 @@
     </ion-col>
     <ion-col size="12">
       <p class="user-bio">
-        I am a product and visual designer based in San Francisco. I have designed at Google, Amazon and Microsoft.
+        I am a product and visual designer based in Uruguay. I have designed at Google, Amazon and Microsoft.
       </p>
     </ion-col>
   </ion-row>
