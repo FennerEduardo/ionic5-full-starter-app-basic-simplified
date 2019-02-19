@@ -21,6 +21,7 @@
   &::before {
     content: '';
     background-color: var(--image-shell-loading-background);
+    border-radius: var(--image-shell-border-radius);
     position: absolute;
     top: 0;
     bottom: 0;
