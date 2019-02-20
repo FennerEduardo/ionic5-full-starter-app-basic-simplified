@@ -17,7 +17,9 @@
     <ion-item class="notification-item" lines="none" *ngFor="let notification of notifications.today">
       <ion-row class="notification-item-wrapper">
         <ion-col size="2">
-          <img class="notification-image" [src]="notification.image" alt="user image">
+          <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+            <app-image-shell class="notification-image" [src]="notification.image" [alt]="'user image'"></app-image-shell>
+          </app-aspect-ratio>
         </ion-col>
         <ion-col class="details-wrapper">
           <h2 class="details-name">{{ notification.name }}</h2>
@@ -36,7 +38,9 @@
     <ion-item class="notification-item" lines="none" *ngFor="let notification of notifications.yesterday">
       <ion-row class="notification-item-wrapper">
         <ion-col size="2">
-          <img class="notification-image" [src]="notification.image" alt="user image">
+          <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+            <app-image-shell class="notification-image" [src]="notification.image" [alt]="'user image'"></app-image-shell>
+          </app-aspect-ratio>
         </ion-col>
         <ion-col class="details-wrapper">
           <h2 class="details-name">{{ notification.name }}</h2>
