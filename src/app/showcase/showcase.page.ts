@@ -18,7 +18,7 @@ interface IShell {
 }
 
 // You can also use a Class object as a shell model
-import { ShowcaseShellModel } from './models/showcase-shell.model';
+import { ShowcaseShellModel } from './showcase-shell.model';
 
 @Component({
   selector: 'app-showcase',
@@ -49,9 +49,6 @@ export class ShowcasePage implements OnInit {
   // subjectFetchData: Observable<IShell>;
   // subjectFetchData: Observable<ShowcaseShellModel>;
 
-  // We will assign data coming from the Route Resolver to this property
-  routeResolveData: ShowcaseShellModel;
-
   // Aux properties for the Simple Fetch (HttpClient) showcase
   simpleFetchButtonDisabled = true;
   simpleFetchCountdown = 0;
@@ -72,29 +69,6 @@ export class ShowcasePage implements OnInit {
 
   ngOnInit(): void {
     console.log('ShowcasePage - ngOnInit()');
-
-    if (this.route && this.route.data) {
-      this.route.data.subscribe(routeData => {
-        const resolvedHotObservable = routeData['data'];
-        console.log('ShowcasePage - Subscribe to Route Resolve Observable => HotObservable: ', resolvedHotObservable);
-
-        if (resolvedHotObservable) {
-          resolvedHotObservable.subscribe((pageData: ShowcaseShellModel) => {
-            // tslint:disable-next-line:max-line-length
-            console.log('ShowcasePage - Subscribe to HotObservable (can emmit multiple values) => PageData (' + ((pageData && pageData.isShell) ? 'SHELL' : 'REAL') + '): ', pageData);
-            // As we are implementing an App Shell architecture, pageData will be firstly an empty shell model,
-            // and the real remote data once it gets fetched
-            if (pageData) {
-              this.routeResolveData = pageData;
-            }
-          });
-        } else {
-          alert('No route data 2');
-        }
-      });
-    } else {
-      alert('No route data');
-    }
 
     this.showcaseShellSimpleFetch(10);
     this.showcaseShellSubjectFetch();

@@ -8,7 +8,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from '../components/components.module';
 
 import { ShowcasePage } from './showcase.page';
-import { ShowcaseResolver } from './showcase.resolver';
+
+import { ShowcaseHotObservablePage } from './hot-observable/hot-observable.page';
+import { HotObservableResolver } from './hot-observable/hot-observable.resolver';
+import { ShowcaseColdObservablePage } from './cold-observable/cold-observable.page';
+import { ColdObservableResolver } from './cold-observable/cold-observable.resolver';
+
 import { ShowcaseService } from './showcase.service';
 
 @NgModule({
@@ -21,16 +26,32 @@ import { ShowcaseService } from './showcase.service';
     RouterModule.forChild([
       {
         path: '',
-        component: ShowcasePage,
+        component: ShowcasePage
+      },
+      {
+        path: 'hot-observable',
+        component: ShowcaseHotObservablePage,
         resolve: {
-          data: ShowcaseResolver
+          data: HotObservableResolver
+        }
+      },
+      {
+        path: 'cold-observable',
+        component: ShowcaseColdObservablePage,
+        resolve: {
+          data: ColdObservableResolver
         }
       }
     ])
   ],
-  declarations: [ ShowcasePage ],
+  declarations: [
+    ShowcasePage,
+    ShowcaseHotObservablePage,
+    ShowcaseColdObservablePage
+  ],
   providers: [
-    ShowcaseResolver,
+    HotObservableResolver,
+    ColdObservableResolver,
     ShowcaseService
   ]
 })

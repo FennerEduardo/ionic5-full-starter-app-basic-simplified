@@ -430,30 +430,27 @@ app-text-shell &#123;
   <section class="showcase-section">
     <h5>Display data from Route Resolvers</h5>
     <p>
-      <code>SubjectFetch</code> can also be easily plugged in Angular Route Resolvers
+      Lets see the difference between using hot-observables and cold-observables for Route Resolves
     </p>
-    <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
-      <ion-col size="12">
-        <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="routeResolveData?.cover" [alt]="'Sample Image Cover'">
-          <app-aspect-ratio [ratio]="{w:2, h:1}">
-            <h4 style="margin: 10px; text-align: center; color: #FFF;">Heading on top of a cover image</h4>
-          </app-aspect-ratio>
-        </app-image-shell>
-      </ion-col>
-      <ion-col size="4">
-        <app-aspect-ratio [ratio]="{w:1, h:1}">
-          <app-image-shell class="add-spinner" [src]="routeResolveData?.image" [alt]="'Sample Image'"></app-image-shell>
-        </app-aspect-ratio>
-      </ion-col>
-      <ion-col size="8">
-        <h3 style="margin-top: 0px;">
-          <app-text-shell [data]="routeResolveData?.title"></app-text-shell>
-        </h3>
-        <p>
-          <app-text-shell [data]="routeResolveData?.description" [attr.lines]="3"></app-text-shell>
-        </p>
-      </ion-col>
-    </ion-row>
+    <p>
+      By default, Angular Route Resolvers won't transition to the page until the Resolver Observable completes.
+    </p>
+    <p>
+      Let's suppose the backend is slow and takes 5 seconds to fetch data and return it to the client, this is what's going to happen.
+    </p>
+    <p>
+      <b>Expected behavior:</b> Page transition will be delayed 5 seconds until the server sends data back to the client.
+    </p>
+    <ion-button expand="block" [routerLink]="['/showcase/cold-observable']">Go to Cold Observable Resolver Page</ion-button>
+    <br/>
+    <br/>
+    <p>
+      By using the <code>SubjectFetch</code> utility in conjuction with Angular Route Resolvers, we can solve this UX problem and make page transitions inmediate.
+    </p>
+    <p>
+      <b>Expected behavior:</b> Page transition will be instant and the transitioned page will show some shell elements while the server sends data back to the client.
+    </p>
+    <ion-button expand="block" [routerLink]="['/showcase/hot-observable']">Go to Hot Observable Resolver Page</ion-button>
   </section>
 
   <ion-item-divider sticky="true">

@@ -20,7 +20,8 @@ export class SubjectFetch<T> {
     this._subject.next(model);
     // Immediately after fetch data from endpoint
     fetchData().pipe(
-      delay(this.networkDelay),
+      // delay(this.networkDelay),
+      delay(5000),
       // Prevent the need to unsubscribe because .first() completes the observable
       first()
     ).subscribe((value: T) => {
