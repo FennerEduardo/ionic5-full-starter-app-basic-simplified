@@ -38,13 +38,13 @@ export class FormsFiltersPage {
     });
 
     this.checkboxTagsForm = new FormGroup({
-      tag_1: new FormControl(false),
+      tag_1: new FormControl(true),
       tag_2: new FormControl(false),
       tag_3: new FormControl(true),
       tag_4: new FormControl(true),
       tag_5: new FormControl(false),
       tag_6: new FormControl(false),
-      tag_7: new FormControl(true),
+      tag_7: new FormControl({value: true, disabled: true}),
       tag_8: new FormControl(false)
     });
 

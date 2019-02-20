@@ -14,9 +14,9 @@
   .image-row {
     --ion-grid-column-padding: 0px;
 
-    app-background-image {
-      --loading-background: rgba(var(--shell-color-rgb), .10);
-      --spinner-color: rgba(var(--shell-color-rgb), .25);
+    app-image-shell {
+      --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
+      --image-shell-spinner-color: rgba(var(--shell-color-rgb), .25);
     }
 
     .image-anchor {

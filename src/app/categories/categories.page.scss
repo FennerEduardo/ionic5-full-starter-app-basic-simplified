@@ -24,9 +24,9 @@
     --category-loading-background: rgba(var(--ion-color-medium-rgb), 0.25);
     --category-spinner-color: var(--ion-color-lightest);
 
-    app-background-image {
-      --loading-background: var(--category-loading-background);
-      --spinner-color: var(--category-spinner-color);
+    app-image-shell {
+      --image-shell-loading-background: var(--category-loading-background);
+      --image-shell-spinner-color: var(--category-spinner-color);
 
       // border-radius: var(--categories-radius);
     }

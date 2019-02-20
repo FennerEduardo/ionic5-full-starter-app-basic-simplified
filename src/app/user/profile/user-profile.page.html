@@ -9,16 +9,18 @@
 <ion-content class="user-profile-content">
   <ion-row class="user-details-section">
     <ion-col class="user-image-wrapper">
-      <app-preload-image class="user-image add-spinner" [ratio]="{w:1, h:1}" [src]="profile.userImage"></app-preload-image>
+      <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+        <app-image-shell class="user-image add-spinner" [src]="profile.userImage"></app-image-shell>
+      </app-aspect-ratio>
     </ion-col>
     <ion-col class="user-info-wrapper">
       <ion-row class="user-data-row">
         <ion-col size="9">
           <h3 class="user-name">
-            <app-text-shell [data]="profile.name" [attr.element]="'h3'"></app-text-shell>
+            <app-text-shell [data]="profile.name"></app-text-shell>
           </h3>
           <h5 class="user-title">
-            <app-text-shell [data]="profile.job" [attr.element]="'h5'"></app-text-shell>
+            <app-text-shell [data]="profile.job"></app-text-shell>
           </h5>
         </ion-col>
         <ion-col class="membership-col">
@@ -73,7 +75,9 @@
     </ion-row>
     <ion-row class="friends-row">
       <ion-col class="friend-item" size="2" *ngFor="let friend of profile.friends">
-        <app-preload-image class="friend-picture" [ratio]="{w:1, h:1}" [src]="friend.image"></app-preload-image>
+        <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+          <app-image-shell class="friend-picture" [src]="friend.image"></app-image-shell>
+        </app-aspect-ratio>
         <span class="friend-name">
           <app-text-shell [data]="friend.name" class="no-animation"></app-text-shell>
         </span>
@@ -88,7 +92,10 @@
     </ion-row>
     <ion-row class="pictures-row">
       <ion-col class="picture-item" size="2" *ngFor="let photo of profile.photos">
-        <app-preload-image class="picture" [ratio]="{w:1, h:1}" [src]="photo.image"></app-preload-image>
+        <app-image-shell [mode]="'cover'" [src]="photo.image">
+          <app-aspect-ratio [ratio]="{w:1, h:1}">
+          </app-aspect-ratio>
+        </app-image-shell>
       </ion-col>
     </ion-row>
   </div>

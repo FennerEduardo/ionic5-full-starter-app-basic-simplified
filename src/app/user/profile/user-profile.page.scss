@@ -10,8 +10,8 @@
   .user-image-wrapper {
     max-width: 26%;
 
-    app-preload-image.user-image {
-      --image-border-radius: var(--app-fair-radius);
+    app-image-shell.user-image {
+      --image-shell-border-radius: var(--app-fair-radius);
     }
   }
 
@@ -225,8 +225,8 @@
     .friend-item {
       padding: 0px var(--friends-gutter);
 
-      app-preload-image.friend-picture {
-        --image-border-radius: var(--app-fair-radius);
+      app-image-shell.friend-picture {
+        --image-shell-border-radius: var(--app-fair-radius);
       }
 
       .friend-name {
@@ -273,8 +273,8 @@
     .picture-item {
       padding: 0px var(--pictures-gutter) calc(var(--pictures-gutter) * 2);
 
-      app-preload-image.picture {
-        --image-border-radius: var(--app-fair-radius);
+      app-image-shell {
+        --image-shell-border-radius: var(--app-fair-radius);
       }
     }
   }

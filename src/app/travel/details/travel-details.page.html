@@ -10,19 +10,21 @@
 <ion-content class="travel-details-content">
   <ion-row class="image-row">
     <ion-col size="12">
-      <app-background-image class="add-overlay add-spinner" [src]="details?.image">
-        <app-fill-container [ratio]="{w:64, h:50}">
+      <app-image-shell [mode]="'cover'" class="add-overlay add-spinner details-image" [src]="details?.image">
+        <app-aspect-ratio [ratio]="{w:64, h:50}">
           <div class="icon-wrapper">
-            <app-preload-image [ratio]="{w: 47, h: 25}" [src]="details?.icon"></app-preload-image>
+            <app-aspect-ratio [ratio]="{w: 47, h: 25}">
+              <app-image-shell [src]="details?.icon"></app-image-shell>
+            </app-aspect-ratio>
           </div>
-        </app-fill-container>
-      </app-background-image>
+        </app-aspect-ratio>
+      </app-image-shell>
     </ion-col>
   </ion-row>
   <ion-row class="description-row">
     <ion-col size="12">
       <h3 class="details-name">
-        <app-text-shell [data]="details?.name?.concat(' - ', details?.category)" [attr.element]="'h3'"></app-text-shell>
+        <app-text-shell [data]="details?.name?.concat(' - ', details?.category)"></app-text-shell>
       </h3>
       <p class="details-short-description">
         <app-text-shell [data]="details?.shortDescription"></app-text-shell>
@@ -92,14 +94,21 @@
         <app-text-shell [data]="details.location?.address" class="no-animation"></app-text-shell>
       </span>
     </div>
-    <!-- <app-preload-image [ratio]="{w: 64, h: 30}" [src]="'https://maps.googleapis.com/maps/api/staticmap?center=' + details.location?.latlng + '&zoom=15&size=640x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xd9453a%7C' + details.location?.latlng + '&key=YOUR_KEY_HERE'"></app-preload-image> -->
-    <app-preload-image class="add-spinner" [ratio]="{w: 64, h: 30}" [src]="details.location?.mapImage"></app-preload-image>
+    <!-- <app-aspect-ratio [ratio]="{w: 64, h: 30}">
+      <app-image-shell [src]="'https://maps.googleapis.com/maps/api/staticmap?center=' + details.location?.latlng + '&zoom=15&size=640x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xd9453a%7C' + details.location?.latlng + '&key=YOUR_KEY_HERE'">
+      </app-image-shell>
+    </app-aspect-ratio> -->
+    <app-aspect-ratio [ratio]="{w: 64, h: 30}">
+      <app-image-shell class="add-spinner" [src]="details.location?.mapImage"></app-image-shell>
+    </app-aspect-ratio>
   </div>
   <div class="suggested-places-wrapper" *ngIf="details?.whereToStay && details.whereToStay.length > 0">
     <h3 class="detail-alt-title">Need a place to stay?</h3>
     <ion-row class="suggested-places-row">
       <ion-col size="4" class="suggested-place" *ngFor="let placeToStay of details?.whereToStay">
-        <app-preload-image class="add-spinner" [ratio]="{w: 18, h: 23}" [src]="placeToStay.picture"></app-preload-image>
+        <app-aspect-ratio [ratio]="{w: 18, h: 23}">
+          <app-image-shell class="add-spinner" [src]="placeToStay.picture"></app-image-shell>
+        </app-aspect-ratio>
         <div class="place-details">
           <h5 class="place-name">
             <app-text-shell [data]="placeToStay.name" [attr.element]="'h5'" class="no-animation"></app-text-shell>
@@ -118,10 +127,12 @@
     <h3 class="detail-alt-title">Grab a bite?</h3>
     <ion-row class="suggested-places-row">
       <ion-col size="4" class="suggested-place" *ngFor="let placeToEat of details?.whereToEat">
-        <app-preload-image class="add-spinner" [ratio]="{w: 18, h: 23}" [src]="placeToEat.picture"></app-preload-image>
+        <app-aspect-ratio [ratio]="{w: 18, h: 23}">
+          <app-image-shell class="add-spinner" [src]="placeToEat.picture"></app-image-shell>
+        </app-aspect-ratio>
         <div class="place-details">
           <h5 class="place-name">
-            <app-text-shell [data]="placeToEat.name" [attr.element]="'h5'" class="no-animation"></app-text-shell>
+            <app-text-shell [data]="placeToEat.name" class="no-animation"></app-text-shell>
           </h5>
           <div class="place-rating">
             <ion-icon class="rating-icon" name="star-outline"></ion-icon>
@@ -137,10 +148,10 @@
     <h3 class="detail-alt-title">More activities?</h3>
     <ion-row class="related-activity" *ngFor="let relatedActivity of details?.relatedActivities">
       <ion-col size="12">
-        <app-background-image class="add-spinner" [src]="relatedActivity.picture">
-          <app-fill-container [ratio]="{w:64, h:23}">
-          </app-fill-container>
-        </app-background-image>
+        <app-image-shell [mode]="'cover'" class="add-spinner related-activity-picture" [src]="relatedActivity.picture">
+          <app-aspect-ratio [ratio]="{w:64, h:23}">
+          </app-aspect-ratio>
+        </app-image-shell>
       </ion-col>
       <ion-col size="12" class="activity-details">
         <h5 class="activity-name">

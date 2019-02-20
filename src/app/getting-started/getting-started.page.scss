@@ -179,9 +179,9 @@ ion-content {
   }
 
   .custom-checkbox {
-    app-background-image {
-      --loading-background: rgba(var(--ion-color-tertiary-rgb), .4);
-      --overlay-background: rgba(var(--ion-color-primary-rgb), .4);
+    app-image-shell {
+      --image-shell-loading-background: rgba(var(--ion-color-tertiary-rgb), .4);
+      --image-shell-overlay-background: rgba(var(--ion-color-primary-rgb), .4);
     }
 
     .checkbox-title {

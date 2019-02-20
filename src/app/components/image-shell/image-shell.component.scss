@@ -13,7 +13,7 @@
   z-index: 2;
 
   // By default, hide the spinner
-  .spinner {
+  & > .spinner {
     display: none;
   }
 
@@ -21,6 +21,7 @@
   &::before {
     content: '';
     background-color: var(--image-shell-loading-background);
+    border-radius: var(--image-shell-border-radius);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -34,7 +35,7 @@
     overflow: hidden;
     // background-color: var(--image-shell-loading-background);
 
-    .inner-img {
+    & > .inner-img {
       position: absolute;
       top: 0;
       left: 0;
@@ -56,7 +57,7 @@
         display: none;
       }
 
-      .inner-img {
+      & > .inner-img {
         opacity: 1;
         visibility: visible;
       }
@@ -68,7 +69,7 @@
     background-size: cover;
     background-repeat: no-repeat;
 
-    .inner-img {
+    & > .inner-img {
       display: none;
       visibility: hidden;
     }
@@ -96,7 +97,7 @@
 }
 
 :host(.add-spinner) {
-  .spinner {
+  & > .spinner {
     display: block;
     position: absolute;
     top: calc(50% - calc(var(--image-shell-spinner-size) / 2));
@@ -110,7 +111,7 @@
   }
 
   &.img-loaded {
-    .spinner {
+    & > .spinner {
       display: none;
       visibility: hidden;
     }

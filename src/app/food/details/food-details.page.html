@@ -10,19 +10,21 @@
 <ion-content class="food-details-content">
   <ion-row class="image-row">
     <ion-col size="12">
-      <app-background-image class="add-spinner add-overlay" [src]="details?.showcaseImage">
-        <app-fill-container [ratio]="{w:64, h:40}">
+      <app-image-shell [mode]="'cover'" class="add-spinner add-overlay showcase-image" [src]="details?.showcaseImage">
+        <app-aspect-ratio [ratio]="{w:64, h:40}">
           <div class="icon-wrapper">
-            <app-preload-image [ratio]="{w: 40, h: 20}" [src]="details?.icon"></app-preload-image>
+            <app-aspect-ratio [ratio]="{w: 40, h: 20}">
+              <app-image-shell [src]="details?.icon"></app-image-shell>
+            </app-aspect-ratio>
           </div>
-        </app-fill-container>
-      </app-background-image>
+        </app-aspect-ratio>
+      </app-image-shell>
     </ion-col>
   </ion-row>
   <ion-row class="description-row">
     <ion-col size="9">
       <h3 class="details-name">
-        <app-text-shell [data]="details?.name" [attr.element]="'h3'"></app-text-shell>
+        <app-text-shell [data]="details?.name"></app-text-shell>
       </h3>
       <p class="details-style">
         <app-text-shell [data]="details?.style"></app-text-shell>
@@ -87,8 +89,13 @@
         <app-text-shell [data]="details.location?.address" class="no-animation"></app-text-shell>
       </span>
     </div>
-    <!-- <app-preload-image [ratio]="{w: 64, h: 20}" [src]="'https://maps.googleapis.com/maps/api/staticmap?center=' + details.location?.latlng + '&zoom=15&size=640x200&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xd9453a%7C' + details.location?.latlng + '&key=YOUR_KEY_HERE'"></app-preload-image> -->
-    <app-preload-image class="add-spinner" [ratio]="{w: 64, h: 20}" [src]="details.location?.mapImage"></app-preload-image>
+    <!-- <app-aspect-ratio [ratio]="{w: 64, h: 20}">
+      <app-image-shell [src]="'https://maps.googleapis.com/maps/api/staticmap?center=' + details.location?.latlng + '&zoom=15&size=640x200&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xd9453a%7C' + details.location?.latlng + '&key=YOUR_KEY_HERE'">
+      </app-image-shell>
+    </app-aspect-ratio> -->
+    <app-aspect-ratio class="add-spinner" [ratio]="{w: 64, h: 20}">
+      <app-image-shell [src]="details.location?.mapImage" [alt]="'location map'"></app-image-shell>
+    </app-aspect-ratio>
   </div>
   <ion-row class="details-tags">
     <ion-col class="tag-wrapper" *ngFor="let tag of details?.tags">
@@ -102,7 +109,9 @@
     <h3 class="detail-title">User's photos</h3>
     <ion-row class="pictures-row">
       <ion-col class="picture-wrapper" size="2" *ngFor="let picture of details?.usersPictures?.slice(0, 5); let i = index">
-        <app-preload-image [ratio]="{w: 1, h: 1}" [src]="picture"></app-preload-image>
+        <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+          <app-image-shell [src]="picture" [alt]="'user image'"></app-image-shell>
+        </app-aspect-ratio>
         <a class="has-more-pictures" *ngIf="i == 4 && details?.usersPictures?.length > 5">
           <span class="pictures-count">{{ details?.usersPictures?.length - 5 }}</span>
         </a>
@@ -134,11 +143,13 @@
       <div class="review-item" *ngFor="let review of details?.reviews">
         <ion-row class="review-user">
           <ion-col size="2" class="user-image-wrapper">
-            <app-preload-image [ratio]="{w: 1, h: 1}" [src]="review.user.image"></app-preload-image>
+            <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+              <app-image-shell [src]="review.user.image" [alt]="'review user image'"></app-image-shell>
+            </app-aspect-ratio>
           </ion-col>
           <ion-col class="user-brief-wrapper">
             <h5 class="user-name">
-              <app-text-shell [data]="review.user.name" [attr.element]="'h5'"></app-text-shell>
+              <app-text-shell [data]="review.user.name"></app-text-shell>
             </h5>
             <ion-row class="user-scores">
               <ion-col class="score-item">
@@ -192,12 +203,14 @@
     </div>
     <div class="recipes-list">
       <div class="recipe-item" *ngFor="let recipe of details?.popularRecipes">
-        <app-background-image [src]="recipe.showcaseImage">
-          <app-fill-container [ratio]="{w:64, h:30}">
-          </app-fill-container>
-        </app-background-image>
+        <app-image-shell [mode]="'cover'" [src]="recipe.showcaseImage">
+          <app-aspect-ratio [ratio]="{w:64, h:30}">
+          </app-aspect-ratio>
+        </app-image-shell>
         <div class="chef-picture-wrapper">
-          <app-preload-image [ratio]="{w: 1, h: 1}" [src]="recipe?.chef?.image"></app-preload-image>
+          <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+            <app-image-shell [src]="recipe?.chef?.image" [alt]="'chef image'"></app-image-shell>
+          </app-aspect-ratio>
         </div>
         <h4 class="recipe-title">RECIPE</h4>
         <hr class="details-divider">

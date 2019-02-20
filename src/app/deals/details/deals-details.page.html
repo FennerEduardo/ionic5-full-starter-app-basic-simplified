@@ -21,25 +21,31 @@
       <ion-slides class="details-slides" pager="true" [options]="slidesOptions">
         <ion-slide class="" *ngFor="let image of details?.showcaseImages">
           <ion-row class="slide-inner-row">
-            <app-preload-image [alt]="'deals details'" class="showcase-image add-spinner" [ratio]="{w: 56, h: 40}" [src]="image"></app-preload-image>
+            <app-aspect-ratio [ratio]="{w: 56, h: 40}">
+              <app-image-shell [src]="image" [alt]="'deals details'" class="showcase-image add-spinner"></app-image-shell>
+            </app-aspect-ratio>
           </ion-row>
         </ion-slide>
       </ion-slides>
     </ion-row>
     <ion-row class="description-row">
       <ion-col class="logo-col" size="6">
-        <app-preload-image [alt]="'deals details'" class="add-spinner" [ratio]="{w: 128, h: 32}" [src]="details?.logo"></app-preload-image>
+        <app-aspect-ratio [ratio]="{w: 128, h: 32}">
+          <app-image-shell [src]="details?.logo" [alt]="'deals details'" class="add-spinner"></app-image-shell>
+        </app-aspect-ratio>
       </ion-col>
       <ion-col class="info-col" size="9">
         <h4 class="details-name">
-          <app-text-shell [data]="details?.name" [attr.element]="'h4'"></app-text-shell>
+          <app-text-shell [data]="details?.name"></app-text-shell>
         </h4>
         <p class="details-description">
           <app-text-shell [data]="details?.description" [attr.lines]="3"></app-text-shell>
         </p>
       </ion-col>
       <ion-col class="preview-image-col" size="3">
-        <app-preload-image [alt]="'deals details'" class="add-spinner" [ratio]="{w: 1, h: 1}" [src]="details?.previewImage"></app-preload-image>
+        <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+          <app-image-shell [src]="details?.previewImage" [alt]="'deals details'" class="add-spinner"></app-image-shell>
+        </app-aspect-ratio>
       </ion-col>
     </ion-row>
     <ion-row class="promo-row">
@@ -74,11 +80,13 @@
     <h3 class="related-deals-title">More hot deals</h3>
     <ion-row class="related-deal" *ngFor="let deal of details.relatedDeals">
       <ion-col class="deal-logo-wrapper" size="4">
-        <app-preload-image [alt]="'deals details'" class="add-spinner" [ratio]="{w: 1, h: 1}" [src]="deal.logo"></app-preload-image>
+        <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+          <app-image-shell [src]="deal.logo" [alt]="'deals logo'" class="add-spinner"></app-image-shell>
+        </app-aspect-ratio>
       </ion-col>
       <ion-col class="deal-info-wrapper" size="8">
         <h4 class="deal-title">
-          <app-text-shell [data]="deal?.name" [attr.element]="'h4'"></app-text-shell>
+          <app-text-shell [data]="deal?.name"></app-text-shell>
         </h4>
         <p class="deal-description">
           <app-text-shell [data]="deal?.description" [attr.lines]="1"></app-text-shell>

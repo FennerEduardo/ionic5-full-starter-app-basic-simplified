@@ -24,16 +24,18 @@
   <ng-template #friendItem let-friend="friend">
     <ion-row class="user-details-section">
       <ion-col class="user-image-wrapper">
-        <app-preload-image class="user-image add-spinner" [ratio]="{w:1, h:1}" [src]="friend.image"></app-preload-image>
+        <app-aspect-ratio [ratio]="{w:1, h:1}">
+          <app-image-shell class="user-image add-spinner" [src]="friend.image" [alt]="'friend'"></app-image-shell>
+        </app-aspect-ratio>
       </ion-col>
       <ion-col class="user-info-wrapper">
         <ion-row>
           <h3 class="user-name">
-            <app-text-shell [data]="friend.name" [attr.element]="'h3'"></app-text-shell>
+            <app-text-shell [data]="friend.name"></app-text-shell>
           </h3>
         </ion-row>
         <h5 class="user-job">
-          <app-text-shell [data]="friend.job" [attr.element]="'h5'"></app-text-shell>
+          <app-text-shell [data]="friend.job"></app-text-shell>
         </h5>
         <ion-row class="user-stats">
           <ion-col size="5">
