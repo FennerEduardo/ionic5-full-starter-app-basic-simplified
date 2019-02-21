@@ -74,6 +74,7 @@
     ion-item {
       --border-width: 0px !important;
       --padding-start: var(--side-menu-margin);
+      --background-activated: var(--ion-color-medium);
 
       font-weight: 500;
     }
