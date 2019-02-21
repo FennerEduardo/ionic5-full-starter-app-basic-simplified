@@ -1,5 +1,6 @@
 export class FoodItemModel {
   icon: string;
+  image: string;
   name: string;
   address: string;
   priceRange: number;

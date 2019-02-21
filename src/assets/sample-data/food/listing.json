@@ -2,10 +2,11 @@
   "items": [
     {
       "id": 1,
-      "slug": "nom-nom",
+      "slug": "la-olla",
       "priceRange": 3,
-      "icon": "./assets/sample-images/food/foodlogo1.png",
-      "name": "NomNom",
+      "icon": "./assets/sample-images/food/food-details-icon.png",
+      "image": "./assets/sample-images/food/food-details-showcase.png",
+      "name": "La Olla",
       "rating": 4.3,
       "tags": [
         "vegetarian",
@@ -29,6 +30,7 @@
       "slug": "happy-foods",
       "priceRange": 1,
       "icon": "./assets/sample-images/food/foodlogo2.png",
+      "image": "./assets/sample-images/food/food-details-showcase.png",
       "name": "HappyFoods",
       "rating": 3.7,
       "tags": [
@@ -52,6 +54,7 @@
       "slug": "tasty",
       "priceRange": 2,
       "icon": "./assets/sample-images/food/foodlogo3.png",
+      "image": "./assets/sample-images/food/food-details-showcase.png",
       "name": "Tasty",
       "rating": 2.5,
       "tags": [
@@ -73,6 +76,7 @@
       "slug": "debbies",
       "priceRange": 2,
       "icon": "./assets/sample-images/food/foodlogo4.png",
+      "image": "./assets/sample-images/food/food-details-showcase.png",
       "name": "Debbie’s",
       "rating": 5,
       "tags": [
