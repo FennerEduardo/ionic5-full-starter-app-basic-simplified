@@ -4,10 +4,10 @@ import { Resolve } from '@angular/router';
 import { ReplaySubject, Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 
-import { ShowcaseService } from '../showcase.service';
+import { ShowcaseService } from '../../showcase.service';
 
 @Injectable()
-export class ColdObservableResolver implements Resolve<any> {
+export class BlockingResolversResolver implements Resolve<any> {
 
   constructor(
     private showcaseService: ShowcaseService

@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // You can also use a Class object as a shell model
-import { ShowcaseShellModel } from '../showcase-shell.model';
+import { ShowcaseShellModel } from '../../showcase-shell.model';
 
 @Component({
-  selector: 'app-showcase-hot-observable',
-  templateUrl: './hot-observable.page.html',
-  styleUrls: ['./hot-observable.page.scss']
+  selector: 'app-showcase-non-blocking-resolvers',
+  templateUrl: './non-blocking-resolvers.page.html',
+  styleUrls: ['./non-blocking-resolvers.page.scss']
 })
-export class ShowcaseHotObservablePage implements OnInit {
+export class NonBlockingResolversPage implements OnInit {
   // We will assign data coming from the Route Resolver to this property
   routeResolveData: ShowcaseShellModel;
 

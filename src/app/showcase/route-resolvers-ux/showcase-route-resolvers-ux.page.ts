@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { LoadingController } from '@ionic/angular';
 
 import { Observable, timer, interval } from 'rxjs';
 import { first, takeUntil, finalize, take } from 'rxjs/operators';
 
-import * as dayjs from 'dayjs';
-
-import { SubjectFetch } from '../utils/subject-fetch';
+import { SubjectFetch } from '../../utils/subject-fetch';
 
 // You can use a plain interface as a shell model
 interface IShell {
@@ -18,14 +17,14 @@ interface IShell {
 }
 
 // You can also use a Class object as a shell model
-import { ShowcaseShellModel } from './showcase-shell.model';
+import { ShowcaseShellModel } from '../showcase-shell.model';
 
 @Component({
-  selector: 'app-showcase',
-  templateUrl: './showcase.page.html',
-  styleUrls: ['./showcase.page.scss']
+  selector: 'app-showcase-route-resolvers-ux',
+  templateUrl: './showcase-route-resolvers-ux.page.html',
+  styleUrls: ['./showcase-route-resolvers-ux.page.scss']
 })
-export class ShowcasePage implements OnInit {
+export class RouteResovlersUXPage implements OnInit {
   // We will manually fetch data using the HttpClient and assign it to this property
   simpleFetchData: {
     cover: string,
@@ -57,14 +56,10 @@ export class ShowcasePage implements OnInit {
   // Aux properties for the SubjectFetch showcase
   subjectFetchButtonDisabled = true;
 
-  // Relative date (better to showcase UI micro-interactions)
-  countdownDate: string = dayjs().add(1, 'day').add(8, 'hour').add(10, 'second').format('MM/DD/YYYY HH:mm:ss') as string;
-  // Instead of hardcoded one
-  // countdownDate = '12/01/2018';
-
   constructor(
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public loadingController: LoadingController
   ) { }
 
   ngOnInit(): void {
@@ -148,4 +143,12 @@ export class ShowcasePage implements OnInit {
       finalize(() => this.subjectFetchButtonDisabled = false)
     );
   }
+
+  async presentLoadingForColdObservableExample() {
+   const loading = await this.loadingController.create({
+     message: 'Loading...',
+     duration: 5000
+   });
+   await loading.present();
+ }
 }

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Improve Route Resolvers UX
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="showcase-content">
+  <section class="showcase-section">
+    <h5>Display data from Route Resolvers</h5>
+    <p>
+      Lets see the difference between using hot-observables and cold-observables for Route Resolves
+    </p>
+    <p>
+      By default, Angular Route Resolvers won't transition to the page until the Resolver Observable completes.
+    </p>
+    <p>
+      Let's suppose the backend is slow and takes 5 seconds to fetch data and return it to the client, this is what's going to happen.
+    </p>
+    <p>
+      <b>Expected behavior:</b> Page transition will be delayed 5 seconds until the server sends data back to the client.
+    </p>
+    <ion-button expand="block" [routerLink]="['/showcase/route-resolvers-ux/blocking-resolvers']" (click)="presentLoadingForColdObservableExample()">Go to Cold Observable Resolver Page</ion-button>
+    <br/>
+    <br/>
+    <p>
+      By using the <code>SubjectFetch</code> utility in conjuction with Angular Route Resolvers, we can solve this UX problem and make page transitions inmediate.
+    </p>
+    <p>
+      <b>Expected behavior:</b> Page transition will be instant and the transitioned page will show some shell elements while the server sends data back to the client.
+    </p>
+    <ion-button expand="block" [routerLink]="['/showcase/route-resolvers-ux/non-blocking-resolvers']">Go to Hot Observable Resolver Page</ion-button>
+    <br/>
+    <br/>
+    <p>
+      <b>TO DO</b>
+    </p>
+    <ion-button expand="block" [routerLink]="['/showcase/route-resolvers-ux/progressive-shell-resolvers']">Go to Progressive Shell Resolvers Page</ion-button>
+  </section>
+</ion-content>

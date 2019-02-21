@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 // You can also use a Class object as a shell model
-import { ShowcaseShellModel } from '../showcase-shell.model';
+import { ShowcaseShellModel } from '../../showcase-shell.model';
 
 @Component({
-  selector: 'app-showcase-cold-observable',
-  templateUrl: './cold-observable.page.html',
-  styleUrls: ['./cold-observable.page.scss']
+  selector: 'app-showcase-progressive-shell-resolvers',
+  templateUrl: './progressive-shell-resolvers.page.html',
+  styleUrls: ['./progressive-shell-resolvers.page.scss']
 })
-export class ShowcaseColdObservablePage implements OnInit {
+export class ProgressiveShellResovlersPage implements OnInit {
   // We will assign data coming from the Route Resolver to this property
   routeResolveData: ShowcaseShellModel;
 
@@ -18,7 +18,7 @@ export class ShowcaseColdObservablePage implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log('ShowcaseColdObservablePage - ngOnInit()');
+    console.log('ShowcaseHotObservablePage - ngOnInit()');
 
     if (this.route && this.route.data) {
       this.route.data.subscribe(routeData => {
@@ -42,25 +42,5 @@ export class ShowcaseColdObservablePage implements OnInit {
     } else {
       alert('No route data');
     }
-
-    // if (this.route && this.route.data) {
-    //   const resolvedColdObservable = this.route.data;
-    //   console.log('ShowcaseColdObservablePage - Route Resolve Observable => ColdObservable: ', resolvedColdObservable);
-    //
-    //   if (resolvedColdObservable) {
-    //     resolvedColdObservable.subscribe(observableData => {
-    //       const pageData: ShowcaseShellModel = observableData['data'];
-          // tslint:disable-next-line:max-line-length
-    //       console.log('ShowcaseColdObservablePage - Subscribe to ColdObservable (will emmit just one value) => PageData (' + ((pageData && pageData.isShell) ? 'SHELL' : 'REAL') + '): ', pageData);
-    //       if (pageData) {
-    //         this.routeResolveData = pageData;
-    //       }
-    //     });
-    //   } else {
-    //     alert('No route data 2');
-    //   }
-    // } else {
-    //   alert('No route data');
-    // }
   }
 }

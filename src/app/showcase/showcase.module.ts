@@ -1,58 +1,38 @@
 import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { ComponentsModule } from '../components/components.module';
 
-import { ShowcasePage } from './showcase.page';
+import { AppShellPage } from './app-shell/showcase-shell.page';
+import { CustomComponentsPage } from './custom-components/showcase-custom-components.page';
 
-import { ShowcaseHotObservablePage } from './hot-observable/hot-observable.page';
-import { HotObservableResolver } from './hot-observable/hot-observable.resolver';
-import { ShowcaseColdObservablePage } from './cold-observable/cold-observable.page';
-import { ColdObservableResolver } from './cold-observable/cold-observable.resolver';
-
-import { ShowcaseService } from './showcase.service';
+const showcaseRoutes: Routes = [
+  {
+    path: 'app-shell',
+    component: AppShellPage
+  },
+  {
+    path: 'custom-components',
+    component: CustomComponentsPage
+  },
+  {
+    path: 'route-resolvers-ux',
+    loadChildren: './route-resolvers-ux/showcase-route-resolvers-ux.module#ShowcaseRouteResolversUXModule'
+  }
+];
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
-    ComponentsModule,
     FormsModule,
-    HttpClientModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: ShowcasePage
-      },
-      {
-        path: 'hot-observable',
-        component: ShowcaseHotObservablePage,
-        resolve: {
-          data: HotObservableResolver
-        }
-      },
-      {
-        path: 'cold-observable',
-        component: ShowcaseColdObservablePage,
-        resolve: {
-          data: ColdObservableResolver
-        }
-      }
-    ])
+    RouterModule.forChild(showcaseRoutes),
+    ComponentsModule,
+    HttpClientModule
   ],
-  declarations: [
-    ShowcasePage,
-    ShowcaseHotObservablePage,
-    ShowcaseColdObservablePage
-  ],
-  providers: [
-    HotObservableResolver,
-    ColdObservableResolver,
-    ShowcaseService
-  ]
+  declarations: [ AppShellPage, CustomComponentsPage ]
 })
-export class ShowcaseModule {}
+export class ShowcasePageModule {}

@@ -3,10 +3,10 @@ import { Resolve } from '@angular/router';
 
 import { first } from 'rxjs/operators';
 
-import { ShowcaseService } from '../showcase.service';
+import { ShowcaseService } from '../../showcase.service';
 
 @Injectable()
-export class HotObservableResolver implements Resolve<any> {
+export class ProgressiveShellResolversResolver implements Resolve<any> {
 
   constructor(
     private showcaseService: ShowcaseService
