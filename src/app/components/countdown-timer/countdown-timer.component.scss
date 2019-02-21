@@ -5,6 +5,7 @@ app-countdown-timer {
   --countdown-time-border: none;
   --countdown-time-border-radius: 0px;
   --countdown-time-background: transparent;
+  --countdown-time-shadow: none;
   --countdown-time-color: #808080;
   --countdown-time-text-shadow: none;
   --countdown-time-flex-direction: row-reverse;
@@ -33,6 +34,7 @@ app-countdown-timer {
     border: var(--countdown-time-border);
     border-radius: var(--countdown-time-border-radius);
     background-color: var(--countdown-time-background);
+    box-shadow: var(--countdown-time-shadow);
 
     .time-left {
       display: block;
