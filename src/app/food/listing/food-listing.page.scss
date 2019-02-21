@@ -31,9 +31,24 @@
 		margin-bottom: 0px;
 	}
 
-  app-image-shell {
-    --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
-    --image-shell-spinner-color: rgba(var(--shell-color-rgb), .25);
+  .cover-wrapper {
+    margin-bottom: var(--food-listing-margin);
+
+    .cover-anchor {
+      display: block;
+    }
+
+    app-image-shell.cover-image {
+      --image-shell-border-radius: var(--app-fair-radius);
+    }
+
+    .cover-icon-wrapper {
+      margin: 0px 20%;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .info-row {
@@ -50,18 +65,6 @@
       flex: 0 0 var(--pictures-gutter);
     }
 
-    .icon-col {
-      padding-right: calc(var(--food-listing-margin) / 2);
-
-      .icon-anchor {
-        display: block;
-      }
-
-      app-image-shell {
-        --image-shell-border-radius: var(--app-narrow-radius);
-      }
-    }
-
     .description-col {
       .description-wrapper {
         height: 100%;
@@ -72,7 +75,7 @@
       .item-name {
         margin: 0px;
         color: var(--ion-color-dark-tint);
-        font-size: 14px;
+        font-size: 20px;
 
         .name-anchor {
           display: block;
@@ -81,7 +84,7 @@
 
         app-text-shell {
           --c-bg-color: rgba(var(--shell-color-rgb), .25);
-          --c-line-height: 14px;
+          --c-line-height: 20px;
         }
       }
 
@@ -137,9 +140,14 @@
       padding-left: calc(var(--food-listing-margin) / 2);
 
       .item-rating {
+        // Default background
+        background-color: rgba(var(--shell-color-rgb), .35);
 				color: var(--ion-color-lightest);
 				border-radius: var(--app-narrow-radius);
-				padding: calc(var(--food-listing-margin) / 4) calc(var(--food-listing-margin) / 2);
+				padding-top: calc(var(--food-listing-margin) / 3);
+				padding-bottom: calc(var(--food-listing-margin) / 3);
+				padding-left: calc(var(--food-listing-margin) / 2);
+				padding-right: calc(var(--food-listing-margin) / 2);
 			  font-size: 12px;
 			  font-weight: 600;
 			  width: 100%;
@@ -163,7 +171,7 @@
 				}
 
         app-text-shell {
-          --c-bg-color: rgba(var(--shell-color-rgb), .15);
+          --c-bg-color: rgba(var(--shell-color-rgb), .10);
           --c-line-height: 12px;
         }
 			}

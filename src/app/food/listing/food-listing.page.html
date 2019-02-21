@@ -10,21 +10,27 @@
 <ion-content class="food-listing-content">
   <ng-container *ngIf="listing?.items">
     <div class="listing-item" *ngFor="let item of listing.items">
-      <ion-row class="info-row">
-        <ion-col class="icon-col" size="2">
-          <a class="icon-anchor" [routerLink]="['/app/categories/food/', item.slug]">
-            <app-aspect-ratio class="add-spinner" [ratio]="{w: 1, h: 1}">
-              <app-image-shell [src]="item.icon"></app-image-shell>
+      <div class="cover-wrapper">
+        <a class="cover-anchor" [routerLink]="['/app/categories/food/', item.slug]">
+          <app-image-shell class="cover-image add-spinner add-overlay" [mode]="'cover'" [src]="">
+            <app-aspect-ratio [ratio]="{w:35, h:15}">
+              <div class="cover-icon-wrapper">
+                <app-aspect-ratio class="add-spinner" [ratio]="{w: 20, h: 7}">
+                  <app-image-shell [src]="item.icon"></app-image-shell>
+                </app-aspect-ratio>
+              </div>
             </app-aspect-ratio>
-          </a>
-        </ion-col>
+          </app-image-shell>
+        </a>
+      </div>
+      <ion-row class="info-row">
         <ion-col class="description-col">
           <ion-row class="description-wrapper">
-            <h4 class="item-name">
+            <h3 class="item-name">
               <a class="name-anchor" [routerLink]="['/app/categories/food/', item.slug]">
                 <app-text-shell [data]="item.name"></app-text-shell>
               </a>
-            </h4>
+            </h3>
             <p class="item-address">
               <app-text-shell [data]="item.address" [attr.lines]="1"></app-text-shell>
             </p>
