@@ -138,8 +138,8 @@
           font-size: 16px;
 
           app-text-shell {
-            --c-bg-color: rgba(var(--shell-color-rgb), .30);
-            --c-line-height: 16px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .30);
+            --text-shell-line-height: 16px;
           }
         }
 
@@ -149,8 +149,8 @@
           font-size: 14px;
 
           app-text-shell {
-            --c-bg-color: rgba(var(--shell-color-rgb), .20);
-            --c-line-height: 14px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
+            --text-shell-line-height: 14px;
           }
         }
       }
@@ -202,8 +202,8 @@
         line-height: 1;
 
         app-text-shell {
-          --c-bg-color: rgba(var(--shell-color-rgb), .15);
-          --c-line-height: 14px;
+          --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
+          --text-shell-line-height: 14px;
           min-width: 80px;
 
           &.text-loaded {
@@ -243,8 +243,8 @@
         display: block;
 
         app-text-shell {
-          --c-bg-color: rgba(var(--ion-color-lightest-rgb), .20);
-          --c-line-height: 18px;
+          --text-shell-line-color: rgba(var(--ion-color-lightest-rgb), .20);
+          --text-shell-line-height: 18px;
           min-width: 60px;
 
           &.text-loaded {
@@ -304,8 +304,8 @@
           font-size: 20px;
 
           app-text-shell {
-            --c-bg-color: rgba(var(--shell-color-rgb), .30);
-            --c-line-height: 20px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .30);
+            --text-shell-line-height: 20px;
           }
         }
 
@@ -315,8 +315,8 @@
           font-size: 16px;
 
           app-text-shell {
-            --c-bg-color: rgba(var(--shell-color-rgb), .20);
-            --c-line-height: 16px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
+            --text-shell-line-height: 16px;
           }
         }
       }

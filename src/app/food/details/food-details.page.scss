@@ -47,8 +47,8 @@
       font-size: 18px;
 
       app-text-shell {
-        --c-bg-color: rgba(var(--shell-color-rgb), .20);
-        --c-line-height: 18px;
+        --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
+        --text-shell-line-height: 18px;
       }
     }
 
@@ -59,8 +59,8 @@
       color: var(--ion-color-dark-tint);
 
       app-text-shell {
-        --c-bg-color: rgba(var(--shell-color-rgb), .10);
-        --c-line-height: 16px;
+        --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+        --text-shell-line-height: 16px;
       }
     }
 
@@ -110,8 +110,8 @@
           margin-left: 4px;
 
           app-text-shell {
-            --c-bg-color: rgba(var(--shell-color-rgb), .15);
-            --c-line-height: 14px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
+            --text-shell-line-height: 14px;
             min-width: 30px;
 
             &.text-loaded {
@@ -152,8 +152,8 @@
 				}
 
         app-text-shell {
-          --c-bg-color: rgba(var(--shell-color-rgb), .15);
-          --c-line-height: 12px;
+          --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
+          --text-shell-line-height: 12px;
           min-width: 20px;
 
           &.text-loaded {
@@ -201,8 +201,8 @@
             font-size: 14px;
 
             app-text-shell {
-              --c-bg-color: rgba(var(--shell-color-rgb), .10);
-              --c-line-height: 14px;
+              --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+              --text-shell-line-height: 14px;
               max-width: 90%;
 
               &.text-loaded {
@@ -227,8 +227,8 @@
               font-weight: 500;
 
               app-text-shell {
-                --c-bg-color: rgba(var(--shell-color-rgb), .10);
-                --c-line-height: 14px;
+                --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+                --text-shell-line-height: 14px;
                 max-width: 100%;
 
                 &.text-loaded {
@@ -265,8 +265,8 @@
       color: var(--ion-color-medium-tint);
 
       app-text-shell {
-        --c-bg-color: rgba(var(--shell-color-rgb), .10);
-        --c-line-height: 14px;
+        --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+        --text-shell-line-height: 14px;
         max-width: 60%;
 
         &.text-loaded {
@@ -309,8 +309,8 @@
       color: var(--ion-color-medium-tint);
 
       app-text-shell {
-        --c-bg-color: rgba(var(--shell-color-rgb), .15);
-        --c-line-height: 14px;
+        --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
+        --text-shell-line-height: 14px;
         min-width: 50px;
 
         &.text-loaded {
@@ -414,8 +414,8 @@
           margin-right: 4px;
 
           app-text-shell {
-            --c-bg-color: rgba(var(--shell-color-rgb), .15);
-            --c-line-height: 14px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
+            --text-shell-line-height: 14px;
             min-width: 30px;
 
             &.text-loaded {
@@ -482,8 +482,8 @@
                   margin-left: 4px;
 
                   app-text-shell {
-                    --c-bg-color: rgba(var(--shell-color-rgb), .15);
-                    --c-line-height: 12px;
+                    --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
+                    --text-shell-line-height: 12px;
                     min-width: 30px;
 
                     &.text-loaded {
@@ -518,8 +518,8 @@
               text-align: right;
 
               app-text-shell {
-                --c-bg-color: rgba(var(--shell-color-rgb), .05);
-                --c-line-height: 11px;
+                --text-shell-line-color: rgba(var(--shell-color-rgb), .05);
+                --text-shell-line-height: 11px;
               }
             }
 
@@ -551,8 +551,8 @@
       				}
 
               app-text-shell {
-                --c-bg-color: rgba(var(--shell-color-rgb), .15);
-                --c-line-height: 12px;
+                --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
+                --text-shell-line-height: 12px;
               }
             }
           }
@@ -594,8 +594,8 @@
               margin-left: 4px;
 
               app-text-shell {
-                --c-bg-color: rgba(var(--shell-color-rgb), .15);
-                --c-line-height: 14px;
+                --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
+                --text-shell-line-height: 14px;
                 min-width: 30px;
 
                 &.text-loaded {
@@ -726,8 +726,8 @@
               margin-left: 4px;
 
               app-text-shell {
-                --c-bg-color: rgba(var(--shell-color-rgb), .15);
-                --c-line-height: 14px;
+                --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
+                --text-shell-line-height: 14px;
                 min-width: 30px;
 
                 &.text-loaded {

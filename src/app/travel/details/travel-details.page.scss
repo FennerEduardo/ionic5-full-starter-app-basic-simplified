@@ -38,8 +38,8 @@
       font-size: 20px;
 
       app-text-shell {
-        --c-bg-color: rgba(var(--shell-color-rgb), .20);
-        --c-line-height: 20px;
+        --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
+        --text-shell-line-height: 20px;
       }
     }
 
@@ -49,8 +49,8 @@
       font-size: 14px;
 
       app-text-shell {
-        --c-bg-color: rgba(var(--shell-color-rgb), .10);
-        --c-line-height: 14px;
+        --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+        --text-shell-line-height: 14px;
       }
     }
 
@@ -76,8 +76,8 @@
           margin-left: 4px;
 
           app-text-shell {
-            --c-bg-color: rgba(var(--shell-color-rgb), .15);
-            --c-line-height: 14px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
+            --text-shell-line-height: 14px;
             min-width: 30px;
 
             &.text-loaded {
@@ -116,8 +116,8 @@
         color: var(--ion-color-medium-tint);
 
         app-text-shell {
-          --c-bg-color: rgba(var(--shell-color-rgb), .15);
-          --c-line-height: 14px;
+          --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
+          --text-shell-line-height: 14px;
           min-width: 50px;
 
           &.text-loaded {
@@ -133,8 +133,8 @@
       font-size: 14px;
 
       app-text-shell {
-        --c-bg-color: rgba(var(--shell-color-rgb), .10);
-        --c-line-height: 14px;
+        --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+        --text-shell-line-height: 14px;
       }
     }
   }
@@ -175,8 +175,8 @@
             font-size: 14px;
 
             app-text-shell {
-              --c-bg-color: rgba(var(--shell-color-rgb), .10);
-              --c-line-height: 14px;
+              --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+              --text-shell-line-height: 14px;
               max-width: 90%;
 
               &.text-loaded {
@@ -200,8 +200,8 @@
               font-weight: 500;
 
               app-text-shell {
-                --c-bg-color: rgba(var(--shell-color-rgb), .10);
-                --c-line-height: 14px;
+                --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+                --text-shell-line-height: 14px;
                 max-width: 100%;
 
                 &.text-loaded {
@@ -238,8 +238,8 @@
       color: var(--ion-color-medium-tint);
 
       app-text-shell {
-        --c-bg-color: rgba(var(--shell-color-rgb), .10);
-        --c-line-height: 14px;
+        --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+        --text-shell-line-height: 14px;
         max-width: 60%;
 
         &.text-loaded {
@@ -297,8 +297,8 @@
             text-align: center;
 
             app-text-shell {
-              --c-bg-color: rgba(var(--shell-color-rgb), .10);
-              --c-line-height: 12px;
+              --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+              --text-shell-line-height: 12px;
             }
           }
 
@@ -317,8 +317,8 @@
               margin-left: 4px;
 
               app-text-shell {
-                --c-bg-color: rgba(var(--shell-color-rgb), .05);
-                --c-line-height: 14px;
+                --text-shell-line-color: rgba(var(--shell-color-rgb), .05);
+                --text-shell-line-height: 14px;
                 min-width: 30px;
 
                 &.text-loaded {
@@ -357,8 +357,8 @@
           font-size: 14px;
 
           app-text-shell {
-            --c-bg-color: rgba(var(--shell-color-rgb), .20);
-            --c-line-height: 14px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
+            --text-shell-line-height: 14px;
             max-width: 25%;
             margin: 0px auto;
 
@@ -375,8 +375,8 @@
           font-size: 12px;
 
           app-text-shell {
-            --c-bg-color: rgba(var(--shell-color-rgb), .10);
-            --c-line-height: 12px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+            --text-shell-line-height: 12px;
             max-width: 45%;
             margin: 0px auto;
 
@@ -408,8 +408,8 @@
             margin-left: 4px;
 
             app-text-shell {
-              --c-bg-color: rgba(var(--shell-color-rgb), .15);
-              --c-line-height: 14px;
+              --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
+              --text-shell-line-height: 14px;
               min-width: 30px;
 
               &.text-loaded {

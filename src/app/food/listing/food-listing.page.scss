@@ -83,8 +83,8 @@
         }
 
         app-text-shell {
-          --c-bg-color: rgba(var(--shell-color-rgb), .25);
-          --c-line-height: 20px;
+          --text-shell-line-color: rgba(var(--shell-color-rgb), .25);
+          --text-shell-line-height: 20px;
         }
       }
 
@@ -95,8 +95,8 @@
         font-size: 12px;
 
         app-text-shell {
-          --c-bg-color: rgba(var(--shell-color-rgb), .20);
-          --c-line-height: 12px;
+          --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
+          --text-shell-line-height: 12px;
         }
       }
 
@@ -124,8 +124,8 @@
 					color: var(--ion-color-medium-tint);
 
           app-text-shell {
-            --c-bg-color: rgba(var(--shell-color-rgb), .15);
-            --c-line-height: 10px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
+            --text-shell-line-height: 10px;
             min-width: 30px;
 
             &.text-loaded {
@@ -171,8 +171,8 @@
 				}
 
         app-text-shell {
-          --c-bg-color: rgba(var(--shell-color-rgb), .10);
-          --c-line-height: 12px;
+          --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+          --text-shell-line-height: 12px;
         }
 			}
 

@@ -68,8 +68,8 @@
           }
 
           app-text-shell {
-            --c-line-height: 14px;
-            --c-bg-color: rgba(var(--shell-color-rgb), .25);
+            --text-shell-line-height: 14px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .25);
           }
         }
       }
@@ -106,8 +106,8 @@
           font-size: 16px;
 
           app-text-shell {
-            --c-line-height: 16px;
-            --c-bg-color: rgba(var(--shell-color-rgb), .20);
+            --text-shell-line-height: 16px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
           }
         }
 
@@ -118,8 +118,8 @@
           font-size: 14px;
 
           app-text-shell {
-            --c-line-height: 16px;
-            --c-bg-color: rgba(var(--shell-color-rgb), .20);
+            --text-shell-line-height: 16px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
           }
         }
       }

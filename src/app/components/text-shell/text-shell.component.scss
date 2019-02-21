@@ -3,24 +3,10 @@
 // WIP on gist: https://www.sassmeister.com/gist/fc8790761e3a6d9dc83f7326c1bc6ab4
 // Inspiration for the animation: https://cloudcannon.com/deconstructions/2014/11/15/facebook-content-placeholder-deconstruction.html
 :host {
-  --c-line-height: 16px;
-  --c-line-spacing: 3px;
-  --c-bg-color: #EEE;
-  --c-mask-color: transparent;
-  --c-line-bg-color: transparent;
-
   --text-shell-background: transparent;
-  --c-mask-color: var(--text-shell-background);
-  --c-line-bg-color: var(--text-shell-background);
-
   --text-shell-line-color: #EEE;
-  --c-bg-color: var(--text-shell-line-color);
-
   --text-shell-line-height: 16px;
-  --c-line-height: var(--text-shell-line-height);
-
   --text-shell-line-gutter: 3px;
-  --c-line-spacing: var(--text-shell-line-gutter);
 
   display: block;
   position: relative;

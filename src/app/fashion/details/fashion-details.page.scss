@@ -53,8 +53,8 @@
       margin: 0px 0px 5px;
 
       app-text-shell {
-        --c-bg-color: rgba(var(--shell-color-rgb), .25);
-        --c-line-height: 18px;
+        --text-shell-line-color: rgba(var(--shell-color-rgb), .25);
+        --text-shell-line-height: 18px;
         max-width: 60%;
 
         &.text-loaded {
@@ -71,8 +71,8 @@
       margin: 0px 0px var(--fashion-details-margin);
 
       app-text-shell {
-        --c-bg-color: rgba(var(--shell-color-rgb), .20);
-        --c-line-height: 14px;
+        --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
+        --text-shell-line-height: 14px;
         max-width: 40%;
 
         &.text-loaded {
@@ -89,8 +89,8 @@
       display: inline-block;
 
       app-text-shell {
-        --c-bg-color: rgba(var(--shell-color-rgb), .10);
-        --c-line-height: 18px;
+        --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+        --text-shell-line-height: 18px;
         width: 30px;
 
         &.text-loaded {
@@ -107,8 +107,8 @@
       font-size: 14px;
 
       app-text-shell {
-        --c-bg-color: rgba(var(--shell-color-rgb), .10);
-        --c-line-height: 18px;
+        --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+        --text-shell-line-height: 18px;
         width: 30px;
 
         &.text-loaded {
@@ -174,8 +174,8 @@
       color: var(--ion-color-medium-shade);
 
       app-text-shell {
-        --c-bg-color: rgba(var(--shell-color-rgb), .10);
-        --c-line-height: 14px;
+        --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+        --text-shell-line-height: 14px;
       }
 
       &.product-code {
@@ -263,8 +263,8 @@
           }
 
           app-text-shell {
-            --c-line-height: 14px;
-            --c-bg-color: rgba(var(--shell-color-rgb), .25);
+            --text-shell-line-height: 14px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .25);
           }
         }
 
@@ -277,8 +277,8 @@
           min-width: 30%;
 
           app-text-shell {
-            --c-line-height: 16px;
-            --c-bg-color: rgba(var(--shell-color-rgb), .20);
+            --text-shell-line-height: 16px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
           }
         }
       }

@@ -1,11 +1,11 @@
 @import "./utils";
 
 @mixin bouncing-lines-background($lines: 1){
-  $line-height: var(--c-line-height, 16px);
-  $line-spacing: var(--c-line-spacing, 3px);
-  $bg-color: var(--c-bg-color, #CCC);
-  $mask-color: var(--c-mask-color, #FFF);
-  $line-bg-color: var(--c-line-bg-color, #FFF);
+  $line-height: var(--text-shell-line-height, 16px);
+  $line-spacing: var(--text-shell-line-gutter, 3px);
+  $bg-color: var(--text-shell-line-color, #CCC);
+  $mask-color: var(--text-shell-background, #FFF);
+  $line-bg-color: var(--text-shell-background, #FFF);
   $bg-y-pos: 0px;
   $rand-width: #{randomNum(85, 95)};
   $bg-image: 'linear-gradient(to right, ' + $bg-color + ' ' + $rand-width + '% , ' + $mask-color + ' ' + $rand-width + '%)';
