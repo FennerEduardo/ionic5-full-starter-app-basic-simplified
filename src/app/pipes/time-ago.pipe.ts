@@ -16,10 +16,10 @@ export class TimeAgoPipe implements PipeTransform {
   transform(value: any): string {
     dayjs.extend(relativeTime);
     let timeAgo = '';
-    const prependText = (dayjs(value).diff(dayjs(), 'day') < 0) ? 'Ended' : 'Ends';
 
     if (value) {
-      timeAgo = prependText + ' ' + dayjs().to(dayjs(value));
+      const withoutSuffix = (dayjs(value).diff(dayjs(), 'day') < 0) ? false : true;
+      timeAgo = dayjs().to(dayjs(value), withoutSuffix);
     }
 
     return timeAgo;
