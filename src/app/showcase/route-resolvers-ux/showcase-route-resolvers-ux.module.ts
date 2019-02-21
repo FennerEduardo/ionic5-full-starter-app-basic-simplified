@@ -11,9 +11,9 @@ import { NonBlockingResolversPage } from './non-blocking-resolvers/non-blocking-
 import { BlockingResovlersPage } from './blocking-resolvers/blocking-resolvers.page';
 import { ProgressiveShellResovlersPage } from './progressive-shell-resolvers/progressive-shell-resolvers.page';
 
-import { NonBlockingResolversResolver } from './non-blocking-resolvers/non-blocking-resolvers.resolver';
-import { BlockingResolversResolver } from './blocking-resolvers/blocking-resolvers.resolver';
-import { ProgressiveShellResolversResolver } from './progressive-shell-resolvers/progressive-shell-resolvers.resolver';
+import { BlockingResolver } from './blocking-resolvers/blocking.resolver';
+import { NonBlockingResolver } from './non-blocking-resolvers/non-blocking.resolver';
+import { ProgressiveShellResolver } from './progressive-shell-resolvers/progressive-shell.resolver';
 
 import { ShowcaseService } from '../showcase.service';
 
@@ -23,24 +23,24 @@ const routes: Routes = [
     component: RouteResovlersUXPage
   },
   {
-    path: 'non-blocking-resolvers',
-    component: NonBlockingResolversPage,
-    resolve: {
-      data: NonBlockingResolversResolver
-    }
-  },
-  {
     path: 'blocking-resolvers',
     component: BlockingResovlersPage,
     resolve: {
-      data: BlockingResolversResolver
+      data: BlockingResolver
+    }
+  },
+  {
+    path: 'non-blocking-resolvers',
+    component: NonBlockingResolversPage,
+    resolve: {
+      data: NonBlockingResolver
     }
   },
   {
     path: 'progressive-shell-resolvers',
     component: ProgressiveShellResovlersPage,
     resolve: {
-      data: ProgressiveShellResolversResolver
+      data: ProgressiveShellResolver
     }
   }
 ];
@@ -55,16 +55,16 @@ const routes: Routes = [
     HttpClientModule
   ],
   declarations: [
-    NonBlockingResolversPage,
+    RouteResovlersUXPage,
     BlockingResovlersPage,
-    ProgressiveShellResovlersPage,
-    RouteResovlersUXPage
+    NonBlockingResolversPage,
+    ProgressiveShellResovlersPage
   ],
   providers: [
-    ShowcaseService,
-    ProgressiveShellResolversResolver,
-    NonBlockingResolversResolver,
-    BlockingResolversResolver
+    BlockingResolver,
+    NonBlockingResolver,
+    ProgressiveShellResolver,
+    ShowcaseService
   ]
 })
 export class ShowcaseRouteResolversUXModule {}

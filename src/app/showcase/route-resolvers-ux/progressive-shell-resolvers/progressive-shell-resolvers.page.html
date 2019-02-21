@@ -1,18 +1,15 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="showcase"></ion-back-button>
+      <ion-back-button defaultHref="showcase/route-resolvers-ux"></ion-back-button>
     </ion-buttons>
     <ion-title>
-      Hot Observable Showcase
+      Progressive Shell Showcase
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="showcase-content">
-  <p>
-    <code>SubjectFetch</code> can also be easily plugged in Angular Route Resolvers
-  </p>
   <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
     <ion-col size="12">
       <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="routeResolveData?.cover" [alt]="'Sample Image Cover'">

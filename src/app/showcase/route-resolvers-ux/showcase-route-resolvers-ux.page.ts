@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { LoadingController } from '@ionic/angular';
 
 import { Observable, timer, interval } from 'rxjs';
 import { first, takeUntil, finalize, take } from 'rxjs/operators';
@@ -58,8 +57,7 @@ export class RouteResovlersUXPage implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private route: ActivatedRoute,
-    public loadingController: LoadingController
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -143,12 +141,4 @@ export class RouteResovlersUXPage implements OnInit {
       finalize(() => this.subjectFetchButtonDisabled = false)
     );
   }
-
-  async presentLoadingForColdObservableExample() {
-   const loading = await this.loadingController.create({
-     message: 'Loading...',
-     duration: 5000
-   });
-   await loading.present();
- }
 }
