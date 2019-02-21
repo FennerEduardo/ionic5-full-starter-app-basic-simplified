@@ -1,4 +1,4 @@
-import { Component , ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation} from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { counterRangeValidator } from '../../components/counter-input/counter-input.component';
