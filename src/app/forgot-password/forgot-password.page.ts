@@ -31,11 +31,11 @@ export class ForgotPasswordPage implements OnInit {
     });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.menu.enable(false);
   }
 
-  recoverPassword() {
+  recoverPassword(): void {
     console.log(this.forgotPasswordForm.value);
     this.router.navigate(['app/categories']);
   }

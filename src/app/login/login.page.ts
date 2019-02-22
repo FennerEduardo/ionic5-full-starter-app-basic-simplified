@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
     });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.menu.enable(false);
   }
 

@@ -1,5 +1,5 @@
 import { Observable, BehaviorSubject, forkJoin, of } from 'rxjs';
-import { first, delay, finalize } from 'rxjs/operators';
+import { first, delay } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 

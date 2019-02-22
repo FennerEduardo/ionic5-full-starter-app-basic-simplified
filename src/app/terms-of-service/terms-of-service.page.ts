@@ -9,9 +9,9 @@ import { ModalController } from '@ionic/angular';
 
 export class TermsOfServicePage {
 
-  constructor(private modalController: ModalController) {}
+  constructor(private modalController: ModalController) { }
 
-  dismiss() {
+  dismiss(): void {
     this.modalController.dismiss();
   }
 }

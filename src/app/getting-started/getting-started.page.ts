@@ -28,11 +28,11 @@ export class GettingStartedPage implements OnInit, AfterViewInit {
     });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.menu.enable(false);
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     // ViewChild is set
     this.slides.isEnd().then(isEnd => {
       this.isLastSlide = isEnd;

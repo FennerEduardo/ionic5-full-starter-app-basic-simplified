@@ -20,11 +20,11 @@ export class WalkthroughPage implements OnInit, AfterViewInit {
 
   constructor(public menu: MenuController) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.menu.enable(false);
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     // ViewChild is set
     this.slides.isBeginning().then(isBeginning => {
       this.isFirstSlide = isBeginning;
