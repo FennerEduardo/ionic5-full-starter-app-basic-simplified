@@ -45,34 +45,50 @@
     background-color: var(--deal-ended-color);
     padding: calc(var(--deals-details-margin) / 2) var(--deals-details-margin);
 
+    position: sticky;
+    top: 0;
+    z-index: 8;
+
     text-align: center;
     justify-content: center;
     align-items: center;
 
-    .time-icon {
-      font-size: 24px;
-    }
-
     .expiration-lead {
       padding: 0px calc(var(--deals-details-margin) / 2);
       text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
     }
 
     app-countdown-timer.item-countdown {
-      --countdown-time-margin: 0px calc(var(--deals-details-margin) / 4) 0px 0px;
-      --countdown-time-padding: 0px;
-      --countdown-time-inner-padding: calc(var(--deals-details-margin) / 4);
-      --countdown-time-border: none;
-      --countdown-time-border-radius: 0px;
-      --countdown-time-background: transparent;
-      --countdown-time-color: var(--ion-color-lightest);
-      --countdown-time-text-shadow: none;
-      --countdown-alt-color: var(--ion-color-lightest);
+      --fill-shadow-color: rgba(var(--ion-color-darkest-rgb), 0.2);
 
-      border: 2px solid var(--ion-color-lightest);
-      border-radius: var(--app-broad-radius);
+      --countdown-margin: 0px;
+      --countdown-padding: 0px 3px;
+      --countdown-time-margin: 0px 2px;
+      --countdown-time-padding: 0px 2px;
+      --countdown-inner-time-margin: 0px 2px 0px 0px;
+      --countdown-inner-time-padding: calc(var(--deals-details-margin) / 2) 0px;
+      --countdown-fill-border: none;
+      --countdown-fill-border-radius: var(--app-narrow-radius);
+      --countdown-fill-background: var(--ion-color-lightest);
+      --countdown-fill-shadow: 0px 0px 5px 0px var(--fill-shadow-color);
+      --countdown-value-color: var(--ion-color-darkest);
+      --countdown-unit-color: var(--ion-color-medium-shade);
+
+      // // fill: time
+      // --countdown-time-margin: 0px 4px;
+      // --countdown-time-padding: 0px 5px;
+      //
+      // // fill: time (unit below)
+      // --countdown-time-padding: 4px 5px;
+      // --countdown-inner-time-margin: 0px;
+      // --countdown-inner-time-padding: 4px 0px;
+      // --countdown-time-flex-direction: column-reverse;
+
       padding: 0px calc(var(--deals-details-margin) / 4);
-      font-size: 15px;
+      font-size: 14px;
+      font-weight: 500;
     }
   }
 
@@ -347,9 +363,9 @@
   }
 
   app-countdown-timer.item-countdown {
-    .time-alt-text {
-      text-transform: lowercase;
-      font-size: 1em;
+    .time-unit {
+      // text-transform: lowercase;
+      font-size: 0.8em;
     }
   }
 }

@@ -9,10 +9,10 @@
 
 <ion-content class="deals-details-content">
   <ion-row class="expiration-countdown">
-    <ion-icon class="time-icon" name="md-time"></ion-icon>
-    <span class="expiration-lead">Deal expires in</span>
+    <span class="expiration-lead">Deal expires in:</span>
     <ng-container *ngIf="((details?.expirationDate | appTimeDifference) > 0 && (details?.expirationDate | appTimeDifference) <= 2)">
-      <app-countdown-timer class="item-countdown" [end]="details?.expirationDate" [units]="{from: 'hour', to: 'minute'}"></app-countdown-timer>
+      <app-countdown-timer class="item-countdown" fill="countdown" [end]="details?.expirationDate" [units]="{from: 'hour', to: 'second'}"></app-countdown-timer>
+      <!-- <app-countdown-timer class="item-countdown" fill="time" [end]="details?.expirationDate" [units]="{from: 'hour', to: 'second'}"></app-countdown-timer> -->
     </ng-container>
   </ion-row>
 
