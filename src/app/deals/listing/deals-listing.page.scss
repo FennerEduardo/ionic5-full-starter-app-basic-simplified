@@ -16,7 +16,8 @@
   --shell-color: #70DF70;
   --shell-color-rgb: 112,223,112;
 
-  --deal-ended-color: #D9453A;
+  --deal-expired-color: var(--ion-color-medium-tint);
+  // --deal-ended-color: #D9453A;
   --deal-ends-soon-color: #FFAB6B;
   --deal-distant-end-color: #70DF70;
 
@@ -44,8 +45,8 @@
   --deal-border-color: var(--ion-color-light-shade);
 
   &.ended {
-    --deal-color: var(--deal-ended-color);
-    --deal-border-color: var(--deal-ended-color);
+    --deal-color: var(--deal-expired-color);
+    --deal-border-color: var(--deal-expired-color);
     border-bottom-style: none;
   }
   &.imminent-end {
@@ -91,6 +92,13 @@
 
     .call-to-action-col {
       flex-grow: 0;
+
+      .expired-cta {
+        color: var(--deal-expired-color);
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+      }
 
       .claim-button {
         --box-shadow: none;
@@ -189,6 +197,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        &.expired {
+          border: 2px solid var(--deal-expired-color);
+          background: var(--deal-expired-color);
+          color: #FFF;
+        }
 
         app-text-shell {
           --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
