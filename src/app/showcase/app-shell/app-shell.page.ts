@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable, timer, interval } from 'rxjs';
@@ -8,15 +7,15 @@ import { takeUntil, finalize, take } from 'rxjs/operators';
 import { ShellProvider } from '../../utils/shell-provider';
 
 // You can use a plain interface as a shell model
-interface IShell {
-  cover: string;
-  image: string;
-  title: string;
-  description: string;
-}
+// interface IShell {
+//   cover: string;
+//   image: string;
+//   title: string;
+//   description: string;
+// }
 
 // You can also use a Class object as a shell model
-import { ShowcaseShellModel } from '../showcase-shell.model';
+// import { ShowcaseShellModel } from '../showcase-shell.model';
 
 @Component({
   selector: 'app-showcase-shell',
@@ -55,14 +54,9 @@ export class AppShellPage implements OnInit {
   // Aux properties for the ShellProvider showcase
   shellProviderButtonDisabled = true;
 
-  constructor(
-    private http: HttpClient,
-    private route: ActivatedRoute
-  ) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    console.log('ShowcasePage - ngOnInit()');
-
     this.showcaseShellSimpleFetch(10);
     this.showcaseShellProvider();
   }
