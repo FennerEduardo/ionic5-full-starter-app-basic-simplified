@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 
@@ -15,7 +14,7 @@ export class DealsService {
   private _listingWithShellCache: ShellProvider<DealsListingModel>;
   private _detailsWithShellCache: ShellProvider<DealsDetailsModel>;
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   public getListingDataWithShell(): Observable<DealsListingModel> {
     // Use cache if we have it.
