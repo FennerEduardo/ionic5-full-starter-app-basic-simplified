@@ -10,6 +10,7 @@ import { FoodDetailsModel } from './food-details.model';
 })
 export class FoodDetailsPage implements OnInit {
   details: FoodDetailsModel;
+
   @HostBinding('class.is-shell') get isShell() {
     return (this.details && this.details.isShell) ? true : false;
   }

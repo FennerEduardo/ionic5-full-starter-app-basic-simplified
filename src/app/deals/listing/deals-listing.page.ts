@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { DealsListingModel } from './deals-listing.model';
@@ -10,6 +10,10 @@ import { DealsListingModel } from './deals-listing.model';
 })
 export class DealsListingPage implements OnInit {
   listing: DealsListingModel;
+
+  @HostBinding('class.is-shell') get isShell() {
+    return (this.listing && this.listing.isShell) ? true : false;
+  }
 
   constructor(private route: ActivatedRoute) { }
 
