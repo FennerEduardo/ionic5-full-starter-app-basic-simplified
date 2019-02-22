@@ -10,6 +10,7 @@ import { UserFriendsModel } from './user-friends.model';
 })
 export class UserFriendsPage implements OnInit {
   data: UserFriendsModel;
+
   segmentValue = 'friends';
   friendsList: Array<any>;
   followersList: Array<any>;
@@ -23,29 +24,40 @@ export class UserFriendsPage implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.route && this.route.data) {
-      this.route.data.subscribe(routeData => {
-        const data = routeData['data'];
-        console.log('data - UserFriendsPage - ngOnInit()', data);
+      // We resolved a promise for the data Observable
+      const promiseObservable = this.route.data;
+      console.log('Route Resolve Observable => promiseObservable: ', promiseObservable);
 
-        if (data) {
-          data.subscribe((observableData: UserFriendsModel) => {
-            if (observableData) {
-              this.data = observableData;
-              this.friendsList = this.data.friends;
-              this.followersList = this.data.followers;
-              this.followingList = this.data.following;
-            }
+      if (promiseObservable) {
+        promiseObservable.subscribe(promiseValue => {
+          const dataObservable = promiseValue['data'];
+          console.log('Subscribe to promiseObservable => dataObservable: ', dataObservable);
 
-            console.log('observableData - UserFriendsPage - ngOnInit()', observableData);
-          });
-        } else {
-          alert('No route data 2');
-        }
-      });
+          if (dataObservable) {
+            dataObservable.subscribe(observableValue => {
+              const pageData: UserFriendsModel = observableValue;
+              // tslint:disable-next-line:max-line-length
+              console.log('Subscribe to dataObservable (can emmit multiple values) => PageData (' + ((pageData && pageData.isShell) ? 'SHELL' : 'REAL') + '): ', pageData);
+              // As we are implementing an App Shell architecture, pageData will be firstly an empty shell model,
+              // and the real remote data once it gets fetched
+              if (pageData) {
+                this.data = pageData;
+                this.friendsList = this.data.friends;
+                this.followersList = this.data.followers;
+                this.followingList = this.data.following;
+              }
+            });
+          } else {
+            console.warn('No dataObservable coming from Route Resolver promiseObservable');
+          }
+        });
+      } else {
+        console.warn('No promiseObservable coming from Route Resolver data');
+      }
     } else {
-      alert('No route data');
+      console.warn('No data coming from Route Resolver');
     }
   }
 
@@ -70,9 +82,5 @@ export class UserFriendsPage implements OnInit {
 
   filterList(list, query): Array<any> {
     return list.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
-  }
-
-  toggleFilters(): void {
-    this.showFilters = !this.showFilters;
   }
 }
