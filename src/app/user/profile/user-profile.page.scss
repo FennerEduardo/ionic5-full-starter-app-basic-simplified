@@ -1,5 +1,6 @@
 .user-profile-content {
   --user-profile-margin: var(--app-narrow-margin);
+  --user-profile-border-radius: var(--app-fair-radius);
 }
 
 .user-details-section {
@@ -11,7 +12,7 @@
     max-width: 26%;
 
     app-image-shell.user-image {
-      --image-shell-border-radius: var(--app-fair-radius);
+      --image-shell-border-radius: var(--user-profile-border-radius);
     }
   }
 
@@ -34,6 +35,11 @@
 
         app-text-shell {
           --text-shell-line-height: 20px;
+          max-width: 50%;
+
+          &.text-loaded {
+            max-width: unset;
+          }
         }
       }
 
@@ -44,6 +50,11 @@
 
         app-text-shell {
           --text-shell-line-height: 16px;
+          max-width: 70%;
+
+          &.text-loaded {
+            max-width: unset;
+          }
         }
       }
 
@@ -133,10 +144,12 @@
 
       app-text-shell {
         --text-shell-line-height: 18px;
-        min-width: 30px;
+        max-width: 50%;
+        margin: 0px auto;
 
         &.text-loaded {
-          min-width: 0px;
+          max-width: unset;
+          margin: initial;
         }
       }
     }
@@ -226,7 +239,7 @@
       padding: 0px var(--friends-gutter);
 
       app-image-shell.friend-picture {
-        --image-shell-border-radius: var(--app-fair-radius);
+        --image-shell-border-radius: var(--user-profile-border-radius);
       }
 
       .friend-name {
@@ -274,7 +287,7 @@
       padding: 0px var(--pictures-gutter) calc(var(--pictures-gutter) * 2);
 
       app-image-shell {
-        --image-shell-border-radius: var(--app-fair-radius);
+        --image-shell-border-radius: var(--user-profile-border-radius);
       }
     }
   }
