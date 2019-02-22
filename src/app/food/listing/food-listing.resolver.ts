@@ -1,27 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-
-import { first } from 'rxjs/operators';
-
 import { FoodService } from '../food.service';
 
 @Injectable()
 export class FoodListingResolver implements Resolve<any> {
 
-  constructor(
-    private foodService: FoodService
-  ) {}
+  constructor(private foodService: FoodService) {}
 
   resolve() {
-    return new Promise((resolve, reject) => {
-      const documentObservable = this.foodService.list();
+    // Get the Shell Provider from the service
+    const shellProviderObservable = this.foodService.getListingDataWithShell();
 
-      documentObservable.pipe(
-        first()
-      ).subscribe((data: any) => {
-        console.log('data - FoodListingResolver - resolve()', data);
-        resolve(documentObservable);
-      });
+    // Resolve with Shell Provider
+    const observablePromise = new Promise((resolve, reject) => {
+      resolve(shellProviderObservable);
     });
+    return observablePromise;
   }
 }

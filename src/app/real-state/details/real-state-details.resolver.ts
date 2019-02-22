@@ -1,27 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-
-import { first } from 'rxjs/operators';
-
 import { RealStateService } from '../real-state.service';
 
 @Injectable()
 export class RealStateDetailsResolver implements Resolve<any> {
 
-  constructor(
-    private realStateService: RealStateService
-  ) {}
+  constructor(private realStateService: RealStateService) {}
 
   resolve() {
-    return new Promise((resolve, reject) => {
-      const documentObservable = this.realStateService.details();
+    // Get the Shell Provider from the service
+    const shellProviderObservable = this.realStateService.getDetailsDataWithShell();
 
-      documentObservable.pipe(
-        first()
-      ).subscribe((data: any) => {
-        console.log('data - RealStateDetailsResolver - resolve()', data);
-        resolve(documentObservable);
-      });
+    // Resolve with Shell Provider
+    const observablePromise = new Promise((resolve, reject) => {
+      resolve(shellProviderObservable);
     });
+    return observablePromise;
   }
 }

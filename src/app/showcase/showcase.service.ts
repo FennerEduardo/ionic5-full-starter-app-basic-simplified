@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { delay, throttleTime, finalize, tap } from 'rxjs/operators';
+import { delay, finalize, tap } from 'rxjs/operators';
 
-import { SubjectFetch } from '../utils/subject-fetch';
 import { ShellProvider } from '../utils/shell-provider';
 
 import { ShowcaseShellModel } from './showcase-shell.model';

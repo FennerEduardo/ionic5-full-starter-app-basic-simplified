@@ -2,44 +2,46 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-
-import { SubjectFetch } from '../utils/subject-fetch';
+import { ShellProvider } from '../utils/shell-provider';
 
 import { TravelListingModel } from './listing/travel-listing.model';
 import { TravelDetailsModel } from './details/travel-details.model';
 
 @Injectable()
 export class TravelService {
-  private _listingCache: SubjectFetch<TravelListingModel>;
-  private _detailsCache: SubjectFetch<TravelDetailsModel>;
+  private _listingWithShellCache: ShellProvider<TravelListingModel>;
+  private _detailsWithShellCache: ShellProvider<TravelDetailsModel>;
 
   constructor(private http: HttpClient) { }
 
-  public list(): Observable<TravelListingModel> {
+  public getListingDataWithShell(): Observable<TravelListingModel> {
     // Use cache if we have it.
-    if (!this._listingCache) {
+    if (!this._listingWithShellCache) {
       // Initialize the model specifying that it is a shell model
-      const listingShell: TravelListingModel = new TravelListingModel(true);
-      this._listingCache = new SubjectFetch(
-        listingShell,
-        () => this.http.get<TravelListingModel>('./assets/sample-data/travel/listing.json')
+      const shellModel: TravelListingModel = new TravelListingModel(true);
+      const dataObservable = this.http.get<TravelListingModel>('./assets/sample-data/travel/listing.json');
+
+      this._listingWithShellCache = new ShellProvider(
+        shellModel,
+        dataObservable
       );
     }
-
-    return this._listingCache.observable;
+    return this._listingWithShellCache.observable;
   }
 
-  public details(): Observable<TravelDetailsModel> {
+  public getDetailsDataWithShell(): Observable<TravelDetailsModel> {
     // Use cache if we have it.
-    if (!this._detailsCache) {
+    if (!this._detailsWithShellCache) {
       // Initialize the model specifying that it is a shell model
-      const detailsShell: TravelDetailsModel = new TravelDetailsModel(true);
-      this._detailsCache = new SubjectFetch(
-        detailsShell,
-        () => this.http.get<TravelDetailsModel>('./assets/sample-data/travel/details.json')
+      const shellModel: TravelDetailsModel = new TravelDetailsModel(true);
+      const dataObservable = this.http.get<TravelDetailsModel>('./assets/sample-data/travel/details.json');
+
+      this._detailsWithShellCache = new ShellProvider(
+        shellModel,
+        dataObservable
       );
     }
-
-    return this._detailsCache.observable;
+    return this._detailsWithShellCache.observable;
   }
+
 }

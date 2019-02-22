@@ -3,43 +3,45 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
-import { SubjectFetch } from '../utils/subject-fetch';
+import { ShellProvider } from '../utils/shell-provider';
 
 import { FoodListingModel } from './listing/food-listing.model';
 import { FoodDetailsModel } from './details/food-details.model';
 
 @Injectable()
 export class FoodService {
-  private _listingCache: SubjectFetch<FoodListingModel>;
-  private _detailsCache: SubjectFetch<FoodDetailsModel>;
+  private _listingWithShellCache: ShellProvider<FoodListingModel>;
+  private _detailsWithShellCache: ShellProvider<FoodDetailsModel>;
 
   constructor(private http: HttpClient) { }
 
-  public list(): Observable<FoodListingModel> {
+  public getListingDataWithShell(): Observable<FoodListingModel> {
     // Use cache if we have it.
-    if (!this._listingCache) {
+    if (!this._listingWithShellCache) {
       // Initialize the model specifying that it is a shell model
-      const listingShell: FoodListingModel = new FoodListingModel(true);
-      this._listingCache = new SubjectFetch(
-        listingShell,
-        () => this.http.get<FoodListingModel>('./assets/sample-data/food/listing.json')
+      const shellModel: FoodListingModel = new FoodListingModel(true);
+      const dataObservable = this.http.get<FoodListingModel>('./assets/sample-data/food/listing.json');
+
+      this._listingWithShellCache = new ShellProvider(
+        shellModel,
+        dataObservable
       );
     }
-
-    return this._listingCache.observable;
+    return this._listingWithShellCache.observable;
   }
 
-  public details(): Observable<FoodDetailsModel> {
+  public getDetailsDataWithShell(): Observable<FoodDetailsModel> {
     // Use cache if we have it.
-    if (!this._detailsCache) {
+    if (!this._detailsWithShellCache) {
       // Initialize the model specifying that it is a shell model
-      const detailsShell: FoodDetailsModel = new FoodDetailsModel(true);
-      this._detailsCache = new SubjectFetch(
-        detailsShell,
-        () => this.http.get<FoodDetailsModel>('./assets/sample-data/food/details.json')
+      const shellModel: FoodDetailsModel = new FoodDetailsModel(true);
+      const dataObservable = this.http.get<FoodDetailsModel>('./assets/sample-data/food/details.json');
+
+      this._detailsWithShellCache = new ShellProvider(
+        shellModel,
+        dataObservable
       );
     }
-
-    return this._detailsCache.observable;
+    return this._detailsWithShellCache.observable;
   }
 }

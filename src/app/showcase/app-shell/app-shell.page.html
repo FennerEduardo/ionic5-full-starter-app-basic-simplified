@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Custom Components
+      App Shell Components
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -399,13 +399,13 @@ app-text-shell &#123;
     <ion-button (click)="showcaseShellSimpleFetch(3)" [disabled]="simpleFetchButtonDisabled">Fetch more Data</ion-button>
   </section>
   <section class="showcase-section">
-    <h5>Fetch data using SubjectFetch</h5>
+    <h5>Fetch data using ShellProvider</h5>
     <p>
-      Using the <code>SubjectFetch</code> utility you can reduce the amount of boilerplate from the previous example and achieve the same behavior.
+      Using the <code>ShellProvider</code> utility you can reduce the amount of boilerplate from the previous example and achieve the same behavior.
     </p>
     <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
       <ion-col size="12">
-        <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="(subjectFetchData | async)?.cover" [alt]="'Sample Image Cover'">
+        <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="(shellProviderData | async)?.cover" [alt]="'Sample Image Cover'">
           <app-aspect-ratio [ratio]="{w:2, h:1}">
             <h4 style="margin: 10px; text-align: center; color: #FFF;">Heading on top of a cover image</h4>
           </app-aspect-ratio>
@@ -413,18 +413,18 @@ app-text-shell &#123;
       </ion-col>
       <ion-col size="4">
         <app-aspect-ratio [ratio]="{w:1, h:1}">
-          <app-image-shell class="add-spinner" [src]="(subjectFetchData | async)?.image" [alt]="'Sample Image'"></app-image-shell>
+          <app-image-shell class="add-spinner" [src]="(shellProviderData | async)?.image" [alt]="'Sample Image'"></app-image-shell>
         </app-aspect-ratio>
       </ion-col>
       <ion-col size="8">
         <h3 style="margin-top: 0px;">
-          <app-text-shell [data]="(subjectFetchData | async)?.title"></app-text-shell>
+          <app-text-shell [data]="(shellProviderData | async)?.title"></app-text-shell>
         </h3>
         <p>
-          <app-text-shell [data]="(subjectFetchData | async)?.description" [attr.lines]="3"></app-text-shell>
+          <app-text-shell [data]="(shellProviderData | async)?.description" [attr.lines]="3"></app-text-shell>
         </p>
       </ion-col>
     </ion-row>
-    <ion-button (click)="showcaseShellSubjectFetch()" [disabled]="subjectFetchButtonDisabled">Fetch more Data</ion-button>
+    <ion-button (click)="showcaseShellProvider()" [disabled]="shellProviderButtonDisabled">Fetch more Data</ion-button>
   </section>
 </ion-content>

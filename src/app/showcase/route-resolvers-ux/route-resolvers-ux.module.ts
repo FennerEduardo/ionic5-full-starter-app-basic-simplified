@@ -5,8 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
 import { ComponentsModule } from '../../components/components.module';
-import { RouteResovlersUXPage } from './route-resolvers-ux.page';
 
+import { RouteResovlersUXPage } from './route-resolvers-ux.page';
 import { NonBlockingResolversPage } from './non-blocking-resolvers/non-blocking-resolvers.page';
 import { BlockingResovlersPage } from './blocking-resolvers/blocking-resolvers.page';
 import { ProgressiveShellResovlersPage } from './progressive-shell-resolvers/progressive-shell-resolvers.page';
