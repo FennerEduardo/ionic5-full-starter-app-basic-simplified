@@ -75,5 +75,4 @@ export class FormsFiltersPage {
   rangeChange(range: Range) {
     console.log('range change', range);
   }
-
 }

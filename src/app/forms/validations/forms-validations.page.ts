@@ -8,7 +8,6 @@ import { PhoneValidator } from '../../validators/phone.validator';
 import { counterRangeValidator } from '../../components/counter-input/counter-input.component';
 import { CountryPhone } from './country-phone.model';
 
-
 @Component({
   selector: 'forms-validations-page',
   templateUrl: './forms-validations.page.html',
@@ -68,7 +67,7 @@ export class FormsValidationsPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     //  We just use a few random countries, however, you can use the countries you need by just adding them to this list.
     // also you can use a library to get all the countries from the world.
     this.countries = [
@@ -133,5 +132,4 @@ export class FormsValidationsPage implements OnInit {
   onSubmit(values) {
     console.log(values);
   }
-
 }
