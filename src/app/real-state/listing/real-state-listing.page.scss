@@ -3,7 +3,7 @@
   --shell-color-rgb: 217,69,58;
 
   --real-state-listing-margin: var(--app-broad-margin);
-  --real-state-listing-background: var(--app-background-shade);
+  --real-state-listing-background: #FFF;
 }
 
 .real-state-listing-content {
@@ -26,132 +26,163 @@
 
   .description-row {
     --ion-grid-column-padding: 0px;
+    padding-bottom: 18px;
 
-    padding: calc(var(--real-state-listing-margin) / 2) var(--real-state-listing-margin) var(--real-state-listing-margin);
+    .details-col {
+      padding: calc(var(--real-state-listing-margin) / 2) var(--real-state-listing-margin) 0px;
 
-    .item-price {
-      margin: 0px 0px 5px;
-			font-size: 16px;
-			font-weight: 600;
-      color: var(--ion-color-dark-tint);
+      .price-wrapper {
+        display: flex;
+        justify-content: space-between;
 
-      .price-anchor {
-        text-decoration: none;
-      }
-
-      app-text-shell {
-        --text-shell-line-color: rgba(var(--shell-color-rgb), .25);
-        --text-shell-line-height: 16px;
-        max-width: 100px;
-
-        &.text-loaded {
-          max-width: inherit;
+        .like-icon {
+          font-size: 32px;
+          color: var(--shell-color);
         }
-      }
-    }
 
-    .item-address {
-      margin: 0px;
-      font-size: 14px;
-      color: var(--ion-color-medium-tint);
+        .item-price {
+          margin: 0px 0px 5px;
+    			font-weight: 500;
+          color: var(--ion-color-dark-tint);
+          display: flex;
 
-      app-text-shell {
-        --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
-        --text-shell-line-height: 14px;
-        max-width: 60%;
+          .price-icon {
+            margin-right: 2px;
+          }
 
-        &.text-loaded {
-          max-width: inherit;
-        }
-      }
-    }
+          app-text-shell {
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .25);
+            --text-shell-line-height: 24px;
+            min-width: 50px;
+            max-width: 100px;
 
-    .accommodations-wrapper {
-      padding-top: calc(var(--real-state-listing-margin) / 2);
-      justify-content: space-between;
-    }
-
-    .item-accommodation {
-      display: flex;
-      align-items: center;
-      max-width: fit-content;
-
-      & + .item-accommodation {
-        padding-left: calc(var(--real-state-listing-margin) / 2);
-      }
-
-      .accommodation-value {
-        display: inline-block;
-        font-weight: 500;
-        font-size: 14px;
-        color: var(--ion-color-medium-tint);
-        margin-right: 5px;
-
-        app-text-shell {
-          --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
-          --text-shell-line-height: 14px;
-          min-width: 30px;
-
-          &.text-loaded {
-            min-width: 0px;
+            &.text-loaded {
+              max-width: inherit;
+            }
           }
         }
       }
 
-      .accommodation-name {
-        display: inline-block;
-        font-size: 12px;
+      .item-address {
+        margin: 0px;
+        font-size: 14px;
         color: var(--ion-color-medium-tint);
-      }
 
-      .accommodation-icon {
-        color: var(--ion-color-medium-tint);
+        app-text-shell {
+          --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
+          --text-shell-line-height: 14px;
+          max-width: 60%;
+
+          &.text-loaded {
+            max-width: inherit;
+          }
+        }
       }
     }
 
-    .amenities-title {
-      margin: var(--real-state-listing-margin) 0px calc(var(--real-state-listing-margin) / 2);
-      font-size: 12px;
-			font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--ion-color-medium-shade);
-    }
+    .accommodations-col {
+      padding: 0px var(--real-state-listing-margin) var(--real-state-listing-margin);
 
-    .amenities-wrapper {
-      --amenity-vertical-gutter: 6px;
-      --amenity-horizontal-gutter: 4px;
+      .accommodations-wrapper {
+        padding-top: calc(var(--real-state-listing-margin));
+        // justify-content: space-between;
+      }
 
-      margin: 0px calc(var(--amenity-horizontal-gutter) * -1);
-
-      .item-amenity {
+      .item-accommodation {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        padding: var(--amenity-vertical-gutter) var(--amenity-horizontal-gutter);
+        max-width: fit-content;
 
-        .amenity-icon {
-          color: var(--ion-color-medium-tint);
-          font-size: 24px;
-          flex-shrink: 0;
+        & + .item-accommodation {
+          padding-left: calc((var(--real-state-listing-margin) / 2) * 3);
         }
 
-        .amenity-value {
-          display: block;
-          font-weight: 300;
+        .accommodation-property {
           font-size: 12px;
           color: var(--ion-color-medium-tint);
-          margin-left: calc(var(--amenity-horizontal-gutter) * 2);
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
+        }
+
+        .accommodation-value {
+          display: inline-block;
+          font-weight: 400;
+          font-size: 16px;
+          color: var(--ion-color-medium-tint);
+          margin-top: 4px;
 
           app-text-shell {
-            --text-shell-line-color: rgba(var(--shell-color-rgb), .05);
-            --text-shell-line-height: 12px;
-            min-width: 50px;
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+            --text-shell-line-height: 14px;
+            min-width: 30px;
 
             &.text-loaded {
               min-width: 0px;
+            }
+          }
+        }
+
+        .accommodation-name {
+          display: inline-block;
+          font-size: 12px;
+          color: var(--ion-color-medium-tint);
+        }
+
+        .accommodation-icon {
+          color: var(--ion-color-medium-tint);
+          font-size: 30px;
+        }
+      }
+    }
+
+
+    .amenities-col {
+      padding: 0px var(--real-state-listing-margin) calc(var(--real-state-listing-margin) / 2);
+      background: var(--app-background-shade);
+
+      .amenities-title {
+        margin: var(--real-state-listing-margin) 0px calc(var(--real-state-listing-margin) / 2);
+        font-size: 12px;
+  			// font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--ion-color-medium-shade);
+      }
+
+      .amenities-wrapper {
+        --amenity-vertical-gutter: 6px;
+        --amenity-horizontal-gutter: 4px;
+
+        margin: 0px calc(var(--amenity-horizontal-gutter) * -1);
+
+        .item-amenity {
+          display: flex;
+          align-items: center;
+          padding: var(--amenity-vertical-gutter) var(--amenity-horizontal-gutter);
+
+          .amenity-icon {
+            color: var(--ion-color-medium-tint);
+            font-size: 30px;
+            flex-shrink: 0;
+          }
+
+          .amenity-value {
+            display: block;
+            font-weight: 300;
+            font-size: 12px;
+            color: var(--ion-color-medium-tint);
+            margin-left: calc(var(--amenity-horizontal-gutter) * 2);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            app-text-shell {
+              --text-shell-line-color: rgba(var(--shell-color-rgb), .05);
+              --text-shell-line-height: 12px;
+              min-width: 50px;
+
+              &.text-loaded {
+                min-width: 0px;
+              }
             }
           }
         }

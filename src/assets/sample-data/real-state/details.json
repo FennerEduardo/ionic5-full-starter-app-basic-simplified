@@ -8,12 +8,12 @@
     "mapImage": "./assets/sample-images/real-state/real-state-map.png"
   },
   "description": "Enjoy luxury living like a local in the heart of the City, Hayes Valley District. Stroll, shop and eat at the best restaurants and boutiques within in blocks. Fitness center to stay fit & landscaped rooftop terraces with outdoor seating and bbq to lounge.",
-  "price": "1919 x ppm",
+  "price": "1900",
   "accommodations": {
-    "guests": 4,
+    "guests": 5,
     "bedrooms": 2,
-    "beds": 4,
-    "bathrooms": 2
+    "bathrooms": 2,
+    "patios": 1
   },
   "amenities": [
     {

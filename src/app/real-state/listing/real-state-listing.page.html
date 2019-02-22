@@ -21,45 +21,58 @@
         </ion-col>
       </ion-row>
       <ion-row class="description-row">
-        <ion-col size="12">
-          <h4 class="item-price">
-            <a class="price-anchor" [routerLink]="['/app/categories/real-state/', item.slug]">
+
+        <ion-col size="12" class="details-col">
+          <ion-row class="price-wrapper">
+            <h4 class="item-price">
+              <span class="price-icon">$</span>
               <app-text-shell [data]="item.price" class="no-animation"></app-text-shell>
-            </a>
-          </h4>
-          <p class="item-address">
-            <app-text-shell [data]="item.address" [attr.lines]="1"></app-text-shell>
-          </p>
+            </h4>
+            <ion-icon *ngIf="item.liked" class="like-icon" name="heart"></ion-icon>
+            <ion-icon *ngIf="!item.liked" class="like-icon" name="heart-empty"></ion-icon>
+          </ion-row>
+          <ion-row>
+            <p class="item-address">
+              <app-text-shell [data]="item.address" [attr.lines]="1"></app-text-shell>
+            </p>
+          </ion-row>
         </ion-col>
-        <ion-col size="12">
+
+        <ion-col class="accommodations-col" size="12">
           <ion-row class="accommodations-wrapper">
+
             <ion-col class="item-accommodation">
+              <ion-icon class="accommodation-icon" src="./assets/sample-icons/real-state/guests.svg"></ion-icon>
+              <span class="accommodation-property">Guests</span>
               <span class="accommodation-value">
                 <app-text-shell [data]="item.accommodations?.guests" class="no-animation"></app-text-shell>
               </span>
-              <span class="accommodation-name">guests</span>
             </ion-col>
             <ion-col class="item-accommodation">
+              <ion-icon class="accommodation-icon" src="./assets/sample-icons/real-state/bedrooms.svg"></ion-icon>
+              <span class="accommodation-property">Bedrooms</span>
               <span class="accommodation-value">
                 <app-text-shell [data]="item.accommodations?.bedrooms" class="no-animation"></app-text-shell>
               </span>
-              <span class="accommodation-name">bedrooms</span>
             </ion-col>
             <ion-col class="item-accommodation">
-              <span class="accommodation-value">
-                <app-text-shell [data]="item.accommodations?.beds" class="no-animation"></app-text-shell>
-              </span>
-              <ion-icon class="accommodation-icon" src="./assets/sample-icons/real-state/bed.svg"></ion-icon>
-            </ion-col>
-            <ion-col class="item-accommodation">
+              <ion-icon class="accommodation-icon" src="./assets/sample-icons/real-state/bathroom.svg"></ion-icon>
+              <span class="accommodation-property">Bathrooms</span>
               <span class="accommodation-value">
                 <app-text-shell [data]="item.accommodations?.bathrooms" class="no-animation"></app-text-shell>
               </span>
-              <ion-icon class="accommodation-icon" src="./assets/sample-icons/real-state/bathroom.svg"></ion-icon>
+            </ion-col>
+            <ion-col class="item-accommodation">
+              <ion-icon class="accommodation-icon" src="./assets/sample-icons/real-state/patio.svg"></ion-icon>
+              <span class="accommodation-property">Patios</span>
+              <span class="accommodation-value">
+                <app-text-shell [data]="item.accommodations?.patios" class="no-animation"></app-text-shell>
+              </span>
             </ion-col>
           </ion-row>
         </ion-col>
-        <ion-col size="12" *ngIf="item.amenities">
+
+        <ion-col size="12" class="amenities-col" *ngIf="item.amenities">
           <h5 class="amenities-title">Amenities</h5>
           <ion-row class="amenities-wrapper">
             <ng-container>
@@ -75,6 +88,7 @@
             </ng-container>
           </ion-row>
         </ion-col>
+
       </ion-row>
     </div>
   </ng-container>

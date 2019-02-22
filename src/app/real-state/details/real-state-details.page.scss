@@ -111,10 +111,12 @@
       .icon-wrapper {
         display: flex;
         align-items: center;
+        flex-grow: 0;
+        padding-right: 20px;
       }
 
       .accommodation-icon {
-        font-size: 20px;
+        font-size: 30px;
         color: var(--ion-color-medium-shade);
       }
 

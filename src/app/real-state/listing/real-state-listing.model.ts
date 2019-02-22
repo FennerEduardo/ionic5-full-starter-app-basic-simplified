@@ -3,6 +3,7 @@ export class RealStateItemModel {
   picture: string;
   address: string;
   price: string;
+  liked: boolean;
   accommodations: {
     guests: number,
     bedrooms: number,
