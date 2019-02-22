@@ -40,6 +40,8 @@
 
     app-image-shell.cover-image {
       --image-shell-border-radius: var(--app-fair-radius);
+      --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
+      --image-shell-spinner-color: rgba(var(--shell-color-rgb), .25);
     }
 
     .cover-icon-wrapper {
@@ -48,6 +50,10 @@
       height: 100%;
       justify-content: center;
       align-items: center;
+
+      app-image-shell {
+        --image-shell-loading-background: transparent;
+      }
     }
   }
 
@@ -205,6 +211,7 @@
 
       app-image-shell {
         --image-shell-border-radius: var(--app-narrow-radius);
+        --image-shell-loading-background: rgba(var(--shell-color-rgb), .20);
       }
 
       .has-more-pictures {

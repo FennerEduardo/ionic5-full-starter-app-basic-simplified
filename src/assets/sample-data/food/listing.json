@@ -4,13 +4,14 @@
       "id": 1,
       "slug": "la-olla",
       "priceRange": 3,
-      "icon": "./assets/sample-images/food/food-details-icon.png",
-      "image": "./assets/sample-images/food/food-details-showcase.png",
+      "icon": "./assets/sample-images/food/la-olla-icon.svg",
+      "image": "./assets/sample-images/food/la-olla.jpg",
       "name": "La Olla",
       "rating": 4.3,
       "tags": [
         "vegetarian",
         "vegan",
+        "gluten free",
         "desserts"
       ],
       "pictures": [
@@ -27,16 +28,18 @@
     },
     {
       "id": 2,
-      "slug": "happy-foods",
+      "slug": "salad-heaven",
       "priceRange": 1,
-      "icon": "./assets/sample-images/food/foodlogo2.png",
-      "image": "./assets/sample-images/food/food-details-showcase.png",
-      "name": "HappyFoods",
-      "rating": 3.7,
+      "icon": "./assets/sample-images/food/salad-heaven-icon.svg",
+      "image": "./assets/sample-images/food/salad-heaven.jpg",
+      "name": "Salad Heaven",
+      "rating": 3.9,
       "tags": [
-        "mexican",
+        "salads",
         "sushi",
-        "vegetarian"
+        "vegetarian",
+        "desserts",
+        "tapas"
       ],
       "pictures": [
         "./assets/sample-images/food/Cat2Foto1-1.1.png",
@@ -51,49 +54,26 @@
     },
     {
       "id": 3,
-      "slug": "tasty",
+      "slug": "les-miserables",
       "priceRange": 2,
-      "icon": "./assets/sample-images/food/foodlogo3.png",
-      "image": "./assets/sample-images/food/food-details-showcase.png",
-      "name": "Tasty",
+      "icon": "./assets/sample-images/food/les-miserables-icon.svg",
+      "image": "./assets/sample-images/food/les-miserables.jpg",
+      "name": "Les Miserables",
       "rating": 2.5,
       "tags": [
         "meats",
-        "indian",
-        "currys",
-        "desserts"
-      ],
-      "pictures": [
-        "./assets/sample-images/food/Cat3Foto1-1.1.png",
-        "./assets/sample-images/food/Cat3Foto2-1.1.png",
-        "./assets/sample-images/food/Cat3Foto3-1.1.png",
-        "./assets/sample-images/food/Cat3Foto4-1.1.png"
-      ],
-      "address": "7104 Burning Wood Park"
-    },
-    {
-      "id": 4,
-      "slug": "debbies",
-      "priceRange": 2,
-      "icon": "./assets/sample-images/food/foodlogo4.png",
-      "image": "./assets/sample-images/food/food-details-showcase.png",
-      "name": "Debbie’s",
-      "rating": 5,
-      "tags": [
+        "burgers",
         "fish",
-        "gluten free",
-        "pizza"
+        "desserts"
       ],
       "pictures": [
         "./assets/sample-images/food/Cat4Foto1-1.1.png",
         "./assets/sample-images/food/Cat4Foto2-1.1.png",
         "./assets/sample-images/food/Cat4Foto3-1.1.png",
         "./assets/sample-images/food/Cat4Foto4-1.1.png",
-        "./assets/sample-images/food/Cat4Foto5-1.1.png",
-        "./assets/sample-images/food/Cat4Foto4-1.1.png",
-        "./assets/sample-images/food/Cat4Foto3-1.1.png"
+        "./assets/sample-images/food/Cat4Foto5-1.1.png"
       ],
-      "address": "4362 Wandsworth Street"
+      "address": "7104 Burning Wood Park"
     }
   ]
 }
