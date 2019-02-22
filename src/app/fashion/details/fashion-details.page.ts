@@ -1,8 +1,8 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FashionDetailsModel } from './fashion-details.model';
 import { AlertController } from '@ionic/angular';
-import { map } from 'rxjs/operators';
+
+import { FashionDetailsModel } from './fashion-details.model';
 
 @Component({
   selector: 'app-fashion-details',
@@ -32,47 +32,58 @@ export class FashionDetailsPage implements OnInit {
     public alertController: AlertController
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.route && this.route.data) {
-      this.route.data.subscribe(routeData => {
-        const data = routeData['data'];
-        console.log('data - FashionDetailsPage - ngOnInit()', data);
+      // We resolved a promise for the data Observable
+      const promiseObservable = this.route.data;
+      console.log('Route Resolve Observable => promiseObservable: ', promiseObservable);
 
-        if (data) {
-          data.subscribe((observableData: FashionDetailsModel) => {
-            if (observableData) {
-              this.details = observableData;
+      if (promiseObservable) {
+        promiseObservable.subscribe(promiseValue => {
+          const dataObservable = promiseValue['data'];
+          console.log('Subscribe to promiseObservable => dataObservable: ', dataObservable);
 
-              this.colorVariants = this.details.colorVariants
-              .map(item =>
-                ({
-                  name: item.name,
-                  type: 'radio',
-                  label: item.name,
-                  value: item.value,
-                  checked: item.default
-                })
-              );
-              this.sizeVariants = this.details.sizeVariants
-              .map(item =>
-                ({
-                  name: item.name,
-                  type: 'radio',
-                  label: item.name,
-                  value: item.value,
-                  checked: item.default
-                })
-              );
-            }
+          if (dataObservable) {
+            dataObservable.subscribe(observableValue => {
+              const pageData: FashionDetailsModel = observableValue;
+              // tslint:disable-next-line:max-line-length
+              console.log('Subscribe to dataObservable (can emmit multiple values) => PageData (' + ((pageData && pageData.isShell) ? 'SHELL' : 'REAL') + '): ', pageData);
+              // As we are implementing an App Shell architecture, pageData will be firstly an empty shell model,
+              // and the real remote data once it gets fetched
+              if (pageData) {
+                this.details = pageData;
 
-            console.log('observableData - FashionDetailsPage - ngOnInit()', observableData);
-          });
-        } else {
-          alert('No route data 2');
-        }
-      });
+                this.colorVariants = this.details.colorVariants
+                .map(item =>
+                  ({
+                    name: item.name,
+                    type: 'radio',
+                    label: item.name,
+                    value: item.value,
+                    checked: item.default
+                  })
+                );
+                this.sizeVariants = this.details.sizeVariants
+                .map(item =>
+                  ({
+                    name: item.name,
+                    type: 'radio',
+                    label: item.name,
+                    value: item.value,
+                    checked: item.default
+                  })
+                );
+              }
+            });
+          } else {
+            console.warn('No dataObservable coming from Route Resolver promiseObservable');
+          }
+        });
+      } else {
+        console.warn('No promiseObservable coming from Route Resolver data');
+      }
     } else {
-      alert('No route data');
+      console.warn('No data coming from Route Resolver');
     }
   }
 
@@ -100,6 +111,7 @@ export class FashionDetailsPage implements OnInit {
 
     await alert.present();
   }
+
   async openSizeChooser() {
     const alert = await this.alertController.create({
       header: 'Size',
