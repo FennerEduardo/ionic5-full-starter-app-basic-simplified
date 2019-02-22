@@ -105,8 +105,8 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
         this._minutesLeft = Math.floor(this._minuteModulus(secondsLeft) / this._minuteDivisor);
         this._secondsLeft = Math.floor(this._secondModulus(secondsLeft) / this._secondDivisor);
       },
-      (error) => console.error(error),
-      () => console.log('[takeUntil] complete')
+      (error) => console.error(error)
+      // () => console.log('[takeUntil] complete')
     );
   }
 
