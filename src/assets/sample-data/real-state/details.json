@@ -2,7 +2,7 @@
   "id": 1,
   "picture": "./assets/sample-images/real-state/RealState1-64.25.png",
   "location": {
-    "address": "1900 Powell Street",
+    "address": "1805 Powell Street",
     "city": "San Fransisco, CA, United States",
     "latlng": "37.8383976,-122.3019787",
     "mapImage": "./assets/sample-images/real-state/real-state-map.png"

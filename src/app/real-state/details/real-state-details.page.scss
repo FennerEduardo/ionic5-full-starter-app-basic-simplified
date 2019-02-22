@@ -36,11 +36,17 @@
 			font-size: 18px;
 			font-weight: 600;
       color: var(--ion-color-dark-tint);
+      display: flex;
+
+      .price-icon {
+        margin-right: 2px;
+      }
 
       app-text-shell {
         --text-shell-line-color: rgba(var(--shell-color-rgb), .25);
         --text-shell-line-height: 18px;
         max-width: 100px;
+        min-width: 50px;
 
         &.text-loaded {
           max-width: inherit;
