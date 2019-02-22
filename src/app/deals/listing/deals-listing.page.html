@@ -56,7 +56,7 @@
           </ng-container>
           <ng-container *ngIf="((item.expirationDate | appTimeDifference) > 0 && (item.expirationDate | appTimeDifference) <= 2)">
             <ion-row class="countdown-wrapper">
-              <app-countdown-timer class="item-countdown" [end]="item.expirationDate" [units]="{from: 'hour', to: 'second'}"></app-countdown-timer>
+              <app-countdown-timer class="item-countdown" fill="inner-time" [end]="item.expirationDate" [units]="{from: 'hour', to: 'second'}"></app-countdown-timer>
             </ion-row>
           </ng-container>
         </ion-col>

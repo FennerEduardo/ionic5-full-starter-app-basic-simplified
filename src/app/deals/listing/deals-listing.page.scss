@@ -253,18 +253,19 @@
           right: 0px;
 
           app-countdown-timer.item-countdown {
-            --inner-shadow-color: rgba(var(--ion-color-darkest-rgb), 0.2);
+            --fill-shadow-color: rgba(var(--ion-color-darkest-rgb), 0.2);
 
-            --countdown-time-margin: var(--countdown-gutter) var(--countdown-gutter) 0px;
-            --countdown-time-padding: calc(var(--deals-listing-margin) / 2) calc(var(--deals-listing-margin) / 4);
-            --countdown-time-border: none;
-            --countdown-time-border-radius: var(--app-narrow-radius);
-            --countdown-time-background: var(--ion-color-lightest);
-            --countdown-time-shadow: 0px 0px 5px 0px var(--inner-shadow-color);
-            --countdown-time-color: var(--ion-color-darkest);
-            --countdown-time-text-shadow: none;
+            --countdown-time-margin: 0px;
+            --countdown-time-padding: 0px;
+            --countdown-inner-time-margin: var(--countdown-gutter) var(--countdown-gutter) 0px;
+            --countdown-inner-time-padding: calc(var(--deals-listing-margin) / 2) calc(var(--deals-listing-margin) / 4);
+            --countdown-fill-border: none;
+            --countdown-fill-border-radius: var(--app-narrow-radius);
+            --countdown-fill-background: var(--ion-color-lightest);
+            --countdown-fill-shadow: 0px 0px 5px 0px var(--fill-shadow-color);
+            --countdown-value-color: var(--ion-color-darkest);
+            --countdown-unit-color: var(--ion-color-medium-shade);
             --countdown-time-flex-direction: column;
-            --countdown-alt-color: var(--ion-color-medium-shade);
 
             font-weight: 500;
             font-size: 14px;
