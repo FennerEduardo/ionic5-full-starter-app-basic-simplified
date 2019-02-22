@@ -13,7 +13,7 @@ export class DealsListingPage implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.route && this.route.data) {
       // We resolved a promise for the data Observable
       const promiseObservable = this.route.data;
