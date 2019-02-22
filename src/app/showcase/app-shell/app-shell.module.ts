@@ -1,33 +1,37 @@
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+import { IonicModule } from '@ionic/angular';
+
 import { ComponentsModule } from '../../components/components.module';
-import { CustomComponentsPage } from './showcase-custom-components.page';
+
+import { AppShellPage } from './app-shell.page';
 import { ShowcaseService } from '../showcase.service';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: AppShellPage
+  }
+];
 
 @NgModule({
   imports: [
-    IonicModule,
     CommonModule,
-    ComponentsModule,
     FormsModule,
-    HttpClientModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: CustomComponentsPage
-      }
-    ])
+    IonicModule,
+    RouterModule.forChild(routes),
+    ComponentsModule,
+    HttpClientModule
   ],
   declarations: [
-    CustomComponentsPage
+    AppShellPage
   ],
   providers: [
     ShowcaseService
   ]
 })
-export class ShowcaseCustomComponentsModule {}
+export class AppShellModule {}

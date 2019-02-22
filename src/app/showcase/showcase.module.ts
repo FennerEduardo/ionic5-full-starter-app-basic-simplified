@@ -6,21 +6,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from '../components/components.module';
 
-import { AppShellPage } from './app-shell/showcase-shell.page';
-import { CustomComponentsPage } from './custom-components/showcase-custom-components.page';
-
 const showcaseRoutes: Routes = [
   {
     path: 'app-shell',
-    component: AppShellPage
+    loadChildren: './app-shell/app-shell.module#AppShellModule'
   },
   {
     path: 'custom-components',
-    component: CustomComponentsPage
+    loadChildren: './custom-components/custom-components.module#CustomComponentsModule'
   },
   {
     path: 'route-resolvers-ux',
-    loadChildren: './route-resolvers-ux/showcase-route-resolvers-ux.module#ShowcaseRouteResolversUXModule'
+    loadChildren: './route-resolvers-ux/route-resolvers-ux.module#RouteResolversUXModule'
   }
 ];
 
@@ -33,6 +30,6 @@ const showcaseRoutes: Routes = [
     ComponentsModule,
     HttpClientModule
   ],
-  declarations: [ AppShellPage, CustomComponentsPage ]
+  declarations: [ ]
 })
 export class ShowcasePageModule {}

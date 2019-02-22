@@ -20,8 +20,8 @@ import { ShowcaseShellModel } from '../showcase-shell.model';
 
 @Component({
   selector: 'app-showcase-shell',
-  templateUrl: './showcase-shell.page.html',
-  styleUrls: ['./showcase-shell.page.scss']
+  templateUrl: './app-shell.page.html',
+  styleUrls: ['./app-shell.page.scss']
 })
 export class AppShellPage implements OnInit {
   // We will manually fetch data using the HttpClient and assign it to this property

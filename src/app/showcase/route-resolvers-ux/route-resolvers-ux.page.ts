@@ -20,8 +20,8 @@ import { ShowcaseShellModel } from '../showcase-shell.model';
 
 @Component({
   selector: 'app-showcase-route-resolvers-ux',
-  templateUrl: './showcase-route-resolvers-ux.page.html',
-  styleUrls: ['./showcase-route-resolvers-ux.page.scss']
+  templateUrl: './route-resolvers-ux.page.html',
+  styleUrls: ['./route-resolvers-ux.page.scss']
 })
 export class RouteResovlersUXPage implements OnInit {
   // We will manually fetch data using the HttpClient and assign it to this property

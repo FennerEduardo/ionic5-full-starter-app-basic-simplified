@@ -11,7 +11,7 @@ export class RealStateDetailsModel {
   accommodations: {
     guests: number,
     bedrooms: number,
-    beds: number,
+    patios: number,
     bathrooms: number
   };
   amenities: Array<{name: string, icon: string}> = [

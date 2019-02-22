@@ -8,8 +8,8 @@ import * as dayjs from 'dayjs';
 
 @Component({
   selector: 'app-showcase-custom-components',
-  templateUrl: './showcase-custom-components.page.html',
-  styleUrls: ['./showcase-custom-components.page.scss']
+  templateUrl: './custom-components.page.html',
+  styleUrls: ['./custom-components.page.scss']
 })
 export class CustomComponentsPage {
 
