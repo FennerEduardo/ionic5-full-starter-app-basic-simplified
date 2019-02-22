@@ -1,45 +1,59 @@
-app-countdown-timer {
-  --countdown-time-margin: 2px;
-  --countdown-time-padding: 0px;
-  --countdown-time-inner-padding: 0px;
-  --countdown-time-border: none;
-  --countdown-time-border-radius: 0px;
-  --countdown-time-background: transparent;
-  --countdown-time-shadow: none;
-  --countdown-time-color: #808080;
-  --countdown-time-text-shadow: none;
-  --countdown-time-flex-direction: row-reverse;
+@mixin fill-container(){
+  border: var(--countdown-fill-border);
+  border-radius: var(--countdown-fill-border-radius);
+  background-color: var(--countdown-fill-background);
+  box-shadow: var(--countdown-fill-shadow);
+}
 
-  --countdown-alt-color: #808080;
+:host {
+  --countdown-margin: 0px;
+  --countdown-padding: 0px;
+  --countdown-time-margin: 0px;
+  --countdown-time-padding: 0px;
+  --countdown-inner-time-margin: 2px;
+  --countdown-inner-time-padding: 0px;
+
+  --countdown-fill-border: none;
+  --countdown-fill-border-radius: 0px;
+  --countdown-fill-background: transparent;
+  --countdown-fill-shadow: none;
+
+  --countdown-value-color: #CCC;
+  --countdown-unit-color: #CCC;
+
+  --countdown-time-flex-direction: row-reverse;
 
   display: block;
 
-  .countdown-row {
-    --ion-grid-column-padding: var(--countdown-time-inner-padding);
+  .countdown {
+    margin: var(--countdown-margin);
+    padding: var(--countdown-padding);
 
     justify-content: center;
     flex-wrap: nowrap;
-
-    .time-col {
-      display: flex;
-      flex-direction: var(--countdown-time-flex-direction);
-      align-items: center;
-      justify-content: center;
-    }
   }
 
-  .time-wrapper {
-    margin: var(--countdown-time-margin);
+  .time {
     padding: var(--countdown-time-padding);
-    border: var(--countdown-time-border);
-    border-radius: var(--countdown-time-border-radius);
-    background-color: var(--countdown-time-background);
-    box-shadow: var(--countdown-time-shadow);
+    margin: var(--countdown-time-margin);
 
-    .time-left {
+    display: flex;
+    flex-direction: var(--countdown-time-flex-direction);
+    align-items: center;
+    justify-content: center;
+
+    .time-unit {
       display: block;
-      color: var(--countdown-time-color);
-      text-shadow: var(--countdown-time-text-shadow);
+      color: var(--countdown-unit-color);
+      font-size: 0.7em;
+      text-align: center;
+      text-transform: uppercase;
+      width: 2ex;
+    }
+
+    .time-value {
+      display: block;
+      color: var(--countdown-value-color);
       text-align: center;
       font-size: 1em;
       line-height: 1em;
@@ -53,12 +67,26 @@ app-countdown-timer {
     }
   }
 
-  .time-alt-text {
-    display: block;
-    color: var(--countdown-alt-color);
-    font-size: 0.7em;
-    text-align: center;
-    text-transform: uppercase;
-    width: 2ex;
+  .inner-time {
+    margin: var(--countdown-inner-time-margin);
+    padding: var(--countdown-inner-time-padding);
+  }
+}
+
+:host([fill="countdown"]) {
+  .countdown {
+    @include fill-container();
+  }
+}
+
+:host([fill="time"]) {
+  .time {
+    @include fill-container();
+  }
+}
+
+:host([fill="inner-time"]) {
+  .inner-time {
+    @include fill-container();
   }
 }

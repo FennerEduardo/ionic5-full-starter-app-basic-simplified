@@ -1,7 +1,7 @@
-import { Component, ViewEncapsulation, Input, HostBinding, PLATFORM_ID, Inject, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 
 import { Observable, Subject, interval } from 'rxjs';
-import { take, takeUntil } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 
 // When fixed, uncomment this
 // import * as dayjs from 'dayjs';
@@ -18,8 +18,7 @@ const dayjs: any = _dayjs;
   templateUrl: './countdown-timer.component.html',
   styleUrls: [
     './countdown-timer.component.scss'
-  ],
-  encapsulation: ViewEncapsulation.None
+  ]
 })
 export class CountdownTimerComponent implements OnInit, OnDestroy {
   _endingTime: any;
