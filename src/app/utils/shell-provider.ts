@@ -18,19 +18,22 @@ export class ShellProvider<T> {
   private debugMode = (environment && environment.shell && environment.shell.debug) ? environment.shell.debug : false;
 
   constructor(shellModel: T, dataObservable: Observable<T>) {
+    // tslint:disable-next-line:max-line-length
+    const shellClassName = (shellModel && shellModel.constructor && shellModel.constructor.name) ? shellModel.constructor.name : 'No Class Name';
+
     // tslint:disable-next-line:no-console
-    console.time('Shell Provider Roundtrip');
+    console.time('[' + shellClassName + '] ShellProvider roundtrip');
     // Set the shell model as the initial value
     this._subject = new BehaviorSubject<T>(shellModel);
 
     const delayObservable = of(true).pipe(
-      delay(this.networkDelay),
-      finalize(() => console.log('delayObservable COMPLETED')),
+      delay(this.networkDelay)
+      // finalize(() => console.log('delayObservable COMPLETED'))
     );
 
     dataObservable.pipe(
-      first(), // Prevent the need to unsubscribe because .first() completes the observable
-      finalize(() => console.log('dataObservable COMPLETED'))
+      first() // Prevent the need to unsubscribe because .first() completes the observable
+      // finalize(() => console.log('dataObservable COMPLETED'))
     );
 
     // Put both delay and data Observables in a forkJoin so they execute in parallel so that
@@ -40,15 +43,13 @@ export class ShellProvider<T> {
       dataObservable
     )
     .pipe(
-      finalize(() => console.log('forkedObservables COMPLETED'))
+      // finalize(() => console.log('forkedObservables COMPLETED'))
     )
     .subscribe(([delayValue, dataValue]: [boolean, T]) => {
       if (!this.debugMode) {
         this._subject.next(dataValue);
         // tslint:disable-next-line:no-console
-        console.log('Shell Provider for:', shellModel.constructor.name);
-        // tslint:disable-next-line:no-console
-        console.timeEnd('Shell Provider Roundtrip');
+        console.timeEnd('[' + shellClassName + '] ShellProvider roundtrip');
       }
     });
 
