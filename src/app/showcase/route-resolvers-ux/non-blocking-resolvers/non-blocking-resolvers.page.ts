@@ -25,25 +25,29 @@ export class NonBlockingResolversPage implements OnInit {
       const promiseObservable = this.route.data;
       console.log('Showcase NON Blocking Resovlers - Route Resolve Observable => promiseObservable: ', promiseObservable);
 
-      promiseObservable.subscribe(promiseValue => {
-        const dataObservable = promiseValue['data'];
-        console.log('Showcase NON Blocking Resovlers - Subscribe to promiseObservable => dataObservable: ', dataObservable);
+      if (promiseObservable) {
+        promiseObservable.subscribe(promiseValue => {
+          const dataObservable = promiseValue['data'];
+          console.log('Showcase NON Blocking Resovlers - Subscribe to promiseObservable => dataObservable: ', dataObservable);
 
-        if (dataObservable) {
-          dataObservable.subscribe(observableValue => {
-            const pageData: ShowcaseShellModel = observableValue;
-            // tslint:disable-next-line:max-line-length
-            console.log('Showcase NON Blocking Resovlers - Subscribe to dataObservable (will emmit just one value) => PageData (' + ((pageData && pageData.isShell) ? 'SHELL' : 'REAL') + '): ', pageData);
-            if (pageData) {
-              this.routeResolveData = pageData;
-            }
-          });
-        } else {
-          alert('No route data 2');
-        }
-      });
+          if (dataObservable) {
+            dataObservable.subscribe(observableValue => {
+              const pageData: ShowcaseShellModel = observableValue;
+              // tslint:disable-next-line:max-line-length
+              console.log('Showcase NON Blocking Resovlers - Subscribe to dataObservable (will emmit just one value) => PageData (' + ((pageData && pageData.isShell) ? 'SHELL' : 'REAL') + '): ', pageData);
+              if (pageData) {
+                this.routeResolveData = pageData;
+              }
+            });
+          } else {
+            console.warn('No dataObservable coming from Route Resolver promiseObservable');
+          }
+        });
+      } else {
+        console.warn('No promiseObservable coming from Route Resolver data');
+      }
     } else {
-      alert('No route data');
+      console.warn('No data coming from Route Resolver');
     }
   }
 }

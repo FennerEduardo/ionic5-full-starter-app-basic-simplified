@@ -23,7 +23,7 @@
       </div>
     </ng-container>
     <ng-container *ngIf="routeResolveData">
-      <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
+      <ion-row style="background-color: #FFF; padding: 10px;">
         <ion-col size="12">
           <div [ngStyle]="{'background-image': 'url(' + routeResolveData?.cover + ')'}" style="background-size: cover; background-repeat: no-repeat;">
             <app-aspect-ratio [ratio]="{w:2, h:1}">
@@ -46,5 +46,5 @@
         </ion-col>
       </ion-row>
     </ng-container>
-  </section>  
+  </section>
 </ion-content>

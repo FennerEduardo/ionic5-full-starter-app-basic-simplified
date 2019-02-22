@@ -34,10 +34,10 @@ export class BlockingResovlersPage implements OnInit {
           }
         });
       } else {
-        alert('No route data 2');
+        console.warn('No dataObservable coming from Route Resolver data');
       }
     } else {
-      alert('No route data');
+      console.warn('No data coming from Route Resolver');
     }
   }
 }
