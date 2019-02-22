@@ -49,6 +49,11 @@
       app-text-shell {
         --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
         --text-shell-line-height: 18px;
+        max-width: 30%;
+
+        &.text-loaded {
+          max-width: unset;
+        }
       }
     }
 
@@ -61,6 +66,11 @@
       app-text-shell {
         --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
         --text-shell-line-height: 16px;
+        max-width: 50%;
+
+        &.text-loaded {
+          max-width: unset;
+        }
       }
     }
 

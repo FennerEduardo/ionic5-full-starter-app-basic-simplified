@@ -41,6 +41,7 @@
     app-image-shell.cover-image {
       --image-shell-border-radius: var(--app-fair-radius);
       --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
+      --image-shell-overlay-background: transparent;
       --image-shell-spinner-color: rgba(var(--shell-color-rgb), .25);
     }
 
@@ -91,6 +92,11 @@
         app-text-shell {
           --text-shell-line-color: rgba(var(--shell-color-rgb), .25);
           --text-shell-line-height: 20px;
+          max-width: 30%;
+
+          &.text-loaded {
+            max-width: unset;
+          }
         }
       }
 
@@ -103,6 +109,11 @@
         app-text-shell {
           --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
           --text-shell-line-height: 12px;
+          max-width: 50%;
+
+          &.text-loaded {
+            max-width: unset;
+          }
         }
       }
 

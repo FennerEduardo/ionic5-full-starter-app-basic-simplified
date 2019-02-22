@@ -28,11 +28,11 @@
           <ion-row class="description-wrapper">
             <h3 class="item-name">
               <a class="name-anchor" [routerLink]="['/app/categories/food/', item.slug]">
-                <app-text-shell [data]="item.name"></app-text-shell>
+                <app-text-shell [data]="item.name" class="no-animation"></app-text-shell>
               </a>
             </h3>
             <p class="item-address">
-              <app-text-shell [data]="item.address" [attr.lines]="1"></app-text-shell>
+              <app-text-shell [data]="item.address" [attr.lines]="1" class="no-animation"></app-text-shell>
             </p>
             <ion-row class="item-tags">
               <ion-col class="tag-wrapper" *ngFor="let tag of item.tags">
