@@ -1,16 +1,4 @@
-// TODO: pasar este mixin a un shared mixins.scss
-@mixin custom-button-color($color){
-  @content;
-
-  .ion-color-#{$color} {
-    --ion-color-base: var(--ion-color-#{$color}) !important;
-    --ion-color-base-rgb: var(--ion-color-#{$color}-rgb) !important;
-    --ion-color-contrast: var(--ion-color-#{$color}-contrast) !important;
-    --ion-color-contrast-rgb: var(--ion-color-#{$color}-contrast-rgb) !important;
-    --ion-color-shade: var(--ion-color-#{$color}-shade) !important;
-    --ion-color-tint: var(--ion-color-#{$color}-tint) !important;
-  }
-}
+@import "../../../theme/mixins/ion-color";
 
 :host {
   --shell-color: #70DF70;
@@ -27,7 +15,8 @@
   --deals-details-margin: var(--app-broad-margin);
   --deals-details-background: var(--app-background-shade);
 
-  @include custom-button-color('claim') {
+  // Add custom colors to use with [color] property
+  @include ion-color('claim') {
     --ion-color-claim: #70DF70;
     --ion-color-claim-rgb: 112,223,112;
     --ion-color-claim-contrast: #FFFFFF;

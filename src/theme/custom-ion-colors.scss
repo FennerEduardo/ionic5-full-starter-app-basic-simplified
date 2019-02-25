@@ -1,18 +1,14 @@
-@mixin custom-button-color($color){
-  @content;
+@import "./mixins/ion-color";
 
-  .ion-color-#{$color} {
-    --ion-color-base: var(--ion-color-#{$color}) !important;
-    --ion-color-base-rgb: var(--ion-color-#{$color}-rgb) !important;
-    --ion-color-contrast: var(--ion-color-#{$color}-contrast) !important;
-    --ion-color-contrast-rgb: var(--ion-color-#{$color}-contrast-rgb) !important;
-    --ion-color-shade: var(--ion-color-#{$color}-shade) !important;
-    --ion-color-tint: var(--ion-color-#{$color}-tint) !important;
-  }
-}
-
+// Add custom colors to use with [color] property
+// (see: https://forum.ionicframework.com/t/adding-custom-colours-to-use-with-color-property/136919)
+// GLOBAL COLORS:
+//    You can define new Ionic colors here (inside :root{ ... }) to be available within the entire app
+// LOCAL COLORS:
+//    You can also define new Ionic colors in each page (inside :host{ ... }) to be available just in that page
+//    (We have an example of local custom Ionic colors in the deals pages)
 :root {
-  @include custom-button-color('facebook') {
+  @include ion-color('facebook') {
     --ion-color-facebook: #3b5998;
     --ion-color-facebook-rgb: 59,89,152;
     --ion-color-facebook-contrast: #ffffff;
@@ -21,7 +17,7 @@
     --ion-color-facebook-tint: #4f6aa2;
   }
 
-  @include custom-button-color('google') {
+  @include ion-color('google') {
     --ion-color-google: #cc181e;
     --ion-color-google-rgb: 204,24,30;
     --ion-color-google-contrast: #ffffff;
@@ -30,7 +26,7 @@
     --ion-color-google-tint: #d12f35;
   }
 
-  @include custom-button-color('twitter') {
+  @include ion-color('twitter') {
     --ion-color-twitter: #00aced;
     --ion-color-twitter-rgb: 0,172,237;
     --ion-color-twitter-contrast: #ffffff;
