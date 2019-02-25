@@ -2,21 +2,19 @@
   --swiper-pagination-space: 40px;
   --swiper-pagination-height: 18px;
   --pagination-bullet-size: 10px;
-
   --slides-background: var(--ion-color-primary);
+  --getting-started-margin: var(--app-broad-margin);
 }
 
-// If you use ViewEncapsulation.None then add ion-header and ion-content styles here
-// app-getting-started {
-//
-// }
-
-// If you choose ViewEncapsulation.ShadowDom, the leave ion-header and ion-content styles here
 ion-header {
   ion-toolbar {
     --background: var(--slides-background);
     // For the skip button
-    --color: var(--ion-color-tertiary);
+    // TODO: hacerlo como hacemos los otros botones
+    // --ion-toolbar-color: var(--ion-color-lightest);
+    ion-button {
+      --color: var(--ion-color-lightest);
+    }
   }
 }
 
@@ -29,22 +27,215 @@ ion-content {
 }
 
 .getting-started-slides {
-  height: 100%;
   --bullet-background: var(--ion-color-tertiary);
   --bullet-background-active: var(--ion-color-tertiary);
 
+  height: 100%;
+
   .slide-inner-row {
+    --ion-grid-column-padding: 0px;
+
     height: 100%;
     width: 100%;
-    padding: 5px 5px 0px;
+    padding: var(--getting-started-margin);
     // .swiper-pagination space
     border-bottom: var(--swiper-pagination-space) solid transparent;
     background-clip: padding-box;
+  }
+}
 
-    // Don't know why it gets overridden by content-box if I don't add this
-    box-sizing: border-box;
+.question-slide {
+  .slide-title {
+    color: var(--ion-color-tertiary);
+    text-align: center;
+    margin: calc(var(--getting-started-margin) / 2) calc(var(--getting-started-margin) * 2) 0px;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 30px;
   }
 
+  .slide-subtitle {
+    color: var(--ion-color-tertiary);
+    text-align: center;
+    margin: calc(var(--getting-started-margin) / 2) var(--getting-started-margin);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 28px;
+  }
+}
+
+.browsing-categories-slide {
+  .question-options-list {
+    margin: var(--getting-started-margin) 0px 0px;
+    background: transparent;
+
+    .question-option {
+      --padding-start: 0px;
+      --ion-item-background: var(--ion-color-tertiary);
+      --ion-item-color: var(--ion-color-primary);
+      --inner-border-width: 0px;
+      --inner-padding-end: 0px;
+
+      text-align: center;
+
+      &:not(:last-child) {
+        margin-bottom: var(--getting-started-margin);
+      }
+
+      &.item-radio-checked {
+        --ion-item-background: var(--ion-color-secondary);
+        --ion-item-color: var(--ion-color-tertiary);
+      }
+
+      ion-label {
+        margin: calc(var(--getting-started-margin) / 2) 0px;
+      }
+
+      ion-radio {
+        margin: 0px;
+        // To hide the .radio-icon
+        width: 0px;
+        --border-width: 0px;
+        height: 0px;
+        // We cant set width and height for .radio-icon .radio-inner, so lets hide it changing its color
+        --color-checked: transparent;
+      }
+    }
+  }
+}
+
+.interests-to-follow-slide {
+  --max-heading-height: 16%;
+  --max-call-to-actions-height: 10%;
+
+  .slide-inner-row {
+    flex-flow: column;
+    justify-content: space-between;
+
+    // In the last slide .swiper-pagination is hidden
+    border-width: 0px;
+  }
+
+  .heading-col {
+    flex: 0 1 auto;
+    max-height: var(--max-heading-height);
+    max-height: fit-content;
+  }
+
+  .question-options-col {
+    --options-gutter: 5px;
+
+    overflow: scroll;
+    // Hide scrollbars: https://stackoverflow.com/a/38994837/1116959
+    -ms-overflow-style: none;  // IE 10+
+    // Firefox
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+    // Safari and Chrome
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .options-list-row {
+      --ion-grid-column-padding: 0px;
+
+      padding-top: var(--options-gutter);
+      padding-bottom: var(--options-gutter);
+
+      ion-col {
+        padding-top: var(--options-gutter);
+        padding-bottom: var(--options-gutter);
+
+        &:nth-child(odd) {
+          padding-right: var(--options-gutter);
+        }
+
+        &:nth-child(even) {
+          padding-left: var(--options-gutter);
+        }
+      }
+    }
+  }
+
+  .call-to-action-col {
+    flex: 0 1 auto;
+    max-height: var(--max-call-to-actions-height);
+    max-height: fit-content;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding-top: calc(var(--getting-started-margin) / 2);
+
+    .signup-button {
+      --background: var(--ion-color-secondary);
+      --background-activated: var(--ion-color-secondary);
+      --color: #FFF;
+      --color-activated: #e6e6e6;
+
+      margin: 0px;
+      flex: 1 0 100%;
+    }
+  }
+
+  .custom-checkbox {
+    app-image-shell {
+      --image-shell-loading-background: rgba(var(--ion-color-tertiary-rgb), .4);
+      --image-shell-overlay-background: rgba(var(--ion-color-primary-rgb), .4);
+    }
+
+    .checkbox-title {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 22px;
+      color: var(--ion-color-lightest);
+      text-align: center;
+      word-break: break-word;
+      overflow: visible;
+
+      position: absolute;
+      width: 70%;
+      left: 15%;
+      // vertically centered
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    ion-checkbox {
+      --border-radius: 0px;
+      --border-width: 10vw;
+      --border-color: transparent;
+      --border-color-checked: transparent;
+      --background: transparent;
+      --background-checked: var(--ion-color-secondary-rgb);
+      --background-checked: rgba(var(--ion-color-secondary-rgb), .4);
+
+      height: 100%;
+      width: 100%;
+      // Note: We cannote change the styles of the .checkbox-icon because it's inside the shadow dom.
+      // An alternative would be to set --width and --height to 0px and add a custom overlay and icon in the <custom-checkbox> html
+    }
+
+    &.checkbox-checked {
+      .checkbox-title {
+        display: none;
+      }
+    }
+  }
+}
+
+:host(.last-slide-active) {
+  ::ng-deep .getting-started-slides {
+    .swiper-pagination {
+      display: none;
+    }
+  }
+}
+
+// ISSUE: .swiper-paggination gets rendered dynamically. That prevents styling the elements when using the default Angular ViewEncapsulation.None
+//        (Angular doesn't add an '_ngcontent' attribute to the .swiper-paggination because it's dynamically rendered)
+// FIX:   See: https://stackoverflow.com/a/36265072/1116959
+:host ::ng-deep .getting-started-slides {
   .swiper-pagination {
     height: var(--swiper-pagination-height);
     line-height: 1;
@@ -54,161 +245,6 @@ ion-content {
     .swiper-pagination-bullet {
       width: var(--pagination-bullet-size);
       height: var(--pagination-bullet-size);
-    }
-  }
-}
-
-.question-slide {
-  .slide-title {
-    color: var(--ion-color-tertiary);
-    text-align: center;
-    margin: 6px 18% 0;
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 30px;
-  }
-
-  .slide-subtitle {
-    color: var(--ion-color-tertiary);
-    text-align: center;
-    margin: 8px 9%;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 28px;
-  }
-}
-
-.browsing-categories-slide {
-  .question-options-list {
-    margin: 30px 6% 0;
-    background: transparent;
-
-    .question-option {
-      --padding-start: 0px;
-      --ion-item-background: var(--ion-color-tertiary);
-      --ion-item-color: var(--ion-color-primary);
-
-      text-align: center;
-
-      &:not(:last-child) {
-        margin-bottom: 20px;
-      }
-
-      &.item-radio-checked {
-        --ion-item-background: var(--ion-color-secondary);
-        --ion-item-color: var(--ion-color-tertiary);
-      }
-
-      ion-label {
-        margin: 10px 0px;
-      }
-
-      ion-radio {
-        margin: 0px;
-
-        // To hide the .radio-icon
-        --width: 0px;
-        --border-width: 0px;
-        --height: 0px;
-        // We cant set width and height for .radio-icon .radio-inner, so lets hide it changing its color
-        --color-checked: transparent;
-      }
-    }
-  }
-}
-
-.interests-to-follow-slide {
-  .slide-inner-row {
-    flex-flow: column;
-    justify-content: space-between;
-
-    // In the last slide .swiper-pagination is hidden
-    border-width: 0px;
-    padding: 5px;
-  }
-
-  .heading-col {
-    max-height: 16%;
-    max-height: fit-content;
-  }
-
-  .question-options-col {
-    --ion-grid-column-padding: 5px;
-
-    overflow: scroll;
-
-    // Hide scrollbars: https://stackoverflow.com/a/38994837/1116959
-    -ms-overflow-style: none;  // IE 10+
-    overflow: -moz-scrollbars-none;  // Firefox
-    // Safari and Chrome
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  .call-to-action-col {
-    max-height: 10%;
-    max-height: fit-content;
-
-    .signup-button {
-      --background: var(--ion-color-secondary);
-      --background-activated: var(--ion-color-secondary);
-      --color: #FFF;
-      --color-activated: #e6e6e6;
-
-      margin: 5px;
-    }
-  }
-
-  .custom-checkbox {
-    app-background-image {
-      --loading-background: rgba(var(--ion-color-tertiary-rgb), .4);
-      --overlay-background: rgba(var(--ion-color-primary-rgb), .4);
-    }
-
-    .checkbox-title {
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 22px;
-      color: #FFF;
-      text-align: center;
-      word-break: break-word;
-      overflow: visible;
-
-      position: absolute;
-      width: 70%;
-      left: 15%;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    &.checkbox-checked {
-      .checkbox-title {
-        display: none;
-      }
-    }
-
-    ion-checkbox {
-      --height: 100%;
-      --width: 100%;
-      --border-radius: 0px;
-      --border-width: 10vw;
-      --border-color: transparent;
-      --border-color-checked: transparent;
-      --background: transparent;
-      --background-checked: var(--ion-color-secondary-rgb);
-      --background-checked: rgba(var(--ion-color-secondary-rgb), .4);
-
-      // Note: We cannote change the styles of the .checkbox-icon because it's inside the shadow dom.
-      // An alternative would be to set --width and --height to 0px and add a custom overlay and icon in the <custom-checkbox> html
-    }
-  }
-}
-
-:host(.last-slide-active) {
-  .getting-started-slides {
-    .swiper-pagination {
-      display: none;
     }
   }
 }

@@ -1,0 +1,144 @@
+.user-friends-content {
+  --user-friends-margin: var(--app-narrow-margin);
+  --user-friends-border-radius: var(--app-fair-radius);
+}
+
+.user-friends-segment {
+  --segment-background: var(--app-background);
+
+  position: sticky;
+  top: 0;
+  z-index: 8;
+  background-color: var(--segment-background);
+
+  ion-segment-button {
+    --indicator-height: 2px;
+
+    --padding-end: var(--user-friends-margin);
+    --padding-start: var(--user-friends-margin);
+    --background: var(--segment-background);
+    --color: rgba(var(--ion-color-dark-rgb), 0.4);
+    --color-checked: var(--ion-color-primary);
+    --indicator-color-checked: var(--ion-color-primary);
+
+    text-transform: capitalize;
+    min-height: calc((var(--user-friends-margin) * 3) - var(--indicator-height));
+
+    ion-label {
+      margin-top: calc(var(--user-friends-margin) / 2);
+      margin-bottom: calc(var(--user-friends-margin) / 4);
+    }
+  }
+}
+
+ion-searchbar.friends-searchbar {
+  padding: var(--user-friends-margin);
+}
+
+.friends-list {
+  padding: 0px var(--user-friends-margin);
+  margin-bottom: calc(var(--user-friends-margin) * 3);
+}
+
+.empty-list-message {
+  margin: calc(var(--user-friends-margin) * 3);
+  color: rgba(var(--ion-color-dark-rgb), 0.4);
+  text-align: center;
+}
+
+ion-item.friend-item {
+  --inner-padding-start: 0px;
+  --inner-padding-end: 0px;
+  --padding-start: 0px;
+  --padding-end: 0px;
+  // --padding-bottom: calc(var(--user-friends-margin) / 2);
+  // --inner-padding-bottom: calc(var(--user-friends-margin) / 2);
+  --padding-bottom: var(--user-friends-margin);
+  --inner-padding-bottom: var(--user-friends-margin);
+
+  &:last-child {
+    --border-style: none;
+    --padding-bottom: 0px;
+    --inner-padding-bottom: 0px;
+  }
+
+  .user-details-section {
+    --ion-grid-column-padding: 0px;
+
+    width: 100%;
+    align-items: center;
+
+    .user-image-wrapper {
+      app-image-shell.user-image {
+        --image-shell-border-radius: var(--user-friends-border-radius);
+      }
+    }
+
+    .user-data-wrapper {
+      padding-left: var(--user-friends-margin);
+      padding-right: calc(var(--user-friends-margin) / 2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .user-info {
+        &:not(:last-child) {
+          margin-bottom: calc(var(--user-friends-margin) / 2);
+        }
+
+        .user-name {
+          margin: 0px;
+          margin-bottom: 4px;
+          font-size: 16px;
+
+          app-text-shell {
+            --text-shell-line-height: 16px;
+            max-width: 50%;
+
+            &.text-loaded {
+              max-width: unset;
+            }
+          }
+        }
+
+        .user-job {
+          margin: 0px;
+          color: rgba(var(--ion-color-dark-rgb), 0.4);
+          font-size: 14px;
+
+          app-text-shell {
+            --text-shell-line-height: 14px;
+            max-width: 70%;
+
+            &.text-loaded {
+              max-width: unset;
+            }
+          }
+        }
+      }
+    }
+
+    .user-actions-wrapper {
+      font-size: 14px;
+
+      // Make sure we always have space for 10 characters
+      // As ch (width of the character '0') unit is not 100% supported, we will use ex (height of the 'x' character) as a fallback
+      // See: https://www.quirksmode.org/css/units-values/
+      max-width: 10ex; // The 'x' character is semi-square char
+      max-width: 10ch; // ch is the only font unit based on the width of characters
+
+      .user-action {
+        margin: 0px;
+      }
+    }
+  }
+}
+
+:host-context(.plt-mobile.md) {
+  .user-details-section {
+    .user-actions-wrapper {
+      max-width: 12ex;
+      max-width: 12ch;
+    }
+  }
+}

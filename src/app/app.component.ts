@@ -13,45 +13,50 @@ export class AppComponent {
   appPages = [
     {
       title: 'Categories',
-      url: '/app/tabs/(home:categories)',
-      icon: 'list-box'
+      url: '/app/categories',
+      icon: './assets/sample-icons/side-menu/categories.svg'
     },
     {
       title: 'Profile',
-      url: 'app/tabs/(profile:profile)',
-      icon: 'person'
+      url: '/app/user',
+      icon: './assets/sample-icons/side-menu/profile.svg'
+    },
+    {
+      title: 'Contact Card',
+      url: '/contact-card',
+      icon: './assets/sample-icons/side-menu/contact-card.svg'
     },
     {
       title: 'Notifications',
-      url: 'app/tabs/(notifications:notifications)',
-      icon: 'notifications'
+      url: '/app/notifications',
+      icon: './assets/sample-icons/side-menu/notifications.svg'
     }
   ];
   accountPages = [
     {
       title: 'Log In',
-      url: 'auth/login',
-      icon: 'log-in'
+      url: '/auth/login',
+      icon: './assets/sample-icons/side-menu/login.svg'
     },
     {
       title: 'Sign Up',
-      url: 'auth/signup',
-      icon: 'person-add'
+      url: '/auth/signup',
+      icon: './assets/sample-icons/side-menu/signup.svg'
     },
     {
       title: 'Tutorial',
       url: '/walkthrough',
-      icon: 'hammer'
+      icon: './assets/sample-icons/side-menu/tutorial.svg'
     },
     {
       title: 'Getting Started',
       url: '/getting-started',
-      icon: 'color-wand'
+      icon: './assets/sample-icons/side-menu/getting-started.svg'
     },
     {
       title: '404 page',
       url: '/page-not-found',
-      icon: 'warning'
+      icon: './assets/sample-icons/side-menu/warning.svg'
     }
   ];
 

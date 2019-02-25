@@ -7,9 +7,13 @@ const routes: Routes = [
   { path: 'getting-started', loadChildren: './getting-started/getting-started.module#GettingStartedPageModule' },
   { path: 'auth/login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'auth/signup', loadChildren: './signup/signup.module#SignupPageModule' },
+  { path: 'auth/forgot-password', loadChildren: './forgot-password/forgot-password.module#ForgotPasswordPageModule' },
   { path: 'app', loadChildren: './tabs/tabs.module#TabsPageModule' },
-  { path: 'coming-soon', loadChildren: './coming-soon/coming-soon.module#ComingSoonPageModule' },
+  { path: 'contact-card', loadChildren: './contact-card/contact-card.module#ContactCardPageModule' },
+  { path: 'forms-and-validations', loadChildren: './forms/validations/forms-validations.module#FormsValidationsPageModule' },
+  { path: 'forms-filters', loadChildren: './forms/filters/forms-filters.module#FormsFiltersPageModule' },
   { path: 'page-not-found', loadChildren: './page-not-found/page-not-found.module#PageNotFoundModule' },
+  { path: 'showcase', loadChildren: './showcase/showcase.module#ShowcasePageModule' },
   { path: '**', redirectTo: 'page-not-found' }
 ];
 @NgModule({

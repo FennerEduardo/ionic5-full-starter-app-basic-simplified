@@ -1,0 +1,83 @@
+@import "../../../theme/mixins/inputs/inputs";
+
+.forms-validations-content {
+  --forms-validations-margin: var(--app-fair-margin);
+  --forms-validations-background: var(--app-background-shade);
+
+  --background: var(--forms-validations-background);
+
+  .validations-form {
+    margin-bottom: calc(var(--forms-validations-margin) * 2);
+
+    .inputs-list {
+      --ion-item-background: var(--forms-validations-background);
+
+      padding: var(--forms-validations-margin) var(--forms-validations-margin) calc(var(--forms-validations-margin) * 2);
+
+      ion-list-header {
+        padding-inline-start: 0px;
+
+        .header-title {
+          text-transform: uppercase;
+      		font-size: 16px;
+      		color: var(--ion-color-secondary);
+        }
+      }
+
+      .input-item {
+        --padding-start: 0px;
+        --padding-end: 0px;
+        --inner-padding-end: 0px;
+      }
+
+      .terms-item {
+        --border-width: 0px;
+        --inner-padding-end: 0px;
+      }
+
+      .error-container {
+        .error-message {
+          margin: calc(var(--forms-validations-margin) / 2) 0px;
+          display: flex;
+          align-items: center;
+          color: var(--ion-color-danger);
+          font-size: 14px;
+
+          ion-icon {
+            padding-inline-end: calc(var(--forms-validations-margin) / 2);
+            flex-shrink: 0;
+          }
+        }
+    	}
+      .counter-item {
+        app-counter-input {
+          --counter-background: transparent;
+          --counter-color: var(--ion-color-primary);
+          --counter-border-color: var(--ion-color-primary);
+        }
+        .counter-value {
+          text-align: center;
+        }
+      }
+    }
+
+    .submit-btn {
+      margin: var(--forms-validations-margin)
+    }
+  }
+}
+
+// Alerts and in general all overlays are attached to the body or ion-app directly
+// We need to use ::ng-deep to access it from here
+::ng-deep .select-alert {
+  @include select-alert();
+
+  // Variables should be in a deeper selector or after the mixin include to override default values
+  --select-alert-color: var(--ion-color-lightest);
+  --select-alert-background: var(--ion-color-primary);
+  --select-alert-margin: 16px;
+
+  .alert-message {
+    display: none;
+  }
+}

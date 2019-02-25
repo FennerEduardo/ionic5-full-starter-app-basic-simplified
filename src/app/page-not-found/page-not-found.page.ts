@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ComponentsModule } from '../components/components.module';
 import { MenuController } from '@ionic/angular';
 
 @Component({
@@ -11,7 +10,7 @@ export class PageNotFound implements OnInit {
 
   constructor(public menu: MenuController) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.menu.enable(false);
   }
 }

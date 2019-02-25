@@ -1,6 +1,6 @@
 import { Component, ContentChild } from '@angular/core';
 
-import { Input } from '@ionic/angular';
+import { IonInput } from '@ionic/angular';
 
 @Component({
   selector: 'app-show-hide-password',
@@ -8,14 +8,11 @@ import { Input } from '@ionic/angular';
   styleUrls: [
     './show-hide-password.component.scss'
   ]
-  // host: {
-  //   'class': 'show-hide-password'
-  // }
 })
 export class ShowHidePasswordComponent {
   show = false;
 
-  @ContentChild(Input) input: Input;
+  @ContentChild(IonInput) input: IonInput;
 
   constructor() {}
 

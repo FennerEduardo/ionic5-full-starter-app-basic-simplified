@@ -2,64 +2,56 @@
   --swiper-pagination-space: 40px;
   --swiper-pagination-height: 18px;
   --pagination-bullet-size: 10px;
+  --walkthrough-margin: var(--app-broad-margin);
+  --walkthrough-background: var(--ion-color-lightest);
 
-  --first-slide-background: #{ rgba(#00AFFF, .25); };
-  --second-slide-background:#{ rgba(#38d39f, .45); };
-  --third-slide-background: #{ rgba(#cb328f, .25); };
+  --first-slide-background: #c1ebff;
+  --second-slide-background: #a9ebd2;
+  --third-slide-background: #f0cbe5;
   --last-slide-background: #eef3ff;
 }
 
 ion-header {
   ion-toolbar {
-    --background: transparent;
+    // --background: transparent;
+    --ion-toolbar-background: transparent;
     // For the skip button
-    --color: var(--ion-color-tertiary);
+    // TODO: hacerlo como hacemos los otros botones
+    // --ion-toolbar-color: var(--ion-color-lightest);
+    ion-button {
+      --color: var(--ion-color-lightest);
+    }
   }
 }
 
 ion-content {
-  --background: #FFF;
-
   // To get the ion-content behind the ion-header
   position: absolute;
   top: 0;
 }
 
 .walkthrough-slides {
-  height: 100%;
   --bullet-background: var(--ion-color-primary);
   --bullet-background-active: var(--ion-color-primary);
+
+  height: 100%;
 
   .slide-inner-row {
     height: 100%;
     width: 100%;
     padding: 0px;
     // Header space
-    padding-top: var(--header-height);
+    padding-top: var(--app-header-height);
     // .swiper-pagination space
     border-bottom: var(--swiper-pagination-space) solid transparent;
     background-clip: padding-box;
-
-    // Don't know why it gets overridden by content-box if I don't add this
-    box-sizing: border-box;
-  }
-
-  .swiper-pagination {
-    height: var(--swiper-pagination-height);
-    line-height: 1;
-    // .swiper-pagination is 18px height, .slide-inner-row has 40px of padding-bottom => bottom = (40px - 18px)/2 = 11px
-    bottom: calc((var(--swiper-pagination-space) - var(--swiper-pagination-height) ) / 2);
-
-    .swiper-pagination-bullet {
-      width: var(--pagination-bullet-size);
-      height: var(--pagination-bullet-size);
-    }
   }
 }
 
 .illustration-and-decoration-slide {
   .slide-inner-row {
     --ion-grid-column-padding: 0px;
+
     flex-flow: column;
     justify-content: flex-start;
   }
@@ -70,9 +62,9 @@ ion-content {
     min-height: auto;
     min-height: fit-content;
 
-    app-preload-image {
-      --loading-background: transparent;
-      --spinner-color: #FFF;
+    app-image-shell {
+      --image-shell-loading-background: transparent;
+      --image-shell-spinner-color: var(--ion-color-lightest);
 
       // Override <ion-slide> image styles
       img {
@@ -85,14 +77,18 @@ ion-content {
   .decoration-col {
     flex-grow: 0;
     flex-shrink: 1;
-    min-height: auto;
-    background-color: var(--background);
-
+    min-height: 99px;
     // To prevent transparent line caused by pixel fractions
+    transform: translate3d(0px, 0px, 0px);
+
     .vector-decoration {
-      // margin-top: -1px;
+      fill: currentColor;
+      color: var(--vector-decoration-fill);
+      background-color: var(--walkthrough-background);
+      padding-bottom: 4px;
+      // To prevent transparent line caused by pixel fractions
+      transform: translate3d(0px, 0px, 0px);
       shape-rendering: geometricprecision;
-      overflow: visible;
     }
   }
 
@@ -100,23 +96,26 @@ ion-content {
     flex-grow: 1;
     flex-shrink: 0;
     min-height: auto;
-    background-color: var(--background);
+    background-color: var(--walkthrough-background);
+
     // To prevent transparent line caused by pixel fractions
-    // margin-top: -1px;
+    margin-bottom: -1px;
+    // Prevent .info-wrapper text to blink as it's over the previous element (Safari issue)
+    transform: translate3d(0px, 0px, 0px);
 
     .info-wrapper {
-      margin: -20px 20px 0px;
+      margin: calc(var(--walkthrough-margin) * -1) var(--walkthrough-margin) 0px;
       text-align: left;
 
       .info-title {
-        margin: 0px 0px 20px;
-        color: #333;
+        margin: 0px 0px var(--walkthrough-margin);
+        color: var(--ion-color-primary-tint);
       }
 
       .info-paragraph {
-        color: #666;
+        color: var(--ion-color-medium-shade);
         font-size: 14px;
-        margin: 0px 0px 10px;
+        margin: 0px 0px calc(var(--walkthrough-margin) / 2);
 
         &:last-child {
           margin-bottom: 0px;
@@ -134,7 +133,7 @@ ion-content {
   }
 
   .illustration-col {
-    padding: 0px 8%;
+    padding: 0px 9%;
   }
 }
 
@@ -172,11 +171,11 @@ ion-content {
   }
 
   .illustration-col {
-    padding: 0px 10%;
+    padding: 0px 12%;
   }
 
   .info-col {
-    padding: 20px;
+    padding: var(--walkthrough-margin);
 
     .info-outer {
       height: 100%;
@@ -184,7 +183,7 @@ ion-content {
       flex-direction: column;
 
       .info-wrapper {
-        margin: -20px 0px 0px;
+        margin: calc(var(--walkthrough-margin) * -1) 0px 0px;
       }
 
       .call-to-actions-wrapper {
@@ -192,6 +191,7 @@ ion-content {
       }
     }
 
+    // TODO: Set this button color using the button-color mixin
     .get-started-button {
       --background: var(--ion-color-primary);
       --background-activated: var(--ion-color-primary-shade);
@@ -199,19 +199,25 @@ ion-content {
       --color: var(--ion-color-primary-contrast);
       --color-activated: var(--ion-color-primary-contrast);
       --color-focused: var(--ion-color-primary-contrast);
+
+      margin: 0px;
     }
 
     .alt-call-to-action-row {
+      padding-top: 5px;
       align-items: center;
-      justify-content: center;
+      justify-content: space-evenly;
 
       .cta-leading-text {
         color: var(--ion-color-medium);
         font-size: 16px;
       }
 
+      // TODO: pasar estos estilos como hacemos con los otros botones
       .login-button {
         --color: var(--ion-color-secondary);
+
+        margin: 0px;
       }
     }
   }
@@ -224,7 +230,7 @@ ion-content {
 }
 
 :host(.last-slide-active) {
-  .walkthrough-slides {
+  ::ng-deep .walkthrough-slides {
     .swiper-pagination {
       display: none;
     }
@@ -232,5 +238,22 @@ ion-content {
 
   .skip-walkthrough-button {
     visibility: hidden;
+  }
+}
+
+// ISSUE: .swiper-paggination gets rendered dynamically. That prevents styling the elements when using the default Angular ViewEncapsulation.None
+//        (Angular doesn't add an '_ngcontent' attribute to the .swiper-paggination because it's dynamically rendered)
+// FIX:   See: https://stackoverflow.com/a/36265072/1116959
+:host ::ng-deep .walkthrough-slides {
+  .swiper-pagination {
+    height: var(--swiper-pagination-height);
+    line-height: 1;
+    // .swiper-pagination is 18px height, .slide-inner-row has 40px of padding-bottom => bottom = (40px - 18px)/2 = 11px
+    bottom: calc((var(--swiper-pagination-space) - var(--swiper-pagination-height) ) / 2);
+
+    .swiper-pagination-bullet {
+      width: var(--pagination-bullet-size);
+      height: var(--pagination-bullet-size);
+    }
   }
 }

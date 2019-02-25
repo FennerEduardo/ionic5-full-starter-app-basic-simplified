@@ -1,0 +1,371 @@
+// TODO: pasar este mixin a un shared mixins.scss
+@mixin custom-button-color($color){
+  @content;
+
+  .ion-color-#{$color} {
+    --ion-color-base: var(--ion-color-#{$color}) !important;
+    --ion-color-base-rgb: var(--ion-color-#{$color}-rgb) !important;
+    --ion-color-contrast: var(--ion-color-#{$color}-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-#{$color}-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-#{$color}-shade) !important;
+    --ion-color-tint: var(--ion-color-#{$color}-tint) !important;
+  }
+}
+
+:host {
+  --shell-color: #70DF70;
+  --shell-color-rgb: 112,223,112;
+
+  --deal-ended-color: #D9453A;
+  --deal-ends-soon-color: #FFAB6B;
+  --deal-distant-end-color: #70DF70;
+
+  --swiper-pagination-space: 30px;
+  --swiper-pagination-height: 18px;
+  --pagination-bullet-size: 10px;
+
+  --deals-details-margin: var(--app-broad-margin);
+  --deals-details-background: var(--app-background-shade);
+
+  @include custom-button-color('claim') {
+    --ion-color-claim: #70DF70;
+    --ion-color-claim-rgb: 112,223,112;
+    --ion-color-claim-contrast: #FFFFFF;
+    --ion-color-claim-contrast-rgb: 255,255,255;
+    --ion-color-claim-shade: #63C463;
+    --ion-color-claim-tint: #7EE27E;
+  }
+}
+
+.deals-details-content {
+  --background: var(--deals-details-background);
+
+  .expiration-countdown {
+    color: var(--ion-color-lightest);
+    background-color: var(--deal-ended-color);
+    padding: calc(var(--deals-details-margin) / 2) var(--deals-details-margin);
+
+    position: sticky;
+    top: 0;
+    z-index: 8;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    .expiration-lead {
+      padding: 0px calc(var(--deals-details-margin) / 2);
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    app-countdown-timer.item-countdown {
+      --fill-shadow-color: rgba(var(--ion-color-darkest-rgb), 0.2);
+
+      --countdown-margin: 0px;
+      --countdown-padding: 0px 3px;
+      --countdown-time-margin: 0px 2px;
+      --countdown-time-padding: 0px 2px;
+      --countdown-inner-time-margin: 0px 2px 0px 0px;
+      --countdown-inner-time-padding: calc(var(--deals-details-margin) / 2) 0px;
+      --countdown-fill-border: none;
+      --countdown-fill-border-radius: var(--app-narrow-radius);
+      --countdown-fill-background: var(--ion-color-lightest);
+      --countdown-fill-shadow: 0px 0px 5px 0px var(--fill-shadow-color);
+      --countdown-value-color: var(--ion-color-darkest);
+      --countdown-unit-color: var(--ion-color-medium-shade);
+
+      // // fill: time
+      // --countdown-time-margin: 0px 4px;
+      // --countdown-time-padding: 0px 5px;
+      //
+      // // fill: time (unit below)
+      // --countdown-time-padding: 4px 5px;
+      // --countdown-inner-time-margin: 0px;
+      // --countdown-inner-time-padding: 4px 0px;
+      // --countdown-time-flex-direction: column-reverse;
+
+      padding: 0px calc(var(--deals-details-margin) / 4);
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  .details-wrapper {
+    margin: var(--deals-details-margin);
+    border-radius: var(--app-broad-radius);
+    background-color: var(--ion-color-lightest);
+
+    .slider-row {
+      .details-slides {
+        height: 100%;
+        width: 100%;
+        border-radius: var(--app-broad-radius) var(--app-broad-radius) 0px 0px;
+
+        --bullet-background: var(--ion-color-primary);
+        --bullet-background-active: var(--ion-color-primary);
+
+        .slide-inner-row {
+          height: 100%;
+          width: 100%;
+          padding: 0px;
+          // .swiper-pagination space
+          padding-bottom: var(--swiper-pagination-space);
+          // As we set ViewEncapsulation.ShadowDom, box-sizing get's resetted to content-box if I don't add this
+          box-sizing: border-box;
+        }
+      }
+
+      app-image-shell.showcase-image {
+        --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
+        --image-shell-spinner-color: rgba(var(--shell-color-rgb), .25);
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .description-row {
+      --ion-grid-column-padding: 0px;
+
+      padding: calc(var(--deals-details-margin) / 2) var(--deals-details-margin) var(--deals-details-margin);
+      border-bottom: 2px dashed rgba(var(--ion-color-dark-rgb), .1);
+      align-items: center;
+
+      .logo-col {
+        padding-bottom: calc(var(--deals-details-margin) / 2);
+
+        app-image-shell {
+          --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
+          --image-shell-spinner-color: rgba(var(--shell-color-rgb), .30);
+          --image-shell-spinner-size: 18px;
+        }
+      }
+
+      .info-col {
+        padding-right: calc(var(--deals-details-margin) / 2);
+
+        .details-name {
+          margin: 0px;
+    			margin-bottom: calc(var(--deals-details-margin) / 2);
+          color: var(--ion-color-dark-tint);
+          font-size: 16px;
+
+          app-text-shell {
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .30);
+            --text-shell-line-height: 16px;
+          }
+        }
+
+        .details-description {
+          margin: 0px;
+          color: var(--ion-color-medium-tint);
+          font-size: 14px;
+
+          app-text-shell {
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
+            --text-shell-line-height: 14px;
+          }
+        }
+      }
+
+      .preview-image-col {
+        app-image-shell {
+          --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
+          --image-shell-spinner-color: rgba(var(--shell-color-rgb), .30);
+          --image-shell-spinner-size: 18px;
+        }
+      }
+    }
+
+    .promo-row {
+      --ion-grid-column-padding: 0px;
+
+      padding: var(--deals-details-margin);
+      text-align: center;
+      justify-content: center;
+
+      .promo-title {
+        font-size: 22px;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: var(--ion-color-dark-tint);
+        margin: 0px;
+
+        &::before,
+        &::after {
+          content: '·';
+          color: var(--ion-color-dark-tint);
+        }
+      }
+
+      .promo-description {
+        margin: var(--deals-details-margin) 0px;
+        color: var(--ion-color-medium-tint);
+        font-size: 14px;
+      }
+
+      .promo-code-btn {
+        margin: 0px;
+      }
+
+      .promo-code {
+        display: block;
+        font-size: 14px;
+        line-height: 1;
+
+        app-text-shell {
+          --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
+          --text-shell-line-height: 14px;
+          min-width: 80px;
+
+          &.text-loaded {
+            min-width: 0px;
+          }
+        }
+      }
+
+      .promo-instructions {
+        margin: var(--deals-details-margin) 0px 0px;
+        color: var(--ion-color-medium-tint);
+        font-size: 12px;
+        line-height: 1.4;
+
+        .instructions-anchor {
+          color: var(--shell-color);
+          text-decoration: none;
+        }
+      }
+    }
+
+    .expiration-notice {
+      background-color: var(--deal-distant-end-color);
+      padding: calc(var(--deals-details-margin) / 2) var(--deals-details-margin);
+      color: var(--ion-color-lightest);
+      border-radius: 0px 0px var(--app-broad-radius) var(--app-broad-radius);
+      display: flex;
+      justify-content: space-evenly;
+
+      .notice-message {
+        display: block;
+        margin-right: 5px;
+        text-transform: capitalize;
+      }
+
+      .notice-value {
+        display: block;
+
+        app-text-shell {
+          --text-shell-line-color: rgba(var(--ion-color-lightest-rgb), .20);
+          --text-shell-line-height: 18px;
+          min-width: 60px;
+
+          &.text-loaded {
+            min-width: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .related-deals-wrapper {
+    margin: calc(var(--deals-details-margin) * 3) var(--deals-details-margin) calc(var(--deals-details-margin) * 2);
+
+    .related-deals-title {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: var(--ion-color-dark-shade);
+      margin: 0px 0px var(--deals-details-margin);
+    }
+
+    .related-deal {
+      --ion-grid-column-padding: 0px;
+
+      border-radius: var(--app-broad-radius);
+      background-color: var(--ion-color-lightest);
+
+      &:not(:last-child) {
+        margin-bottom: calc(var(--deals-details-margin) / 2);
+      }
+
+      .deal-logo-wrapper {
+        padding: calc(var(--deals-details-margin) / 4) var(--deals-details-margin) calc(var(--deals-details-margin) / 4) calc(var(--deals-details-margin) / 2);
+        border-right: 2px dashed rgba(var(--ion-color-dark-rgb), .1);
+
+        app-image-shell {
+          --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
+          --image-shell-spinner-color: rgba(var(--shell-color-rgb), .30);
+          --image-shell-spinner-size: 18px;
+        }
+      }
+
+      .deal-info-wrapper {
+        padding-left: var(--deals-details-margin);
+        padding-right: calc(var(--deals-details-margin) / 2);
+        padding-top: calc(var(--deals-details-margin) / 4);
+        padding-bottom: calc(var(--deals-details-margin) / 4);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .deal-title {
+          margin: 0px;
+          margin-bottom: 5px;
+          color: var(--ion-color-dark-tint);
+          font-size: 20px;
+
+          app-text-shell {
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .30);
+            --text-shell-line-height: 20px;
+          }
+        }
+
+        .deal-description {
+          margin: 0px;
+          color: var(--ion-color-medium-tint);
+          font-size: 16px;
+
+          app-text-shell {
+            --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
+            --text-shell-line-height: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+:host(.is-shell) {
+
+}
+
+// ISSUE: .swiper-paggination gets rendered dynamically. That prevents styling the elements when using the default Angular ViewEncapsulation.None
+//        (Angular doesn't add an '_ngcontent' attribute to the .swiper-paggination because it's dynamically rendered)
+// FIX:   See: https://stackoverflow.com/a/36265072/1116959
+:host ::ng-deep {
+  .details-slides {
+    .swiper-pagination {
+      height: var(--swiper-pagination-height);
+      line-height: 1;
+      // .swiper-pagination is 18px height, .slide-inner-row has 40px of padding-bottom => bottom = (40px - 18px)/2 = 11px
+      bottom: calc((var(--swiper-pagination-space) - var(--swiper-pagination-height) ) / 2);
+
+      .swiper-pagination-bullet {
+        width: var(--pagination-bullet-size);
+        height: var(--pagination-bullet-size);
+      }
+    }
+  }
+
+  app-countdown-timer.item-countdown {
+    .time-unit {
+      // text-transform: lowercase;
+      font-size: 0.8em;
+    }
+  }
+}

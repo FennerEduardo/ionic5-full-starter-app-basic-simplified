@@ -1,66 +1,91 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+
 import { TabsPage } from './tabs.page';
-
-import { CategoriesPage } from '../categories/categories.page';
-
-import { FashionListingPage } from '../fashion-listing/fashion-listing.page';
-import { FashionListingResolver } from '../fashion-listing/fashion-listing.resolver';
-
-import { TravelListingPage } from '../travel-listing/travel-listing.page';
-import { TravelListingResolver } from '../travel-listing/travel-listing.resolver';
-
-import { ProfilePage } from '../profile/profile.page';
-
-import { NotificationsPage } from '../notifications/notifications.page';
-import { NotificationsResolver } from '../notifications/notifications.resolver';
-import { NotificationsService } from '../notifications/notifications.service';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
         path: 'categories',
-        outlet: 'home',
-        component: CategoriesPage
+        children: [
+          {
+            path: '',
+            loadChildren: '../categories/categories.module#CategoriesPageModule'
+          },
+          {
+            path: 'fashion',
+            loadChildren: '../fashion/listing/fashion-listing.module#FashionListingPageModule'
+          },
+          {
+            path: 'fashion/:productId',
+            loadChildren: '../fashion/details/fashion-details.module#FashionDetailsPageModule'
+          },
+          {
+            path: 'food',
+            loadChildren: '../food/listing/food-listing.module#FoodListingPageModule'
+          },
+          {
+            path: 'food/:productId',
+            loadChildren: '../food/details/food-details.module#FoodDetailsPageModule'
+          },
+          {
+            path: 'travel',
+            loadChildren: '../travel/listing/travel-listing.module#TravelListingPageModule'
+          },
+          {
+            path: 'travel/:productId',
+            loadChildren: '../travel/details/travel-details.module#TravelDetailsPageModule'
+          },
+          {
+            path: 'deals',
+            loadChildren: '../deals/listing/deals-listing.module#DealsListingPageModule'
+          },
+          {
+            path: 'deals/:productId',
+            loadChildren: '../deals/details/deals-details.module#DealsDetailsPageModule'
+          },
+          {
+            path: 'real-state',
+            loadChildren: '../real-state/listing/real-state-listing.module#RealStateListingPageModule'
+          },
+          {
+            path: 'real-state/:productId',
+            loadChildren: '../real-state/details/real-state-details.module#RealStateDetailsPageModule'
+          }
+        ]
       },
       {
-        path: 'fashion',
-        outlet: 'home',
-        component: FashionListingPage,
-        resolve: {
-          data: FashionListingResolver
-        }
-      },
-      {
-        path: 'travel',
-        outlet: 'home',
-        component: TravelListingPage,
-        resolve: {
-          data: TravelListingResolver
-        }
-      },
-      {
-        path: 'profile',
-        outlet: 'profile',
-        component: ProfilePage
+        path: 'user',
+        children: [
+          {
+            path: '',
+            loadChildren: '../user/profile/user-profile.module#UserProfilePageModule'
+          },
+          {
+            path: 'friends',
+            loadChildren: '../user/friends/user-friends.module#UserFriendsPageModule'
+          }
+        ]
       },
       {
         path: 'notifications',
-        outlet: 'notifications',
-        component: NotificationsPage,
-        resolve: {
-         data: NotificationsResolver,
-       }
-      }
+        children: [
+          {
+            path: '',
+            loadChildren: '../notifications/notifications.module#NotificationsPageModule'
+          }
+        ]
+      },
     ]
   },
+  // /app/ redirect
   {
     path: '',
-    redirectTo: '/tabs/(home:categories)',
+    redirectTo: 'app/categories',
     pathMatch: 'full'
   }
 ];
@@ -68,11 +93,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes), HttpClientModule],
   exports: [RouterModule],
-  providers: [
-    FashionListingResolver,
-    TravelListingResolver,
-    NotificationsResolver,
-    NotificationsService
-  ]
+  providers: [ ]
 })
 export class TabsPageRoutingModule {}

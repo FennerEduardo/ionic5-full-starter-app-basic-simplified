@@ -1,16 +1,15 @@
-import { Component, ViewEncapsulation, OnInit, AfterViewInit, ViewChild, HostBinding } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, HostBinding } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
-import { Slides, MenuController } from '@ionic/angular';
+import { IonSlides, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-getting-started',
   templateUrl: './getting-started.page.html',
-  styleUrls: ['./getting-started.page.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  styleUrls: ['./getting-started.page.scss']
 })
 export class GettingStartedPage implements OnInit, AfterViewInit {
-  @ViewChild(Slides) slides: Slides;
+  @ViewChild(IonSlides) slides: IonSlides;
   @HostBinding('class.last-slide-active') isLastSlide = false;
 
   gettingStartedForm: FormGroup;
@@ -29,11 +28,11 @@ export class GettingStartedPage implements OnInit, AfterViewInit {
     });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.menu.enable(false);
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     // ViewChild is set
     this.slides.isEnd().then(isEnd => {
       this.isLastSlide = isEnd;

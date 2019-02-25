@@ -1,0 +1,77 @@
+ion-header {
+  ion-toolbar {
+    --background: var(--ion-color-secondary-tint);
+  }
+}
+
+.contact-card-content {
+  --background: var(--ion-color-light-tint);
+  --contact-card-margin: var(--app-broad-margin);
+}
+
+.user-details-wrapper {
+  --ion-grid-column-padding: 0px;
+
+  padding: 0px var(--contact-card-margin) var(--contact-card-margin);
+  background-color: var(--ion-color-secondary-tint);
+  color: var(--ion-color-light);
+  align-items: center;
+
+  app-image-shell.user-avatar {
+    --image-shell-border-radius: 50%;
+
+    border: solid 3px var(--ion-color-light);
+  }
+
+  .user-info-wrapper {
+    padding-left: calc(var(--contact-card-margin) / 2);
+
+    .user-name {
+      margin: 0px 0px 5px;
+    }
+
+    .user-handle {
+      margin: 0px;
+      font-weight: 400;
+    }
+  }
+
+  .user-stats-wrapper {
+    text-align: center;
+    padding-top: calc(var(--contact-card-margin) / 2);
+
+    .user-stat-value {
+      margin-right: 5px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .user-stat-name {
+      font-size: 16px;
+    }
+  }
+
+  .user-bio {
+    margin: var(--contact-card-margin) 0px 0px;
+    line-height: 1.2;
+    font-size: 14px;
+  }
+}
+
+.user-preferences-wrapper {
+  --ion-grid-column-padding: 0px;
+
+  padding: var(--contact-card-margin);
+
+  .preference-name {
+    margin: 0px 0px 5px;
+    font-size: 16px;
+  }
+
+  .preference-value {
+    margin: 0px 0px calc(var(--contact-card-margin) / 2);
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--ion-color-dark-tint);
+  }
+}

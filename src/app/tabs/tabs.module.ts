@@ -8,11 +8,24 @@ import { TabsPageRoutingModule } from './tabs.router.module';
 
 import { TabsPage } from './tabs.page';
 
+// TODO: por que tenemos estos modulos aca?
 import { CategoriesPageModule } from '../categories/categories.module';
-import { FashionListingPageModule } from '../fashion-listing/fashion-listing.module';
-import { TravelListingPageModule } from '../travel-listing/travel-listing.module';
+// Fashion
+import { FashionListingPageModule } from '../fashion/listing/fashion-listing.module';
+// Travel
+import { TravelListingPageModule } from '../travel/listing/travel-listing.module';
+// Food
+import { FoodListingPageModule } from '../food/listing/food-listing.module';
+// Deals
+import { DealsListingPageModule } from '../deals/listing/deals-listing.module';
+import { DealsDetailsPageModule } from '../deals/details/deals-details.module';
+// Real State
+import { RealStateListingPageModule } from '../real-state/listing/real-state-listing.module';
+import { RealStateDetailsPageModule } from '../real-state/details/real-state-details.module';
 
-import { ProfilePageModule } from '../profile/profile.module';
+import { UserProfilePageModule } from '../user/profile/user-profile.module';
+
+import { ContactCardPageModule } from '../contact-card/contact-card.module';
 
 import { NotificationsPageModule } from '../notifications/notifications.module';
 
@@ -21,12 +34,20 @@ import { NotificationsPageModule } from '../notifications/notifications.module';
     IonicModule,
     CommonModule,
     FormsModule,
+
     TabsPageRoutingModule,
     CategoriesPageModule,
+    UserProfilePageModule,
+    ContactCardPageModule,
+    NotificationsPageModule,
+
     FashionListingPageModule,
     TravelListingPageModule,
-    ProfilePageModule,
-    NotificationsPageModule
+    FoodListingPageModule,
+    DealsListingPageModule,
+    DealsDetailsPageModule,
+    RealStateListingPageModule,
+    RealStateDetailsPageModule
   ],
   declarations: [TabsPage]
 })

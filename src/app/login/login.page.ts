@@ -11,26 +11,40 @@ import { MenuController } from '@ionic/angular';
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
 
+  validation_messages = {
+    'email': [
+      { type: 'required', message: 'Email is required.' },
+      { type: 'pattern', message: 'Enter a valid email.' }
+    ],
+    'password': [
+      { type: 'required', message: 'Password is required.' },
+      { type: 'minlength', message: 'Password must be at least 5 characters long.' }
+    ]
+  };
+
   constructor(
     public router: Router,
     public menu: MenuController
   ) {
     this.loginForm = new FormGroup({
-      'email': new FormControl('test@test.com', [
+      'email': new FormControl('test@test.com', Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ]),
-      'password': new FormControl('', Validators.required)
+      ])),
+      'password': new FormControl('', Validators.compose([
+        Validators.minLength(5),
+        Validators.required
+      ]))
     });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.menu.enable(false);
   }
 
   doLogin(): void {
     console.log('do Log In');
-    this.router.navigate(['app/tabs/', { outlets: {home: [ 'categories' ]} }]);
+    this.router.navigate(['app/categories']);
   }
 
   goToForgotPassword(): void {
@@ -39,15 +53,16 @@ export class LoginPage implements OnInit {
 
   doFacebookLogin(): void {
     console.log('facebook login');
-    this.router.navigate(['app/tabs/', { outlets: {home: [ 'categories' ]} }]);
-  }
-  doGoogleLogin(): void {
-    console.log('google login');
-    this.router.navigate(['app/tabs/', { outlets: {home: [ 'categories' ]} }]);
-  }
-  doTwitterLogin(): void {
-    console.log('twitter login');
-    this.router.navigate(['app/tabs/', { outlets: {home: [ 'categories' ]} }]);
+    this.router.navigate(['app/categories']);
   }
 
+  doGoogleLogin(): void {
+    console.log('google login');
+    this.router.navigate(['app/categories']);
+  }
+
+  doTwitterLogin(): void {
+    console.log('twitter login');
+    this.router.navigate(['app/categories']);
+  }
 }

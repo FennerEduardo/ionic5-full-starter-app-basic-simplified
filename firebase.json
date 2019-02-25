@@ -7,16 +7,26 @@
       "**/node_modules/**"
     ],
     "rewrites": [ {
-      "source": "/**",
+      "source": "**",
       "destination": "/index.html"
     } ],
     "headers": [
       {
-        "source": "/www/**",
+        "source": "/**",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "public, max-age=31536000"
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source":
+          "/build/app/**/*.@(jpg|jpeg|gif|png|svg|webp|js|css|eot|otf|ttf|ttc|woff|font.css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=604800"
           }
         ]
       },

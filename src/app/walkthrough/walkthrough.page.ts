@@ -1,25 +1,30 @@
-import { Component, ViewEncapsulation, OnInit, AfterViewInit, ViewChild, HostBinding } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, HostBinding } from '@angular/core';
 
-import { Slides, MenuController } from '@ionic/angular';
+import { IonSlides, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-walkthrough',
   templateUrl: './walkthrough.page.html',
-  styleUrls: ['./walkthrough.page.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  styleUrls: ['./walkthrough.page.scss']
 })
 export class WalkthroughPage implements OnInit, AfterViewInit {
-  @ViewChild(Slides) slides: Slides;
+  @ViewChild(IonSlides) slides: IonSlides;
   @HostBinding('class.first-slide-active') isFirstSlide = true;
   @HostBinding('class.last-slide-active') isLastSlide = false;
 
+  slidesOptions: any = {
+    zoom: {
+      toggle: false // Disable zooming to prevent weird double tap zomming on slide images
+    }
+  };
+
   constructor(public menu: MenuController) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.menu.enable(false);
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     // ViewChild is set
     this.slides.isBeginning().then(isBeginning => {
       this.isFirstSlide = isBeginning;

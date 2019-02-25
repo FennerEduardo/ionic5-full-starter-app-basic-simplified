@@ -6,11 +6,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding class="outer-content">
-
-  <app-preload-image [ratio]="{w: 1, h: 1}" [src]="'./assets/images/page-not-found.svg'"></app-preload-image>
+<ion-content class="not-found-content">
+  <div class="illustration-wrapper">
+    <app-aspect-ratio [ratio]="{w: 1, h: 1}">
+      <app-image-shell [src]="'./assets/images/page-not-found.svg'" [alt]="'not found page'"></app-image-shell>
+    </app-aspect-ratio>
+  </div>
   <div class="not-found-title">404</div>
   <div class="not-found-text">Page not found</div>
-  <ion-button href="/app/tabs/(home:categories)" expand="block">Go to home</ion-button>
-
+  <ion-button class="go-home-btn" [routerLink]="['/app/categories']" expand="block" fill="outline">Back to Home page</ion-button>
 </ion-content>

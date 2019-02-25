@@ -73,40 +73,34 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-shade-rgb: 215,216,218;
   --ion-color-light-tint: #f5f6f9;
-
-
 }
 
-// Custom Colors
-
 :root {
-  --ion-color-facebook: #3b5998;
-  --ion-color-facebook-rgb: 59,89,152;
-  --ion-color-facebook-contrast: #ffffff;
-  --ion-color-facebook-contrast-rgb: 255,255,255;
-  --ion-color-facebook-shade: #344e86;
-  --ion-color-facebook-tint: #4f6aa2;
+  --app-background: #FFFFFF;
+  --app-background-shade: var(--ion-background-color-step-50, #F2F2F2);
 
-  --ion-color-google: #cc181e;
-  --ion-color-google-rgb: 204,24,30;
-  --ion-color-google-contrast: #ffffff;
-  --ion-color-google-contrast-rgb: 255,255,255;
-  --ion-color-google-shade: #b4151a;
-  --ion-color-google-tint: #d12f35;
+  /* Set the font family of the entire app */
+  --ion-font-family: 'Rubik', sans-serif;
 
-  --ion-color-twitter: #00aced;
-  --ion-color-twitter-rgb: 0,172,237;
-  --ion-color-twitter-contrast: #ffffff;
-  --ion-color-twitter-contrast-rgb: 255,255,255;
-  --ion-color-twitter-shade: #0097d1;
-  --ion-color-twitter-tint: #1ab4ef;
+  --app-narrow-margin: 12px;
+  --app-fair-margin: 16px;
+  --app-broad-margin: 20px;
+
+  --app-narrow-radius: 4px;
+  --app-fair-radius: 8px;
+  --app-broad-radius: 12px;
+}
+
+ion-title {
+  font-weight: 400;
+  letter-spacing: 0.4px;
 }
 
 html.ios {
   // ios
-  --header-height: 44px;
+  --app-header-height: 44px;
 }
 html.md {
   // md
-  --header-height: 56px;
+  --app-header-height: 56px;
 }
