@@ -1,4 +1,6 @@
-@import "../../../theme/mixins/inputs/inputs";
+@import "../../../theme/mixins/inputs/checkbox-tag";
+@import "../../../theme/mixins/inputs/radio-tag";
+@import "../../../theme/mixins/inputs/color-radio";
 
 .filters-content {
   --background: var(--app-background-shade);
