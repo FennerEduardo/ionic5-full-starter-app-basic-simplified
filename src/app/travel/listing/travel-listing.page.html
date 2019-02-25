@@ -20,14 +20,10 @@
                     <app-image-shell [src]="item.icon"></app-image-shell>
                   </app-aspect-ratio>
                 </div>
-                <h2 class="item-name">
-                  <app-text-shell data="Explore"></app-text-shell>
-                  <!-- <app-text-shell [data]="item.name"></app-text-shell> -->
-                  <ion-icon class="arrow-icon" name="arrow-round-forward"></ion-icon>
-                </h2>
-                <!-- <h4 class="item-tagline">
-                  <app-text-shell [data]="item.category" [attr.element]="'h4'"></app-text-shell>
-                </h4> -->
+                <div class="item-cta">
+                  <span>Explore</span>
+                  <ion-icon class="cta-icon" name="arrow-round-forward"></ion-icon>
+                </div>
               </div>
             </app-aspect-ratio>
           </app-image-shell>

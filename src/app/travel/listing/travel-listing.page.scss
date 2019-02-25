@@ -39,42 +39,22 @@
         }
       }
 
-      .item-name {
+      .item-cta {
         margin: 0px auto;
         padding: calc(var(--travel-listing-margin) / 2) calc(var(--travel-listing-margin));
         text-transform: uppercase;
         font-size: 20px;
-        font-weight: 900;
+        font-weight: 700;
         text-align: center;
         color: var(--ion-color-light);
         display: flex;
         align-items: center;
         background-color: var(--shell-color);
-        border-radius: 8px;
+        border-radius: var(--app-fair-radius);
 
-        .arrow-icon {
+        .cta-icon {
           font-size: 26px;
-          margin-left: 6px;
-        }
-
-        app-text-shell {
-          --text-shell-line-color: rgba(var(--shell-color-rgb), .25);
-          --text-shell-line-height: 20px;
-        }
-      }
-
-      .item-tagline {
-        color: var(--ion-color-light);
-        text-transform: uppercase;
-        font-size: 16px;
-        font-weight: 400;
-        font-style: italic;
-        margin: calc(var(--travel-listing-margin) / 2) 0px 0px;
-        text-align: center;
-
-        app-text-shell {
-          --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
-          --text-shell-line-height: 16px;
+          margin-left: calc(var(--travel-listing-margin) / 2);
         }
       }
     }

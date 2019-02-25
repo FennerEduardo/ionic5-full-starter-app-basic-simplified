@@ -76,11 +76,11 @@
 }
 
 :root {
-  --app-background: #FFFFFF;
-  --app-background-shade: var(--ion-background-color-step-50, #F2F2F2);
-
   /* Set the font family of the entire app */
   --ion-font-family: 'Rubik', sans-serif;
+
+  --app-background: #FFFFFF;
+  --app-background-shade: var(--ion-background-color-step-50, #F2F2F2);  
 
   --app-narrow-margin: 12px;
   --app-fair-margin: 16px;
