@@ -7,7 +7,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: [
+    './side-menu/styles/side-menu.scss',
+    './side-menu/styles/side-menu.shell.scss',
+    './side-menu/styles/side-menu.responsive.scss'
+  ]
 })
 export class AppComponent {
   appPages = [
