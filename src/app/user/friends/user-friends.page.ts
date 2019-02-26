@@ -6,7 +6,11 @@ import { UserFriendsModel } from './user-friends.model';
 @Component({
   selector: 'app-user-friends',
   templateUrl: './user-friends.page.html',
-  styleUrls: ['./user-friends.page.scss'],
+  styleUrls: [
+    './styles/user-friends.page.scss',
+    './styles/user-friends.shell.scss',
+    './styles/user-friends.md.scss'
+  ]
 })
 export class UserFriendsPage implements OnInit {
   data: UserFriendsModel;
