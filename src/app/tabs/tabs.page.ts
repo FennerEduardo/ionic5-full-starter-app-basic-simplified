@@ -5,7 +5,9 @@ import { MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-tabs',
   templateUrl: 'tabs.page.html',
-  styleUrls: ['tabs.page.scss']
+  styleUrls: [
+    './styles/tabs.page.scss'
+  ]
 })
 export class TabsPage  {
 
