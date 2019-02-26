@@ -1,4 +1,5 @@
-// Custom variables (These ones were added by us and have nothing to do with Ionic CSS Custom Properties)
+// Custom variables
+// Note:  These ones were added by us and have nothing to do with Ionic CSS Custom Properties
 :host {
   --page-margin: var(--app-broad-margin);
   --page-background: var(--app-background);
@@ -15,8 +16,7 @@
   --page-vector-decoration-fill: var(--ion-color-light-shade);
 }
 
-// Note:  All the CSS variables below are overrides of Ionic elements CSS Custom Properties.
-//        All the CSS variables above are custom ones we added and have nothing to do with Ionic CSS Custom Properties
+// Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
 ion-header {
   ion-toolbar {
     --ion-toolbar-background: transparent;

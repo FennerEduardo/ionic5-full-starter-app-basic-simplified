@@ -1,4 +1,4 @@
-@mixin ion-color($color){
+@mixin ion-color($color) {
   @content;
 
   .ion-color-#{$color} {
