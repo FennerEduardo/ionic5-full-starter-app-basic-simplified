@@ -3,14 +3,15 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subject, interval } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
+// TODO:  dayjs is throwing this ERROR:
+//        error TS2339: Property 'to' does not exist on type 'Dayjs'.
+// Luckily there's a PR that apparently fixes this (https://github.com/iamkun/dayjs/issues/297#issuecomment-442748858)
+
 // When fixed, uncomment this
 // import * as dayjs from 'dayjs';
-import * as _dayjs from 'dayjs';
 
-// TODO:  dayjs esta tirando este ERROR:
-//        error TS2339: Property 'to' does not exist on type 'Dayjs'.
-// Por suerte ya hay un PR que lo soluciona (https://github.com/iamkun/dayjs/issues/297#issuecomment-442748858)
 // When fixed, remove this
+import * as _dayjs from 'dayjs';
 const dayjs: any = _dayjs;
 
 @Component({

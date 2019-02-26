@@ -33,7 +33,6 @@
   &:not([mode="cover"]) {
     width: 100%;
     overflow: hidden;
-    // background-color: var(--image-shell-loading-background);
 
     & > .inner-img {
       position: absolute;
@@ -49,9 +48,6 @@
     }
 
     &.img-loaded {
-      // Hide loading background once the image has loaded
-      // background-color: transparent;
-
       // Hide loading background once the image has loaded
       &::before {
         display: none;
@@ -73,19 +69,6 @@
       display: none;
       visibility: hidden;
     }
-
-    // // Loading background
-    // &::before {
-    //   content: '';
-    //   display: block;
-    //   background-color: var(--image-shell-loading-background);
-    //   position: absolute;
-    //   top: 0;
-    //   bottom: 0;
-    //   left: 0;
-    //   right: 0;
-    //   z-index: 0;
-    // }
 
     &.img-loaded {
       // Hide loading background once the image has loaded
@@ -119,14 +102,11 @@
 }
 
 :host(.add-overlay) {
-  // &[mode="cover"] {
   &.img-loaded {
     // Add background overlay after the image has loaded
     &::before {
       display: block;
       background-color: var(--image-shell-overlay-background);
-      // z-index: 1;
     }
   }
-  // }
 }
