@@ -6,7 +6,9 @@ import { counterRangeValidator } from '../../components/counter-input/counter-in
 @Component({
   selector: 'forms-filters-page',
   templateUrl: './forms-filters.page.html',
-  styleUrls: ['./forms-filters.page.scss']
+  styleUrls: [
+    './styles/forms-filters.page.scss'
+  ]
 })
 export class FormsFiltersPage {
   rangeForm: any;

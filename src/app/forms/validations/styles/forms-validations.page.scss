@@ -1,18 +1,23 @@
-@import "../../../theme/mixins/inputs/select-alert";
+@import "../../../../theme/mixins/inputs/select-alert";
 
+// Custom variables
+// Note:  These ones were added by us and have nothing to do with Ionic CSS Custom Properties
+:host {
+  --page-margin: var(--app-fair-margin);
+  --page-background: var(--app-background-shade);
+}
+
+// Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
 .forms-validations-content {
-  --forms-validations-margin: var(--app-fair-margin);
-  --forms-validations-background: var(--app-background-shade);
-
-  --background: var(--forms-validations-background);
+  --background: var(--page-background);
 
   .validations-form {
-    margin-bottom: calc(var(--forms-validations-margin) * 2);
+    margin-bottom: calc(var(--page-margin) * 2);
 
     .inputs-list {
-      --ion-item-background: var(--forms-validations-background);
+      --ion-item-background: var(--page-background);
 
-      padding: var(--forms-validations-margin) var(--forms-validations-margin) calc(var(--forms-validations-margin) * 2);
+      padding: var(--page-margin) var(--page-margin) calc(var(--page-margin) * 2);
 
       ion-list-header {
         padding-inline-start: 0px;
@@ -37,24 +42,26 @@
 
       .error-container {
         .error-message {
-          margin: calc(var(--forms-validations-margin) / 2) 0px;
+          margin: calc(var(--page-margin) / 2) 0px;
           display: flex;
           align-items: center;
           color: var(--ion-color-danger);
           font-size: 14px;
 
           ion-icon {
-            padding-inline-end: calc(var(--forms-validations-margin) / 2);
+            padding-inline-end: calc(var(--page-margin) / 2);
             flex-shrink: 0;
           }
         }
     	}
+
       .counter-item {
         app-counter-input {
           --counter-background: transparent;
           --counter-color: var(--ion-color-primary);
           --counter-border-color: var(--ion-color-primary);
         }
+
         .counter-value {
           text-align: center;
         }
@@ -62,7 +69,7 @@
     }
 
     .submit-btn {
-      margin: var(--forms-validations-margin)
+      margin: var(--page-margin)
     }
   }
 }
