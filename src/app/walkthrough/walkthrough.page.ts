@@ -5,18 +5,24 @@ import { IonSlides, MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-walkthrough',
   templateUrl: './walkthrough.page.html',
-  styleUrls: ['./walkthrough.page.scss']
+  styleUrls: [
+    './styles/walkthrough.page.scss',
+    './styles/walkthrough.shell.scss',
+    './styles/walkthrough.responsive.scss'
+  ]
 })
 export class WalkthroughPage implements OnInit, AfterViewInit {
-  @ViewChild(IonSlides) slides: IonSlides;
-  @HostBinding('class.first-slide-active') isFirstSlide = true;
-  @HostBinding('class.last-slide-active') isLastSlide = false;
-
   slidesOptions: any = {
     zoom: {
       toggle: false // Disable zooming to prevent weird double tap zomming on slide images
     }
   };
+
+  @ViewChild(IonSlides) slides: IonSlides;
+
+  @HostBinding('class.first-slide-active') isFirstSlide = true;
+
+  @HostBinding('class.last-slide-active') isLastSlide = false;
 
   constructor(public menu: MenuController) { }
 
@@ -44,7 +50,7 @@ export class WalkthroughPage implements OnInit, AfterViewInit {
     });
   }
 
-  skipWalkthrough() {
+  skipWalkthrough(): void {
     // Skip to the last slide
     this.slides.length().then(length => {
       this.slides.slideTo(length);

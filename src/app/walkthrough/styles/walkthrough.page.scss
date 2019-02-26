@@ -1,23 +1,27 @@
+// Custom variables (These ones were added by us and have nothing to do with Ionic CSS Custom Properties)
 :host {
-  --swiper-pagination-space: 40px;
-  --swiper-pagination-height: 18px;
-  --pagination-bullet-size: 10px;
-  --walkthrough-margin: var(--app-broad-margin);
-  --walkthrough-background: var(--ion-color-lightest);
+  --page-margin: var(--app-broad-margin);
+  --page-background: var(--app-background);
 
-  --first-slide-background: #c1ebff;
-  --second-slide-background: #a9ebd2;
-  --third-slide-background: #f0cbe5;
-  --last-slide-background: #eef3ff;
+  --page-swiper-pagination-space: 40px;
+  --page-swiper-pagination-height: 18px;
+  --page-pagination-bullet-size: 10px;
+
+  --page-first-slide-background: #c1ebff;
+  --page-second-slide-background: #a9ebd2;
+  --page-third-slide-background: #f0cbe5;
+  --page-last-slide-background: #eef3ff;
+
+  --page-vector-decoration-fill: var(--ion-color-light-shade);
 }
 
+// Note:  All the CSS variables below are overrides of Ionic elements CSS Custom Properties.
+//        All the CSS variables above are custom ones we added and have nothing to do with Ionic CSS Custom Properties
 ion-header {
   ion-toolbar {
-    // --background: transparent;
     --ion-toolbar-background: transparent;
+
     // For the skip button
-    // TODO: hacerlo como hacemos los otros botones
-    // --ion-toolbar-color: var(--ion-color-lightest);
     ion-button {
       --color: var(--ion-color-lightest);
     }
@@ -31,8 +35,8 @@ ion-content {
 }
 
 .walkthrough-slides {
-  --bullet-background: var(--ion-color-primary);
-  --bullet-background-active: var(--ion-color-primary);
+  --bullet-background: var(--ion-color-dark);
+  --bullet-background-active: var(--ion-color-dark);
 
   height: 100%;
 
@@ -43,8 +47,9 @@ ion-content {
     // Header space
     padding-top: var(--app-header-height);
     // .swiper-pagination space
-    border-bottom: var(--swiper-pagination-space) solid transparent;
+    border-bottom: var(--page-swiper-pagination-space) solid transparent;
     background-clip: padding-box;
+    background-color: var(--page-vector-decoration-fill);
   }
 }
 
@@ -54,6 +59,7 @@ ion-content {
 
     flex-flow: column;
     justify-content: flex-start;
+    align-items: center;
   }
 
   .illustration-col {
@@ -61,34 +67,27 @@ ion-content {
     flex-shrink: 0;
     min-height: auto;
     min-height: fit-content;
-
-    app-image-shell {
-      --image-shell-loading-background: transparent;
-      --image-shell-spinner-color: var(--ion-color-lightest);
-
-      // Override <ion-slide> image styles
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
+    max-width: 30vh;
+    padding: 0px;
   }
 
   .decoration-col {
     flex-grow: 0;
     flex-shrink: 1;
-    min-height: 99px;
+    min-height: 12vh;
     // To prevent transparent line caused by pixel fractions
     transform: translate3d(0px, 0px, 0px);
 
     .vector-decoration {
       fill: currentColor;
-      color: var(--vector-decoration-fill);
-      background-color: var(--walkthrough-background);
+      color: var(--page-vector-decoration-fill);
+      background-color: var(--page-background);
       padding-bottom: 4px;
       // To prevent transparent line caused by pixel fractions
       transform: translate3d(0px, 0px, 0px);
       shape-rendering: geometricprecision;
+
+      height: 100%;
     }
   }
 
@@ -96,7 +95,7 @@ ion-content {
     flex-grow: 1;
     flex-shrink: 0;
     min-height: auto;
-    background-color: var(--walkthrough-background);
+    background-color: var(--page-background);
 
     // To prevent transparent line caused by pixel fractions
     margin-bottom: -1px;
@@ -104,18 +103,19 @@ ion-content {
     transform: translate3d(0px, 0px, 0px);
 
     .info-wrapper {
-      margin: calc(var(--walkthrough-margin) * -1) var(--walkthrough-margin) 0px;
+      margin: calc(var(--page-margin) * -1) var(--page-margin) 0px;
       text-align: left;
 
       .info-title {
-        margin: 0px 0px var(--walkthrough-margin);
-        color: var(--ion-color-primary-tint);
+        margin: 0px;
+        margin-bottom: var(--page-margin);
+        color: var(--ion-color-dark);
       }
 
       .info-paragraph {
         color: var(--ion-color-medium-shade);
         font-size: 14px;
-        margin: 0px 0px calc(var(--walkthrough-margin) / 2);
+        margin: 0px 0px calc(var(--page-margin) / 2);
 
         &:last-child {
           margin-bottom: 0px;
@@ -126,56 +126,27 @@ ion-content {
 }
 
 .first-slide {
-  --vector-decoration-fill: var(--first-slide-background);
-
-  .slide-inner-row {
-    background-color: var(--first-slide-background);
-  }
-
-  .illustration-col {
-    padding: 0px 9%;
-  }
+  --page-vector-decoration-fill: var(--page-first-slide-background);
 }
 
 .second-slide {
-  --vector-decoration-fill: var(--second-slide-background);
-
-  .slide-inner-row {
-    background-color: var(--second-slide-background);
-  }
-
-  .illustration-col {
-    padding: 0px 10%;
-  }
+  --page-vector-decoration-fill: var(--page-second-slide-background);
 }
 
 .third-slide {
-  --vector-decoration-fill: var(--third-slide-background);
-
-  .slide-inner-row {
-    background-color: var(--third-slide-background);
-  }
-
-  .illustration-col {
-    padding: 0px 15%;
-  }
+  --page-vector-decoration-fill: var(--page-third-slide-background);
 }
 
 .last-slide {
-  --vector-decoration-fill: var(--last-slide-background);
+  --page-vector-decoration-fill: var(--page-last-slide-background);
 
   .slide-inner-row {
-    background-color: var(--last-slide-background);
     // In the last slide .swiper-pagination is hidden
     border-width: 0px;
   }
 
-  .illustration-col {
-    padding: 0px 12%;
-  }
-
   .info-col {
-    padding: var(--walkthrough-margin);
+    padding: var(--page-margin);
 
     .info-outer {
       height: 100%;
@@ -183,7 +154,7 @@ ion-content {
       flex-direction: column;
 
       .info-wrapper {
-        margin: calc(var(--walkthrough-margin) * -1) 0px 0px;
+        margin: calc(var(--page-margin) * -1) 0px 0px;
       }
 
       .call-to-actions-wrapper {
@@ -191,15 +162,7 @@ ion-content {
       }
     }
 
-    // TODO: Set this button color using the button-color mixin
     .get-started-button {
-      --background: var(--ion-color-primary);
-      --background-activated: var(--ion-color-primary-shade);
-      --background-focused: var(--ion-color-primary-shade);
-      --color: var(--ion-color-primary-contrast);
-      --color-activated: var(--ion-color-primary-contrast);
-      --color-focused: var(--ion-color-primary-contrast);
-
       margin: 0px;
     }
 
@@ -213,7 +176,6 @@ ion-content {
         font-size: 16px;
       }
 
-      // TODO: pasar estos estilos como hacemos con los otros botones
       .login-button {
         --color: var(--ion-color-secondary);
 
@@ -246,14 +208,14 @@ ion-content {
 // FIX:   See: https://stackoverflow.com/a/36265072/1116959
 :host ::ng-deep .walkthrough-slides {
   .swiper-pagination {
-    height: var(--swiper-pagination-height);
+    height: var(--page-swiper-pagination-height);
     line-height: 1;
     // .swiper-pagination is 18px height, .slide-inner-row has 40px of padding-bottom => bottom = (40px - 18px)/2 = 11px
-    bottom: calc((var(--swiper-pagination-space) - var(--swiper-pagination-height) ) / 2);
+    bottom: calc((var(--page-swiper-pagination-space) - var(--page-swiper-pagination-height) ) / 2);
 
     .swiper-pagination-bullet {
-      width: var(--pagination-bullet-size);
-      height: var(--pagination-bullet-size);
+      width: var(--page-pagination-bullet-size);
+      height: var(--page-pagination-bullet-size);
     }
   }
 }
