@@ -11,10 +11,10 @@
   <ng-container *ngIf="listing?.items">
     <ion-row class="items-row">
       <ion-col size="6" class="listing-item" *ngFor="let item of listing.items">
-        <div class="item-image">
+        <div class="item-image-wrapper">
           <a class="image-anchor" [routerLink]="['/app/categories/fashion/', item.slug]">
-            <app-aspect-ratio class="add-spinner" [ratio]="{w: 3, h: 4}">
-              <app-image-shell [src]="item.image" [alt]="'product image'"></app-image-shell>
+            <app-aspect-ratio [ratio]="{w: 3, h: 4}">
+              <app-image-shell class="add-spinner item-image" [src]="item.image" [alt]="'product image'"></app-image-shell>
             </app-aspect-ratio>
           </a>
         </div>

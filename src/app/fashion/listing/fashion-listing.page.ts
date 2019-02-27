@@ -6,7 +6,10 @@ import { FashionListingModel } from './fashion-listing.model';
 @Component({
   selector: 'app-fashion-listing',
   templateUrl: './fashion-listing.page.html',
-  styleUrls: ['./fashion-listing.page.scss'],
+  styleUrls: [
+    './styles/fashion-listing.page.scss',
+    './styles/fashion-listing.shell.scss'
+  ]
 })
 export class FashionListingPage implements OnInit {
   listing: FashionListingModel;
