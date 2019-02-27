@@ -8,9 +8,10 @@ import { FashionDetailsModel } from './fashion-details.model';
   selector: 'app-fashion-details',
   templateUrl: './fashion-details.page.html',
   styleUrls: [
-    './fashion-details.page.scss',
-    './fashion-details.page.ios.scss',
-    './fashion-details.page.md.scss'
+    './styles/fashion-details.page.scss',
+    './styles/fashion-details.shell.scss',
+    './styles/fashion-details.ios.scss',
+    './styles/fashion-details.md.scss'
   ]
 })
 export class FashionDetailsPage implements OnInit {

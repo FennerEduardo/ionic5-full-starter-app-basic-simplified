@@ -17,7 +17,7 @@ app-image-shell.item-image {
   --image-shell-spinner-color: rgba(var(--shell-color-rgb), .25);
 }
 
-.item-name > app-text-shell {
+.item-name app-text-shell {
   --text-shell-line-height: 14px;
   --text-shell-line-color: rgba(var(--shell-color-rgb), .25);
 }
