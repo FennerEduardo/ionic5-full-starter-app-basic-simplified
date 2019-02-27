@@ -6,7 +6,10 @@ import { TravelListingModel } from './travel-listing.model';
 @Component({
   selector: 'app-travel-listing',
   templateUrl: './travel-listing.page.html',
-  styleUrls: ['./travel-listing.page.scss'],
+  styleUrls: [
+    './styles/travel-listing.page.scss',
+    './styles/travel-listing.shell.scss'
+  ]
 })
 export class TravelListingPage implements OnInit {
   listing: TravelListingModel;
