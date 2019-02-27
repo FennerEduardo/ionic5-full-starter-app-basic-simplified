@@ -1,10 +1,13 @@
+import * as dayjs from 'dayjs';
+
 export class DealsItemModel {
   slug: string;
   logo: string;
   name: string;
   code: string;
   description: string;
-  expirationDate: string;
+  // Default mock value
+  expirationDate: string = dayjs().add(5, 'day').format('MM/DD/YYYY HH:mm:ss') as string;
 }
 
 export class DealsListingModel {

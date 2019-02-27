@@ -1,18 +1,25 @@
-@import "../../../theme/mixins/ion-color";
+@import "../../../../theme/mixins/ion-color";
 
+// Custom variables
+// Note:  These ones were added by us and have nothing to do with Ionic CSS Custom Properties
 :host {
+  --page-margin: var(--app-broad-margin);
+  --page-background: var(--app-background-shade);
+
+  --page-countdown-fill-shadow-color: rgba(var(--ion-color-darkest-rgb), 0.2);
+  --page-item-shadow-color: rgba(var(--ion-color-dark-rgb), .1);
+  --page-deal-code-height: 30px;
+  --page-countdown-gutter: 3px;
+
+  --page-expired-color: var(--ion-color-medium-tint);
+  --page-ends-soon-color: #FFAB6B;
+  --page-distant-end-color: #70DF70;
+
+  --page-deal-color: var(--ion-color-medium);
+  --page-deal-border-color: var(--ion-color-light-shade);
+
   --shell-color: #70DF70;
   --shell-color-rgb: 112,223,112;
-
-  --deal-expired-color: var(--ion-color-medium-tint);
-  // --deal-ended-color: #D9453A;
-  --deal-ends-soon-color: #FFAB6B;
-  --deal-distant-end-color: #70DF70;
-
-  --shadow-color: rgba(var(--ion-color-dark-rgb), .1);
-
-  --deals-listing-margin: var(--app-broad-margin);
-  --deals-listing-background: var(--app-background-shade);
 
   // Add custom colors to use with [color] property
   @include ion-color('claim') {
@@ -25,55 +32,47 @@
   }
 }
 
+// Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
 .deals-listing-content {
-  --background: var(--deals-listing-background);
+  --background: var(--page-background);
 }
 
 .listing-item {
-  --deal-color: var(--ion-color-medium);
-  --deal-border-color: var(--ion-color-light-shade);
-
   &.ended {
-    --deal-color: var(--deal-expired-color);
-    --deal-border-color: var(--deal-expired-color);
+    --page-deal-color: var(--page-expired-color);
+    --page-deal-border-color: var(--page-expired-color);
     border-bottom-style: none;
   }
   &.imminent-end {
-    --deal-color: var(--deal-ends-soon-color);
-    --deal-border-color: var(--deal-distant-end-color);
+    --page-deal-color: var(--page-ends-soon-color);
+    --page-deal-border-color: var(--page-distant-end-color);
   }
   &.ends-soon {
-    --deal-color: var(--deal-ends-soon-color);
-    --deal-border-color: var(--deal-ends-soon-color);
+    --page-deal-color: var(--page-ends-soon-color);
+    --page-deal-border-color: var(--page-ends-soon-color);
     border-bottom-style: none;
   }
   &.distant-end {
-    --deal-color: var(--deal-distant-end-color);
-    --deal-border-color: var(--deal-distant-end-color);
+    --page-deal-color: var(--page-distant-end-color);
+    --page-deal-border-color: var(--page-distant-end-color);
     border-bottom-style: none;
   }
 
   background-color: var(--ion-color-lightest);
-  margin: var(--deals-listing-margin);
+  margin: var(--page-margin);
   border-radius: var(--app-fair-radius);
-  box-shadow: 1px 1px 4px 1px var(--shadow-color);
+  box-shadow: 1px 1px 4px 1px var(--page-item-shadow-color);
   border-bottom-style: solid;
-  border-bottom-width: calc((var(--deals-listing-margin) / 2) * 3);
-  border-bottom-color: var(--deal-border-color);
+  border-bottom-width: calc((var(--page-margin) / 2) * 3);
+  border-bottom-color: var(--page-deal-border-color);
 
   .top-row {
     --ion-grid-column-padding: 0px;
 
     border-bottom: 2px dashed rgba(var(--ion-color-dark-rgb), .1);
-    padding: calc(var(--deals-listing-margin) / 2);
+    padding: calc(var(--page-margin) / 2);
     justify-content: space-between;
     align-items: center;
-
-    app-image-shell {
-      --image-shell-loading-background: rgba(var(--shell-color-rgb), .10);
-      --image-shell-spinner-color: rgba(var(--shell-color-rgb), .30);
-      --image-shell-spinner-size: 18px;
-    }
 
     .logo-col {
       align-self: center;
@@ -83,7 +82,7 @@
       flex-grow: 0;
 
       .expired-cta {
-        color: var(--deal-expired-color);
+        color: var(--page-expired-color);
         font-size: 16px;
         font-weight: 600;
         letter-spacing: 0.8px;
@@ -112,16 +111,16 @@
   .middle-row {
     --ion-grid-column-padding: 0px;
 
-    padding: calc(var(--deals-listing-margin) / 2);
-    padding-bottom: var(--deals-listing-margin);
+    padding: calc(var(--page-margin) / 2);
+    padding-bottom: var(--page-margin);
 
     .info-col {
-      padding-right: calc(var(--deals-listing-margin) / 2);
+      padding-right: calc(var(--page-margin) / 2);
     }
 
     .item-name {
       margin: 0px;
-			margin-bottom: calc(var(--deals-listing-margin) / 2);
+			margin-bottom: calc(var(--page-margin) / 2);
       color: var(--ion-color-dark-tint);
       font-size: 16px;
 
@@ -129,22 +128,12 @@
         display: block;
         text-decoration: none;
       }
-
-      app-text-shell {
-        --text-shell-line-color: rgba(var(--shell-color-rgb), .30);
-        --text-shell-line-height: 16px;
-      }
     }
 
     .item-description {
       margin: 0px;
       color: var(--ion-color-medium-tint);
       font-size: 14px;
-
-      app-text-shell {
-        --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
-        --text-shell-line-height: 14px;
-      }
     }
 
     .bookmark-button {
@@ -159,7 +148,7 @@
   .bottom-row {
     --ion-grid-column-padding: 0px;
 
-    padding: 0px calc(var(--deals-listing-margin) / 2) calc(var(--deals-listing-margin) / 2);
+    padding: 0px calc(var(--page-margin) / 2) calc(var(--page-margin) / 2);
     justify-content: space-between;
 
     .code-wrapper {
@@ -173,34 +162,22 @@
       }
 
       .item-code {
-        --code-height: 30px;
-
-        height: var(--code-height);
+        height: var(--page-deal-code-height);
         text-transform: uppercase;
-        padding: calc(var(--deals-listing-margin) / 4) calc(var(--deals-listing-margin) / 2);
+        padding: calc(var(--page-margin) / 4) calc(var(--page-margin) / 2);
         border: 2px solid var(--shell-color);
         font-size: 12px;
         font-weight: 500;
         line-height: 1;
-        border-radius: calc(var(--code-height) / 2);
+        border-radius: calc(var(--page-deal-code-height) / 2);
         display: flex;
         align-items: center;
         justify-content: center;
 
         &.expired {
-          border: 2px solid var(--deal-expired-color);
-          background: var(--deal-expired-color);
-          color: #FFF;
-        }
-
-        app-text-shell {
-          --text-shell-line-color: rgba(var(--shell-color-rgb), .15);
-          --text-shell-line-height: 14px;
-          min-width: 60px;
-
-          &.text-loaded {
-            min-width: 0px;
-          }
+          border-color: var(--page-expired-color);
+          color: var(--page-expired-color);
+          opacity: 0.6;
         }
       }
     }
@@ -211,6 +188,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      align-items: flex-end;
 
       .expiration-cta {
         font-size: 12px;
@@ -223,21 +201,11 @@
 
       &:not(.countdown-active) {
         .item-time-left {
-          color: var(--deal-color);
+          color: var(--page-deal-color);
           font-size: 14px;
           font-weight: 500;
           display: block;
           text-align: end;
-
-          app-text-shell {
-            --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
-            --text-shell-line-height: 12px;
-            min-width: 100px;
-
-            &.text-loaded {
-              min-width: 0px;
-            }
-          }
         }
       }
 
@@ -246,8 +214,6 @@
         position: relative;
 
         .countdown-wrapper {
-          --countdown-gutter: 3px;
-
           width: 100%;
           display: flex;
           justify-content: flex-end;
@@ -256,33 +222,24 @@
           right: 0px;
 
           app-countdown-timer.item-countdown {
-            --fill-shadow-color: rgba(var(--ion-color-darkest-rgb), 0.2);
-
             --countdown-time-margin: 0px;
             --countdown-time-padding: 0px;
-            --countdown-inner-time-margin: var(--countdown-gutter) var(--countdown-gutter) 0px;
-            --countdown-inner-time-padding: calc(var(--deals-listing-margin) / 2) calc(var(--deals-listing-margin) / 4);
+            --countdown-inner-time-margin: var(--page-countdown-gutter) var(--page-countdown-gutter) 0px;
+            --countdown-inner-time-padding: calc(var(--page-margin) / 2) calc(var(--page-margin) / 4);
             --countdown-fill-border: none;
             --countdown-fill-border-radius: var(--app-narrow-radius);
             --countdown-fill-background: var(--ion-color-lightest);
-            --countdown-fill-shadow: 0px 0px 5px 0px var(--fill-shadow-color);
+            --countdown-fill-shadow: 0px 0px 5px 0px var(--page-countdown-fill-shadow-color);
             --countdown-value-color: var(--ion-color-darkest);
             --countdown-unit-color: var(--ion-color-medium-shade);
             --countdown-time-flex-direction: column;
 
             font-weight: 500;
             font-size: 14px;
-            margin-right: calc(var(--countdown-gutter) * -1);
+            margin-right: calc(var(--page-countdown-gutter) * -1);
           }
         }
       }
     }
-  }
-}
-
-:host-context(.plt-mobile.ios) {
-  // Custom platform styles here
-  .claim-button {
-    height: 2.2em;
   }
 }

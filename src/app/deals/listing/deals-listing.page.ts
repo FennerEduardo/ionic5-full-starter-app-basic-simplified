@@ -6,7 +6,11 @@ import { DealsListingModel } from './deals-listing.model';
 @Component({
   selector: 'app-deals-listing',
   templateUrl: './deals-listing.page.html',
-  styleUrls: ['./deals-listing.page.scss'],
+  styleUrls: [
+    './styles/deals-listing.page.scss',
+    './styles/deals-listing.shell.scss',
+    './styles/deals-listing.ios.scss'
+  ]
 })
 export class DealsListingPage implements OnInit {
   listing: DealsListingModel;
