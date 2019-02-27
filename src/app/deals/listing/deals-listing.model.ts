@@ -7,6 +7,7 @@ export class DealsItemModel {
   code: string;
   description: string;
   // Default mock value
+  // expirationDate = '12/01/2018';
   expirationDate: string = dayjs().add(5, 'day').format('MM/DD/YYYY HH:mm:ss') as string;
 }
 

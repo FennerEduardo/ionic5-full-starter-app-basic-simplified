@@ -7,13 +7,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="deals-details-content">
-  <ion-row class="expiration-countdown">
+<ion-content class="deals-details-content" [ngClass]="{'ended': ((details?.expirationDate | appTimeDifference) < 0), 'imminent-end': ((details?.expirationDate | appTimeDifference) > 0 && (details?.expirationDate | appTimeDifference) <= 2), 'ends-soon': ((details?.expirationDate | appTimeDifference) > 0 && (details?.expirationDate | appTimeDifference) > 2 && (details?.expirationDate | appTimeDifference) < 10), 'distant-end': ((details?.expirationDate | appTimeDifference) >= 10)}">
+  <ion-row class="expiration-countdown" *ngIf="((details?.expirationDate | appTimeDifference) > 0 && (details?.expirationDate | appTimeDifference) <= 2)">
     <span class="expiration-lead">Deal expires in:</span>
-    <ng-container *ngIf="((details?.expirationDate | appTimeDifference) > 0 && (details?.expirationDate | appTimeDifference) <= 2)">
-      <app-countdown-timer class="item-countdown" fill="countdown" [end]="details?.expirationDate" [units]="{from: 'hour', to: 'second'}"></app-countdown-timer>
-      <!-- <app-countdown-timer class="item-countdown" fill="time" [end]="details?.expirationDate" [units]="{from: 'hour', to: 'second'}"></app-countdown-timer> -->
-    </ng-container>
+    <app-countdown-timer class="item-countdown" fill="countdown" [end]="details?.expirationDate" [units]="{from: 'hour', to: 'second'}"></app-countdown-timer>
+    <!-- <app-countdown-timer class="item-countdown" fill="time" [end]="details?.expirationDate" [units]="{from: 'hour', to: 'second'}"></app-countdown-timer> -->
   </ion-row>
 
   <div class="details-wrapper">
@@ -31,7 +29,7 @@
     <ion-row class="description-row">
       <ion-col class="logo-col" size="6">
         <app-aspect-ratio [ratio]="{w: 128, h: 32}">
-          <app-image-shell [src]="details?.logo" [alt]="'deals details'" class="add-spinner"></app-image-shell>
+          <app-image-shell [src]="details?.logo" [alt]="'deals details'" class="add-spinner logo-image"></app-image-shell>
         </app-aspect-ratio>
       </ion-col>
       <ion-col class="info-col" size="9">
@@ -44,7 +42,7 @@
       </ion-col>
       <ion-col class="preview-image-col" size="3">
         <app-aspect-ratio [ratio]="{w: 1, h: 1}">
-          <app-image-shell [src]="details?.previewImage" [alt]="'deals details'" class="add-spinner"></app-image-shell>
+          <app-image-shell [src]="details?.previewImage" [alt]="'deals details'" class="add-spinner preview-image"></app-image-shell>
         </app-aspect-ratio>
       </ion-col>
     </ion-row>
@@ -69,8 +67,8 @@
       </ion-col>
     </ion-row>
     <div class="expiration-notice">
-      <span class="notice-message">Cupon expires on:</span>
-      <span class="notice-value">
+      <span class="notice-message">Cupon {{ ((details?.expirationDate | appTimeDifference) < 0) ? 'expired' : 'expires' }} on:</span>
+      <span class="expiration-value">
         <app-text-shell [data]="details?.expirationDate | date:'mediumDate'" class="no-animation"></app-text-shell>
       </span>
     </div>
@@ -81,15 +79,15 @@
     <ion-row class="related-deal" *ngFor="let deal of details.relatedDeals">
       <ion-col class="deal-logo-wrapper" size="4">
         <app-aspect-ratio [ratio]="{w: 1, h: 1}">
-          <app-image-shell [src]="deal.logo" [alt]="'deals logo'" class="add-spinner"></app-image-shell>
+          <app-image-shell [src]="deal.logo" [alt]="'deals logo'" class="add-spinner related-deal-logo"></app-image-shell>
         </app-aspect-ratio>
       </ion-col>
       <ion-col class="deal-info-wrapper" size="8">
-        <h4 class="deal-title">
-          <app-text-shell [data]="deal?.name"></app-text-shell>
+        <h4 class="related-deal-title">
+          <app-text-shell class="no-animation" [data]="deal?.name"></app-text-shell>
         </h4>
-        <p class="deal-description">
-          <app-text-shell [data]="deal?.description" [attr.lines]="1"></app-text-shell>
+        <p class="related-deal-description">
+          <app-text-shell class="no-animation" [data]="deal?.description"></app-text-shell>
         </p>
       </ion-col>
     </ion-row>

@@ -18,8 +18,7 @@
   --page-deal-color: var(--ion-color-medium);
   --page-deal-border-color: var(--ion-color-light-shade);
 
-  --shell-color: #70DF70;
-  --shell-color-rgb: 112,223,112;
+  --page-color: #70DF70;
 
   // Add custom colors to use with [color] property
   @include ion-color('claim') {
@@ -165,7 +164,7 @@
         height: var(--page-deal-code-height);
         text-transform: uppercase;
         padding: calc(var(--page-margin) / 4) calc(var(--page-margin) / 2);
-        border: 2px solid var(--shell-color);
+        border: 2px solid var(--page-color);
         font-size: 12px;
         font-weight: 500;
         line-height: 1;
