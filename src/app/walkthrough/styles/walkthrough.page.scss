@@ -74,8 +74,9 @@ ion-content {
   .decoration-col {
     flex-grow: 0;
     flex-shrink: 1;
-    min-height: 12vh;
+
     // To prevent transparent line caused by pixel fractions
+    min-height: 12vh;
     transform: translate3d(0px, 0px, 0px);
 
     .vector-decoration {
@@ -83,11 +84,11 @@ ion-content {
       color: var(--page-vector-decoration-fill);
       background-color: var(--page-background);
       padding-bottom: 4px;
+
       // To prevent transparent line caused by pixel fractions
       transform: translate3d(0px, 0px, 0px);
       shape-rendering: geometricprecision;
-
-      height: 100%;
+      height: calc(100% + 1px);
     }
   }
 
