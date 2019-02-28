@@ -95,7 +95,7 @@
     <div class="location-header">
       <h3 class="detail-title">Location</h3>
       <span class="location-address">
-        <app-text-shell [data]="details.location?.address"></app-text-shell>
+        <app-text-shell [data]="details.location?.address" class="no-animation"></app-text-shell>
       </span>
     </div>
     <!-- <app-aspect-ratio [ratio]="{w: 64, h: 30}">
@@ -103,7 +103,7 @@
       </app-image-shell>
     </app-aspect-ratio> -->
     <app-aspect-ratio [ratio]="{w:64, h:30}">
-      <app-image-shell class="add-spinner" [src]="details.location?.mapImage" [alt]="'location map'"></app-image-shell>
+      <app-image-shell class="add-spinner location-image" [src]="details.location?.mapImage" [alt]="'location map'"></app-image-shell>
     </app-aspect-ratio>
   </div>
   <div class="amenities-wrapper">
@@ -120,13 +120,13 @@
     <h3 class="detail-title">Safety Features</h3>
     <ul class="features-list">
       <li class="feature-item">
-        Smoke Detector
+        <app-text-shell [data]="'Smoke Detector'" class="no-animation"></app-text-shell>
       </li>
       <li class="feature-item">
-        Carbon Monoxide Detector
+        <app-text-shell [data]="'Carbon Monoxide Detector'" class="no-animation"></app-text-shell>
       </li>
       <li class="feature-item">
-        Security Alarm System
+        <app-text-shell [data]="'Security Alarm System'" class="no-animation"></app-text-shell>
       </li>
     </ul>
   </div>
