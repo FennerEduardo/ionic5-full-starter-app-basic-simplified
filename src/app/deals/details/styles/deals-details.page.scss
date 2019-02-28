@@ -82,17 +82,6 @@
       --countdown-value-color: var(--ion-color-darkest);
       --countdown-unit-color: var(--ion-color-medium-shade);
 
-      // TODO: Borrar esto despues de poner estos ejemplos en showcase
-      // // fill: time
-      // --countdown-time-margin: 0px 4px;
-      // --countdown-time-padding: 0px 5px;
-      //
-      // // fill: time (unit below)
-      // --countdown-time-padding: 4px 5px;
-      // --countdown-inner-time-margin: 0px;
-      // --countdown-inner-time-padding: 4px 0px;
-      // --countdown-time-flex-direction: column-reverse;
-
       padding: 0px calc(var(--page-margin) / 4);
       font-size: 14px;
       font-weight: 500;

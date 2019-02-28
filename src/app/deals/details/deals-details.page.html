@@ -11,7 +11,6 @@
   <ion-row class="expiration-countdown" *ngIf="((details?.expirationDate | appTimeDifference) > 0 && (details?.expirationDate | appTimeDifference) <= 2)">
     <span class="expiration-lead">Deal expires in:</span>
     <app-countdown-timer class="item-countdown" fill="countdown" [end]="details?.expirationDate" [units]="{from: 'hour', to: 'second'}"></app-countdown-timer>
-    <!-- <app-countdown-timer class="item-countdown" fill="time" [end]="details?.expirationDate" [units]="{from: 'hour', to: 'second'}"></app-countdown-timer> -->
   </ion-row>
 
   <div class="details-wrapper">
