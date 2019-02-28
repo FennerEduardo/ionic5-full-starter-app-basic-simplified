@@ -21,8 +21,7 @@
         ]
       },
       {
-        "source":
-          "/build/app/**/*.@(jpg|jpeg|gif|png|svg|webp|js|css|eot|otf|ttf|ttc|woff|font.css)",
+        "source": "/**/*.@(jpg|jpeg|gif|png|svg|webp|js|css|eot|otf|ttf|ttc|woff|font.css)",
         "headers": [
           {
             "key": "Cache-Control",
@@ -31,7 +30,7 @@
         ]
       },
       {
-        "source": "sw.js",
+        "source": "ngsw-worker.js",
         "headers": [
           {
             "key": "Cache-Control",
