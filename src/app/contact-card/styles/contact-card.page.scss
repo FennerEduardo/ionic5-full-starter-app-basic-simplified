@@ -16,6 +16,8 @@ ion-header {
 
 .contact-card-content {
   --background: var(--page-background);
+  // To fix half pixel line between ion-header and  ion-content
+  transform: translateZ(0);
 
   .user-details-wrapper {
     --ion-grid-column-padding: 0px;

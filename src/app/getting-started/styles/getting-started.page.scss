@@ -15,6 +15,11 @@
 }
 
 // Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
+:host {
+  // To fix half pixel line between ion-header and  ion-content
+  background-color: var(--page-background);
+}
+
 ion-header {
   ion-toolbar {
     --background: var(--page-background);
@@ -120,7 +125,7 @@ ion-content {
         }
       }
     }
-  }  
+  }
 }
 
 .interests-to-follow-slide {
