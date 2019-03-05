@@ -6,7 +6,10 @@ import { TravelDetailsModel } from './travel-details.model';
 @Component({
   selector: 'app-travel-details',
   templateUrl: './travel-details.page.html',
-  styleUrls: ['./travel-details.page.scss'],
+  styleUrls: [
+    './styles/travel-details.page.scss',
+    './styles/travel-details.shell.scss'
+  ]
 })
 export class TravelDetailsPage implements OnInit {
   details: TravelDetailsModel;

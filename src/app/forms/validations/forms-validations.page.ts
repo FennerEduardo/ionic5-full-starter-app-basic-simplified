@@ -11,7 +11,9 @@ import { CountryPhone } from './country-phone.model';
 @Component({
   selector: 'forms-validations-page',
   templateUrl: './forms-validations.page.html',
-  styleUrls: ['./forms-validations.page.scss'],
+  styleUrls: [
+    './styles/forms-validations.page.scss'
+  ]
 })
 export class FormsValidationsPage implements OnInit {
 

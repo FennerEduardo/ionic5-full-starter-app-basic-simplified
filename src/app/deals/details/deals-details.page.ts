@@ -6,7 +6,10 @@ import { DealsDetailsModel } from './deals-details.model';
 @Component({
   selector: 'app-deals-details',
   templateUrl: './deals-details.page.html',
-  styleUrls: ['./deals-details.page.scss']
+  styleUrls: [
+    './styles/deals-details.page.scss',
+    './styles/deals-details.shell.scss'
+  ]
 })
 export class DealsDetailsPage implements OnInit {
   details: DealsDetailsModel;

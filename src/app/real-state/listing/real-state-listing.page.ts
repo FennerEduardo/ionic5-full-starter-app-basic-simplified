@@ -6,7 +6,10 @@ import { RealStateListingModel } from './real-state-listing.model';
 @Component({
   selector: 'app-real-state-listing',
   templateUrl: './real-state-listing.page.html',
-  styleUrls: ['./real-state-listing.page.scss'],
+  styleUrls: [
+    './styles/real-state-listing.page.scss',
+    './styles/real-state-listing.shell.scss'
+  ]
 })
 export class RealStateListingPage implements OnInit {
   listing: RealStateListingModel;

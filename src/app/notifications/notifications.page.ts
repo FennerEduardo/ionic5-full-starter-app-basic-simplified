@@ -4,7 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.page.html',
-  styleUrls: ['./notifications.page.scss']
+  styleUrls: [
+    './styles/notifications.page.scss',
+    './styles/notifications.shell.scss'
+  ]
 })
 export class NotificationsPage implements OnInit {
   notifications: any;
@@ -41,9 +44,5 @@ export class NotificationsPage implements OnInit {
     } else {
       console.warn('No data coming from Route Resolver');
     }
-
-    // this.route.data.subscribe(routeData => {
-    //   this.notifications = routeData['data'];
-    // });
   }
 }

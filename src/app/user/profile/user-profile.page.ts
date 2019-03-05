@@ -7,9 +7,10 @@ import { UserProfileModel } from './user-profile.model';
   selector: 'app-user-profile',
   templateUrl: './user-profile.page.html',
   styleUrls: [
-    './user-profile.page.scss',
-    './user-profile.page.ios.scss',
-    './user-profile.page.md.scss'
+    './styles/user-profile.page.scss',
+    './styles/user-profile.shell.scss',
+    './styles/user-profile.ios.scss',
+    './styles/user-profile.md.scss'
   ],
 })
 export class UserProfilePage implements OnInit {

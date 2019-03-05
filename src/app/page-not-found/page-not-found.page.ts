@@ -4,7 +4,9 @@ import { MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-page-not-found',
   templateUrl: './page-not-found.page.html',
-  styleUrls: ['./page-not-found.page.scss']
+  styleUrls: [
+    './styles/page-not-found.page.scss'
+  ]
 })
 export class PageNotFound implements OnInit {
 

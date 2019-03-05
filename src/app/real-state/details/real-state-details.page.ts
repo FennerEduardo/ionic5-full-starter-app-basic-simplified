@@ -6,7 +6,10 @@ import { RealStateDetailsModel } from './real-state-details.model';
 @Component({
   selector: 'app-real-state-details',
   templateUrl: './real-state-details.page.html',
-  styleUrls: ['./real-state-details.page.scss'],
+  styleUrls: [
+    './styles/real-state-details.page.scss',
+    './styles/real-state-details.shell.scss'
+  ]
 })
 export class RealStateDetailsPage implements OnInit {
   details: RealStateDetailsModel;

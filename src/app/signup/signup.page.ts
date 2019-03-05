@@ -10,7 +10,9 @@ import { PasswordValidator } from '../validators/password.validator';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
-  styleUrls: ['./signup.page.scss']
+  styleUrls: [
+    './styles/signup.page.scss'
+  ]
 })
 export class SignupPage implements OnInit {
   signupForm: FormGroup;

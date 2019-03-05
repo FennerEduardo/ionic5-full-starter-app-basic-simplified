@@ -1,3 +1,5 @@
+import * as dayjs from 'dayjs';
+
 export class DealsDetailsModel {
   showcaseImages: Array<string> = [
     '',
@@ -9,7 +11,9 @@ export class DealsDetailsModel {
   name: string;
   code: string;
   description: string;
-  expirationDate: string;
+  // Default mock value
+  // expirationDate = '03/03/2019';
+  expirationDate: string = dayjs().add(5, 'day').format('MM/DD/YYYY HH:mm:ss') as string;
   relatedDeals: Array<{logo: string, name: string, description: string}> = [
     {
       logo: '',

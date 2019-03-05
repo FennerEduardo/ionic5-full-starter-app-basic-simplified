@@ -1,6 +1,8 @@
 import { Component, Input, HostBinding, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformServer } from '@angular/common';
 
+import { environment } from '../../../environments/environment';
+
 @Component({
   selector: 'app-image-shell',
   templateUrl: './image-shell.component.html',
@@ -9,6 +11,9 @@ import { isPlatformServer } from '@angular/common';
   ]
 })
 export class ImageShellComponent {
+  // To debug shell styles, change configuration in the environment.ts file
+  private debugMode = (environment && environment.shell && environment.shell.debug) ? environment.shell.debug : false;
+
   _src = '';
   _alt = '';
   _mode = '';
@@ -28,7 +33,9 @@ export class ImageShellComponent {
 
   @Input()
   set src(val: string) {
-    this._src = (val !== undefined && val !== null) ? val : '';
+    if (!this.debugMode) {
+      this._src = (val !== undefined && val !== null) ? val : '';
+    }
 
     if (this._mode === 'cover') {
       // Unset the background-image

@@ -6,7 +6,11 @@ import { IonSlides, MenuController } from '@ionic/angular';
 @Component({
   selector: 'app-getting-started',
   templateUrl: './getting-started.page.html',
-  styleUrls: ['./getting-started.page.scss']
+  styleUrls: [
+    './styles/getting-started.page.scss',
+    './styles/getting-started.shell.scss',
+    './styles/getting-started.responsive.scss'
+  ]
 })
 export class GettingStartedPage implements OnInit, AfterViewInit {
   @ViewChild(IonSlides) slides: IonSlides;

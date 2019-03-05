@@ -56,7 +56,7 @@
       </app-aspect-ratio>
     </div>
     <p>
-      You can add/remove the following <b>Clasess</b> to adjust the shell element behavior:
+      You can add/remove the following <b>Classes</b> to adjust the shell element behavior:
     </p>
     <h5>Spinner</h5>
 <pre>
@@ -148,6 +148,80 @@ app-image-shell &#123;
         <h4 style="margin: 10px;">Some Text on top of a background-image container</h4>
       </app-aspect-ratio>
     </app-image-shell>
+  </section>
+  <section class="showcase-section">
+    <h2>Usage</h2>
+    <p>
+      Let me explain you the differences between <b>default</b> and <b>cover</b> mode and when you should use each one.
+    </p>
+    <h5>Default Mode Usage</h5>
+    <p>
+      You should use the <b>default mode</b> when you are 100% confident on the aspect ratio of an image.
+    </p>
+    <p>
+      If the image ratio does not match the specified aspect ratio, the image will be stretched.
+    </p>
+    <p>
+      <b>Expected behavior:</b>
+      <br />
+      The image <b>WILL</b> be stretched.
+      <br />
+      We define an aspect ratio of <b>2:1</b> but the image has an aspect ratio of <b>1:1</b>.
+    </p>
+    <div style="width:80%; margin: 0px auto;">
+      <app-aspect-ratio [ratio]="{w:2, h:1}">
+        <app-image-shell class="add-spinner" [src]="'https://lorempixel.com/200/200/sports/1/'" [alt]=""></app-image-shell>
+      </app-aspect-ratio>
+    </div>
+    <p>
+      <b>Expected behavior:</b>
+      <br />
+      The image <b>WON'T</b> be stretched.
+      <br />
+      We define an aspect ratio of <b>1:1</b> that matches the image ratio of <b>1:1</b>.
+    </p>
+    <div style="width:80%; margin: 0px auto;">
+      <app-aspect-ratio [ratio]="{w:1, h:1}">
+        <app-image-shell class="add-spinner" [src]="'https://lorempixel.com/200/200/sports/1/'" [alt]=""></app-image-shell>
+      </app-aspect-ratio>
+    </div>
+    <h5>Cover Mode Usage</h5>
+    <p>
+      You should use the <b>cover mode</b> when you want to fill a container with an image and you don't care if the image is shown completly or a portion of it.
+    </p>
+    <p>
+      If the image ratio does not match the specified aspect ratio, the image will be cropped to fit the available space without stretching the image.
+    </p>
+    <p>
+      <b>Expected behavior:</b>
+      <br />
+      The image will be cropped to fill the available space.
+      <br />
+      We define an aspect ratio of <b>2:1</b> but the image has an aspect ratio of <b>1:1</b>.
+    </p>
+    <div style="width:80%; margin: 0px auto;">
+      <app-image-shell class="add-spinner" [mode]="'cover'" [src]="'https://lorempixel.com/200/200/sports/1/'">
+        <app-aspect-ratio [ratio]="{w:2, h:1}">
+        </app-aspect-ratio>
+      </app-image-shell>
+    </div>
+    <p>
+      You can also change the <b>background-position</b> property to adjust how the image is placed inside the container.
+    </p>
+    <p>
+      <b>Notice:</b> This only applies to <b>cover</b> mode.
+    </p>
+<pre>
+app-image-shell[mode="cover"] &#123;
+  background-position: bottom right;
+&#125;
+</pre>
+    <div style="width:80%; margin: 0px auto;">
+      <app-image-shell style="background-position: bottom right;" class="add-spinner" [mode]="'cover'" [src]="'https://lorempixel.com/200/200/sports/1/'">
+        <app-aspect-ratio [ratio]="{w:2, h:1}">
+        </app-aspect-ratio>
+      </app-image-shell>
+    </div>
   </section>
   <section class="showcase-section">
     <h2>Maintain Aspect Ratio</h2>

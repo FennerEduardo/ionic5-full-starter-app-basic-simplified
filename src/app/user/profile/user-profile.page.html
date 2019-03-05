@@ -92,7 +92,7 @@
     </ion-row>
     <ion-row class="pictures-row">
       <ion-col class="picture-item" size="2" *ngFor="let photo of profile.photos">
-        <app-image-shell [mode]="'cover'" [src]="photo.image">
+        <app-image-shell [mode]="'cover'" [src]="photo.image" class="user-photo-image">
           <app-aspect-ratio [ratio]="{w:1, h:1}">
           </app-aspect-ratio>
         </app-image-shell>

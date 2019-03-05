@@ -13,7 +13,7 @@
       <ion-row class="image-row">
         <ion-col size="12">
           <a class="image-anchor" [routerLink]="['/app/categories/real-state/', item.slug]">
-            <app-image-shell [mode]="'cover'" class="add-spinner" [src]="item.picture">
+            <app-image-shell [mode]="'cover'" class="add-spinner item-picture" [src]="item.picture">
               <app-aspect-ratio [ratio]="{w:365, h:125}">
               </app-aspect-ratio>
             </app-image-shell>
@@ -21,26 +21,26 @@
         </ion-col>
       </ion-row>
       <ion-row class="description-row">
-
         <ion-col size="12" class="details-col">
-          <ion-row class="price-wrapper">
-            <h4 class="item-price">
-              <span class="price-icon">$</span>
-              <app-text-shell [data]="item.price" class="no-animation"></app-text-shell>
-            </h4>
-            <ion-icon *ngIf="item.liked" class="like-icon" name="heart"></ion-icon>
-            <ion-icon *ngIf="!item.liked" class="like-icon" name="heart-empty"></ion-icon>
-          </ion-row>
-          <ion-row>
-            <p class="item-address">
-              <app-text-shell [data]="item.address" [attr.lines]="1"></app-text-shell>
-            </p>
+          <ion-row class="details-wrapper">
+            <ion-col>
+              <h4 class="item-price">
+                <span class="price-icon">$</span>
+                <app-text-shell [data]="item.price" class="no-animation"></app-text-shell>
+              </h4>
+              <p class="item-address">
+                <app-text-shell [data]="item.address" class="no-animation"></app-text-shell>
+              </p>
+            </ion-col>
+            <ion-col class="bookmark-col" size="2">
+              <ion-icon *ngIf="item.liked" class="like-icon" name="heart"></ion-icon>
+              <ion-icon *ngIf="!item.liked" class="like-icon" name="heart-empty"></ion-icon>
+            </ion-col>
           </ion-row>
         </ion-col>
 
         <ion-col class="accommodations-col" size="12">
           <ion-row class="accommodations-wrapper">
-
             <ion-col class="item-accommodation">
               <ion-icon class="accommodation-icon" src="./assets/sample-icons/real-state/guests.svg"></ion-icon>
               <span class="accommodation-property">Guests</span>
