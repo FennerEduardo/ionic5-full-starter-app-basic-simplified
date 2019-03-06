@@ -170,7 +170,7 @@ app-image-shell &#123;
     </p>
     <div style="width:80%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:2, h:1}">
-        <app-image-shell class="add-spinner" [src]="'https://lorempixel.com/200/200/sports/1/'" [alt]=""></app-image-shell>
+        <app-image-shell class="add-spinner" [src]="'https://lorempixel.com/200/200/people/1/'" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
     <p>
@@ -182,7 +182,7 @@ app-image-shell &#123;
     </p>
     <div style="width:80%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:1, h:1}">
-        <app-image-shell class="add-spinner" [src]="'https://lorempixel.com/200/200/sports/1/'" [alt]=""></app-image-shell>
+        <app-image-shell class="add-spinner" [src]="'https://lorempixel.com/200/200/people/1/'" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
     <h5>Cover Mode Usage</h5>
@@ -200,7 +200,7 @@ app-image-shell &#123;
       We define an aspect ratio of <b>2:1</b> but the image has an aspect ratio of <b>1:1</b>.
     </p>
     <div style="width:80%; margin: 0px auto;">
-      <app-image-shell class="add-spinner" [mode]="'cover'" [src]="'https://lorempixel.com/200/200/sports/1/'">
+      <app-image-shell class="add-spinner" [mode]="'cover'" [src]="'https://lorempixel.com/200/200/people/1/'">
         <app-aspect-ratio [ratio]="{w:2, h:1}">
         </app-aspect-ratio>
       </app-image-shell>
@@ -217,7 +217,7 @@ app-image-shell[mode="cover"] &#123;
 &#125;
 </pre>
     <div style="width:80%; margin: 0px auto;">
-      <app-image-shell style="background-position: bottom right;" class="add-spinner" [mode]="'cover'" [src]="'https://lorempixel.com/200/200/sports/1/'">
+      <app-image-shell style="background-position: bottom right;" class="add-spinner" [mode]="'cover'" [src]="'https://lorempixel.com/200/200/people/1/'">
         <app-aspect-ratio [ratio]="{w:2, h:1}">
         </app-aspect-ratio>
       </app-image-shell>
@@ -274,14 +274,111 @@ app-image-shell[mode="cover"] &#123;
       The <code>&lt;app-text-shell&gt;</code> basically works by wrapping the text node with a loading indicator while you are fetching data.
     </p>
     <p>
-      While there are empty values the component adds some 'loading' styles and animations.
+      While there are empty values the component adds some 'loading' styles and animations. Whereas while there are non empty values, the loading state is removed.
     </p>
     <p>
-      You can reset the 'loading' state by re-assigning the data to the empty/null value.
+      Try toggling the loading state of the text shells below by changing the value of this textarea.
     </p>
+    <ion-textarea style="--background: #FFF;" placeholder="When this text is empty the text-shell will show the loading state." clearOnEdit="true" [(ngModel)]="sampleTextShellData"></ion-textarea>
     <p>
-      Empty data will cause the shell to never quit its 'loading' state.
+      You can reset the 'loading' state by clearing the textarea value.
     </p>
+  </section>
+  <section class="showcase-section">
+    <h4>Plain CSS Technique</h4>
+    <div style="background-color: #FFF; padding: 20px;">
+      <div class="text-shell"></div>
+    </div>
+  </section>
+  <section class="showcase-section">
+    <h4>No animation (default)</h4>
+    <p>
+      Single line example
+    </p>
+    <div style="background-color: #FFF; padding: 20px;">
+      <app-text-shell [data]="sampleTextShellData"></app-text-shell>
+    </div>
+    <p>
+      Multi-line example
+    </p>
+    <div style="background-color: #FFF; padding: 20px;">
+      <p>
+        <app-text-shell [data]="sampleTextShellData" lines="3"></app-text-shell>
+      </p>
+    </div>
+    <p>
+      On top of another element (with transparent background)
+    </p>
+    <div style="background-color: #FFF; padding: 20px; color: #FFF; font-weight: 500;">
+      <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="'https://lorempixel.com/400/200/abstract/1/'">
+        <app-aspect-ratio [ratio]="{w:2, h:1}">
+          <p style="margin: 20px 40px;">
+            <app-text-shell [data]="sampleTextShellData" lines="3"></app-text-shell>
+          </p>
+        </app-aspect-ratio>
+      </app-image-shell>
+    </div>
+  </section>
+  <section class="showcase-section">
+    <h4>Bouncing animation</h4>
+    <p>
+      Single line example
+    </p>
+    <div style="background-color: #FFF; padding: 20px;">
+      <app-text-shell [data]="sampleTextShellData" animation="bouncing"></app-text-shell>
+    </div>
+    <p>
+      Multi-line example
+    </p>
+    <div style="background-color: #FFF; padding: 20px;">
+      <p>
+        <app-text-shell [data]="sampleTextShellData" animation="bouncing" lines="3"></app-text-shell>
+      </p>
+    </div>
+    <p>
+      On top of another element (with transparent background)
+    </p>
+    <div style="background-color: #FFF; padding: 20px; color: #FFF; font-weight: 500;">
+      <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="'https://lorempixel.com/400/200/nature/1/'">
+        <app-aspect-ratio [ratio]="{w:2, h:1}">
+          <p style="margin: 20px 40px;">
+            <app-text-shell [data]="sampleTextShellData" animation="bouncing" lines="3"></app-text-shell>
+          </p>
+        </app-aspect-ratio>
+      </app-image-shell>
+    </div>
+  </section>
+  <section class="showcase-section">
+    <h4>Masked with background animation</h4>
+    <p>
+      Single line example
+    </p>
+    <div style="background-color: #FFF; padding: 20px;">
+      <app-text-shell [data]="sampleTextShellData" animation="masked"></app-text-shell>
+    </div>
+    <p>
+      Multi-line example
+    </p>
+    <div style="background-color: #FFF; padding: 20px;">
+      <p>
+        <app-text-shell [data]="sampleTextShellData" animation="masked" lines="3"></app-text-shell>
+      </p>
+    </div>
+    <p>
+      On top of another element (with transparent background)
+    </p>
+    <div style="background-color: #FFF; padding: 20px; color: #FFF; font-weight: 500;">
+      <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="'https://lorempixel.com/400/200/city/1/'">
+        <app-aspect-ratio [ratio]="{w:2, h:1}">
+          <p style="margin: 20px 40px;">
+            <app-text-shell [data]="sampleTextShellData" animation="masked" lines="3"></app-text-shell>
+          </p>
+        </app-aspect-ratio>
+      </app-image-shell>
+    </div>
+  </section>
+  <section class="showcase-section">
+    <h4>Other use cases</h4>
     <p>
       The <code>&lt;app-text-shell&gt;</code> element can be used alone or wrapped with a text tag (<b>h1</b>, <b>h2</b>, <b>h3</b>, <b>p</b>, etc).
     </p>
@@ -335,21 +432,8 @@ app-image-shell[mode="cover"] &#123;
     <h5>
       <app-text-shell [data]=""></app-text-shell>
     </h5>
-    <p>
-      You can add/remove the following <b>Class</b> to adjust the shell element behavior
-    </p>
-    <h5>Disable animation</h5>
-    <p>
-      You can disable the line animation by adding the <b>no-animation</b> class.
-    </p>
-<pre>
-&lt;p&gt;
-  <b>&lt;app-text-shell class="no-animation" [data]="" [attr.lines]="3"&gt;&lt;/app-text-shell&gt;</b>
-&lt;/p&gt;
-</pre>
-  <p>
-    <app-text-shell style="--text-shell-line-color: #DDD;" class="no-animation" [data]="" [attr.lines]="3"></app-text-shell>
-  </p>
+  </section>
+  <section class="showcase-section">
     <p>
       You can add/remove the following <b>Attributes</b> to adjust the shell element behavior
     </p>
@@ -359,12 +443,46 @@ app-image-shell[mode="cover"] &#123;
     </p>
 <pre>
 &lt;p&gt;
-  <b>&lt;app-text-shell [attr.lines]="6" [data]=""&gt;&lt;/app-text-shell&gt;</b>
+  &lt;app-text-shell <b>lines="6"</b> [data]=""&gt;&lt;/app-text-shell&gt;
 &lt;/p&gt;
 </pre>
-  <p>
-    <app-text-shell style="--text-shell-line-color: #DDD;" [data]="" [attr.lines]="6"></app-text-shell>
-  </p>
+    <p>
+      <app-text-shell style="--text-shell-line-color: #DDD;" [data]="" lines="6"></app-text-shell>
+    </p>
+    <h5>Set different animation options</h5>
+    <p>
+      You can choose between <b>no animation</b> (default), <b>bouncing animation</b>, and <b>masked with background animation</b>
+    </p>
+<pre>
+&lt;p&gt;
+  &lt;app-text-shell <b>animation="bouncing"</b> lines="2" [data]=""&gt;&lt;/app-text-shell&gt;
+&lt;/p&gt;
+</pre>
+    <p>
+      <app-text-shell style="--text-shell-line-color: #DDD;" [data]="" animation="bouncing" lines="2"></app-text-shell>
+    </p>
+<pre>
+&lt;p&gt;
+  &lt;app-text-shell <b>animation="masked"</b> lines="2" [data]=""&gt;&lt;/app-text-shell&gt;
+&lt;/p&gt;
+</pre>
+<pre>
+app-text-shell &#123;
+  --text-shell-background: #FFF;
+  --text-shell-line-color: transparent;
+&#125;
+</pre>
+    <p>
+      In this mode, the <code>--text-shell-background</code> property refers to the masks colors.
+    </p>
+    <p>
+      <b>Note:</b> When using a <code>masked</code> animation, make sure you set the line-color to transparent so the background animation that's beneath the masks can be seen.
+    </p>
+    <p style="padding: 5px; background: #FFF;">
+      <app-text-shell style="--text-shell-line-color: transparent; --text-shell-background: #FFF;" [data]="" animation="masked" lines="2"></app-text-shell>
+    </p>
+  </section>
+  <section class="showcase-section">
     <p>
       You can also override these <b>CSS 4 variables</b> to adjust the shell element style
     </p>
@@ -388,7 +506,27 @@ app-text-shell &#123;
 &#125;
 </pre>
     <p style="padding: 5px; background: #000000;">
-      <app-text-shell style="--text-shell-line-color: #FFFFFF; --text-shell-background: #000000;" [data]="" [attr.lines]="3"></app-text-shell>
+      <app-text-shell style="--text-shell-line-color: #FFFFFF; --text-shell-background: #000000;" [data]="" lines="3"></app-text-shell>
+    </p>
+    <h5>Background Animation</h5>
+    <p>
+      <b>Note:</b> These properties are only applied when using <code>animation="masked"</code>.
+    </p>
+<pre>
+app-text-shell &#123;
+  --text-shell-line-color: transparent;
+  --text-shell-background: #000000;
+  --text-shell-animation-background: rgba(255, 3, 109, 0.6);
+  --text-shell-animation-color: rgba(156, 4, 68, 0.7);
+&#125;
+</pre>
+    <p style="padding: 5px; background: #000000;">
+      <app-text-shell style="
+        --text-shell-line-color: transparent;
+        --text-shell-background: #000000;
+        --text-shell-animation-background: rgba(255, 3, 109, 0.6);
+        --text-shell-animation-color: rgba(156, 4, 68, 0.7);
+      " [data]="" lines="3" animation="masked"></app-text-shell>
     </p>
     <h5>Line height</h5>
 <pre>
@@ -406,7 +544,7 @@ app-text-shell &#123;
 &#125;
 </pre>
     <p>
-      <app-text-shell style="--text-shell-line-gutter: 10px; --text-shell-line-color: #CCC;" [data]="" [attr.lines]="4"></app-text-shell>
+      <app-text-shell style="--text-shell-line-gutter: 10px; --text-shell-line-color: #CCC;" [data]="" lines="4"></app-text-shell>
     </p>
   </section>
 
@@ -435,7 +573,7 @@ app-text-shell &#123;
           <app-text-shell [data]=""></app-text-shell>
         </h3>
         <p>
-          <app-text-shell [data]="" [attr.lines]="3"></app-text-shell>
+          <app-text-shell [data]="" lines="3"></app-text-shell>
         </p>
       </ion-col>
     </ion-row>
@@ -466,7 +604,7 @@ app-text-shell &#123;
           <app-text-shell [data]="simpleFetchData?.title"></app-text-shell>
         </h3>
         <p>
-          <app-text-shell [data]="simpleFetchData?.description" [attr.lines]="3"></app-text-shell>
+          <app-text-shell [data]="simpleFetchData?.description" lines="3"></app-text-shell>
         </p>
       </ion-col>
     </ion-row>
@@ -495,7 +633,7 @@ app-text-shell &#123;
           <app-text-shell [data]="(shellProviderData | async)?.title"></app-text-shell>
         </h3>
         <p>
-          <app-text-shell [data]="(shellProviderData | async)?.description" [attr.lines]="3"></app-text-shell>
+          <app-text-shell [data]="(shellProviderData | async)?.description" lines="3"></app-text-shell>
         </p>
       </ion-col>
     </ion-row>

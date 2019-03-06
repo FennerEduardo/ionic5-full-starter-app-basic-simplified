@@ -23,6 +23,8 @@ import { ShellProvider } from '../../utils/shell-provider';
   styleUrls: ['./app-shell.page.scss']
 })
 export class AppShellPage implements OnInit {
+  sampleTextShellData = '';
+
   // We will manually fetch data using the HttpClient and assign it to this property
   simpleFetchData: {
     cover: string,
