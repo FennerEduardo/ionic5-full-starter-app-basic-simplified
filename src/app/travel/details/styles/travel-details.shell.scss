@@ -30,6 +30,11 @@ app-image-shell.details-icon {
 .details-short-description > app-text-shell {
   --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
   --text-shell-line-height: 14px;
+  max-width: 80%;
+
+  &.text-loaded {
+    max-width: inherit;
+  }
 }
 
 .score-value > app-text-shell {

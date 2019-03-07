@@ -22,16 +22,16 @@
   </ion-row>
   <div class="description-wrapper">
     <h3 class="details-name">
-      <app-text-shell [data]="details?.name" [attr.element]="'h3'" class="no-animation"></app-text-shell>
+      <app-text-shell animation="masked" [data]="details?.name"></app-text-shell>
     </h3>
     <span class="details-brand">
-      <app-text-shell [data]="details?.brand" class="no-animation"></app-text-shell>
+      <app-text-shell animation="masked" [data]="details?.brand"></app-text-shell>
     </span>
     <span class="details-price">
-      <app-text-shell [data]="details?.price | currency" class="no-animation"></app-text-shell>
+      <app-text-shell animation="masked" [data]="details?.price | currency"></app-text-shell>
     </span>
     <span class="details-sale-price">
-      <app-text-shell [data]="details?.salePrice | currency" class="no-animation"></app-text-shell>
+      <app-text-shell animation="masked" [data]="details?.salePrice | currency"></app-text-shell>
     </span>
   </div>
   <ion-row class="details-purchase-options-row">
@@ -51,19 +51,19 @@
   <div class="details-description-wrapper">
     <h3 class="detail-title">About me</h3>
     <p class="details-description">
-      <app-text-shell [data]="details?.description" [attr.lines]="5" class="no-animation"></app-text-shell>
+      <app-text-shell animation="masked" [data]="details?.description" lines="5"></app-text-shell>
     </p>
   </div>
   <div class="details-description-wrapper">
     <h3 class="detail-title">Looking after me</h3>
     <p class="details-description">
-      <app-text-shell [data]="details?.careInstructions" [attr.lines]="3" class="no-animation"></app-text-shell>
+      <app-text-shell animation="masked" [data]="details?.careInstructions" lines="3"></app-text-shell>
     </p>
   </div>
   <div class="details-description-wrapper">
     <h3 class="detail-title">Product code</h3>
     <span class="details-description product-code">
-      <app-text-shell [data]="details?.upc" class="no-animation"></app-text-shell>
+      <app-text-shell animation="masked" [data]="details?.upc"></app-text-shell>
     </span>
   </div>
   <!-- Related Products -->
@@ -81,11 +81,11 @@
         <div class="item-details-wrapper">
           <h4 class="item-name">
             <a class="name-anchor">
-              <app-text-shell [data]="relatedProduct.name" [attr.element]="'h4'" class="no-animation"></app-text-shell>
+              <app-text-shell animation="masked" [data]="relatedProduct.name"></app-text-shell>
             </a>
           </h4>
           <span class="item-sale-price">
-            <app-text-shell [data]="relatedProduct.salePrice | currency" class="no-animation"></app-text-shell>
+            <app-text-shell animation="masked" [data]="relatedProduct.salePrice | currency"></app-text-shell>
           </span>
         </div>
       </ion-col>

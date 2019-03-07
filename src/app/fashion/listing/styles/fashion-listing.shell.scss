@@ -18,16 +18,19 @@ app-image-shell.item-image {
 }
 
 .item-name app-text-shell {
+  --text-shell-animation-background: rgba(var(--shell-color-rgb), .25);
+  --text-shell-animation-color: rgba(var(--shell-color-rgb), .35);
   --text-shell-line-height: 14px;
-  --text-shell-line-color: rgba(var(--shell-color-rgb), .25);
 }
 
 .item-sale-price > app-text-shell {
+  --text-shell-animation-background: rgba(var(--shell-color-rgb), .20);
+  --text-shell-animation-color: rgba(var(--shell-color-rgb), .30);
   --text-shell-line-height: 16px;
-  --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
 }
 
 .item-original-price > app-text-shell {
+  --text-shell-animation-background: rgba(var(--shell-color-rgb), .20);
+  --text-shell-animation-color: rgba(var(--shell-color-rgb), .30);
   --text-shell-line-height: 16px;
-  --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
 }

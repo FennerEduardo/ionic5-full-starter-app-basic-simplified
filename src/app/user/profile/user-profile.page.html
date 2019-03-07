@@ -17,15 +17,15 @@
       <ion-row class="user-data-row">
         <ion-col size="9">
           <h3 class="user-name">
-            <app-text-shell class="no-animation" [data]="profile.name"></app-text-shell>
+            <app-text-shell [data]="profile.name"></app-text-shell>
           </h3>
           <h5 class="user-title">
-            <app-text-shell class="no-animation" [data]="profile.job"></app-text-shell>
+            <app-text-shell [data]="profile.job"></app-text-shell>
           </h5>
         </ion-col>
         <ion-col class="membership-col">
           <span class="user-membership">
-            <app-text-shell [data]="profile.membership" class="no-animation"></app-text-shell>
+            <app-text-shell [data]="profile.membership"></app-text-shell>
           </span>
         </ion-col>
       </ion-row>
@@ -45,19 +45,19 @@
   <ion-row class="user-stats-section">
     <ion-col class="user-stats-wrapper" size="4">
       <span class="stat-value">
-        <app-text-shell [data]="profile.likes" class="no-animation"></app-text-shell>
+        <app-text-shell [data]="profile.likes"></app-text-shell>
       </span>
       <span class="stat-name">Likes</span>
     </ion-col>
     <ion-col class="user-stats-wrapper" size="4">
       <span class="stat-value">
-        <app-text-shell [data]="profile.followers" class="no-animation"></app-text-shell>
+        <app-text-shell [data]="profile.followers"></app-text-shell>
       </span>
       <span class="stat-name">Followers</span>
     </ion-col>
     <ion-col class="user-stats-wrapper" size="4">
       <span class="stat-value">
-        <app-text-shell [data]="profile.following" class="no-animation"></app-text-shell>
+        <app-text-shell [data]="profile.following"></app-text-shell>
       </span>
       <span class="stat-name">Following</span>
     </ion-col>
@@ -65,7 +65,7 @@
   <div class="user-about-section">
     <h3 class="details-section-title">About</h3>
     <p class="user-description">
-      <app-text-shell [data]="profile.about" [attr.lines]="4"></app-text-shell>
+      <app-text-shell animation="bouncing" lines="4" [data]="profile.about"></app-text-shell>
     </p>
   </div>
   <div class="user-friends-section">
@@ -79,7 +79,7 @@
           <app-image-shell class="friend-picture" [src]="friend.image"></app-image-shell>
         </app-aspect-ratio>
         <span class="friend-name">
-          <app-text-shell [data]="friend.name" class="no-animation"></app-text-shell>
+          <app-text-shell [data]="friend.name"></app-text-shell>
         </span>
       </ion-col>
     </ion-row>
