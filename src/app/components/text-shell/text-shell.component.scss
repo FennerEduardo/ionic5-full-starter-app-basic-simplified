@@ -63,9 +63,10 @@ $max-lines-count: 6;
 // Masked lines with animation beneath
 :host([animation="masked"]) {
   --text-shell-background: #FFF;
-  --text-shell-line-color: transparent;
+  --text-shell-line-color: transparent !important;
   --text-shell-animation-background: #EEE;
   --text-shell-animation-color: #DDD;
+
 
   // Calculate default height for 1 line
   @include background-height(min-height, 1);
@@ -82,6 +83,16 @@ $max-lines-count: 6;
       linear-gradient(to right, var(--text-shell-animation-background) 8%, var(--text-shell-animation-color) 18%, var(--text-shell-animation-background) 33%);
     background-size: 800px 104px;
     animation: animateBackground 2s ease-in-out infinite;
+  }
+
+  @keyframes animateBackground {
+    0%{
+      background-position: -468px 0
+    }
+
+    100%{
+      background-position: 468px 0
+    }
   }
 
   // The masks
