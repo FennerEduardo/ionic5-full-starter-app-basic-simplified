@@ -35,9 +35,11 @@
     overflow: hidden;
 
     & > .inner-img {
-      position: absolute;
-      top: 0;
-      left: 0;
+      // Consider removing these properties to support standalone mode (without aspect-ratio wrapper)
+      // position: absolute;
+      // top: 0;
+      // left: 0;
+      // end
       transition: visibility 0s linear, opacity .5s linear;
       opacity: 0;
       visibility: hidden;
