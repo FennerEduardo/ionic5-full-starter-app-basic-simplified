@@ -60,8 +60,8 @@ $max-lines-count: 6;
   }
 }
 
-// Masked lines with animation beneath
-:host([animation="masked"]) {
+// Background gradient beneath masked lines
+:host([animation="gradient"]) {
   --text-shell-background: #FFF;
   --text-shell-line-color: transparent !important;
   --text-shell-animation-background: #EEE;

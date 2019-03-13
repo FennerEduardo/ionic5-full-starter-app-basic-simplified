@@ -349,19 +349,19 @@ app-image-shell[mode="cover"] &#123;
     </div>
   </section>
   <section class="showcase-section">
-    <h4>Masked with background animation</h4>
+    <h4>Gradient animation</h4>
     <p>
       Single line example
     </p>
     <div style="background-color: #FFF; padding: 20px;">
-      <app-text-shell [data]="sampleTextShellData" animation="masked"></app-text-shell>
+      <app-text-shell [data]="sampleTextShellData" animation="gradient"></app-text-shell>
     </div>
     <p>
       Multi-line example
     </p>
     <div style="background-color: #FFF; padding: 20px;">
       <p>
-        <app-text-shell [data]="sampleTextShellData" animation="masked" lines="3"></app-text-shell>
+        <app-text-shell [data]="sampleTextShellData" animation="gradient" lines="3"></app-text-shell>
       </p>
     </div>
     <p>
@@ -371,7 +371,7 @@ app-image-shell[mode="cover"] &#123;
       <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="'https://lorempixel.com/400/200/city/1/'">
         <app-aspect-ratio [ratio]="{w:2, h:1}">
           <p style="margin: 20px 40px;">
-            <app-text-shell [data]="sampleTextShellData" animation="masked" lines="3"></app-text-shell>
+            <app-text-shell [data]="sampleTextShellData" animation="gradient" lines="3"></app-text-shell>
           </p>
         </app-aspect-ratio>
       </app-image-shell>
@@ -451,7 +451,7 @@ app-image-shell[mode="cover"] &#123;
     </p>
     <h5>Set different animation options</h5>
     <p>
-      You can choose between <b>no animation</b> (default), <b>bouncing animation</b>, and <b>masked with background animation</b>
+      You can choose between <b>no animation</b> (default), <b>bouncing animation</b>, and <b>gradient background with line msks on top</b>
     </p>
 <pre>
 &lt;p&gt;
@@ -463,7 +463,7 @@ app-image-shell[mode="cover"] &#123;
     </p>
 <pre>
 &lt;p&gt;
-  &lt;app-text-shell <b>animation="masked"</b> lines="2" [data]=""&gt;&lt;/app-text-shell&gt;
+  &lt;app-text-shell <b>animation="gradient"</b> lines="2" [data]=""&gt;&lt;/app-text-shell&gt;
 &lt;/p&gt;
 </pre>
 <pre>
@@ -472,14 +472,14 @@ app-text-shell &#123;
   --text-shell-line-color: transparent;
 &#125;
 </pre>
+    <p style="padding: 5px; background: #FFF;">
+      <app-text-shell style="--text-shell-line-color: transparent; --text-shell-background: #FFF;" [data]="" animation="gradient" lines="2"></app-text-shell>
+    </p>
     <p>
       In this mode, the <code>--text-shell-background</code> property refers to the masks colors.
     </p>
     <p>
-      <b>Note:</b> When using a <code>masked</code> animation, make sure you set the line-color to transparent so the background animation that's beneath the masks can be seen.
-    </p>
-    <p style="padding: 5px; background: #FFF;">
-      <app-text-shell style="--text-shell-line-color: transparent; --text-shell-background: #FFF;" [data]="" animation="masked" lines="2"></app-text-shell>
+      <b>Note:</b> When using a <code>gradient</code> animation, make sure you set the line-color to transparent so the background animation that's beneath the masks can be seen.
     </p>
   </section>
   <section class="showcase-section">
@@ -510,7 +510,7 @@ app-text-shell &#123;
     </p>
     <h5>Background Animation</h5>
     <p>
-      <b>Note:</b> These properties are only applied when using <code>animation="masked"</code>.
+      <b>Note:</b> These properties are only applied when using <code>animation="gradient"</code>.
     </p>
 <pre>
 app-text-shell &#123;
@@ -526,7 +526,7 @@ app-text-shell &#123;
         --text-shell-background: #000000;
         --text-shell-animation-background: rgba(255, 3, 109, 0.6);
         --text-shell-animation-color: rgba(156, 4, 68, 0.7);
-      " [data]="" lines="3" animation="masked"></app-text-shell>
+      " [data]="" lines="3" animation="gradient"></app-text-shell>
     </p>
     <h5>Line height</h5>
 <pre>
