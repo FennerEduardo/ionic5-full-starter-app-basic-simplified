@@ -59,6 +59,12 @@
     background-size: cover;
     background-repeat: no-repeat;
 
+    // In cover mode, we can have content inside the element, thus we need to put these elements beneath
+    &::before,
+    & > .spinner {
+      z-index: -1;
+    }
+
     & > .inner-img {
       display: none;
       visibility: hidden;
