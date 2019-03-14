@@ -47,6 +47,13 @@
     <p>
       This component enables to preload an image with an elegant shell.
     </p>
+  </section>
+  <section class="showcase-section">
+    <h5>Set different animation options</h5>
+    <p>
+      You can choose between <b>no animation</b> (default), <b>spinner animation</b>, and <b>gradient background</b> animation
+    </p>
+    <h4>No animation (default)</h4>
 <pre>
 &lt;app-image-shell [src]="" [alt]=""&gt;&lt;/app-image-shell&gt;
 </pre>
@@ -55,30 +62,43 @@
         <app-image-shell [src]="" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
-    <p>
-      You can add/remove the following <b>Classes</b> to adjust the shell element behavior:
-    </p>
-    <h5>Spinner</h5>
+    <h4>Spinner animation</h4>
 <pre>
-&lt;app-image-shell class="add-spinner" [src]="" [alt]=""&gt;&lt;/app-image-shell&gt;
+&lt;app-image-shell <b>animation="spinner"</b> [src]="" [alt]=""&gt;&lt;/app-image-shell&gt;
 </pre>
     <div style="width:30%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:1, h:1}">
-        <app-image-shell class="add-spinner" [src]="" [alt]=""></app-image-shell>
+        <app-image-shell animation="spinner" [src]="" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
+    <h4>Gradient animation</h4>
+<pre>
+&lt;app-image-shell <b>animation="gradient"</b> [src]="" [alt]=""&gt;&lt;/app-image-shell&gt;
+</pre>
+    <div style="width:30%; margin: 0px auto;">
+      <app-aspect-ratio [ratio]="{w:1, h:1}">
+        <app-image-shell animation="gradient" [src]="" [alt]=""></app-image-shell>
+      </app-aspect-ratio>
+    </div>
+  </section>
+  <section class="showcase-section">
+    <p>
+      You can add/remove the following <b>Classes</b> to adjust the shell element behavior:
+    </p>
     <h5>Overlay</h5>
     <p>
       This class adds a background overlay after the image has loaded.
     </p>
 <pre>
-&lt;app-image-shell class="add-spinner add-overlay" [src]="''./assets/sample-images/travel/Travel2-64.47.png''" [alt]=""&gt;&lt;/app-image-shell&gt;
+&lt;app-image-shell animation="spinner" <b>class="add-overlay"</b> [src]="''./assets/sample-images/travel/Travel2-64.47.png''" [alt]=""&gt;&lt;/app-image-shell&gt;
 </pre>
     <div style="width:30%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:1, h:1}">
-        <app-image-shell class="add-spinner add-overlay" [src]="'./assets/sample-images/travel/Travel2-64.47.png'" [alt]=""></app-image-shell>
+        <app-image-shell animation="spinner" class="add-overlay" [src]="'./assets/sample-images/travel/Travel2-64.47.png'" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
+  </section>
+  <section class="showcase-section">
     <p>
       You can also override these <b>CSS 4 variables</b> to adjust the shell element style
     </p>
@@ -90,7 +110,7 @@ app-image-shell &#123;
 </pre>
     <div style="width:30%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:1, h:1}">
-        <app-image-shell style="--image-shell-loading-background: rgba(233, 30, 99, .25);" class="add-spinner" [src]="" [alt]=""></app-image-shell>
+        <app-image-shell style="--image-shell-loading-background: rgba(233, 30, 99, .25);" [src]="" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
     <h5>Overlay</h5>
@@ -101,7 +121,7 @@ app-image-shell &#123;
 </pre>
     <div style="width:30%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:1, h:1}">
-        <app-image-shell style="--image-shell-overlay-background: rgba(103, 58, 183, .40);" class="add-spinner add-overlay" [src]="'./assets/sample-images/travel/Travel2-64.47.png'" [alt]=""></app-image-shell>
+        <app-image-shell style="--image-shell-overlay-background: rgba(103, 58, 183, .40);" animation="spinner" class="add-overlay" [src]="'./assets/sample-images/travel/Travel2-64.47.png'" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
     <h5>Spinner</h5>
@@ -113,7 +133,25 @@ app-image-shell &#123;
 </pre>
     <div style="width:30%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:1, h:1}">
-        <app-image-shell style="--image-shell-spinner-size: 40px; --image-shell-spinner-color: #000000;" class="add-spinner" [src]="" [alt]=""></app-image-shell>
+        <app-image-shell style="--image-shell-spinner-size: 40px; --image-shell-spinner-color: #000000;" animation="spinner" [src]="" [alt]=""></app-image-shell>
+      </app-aspect-ratio>
+    </div>
+    <h5>Background Animation</h5>
+    <p>
+      <b>Note:</b> These properties are only applied when using <code>animation="gradient"</code>.
+    </p>
+<pre>
+app-image-shell &#123;
+  --image-shell-loading-background: rgba(255, 3, 109, 0.6);
+  --image-shell-animation-color: rgba(156, 4, 68, 0.7);
+&#125;
+</pre>
+    <div style="width:30%; margin: 0px auto;">
+      <app-aspect-ratio [ratio]="{w:1, h:1}">
+        <app-image-shell style="
+          --image-shell-loading-background: rgba(255, 3, 109, 0.6);
+          --image-shell-animation-color: rgba(156, 4, 68, 0.7);
+        " animation="gradient" [src]="" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
     <h5>Border Radius</h5>
@@ -124,7 +162,7 @@ app-image-shell &#123;
 </pre>
     <div style="width:30%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:1, h:1}">
-        <app-image-shell style="--image-shell-border-radius: 10px;" class="add-spinner" [src]="" [alt]=""></app-image-shell>
+        <app-image-shell style="--image-shell-border-radius: 10px;" animation="spinner" [src]="" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
   </section>
@@ -137,13 +175,13 @@ app-image-shell &#123;
       This is different from the default mode, because (although it's not mandatory) cover mode is designed to contain content (for example some text)
     </p>
 <pre>
-<b>&lt;app-image-shell [mode]="'cover'" class="add-spinner add-overlay" [src]=""&gt;</b>
+<b>&lt;app-image-shell [mode]="'cover'" animation="spinner" class="add-overlay" [src]=""&gt;</b>
   &lt;app-aspect-ratio [ratio]="&#123;w:3, h:2&#125;"&gt;
     Some Text
   &lt;/app-aspect-ratio&gt;
 <b>&lt;/app-image-shell&gt;</b>
 </pre>
-    <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="">
+    <app-image-shell class="add-overlay" animation="spinner" [mode]="'cover'" [src]="">
       <app-aspect-ratio [ratio]="{w:3, h:2}">
         <h4 style="margin: 10px;">Some Text on top of a background-image container</h4>
       </app-aspect-ratio>
@@ -170,7 +208,7 @@ app-image-shell &#123;
     </p>
     <div style="width:80%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:2, h:1}">
-        <app-image-shell class="add-spinner" [src]="'https://lorempixel.com/200/200/people/1/'" [alt]=""></app-image-shell>
+        <app-image-shell animation="spinner" [src]="'https://lorempixel.com/200/200/people/1/'" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
     <p>
@@ -182,7 +220,7 @@ app-image-shell &#123;
     </p>
     <div style="width:80%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:1, h:1}">
-        <app-image-shell class="add-spinner" [src]="'https://lorempixel.com/200/200/people/1/'" [alt]=""></app-image-shell>
+        <app-image-shell animation="spinner" [src]="'https://lorempixel.com/200/200/people/1/'" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
     <h5>Cover Mode Usage</h5>
@@ -200,7 +238,7 @@ app-image-shell &#123;
       We define an aspect ratio of <b>2:1</b> but the image has an aspect ratio of <b>1:1</b>.
     </p>
     <div style="width:80%; margin: 0px auto;">
-      <app-image-shell class="add-spinner" [mode]="'cover'" [src]="'https://lorempixel.com/200/200/people/1/'">
+      <app-image-shell animation="spinner" [mode]="'cover'" [src]="'https://lorempixel.com/200/200/people/1/'">
         <app-aspect-ratio [ratio]="{w:2, h:1}">
         </app-aspect-ratio>
       </app-image-shell>
@@ -217,7 +255,7 @@ app-image-shell[mode="cover"] &#123;
 &#125;
 </pre>
     <div style="width:80%; margin: 0px auto;">
-      <app-image-shell style="background-position: bottom right;" class="add-spinner" [mode]="'cover'" [src]="'https://lorempixel.com/200/200/people/1/'">
+      <app-image-shell style="background-position: bottom right;" animation="spinner" [mode]="'cover'" [src]="'https://lorempixel.com/200/200/people/1/'">
         <app-aspect-ratio [ratio]="{w:2, h:1}">
         </app-aspect-ratio>
       </app-image-shell>
@@ -237,12 +275,12 @@ app-image-shell[mode="cover"] &#123;
     </p>
 <pre>
 <b>&lt;app-aspect-ratio [ratio]="&#123;w:3, h:2&#125;"&gt;</b>
-  &lt;app-image-shell class="add-spinner" [src]="" [alt]=""&gt;&lt;/app-image-shell&gt;
+  &lt;app-image-shell animation="spinner" [src]="" [alt]=""&gt;&lt;/app-image-shell&gt;
 <b>&lt;/app-aspect-ratio&gt;</b>
 </pre>
     <div style="width:60%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:3, h:2}">
-        <app-image-shell class="add-spinner" [src]="" [alt]=""></app-image-shell>
+        <app-image-shell animation="spinner" [src]="" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
     <h5>Cover mode</h5>
@@ -250,13 +288,13 @@ app-image-shell[mode="cover"] &#123;
       When using the <b>cover</b> mode we need to include the <code>&lt;app-aspect-ratio&gt;</code> inside the <code>&lt;app-image-shell&gt;</code> element instead of surrounding it.
     </p>
 <pre>
-&lt;app-image-shell [mode]="'cover'" class="add-spinner add-overlay" [src]=""&gt;
+&lt;app-image-shell [mode]="'cover'" animation="spinner" class="add-overlay" [src]=""&gt;
   <b>&lt;app-aspect-ratio [ratio]="&#123;w:3, h:2&#125;"&gt;</b>
     Some Text
   <b>&lt;/app-aspect-ratio&gt;</b>
 &lt;/app-image-shell&gt;
 </pre>
-    <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="">
+    <app-image-shell animation="spinner" class="add-overlay" [mode]="'cover'" [src]="">
       <app-aspect-ratio [ratio]="{w:3, h:2}">
         <h4 style="margin: 10px;">Some Text on top of a background-image container</h4>
       </app-aspect-ratio>
@@ -279,7 +317,7 @@ app-image-shell[mode="cover"] &#123;
     <p>
       Try toggling the loading state of the text shells below by changing the value of this textarea.
     </p>
-    <ion-textarea style="--background: #FFF;" placeholder="When this text is empty the text-shell will show the loading state." clearOnEdit="true" [(ngModel)]="sampleTextShellData"></ion-textarea>
+    <ion-textarea style="--background: #EEE;" placeholder="When this text is empty the text-shell will show the loading state." clearOnEdit="true" [(ngModel)]="sampleTextShellData"></ion-textarea>
     <p>
       You can reset the 'loading' state by clearing the textarea value.
     </p>
@@ -310,7 +348,7 @@ app-image-shell[mode="cover"] &#123;
       On top of another element (with transparent background)
     </p>
     <div style="background-color: #FFF; padding: 20px; color: #FFF; font-weight: 500;">
-      <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="'https://lorempixel.com/400/200/abstract/1/'">
+      <app-image-shell animation="spinner" class="add-overlay" [mode]="'cover'" [src]="'https://lorempixel.com/400/200/abstract/1/'">
         <app-aspect-ratio [ratio]="{w:2, h:1}">
           <p style="margin: 20px 40px;">
             <app-text-shell [data]="sampleTextShellData" lines="3"></app-text-shell>
@@ -339,7 +377,7 @@ app-image-shell[mode="cover"] &#123;
       On top of another element (with transparent background)
     </p>
     <div style="background-color: #FFF; padding: 20px; color: #FFF; font-weight: 500;">
-      <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="'https://lorempixel.com/400/200/nature/1/'">
+      <app-image-shell animation="spinner" class="add-overlay" [mode]="'cover'" [src]="'https://lorempixel.com/400/200/nature/1/'">
         <app-aspect-ratio [ratio]="{w:2, h:1}">
           <p style="margin: 20px 40px;">
             <app-text-shell [data]="sampleTextShellData" animation="bouncing" lines="3"></app-text-shell>
@@ -368,7 +406,7 @@ app-image-shell[mode="cover"] &#123;
       On top of another element (with transparent background)
     </p>
     <div style="background-color: #FFF; padding: 20px; color: #FFF; font-weight: 500;">
-      <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="'https://lorempixel.com/400/200/city/1/'">
+      <app-image-shell animation="spinner" class="add-overlay" [mode]="'cover'" [src]="'https://lorempixel.com/400/200/city/1/'">
         <app-aspect-ratio [ratio]="{w:2, h:1}">
           <p style="margin: 20px 40px;">
             <app-text-shell [data]="sampleTextShellData" animation="gradient" lines="3"></app-text-shell>
@@ -451,7 +489,7 @@ app-image-shell[mode="cover"] &#123;
     </p>
     <h5>Set different animation options</h5>
     <p>
-      You can choose between <b>no animation</b> (default), <b>bouncing animation</b>, and <b>gradient background with line msks on top</b>
+      You can choose between <b>no animation</b> (default), <b>bouncing animation</b>, and <b>gradient background with line masks on top</b>
     </p>
 <pre>
 &lt;p&gt;
@@ -557,7 +595,7 @@ app-text-shell &#123;
     </p>
     <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
       <ion-col size="12">
-        <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="">
+        <app-image-shell animation="spinner" class="add-overlay" [mode]="'cover'" [src]="">
           <app-aspect-ratio [ratio]="{w:2, h:1}">
             <h4 style="margin: 10px; text-align: center;">Text on top of a background-image container</h4>
           </app-aspect-ratio>
@@ -565,7 +603,7 @@ app-text-shell &#123;
       </ion-col>
       <ion-col size="4">
         <app-aspect-ratio [ratio]="{w:1, h:1}">
-          <app-image-shell class="add-spinner" [src]="" [alt]="'Sample Image'"></app-image-shell>
+          <app-image-shell animation="spinner" [src]="" [alt]="'Sample Image'"></app-image-shell>
         </app-aspect-ratio>
       </ion-col>
       <ion-col size="8">
@@ -588,7 +626,7 @@ app-text-shell &#123;
     </p>
     <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
       <ion-col size="12">
-        <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="simpleFetchData?.cover" [alt]="'Sample Image Cover'">
+        <app-image-shell animation="gradient" class="add-overlay" [mode]="'cover'" [src]="simpleFetchData?.cover" [alt]="'Sample Image Cover'">
           <app-aspect-ratio [ratio]="{w:2, h:1}">
             <h4 style="margin: 10px; text-align: center; color: #FFF;">Heading on top of a cover image</h4>
           </app-aspect-ratio>
@@ -596,15 +634,15 @@ app-text-shell &#123;
       </ion-col>
       <ion-col size="4">
         <app-aspect-ratio [ratio]="{w:1, h:1}">
-          <app-image-shell class="add-spinner" [src]="simpleFetchData?.image" [alt]="'Sample Image'"></app-image-shell>
+          <app-image-shell animation="gradient" [src]="simpleFetchData?.image" [alt]="'Sample Image'"></app-image-shell>
         </app-aspect-ratio>
       </ion-col>
       <ion-col size="8">
         <h3 style="margin-top: 0px;">
-          <app-text-shell [data]="simpleFetchData?.title"></app-text-shell>
+          <app-text-shell animation="gradient" [data]="simpleFetchData?.title"></app-text-shell>
         </h3>
         <p>
-          <app-text-shell [data]="simpleFetchData?.description" lines="3"></app-text-shell>
+          <app-text-shell animation="gradient" [data]="simpleFetchData?.description" lines="3"></app-text-shell>
         </p>
       </ion-col>
     </ion-row>
@@ -617,7 +655,7 @@ app-text-shell &#123;
     </p>
     <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
       <ion-col size="12">
-        <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="(shellProviderData | async)?.cover" [alt]="'Sample Image Cover'">
+        <app-image-shell animation="spinner" class="add-overlay" [mode]="'cover'" [src]="(shellProviderData | async)?.cover" [alt]="'Sample Image Cover'">
           <app-aspect-ratio [ratio]="{w:2, h:1}">
             <h4 style="margin: 10px; text-align: center; color: #FFF;">Heading on top of a cover image</h4>
           </app-aspect-ratio>
@@ -625,7 +663,7 @@ app-text-shell &#123;
       </ion-col>
       <ion-col size="4">
         <app-aspect-ratio [ratio]="{w:1, h:1}">
-          <app-image-shell class="add-spinner" [src]="(shellProviderData | async)?.image" [alt]="'Sample Image'"></app-image-shell>
+          <app-image-shell animation="spinner" [src]="(shellProviderData | async)?.image" [alt]="'Sample Image'"></app-image-shell>
         </app-aspect-ratio>
       </ion-col>
       <ion-col size="8">
