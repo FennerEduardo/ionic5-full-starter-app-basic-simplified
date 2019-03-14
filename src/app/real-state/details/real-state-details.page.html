@@ -10,7 +10,7 @@
 <ion-content class="real-state-details-content">
   <ion-row class="image-row">
     <ion-col size="12">
-      <app-image-shell [mode]="'cover'" class="add-spinner details-picture" [src]="details.picture">
+      <app-image-shell [mode]="'cover'" animation="spinner" class="details-picture" [src]="details.picture">
         <app-aspect-ratio [ratio]="{w:64, h:40}">
           <ion-icon class="bookmark-icon" name="heart"></ion-icon>
         </app-aspect-ratio>
@@ -103,7 +103,7 @@
       </app-image-shell>
     </app-aspect-ratio> -->
     <app-aspect-ratio [ratio]="{w:64, h:30}">
-      <app-image-shell class="add-spinner location-image" [src]="details.location?.mapImage" [alt]="'location map'"></app-image-shell>
+      <app-image-shell class="location-image" animation="spinner" [src]="details.location?.mapImage" [alt]="'location map'"></app-image-shell>
     </app-aspect-ratio>
   </div>
   <div class="amenities-wrapper">

@@ -13,7 +13,7 @@
   <section class="showcase-section">
     <ion-row style="background-color: #FFF; padding: 10px;">
       <ion-col size="12">
-        <app-image-shell class="add-spinner add-overlay" [mode]="'cover'" [src]="routeResolveData?.cover" [alt]="'Sample Image Cover'">
+        <app-image-shell class="add-overlay" animation="spinner" [mode]="'cover'" [src]="routeResolveData?.cover" [alt]="'Sample Image Cover'">
           <app-aspect-ratio [ratio]="{w:2, h:1}">
             <h4 style="margin: 10px; text-align: center; color: #FFF;">Heading on top of a cover image</h4>
           </app-aspect-ratio>
@@ -21,7 +21,7 @@
       </ion-col>
       <ion-col size="4">
         <app-aspect-ratio [ratio]="{w:1, h:1}">
-          <app-image-shell class="add-spinner" [src]="routeResolveData?.image" [alt]="'Sample Image'"></app-image-shell>
+          <app-image-shell animation="spinner" [src]="routeResolveData?.image" [alt]="'Sample Image'"></app-image-shell>
         </app-aspect-ratio>
       </ion-col>
       <ion-col size="8">

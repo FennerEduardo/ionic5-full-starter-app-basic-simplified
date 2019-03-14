@@ -10,7 +10,7 @@
 <ion-content class="travel-details-content">
   <ion-row class="image-row">
     <ion-col size="12">
-      <app-image-shell [mode]="'cover'" class="add-overlay add-spinner details-image" [src]="details?.image">
+      <app-image-shell [mode]="'cover'" animation="spinner" class="add-overlay details-image" [src]="details?.image">
         <app-aspect-ratio [ratio]="{w:64, h:50}">
           <div class="icon-wrapper">
             <app-aspect-ratio [ratio]="{w: 47, h: 25}">
@@ -99,7 +99,7 @@
       </app-image-shell>
     </app-aspect-ratio> -->
     <app-aspect-ratio [ratio]="{w: 64, h: 30}">
-      <app-image-shell class="add-spinner location-image" [src]="details.location?.mapImage"></app-image-shell>
+      <app-image-shell class="location-image" animation="spinner" [src]="details.location?.mapImage"></app-image-shell>
     </app-aspect-ratio>
   </div>
   <div class="suggested-places-wrapper" *ngIf="details?.whereToStay && details.whereToStay.length > 0">
@@ -107,7 +107,7 @@
     <ion-row class="suggested-places-row">
       <ion-col size="4" class="suggested-place" *ngFor="let placeToStay of details?.whereToStay">
         <app-aspect-ratio [ratio]="{w: 18, h: 23}">
-          <app-image-shell class="add-spinner place-picture" [src]="placeToStay.picture"></app-image-shell>
+          <app-image-shell class="place-picture" animation="spinner" [src]="placeToStay.picture"></app-image-shell>
         </app-aspect-ratio>
         <div class="place-details">
           <h5 class="place-name">
@@ -128,7 +128,7 @@
     <ion-row class="suggested-places-row">
       <ion-col size="4" class="suggested-place" *ngFor="let placeToEat of details?.whereToEat">
         <app-aspect-ratio [ratio]="{w: 18, h: 23}">
-          <app-image-shell class="add-spinner place-picture" [src]="placeToEat.picture"></app-image-shell>
+          <app-image-shell class="place-picture" animation="spinner" [src]="placeToEat.picture"></app-image-shell>
         </app-aspect-ratio>
         <div class="place-details">
           <h5 class="place-name">
@@ -148,7 +148,7 @@
     <h3 class="detail-alt-title">More activities?</h3>
     <ion-row class="related-activity" *ngFor="let relatedActivity of details?.relatedActivities">
       <ion-col size="12">
-        <app-image-shell [mode]="'cover'" class="add-spinner related-activity-picture" [src]="relatedActivity.picture">
+        <app-image-shell [mode]="'cover'" animation="spinner" class="related-activity-picture" [src]="relatedActivity.picture">
           <app-aspect-ratio [ratio]="{w:64, h:23}">
           </app-aspect-ratio>
         </app-image-shell>

@@ -14,7 +14,7 @@
         <div class="item-image-wrapper">
           <a class="image-anchor" [routerLink]="['/app/categories/fashion/', item.slug]">
             <app-aspect-ratio [ratio]="{w: 3, h: 4}">
-              <app-image-shell class="add-spinner item-image" [src]="item.image" [alt]="'product image'"></app-image-shell>
+              <app-image-shell class="item-image" animation="spinner" [src]="item.image" [alt]="'product image'"></app-image-shell>
             </app-aspect-ratio>
           </a>
         </div>

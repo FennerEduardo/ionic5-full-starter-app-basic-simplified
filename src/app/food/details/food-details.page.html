@@ -10,7 +10,7 @@
 <ion-content class="food-details-content">
   <ion-row class="image-row">
     <ion-col size="12">
-      <app-image-shell [mode]="'cover'" class="add-spinner add-overlay showcase-image" [src]="details?.showcaseImage">
+      <app-image-shell [mode]="'cover'" animation="spinner" class="add-overlay showcase-image" [src]="details?.showcaseImage">
         <app-aspect-ratio [ratio]="{w:64, h:40}">
           <div class="icon-wrapper">
             <app-aspect-ratio [ratio]="{w: 40, h: 20}">
@@ -94,7 +94,7 @@
       </app-image-shell>
     </app-aspect-ratio> -->
     <app-aspect-ratio [ratio]="{w: 64, h: 20}">
-      <app-image-shell class="add-spinner location-image" [src]="details.location?.mapImage" [alt]="'location map'"></app-image-shell>
+      <app-image-shell class="location-image" animation="spinner" [src]="details.location?.mapImage" [alt]="'location map'"></app-image-shell>
     </app-aspect-ratio>
   </div>
   <ion-row class="details-tags">

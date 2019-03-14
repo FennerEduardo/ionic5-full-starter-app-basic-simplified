@@ -19,7 +19,7 @@
         <ion-slide class="" *ngFor="let image of details?.showcaseImages">
           <ion-row class="slide-inner-row">
             <app-aspect-ratio [ratio]="{w: 56, h: 40}">
-              <app-image-shell [src]="image" [alt]="'deals details'" class="showcase-image add-spinner"></app-image-shell>
+              <app-image-shell [src]="image" [alt]="'deals details'" class="showcase-image" animation="spinner"></app-image-shell>
             </app-aspect-ratio>
           </ion-row>
         </ion-slide>
@@ -28,7 +28,7 @@
     <ion-row class="description-row">
       <ion-col class="logo-col" size="6">
         <app-aspect-ratio [ratio]="{w: 128, h: 32}">
-          <app-image-shell [src]="details?.logo" [alt]="'deals details'" class="add-spinner logo-image"></app-image-shell>
+          <app-image-shell [src]="details?.logo" [alt]="'deals details'" class="logo-image" animation="spinner"></app-image-shell>
         </app-aspect-ratio>
       </ion-col>
       <ion-col class="info-col" size="9">
@@ -41,7 +41,7 @@
       </ion-col>
       <ion-col class="preview-image-col" size="3">
         <app-aspect-ratio [ratio]="{w: 1, h: 1}">
-          <app-image-shell [src]="details?.previewImage" [alt]="'deals details'" class="add-spinner preview-image"></app-image-shell>
+          <app-image-shell [src]="details?.previewImage" [alt]="'deals details'" class="preview-image" animation="spinner"></app-image-shell>
         </app-aspect-ratio>
       </ion-col>
     </ion-row>
@@ -78,7 +78,7 @@
     <ion-row class="related-deal" *ngFor="let deal of details.relatedDeals">
       <ion-col class="deal-logo-wrapper" size="4">
         <app-aspect-ratio [ratio]="{w: 1, h: 1}">
-          <app-image-shell [src]="deal.logo" [alt]="'deals logo'" class="add-spinner related-deal-logo"></app-image-shell>
+          <app-image-shell [src]="deal.logo" [alt]="'deals logo'" class="related-deal-logo" animation="spinner"></app-image-shell>
         </app-aspect-ratio>
       </ion-col>
       <ion-col class="deal-info-wrapper" size="8">

@@ -12,7 +12,7 @@
     <div class="listing-item" *ngFor="let item of listing.items">
       <div class="cover-wrapper">
         <a class="cover-anchor" [routerLink]="['/app/categories/food/', item.slug]">
-          <app-image-shell class="cover-image add-spinner add-overlay" [mode]="'cover'" [src]="item.image">
+          <app-image-shell class="cover-image add-overlay" animation="spinner" [mode]="'cover'" [src]="item.image">
             <app-aspect-ratio [ratio]="{w:35, h:15}">
               <div class="cover-icon-wrapper">
                 <app-aspect-ratio [ratio]="{w: 20, h: 7}">
