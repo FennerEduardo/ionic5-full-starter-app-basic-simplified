@@ -1,5 +1,4 @@
 :host {
-  // --image-shell-loading-background: #{ rgba(#CCCCCC, .25); };
   --image-shell-loading-background: #EEE;
   --image-shell-border-radius: 0px;
 
@@ -33,11 +32,6 @@
     overflow: hidden;
 
     & > .inner-img {
-      // Consider removing these properties to support standalone mode (without aspect-ratio wrapper)
-      // position: absolute;
-      // top: 0;
-      // left: 0;
-      // end
       transition: visibility 0s linear, opacity .5s linear;
       opacity: 0;
       visibility: hidden;
@@ -112,7 +106,6 @@
 
 :host([animation="spinner"]) {
   --image-shell-spinner-size: 28px;
-  // --image-shell-spinner-color: #9e9e9e;
   --image-shell-spinner-color: #CCC;
 
   & > .spinner {
@@ -125,8 +118,6 @@
     font-size: var(--image-shell-spinner-size);
     line-height: var(--image-shell-spinner-size);
     color: var(--image-shell-spinner-color);
-    // Now that the loading background is not transparent, remove this negative z-index (if not, the spinner was hidden beneath the loading background)
-    // z-index: -1;
   }
 
   &.img-loaded {
