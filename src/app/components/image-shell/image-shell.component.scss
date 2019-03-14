@@ -1,8 +1,6 @@
 :host {
-  --image-shell-loading-background: #{ rgba(#CCCCCC, .25); };
-  --image-shell-overlay-background: #{ rgba(#000000, .4); };
-  --image-shell-spinner-size: 28px;
-  --image-shell-spinner-color: #9e9e9e;
+  // --image-shell-loading-background: #{ rgba(#CCCCCC, .25); };
+  --image-shell-loading-background: #EEE;
   --image-shell-border-radius: 0px;
 
   display: block;
@@ -20,7 +18,7 @@
   // Loading background
   &::before {
     content: '';
-    background-color: var(--image-shell-loading-background);
+    background: var(--image-shell-loading-background);
     border-radius: var(--image-shell-border-radius);
     position: absolute;
     top: 0;
@@ -81,7 +79,42 @@
   }
 }
 
-:host(.add-spinner) {
+:host([animation="gradient"]) {
+  --image-shell-loading-background: #EEE;
+  --image-shell-animation-color: #DDD;
+
+  // The animation that goes beneath the masks
+  &::before {
+    background:
+      linear-gradient(to right, var(--image-shell-loading-background) 8%, var(--image-shell-animation-color) 18%, var(--image-shell-loading-background) 33%);
+    background-size: 800px 104px;
+    animation: animateBackground 2s ease-in-out infinite;
+  }
+
+  &.img-loaded {
+    // Reset background animation once the image has loaded
+    &::before {
+      background: none;
+      animation: 0;
+    }
+  }
+
+  @keyframes animateBackground {
+    0%{
+      background-position: -468px 0
+    }
+
+    100%{
+      background-position: 468px 0
+    }
+  }
+}
+
+:host([animation="spinner"]) {
+  --image-shell-spinner-size: 28px;
+  // --image-shell-spinner-color: #9e9e9e;
+  --image-shell-spinner-color: #CCC;
+
   & > .spinner {
     display: block;
     position: absolute;
@@ -92,7 +125,8 @@
     font-size: var(--image-shell-spinner-size);
     line-height: var(--image-shell-spinner-size);
     color: var(--image-shell-spinner-color);
-    z-index: -1;
+    // Now that the loading background is not transparent, remove this negative z-index (if not, the spinner was hidden beneath the loading background)
+    // z-index: -1;
   }
 
   &.img-loaded {
@@ -104,11 +138,13 @@
 }
 
 :host(.add-overlay) {
+  --image-shell-overlay-background: rgba(0, 0, 0, .4);
+
   &.img-loaded {
     // Add background overlay after the image has loaded
     &::before {
       display: block;
-      background-color: var(--image-shell-overlay-background);
+      background: var(--image-shell-overlay-background);
     }
   }
 }
