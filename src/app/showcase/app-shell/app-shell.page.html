@@ -160,11 +160,22 @@ app-image-shell &#123;
   --image-shell-border-radius: 10px;
 &#125;
 </pre>
-    <div style="width:30%; margin: 0px auto;">
-      <app-aspect-ratio [ratio]="{w:1, h:1}">
-        <app-image-shell style="--image-shell-border-radius: 10px;" animation="spinner" [src]="" [alt]=""></app-image-shell>
-      </app-aspect-ratio>
-    </div>
+    <ion-row>
+      <ion-col>
+        <div style="width:80%; margin: 0px auto;">
+          <app-aspect-ratio [ratio]="{w:1, h:1}">
+            <app-image-shell style="--image-shell-border-radius: 10px;" animation="spinner" [src]="" [alt]=""></app-image-shell>
+          </app-aspect-ratio>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div style="width:80%; margin: 0px auto;">
+          <app-aspect-ratio [ratio]="{w:1, h:1}">
+            <app-image-shell style="--image-shell-border-radius: 10px;" animation="gradient" [src]="" [alt]=""></app-image-shell>
+          </app-aspect-ratio>
+        </div>
+      </ion-col>
+    </ion-row>
   </section>
   <section class="showcase-section">
     <h2>Cover Image mode</h2>
