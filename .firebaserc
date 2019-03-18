@@ -1,6 +1,6 @@
 {
   "projects": {
-    "preview": "ion4fullpwa",
-    "default": "ion4fullpwa"
+    "dev": "dev-ion4fullpwa",
+    "prod": "ion4fullpwa"
   }
 }

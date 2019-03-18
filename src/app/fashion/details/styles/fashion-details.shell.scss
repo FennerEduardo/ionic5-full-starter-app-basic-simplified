@@ -18,7 +18,8 @@ app-image-shell.showcase-image {
 }
 
 .details-name > app-text-shell {
-  --text-shell-line-color: rgba(var(--shell-color-rgb), .25);
+  --text-shell-animation-background: rgba(var(--shell-color-rgb), .25);
+  --text-shell-animation-color: rgba(var(--shell-color-rgb), .35);
   --text-shell-line-height: 18px;
   max-width: 60%;
 
@@ -28,7 +29,8 @@ app-image-shell.showcase-image {
 }
 
 .details-brand > app-text-shell {
-  --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
+  --text-shell-animation-background: rgba(var(--shell-color-rgb), .20);
+  --text-shell-animation-color: rgba(var(--shell-color-rgb), .30);
   --text-shell-line-height: 14px;
   max-width: 40%;
 
@@ -38,7 +40,8 @@ app-image-shell.showcase-image {
 }
 
 .details-price > app-text-shell {
-  --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+  --text-shell-animation-background: rgba(var(--shell-color-rgb), .10);
+  --text-shell-animation-color: rgba(var(--shell-color-rgb), .20);
   --text-shell-line-height: 18px;
   width: 50px;
 
@@ -48,7 +51,8 @@ app-image-shell.showcase-image {
 }
 
 .details-sale-price > app-text-shell {
-  --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+  --text-shell-animation-background: rgba(var(--shell-color-rgb), .10);
+  --text-shell-animation-color: rgba(var(--shell-color-rgb), .20);
   --text-shell-line-height: 18px;
   width: 50px;
 
@@ -58,7 +62,8 @@ app-image-shell.showcase-image {
 }
 
 .details-description > app-text-shell {
-  --text-shell-line-color: rgba(var(--shell-color-rgb), .10);
+  --text-shell-animation-background: rgba(var(--shell-color-rgb), .10);
+  --text-shell-animation-color: rgba(var(--shell-color-rgb), .20);
   --text-shell-line-height: 14px;
 }
 
@@ -76,11 +81,13 @@ app-image-shell.related-product-image {
 }
 
 .item-name app-text-shell {
+  --text-shell-animation-background: rgba(var(--shell-color-rgb), .25);
+  --text-shell-animation-color: rgba(var(--shell-color-rgb), .35);
   --text-shell-line-height: 14px;
-  --text-shell-line-color: rgba(var(--shell-color-rgb), .25);
 }
 
 .item-sale-price > app-text-shell {
+  --text-shell-animation-background: rgba(var(--shell-color-rgb), .20);
+  --text-shell-animation-color: rgba(var(--shell-color-rgb), .30);
   --text-shell-line-height: 16px;
-  --text-shell-line-color: rgba(var(--shell-color-rgb), .20);
 }

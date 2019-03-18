@@ -93,6 +93,10 @@
 
         margin: 0px;
 
+        &:focus {
+          outline: none;
+        }
+
         .button-cta {
           display: block;
           line-height: 18px;
