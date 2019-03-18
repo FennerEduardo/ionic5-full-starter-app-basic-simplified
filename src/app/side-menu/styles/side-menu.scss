@@ -14,7 +14,7 @@
     --padding-end: 0px;
     --padding-top: 0px;
     --padding-bottom: 0px;
-    --background: var(--page-background);
+    --background: var(--ion-color-dark-tint);
   }
 
   ion-content {
@@ -24,7 +24,7 @@
   .user-details-wrapper {
     --ion-grid-column-padding: 0px;
 
-    background-color: rgba(var(--ion-color-light-rgb), 0.15);
+    // background-color: rgba(var(--ion-color-light-rgb), 0.15);
     color: var(--ion-color-lightest);
     padding: var(--page-margin);
     align-items: center;
