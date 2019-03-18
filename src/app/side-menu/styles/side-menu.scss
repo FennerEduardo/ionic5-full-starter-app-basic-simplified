@@ -9,6 +9,14 @@
 
 // Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
 .app-sidemenu {
+  ion-toolbar {
+    --padding-start: 0px;
+    --padding-end: 0px;
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+    --background: var(--page-background);
+  }
+
   ion-content {
     --background: var(--page-background);
   }
@@ -20,10 +28,6 @@
     color: var(--ion-color-lightest);
     padding: var(--page-margin);
     align-items: center;
-
-    &:first-child {
-      padding-top: var(--ion-statusbar-padding, 10px);
-    }
 
     & + .user-details-wrapper {
       padding-top: 0px;
