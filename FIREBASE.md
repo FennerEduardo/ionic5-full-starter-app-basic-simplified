@@ -28,3 +28,7 @@ You can also use the `-P` flag to specify an alias like this:
 `firebase deploy -P dev`
 
 This will deploy to the `dev` alias/environment
+
+## Serve and test your Firebase project locally
+For more info see: https://firebase.google.com/docs/hosting/deploying
+`firebase serve --only hosting`
