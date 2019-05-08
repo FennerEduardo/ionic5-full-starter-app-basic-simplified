@@ -1,5 +1,6 @@
 export class FoodDetailsModel {
   icon: string;
+  slug: string;
   showcaseImage: string;
   name: string;
   shortName: string;

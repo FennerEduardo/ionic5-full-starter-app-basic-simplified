@@ -10,6 +10,9 @@
   // ion-content {
   //   opacity: 0.8;
   // }
+  a {
+    pointer-events: none;
+  }
 }
 
 app-image-shell.item-image {

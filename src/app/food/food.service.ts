@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
+import { flatMap} from 'rxjs/operators';
 
 import { ShellProvider } from '../utils/shell-provider';
 
@@ -11,7 +12,6 @@ import { FoodDetailsModel } from './details/food-details.model';
 @Injectable()
 export class FoodService {
   private _listingWithShellCache: ShellProvider<FoodListingModel>;
-  private _detailsWithShellCache: ShellProvider<FoodDetailsModel>;
 
   constructor(private http: HttpClient) { }
 
@@ -30,18 +30,19 @@ export class FoodService {
     return this._listingWithShellCache.observable;
   }
 
-  public getDetailsDataWithShell(): Observable<FoodDetailsModel> {
-    // Use cache if we have it.
-    if (!this._detailsWithShellCache) {
-      // Initialize the model specifying that it is a shell model
-      const shellModel: FoodDetailsModel = new FoodDetailsModel(true);
-      const dataObservable = this.http.get<FoodDetailsModel>('./assets/sample-data/food/details.json');
+  public getDetailsDataWithShell(slug: string): Observable<FoodDetailsModel> {
 
-      this._detailsWithShellCache = new ShellProvider(
-        shellModel,
-        dataObservable
-      );
-    }
-    return this._detailsWithShellCache.observable;
+    // Initialize the model specifying that it is a shell model
+    const shellModel: FoodDetailsModel = new FoodDetailsModel(true);
+    const dataObservable = this.http.get<{items: Array<FoodDetailsModel>}>('./assets/sample-data/food/details.json').pipe(
+      flatMap(details => details.items.filter(item => item.slug === slug))
+    );
+
+    const detailsWithShell = new ShellProvider(
+      shellModel,
+      dataObservable
+    );
+
+    return detailsWithShell.observable;
   }
 }
