@@ -26,6 +26,7 @@ export class ShellProvider<T> {
     // Set the shell model as the initial value
     this._subject = new BehaviorSubject<T>(shellModel);
 
+    // tslint:disable-next-line
     const delayObservable = of(true).pipe(
       delay(this.networkDelay)
       // finalize(() => console.log('delayObservable COMPLETED'))
@@ -39,8 +40,7 @@ export class ShellProvider<T> {
     // Put both delay and data Observables in a forkJoin so they execute in parallel so that
     // the delay caused (on purpose) by the delayObservable doesn't get added to the time the dataObservable takes to complete
     const forkedObservables = forkJoin(
-      delayObservable,
-      dataObservable
+      [delayObservable, dataObservable]
     )
     .pipe(
       // finalize(() => console.log('forkedObservables COMPLETED'))

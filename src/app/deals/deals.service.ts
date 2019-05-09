@@ -77,6 +77,7 @@ export class DealsService {
       ]
     } as DealsListingModel;
 
+    // tslint:disable-next-line
     return of(dealsListingModel);
   }
 
@@ -135,6 +136,7 @@ export class DealsService {
       ]
     } as DealsDetailsModel;
 
+    // tslint:disable-next-line
     return of(dealsDetailsModel);
   }
 }
