@@ -8,23 +8,34 @@ You can find the documentation in https://ionic-4-full-starter-app-docs.ionicthe
 Run `npm install` to install the project dependencies.
 
 ## Development Workflow
-Run `ionic build` or `ionic build --prod` to build the project
+
+### To test the app in the browser
+
 Run `ionic serve` to start a live-reload dev server
 
-## iOS Platform
-Run `ionic cordova prepare ios` to add the iOS platform to the project
-Read more in https://beta.ionicframework.com/docs/building/ios
+### To test the app as a Native App
 
-## Android Platform
-Run `ionic cordova prepare android` to add the Android platform to the project
-Read more in https://beta.ionicframework.com/docs/building/android
+This project uses [Capacitor](https://capacitor.ionicframework.com/docs/) (spiritual successor to Cordova).
+
+Before starting make sure to read the [Capacitor Required Dependencies](https://capacitor.ionicframework.com/docs/getting-started/dependencies).
+
+The Capacitor workflow involves a few consistent tasks:
+- [Develop and build your Web App](https://capacitor.ionicframework.com/docs/basics/workflow/#1-develop-and-build-your-web-app)
+- [Copy your Web Assets](https://capacitor.ionicframework.com/docs/basics/workflow/#2-copy-your-web-assets)
+- [Open your Native IDE](https://capacitor.ionicframework.com/docs/basics/workflow/#3-open-your-native-ide)
+- [Periodic Maintenance](https://capacitor.ionicframework.com/docs/basics/workflow/#4-periodic-maintenance)
+
+#### iOS Platform
+This app has an ios folder which contains the iOS native app.
+Read how to [build this app for iOS](https://capacitor.ionicframework.com/docs/basics/building-your-app#ios).
+
+#### Android Platform
+This app has an android folder which contains the Android native app.
+Read how to [build this app for Andrid](https://capacitor.ionicframework.com/docs/basics/building-your-app#android).
+
 
 ## Support
 Drop us a line to contact@ionicthemes.com
-
-## Acknowledgements
-This template uses some icons inspired in [Flaticon](https://www.flaticon.com/). If you want to use the original icons in your app, please make sure you grab a new license that fit your use case when modifying this template.
-We currently use the `Free for commercial use WITH ATTRIBUTION` license in this template as a way to showcase and promote the awesome work and [designs by **catkuro** from Flaticon](https://www.flaticon.com/packs/home-decor).
 
 ### Committing code
 To ensure code quality, we follow and enforce the [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines)

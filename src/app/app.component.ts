@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { Events, MenuController, Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Platform } from '@ionic/angular';
+import { Plugins, StatusBarStyle } from '@capacitor/core';
+const { SplashScreen, StatusBar } = Plugins;
 
 @Component({
   selector: 'app-root',
@@ -65,20 +64,18 @@ export class AppComponent {
   ];
 
   constructor(
-    private events: Events,
-    private menu: MenuController,
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private router: Router
+    private platform: Platform
   ) {
     this.initializeApp();
   }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
-  }
+  async initializeApp() {
+   try {
+     await SplashScreen.hide();
+     // await StatusBar.setStyle({ style: StatusBarStyle.Light });
+   } catch (err) {
+     console.log('This is normal in a browser', err);
+   }
+ }
+
 }
