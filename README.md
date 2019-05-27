@@ -9,6 +9,8 @@ Run `npm install` to install the project dependencies.
 
 ## Development Workflow
 
+Run `ionic build` or `ionic build --prod` to build the project
+
 ### To test the app in the browser
 
 Run `ionic serve` to start a live-reload dev server
@@ -36,6 +38,9 @@ Read how to [build this app for Andrid](https://capacitor.ionicframework.com/doc
 
 ## Support
 Drop us a line to contact@ionicthemes.com
+
+## Acknowledgements
+This template uses some icons inspired in [Flaticon](https://www.flaticon.com/). If you want to use the original icons in your app, please make sure you grab a new license that fit your use case when modifying this template. We currently use the `Free for commercial use WITH ATTRIBUTION` license in this template as a way to showcase and promote the awesome work and [designs by **catkuro** from Flaticon](https://www.flaticon.com/packs/home-decor).
 
 ### Committing code
 To ensure code quality, we follow and enforce the [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines)
