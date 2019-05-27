@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { Events, MenuController, Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Plugins } from '@capacitor/core';
+const { SplashScreen } = Plugins;
 
 @Component({
   selector: 'app-root',
@@ -64,21 +62,16 @@ export class AppComponent {
     }
   ];
 
-  constructor(
-    private events: Events,
-    private menu: MenuController,
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private router: Router
-  ) {
+  constructor() {
     this.initializeApp();
   }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
-  }
+  async initializeApp() {
+   try {
+     await SplashScreen.hide();
+   } catch (err) {
+     console.log('This is normal in a browser', err);
+   }
+ }
+
 }
