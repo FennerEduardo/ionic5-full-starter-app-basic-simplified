@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { Platform } from '@ionic/angular';
-import { Plugins, StatusBarStyle } from '@capacitor/core';
-const { SplashScreen, StatusBar } = Plugins;
+import { Plugins } from '@capacitor/core';
+const { SplashScreen } = Plugins;
 
 @Component({
   selector: 'app-root',
@@ -63,16 +62,13 @@ export class AppComponent {
     }
   ];
 
-  constructor(
-    private platform: Platform
-  ) {
+  constructor() {
     this.initializeApp();
   }
 
   async initializeApp() {
    try {
      await SplashScreen.hide();
-     // await StatusBar.setStyle({ style: StatusBarStyle.Light });
    } catch (err) {
      console.log('This is normal in a browser', err);
    }
