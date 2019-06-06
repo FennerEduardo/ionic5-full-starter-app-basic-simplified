@@ -1,21 +1,22 @@
 import { Component, Input, HostBinding, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformServer } from '@angular/common';
 
-import { environment } from '../../../environments/environment';
+import { AppShellConfig } from '../config/app-shell.config';
 
 @Component({
   selector: 'app-image-shell',
   templateUrl: './image-shell.component.html',
-  styleUrls: [
-    './image-shell.component.scss'
-  ]
+  styleUrls: ['./image-shell.component.scss']
 })
 export class ImageShellComponent {
-  // To debug shell styles, change configuration in the environment.ts file
-  private debugMode = (environment && environment.shell && environment.shell.debug) ? environment.shell.debug : false;
+  // To debug shell styles, change configuration in the assets/app-shell.config.json file
+  private debugMode = (AppShellConfig.settings && AppShellConfig.settings.debug) ? AppShellConfig.settings.debug : false;
 
+  // tslint:disable-next-line:variable-name
   _src = '';
+  // tslint:disable-next-line:variable-name
   _alt = '';
+  // tslint:disable-next-line:variable-name
   _mode = '';
 
   @HostBinding('class.img-loaded') imageLoaded = false;
@@ -60,7 +61,7 @@ export class ImageShellComponent {
     @Inject(PLATFORM_ID) private platformId: string
   ) {}
 
-  _imageLoaded() {
+  private _imageLoaded() {
     this.imageLoaded = true;
 
     // If it's a cover image then set the background-image property accordingly

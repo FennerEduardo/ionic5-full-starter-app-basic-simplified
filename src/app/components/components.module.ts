@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
-import { AspectRatioComponent } from './aspect-ratio/aspect-ratio.component';
-import { TextShellComponent } from './text-shell/text-shell.component';
-import { ImageShellComponent } from './image-shell/image-shell.component';
+import { ShellModule } from '../shell/shell.module';
 
 import { CheckboxWrapperComponent } from './checkbox-wrapper/checkbox-wrapper.component';
 import { ShowHidePasswordComponent } from './show-hide-password/show-hide-password.component';
@@ -17,13 +15,10 @@ import { RatingInputComponent } from './rating-input/rating-input.component';
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule.forRoot(),
+    ShellModule,
+    IonicModule.forRoot()
   ],
   declarations: [
-    AspectRatioComponent,
-    TextShellComponent,
-    ImageShellComponent,
-
     CheckboxWrapperComponent,
     ShowHidePasswordComponent,
     CountdownTimerComponent,
@@ -31,10 +26,7 @@ import { RatingInputComponent } from './rating-input/rating-input.component';
     RatingInputComponent
   ],
   exports: [
-    AspectRatioComponent,
-    TextShellComponent,
-    ImageShellComponent,
-
+    ShellModule,
     CheckboxWrapperComponent,
     ShowHidePasswordComponent,
     CountdownTimerComponent,
