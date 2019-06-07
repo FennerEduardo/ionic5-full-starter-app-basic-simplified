@@ -2,45 +2,47 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { ShellProvider } from '../utils/shell-provider';
 
 import { RealStateListingModel } from './listing/real-state-listing.model';
 import { RealStateDetailsModel } from './details/real-state-details.model';
+import { DataStore } from '../shell/data-store';
 
 @Injectable()
 export class RealStateService {
-  private _listingWithShellCache: ShellProvider<RealStateListingModel>;
-  private _detailsWithShellCache: ShellProvider<RealStateDetailsModel>;
+  private listingDataStore: DataStore<RealStateListingModel>;
+  private detailsDataStore: DataStore<RealStateDetailsModel>;
 
   constructor(private http: HttpClient) { }
 
-  public getListingDataWithShell(): Observable<RealStateListingModel> {
-    // Use cache if we have it.
-    if (!this._listingWithShellCache) {
-      // Initialize the model specifying that it is a shell model
-      const shellModel: RealStateListingModel = new RealStateListingModel(true);
-      const dataObservable = this.http.get<RealStateListingModel>('./assets/sample-data/real-state/listing.json');
-
-      this._listingWithShellCache = new ShellProvider(
-        shellModel,
-        dataObservable
-      );
-    }
-    return this._listingWithShellCache.observable;
+  public getListingDataSource(): Observable<RealStateListingModel> {
+    return this.http.get<RealStateListingModel>('./assets/sample-data/real-state/listing.json');
   }
 
-  public getDetailsDataWithShell(): Observable<RealStateDetailsModel> {
-    // Use cache if we have it.
-    if (!this._detailsWithShellCache) {
+  public getListingStore(dataSource: Observable<RealStateListingModel>): DataStore<RealStateListingModel> {
+    // Use cache if available
+    if (!this.listingDataStore) {
+      // Initialize the model specifying that it is a shell model
+      const shellModel: RealStateListingModel = new RealStateListingModel(true);
+      this.listingDataStore = new DataStore(shellModel);
+      // Trigger the loading mechanism (with shell) in the dataStore
+      this.listingDataStore.load(dataSource);
+    }
+    return this.listingDataStore;
+  }
+
+  public getDetailsDataSource(): Observable<RealStateDetailsModel> {
+    return this.http.get<RealStateDetailsModel>('./assets/sample-data/real-state/details.json');
+  }
+
+  public getDetailsStore(dataSource: Observable<RealStateDetailsModel>): DataStore<RealStateDetailsModel> {
+    // Use cache if available
+    if (!this.detailsDataStore) {
       // Initialize the model specifying that it is a shell model
       const shellModel: RealStateDetailsModel = new RealStateDetailsModel(true);
-      const dataObservable = this.http.get<RealStateDetailsModel>('./assets/sample-data/real-state/details.json');
-
-      this._detailsWithShellCache = new ShellProvider(
-        shellModel,
-        dataObservable
-      );
+      this.detailsDataStore = new DataStore(shellModel);
+      // Trigger the loading mechanism (with shell) in the dataStore
+      this.detailsDataStore.load(dataSource);
     }
-    return this._detailsWithShellCache.observable;
+    return this.detailsDataStore;
   }
 }

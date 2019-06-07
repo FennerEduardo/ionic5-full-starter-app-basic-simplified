@@ -4,35 +4,17 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { delay, finalize, tap } from 'rxjs/operators';
 
-import { ShellProvider } from '../utils/shell-provider';
-
 import { ShowcaseShellModel } from './showcase-shell.model';
+import { DataStore } from '../shell/data-store';
 
 @Injectable()
 export class ShowcaseService {
-  private _dataWithShellCache: ShellProvider<ShowcaseShellModel>;
+  private showcaseDataStore: DataStore<ShowcaseShellModel>;
 
   constructor(private http: HttpClient) { }
 
-  public getDataWithShell(): Observable<ShowcaseShellModel> {
-    // Try to use cache first, so we don't create multiple Observables
-    if (!this._dataWithShellCache) {
-      // Initialize the model specifying that it is a shell model
-      const shellModel: ShowcaseShellModel = new ShowcaseShellModel(true);
-      const dataObservable = this.getData();
-
-      const shellProvider = new ShellProvider(
-        shellModel,
-        dataObservable
-      );
-      this._dataWithShellCache = shellProvider;
-    }
-
-    return this._dataWithShellCache.observable;
-  }
-
-  public getData(): Observable<ShowcaseShellModel> {
-    const dataObservable = this.http.get<ShowcaseShellModel>('./assets/sample-data/showcase/shell.json').pipe(
+  public getShowcaseDataSourceWithDelay(): Observable<ShowcaseShellModel> {
+    return this.http.get<ShowcaseShellModel>('./assets/sample-data/showcase/shell.json').pipe(
       tap(val => {
         console.log('getData STARTED');
         // tslint:disable-next-line:no-console
@@ -43,9 +25,22 @@ export class ShowcaseService {
         console.log('getData COMPLETED');
         // tslint:disable-next-line:no-console
         console.timeEnd('getData Roundtrip');
-      })
-    );
+      }));
+  }
 
-    return dataObservable;
+  public getShowcaseDataSource(): Observable<ShowcaseShellModel> {
+    return this.http.get<ShowcaseShellModel>('./assets/sample-data/showcase/shell.json');
+  }
+
+  public getShowcaseDataStore(dataSource: Observable<ShowcaseShellModel>): DataStore<ShowcaseShellModel> {
+    // Use cache if available
+    if (!this.showcaseDataStore) {
+      // Initialize the model specifying that it is a shell model
+      const shellModel: ShowcaseShellModel = new ShowcaseShellModel(true);
+      this.showcaseDataStore = new DataStore(shellModel);
+      // Trigger the loading mechanism (with shell) in the dataStore
+      this.showcaseDataStore.load(dataSource);
+    }
+    return this.showcaseDataStore;
   }
 }

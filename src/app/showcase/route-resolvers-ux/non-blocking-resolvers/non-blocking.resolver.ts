@@ -6,13 +6,12 @@ import { ShowcaseService } from '../../showcase.service';
 @Injectable()
 export class NonBlockingResolver implements Resolve<any> {
 
-  constructor(
-    private showcaseService: ShowcaseService
-  ) {}
+  constructor(private showcaseService: ShowcaseService) {}
 
   resolve() {
+
     // Base Observable (where we get data from)
-    const dataObservable = this.showcaseService.getData();
+    const dataObservable = this.showcaseService.getShowcaseDataSourceWithDelay();
 
     // NON-BLOCKING RESOLVERS
 
