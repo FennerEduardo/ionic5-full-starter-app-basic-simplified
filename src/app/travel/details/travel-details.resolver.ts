@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { TravelService } from '../travel.service';
+import { TravelDetailsModel } from '../details/travel-details.model';
+import { Observable } from 'rxjs';
+import { DataStore } from '../../shell/data-store';
 
 @Injectable()
 export class TravelDetailsResolver implements Resolve<any> {
@@ -8,13 +11,9 @@ export class TravelDetailsResolver implements Resolve<any> {
   constructor(private travelService: TravelService) {}
 
   resolve() {
-    // Get the Shell Provider from the service
-    const shellProviderObservable = this.travelService.getDetailsDataWithShell();
+    const dataSource: Observable<TravelDetailsModel> = this.travelService.getDetailsDataSource();
+    const dataStore: DataStore<TravelDetailsModel> = this.travelService.getDetailsStore(dataSource);
 
-    // Resolve with Shell Provider
-    const observablePromise = new Promise((resolve, reject) => {
-      resolve(shellProviderObservable);
-    });
-    return observablePromise;
+    return dataStore;
   }
 }
