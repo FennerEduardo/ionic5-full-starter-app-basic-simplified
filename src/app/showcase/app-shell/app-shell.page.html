@@ -219,7 +219,7 @@ app-image-shell &#123;
     </p>
     <div style="width:80%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:2, h:1}">
-        <app-image-shell animation="spinner" [src]="'https://lorempixel.com/200/200/people/1/'" [alt]=""></app-image-shell>
+        <app-image-shell animation="spinner" [src]="'./assets/sample-images/getting-started/category2-1.1.png'" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
     <p>
@@ -231,7 +231,7 @@ app-image-shell &#123;
     </p>
     <div style="width:80%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:1, h:1}">
-        <app-image-shell animation="spinner" [src]="'https://lorempixel.com/200/200/people/1/'" [alt]=""></app-image-shell>
+        <app-image-shell animation="spinner" [src]="'./assets/sample-images/getting-started/category2-1.1.png'" [alt]=""></app-image-shell>
       </app-aspect-ratio>
     </div>
     <h5>Cover Mode Usage</h5>
@@ -249,7 +249,7 @@ app-image-shell &#123;
       We define an aspect ratio of <b>2:1</b> but the image has an aspect ratio of <b>1:1</b>.
     </p>
     <div style="width:80%; margin: 0px auto;">
-      <app-image-shell animation="spinner" [mode]="'cover'" [src]="'https://lorempixel.com/200/200/people/1/'">
+      <app-image-shell animation="spinner" [mode]="'cover'" [src]="'./assets/sample-images/getting-started/category2-1.1.png'">
         <app-aspect-ratio [ratio]="{w:2, h:1}">
         </app-aspect-ratio>
       </app-image-shell>
@@ -266,7 +266,7 @@ app-image-shell[mode="cover"] &#123;
 &#125;
 </pre>
     <div style="width:80%; margin: 0px auto;">
-      <app-image-shell style="background-position: bottom right;" animation="spinner" [mode]="'cover'" [src]="'https://lorempixel.com/200/200/people/1/'">
+      <app-image-shell style="background-position: bottom right;" animation="spinner" [mode]="'cover'" [src]="'./assets/sample-images/getting-started/category2-1.1.png'">
         <app-aspect-ratio [ratio]="{w:2, h:1}">
         </app-aspect-ratio>
       </app-image-shell>
@@ -353,7 +353,7 @@ app-image-shell[mode="cover"] &#123;
       On top of another element (with transparent background)
     </p>
     <div style="background-color: #FFF; padding: 20px; color: #FFF; font-weight: 500;">
-      <app-image-shell animation="spinner" class="add-overlay" [mode]="'cover'" [src]="'https://lorempixel.com/400/200/abstract/1/'">
+      <app-image-shell animation="spinner" class="add-overlay" [mode]="'cover'" [src]="'./assets/sample-images/getting-started/category5-1.1.png'">
         <app-aspect-ratio [ratio]="{w:2, h:1}">
           <p style="margin: 20px 40px;">
             <app-text-shell [data]="sampleTextShellData" lines="3"></app-text-shell>
@@ -382,7 +382,7 @@ app-image-shell[mode="cover"] &#123;
       On top of another element (with transparent background)
     </p>
     <div style="background-color: #FFF; padding: 20px; color: #FFF; font-weight: 500;">
-      <app-image-shell animation="spinner" class="add-overlay" [mode]="'cover'" [src]="'https://lorempixel.com/400/200/nature/1/'">
+      <app-image-shell animation="spinner" class="add-overlay" [mode]="'cover'" [src]="'./assets/sample-images/getting-started/category5-1.1.png'">
         <app-aspect-ratio [ratio]="{w:2, h:1}">
           <p style="margin: 20px 40px;">
             <app-text-shell [data]="sampleTextShellData" animation="bouncing" lines="3"></app-text-shell>
@@ -390,6 +390,9 @@ app-image-shell[mode="cover"] &#123;
         </app-aspect-ratio>
       </app-image-shell>
     </div>
+    <p>
+      <b>Note:</b> As we don’t use masks, this approach works well with use cases that require transparent backgrounds.
+    </p>
   </section>
   <section class="showcase-section">
     <h4>Gradient animation</h4>
@@ -411,7 +414,7 @@ app-image-shell[mode="cover"] &#123;
       On top of another element (with transparent background)
     </p>
     <div style="background-color: #FFF; padding: 20px; color: #FFF; font-weight: 500;">
-      <app-image-shell animation="spinner" class="add-overlay" [mode]="'cover'" [src]="'https://lorempixel.com/400/200/city/1/'">
+      <app-image-shell animation="spinner" class="add-overlay" [mode]="'cover'" [src]="'./assets/sample-images/getting-started/category5-1.1.png'">
         <app-aspect-ratio [ratio]="{w:2, h:1}">
           <p style="margin: 20px 40px;">
             <app-text-shell [data]="sampleTextShellData" animation="gradient" lines="3"></app-text-shell>
@@ -419,6 +422,9 @@ app-image-shell[mode="cover"] &#123;
         </app-aspect-ratio>
       </app-image-shell>
     </div>
+    <p>
+      <b>Side effect:</b> This solution doesn’t play well if you require the <code>&lt;app-text-shell&gt;</code> to have a transparent background as the masks need a solid color to work properly.
+    </p>
   </section>
   <section class="showcase-section">
     <h4>Other use cases</h4>
@@ -660,7 +666,7 @@ app-text-shell &#123;
     </p>
     <ion-row style="background-color: #FFF; padding: 10px; margin: 20px;">
       <ion-col size="12">
-        <app-image-shell animation="spinner" class="add-overlay" [mode]="'cover'" [src]="(dataStoreData | async)?.cover" [alt]="'Sample Image Cover'">
+        <app-image-shell animation="spinner" class="add-overlay" [mode]="'cover'" [src]="dataStoreData?.cover" [alt]="'Sample Image Cover'">
           <app-aspect-ratio [ratio]="{w:2, h:1}">
             <h4 style="margin: 10px; text-align: center; color: #FFF;">Heading on top of a cover image</h4>
           </app-aspect-ratio>
@@ -668,18 +674,46 @@ app-text-shell &#123;
       </ion-col>
       <ion-col size="4">
         <app-aspect-ratio [ratio]="{w:1, h:1}">
-          <app-image-shell animation="spinner" [src]="(dataStoreData | async)?.image" [alt]="'Sample Image'"></app-image-shell>
+          <app-image-shell animation="spinner" [src]="dataStoreData?.image" [alt]="'Sample Image'"></app-image-shell>
         </app-aspect-ratio>
       </ion-col>
       <ion-col size="8">
         <h3 style="margin-top: 0px;">
-          <app-text-shell [data]="(dataStoreData | async)?.title"></app-text-shell>
+          <app-text-shell [data]="dataStoreData?.title"></app-text-shell>
         </h3>
         <p>
-          <app-text-shell [data]="(dataStoreData | async)?.description" lines="3"></app-text-shell>
+          <app-text-shell [data]="dataStoreData?.description" lines="3"></app-text-shell>
         </p>
       </ion-col>
     </ion-row>
     <ion-button (click)="showcaseDataStore()" [disabled]="dataStoreButtonDisabled">Fetch more Data</ion-button>
+  </section>
+  <section class="showcase-section">
+    <h5>Get data from a Remote API using DataStore - Pagination Example</h5>
+    <p>
+      Using <code>DataStore</code> to fetch paginated data from a remote API. Each time you click the button we fetch users from the next page.
+    </p>
+    <p>
+      Current page: {{ dataStoreRemoteApiCounter }}
+    </p>
+    <p *ngIf="dataStoreRemoteApiButtonDisabled">
+      No more pages available
+    </p>
+    <ion-row style="background-color: #FFF; padding: 10px;" *ngFor="let user of remoteApiDataState">
+      <ion-col size="4">
+        <app-aspect-ratio [ratio]="{w:1, h:1}">
+          <app-image-shell animation="spinner" [src]="user?.avatar" [alt]="'Sample Image'"></app-image-shell>
+        </app-aspect-ratio>
+      </ion-col>
+      <ion-col size="8">
+        <h3 style="margin-top: 0px;">
+          <app-text-shell [data]="user?.first_name"></app-text-shell>
+        </h3>
+        <p>
+          <app-text-shell [data]="user?.last_name" lines="3"></app-text-shell>
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-button (click)="showcaseDataStoreFromRemoteAPI()" [disabled]="dataStoreRemoteApiButtonDisabled">Get more data</ion-button>
   </section>
 </ion-content>

@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { delay, finalize, tap } from 'rxjs/operators';
+import { delay, finalize, tap, map } from 'rxjs/operators';
 
-import { ShowcaseShellModel } from './showcase-shell.model';
+import { ShowcaseShellModel, ShowcaseShellRemoteApiModel } from './showcase-shell.model';
 import { DataStore } from '../shell/data-store';
 
 @Injectable()
@@ -42,5 +42,19 @@ export class ShowcaseService {
       this.showcaseDataStore.load(dataSource);
     }
     return this.showcaseDataStore;
+  }
+
+  public getShowcaseRemoteApiDataSource(page: number): Observable<any> {
+    return this.http.get('https://reqres.in/api/users?page=' + page).pipe(map(result => result['data']));
+  }
+
+  public getShowcaseRemoteApiDataStore(dataSource: Observable<ShowcaseShellRemoteApiModel>): DataStore<ShowcaseShellRemoteApiModel> {
+    // Initialize the model specifying that it is a shell model
+    const shellModel: ShowcaseShellRemoteApiModel = new ShowcaseShellRemoteApiModel(true);
+    const showcaseRemoteApiDataStore = new DataStore(shellModel);
+    // Trigger the loading mechanism (with shell) in the dataStore
+    showcaseRemoteApiDataStore.load(dataSource);
+
+    return showcaseRemoteApiDataStore;
   }
 }

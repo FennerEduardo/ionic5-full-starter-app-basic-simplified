@@ -42,6 +42,8 @@
   }
 
   app-countdown-timer {
+    --countdown-value-color: var(--ion-color-darkest);
+    --countdown-unit-color: var(--ion-color-darkest);
     padding: 20px;
     margin-bottom: 40px;
     background-color: #FFF;

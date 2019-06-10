@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, timer, interval } from 'rxjs';
-import { takeUntil, finalize, take } from 'rxjs/operators';
+import { Observable, timer, interval, merge, Subject, of, combineLatest } from 'rxjs';
+import { takeUntil, finalize, take, map, switchMap, delay, startWith } from 'rxjs/operators';
 import { DataStore } from '../../shell/data-store';
 import { ShowcaseService } from '../showcase.service';
-import { ShowcaseShellModel } from '../showcase-shell.model';
+import { ShowcaseShellModel, ShowcaseShellRemoteApiModel } from '../showcase-shell.model';
 
 @Component({
   selector: 'app-showcase-shell',
@@ -18,21 +18,69 @@ export class AppShellPage implements OnInit {
 
   // Fetch data with the DataStore utility and assign it to this property
   // DataStore data is async (Observable)
-  dataStoreData: Observable<ShowcaseShellModel>;
+  dataStoreData: ShowcaseShellModel;
+  dataStoreButtonDisabled = true;
 
   // Aux properties for the Simple Fetch (HttpClient) showcase
   simpleFetchButtonDisabled = true;
   simpleFetchCountdown = 0;
   simpleFetchInterval: Observable<any>;
 
-  // Aux properties for the DataStore showcase
-  dataStoreButtonDisabled = true;
+  // Fetch data with the DataStore utility and assign it to this property
+  // DataStore data is async (Observable)
+  remoteApiDataStore: DataStore<Array<ShowcaseShellRemoteApiModel>>;
+  remoteApiDataState: Array<ShowcaseShellRemoteApiModel> = [];
+  dataStoreRemoteApiButtonDisabled = false;
+  dataStoreRemoteApiCounter = 1;
+  addRemoteApiDataSubject: Subject<any> = new Subject<any>();
+  newRemoteApiDataObservable: Observable<any> = this.addRemoteApiDataSubject.asObservable();
 
   constructor(private showcaseService: ShowcaseService) { }
 
   ngOnInit(): void {
     this.showcaseShellSimpleFetch(10);
     this.showcaseDataStore();
+
+    const dataSource = this.showcaseService.getShowcaseRemoteApiDataSource(this.dataStoreRemoteApiCounter);
+
+    if (!this.remoteApiDataStore) {
+      // Initialize the model specifying that it is a shell model
+      const shellModel: Array<ShowcaseShellRemoteApiModel> = [
+        new ShowcaseShellRemoteApiModel(true),
+        new ShowcaseShellRemoteApiModel(true)
+      ];
+      this.remoteApiDataStore = new DataStore(shellModel);
+      // Trigger the loading mechanism (with shell) in the dataStore
+      this.remoteApiDataStore.load(dataSource);
+    }
+
+    const newDataObservable = this.newRemoteApiDataObservable.pipe(
+      switchMap(() => {
+        const pageData =  this.showcaseService.getShowcaseRemoteApiDataSource(this.dataStoreRemoteApiCounter);
+
+        const delayObservable = of(true).pipe(delay(400));
+
+        return combineLatest([delayObservable, pageData]).pipe(
+          map(([delayValue, dataValue]) => dataValue),
+          startWith([
+            new ShowcaseShellRemoteApiModel(true),
+            new ShowcaseShellRemoteApiModel(true),
+            new ShowcaseShellRemoteApiModel(true)
+          ])
+        );
+      })
+    );
+
+    merge(
+      this.remoteApiDataStore.state,
+      newDataObservable
+    )
+    .subscribe(result => {
+      if (!result.isShell && result.length === 0) {
+        this.dataStoreRemoteApiButtonDisabled = true;
+      }
+      this.remoteApiDataState = result;
+    });
   }
 
   showcaseShellSimpleFetch(countdown: number): void {
@@ -84,9 +132,16 @@ export class AppShellPage implements OnInit {
     // Trigger the loading mechanism (with shell) in the dataStore
     dataStore.load(dataSource);
 
-    this.dataStoreData = dataStore.state.pipe(
+    dataStore.state.pipe(
       take(2), // DataStore will emit a mock object and the real data fetched from the source. Emit those two values and then complete.
       finalize(() => this.dataStoreButtonDisabled = false)
-    );
+    ).subscribe(data => {
+      this.dataStoreData = data;
+    });
+  }
+
+  showcaseDataStoreFromRemoteAPI(): void {
+    this.dataStoreRemoteApiCounter ++;
+    this.addRemoteApiDataSubject.next();
   }
 }

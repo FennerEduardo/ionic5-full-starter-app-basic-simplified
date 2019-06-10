@@ -6,3 +6,12 @@ export class ShowcaseShellModel {
 
   constructor(readonly isShell: boolean) { }
 }
+
+export class ShowcaseShellRemoteApiModel {
+  email: string;
+  first_name: string;
+  last_name: string;
+  avatar: string;
+
+  constructor(readonly isShell: boolean) { }
+}
