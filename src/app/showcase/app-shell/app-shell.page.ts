@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, timer, interval, merge, Subject, of, combineLatest } from 'rxjs';
-import { takeUntil, finalize, take, map, switchMap, delay, startWith } from 'rxjs/operators';
+import { takeUntil, finalize, take, map, switchMap, delay, startWith, filter } from 'rxjs/operators';
 import { DataStore } from '../../shell/data-store';
 import { ShowcaseService } from '../showcase.service';
 import { ShowcaseShellModel, ShowcaseShellRemoteApiModel } from '../showcase-shell.model';
@@ -35,11 +35,14 @@ export class AppShellPage implements OnInit {
   addRemoteApiDataSubject: Subject<any> = new Subject<any>();
   newRemoteApiDataObservable: Observable<any> = this.addRemoteApiDataSubject.asObservable();
 
+  dynamicUsers: Array<Observable<ShowcaseShellRemoteApiModel>> = [];
+
   constructor(private showcaseService: ShowcaseService) { }
 
   ngOnInit(): void {
     this.showcaseShellSimpleFetch(10);
     this.showcaseDataStore();
+    this.loadStackedResult();
 
     const dataSource = this.showcaseService.getShowcaseRemoteApiDataSource(this.dataStoreRemoteApiCounter);
 
@@ -143,5 +146,37 @@ export class AppShellPage implements OnInit {
   showcaseDataStoreFromRemoteAPI(): void {
     this.dataStoreRemoteApiCounter ++;
     this.addRemoteApiDataSubject.next();
+  }
+
+  // TODO: Refactorear
+  loadStackedResult(): void {
+    const newUser = {
+      email: 'pepe@pepe',
+      first_name: 'pepe',
+      last_name: 'potamo',
+      avatar: 'https://cdn-images-1.medium.com/fit/c/50/50/1*LBqf5fcwLvRA1J8g6CJFBg.jpeg'
+    } as ShowcaseShellRemoteApiModel;
+    const newShell = new ShowcaseShellRemoteApiModel(true);
+
+    this.dynamicUsers.push(this.AppendShell(of(newUser), newShell, 2000));
+  }
+
+  // TODO: Mover a DataStore (Hacerlo un metodo static)
+  AppendShell(dataObservable: Observable<any>, shellModel, networkDelay = 400): Observable<any> {
+    const delayObservable = of(true).pipe(
+      delay(networkDelay)
+    );
+
+    return combineLatest([
+      delayObservable,
+      dataObservable
+    ]).pipe(
+      // Dismiss unnecessary delayValue
+      map(([delayValue, dataValue]: [boolean, any]) => dataValue),
+      // Set the shell model as the initial value
+      startWith(shellModel),
+      // When debugging shell UI, only allow shell values. Filter out everything else.
+      // filter((dataValue: T) => ((this.debugMode) ? dataValue.isShell : true))
+    );
   }
 }
