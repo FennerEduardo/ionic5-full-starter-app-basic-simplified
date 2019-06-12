@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, timer, interval, merge, Subject, of, combineLatest } from 'rxjs';
-import { takeUntil, finalize, take, map, switchMap, delay, startWith, filter } from 'rxjs/operators';
+import { takeUntil, finalize, take, map, switchMap, delay, startWith } from 'rxjs/operators';
 import { DataStore } from '../../shell/data-store';
 import { ShowcaseService } from '../showcase.service';
 import { ShowcaseShellModel, ShowcaseShellRemoteApiModel } from '../showcase-shell.model';
@@ -151,14 +151,13 @@ export class AppShellPage implements OnInit {
   // TODO: Refactorear
   loadStackedResult(): void {
     const newUser = {
-      email: 'pepe@pepe',
-      first_name: 'pepe',
-      last_name: 'potamo',
-      avatar: 'https://cdn-images-1.medium.com/fit/c/50/50/1*LBqf5fcwLvRA1J8g6CJFBg.jpeg'
+      first_name: 'Agustin',
+      last_name: 'Nitsuga',
+      avatar: './assets/sample-images/user/person_1.jpg'
     } as ShowcaseShellRemoteApiModel;
     const newShell = new ShowcaseShellRemoteApiModel(true);
 
-    this.dynamicUsers.push(this.AppendShell(of(newUser), newShell, 2000));
+    this.dynamicUsers.push(this.AppendShell(of(newUser), newShell, 1000));
   }
 
   // TODO: Mover a DataStore (Hacerlo un metodo static)

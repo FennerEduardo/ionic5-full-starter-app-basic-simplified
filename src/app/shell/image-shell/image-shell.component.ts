@@ -61,7 +61,7 @@ export class ImageShellComponent {
     @Inject(PLATFORM_ID) private platformId: string
   ) {}
 
-  private _imageLoaded() {
+  _imageLoaded() {
     this.imageLoaded = true;
 
     // If it's a cover image then set the background-image property accordingly
