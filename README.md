@@ -1,5 +1,5 @@
 # Ionic 4 Full App
-The most advanced and complete Mobile & PWA starter app template
+The most advanced and complete Mobile & PWA starter app template.
 
 # Documentation
 You can find the documentation in https://ionic-4-full-starter-app-docs.ionicthemes.com
