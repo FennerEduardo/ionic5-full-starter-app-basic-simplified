@@ -49,8 +49,8 @@ export class AppShellPage implements OnInit {
     if (!this.remoteApiDataStore) {
       // Initialize the model specifying that it is a shell model
       const shellModel: Array<ShowcaseShellRemoteApiModel> = [
-        new ShowcaseShellRemoteApiModel(true),
-        new ShowcaseShellRemoteApiModel(true)
+        new ShowcaseShellRemoteApiModel(),
+        new ShowcaseShellRemoteApiModel()
       ];
       this.remoteApiDataStore = new DataStore(shellModel);
       // Trigger the loading mechanism (with shell) in the dataStore
@@ -66,9 +66,9 @@ export class AppShellPage implements OnInit {
         return combineLatest([delayObservable, pageData]).pipe(
           map(([delayValue, dataValue]) => dataValue),
           startWith([
-            new ShowcaseShellRemoteApiModel(true),
-            new ShowcaseShellRemoteApiModel(true),
-            new ShowcaseShellRemoteApiModel(true)
+            new ShowcaseShellRemoteApiModel(),
+            new ShowcaseShellRemoteApiModel(),
+            new ShowcaseShellRemoteApiModel()
           ])
         );
       })
@@ -130,7 +130,7 @@ export class AppShellPage implements OnInit {
     const dataSource = this.showcaseService.getShowcaseDataSource();
 
     // Initialize the model specifying that it is a shell model
-    const shellModel: ShowcaseShellModel = new ShowcaseShellModel(true);
+    const shellModel: ShowcaseShellModel = new ShowcaseShellModel();
     const dataStore = new DataStore(shellModel);
     // Trigger the loading mechanism (with shell) in the dataStore
     dataStore.load(dataSource);
@@ -155,7 +155,7 @@ export class AppShellPage implements OnInit {
       last_name: 'Nitsuga',
       avatar: './assets/sample-images/user/person_1.jpg'
     } as ShowcaseShellRemoteApiModel;
-    const newShell = new ShowcaseShellRemoteApiModel(true);
+    const newShell = new ShowcaseShellRemoteApiModel();
 
     this.dynamicUsers.push(this.AppendShell(of(newUser), newShell, 1000));
   }

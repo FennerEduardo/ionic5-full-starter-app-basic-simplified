@@ -22,7 +22,7 @@ export class UserService {
     // Use cache if available
     if (!this.profileDataStore) {
       // Initialize the model specifying that it is a shell model
-      const shellModel: UserProfileModel = new UserProfileModel(true);
+      const shellModel: UserProfileModel = new UserProfileModel();
       this.profileDataStore = new DataStore(shellModel);
       // Trigger the loading mechanism (with shell) in the dataStore
       this.profileDataStore.load(dataSource);
@@ -38,7 +38,7 @@ export class UserService {
     // Use cache if available
     if (!this.friendsDataStore) {
       // Initialize the model specifying that it is a shell model
-      const shellModel: UserFriendsModel = new UserFriendsModel(true);
+      const shellModel: UserFriendsModel = new UserFriendsModel();
       this.friendsDataStore = new DataStore(shellModel);
       // Trigger the loading mechanism (with shell) in the dataStore
       this.friendsDataStore.load(dataSource);

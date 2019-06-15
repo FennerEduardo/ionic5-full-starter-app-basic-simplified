@@ -1,3 +1,5 @@
+import { ShellModel } from '../../shell/data-store';
+
 export class TravelItemModel {
   image: string;
   icon: string;
@@ -9,7 +11,7 @@ export class TravelItemModel {
   reviewsCount: number;
 }
 
-export class TravelListingModel {
+export class TravelListingModel extends ShellModel {
   items: Array<TravelItemModel> = [
     new TravelItemModel(),
     new TravelItemModel(),
@@ -17,5 +19,7 @@ export class TravelListingModel {
     new TravelItemModel()
   ];
 
-  constructor(readonly isShell: boolean) { }
+  constructor() {
+    super();
+  }
 }

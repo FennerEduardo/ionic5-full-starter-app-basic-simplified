@@ -1,6 +1,8 @@
 import * as dayjs from 'dayjs';
 
-export class DealsDetailsModel {
+import { ShellModel } from '../../shell/data-store';
+
+export class DealsDetailsModel extends ShellModel {
   showcaseImages: Array<string> = [
     '',
     '',
@@ -32,5 +34,7 @@ export class DealsDetailsModel {
     }
   ];
 
-  constructor(readonly isShell: boolean) { }
+  constructor() {
+    super();
+  }
 }

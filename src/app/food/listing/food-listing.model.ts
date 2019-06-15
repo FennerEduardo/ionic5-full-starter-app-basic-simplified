@@ -1,3 +1,5 @@
+import { ShellModel } from '../../shell/data-store';
+
 export class FoodItemModel {
   icon: string;
   image: string;
@@ -19,7 +21,7 @@ export class FoodItemModel {
   ];
 }
 
-export class FoodListingModel {
+export class FoodListingModel extends ShellModel {
   items: Array<FoodItemModel> = [
     new FoodItemModel(),
     new FoodItemModel(),
@@ -27,5 +29,7 @@ export class FoodListingModel {
     new FoodItemModel()
   ];
 
-  constructor(readonly isShell: boolean) { }
+  constructor() {
+    super();
+  }
 }

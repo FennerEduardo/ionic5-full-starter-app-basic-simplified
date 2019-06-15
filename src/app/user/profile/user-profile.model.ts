@@ -1,4 +1,6 @@
-export class UserProfileModel {
+import { ShellModel } from '../../shell/data-store';
+
+export class UserProfileModel extends ShellModel {
   userImage: string;
   name: string;
   membership: string;
@@ -32,5 +34,7 @@ export class UserProfileModel {
     ''
   ];
 
-  constructor(readonly isShell: boolean) { }
+  constructor() {
+    super();
+  }
 }

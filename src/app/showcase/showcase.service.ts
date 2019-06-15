@@ -36,7 +36,7 @@ export class ShowcaseService {
     // Use cache if available
     if (!this.showcaseDataStore) {
       // Initialize the model specifying that it is a shell model
-      const shellModel: ShowcaseShellModel = new ShowcaseShellModel(true);
+      const shellModel: ShowcaseShellModel = new ShowcaseShellModel();
       this.showcaseDataStore = new DataStore(shellModel);
       // Trigger the loading mechanism (with shell) in the dataStore
       this.showcaseDataStore.load(dataSource);
@@ -50,7 +50,7 @@ export class ShowcaseService {
 
   public getShowcaseRemoteApiDataStore(dataSource: Observable<ShowcaseShellRemoteApiModel>): DataStore<ShowcaseShellRemoteApiModel> {
     // Initialize the model specifying that it is a shell model
-    const shellModel: ShowcaseShellRemoteApiModel = new ShowcaseShellRemoteApiModel(true);
+    const shellModel: ShowcaseShellRemoteApiModel = new ShowcaseShellRemoteApiModel();
     const showcaseRemoteApiDataStore = new DataStore(shellModel);
     // Trigger the loading mechanism (with shell) in the dataStore
     showcaseRemoteApiDataStore.load(dataSource);

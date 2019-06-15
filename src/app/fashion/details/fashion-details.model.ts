@@ -1,4 +1,6 @@
-export class FashionDetailsModel {
+import { ShellModel } from '../../shell/data-store';
+
+export class FashionDetailsModel extends ShellModel {
   showcaseImages: Array<{type: string, source: string}> = [
     {
       type: '',
@@ -63,5 +65,7 @@ export class FashionDetailsModel {
     }
   ];
 
-  constructor(readonly isShell: boolean) { }
+  constructor() {
+    super();
+  }
 }

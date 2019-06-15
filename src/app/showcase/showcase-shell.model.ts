@@ -1,17 +1,23 @@
-export class ShowcaseShellModel {
+import { ShellModel } from '../shell/data-store';
+
+export class ShowcaseShellModel extends ShellModel {
   cover: string;
   image: string;
   title: string;
   description: string;
 
-  constructor(readonly isShell: boolean) { }
+  constructor() {
+    super();
+  }
 }
 
-export class ShowcaseShellRemoteApiModel {
+export class ShowcaseShellRemoteApiModel extends ShellModel {
   email: string;
   first_name: string;
   last_name: string;
   avatar: string;
 
-  constructor(readonly isShell: boolean) { }
+  constructor() {
+    super();
+  }
 }

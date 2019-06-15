@@ -22,7 +22,7 @@ export class FashionService {
     // Use cache if available
     if (!this.listingDataStore) {
       // Initialize the model specifying that it is a shell model
-      const shellModel: FashionListingModel = new FashionListingModel(true);
+      const shellModel: FashionListingModel = new FashionListingModel();
       this.listingDataStore = new DataStore(shellModel);
       // Trigger the loading mechanism (with shell) in the dataStore
       this.listingDataStore.load(dataSource);
@@ -38,7 +38,7 @@ export class FashionService {
     // Use cache if available
     if (!this.detailsDataStore) {
       // Initialize the model specifying that it is a shell model
-      const shellModel: FashionDetailsModel = new FashionDetailsModel(true);
+      const shellModel: FashionDetailsModel = new FashionDetailsModel();
       this.detailsDataStore = new DataStore(shellModel);
       // Trigger the loading mechanism (with shell) in the dataStore
       this.detailsDataStore.load(dataSource);

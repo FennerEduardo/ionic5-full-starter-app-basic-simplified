@@ -1,4 +1,6 @@
-export class TravelDetailsModel {
+import { ShellModel } from '../../shell/data-store';
+
+export class TravelDetailsModel extends ShellModel {
   image: string;
   icon: string;
   name: string;
@@ -83,5 +85,7 @@ export class TravelDetailsModel {
     }
   ];
 
-  constructor(readonly isShell: boolean) { }
+  constructor() {
+    super();
+  }
 }

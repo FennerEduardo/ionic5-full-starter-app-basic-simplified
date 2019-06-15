@@ -1,5 +1,7 @@
 import * as dayjs from 'dayjs';
 
+import { ShellModel } from '../../shell/data-store';
+
 export class DealsItemModel {
   slug: string;
   logo: string;
@@ -11,7 +13,7 @@ export class DealsItemModel {
   expirationDate: string = dayjs().add(5, 'day').format('MM/DD/YYYY HH:mm:ss') as string;
 }
 
-export class DealsListingModel {
+export class DealsListingModel extends ShellModel {
   items: Array<DealsItemModel> = [
     new DealsItemModel(),
     new DealsItemModel(),
@@ -19,5 +21,7 @@ export class DealsListingModel {
     new DealsItemModel()
   ];
 
-  constructor(readonly isShell: boolean) { }
+  constructor() {
+    super();
+  }
 }

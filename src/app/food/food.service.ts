@@ -24,7 +24,7 @@ export class FoodService {
     // Use cache if available
     if (!this.listingDataStore) {
       // Initialize the model specifying that it is a shell model
-      const shellModel: FoodListingModel = new FoodListingModel(true);
+      const shellModel: FoodListingModel = new FoodListingModel();
       this.listingDataStore = new DataStore(shellModel);
       // Trigger the loading mechanism (with shell) in the dataStore
       this.listingDataStore.load(dataSource);
@@ -42,7 +42,7 @@ export class FoodService {
   public getDetailsStore(dataSource: Observable<FoodDetailsModel>): DataStore<FoodDetailsModel> {
 
     // Initialize the model specifying that it is a shell model
-    const shellModel: FoodDetailsModel = new FoodDetailsModel(true);
+    const shellModel: FoodDetailsModel = new FoodDetailsModel();
     this.detailsDataStore = new DataStore(shellModel);
     // Trigger the loading mechanism (with shell) in the dataStore
     this.detailsDataStore.load(dataSource);
