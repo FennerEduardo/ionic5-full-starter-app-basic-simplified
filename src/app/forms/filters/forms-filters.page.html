@@ -12,24 +12,30 @@
     <ion-item-divider>
       <ion-label>Range</ion-label>
     </ion-item-divider>
-    <form [formGroup]="rangeForm">
-      <ion-list class="range-list" lines="full">
-        <div class="range-header">
-          <span class="range-value">{{ rangeForm.controls.dual.value.lower }}</span>
-          <span class="range-label">Quantity</span>
-          <span class="range-value">{{ rangeForm.controls.dual.value.upper }}</span>
-        </div>
-        <ion-item class="range-item">
-          <ion-range formControlName="dual" color="secondary" dualKnobs="true" (ionChange)="rangeChange($event)" min="1" max="40" step="1"></ion-range>
-        </ion-item>
-        <div class="range-header">
-          <span class="range-label">Amount</span>
-          <span class="range-value">{{ rangeForm.controls.single.value }}</span>
-        </div>
-        <ion-item class="range-item">
-          <ion-range formControlName="single" color="secondary" (ionChange)="rangeChange($event)" min="0" max="50" step="1"></ion-range>
-        </ion-item>
-      </ion-list>
+    <form [formGroup]="rangeForm" class="range-list">
+      <ion-row class="range-item">
+        <ion-col size="12">
+          <div class="range-header">
+            <span class="range-value">{{ rangeForm.controls.dual.value.lower }}</span>
+            <span class="range-label">Quantity</span>
+            <span class="range-value">{{ rangeForm.controls.dual.value.upper }}</span>
+          </div>
+        </ion-col>
+        <ion-col size="12">
+          <ion-range class="range-control" formControlName="dual" color="secondary" dualKnobs="true" (ionChange)="rangeChange($event)" min="1" max="40" step="1"></ion-range>
+        </ion-col>
+      </ion-row>
+      <ion-row class="range-item">
+        <ion-col size="12">
+          <div class="range-header">
+            <span class="range-label">Amount</span>
+            <span class="range-value">{{ rangeForm.controls.single.value }}</span>
+          </div>
+        </ion-col>
+        <ion-col size="12">
+          <ion-range class="range-control" formControlName="single" color="secondary" (ionChange)="rangeChange($event)" min="0" max="50" step="1"></ion-range>
+        </ion-col>
+      </ion-row>
     </form>
 
     <ion-item-divider>
