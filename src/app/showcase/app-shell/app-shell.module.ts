@@ -22,6 +22,7 @@ import { DataStoreCombinedPage } from './data-store-combined/data-store-combined
 import { DataStoreMultiplePage } from './data-store-multiple/data-store-multiple.page';
 import { DataStorePaginationPage } from './data-store-pagination/data-store-pagination.page';
 import { DataStoreStackedPage } from './data-store-stacked/data-store-stacked.page';
+import { DataStoreDependantPage } from './data-store-dependant/data-store-dependant.page';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
   {
     path: 'data-store-stacked',
     component: DataStoreStackedPage
+  },
+  {
+    path: 'data-store-dependant',
+    component: DataStoreDependantPage
   }
 ];
 
@@ -95,7 +100,8 @@ const routes: Routes = [
     DataStoreCombinedPage,
     DataStoreMultiplePage,
     DataStorePaginationPage,
-    DataStoreStackedPage
+    DataStoreStackedPage,
+    DataStoreDependantPage
   ],
   providers: [
     ShowcaseService

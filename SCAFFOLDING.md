@@ -15,6 +15,8 @@ ionic generate page showcase/app-shell/data-store-subset --module=showcase/app-s
 
 ionic generate page showcase/app-shell/data-store-combined --module=showcase/app-shell/app-shell
 
+ionic generate page showcase/app-shell/data-store-dependant --module=showcase/app-shell/app-shell
+
 ionic generate page showcase/app-shell/data-store-multiple --module=showcase/app-shell/app-shell
 
 ionic generate page showcase/app-shell/data-store-pagination --module=showcase/app-shell/app-shell
