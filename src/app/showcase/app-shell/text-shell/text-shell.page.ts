@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./text-shell.page.scss'],
 })
 export class TextShellPage implements OnInit {
+  sampleTextShellData = '';
 
   constructor() { }
 
