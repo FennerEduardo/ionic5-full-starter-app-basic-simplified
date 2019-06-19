@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { delay, finalize, tap, map } from 'rxjs/operators';
 
-import { ShowcaseShellModel, ShowcaseShellRemoteApiModel } from './showcase-shell.model';
+import { ShowcaseShellModel, ShowcaseShellUsersListModel } from './showcase-shell.model';
 import { DataStore } from '../shell/data-store';
 
 @Injectable()
@@ -44,13 +44,17 @@ export class ShowcaseService {
     return this.showcaseDataStore;
   }
 
+  public getShowcaseListDataSource(): Observable<any> {
+    return this.http.get('https://reqres.in/api/users').pipe(map(result => result['data']));
+  }
+
   public getShowcaseRemoteApiDataSource(page: number): Observable<any> {
     return this.http.get('https://reqres.in/api/users?page=' + page).pipe(map(result => result['data']));
   }
 
-  public getShowcaseRemoteApiDataStore(dataSource: Observable<ShowcaseShellRemoteApiModel>): DataStore<ShowcaseShellRemoteApiModel> {
+  public getShowcaseRemoteApiDataStore(dataSource: Observable<ShowcaseShellUsersListModel>): DataStore<ShowcaseShellUsersListModel> {
     // Initialize the model specifying that it is a shell model
-    const shellModel: ShowcaseShellRemoteApiModel = new ShowcaseShellRemoteApiModel();
+    const shellModel: ShowcaseShellUsersListModel = new ShowcaseShellUsersListModel();
     const showcaseRemoteApiDataStore = new DataStore(shellModel);
     // Trigger the loading mechanism (with shell) in the dataStore
     showcaseRemoteApiDataStore.load(dataSource);

@@ -11,7 +11,7 @@ export class ShowcaseShellModel extends ShellModel {
   }
 }
 
-export class ShowcaseShellRemoteApiModel extends ShellModel {
+export class ShowcaseShellUsersListModel extends ShellModel {
   email: string;
   first_name: string;
   last_name: string;

@@ -15,5 +15,22 @@
     <p>
       Using the <code>DataStore</code> utility ...
     </p>
+    <ion-list lines="full" class="users-list">
+      <ion-item *ngFor="let user of data">
+        <ion-thumbnail slot="start">
+          <app-aspect-ratio [ratio]="{w:1, h:1}">
+            <app-image-shell animation="spinner" [src]="user?.avatar" [alt]="'Sample Image'"></app-image-shell>
+          </app-aspect-ratio>
+        </ion-thumbnail>
+        <ion-label>
+          <h2 class="user-name">
+            <app-text-shell [data]="user?.first_name" animation="bouncing"></app-text-shell>
+          </h2>
+          <h3 class="user-lastname">
+            <app-text-shell [data]="user?.last_name" animation="bouncing"></app-text-shell>
+          </h3>
+        </ion-label>
+      </ion-item>
+    </ion-list>
   </section>
 </ion-content>
