@@ -1,6 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { ShowcaseService } from '../../showcase.service';
-import { ShowcaseShellUsersListModel } from '../../showcase-shell.model';
+import { ShowcaseShellUserModel } from '../../showcase-shell.model';
 import { DataStore, ShellModel } from '../../../shell/data-store';
 
 @Component({
@@ -10,8 +10,8 @@ import { DataStore, ShellModel } from '../../../shell/data-store';
 })
 export class DataStoreListPage implements OnInit {
 
-  dataStore: DataStore<Array<ShowcaseShellUsersListModel>>;
-  data: Array<ShowcaseShellUsersListModel> & ShellModel;
+  dataStore: DataStore<Array<ShowcaseShellUserModel>>;
+  data: Array<ShowcaseShellUserModel> & ShellModel;
 
   @HostBinding('class.is-shell') get isShell() {
     return (this.data && this.data.isShell) ? true : false;
@@ -23,10 +23,10 @@ export class DataStoreListPage implements OnInit {
     const dataSource = this.showcaseService.getListDataSource();
 
     // Initialize the model specifying that it is a shell model
-    const shellModel: Array<ShowcaseShellUsersListModel> = [
-      new ShowcaseShellUsersListModel(),
-      new ShowcaseShellUsersListModel(),
-      new ShowcaseShellUsersListModel()
+    const shellModel: Array<ShowcaseShellUserModel> = [
+      new ShowcaseShellUserModel(),
+      new ShowcaseShellUserModel(),
+      new ShowcaseShellUserModel()
     ];
     this.dataStore = new DataStore(shellModel);
     // Trigger the loading mechanism (with shell) in the dataStore

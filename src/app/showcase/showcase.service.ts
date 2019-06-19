@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { delay, finalize, tap, map } from 'rxjs/operators';
 
-import { ShowcaseShellModel, ShowcaseShellUsersListModel } from './showcase-shell.model';
+import { ShowcaseShellModel, ShowcaseShellUserModel } from './showcase-shell.model';
 import { DataStore } from '../shell/data-store';
 
 @Injectable()
@@ -53,9 +53,9 @@ export class ShowcaseService {
   }
 
   public getMultipleDataSourceA(): Observable<any> {
-    return this.http.get('https://reqres.in/api/users');
+    return this.http.get('https://jsonplaceholder.typicode.com/albums');
   }
   public getMultipleDataSourceB(): Observable<any> {
-    return this.http.get('https://reqres.in/api/users');
+    return this.http.get('https://jsonplaceholder.typicode.com/posts');
   }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Subject, merge } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import { ShowcaseShellUsersListModel } from '../../showcase-shell.model';
+import { ShowcaseShellUserModel } from '../../showcase-shell.model';
 import { ShowcaseService } from '../../showcase.service';
 
 import { DataStore } from '../../../shell/data-store';
@@ -15,8 +15,8 @@ import { DataStore } from '../../../shell/data-store';
 export class DataStorePaginationPage implements OnInit {
   // Fetch data with the DataStore utility and assign it to this property
   // DataStore data is async (Observable)
-  remoteApiDataStore: DataStore<Array<ShowcaseShellUsersListModel>>;
-  remoteApiDataState: Array<ShowcaseShellUsersListModel> = [];
+  remoteApiDataStore: DataStore<Array<ShowcaseShellUserModel>>;
+  remoteApiDataState: Array<ShowcaseShellUserModel> = [];
   dataStoreRemoteApiButtonDisabled = false;
   dataStoreRemoteApiCounter = 1;
   addRemoteApiDataSubject: Subject<any> = new Subject<any>();
@@ -29,9 +29,9 @@ export class DataStorePaginationPage implements OnInit {
 
     if (!this.remoteApiDataStore) {
       // Initialize the model specifying that it is a shell model
-      const shellModel: Array<ShowcaseShellUsersListModel> = [
-        new ShowcaseShellUsersListModel(),
-        new ShowcaseShellUsersListModel()
+      const shellModel: Array<ShowcaseShellUserModel> = [
+        new ShowcaseShellUserModel(),
+        new ShowcaseShellUserModel()
       ];
       this.remoteApiDataStore = new DataStore(shellModel);
       // Trigger the loading mechanism (with shell) in the dataStore
@@ -42,9 +42,9 @@ export class DataStorePaginationPage implements OnInit {
       switchMap(() => {
         const pageDataSource = this.showcaseService.getPaginationDataSource(this.dataStoreRemoteApiCounter);
         const newDataShell = [
-          new ShowcaseShellUsersListModel(),
-          new ShowcaseShellUsersListModel(),
-          new ShowcaseShellUsersListModel()
+          new ShowcaseShellUserModel(),
+          new ShowcaseShellUserModel(),
+          new ShowcaseShellUserModel()
         ];
 
         const dataSourceWithShellObservable = DataStore.AppendShell(pageDataSource, newDataShell, 400);

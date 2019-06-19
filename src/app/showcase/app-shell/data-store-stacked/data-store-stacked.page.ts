@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-import { ShowcaseShellUsersListModel } from '../../showcase-shell.model';
+import { ShowcaseShellUserModel } from '../../showcase-shell.model';
 
 import { DataStore } from '../../../shell/data-store';
 
@@ -11,7 +11,7 @@ import { DataStore } from '../../../shell/data-store';
   styleUrls: ['./data-store-stacked.page.scss'],
 })
 export class DataStoreStackedPage implements OnInit {
-  dynamicUsers: Array<Observable<ShowcaseShellUsersListModel>> = [];
+  dynamicUsers: Array<Observable<ShowcaseShellUserModel>> = [];
 
   constructor() { }
 
@@ -25,8 +25,8 @@ export class DataStoreStackedPage implements OnInit {
       first_name: 'Agustin',
       last_name: 'Nitsuga',
       avatar: './assets/sample-images/user/person_1.jpg'
-    } as ShowcaseShellUsersListModel;
-    const newShell = new ShowcaseShellUsersListModel();
+    } as ShowcaseShellUserModel;
+    const newShell = new ShowcaseShellUserModel();
 
     const dataSourceWithShellObservable = DataStore.AppendShell(of(newUser), newShell, 1000);
 
