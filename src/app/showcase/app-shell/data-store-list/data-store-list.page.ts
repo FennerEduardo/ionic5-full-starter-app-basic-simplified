@@ -20,7 +20,6 @@ export class DataStoreListPage implements OnInit {
   constructor(private showcaseService: ShowcaseService) { }
 
   ngOnInit() {
-
     const dataSource = this.showcaseService.getListDataSource();
 
     // Initialize the model specifying that it is a shell model
@@ -36,7 +35,5 @@ export class DataStoreListPage implements OnInit {
     this.dataStore.state.subscribe(data => {
       this.data = data;
     });
-
   }
-
 }
