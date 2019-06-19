@@ -27,7 +27,7 @@ export class DataStoreBasicPage implements OnInit {
     // Prevent rage clicks on the 'Fetch more Data' button
     this.dataStoreButtonDisabled = true;
 
-    const dataSource = this.showcaseService.getShowcaseDataSource();
+    const dataSource = this.showcaseService.getSimpleDataSource();
 
     // Initialize the model specifying that it is a shell model
     const shellModel: ShowcaseShellModel = new ShowcaseShellModel();

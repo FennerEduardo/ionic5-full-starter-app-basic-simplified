@@ -25,7 +25,7 @@ export class DataStorePaginationPage implements OnInit {
   constructor(private showcaseService: ShowcaseService) { }
 
   ngOnInit() {
-    const dataSource = this.showcaseService.getShowcaseRemoteApiDataSource(this.dataStoreRemoteApiCounter);
+    const dataSource = this.showcaseService.getPaginationDataSource(this.dataStoreRemoteApiCounter);
 
     if (!this.remoteApiDataStore) {
       // Initialize the model specifying that it is a shell model
@@ -40,7 +40,7 @@ export class DataStorePaginationPage implements OnInit {
 
     const newDataObservable = this.newRemoteApiDataObservable.pipe(
       switchMap(() => {
-        const pageDataSource = this.showcaseService.getShowcaseRemoteApiDataSource(this.dataStoreRemoteApiCounter);
+        const pageDataSource = this.showcaseService.getPaginationDataSource(this.dataStoreRemoteApiCounter);
         const newDataShell = [
           new ShowcaseShellUsersListModel(),
           new ShowcaseShellUsersListModel(),

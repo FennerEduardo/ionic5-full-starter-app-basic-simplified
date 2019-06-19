@@ -11,7 +11,7 @@ export class NonBlockingResolver implements Resolve<any> {
   resolve() {
 
     // Base Observable (where we get data from)
-    const dataObservable = this.showcaseService.getShowcaseDataSourceWithDelay();
+    const dataObservable = this.showcaseService.getDataSourceWithDelay();
 
     // NON-BLOCKING RESOLVERS
 

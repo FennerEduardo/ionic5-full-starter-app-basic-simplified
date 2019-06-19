@@ -21,7 +21,7 @@ export class DataStoreListPage implements OnInit {
 
   ngOnInit() {
 
-    const dataSource = this.showcaseService.getShowcaseListDataSource();
+    const dataSource = this.showcaseService.getListDataSource();
 
     // Initialize the model specifying that it is a shell model
     const shellModel: Array<ShowcaseShellUsersListModel> = [

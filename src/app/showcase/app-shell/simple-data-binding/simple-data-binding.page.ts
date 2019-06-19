@@ -51,7 +51,7 @@ export class SimpleDataBindingPage implements OnInit {
       complete: () => {
         this.simpleFetchCountdown = 0;
         // Once the countdown ends, fetch data using the HttpClient
-        this.showcaseService.getShowcaseDataSource()
+        this.showcaseService.getSimpleDataSource()
         .pipe(
           take(1) // Force Observable to complete
         ).subscribe(val => {

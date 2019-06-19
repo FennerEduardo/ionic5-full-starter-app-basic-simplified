@@ -43,7 +43,7 @@ export class BlockingResolver implements Resolve<any> {
     // WITH LOADING INDICATOR
 
     // Base Observable (where we get data from)
-    const dataObservable = this.showcaseService.getShowcaseDataSourceWithDelay().pipe(
+    const dataObservable = this.showcaseService.getDataSourceWithDelay().pipe(
       finalize(() => {
         console.log('dataObservable COMPLETED - HIDE LOADER');
         this.dismissLoader();

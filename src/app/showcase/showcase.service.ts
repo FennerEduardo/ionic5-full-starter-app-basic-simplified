@@ -13,7 +13,7 @@ export class ShowcaseService {
 
   constructor(private http: HttpClient) { }
 
-  public getShowcaseDataSourceWithDelay(): Observable<ShowcaseShellModel> {
+  public getDataSourceWithDelay(): Observable<ShowcaseShellModel> {
     return this.http.get<ShowcaseShellModel>('./assets/sample-data/showcase/shell.json').pipe(
       tap(val => {
         console.log('getData STARTED');
@@ -28,11 +28,11 @@ export class ShowcaseService {
       }));
   }
 
-  public getShowcaseDataSource(): Observable<ShowcaseShellModel> {
+  public getSimpleDataSource(): Observable<ShowcaseShellModel> {
     return this.http.get<ShowcaseShellModel>('./assets/sample-data/showcase/shell.json');
   }
 
-  public getShowcaseDataStore(dataSource: Observable<ShowcaseShellModel>): DataStore<ShowcaseShellModel> {
+  public getSimpleDataStore(dataSource: Observable<ShowcaseShellModel>): DataStore<ShowcaseShellModel> {
     // Use cache if available
     if (!this.showcaseDataStore) {
       // Initialize the model specifying that it is a shell model
@@ -44,21 +44,18 @@ export class ShowcaseService {
     return this.showcaseDataStore;
   }
 
-  public getShowcaseListDataSource(): Observable<any> {
+  public getListDataSource(): Observable<any> {
     return this.http.get('https://reqres.in/api/users').pipe(map(result => result['data']));
   }
 
-  public getShowcaseRemoteApiDataSource(page: number): Observable<any> {
+  public getPaginationDataSource(page: number): Observable<any> {
     return this.http.get('https://reqres.in/api/users?page=' + page).pipe(map(result => result['data']));
   }
 
-  public getShowcaseRemoteApiDataStore(dataSource: Observable<ShowcaseShellUsersListModel>): DataStore<ShowcaseShellUsersListModel> {
-    // Initialize the model specifying that it is a shell model
-    const shellModel: ShowcaseShellUsersListModel = new ShowcaseShellUsersListModel();
-    const showcaseRemoteApiDataStore = new DataStore(shellModel);
-    // Trigger the loading mechanism (with shell) in the dataStore
-    showcaseRemoteApiDataStore.load(dataSource);
-
-    return showcaseRemoteApiDataStore;
+  public getMultipleDataSourceA(): Observable<any> {
+    return this.http.get('https://reqres.in/api/users');
+  }
+  public getMultipleDataSourceB(): Observable<any> {
+    return this.http.get('https://reqres.in/api/users');
   }
 }
