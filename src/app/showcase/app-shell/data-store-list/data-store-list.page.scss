@@ -10,13 +10,14 @@
   --text-shell-line-height: 17px;
   max-width: 120px;
   &.text-loaded {
-    min-width: 0px;
+    max-width: inherit;
   }
 }
+
 .user-lastname > app-text-shell {
   --text-shell-line-height: 14px;
   max-width: 120px;
   &.text-loaded {
-    min-width: 0px;
+    max-width: inherit;
   }
 }
