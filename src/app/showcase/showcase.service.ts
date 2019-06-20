@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { delay, finalize, tap, map } from 'rxjs/operators';
+import { delay, finalize, tap, map, filter, concatMap } from 'rxjs/operators';
 
-import { ShowcaseShellModel } from './showcase-shell.model';
-import { DataStore } from '../shell/data-store';
+import { ShowcaseShellModel, ShowcasePostModel, ShowcaseCommentModel } from './showcase-shell.model';
+import { DataStore, ShellModel } from '../shell/data-store';
 import { TravelListingModel } from '../travel/listing/travel-listing.model';
 import { FashionListingModel } from '../fashion/listing/fashion-listing.model';
 
@@ -60,5 +60,20 @@ export class ShowcaseService {
 
   public getMultipleDataSourceB(): Observable<FashionListingModel> {
       return this.http.get<FashionListingModel>('./assets/sample-data/fashion/listing.json');
+  }
+
+  public getDependantDataSourcePost(): Observable<ShowcasePostModel> {
+    return this.http.get<any>('https://jsonplaceholder.typicode.com/posts/1');
+  }
+
+  // tslint:disable-next-line:max-line-length
+  public getDependantDataSourcePostComments(dependantDataSource: Observable<ShowcasePostModel & ShellModel>): Observable<Array<ShowcaseCommentModel>> {
+    return dependantDataSource.pipe(
+      // Filter user values that are not shells. We need to add this filter if using the combinedUserDataStore timeline
+      filter(post => !post.isShell),
+      concatMap(post => {
+        return this.http.get<any>('https://jsonplaceholder.typicode.com/comments?postId=' + post.id);
+      })
+    );
   }
 }

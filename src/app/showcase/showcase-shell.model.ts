@@ -21,3 +21,24 @@ export class ShowcaseShellUserModel extends ShellModel {
     super();
   }
 }
+
+export class ShowcaseCommentModel extends ShellModel {
+  postId: number;
+  name: string;
+  email: string;
+  body: string;
+
+  constructor() {
+    super();
+  }
+}
+
+export class ShowcasePostModel extends ShellModel {
+  id: number;
+  title: string;
+  body: string;
+
+  constructor() {
+    super();
+  }
+}
