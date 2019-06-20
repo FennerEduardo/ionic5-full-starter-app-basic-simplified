@@ -11,9 +11,20 @@
 
 <ion-content class="showcase-content">
   <section class="showcase-section">
-    <h5>List example</h5>
     <p>
-      Using the <code>DataStore</code> utility ...
+      When you fetch data from a remote API, sometimes you request a list of items. If that’s the case you would end up having an <b>Observable</b> of type <code>Observable&lt;Array&lt;YourModel&gt;&gt;</code>.
+    </p>
+    <p>
+      The <b>DataStore</b> class works by assigning a shell property to any object.
+    </p>
+<pre>
+const myObj = new YourModel();
+Object.assign(myObj, &#123;isShell: false&#125;);
+
+Object.assign([1, 2, 3], &#123;isShell: false&#125;);
+</pre>
+    <p>
+      In Javascript, everything is an object (including Arrays). That’s why you can assign properties to Arrays independently of their values.
     </p>
     <ion-list lines="full" class="users-list">
       <ion-item *ngFor="let user of data">
@@ -32,5 +43,12 @@
         </ion-label>
       </ion-item>
     </ion-list>
+    <p>
+      In this example we keep track of the current state of the data stream in a local <code>data</code> property.
+    </p>
+    <p>
+      Note how we define its type using <a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html#intersection-types" target="_blank">Typescript intersection typing</a> like this <code>data: Array&lt;YourModel&gt; & ShellModel;</code>
+      to indicate it's an array that has a shell model appended (by the <b>DataStore</b>).
+    </p>
   </section>
 </ion-content>
