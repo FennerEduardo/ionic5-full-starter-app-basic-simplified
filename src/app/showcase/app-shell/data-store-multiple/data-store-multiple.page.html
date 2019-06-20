@@ -15,5 +15,41 @@
     <p>
       Using the <code>DataStore</code> utility ...
     </p>
+    <h3>DataSource A - Local Spots</h3>
+    <ion-list lines="full">
+      <ion-item *ngFor="let item of dataA?.items | slice:0:3">
+        <ion-thumbnail slot="start">
+          <app-aspect-ratio [ratio]="{w:1, h:1}">
+            <app-image-shell animation="spinner" [src]="item?.image" [alt]="'Sample Image'"></app-image-shell>
+          </app-aspect-ratio>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>
+            <app-text-shell [data]="item?.name" animation="bouncing"></app-text-shell>
+          </h2>
+          <h4>
+            <app-text-shell [data]="item?.category" animation="bouncing"></app-text-shell>
+          </h4>
+          <p>
+            <app-text-shell [data]="item?.address" animation="bouncing"></app-text-shell>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <h3>DataSource B - Fashion</h3>
+    <ion-list lines="full">
+      <ion-item *ngFor="let item of dataB?.items | slice:0:5">
+        <ion-thumbnail slot="start">
+          <app-aspect-ratio [ratio]="{w:1, h:1}">
+            <app-image-shell animation="spinner" [src]="item?.image" [alt]="'Sample Image'"></app-image-shell>
+          </app-aspect-ratio>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>
+            <app-text-shell [data]="item?.name" animation="bouncing"></app-text-shell>
+          </h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
   </section>
 </ion-content>

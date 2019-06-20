@@ -4,8 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { delay, finalize, tap, map } from 'rxjs/operators';
 
-import { ShowcaseShellModel, ShowcaseShellUserModel } from './showcase-shell.model';
+import { ShowcaseShellModel } from './showcase-shell.model';
 import { DataStore } from '../shell/data-store';
+import { TravelListingModel } from '../travel/listing/travel-listing.model';
+import { FashionListingModel } from '../fashion/listing/fashion-listing.model';
 
 @Injectable()
 export class ShowcaseService {
@@ -52,10 +54,11 @@ export class ShowcaseService {
     return this.http.get('https://reqres.in/api/users?page=' + page).pipe(map(result => result['data']));
   }
 
-  public getMultipleDataSourceA(): Observable<any> {
-    return this.http.get('https://jsonplaceholder.typicode.com/albums');
+  public getMultipleDataSourceA(): Observable<TravelListingModel> {
+    return this.http.get<TravelListingModel>('./assets/sample-data/travel/listing.json');
   }
-  public getMultipleDataSourceB(): Observable<any> {
-    return this.http.get('https://jsonplaceholder.typicode.com/posts');
+
+  public getMultipleDataSourceB(): Observable<FashionListingModel> {
+      return this.http.get<FashionListingModel>('./assets/sample-data/fashion/listing.json');
   }
 }
