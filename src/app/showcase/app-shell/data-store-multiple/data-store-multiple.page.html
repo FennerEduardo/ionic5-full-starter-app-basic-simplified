@@ -11,11 +11,17 @@
 
 <ion-content class="showcase-content">
   <section class="showcase-section">
-    <h5>Multiple DataStores example</h5>
     <p>
-      Using the <code>DataStore</code> utility ...
+      Sometimes your view displays different types of data, each with a different model and data source.
     </p>
-    <h3>DataSource A - Local Spots</h3>
+    <p>
+      If this is your use case, then you can use multiple data stores to fetch each data stream.
+    </p>
+    <p>
+      <b>Note:</b> This use case is different from the <a [routerLink]="['/showcase/app-shell/data-store-combined']">Combined Data Sources</a> in that you have two data streams that will change independently one from the other updating different parts of the view without causing a full view 're-loading'.
+    </p>
+    <h6>Data Source A</h6>
+    <h5>What to do nearby</h5>
     <ion-list lines="full">
       <ion-item *ngFor="let item of dataA?.items | slice:0:3">
         <ion-thumbnail slot="start">
@@ -36,7 +42,8 @@
         </ion-label>
       </ion-item>
     </ion-list>
-    <h3>DataSource B - Fashion</h3>
+    <h6>Data Source B</h6>
+    <h5>Shop what's trending</h5>
     <ion-list lines="full">
       <ion-item *ngFor="let item of dataB?.items | slice:0:5">
         <ion-thumbnail slot="start">
