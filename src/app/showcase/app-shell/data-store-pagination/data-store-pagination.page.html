@@ -11,15 +11,21 @@
 
 <ion-content class="showcase-content">
   <section class="showcase-section">
-    <h5>Get data from a Remote API using DataStore - Pagination Example</h5>
     <p>
-      Using <code>DataStore</code> to fetch paginated data from a remote API. Each time you click the button we fetch users from the next page.
+      This example is useful for use cases that require the data stream to be updated based on user actions. <i>Pagination</i> and <i>filtering</i> are the clear use cases that come to my mind.
     </p>
     <p>
-      Current page: {{ dataStoreRemoteApiCounter }}
+      For these use cases you get the initial data stream and then, upon user interaction, you request an update for that stream. For example requesting your remote API for the next page of results or a filtered set of results.
     </p>
-    <p *ngIf="dataStoreRemoteApiButtonDisabled">
-      No more pages available
+    <p>
+      This example shows you how to merge the initial data stream with future data streams that may arise from user interaction.
+    </p>
+    <p>
+      <b>Current page: {{ dataStoreRemoteApiCounter }}</b>
+      <span *ngIf="dataStoreRemoteApiButtonDisabled" style="margin-inline-start: 10px;"><small>(No more pages available)</small></span>
+    </p>
+    <p>
+      <small>Each time you click the button we fetch users from the next page.</small>
     </p>
     <ion-row style="background-color: #FFF; padding: 10px;" *ngFor="let user of remoteApiDataState">
       <ion-col size="4">
