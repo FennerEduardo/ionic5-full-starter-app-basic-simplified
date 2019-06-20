@@ -11,9 +11,14 @@
 
 <ion-content class="showcase-content">
   <section class="showcase-section">
-    <h5>Dependant Data Sources example</h5>
     <p>
-      Using the <code>DataStore</code> utility ...
+      This example kinda mixes the two previous examples (<a [routerLink]="['/showcase/app-shell/data-store-multiple']">multiple data stores</a>, <a [routerLink]="['/showcase/app-shell/data-store-combined']">one depending on the other</a>).
+    </p>
+    <p>
+      The uses cases in which to use this approach would be if you have different data sources that depend on each other, but you want the different sections of the view to 're-load' independently one from the other.
+    </p>
+    <p>
+      This contrasts the use case of the <a [routerLink]="['/showcase/app-shell/data-store-combined']">Combined Data Source</a> where you transform multiple data sources into one, causing the hole view to be 're-loaded' as it's binded to just one combined Observable.
     </p>
   </section>
 </ion-content>
