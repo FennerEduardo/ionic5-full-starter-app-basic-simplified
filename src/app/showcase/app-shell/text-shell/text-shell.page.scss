@@ -14,3 +14,19 @@
   margin: 0px 0px 60px !important;
   z-index: 10;
 }
+
+.sample-text-max-width > app-text-shell {
+  max-width: 50%;
+
+  &.text-loaded {
+    max-width: unset;
+  }
+}
+
+.sample-text-min-width > app-text-shell {
+  min-width: 80px;
+
+  &.text-loaded {
+    min-width: 0px;
+  }
+}
