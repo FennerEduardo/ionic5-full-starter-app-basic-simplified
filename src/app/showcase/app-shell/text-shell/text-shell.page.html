@@ -124,6 +124,24 @@
         <b>Side effect:</b> This solution doesn’t play well if you require the <code>&lt;app-text-shell&gt;</code> to have a transparent background as the masks need a solid color to work properly.
       </p>
     </section>
+    <section class="showcase-section">
+      <h5>Prepend and Append text to the data binded</h5>
+      <p>
+        There are cases where we need to add some text before or after the value binded to the <code>&lt;app-text-shell&gt;</code>. For example if we are loading a price value and we want to put the '$' before the price.
+      </p>
+  <pre>
+  &lt;app-text-shell [data]="<b>(sampleTextShellData) ? '$'.concat(' ', sampleTextShellData) : null</b>"&gt;&lt;/app-text-shell&gt;
+  </pre>
+      <div style="background-color: #FFF; padding: 20px;">
+        <app-text-shell [data]="(sampleTextShellData) ? '$'.concat(' ', sampleTextShellData) : null"></app-text-shell>
+      </div>
+<pre>
+&lt;app-text-shell [data]="<b>(sampleTextShellData) ? sampleTextShellData.concat(' years old') : null</b>"&gt;&lt;/app-text-shell&gt;
+</pre>
+      <div style="background-color: #FFF; padding: 20px;">
+        <app-text-shell [data]="(sampleTextShellData) ? sampleTextShellData.concat(' years old') : null"></app-text-shell>
+      </div>
+    </section>
   </div>
   <section class="showcase-section">
     <h4>Other use cases</h4>
@@ -294,5 +312,43 @@ app-text-shell &#123;
     <p>
       <app-text-shell style="--text-shell-line-gutter: 10px; --text-shell-line-color: #CCC;" [data]="" lines="4"></app-text-shell>
     </p>
+  </section>
+  <section class="showcase-section">
+    <h5>Max-width</h5>
+    <p>
+      By default, the <code>&lt;app-text-shell&gt;</code> element will fill it's container width. You can adjust this by setting a temporary <code>max-width</code> while the shell loading state is present.
+    </p>
+<pre>
+.sample-text-max-width &gt; app-text-shell &#123;
+  <b>max-width: 50%;</b>
+
+  &.text-loaded &#123;
+    <b>max-width: unset;</b>
+  &#125;
+&#125;
+</pre>
+    <div class="sample-text-max-width">
+      <app-text-shell [data]="sampleTextShellData"></app-text-shell>
+    </div>
+    <h5>Min-width</h5>
+    <p>
+      When the <code>&lt;app-text-shell&gt;</code> parent container doesn't have a width defined, it may happen that the <code>&lt;app-text-shell&gt;</code> inherits an undefined width and thus it's not shown.
+    </p>
+    <p>In these cases setting a temporary <code>min-width</code> fixes the issue.</p>
+    <p>
+      <b>Note:</b> If the parent doesn't have a defined width, it will fail to set a min-width based on a percentage of it's parents width. You will have to use absolute units (px, ch, etc).
+    </p>
+<pre>
+.sample-text-min-width &gt; app-text-shell &#123;
+  <b>min-width: 80px;</b>
+
+  &.text-loaded &#123;
+    <b>min-width: 0px;</b>
+  &#125;
+&#125;
+</pre>
+    <span class="sample-text-min-width" style="display: inline-block;">
+      <app-text-shell [data]="sampleTextShellData"></app-text-shell>
+    </span>
   </section>
 </ion-content>
