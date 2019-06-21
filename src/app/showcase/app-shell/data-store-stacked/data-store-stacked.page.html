@@ -11,8 +11,24 @@
 
 <ion-content class="showcase-content">
   <section class="showcase-section">
-    <h5>Stacked Example with Individual Shell</h5>
-    <ion-row style="background-color: #FFF; padding: 10px;" *ngFor="let user of dynamicUsers">
+    <p>
+      Once you have values coming from the initial data stream, the shell animation would be off. If its an open stream, then each time a new value arrives, it will be added to the view state without the shell animation.
+    </p>
+    <p>
+      This example is handy If you want to change the default functionality and apply independent shell animations to each value coming from the open data stream.
+    </p>
+    <p>
+      <b>Note:</b> For this to work we will be transforming plain values into Observables, thus the need to update our markup and specify the binded model as async.
+    </p>
+<pre>
+&lt;h3&gt;
+  &lt;app-text-shell [data]="<b>(user | async)?</b>.first_name">&lt;/app-text-shell&gt;
+&lt;/h3&gt;
+&lt;p&gt;
+  &lt;app-text-shell [data]="<b>(user | async)?</b>.last_name" lines="3">&lt;/app-text-shell&gt;
+&lt;/p&gt;
+</pre>
+    <ion-row style="background-color: #FFF; padding: 10px;" *ngFor="let user of stackedUsers">
       <ion-col size="4">
         <app-aspect-ratio [ratio]="{w:1, h:1}">
           <app-image-shell animation="spinner" [src]="(user | async)?.avatar" [alt]="'Sample Image'"></app-image-shell>
@@ -27,6 +43,6 @@
         </p>
       </ion-col>
     </ion-row>
-    <ion-button (click)="loadStackedResult()">Push more data</ion-button>
+    <ion-button (click)="loadStackedResults()">Push more data</ion-button>
   </section>
 </ion-content>
