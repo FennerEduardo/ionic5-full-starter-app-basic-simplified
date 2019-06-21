@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable, combineLatest, of, forkJoin } from 'rxjs';
+import { Observable, combineLatest, of, forkJoin, ReplaySubject, merge } from 'rxjs';
 import { delay, finalize, tap, map, filter, concatMap } from 'rxjs/operators';
 // tslint:disable-next-line:max-line-length
 import { ShowcaseShellModel, ShowcasePostModel, ShowcaseCommentModel, ShowcaseCombinedTaskUserModel, ShowcaseUser2Model, ShowcaseTaskModel, ShowcaseShellUserModel, ShowcaseCompanyModel } from './showcase-shell.model';
@@ -12,6 +12,7 @@ import { FashionListingModel } from '../fashion/listing/fashion-listing.model';
 @Injectable()
 export class ShowcaseService {
   private showcaseDataStore: DataStore<ShowcaseShellModel>;
+  private openDataStream: ReplaySubject<Array<ShowcaseShellUserModel>> = new ReplaySubject<Array<ShowcaseShellUserModel>>();
 
   constructor(private http: HttpClient) { }
 
@@ -124,7 +125,28 @@ export class ShowcaseService {
     );
   }
 
-  public getStackedValues(): Observable<Array<ShowcaseShellUserModel> & ShellModel> {
+  public getOpenDataStream(): Observable<Array<ShowcaseShellUserModel>> {
+    const firstLoadData = this.getPaginationDataSource(1);
+
+    return merge(
+      this.openDataStream.asObservable(),
+      firstLoadData
+    );
+  }
+
+  public pushValuesToOpenStream(): void {
+    const stackedValues = this.getStackedValues();
+
+    this.openDataStream.next(stackedValues);
+  }
+
+  public getStackedValuesDataSource(): Observable<Array<ShowcaseShellUserModel>> {
+    const stackedValues = this.getStackedValues();
+
+    return of(stackedValues).pipe(delay(3000));
+  }
+
+  public getStackedValues(): Array<ShowcaseShellUserModel> {
     const newUser = {
       first_name: 'Agustin',
       last_name: 'Nitsuga',
@@ -137,9 +159,6 @@ export class ShowcaseService {
     };
 
     // Randomly send one, two or three users
-    const stackedValues = Array(getRand(3)).fill(newUser);
-
-    // Apply a no-shell flag
-    return of(Object.assign(stackedValues, {isShell: false})).pipe(delay(3000));
+    return Array(getRand(3)).fill(newUser);
   }
 }
