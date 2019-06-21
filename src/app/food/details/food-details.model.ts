@@ -1,4 +1,6 @@
-export class FoodDetailsModel {
+import { ShellModel } from '../../shell/data-store';
+
+export class FoodDetailsModel extends ShellModel {
   icon: string;
   slug: string;
   showcaseImage: string;
@@ -179,5 +181,7 @@ export class FoodDetailsModel {
     }
   ];
 
-  constructor(readonly isShell: boolean) { }
+  constructor() {
+    super();
+  }
 }

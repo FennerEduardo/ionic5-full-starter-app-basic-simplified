@@ -1,4 +1,6 @@
-export class RealStateDetailsModel {
+import { ShellModel } from '../../shell/data-store';
+
+export class RealStateDetailsModel extends ShellModel {
   picture: string;
   location: {
     address: string,
@@ -41,5 +43,7 @@ export class RealStateDetailsModel {
     }
   ];
 
-  constructor(readonly isShell: boolean) { }
+  constructor() {
+    super();
+  }
 }

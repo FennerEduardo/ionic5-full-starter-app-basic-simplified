@@ -1,4 +1,6 @@
-export class UserFriendsModel {
+import { ShellModel } from '../../shell/data-store';
+
+export class UserFriendsModel extends ShellModel {
   friends: Array<{
     image: string,
     name: string,
@@ -120,5 +122,7 @@ export class UserFriendsModel {
     }
   ];
 
-  constructor(readonly isShell: boolean) { }
+  constructor() {
+    super();
+  }
 }

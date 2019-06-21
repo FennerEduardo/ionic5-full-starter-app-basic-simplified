@@ -1,3 +1,5 @@
+import { ShellModel } from '../../shell/data-store';
+
 export class FashionItemModel {
   price: number;
   salePrice: number;
@@ -9,7 +11,7 @@ export class FashionItemModel {
   relatedProducts: Array<string>;
 }
 
-export class FashionListingModel {
+export class FashionListingModel extends ShellModel {
   items: Array<FashionItemModel> = [
     new FashionItemModel(),
     new FashionItemModel(),
@@ -17,5 +19,7 @@ export class FashionListingModel {
     new FashionItemModel()
   ];
 
-  constructor(readonly isShell: boolean) { }
+  constructor() {
+    super();
+  }
 }

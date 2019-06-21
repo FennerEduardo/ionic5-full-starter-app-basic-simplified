@@ -1,3 +1,5 @@
+import { ShellModel } from '../../shell/data-store';
+
 export class RealStateItemModel {
   slug: string;
   picture: string;
@@ -22,7 +24,7 @@ export class RealStateItemModel {
   ];
 }
 
-export class RealStateListingModel {
+export class RealStateListingModel extends ShellModel {
   items: Array<RealStateItemModel> = [
     new RealStateItemModel(),
     new RealStateItemModel(),
@@ -30,5 +32,7 @@ export class RealStateListingModel {
     new RealStateItemModel()
   ];
 
-  constructor(readonly isShell: boolean) { }
+  constructor() {
+    super();
+  }
 }
