@@ -5,7 +5,7 @@ import { switchMap } from 'rxjs/operators';
 import { ShowcaseShellUserModel } from '../../showcase-shell.model';
 import { ShowcaseService } from '../../showcase.service';
 
-import { DataStore } from '../../../shell/data-store';
+import { DataStore, ShellModel } from '../../../shell/data-store';
 
 @Component({
   selector: 'app-data-store-pagination',
@@ -14,7 +14,7 @@ import { DataStore } from '../../../shell/data-store';
 })
 export class DataStorePaginationPage implements OnInit {
   // View model
-  pagedUsers: Array<ShowcaseShellUserModel> = [];
+  pagedUsers: Array<ShowcaseShellUserModel> & ShellModel;
 
   // View data store
   remoteApiDataStore: DataStore<Array<ShowcaseShellUserModel>>;
