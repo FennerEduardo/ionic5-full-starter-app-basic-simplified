@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { Observable, combineLatest, of, forkJoin } from 'rxjs';
 import { delay, finalize, tap, map, filter, concatMap } from 'rxjs/operators';
-
-import { ShowcaseShellModel, ShowcasePostModel, ShowcaseCommentModel } from './showcase-shell.model';
+// tslint:disable-next-line:max-line-length
+import { ShowcaseShellModel, ShowcasePostModel, ShowcaseCommentModel, ShowcaseCombinedTaskUserModel, ShowcaseUser2Model, ShowcaseTaskModel } from './showcase-shell.model';
 import { DataStore, ShellModel } from '../shell/data-store';
 import { TravelListingModel } from '../travel/listing/travel-listing.model';
 import { FashionListingModel } from '../fashion/listing/fashion-listing.model';
@@ -76,4 +76,38 @@ export class ShowcaseService {
       })
     );
   }
+
+  getUser(userId: number): Observable<ShowcaseUser2Model> {
+    return this.http.get<ShowcaseUser2Model>('https://jsonplaceholder.typicode.com/users/' + userId);
+  }
+
+  getTasks(): Observable<Array<ShowcaseTaskModel>> {
+    return this.http.get<Array<ShowcaseTaskModel>>('https://jsonplaceholder.typicode.com/todos');
+  }
+
+  // Concat the task with the details of the user
+  public getCombinedTasksUserDataSource(): Observable<Array<ShowcaseCombinedTaskUserModel>> {
+    return this.getTasks().pipe(
+      concatMap(tasks => {
+        const completeTaskData = tasks.map(task => {
+          // for each task retrun a new observable with the ShowcaseCombinedTaskUserModel
+          const taskUser: Observable<ShowcaseUser2Model> = this.getUser(task.userId);
+
+          return combineLatest([
+            of(task),
+            taskUser
+          ]).pipe(
+            map(([taskData, user]: [ShowcaseTaskModel, ShowcaseUser2Model]) => {
+              return {
+                ...taskData,
+                user: user
+              } as ShowcaseCombinedTaskUserModel;
+            })
+          );
+        });
+        return forkJoin(completeTaskData);
+      })
+    );
+  }
+
 }

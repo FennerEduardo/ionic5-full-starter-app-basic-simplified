@@ -23,8 +23,36 @@
     <p>
       Below you can see how we combine two data sources (one depending on the other) into one Observable.
     </p>
-<pre>
-
-</pre>
+    <p>
+      Let's do an example of Tasks and their Owners. Imagine a case where we need to have the list of tasks and the details of the 'owner' user combined in the same data source. Let's see how to do it.
+    </p>
   </section>
+  <div class="tasks">
+    <h6>Tasks</h6>
+    <ion-list lines="full" style="--background: transparent">
+      <ion-item class="task" *ngFor="let task of tasks | slice:0:40">
+        <ion-label>
+          <h2>
+            <app-text-shell [data]="task?.title" animation="bouncing" style="--text-shell-line-height: 16px;"></app-text-shell>
+          </h2>
+          <div style="display: flex;">
+            <span style="margin-right: 10px;"><b>Status:</b></span>
+            <h3 style="min-width: 100px;">
+              <app-text-shell [data]="(task.completed) ? 'Completed': 'In Progress'" animation="bouncing" style="--text-shell-line-height: 14px;"></app-text-shell>
+            </h3>
+          </div>
+          <span><b>Owner:</b></span>
+          <p>
+            <app-text-shell [data]="task.user?.name" animation="bouncing"></app-text-shell>
+          </p>
+          <p>
+            <app-text-shell [data]="(task?.user) ? '@'.concat('', task.user.username) : null" animation="bouncing"></app-text-shell>
+          </p>
+          <p>
+            <app-text-shell [data]="task.user?.email" animation="bouncing"></app-text-shell>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

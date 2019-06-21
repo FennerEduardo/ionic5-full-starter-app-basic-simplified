@@ -42,3 +42,33 @@ export class ShowcasePostModel extends ShellModel {
     super();
   }
 }
+
+export class ShowcaseTaskModel extends ShellModel {
+  id: number;
+  userId: number;
+  title: string;
+  completed: boolean;
+
+  constructor() {
+    super();
+  }
+}
+
+export class ShowcaseUser2Model extends ShellModel {
+  id: number;
+  name: string;
+  email: string;
+  username: string;
+
+  constructor() {
+    super();
+  }
+}
+
+export class ShowcaseCombinedTaskUserModel extends ShowcaseTaskModel {
+  user: ShowcaseUser2Model;
+
+  constructor() {
+    super();
+  }
+}
