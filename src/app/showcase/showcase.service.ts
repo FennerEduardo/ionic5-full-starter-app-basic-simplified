@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, combineLatest, of, forkJoin } from 'rxjs';
 import { delay, finalize, tap, map, filter, concatMap } from 'rxjs/operators';
 // tslint:disable-next-line:max-line-length
-import { ShowcaseShellModel, ShowcasePostModel, ShowcaseCommentModel, ShowcaseCombinedTaskUserModel, ShowcaseUser2Model, ShowcaseTaskModel } from './showcase-shell.model';
+import { ShowcaseShellModel, ShowcasePostModel, ShowcaseCommentModel, ShowcaseCombinedTaskUserModel, ShowcaseUser2Model, ShowcaseTaskModel, ShowcaseCompanyModel } from './showcase-shell.model';
 import { DataStore, ShellModel } from '../shell/data-store';
 import { TravelListingModel } from '../travel/listing/travel-listing.model';
 import { FashionListingModel } from '../fashion/listing/fashion-listing.model';
@@ -79,6 +79,20 @@ export class ShowcaseService {
 
   getUser(userId: number): Observable<ShowcaseUser2Model> {
     return this.http.get<ShowcaseUser2Model>('https://jsonplaceholder.typicode.com/users/' + userId);
+  }
+
+  // get the company details, a subset of the user data
+  getUserSubsetData(userId: number): Observable<ShowcaseCompanyModel> {
+    const dataObservable = this.http.get<ShowcaseUser2Model>('https://jsonplaceholder.typicode.com/users/' + userId);
+
+    return dataObservable.pipe(
+      map((jsonResponse) => {
+        const filteredData: ShowcaseCompanyModel = {
+          ...jsonResponse.company
+        };
+        return filteredData;
+      })
+    );
   }
 
   getTasks(): Observable<Array<ShowcaseTaskModel>> {

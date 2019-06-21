@@ -59,6 +59,17 @@ export class ShowcaseUser2Model extends ShellModel {
   name: string;
   email: string;
   username: string;
+  company?: ShowcaseCompanyModel;
+
+  constructor() {
+    super();
+  }
+}
+
+export class ShowcaseCompanyModel extends ShellModel {
+  catchPhrase: string;
+  name: string;
+  bs: string;
 
   constructor() {
     super();
