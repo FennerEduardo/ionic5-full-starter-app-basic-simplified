@@ -13,19 +13,22 @@ import { DataStore } from '../../../shell/data-store';
   styleUrls: ['./data-store-pagination.page.scss'],
 })
 export class DataStorePaginationPage implements OnInit {
-  // Fetch data with the DataStore utility and assign it to this property
-  // DataStore data is async (Observable)
+  // View model
+  pagedUsers: Array<ShowcaseShellUserModel> = [];
+
+  // View data store
   remoteApiDataStore: DataStore<Array<ShowcaseShellUserModel>>;
-  remoteApiDataState: Array<ShowcaseShellUserModel> = [];
-  dataStoreRemoteApiButtonDisabled = false;
-  dataStoreRemoteApiCounter = 1;
-  addRemoteApiDataSubject: Subject<any> = new Subject<any>();
-  newRemoteApiDataObservable: Observable<any> = this.addRemoteApiDataSubject.asObservable();
+
+  loadMorePages = true;
+  currentPage = 0;
+
+  triggerNewPageLoading: Subject<any> = new Subject<any>();
+  newPageTriggerObservable: Observable<any> = this.triggerNewPageLoading.asObservable();
 
   constructor(private showcaseService: ShowcaseService) { }
 
   ngOnInit() {
-    const dataSource = this.showcaseService.getPaginationDataSource(this.dataStoreRemoteApiCounter);
+    const dataSource = this.showcaseService.getPaginationDataSource(1);
 
     if (!this.remoteApiDataStore) {
       // Initialize the model specifying that it is a shell model
@@ -38,9 +41,9 @@ export class DataStorePaginationPage implements OnInit {
       this.remoteApiDataStore.load(dataSource);
     }
 
-    const newDataObservable = this.newRemoteApiDataObservable.pipe(
-      switchMap(() => {
-        const pageDataSource = this.showcaseService.getPaginationDataSource(this.dataStoreRemoteApiCounter);
+    const newDataObservable = this.newPageTriggerObservable.pipe(
+      switchMap((pageNumber) => {
+        const pageDataSource = this.showcaseService.getPaginationDataSource(pageNumber);
         const newDataShell = [
           new ShowcaseShellUserModel(),
           new ShowcaseShellUserModel(),
@@ -58,15 +61,24 @@ export class DataStorePaginationPage implements OnInit {
       newDataObservable
     )
     .subscribe(result => {
-      if (!result.isShell && result.length === 0) {
-        this.dataStoreRemoteApiButtonDisabled = true;
+      console.log('result', result);
+
+      // When successfully load next page, update currentPage pointer
+      if (!result.isShell && result.length > 0) {
+        this.currentPage ++;
       }
-      this.remoteApiDataState = result;
+
+      if (this.loadMorePages) {
+        this.pagedUsers = result;
+      }
+
+      if (this.currentPage === 4) {
+        this.loadMorePages = false;
+      }
     });
   }
 
-  showcaseDataStoreFromRemoteAPI(): void {
-    this.dataStoreRemoteApiCounter ++;
-    this.addRemoteApiDataSubject.next();
+  getNextPageUsers(): void {
+    this.triggerNewPageLoading.next(this.currentPage + 1);
   }
 }

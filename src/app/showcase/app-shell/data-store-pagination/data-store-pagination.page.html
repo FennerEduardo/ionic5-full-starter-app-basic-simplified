@@ -21,13 +21,13 @@
       This example shows you how to merge the initial data stream with future data streams that may arise from user interaction.
     </p>
     <p>
-      <b>Current page: {{ dataStoreRemoteApiCounter }}</b>
-      <span *ngIf="dataStoreRemoteApiButtonDisabled" style="margin-inline-start: 10px;"><small>(No more pages available)</small></span>
+      <b>Current page: {{ currentPage }}</b>
+      <span *ngIf="!loadMorePages" style="margin-inline-start: 10px;"><small>(No more pages available)</small></span>
     </p>
     <p>
       <small>Each time you click the button we fetch users from the next page.</small>
     </p>
-    <ion-row style="background-color: #FFF; padding: 10px;" *ngFor="let user of remoteApiDataState">
+    <ion-row style="background-color: #FFF; padding: 10px;" *ngFor="let user of pagedUsers">
       <ion-col size="4">
         <app-aspect-ratio [ratio]="{w:1, h:1}">
           <app-image-shell animation="spinner" [src]="user?.avatar" [alt]="'Sample Image'"></app-image-shell>
@@ -42,6 +42,6 @@
         </p>
       </ion-col>
     </ion-row>
-    <ion-button (click)="showcaseDataStoreFromRemoteAPI()" [disabled]="dataStoreRemoteApiButtonDisabled">Get more data</ion-button>
+    <ion-button (click)="getNextPageUsers()" [disabled]="!loadMorePages || pagedUsers.isShell">Fetch next page</ion-button>
   </section>
 </ion-content>

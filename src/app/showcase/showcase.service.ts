@@ -52,7 +52,10 @@ export class ShowcaseService {
   }
 
   public getPaginationDataSource(page: number): Observable<any> {
-    return this.http.get('https://reqres.in/api/users?page=' + page).pipe(map(result => result['data']));
+    return this.http.get('https://reqres.in/api/users?page=' + page).pipe(
+      map(result => result['data']),
+      filter(results => results.length > 0)
+    );
   }
 
   public getMultipleDataSourceA(): Observable<TravelListingModel> {
