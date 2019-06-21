@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, combineLatest, of, forkJoin } from 'rxjs';
 import { delay, finalize, tap, map, filter, concatMap } from 'rxjs/operators';
 // tslint:disable-next-line:max-line-length
-import { ShowcaseShellModel, ShowcasePostModel, ShowcaseCommentModel, ShowcaseCombinedTaskUserModel, ShowcaseUser2Model, ShowcaseTaskModel } from './showcase-shell.model';
+import { ShowcaseShellModel, ShowcasePostModel, ShowcaseCommentModel, ShowcaseCombinedTaskUserModel, ShowcaseUser2Model, ShowcaseTaskModel, ShowcaseShellUserModel } from './showcase-shell.model';
 import { DataStore, ShellModel } from '../shell/data-store';
 import { TravelListingModel } from '../travel/listing/travel-listing.model';
 import { FashionListingModel } from '../fashion/listing/fashion-listing.model';
@@ -110,4 +110,22 @@ export class ShowcaseService {
     );
   }
 
+  public getStackedValues(): Observable<Array<ShowcaseShellUserModel> & ShellModel> {
+    const newUser = {
+      first_name: 'Agustin',
+      last_name: 'Nitsuga',
+      avatar: './assets/sample-images/user/person_1.jpg'
+    } as ShowcaseShellUserModel;
+
+    // Get a random integer between 1 (and only 1) and 'max'
+    const getRand: (max: number, min?: number) => number = (max, min = 1) => {
+      return Math.floor(Math.random() * max) + min;
+    };
+
+    // Randomly send one, two or three users
+    const stackedValues = Array(getRand(3)).fill(newUser);
+
+    // Apply a no-shell flag
+    return of(Object.assign(stackedValues, {isShell: false})).pipe(delay(3000));
+  }
 }
