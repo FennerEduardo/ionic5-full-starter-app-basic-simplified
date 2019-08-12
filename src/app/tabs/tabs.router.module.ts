@@ -14,47 +14,47 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../categories/categories.module#CategoriesPageModule'
+            loadChildren: () => import('../categories/categories.module').then(m => m.CategoriesPageModule)
           },
           {
             path: 'fashion',
-            loadChildren: '../fashion/listing/fashion-listing.module#FashionListingPageModule'
+            loadChildren: () => import('../fashion/listing/fashion-listing.module').then(m => m.FashionListingPageModule)
           },
           {
             path: 'fashion/:productId',
-            loadChildren: '../fashion/details/fashion-details.module#FashionDetailsPageModule'
+            loadChildren: () => import('../fashion/details/fashion-details.module').then(m => m.FashionDetailsPageModule)
           },
           {
             path: 'food',
-            loadChildren: '../food/listing/food-listing.module#FoodListingPageModule'
+            loadChildren: () => import('../food/listing/food-listing.module').then(m => m.FoodListingPageModule)
           },
           {
             path: 'food/:productId',
-            loadChildren: '../food/details/food-details.module#FoodDetailsPageModule'
+            loadChildren: () => import('../food/details/food-details.module').then(m => m.FoodDetailsPageModule)
           },
           {
             path: 'travel',
-            loadChildren: '../travel/listing/travel-listing.module#TravelListingPageModule'
+            loadChildren: () => import('../travel/listing/travel-listing.module').then(m => m.TravelListingPageModule)
           },
           {
             path: 'travel/:productId',
-            loadChildren: '../travel/details/travel-details.module#TravelDetailsPageModule'
+            loadChildren: () => import('../travel/details/travel-details.module').then(m => m.TravelDetailsPageModule)
           },
           {
             path: 'deals',
-            loadChildren: '../deals/listing/deals-listing.module#DealsListingPageModule'
+            loadChildren: () => import('../deals/listing/deals-listing.module').then(m => m.DealsListingPageModule)
           },
           {
             path: 'deals/:productId',
-            loadChildren: '../deals/details/deals-details.module#DealsDetailsPageModule'
+            loadChildren: () => import('../deals/details/deals-details.module').then(m => m.DealsDetailsPageModule)
           },
           {
             path: 'real-state',
-            loadChildren: '../real-state/listing/real-state-listing.module#RealStateListingPageModule'
+            loadChildren: () => import('../real-state/listing/real-state-listing.module').then(m => m.RealStateListingPageModule)
           },
           {
             path: 'real-state/:productId',
-            loadChildren: '../real-state/details/real-state-details.module#RealStateDetailsPageModule'
+            loadChildren: () => import('../real-state/details/real-state-details.module').then(m => m.RealStateDetailsPageModule)
           }
         ]
       },
@@ -63,11 +63,11 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../user/profile/user-profile.module#UserProfilePageModule'
+            loadChildren: () => import('../user/profile/user-profile.module').then(m => m.UserProfilePageModule)
           },
           {
             path: 'friends',
-            loadChildren: '../user/friends/user-friends.module#UserFriendsPageModule'
+            loadChildren: () => import('../user/friends/user-friends.module').then(m => m.UserFriendsPageModule)
           }
         ]
       },
@@ -76,7 +76,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../notifications/notifications.module#NotificationsPageModule'
+            loadChildren: () => import('../notifications/notifications.module').then(m => m.NotificationsPageModule)
           }
         ]
       },

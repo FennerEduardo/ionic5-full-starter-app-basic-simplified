@@ -13,7 +13,7 @@ import { IonSlides, MenuController } from '@ionic/angular';
   ]
 })
 export class GettingStartedPage implements OnInit, AfterViewInit {
-  @ViewChild(IonSlides) slides: IonSlides;
+  @ViewChild(IonSlides, { static: true }) slides: IonSlides;
   @HostBinding('class.last-slide-active') isLastSlide = false;
 
   gettingStartedForm: FormGroup;

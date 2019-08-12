@@ -9,15 +9,15 @@ import { ComponentsModule } from '../components/components.module';
 const showcaseRoutes: Routes = [
   {
     path: 'app-shell',
-    loadChildren: './app-shell/app-shell.module#AppShellModule'
+    loadChildren: () => import('./app-shell/app-shell.module').then(m => m.AppShellModule)
   },
   {
     path: 'custom-components',
-    loadChildren: './custom-components/custom-components.module#CustomComponentsModule'
+    loadChildren: () => import('./custom-components/custom-components.module').then(m => m.CustomComponentsModule)
   },
   {
     path: 'route-resolvers-ux',
-    loadChildren: './route-resolvers-ux/route-resolvers-ux.module#RouteResolversUXModule'
+    loadChildren: () => import('./route-resolvers-ux/route-resolvers-ux.module').then(m => m.RouteResolversUXModule)
   }
 ];
 

@@ -18,7 +18,7 @@ export class WalkthroughPage implements OnInit, AfterViewInit {
     }
   };
 
-  @ViewChild(IonSlides) slides: IonSlides;
+  @ViewChild(IonSlides, { static: true }) slides: IonSlides;
 
   @HostBinding('class.first-slide-active') isFirstSlide = true;
 
