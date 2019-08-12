@@ -12,7 +12,7 @@ import { IonCheckbox } from '@ionic/angular';
   ]
 })
 export class CheckboxWrapperComponent implements AfterContentInit {
-  @ContentChild(IonCheckbox) checkbox: IonCheckbox;
+  @ContentChild(IonCheckbox, { static: false }) checkbox: IonCheckbox;
 
   @HostBinding('class.checkbox-checked') isChecked: boolean;
 
