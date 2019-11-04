@@ -33,7 +33,7 @@ Read how to [build this app for iOS](https://capacitor.ionicframework.com/docs/b
 
 #### Android Platform
 This app has an android folder which contains the Android native app.
-Read how to [build this app for Andrid](https://capacitor.ionicframework.com/docs/basics/building-your-app#android).
+Read how to [build this app for Android](https://capacitor.ionicframework.com/docs/basics/building-your-app#android).
 
 
 ## Support
