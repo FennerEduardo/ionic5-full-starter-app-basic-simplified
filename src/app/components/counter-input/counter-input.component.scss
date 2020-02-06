@@ -1,6 +1,7 @@
 app-counter-input {
   --counter-background: #000;
   --counter-color: #FFF;
+  --counter-color-activated: #FFF;
   --counter-border-color: #000;
   --counter-border-radius-outer: 50%;
   --counter-border-radius-inner: 50%;
@@ -12,8 +13,9 @@ app-counter-input {
 
   ion-button.counter-icon {
     --background: var(--counter-background);
+    --background-activated: var(--counter-color);
     --color: var(--counter-color);
-    --color-activated: var(--counter-color);
+    --color-activated: var(--counter-color-activated);
     --border-width: 1px;
     --border-style: solid;
     --border-color: var(--counter-border-color);

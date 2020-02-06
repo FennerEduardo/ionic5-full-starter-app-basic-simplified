@@ -1,4 +1,4 @@
-<ion-header no-border>
+<ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -36,7 +36,7 @@
         </ion-col>
         <ion-col class="secondary-actions">
           <ion-button class="more-btn" size="small" fill="clear" color="medium">
-            <ion-icon slot="icon-only" name="more"></ion-icon>
+            <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
           </ion-button>
         </ion-col>
       </ion-row>
@@ -92,7 +92,7 @@
     </ion-row>
     <ion-row class="pictures-row">
       <ion-col class="picture-item" size="2" *ngFor="let photo of profile.photos">
-        <app-image-shell [mode]="'cover'" [src]="photo.image" class="user-photo-image">
+        <app-image-shell [display]="'cover'" [src]="photo.image" class="user-photo-image">
           <app-aspect-ratio [ratio]="{w:1, h:1}">
           </app-aspect-ratio>
         </app-image-shell>

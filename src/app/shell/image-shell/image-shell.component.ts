@@ -10,35 +10,35 @@ import { AppShellConfig } from '../config/app-shell.config';
 })
 export class ImageShellComponent {
   // To debug shell styles, change configuration in the assets/app-shell.config.json file
-  private debugMode = (AppShellConfig.settings && AppShellConfig.settings.debug) ? AppShellConfig.settings.debug : false;
+  private debugDisplay = (AppShellConfig.settings && AppShellConfig.settings.debug) ? AppShellConfig.settings.debug : false;
 
   // tslint:disable-next-line:variable-name
   _src = '';
   // tslint:disable-next-line:variable-name
   _alt = '';
   // tslint:disable-next-line:variable-name
-  _mode = '';
+  _display = '';
 
   @HostBinding('class.img-loaded') imageLoaded = false;
 
   @HostBinding('style.backgroundImage') backgroundImage: string;
 
-  @HostBinding('attr.mode')
+  @HostBinding('attr.display')
   @Input()
-  set mode(val: string) {
-    this._mode = (val !== undefined && val !== null) ? val : '';
+  set display(val: string) {
+    this._display = (val !== undefined && val !== null) ? val : '';
   }
-  get mode(): string {
-    return this._mode;
+  get display(): string {
+    return this._display;
   }
 
   @Input()
   set src(val: string) {
-    if (!this.debugMode) {
+    if (!this.debugDisplay) {
       this._src = (val !== undefined && val !== null) ? val : '';
     }
 
-    if (this._mode === 'cover') {
+    if (this._display === 'cover') {
       // Unset the background-image
       this.backgroundImage = 'unset';
     }
@@ -65,7 +65,7 @@ export class ImageShellComponent {
     this.imageLoaded = true;
 
     // If it's a cover image then set the background-image property accordingly
-    if (this._mode === 'cover') {
+    if (this._display === 'cover') {
       this.backgroundImage = 'url(' + this._src + ')';
     }
   }

@@ -1,4 +1,4 @@
-<ion-header no-border>
+<ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="app/user"></ion-back-button>
@@ -7,14 +7,14 @@
 </ion-header>
 
 <ion-content class="user-friends-content">
-  <ion-segment class="user-friends-segment" mode="md" (ionChange)="segmentChanged($event)">
-    <ion-segment-button mode="md" checked="true" value="friends">
+  <ion-segment value="friends" class="user-friends-segment" mode="md" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="friends">
       <ion-label>Friends</ion-label>
     </ion-segment-button>
-    <ion-segment-button mode="md" value="followers">
+    <ion-segment-button value="followers">
       <ion-label>Followers</ion-label>
     </ion-segment-button>
-    <ion-segment-button mode="md" value="following">
+    <ion-segment-button value="following">
       <ion-label>Following</ion-label>
     </ion-segment-button>
   </ion-segment>

@@ -21,7 +21,8 @@
     --background: var(--page-segment-background);
     --color: rgba(var(--ion-color-dark-rgb), 0.4);
     --color-checked: var(--ion-color-dark);
-    --indicator-color-checked: var(--ion-color-dark);
+    --indicator-color: var(--ion-color-dark);
+    // --indicator-color-checked: var(--ion-color-dark);
 
     text-transform: capitalize;
     min-height: calc((var(--page-margin) * 3) - var(--page-segment-indicator-height));

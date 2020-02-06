@@ -3,14 +3,14 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="app/categories/real-state"></ion-back-button>
     </ion-buttons>
-    <ion-title>Real State Details</ion-title>
+    <ion-title>Real Estate Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="real-state-details-content">
   <ion-row class="image-row">
     <ion-col size="12">
-      <app-image-shell [mode]="'cover'" animation="spinner" class="details-picture" [src]="details.picture">
+      <app-image-shell [display]="'cover'" animation="spinner" class="details-picture" [src]="details.picture">
         <app-aspect-ratio [ratio]="{w:64, h:40}">
           <ion-icon class="bookmark-icon" name="heart"></ion-icon>
         </app-aspect-ratio>
