@@ -19,7 +19,7 @@
         <ion-col *ngIf="((item.expirationDate | appTimeDifference) > 0)" class="call-to-action-col">
           <ion-button class="claim-button" expand="block" color="claim" [routerLink]="['/app/categories/deals/', item.slug]">
             <span class="button-cta">CLAIM</span>
-            <ion-icon slot="end" name="ios-arrow-forward"></ion-icon>
+            <ion-icon slot="end" name="arrow-forward"></ion-icon>
           </ion-button>
         </ion-col>
         <ion-col *ngIf="((item.expirationDate | appTimeDifference) < 0)" class="call-to-action-col">

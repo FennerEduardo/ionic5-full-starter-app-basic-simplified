@@ -10,7 +10,7 @@
 <ion-content class="food-details-content">
   <ion-row class="image-row">
     <ion-col size="12">
-      <app-image-shell [mode]="'cover'" animation="spinner" class="add-overlay showcase-image" [src]="details?.showcaseImage">
+      <app-image-shell [display]="'cover'" animation="spinner" class="add-overlay showcase-image" [src]="details?.showcaseImage">
         <app-aspect-ratio [ratio]="{w:64, h:40}">
           <div class="icon-wrapper">
             <app-aspect-ratio [ratio]="{w: 40, h: 20}">
@@ -132,7 +132,7 @@
         <div class="dish-votes-value">
           <app-text-shell [data]="dish.votesCount"></app-text-shell>
         </div>
-        <ion-icon class="dish-votes-icon" name="heart-empty"></ion-icon>
+        <ion-icon class="dish-votes-icon" name="heart-outline"></ion-icon>
       </ion-col>
     </ion-row>
   </div>
@@ -203,7 +203,7 @@
     </div>
     <div class="recipes-list">
       <div class="recipe-item" *ngFor="let recipe of details?.popularRecipes">
-        <app-image-shell class="recipe-cover-image" [mode]="'cover'" [src]="recipe.showcaseImage">
+        <app-image-shell class="recipe-cover-image" [display]="'cover'" [src]="recipe.showcaseImage">
           <app-aspect-ratio [ratio]="{w:64, h:30}">
           </app-aspect-ratio>
         </app-image-shell>

@@ -12,7 +12,7 @@
     <ion-slides class="details-slides" pager="true" [options]="slidesOptions">
       <ion-slide class="" *ngFor="let image of details?.showcaseImages">
         <ion-row class="slide-inner-row">
-          <app-image-shell [mode]="'cover'" animation="spinner" class="showcase-image" [ngClass]="{'centered-image': (image.type === 'square'), 'fill-image': (image.type === 'fill')}" [src]="image.source">
+          <app-image-shell [display]="'cover'" animation="spinner" class="showcase-image" [ngClass]="{'centered-image': (image.type === 'square'), 'fill-image': (image.type === 'fill')}" [src]="image.source">
             <app-aspect-ratio [ratio]="{w:64, h:50}">
             </app-aspect-ratio>
           </app-image-shell>

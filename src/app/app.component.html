@@ -1,12 +1,13 @@
 <ion-app>
-  <ion-split-pane>
-    <ion-menu class="app-sidemenu">
+  <ion-split-pane contentId="menu-content">
+    <!-- our side menu  -->
+    <ion-menu contentId="menu-content" class="app-sidemenu">
       <ion-header>
         <ion-toolbar>
           <ion-row class="user-details-wrapper">
             <ion-col size="4">
               <app-aspect-ratio [ratio]="{w: 1, h: 1}">
-                <app-image-shell class="user-avatar" animation="spinner" [src]="'https://pbs.twimg.com/profile_images/722153095761903616/WjIKQ7Wm_400x400.jpg'"></app-image-shell>
+                <app-image-shell class="user-avatar" animation="spinner" [src]="'./assets/images/ionicthemes_logo.jpg'"></app-image-shell>
               </app-aspect-ratio>
             </ion-col>
             <ion-col class="user-info-wrapper" size="8">
@@ -28,8 +29,10 @@
       </ion-header>
       <ion-content>
         <ion-list>
-          <ion-list-header>Layouts</ion-list-header>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+          <ion-list-header>
+            <ion-label>Layouts</ion-label>
+          </ion-list-header>
+          <ion-menu-toggle autoHide="false" *ngFor="let p of appPages; let i = index">
             <ion-item [routerLink]="p.url">
               <ion-icon slot="start" [src]="p.icon"></ion-icon>
               <ion-label>
@@ -39,8 +42,10 @@
           </ion-menu-toggle>
         </ion-list>
         <ion-list>
-          <ion-list-header>Forms</ion-list-header>
-          <ion-menu-toggle auto-hide="false">
+          <ion-list-header>
+            <ion-label>Forms</ion-label>
+          </ion-list-header>
+          <ion-menu-toggle autoHide="false">
             <ion-item [routerLink]="['/forms-and-validations']">
               <ion-icon slot="start" src="./assets/sample-icons/side-menu/forms.svg"></ion-icon>
               <ion-label>
@@ -56,8 +61,10 @@
           </ion-menu-toggle>
         </ion-list>
         <ion-list>
-          <ion-list-header>Account</ion-list-header>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of accountPages; let i = index">
+          <ion-list-header>
+            <ion-label>Account</ion-label>
+          </ion-list-header>
+          <ion-menu-toggle autoHide="false" *ngFor="let p of accountPages; let i = index">
             <ion-item [routerLink]="p.url">
               <ion-icon slot="start" [src]="p.icon"></ion-icon>
               <ion-label>
@@ -67,8 +74,10 @@
           </ion-menu-toggle>
         </ion-list>
         <ion-list>
-          <ion-list-header>Showcase</ion-list-header>
-          <ion-menu-toggle auto-hide="false">
+          <ion-list-header>
+            <ion-label>Showcase</ion-label>
+          </ion-list-header>
+          <ion-menu-toggle autoHide="false">
             <ion-item [routerLink]="['/showcase/app-shell']">
               <ion-icon slot="start" name="egg"></ion-icon>
               <ion-label>
@@ -91,7 +100,7 @@
         </ion-list>
       </ion-content>
     </ion-menu>
-    <!-- Main app content gets rendered in this router-outlet -->
-    <ion-router-outlet main></ion-router-outlet>
+    <!-- Main app content get's rendered in this router-outlet -->
+    <ion-router-outlet id="menu-content"></ion-router-outlet>
   </ion-split-pane>
 </ion-app>

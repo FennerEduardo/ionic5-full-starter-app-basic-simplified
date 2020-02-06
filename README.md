@@ -1,5 +1,5 @@
 # Ionic 4 Full App
-The most advanced and complete Mobile & PWA starter app template
+The most advanced and complete Mobile & PWA starter app template.
 
 # Documentation
 You can find the documentation in https://ionic-4-full-starter-app-docs.ionicthemes.com
@@ -18,6 +18,8 @@ Run `ionic serve` to start a live-reload dev server
 ### To test the app as a Native App
 
 This project uses [Capacitor](https://capacitor.ionicframework.com/docs/) (spiritual successor to Cordova).
+
+[Read this post](https://ionicthemes.com/tutorials/about/native-cross-platform-web-apps-with-ionic-capacitor) to get an introduction about Capacitor and learn the main differences between Capacitor and Cordova.
 
 Before starting make sure to read the [Capacitor Required Dependencies](https://capacitor.ionicframework.com/docs/getting-started/dependencies).
 

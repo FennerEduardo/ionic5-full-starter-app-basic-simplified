@@ -10,7 +10,7 @@
 <ion-content class="travel-details-content">
   <ion-row class="image-row">
     <ion-col size="12">
-      <app-image-shell [mode]="'cover'" animation="spinner" class="add-overlay details-image" [src]="details?.image">
+      <app-image-shell [display]="'cover'" animation="spinner" class="add-overlay details-image" [src]="details?.image">
         <app-aspect-ratio [ratio]="{w:64, h:50}">
           <div class="icon-wrapper">
             <app-aspect-ratio [ratio]="{w: 47, h: 25}">
@@ -148,7 +148,7 @@
     <h3 class="detail-alt-title">More activities?</h3>
     <ion-row class="related-activity" *ngFor="let relatedActivity of details?.relatedActivities">
       <ion-col size="12">
-        <app-image-shell [mode]="'cover'" animation="spinner" class="related-activity-picture" [src]="relatedActivity.picture">
+        <app-image-shell [display]="'cover'" animation="spinner" class="related-activity-picture" [src]="relatedActivity.picture">
           <app-aspect-ratio [ratio]="{w:64, h:23}">
           </app-aspect-ratio>
         </app-image-shell>

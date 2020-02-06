@@ -26,7 +26,7 @@
     right: 0;
   }
 
-  &:not([mode="cover"]) {
+  &:not([display="cover"]) {
     width: 100%;
     overflow: hidden;
 
@@ -52,12 +52,12 @@
     }
   }
 
-  // If it is mode: cover
-  &[mode="cover"] {
+  // If it is display: cover
+  &[display="cover"] {
     background-size: cover;
     background-repeat: no-repeat;
 
-    // In cover mode, we can have content inside the element, thus we need to put these elements beneath
+    // In cover display, we can have content inside the element, thus we need to put these elements beneath
     &::before,
     & > .spinner {
       z-index: -1;
