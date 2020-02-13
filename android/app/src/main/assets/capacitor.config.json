@@ -1,6 +1,6 @@
 {
-  "appId": "com.ionicthemes.ionic4fullapp",
-  "appName": "Ionic4FullApp",
+  "appId": "com.ionicthemes.ionic5fullapp",
+  "appName": "Ionic5FullApp",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

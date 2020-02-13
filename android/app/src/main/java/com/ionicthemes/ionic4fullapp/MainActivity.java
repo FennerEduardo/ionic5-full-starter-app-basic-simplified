@@ -1,4 +1,4 @@
-package com.ionicthemes.ionic4fullapp;
+package com.ionicthemes.ionic5fullapp;
 
 import android.os.Bundle;
 

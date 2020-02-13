@@ -10,32 +10,24 @@
 
 // Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
 .user-friends-segment {
+  --background: var(--page-segment-background);
   position: sticky;
   top: 0;
   z-index: 8;
-  background-color: var(--page-segment-background);
 
   ion-segment-button {
     --padding-end: var(--page-margin);
     --padding-start: var(--page-margin);
-    --background: var(--page-segment-background);
     --color: rgba(var(--ion-color-dark-rgb), 0.4);
-    --color-checked: var(--ion-color-dark);
     --indicator-color: var(--ion-color-dark);
-    // --indicator-color-checked: var(--ion-color-dark);
 
     text-transform: capitalize;
     min-height: calc((var(--page-margin) * 3) - var(--page-segment-indicator-height));
-
-    ion-label {
-      margin-top: calc(var(--page-margin) / 2);
-      margin-bottom: calc(var(--page-margin) / 4);
-    }
   }
 }
 
 ion-searchbar.friends-searchbar {
-  padding: var(--page-margin);
+  padding: calc(var(--page-margin) * 1.5) var(--page-margin);
 }
 
 .friends-list {

@@ -155,6 +155,7 @@ ion-content {
       padding-bottom: calc(var(--page-margin) / 4);
 
       ion-col {
+        transform: translateZ(0px);
         padding-top: calc(var(--page-margin) / 4);
         padding-bottom: calc(var(--page-margin) / 4);
 
@@ -209,7 +210,6 @@ ion-content {
       --border-color: transparent;
       --border-color-checked: transparent;
       --background: transparent;
-      --background-checked: var(--ion-color-secondary-rgb);
       --background-checked: rgba(var(--ion-color-secondary-rgb), .4);
 
       height: 100%;

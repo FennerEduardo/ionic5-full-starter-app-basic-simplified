@@ -7,7 +7,7 @@
           <ion-row class="user-details-wrapper">
             <ion-col size="4">
               <app-aspect-ratio [ratio]="{w: 1, h: 1}">
-                <app-image-shell class="user-avatar" animation="spinner" [src]="'./assets/images/ionicthemes_logo.jpg'"></app-image-shell>
+                <app-image-shell class="user-avatar" animation="spinner" [src]="'./assets/sample-images/ionicthemes_logo.jpg'"></app-image-shell>
               </app-aspect-ratio>
             </ion-col>
             <ion-col class="user-info-wrapper" size="8">
@@ -34,7 +34,7 @@
           </ion-list-header>
           <ion-menu-toggle autoHide="false" *ngFor="let p of appPages; let i = index">
             <ion-item [routerLink]="p.url">
-              <ion-icon slot="start" [src]="p.icon"></ion-icon>
+              <ion-icon slot="start" [name]="p.ionicIcon? p.ionicIcon: ''" [src]="p.customIcon? p.customIcon: ''"></ion-icon>
               <ion-label>
                 {{p.title}}
               </ion-label>
@@ -47,13 +47,13 @@
           </ion-list-header>
           <ion-menu-toggle autoHide="false">
             <ion-item [routerLink]="['/forms-and-validations']">
-              <ion-icon slot="start" src="./assets/sample-icons/side-menu/forms.svg"></ion-icon>
+              <ion-icon slot="start" src="./assets/custom-icons/side-menu/forms.svg"></ion-icon>
               <ion-label>
                 Forms & Validations
               </ion-label>
             </ion-item>
             <ion-item [routerLink]="['/forms-filters']">
-              <ion-icon slot="start" name="options"></ion-icon>
+              <ion-icon slot="start" name="options-outline"></ion-icon>
               <ion-label>
                 Filters
               </ion-label>
@@ -66,7 +66,7 @@
           </ion-list-header>
           <ion-menu-toggle autoHide="false" *ngFor="let p of accountPages; let i = index">
             <ion-item [routerLink]="p.url">
-              <ion-icon slot="start" [src]="p.icon"></ion-icon>
+              <ion-icon slot="start" [name]="p.ionicIcon? p.ionicIcon: ''" [src]="p.customIcon? p.customIcon: ''"></ion-icon>
               <ion-label>
                 {{p.title}}
               </ion-label>
@@ -79,19 +79,19 @@
           </ion-list-header>
           <ion-menu-toggle autoHide="false">
             <ion-item [routerLink]="['/showcase/app-shell']">
-              <ion-icon slot="start" name="egg"></ion-icon>
+              <ion-icon slot="start" name="egg-outline"></ion-icon>
               <ion-label>
                 App Shell
               </ion-label>
             </ion-item>
             <ion-item [routerLink]="['/showcase/route-resolvers-ux']">
-              <ion-icon slot="start" name="cog"></ion-icon>
+              <ion-icon slot="start" name="cog-outline"></ion-icon>
               <ion-label>
                 Route Resolvers UX
               </ion-label>
             </ion-item>
             <ion-item [routerLink]="['/showcase/custom-components']">
-              <ion-icon slot="start" name="color-wand"></ion-icon>
+              <ion-icon slot="start" name="color-wand-outline"></ion-icon>
               <ion-label>
                 Custom Components
               </ion-label>

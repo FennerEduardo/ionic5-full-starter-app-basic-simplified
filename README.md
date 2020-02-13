@@ -1,4 +1,4 @@
-# Ionic 4 Full App
+# Ionic 5 Full App
 The most advanced and complete Mobile & PWA starter app template.
 
 # Documentation

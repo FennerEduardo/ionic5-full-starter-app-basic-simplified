@@ -55,14 +55,20 @@
 
     .forgot-btn {
       --color: var(--ion-color-medium);
-
       margin: 0px;
+
+      &:focus {
+        outline: none;
+      }
     }
 
     .signup-btn {
       --color: var(--ion-color-secondary);
-
       margin: 0px;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 
