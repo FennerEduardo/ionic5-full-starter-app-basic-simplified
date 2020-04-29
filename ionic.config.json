@@ -1,7 +1,5 @@
 {
   "name": "Ionic5FullApp",
-  "integrations": {
-    "capacitor": {}
-  },
+  "integrations": {},
   "type": "angular"
 }
