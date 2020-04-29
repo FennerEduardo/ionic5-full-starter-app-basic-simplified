@@ -42,13 +42,13 @@
           <app-text-shell [data]="details?.avgRating"></app-text-shell>
         </div>
         <ion-col class="score-item restaurant-score" *ngFor="let rating of details?.ratings">
-          <ion-icon *ngIf="rating.concept" class="score-icon" [src]="(rating.concept) ? './assets/sample-icons/food/' + rating.concept + '-rate.svg' : ''"></ion-icon>
+          <ion-icon *ngIf="rating.concept" class="score-icon" [src]="(rating.concept) ? './assets/custom-icons/food/' + rating.concept + '-rate.svg' : ''"></ion-icon>
           <div class="score-value">
             <app-text-shell [data]="rating.rate"></app-text-shell>
           </div>
         </ion-col>
         <ion-col class="score-item restaurant-score reviews-count">
-          <ion-icon class="score-icon" src="./assets/sample-icons/food/reviews.svg"></ion-icon>
+          <ion-icon class="score-icon" src="./assets/custom-icons/food/reviews.svg"></ion-icon>
           <div class="score-value">
             <app-text-shell [data]="details?.reviewsCount"></app-text-shell>
           </div>
@@ -153,14 +153,14 @@
             </h5>
             <ion-row class="details-scores user-scores">
               <ion-col class="score-item user-score">
-                <ion-icon class="score-icon" src="./assets/sample-icons/food/reviews.svg"></ion-icon>
+                <ion-icon class="score-icon" src="./assets/custom-icons/food/reviews.svg"></ion-icon>
                 <div class="score-value">
                   <app-text-shell [data]="review.user.reviewsCount"></app-text-shell>
                 </div>
                 <span class="score-title">Reviews</span>
               </ion-col>
               <ion-col class="score-item user-score">
-                <ion-icon class="score-icon" src="./assets/sample-icons/food/points.svg"></ion-icon>
+                <ion-icon class="score-icon" src="./assets/custom-icons/food/points.svg"></ion-icon>
                 <div class="score-value">
                   <app-text-shell [data]="review.user.points"></app-text-shell>
                 </div>
@@ -182,7 +182,7 @@
         </p>
         <ion-row class="details-scores review-scores">
           <ion-col class="score-item review-score" *ngFor="let rating of review.ratings">
-            <ion-icon *ngIf="rating.concept" class="score-icon" [src]="(rating.concept) ? './assets/sample-icons/food/' + rating.concept + '-rate.svg' : ''"></ion-icon>
+            <ion-icon *ngIf="rating.concept" class="score-icon" [src]="(rating.concept) ? './assets/custom-icons/food/' + rating.concept + '-rate.svg' : ''"></ion-icon>
             <div class="score-value">
               <app-text-shell [data]="rating.rate"></app-text-shell>
             </div>
@@ -228,19 +228,19 @@
         <hr class="details-divider">
         <ion-row class="details-scores recipe-attributes">
           <ion-col class="score-item attribute-score">
-            <ion-icon class="score-icon" src="./assets/sample-icons/food/difficulty.svg"></ion-icon>
+            <ion-icon class="score-icon" src="./assets/custom-icons/food/difficulty.svg"></ion-icon>
             <div class="score-value">
               <app-text-shell [data]="recipe.difficulty"></app-text-shell>
             </div>
           </ion-col>
           <ion-col class="score-item attribute-score">
-            <ion-icon class="score-icon" src="./assets/sample-icons/food/cooking-time.svg"></ion-icon>
+            <ion-icon class="score-icon" src="./assets/custom-icons/food/cooking-time.svg"></ion-icon>
             <div class="score-value">
               <app-text-shell [data]="recipe.time"></app-text-shell>
             </div>
           </ion-col>
           <ion-col class="score-item attribute-score">
-            <ion-icon class="score-icon" src="./assets/sample-icons/food/calories.svg"></ion-icon>
+            <ion-icon class="score-icon" src="./assets/custom-icons/food/calories.svg"></ion-icon>
             <div class="score-value">
               <app-text-shell [data]="recipe.calories"></app-text-shell>
             </div>

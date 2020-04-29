@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content class="user-friends-content">
-  <ion-segment value="friends" class="user-friends-segment" mode="md" (ionChange)="segmentChanged($event)">
+  <ion-segment value="friends" class="user-friends-segment" (ionChange)="segmentChanged($event)">
     <ion-segment-button value="friends">
       <ion-label>Friends</ion-label>
     </ion-segment-button>
@@ -19,7 +19,7 @@
     </ion-segment-button>
   </ion-segment>
 
-  <ion-searchbar class="friends-searchbar" animated mode="ios" [(ngModel)]="searchQuery" (ionChange)="searchList()"></ion-searchbar>
+  <ion-searchbar class="friends-searchbar" animated [(ngModel)]="searchQuery" (ionChange)="searchList()"></ion-searchbar>
 
   <ng-template #friendItem let-friend="friend">
     <ion-row class="user-details-section">

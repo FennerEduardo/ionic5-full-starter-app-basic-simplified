@@ -9,6 +9,7 @@ import { UserFriendsModel } from './user-friends.model';
   styleUrls: [
     './styles/user-friends.page.scss',
     './styles/user-friends.shell.scss',
+    './styles/user-friends.ios.scss',
     './styles/user-friends.md.scss'
   ]
 })

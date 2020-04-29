@@ -56,8 +56,11 @@
 
     .login-btn {
       --color: var(--ion-color-secondary);
-
       margin: 0px;
+
+      &:focus {
+        outline: none;
+      }
     }
   }
 

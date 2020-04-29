@@ -18,23 +18,23 @@
   "amenities": [
     {
       "name": "Air conditioning",
-      "icon": "./assets/sample-icons/real-state/air-conditioner.svg"
+      "icon": "./assets/custom-icons/real-state/air-conditioner.svg"
     },
     {
       "name": "Refrigerator",
-      "icon": "./assets/sample-icons/real-state/refrigerator.svg"
+      "icon": "./assets/custom-icons/real-state/refrigerator.svg"
     },
     {
       "name": "Cable TV",
-      "icon": "./assets/sample-icons/real-state/television.svg"
+      "icon": "./assets/custom-icons/real-state/television.svg"
     },
     {
       "name": "Washer",
-      "icon": "./assets/sample-icons/real-state/washing-machine.svg"
+      "icon": "./assets/custom-icons/real-state/washing-machine.svg"
     },
     {
       "name": "Microwave",
-      "icon": "./assets/sample-icons/real-state/microwave.svg"
+      "icon": "./assets/custom-icons/real-state/microwave.svg"
     },
     {
       "name": "Elevator in Building",

@@ -13,54 +13,54 @@ const { SplashScreen } = Plugins;
 })
 export class AppComponent {
   appPages = [
-    {
-      title: 'Categories',
-      url: '/app/categories',
-      icon: './assets/sample-icons/side-menu/categories.svg'
-    },
-    {
-      title: 'Profile',
-      url: '/app/user',
-      icon: './assets/sample-icons/side-menu/profile.svg'
-    },
-    {
-      title: 'Contact Card',
-      url: '/contact-card',
-      icon: './assets/sample-icons/side-menu/contact-card.svg'
-    },
-    {
-      title: 'Notifications',
-      url: '/app/notifications',
-      icon: './assets/sample-icons/side-menu/notifications.svg'
-    }
-  ];
-  accountPages = [
-    {
-      title: 'Log In',
-      url: '/auth/login',
-      icon: './assets/sample-icons/side-menu/login.svg'
-    },
-    {
-      title: 'Sign Up',
-      url: '/auth/signup',
-      icon: './assets/sample-icons/side-menu/signup.svg'
-    },
-    {
-      title: 'Tutorial',
-      url: '/walkthrough',
-      icon: './assets/sample-icons/side-menu/tutorial.svg'
-    },
-    {
-      title: 'Getting Started',
-      url: '/getting-started',
-      icon: './assets/sample-icons/side-menu/getting-started.svg'
-    },
-    {
-      title: '404 page',
-      url: '/page-not-found',
-      icon: './assets/sample-icons/side-menu/warning.svg'
-    }
-  ];
+   {
+     title: 'Categories',
+     url: '/app/categories',
+     ionicIcon: 'list-outline'
+   },
+   {
+     title: 'Profile',
+     url: '/app/user',
+     ionicIcon: 'person-outline'
+   },
+   {
+     title: 'Contact Card',
+     url: '/contact-card',
+     customIcon: './assets/custom-icons/side-menu/contact-card.svg'
+   },
+   {
+     title: 'Notifications',
+     url: '/app/notifications',
+     ionicIcon: 'notifications-outline'
+   }
+ ];
+ accountPages = [
+   {
+     title: 'Log In',
+     url: '/auth/login',
+     ionicIcon: 'log-in-outline'
+   },
+   {
+     title: 'Sign Up',
+     url: '/auth/signup',
+     ionicIcon: 'person-add-outline'
+   },
+   {
+     title: 'Tutorial',
+     url: '/walkthrough',
+     ionicIcon: 'school-outline'
+   },
+   {
+     title: 'Getting Started',
+     url: '/getting-started',
+     ionicIcon: 'rocket-outline'
+   },
+   {
+     title: '404 page',
+     url: '/page-not-found',
+     ionicIcon: 'alert-circle-outline'
+   }
+ ];
 
   constructor() {
     this.initializeApp();

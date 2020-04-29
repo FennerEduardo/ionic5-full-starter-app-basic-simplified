@@ -11,7 +11,7 @@ import { TimeAgoPipe } from './time-ago.pipe';
 @NgModule({
   imports: [
     CommonModule,
-    IonicModule.forRoot(),
+    IonicModule,
     NgMathPipesModule
   ],
   declarations: [

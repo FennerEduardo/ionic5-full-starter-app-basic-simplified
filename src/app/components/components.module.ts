@@ -16,7 +16,7 @@ import { RatingInputComponent } from './rating-input/rating-input.component';
     CommonModule,
     FormsModule,
     ShellModule,
-    IonicModule.forRoot()
+    IonicModule
   ],
   declarations: [
     CheckboxWrapperComponent,
