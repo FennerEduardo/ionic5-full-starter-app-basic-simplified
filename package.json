@@ -1,11 +1,11 @@
 {
   "name": "Ionic5FullApp",
   "description": "The most advanced and complete Mobile & PWA Ionic starter app template",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": "IonicThemes",
   "contributors": [
-    "Dayana <dayana@startapplabs.com>",
-    "Agustín <agustin@startapplabs.com>"
+    "Dayana <dayana@ionicthemes.com>",
+    "Agustín <agustin@ionicthemes.com>"
   ],
   "homepage": "https://ionicthemes.com/",
   "private": true,
