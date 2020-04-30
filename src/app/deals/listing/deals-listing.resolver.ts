@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
+import { Observable } from 'rxjs';
+
+import { DataStore } from '../../shell/data-store';
 import { DealsService } from '../deals.service';
 import { DealsListingModel } from './deals-listing.model';
-import { Observable } from 'rxjs';
-import { DataStore } from '../../shell/data-store';
 
 @Injectable()
 export class DealsListingResolver implements Resolve<any> {

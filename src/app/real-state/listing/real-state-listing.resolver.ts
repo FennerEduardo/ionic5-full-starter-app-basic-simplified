@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-import { RealStateService } from '../real-state.service';
-import { RealStateListingModel } from '../listing/real-state-listing.model';
 import { Observable } from 'rxjs';
+
 import { DataStore } from '../../shell/data-store';
+import { RealStateService } from '../real-state.service';
+import { RealStateListingModel } from './real-state-listing.model';
 
 @Injectable()
 export class RealStateListingResolver implements Resolve<any> {

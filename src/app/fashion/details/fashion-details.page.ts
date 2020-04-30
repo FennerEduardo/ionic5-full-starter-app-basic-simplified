@@ -1,7 +1,9 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Subscription } from 'rxjs';
 
+import { DataStore } from '../../shell/data-store';
 import { FashionDetailsModel } from './fashion-details.model';
 
 @Component({
@@ -15,6 +17,9 @@ import { FashionDetailsModel } from './fashion-details.model';
   ]
 })
 export class FashionDetailsPage implements OnInit {
+  // Gather all component subscription in one place. Can be one Subscription or multiple (chained using the Subscription.add() method)
+  subscriptions: Subscription;
+
   details: FashionDetailsModel;
   colorVariants = [];
   sizeVariants = [];
@@ -34,38 +39,44 @@ export class FashionDetailsPage implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.data.subscribe((resolvedRouteData) => {
-      const detailsDataStore = resolvedRouteData['data'];
+    // On init, the route subscription is the active subscription
+    this.subscriptions = this.route.data
+    .subscribe(
+      (resolvedRouteData) => {
+        const detailsDataStore: DataStore<FashionDetailsModel> = resolvedRouteData['data'];
 
-      detailsDataStore.state.subscribe(
-        (state) => {
-          this.details = state;
+        // Route subscription resolved, now the active subscription is the the one from the DataStore
+        this.subscriptions = detailsDataStore.state
+        .subscribe(
+          (state) => {
+            this.details = state;
 
-          this.colorVariants = this.details.colorVariants
-          .map(item =>
-            ({
-              name: item.name,
-              type: 'radio',
-              label: item.name,
-              value: item.value,
-              checked: item.default
-            })
-          );
-          this.sizeVariants = this.details.sizeVariants
-          .map(item =>
-            ({
-              name: item.name,
-              type: 'radio',
-              label: item.name,
-              value: item.value,
-              checked: item.default
-            })
-          );
-        },
-        (error) => {}
-      );
-    },
-    (error) => {});
+            this.colorVariants = this.details.colorVariants
+            .map(item =>
+              ({
+                name: item.name,
+                type: 'radio',
+                label: item.name,
+                value: item.value,
+                checked: item.default
+              })
+            );
+            this.sizeVariants = this.details.sizeVariants
+            .map(item =>
+              ({
+                name: item.name,
+                type: 'radio',
+                label: item.name,
+                value: item.value,
+                checked: item.default
+              })
+            );
+          },
+          (error) => {}
+        );
+      },
+      (error) => {}
+    );
   }
 
   async openColorChooser() {
@@ -116,5 +127,12 @@ export class FashionDetailsPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  // NOTE: Ionic only calls ngOnDestroy if the page was popped (ex: when navigating back)
+  // Since ngOnDestroy might not fire when you navigate from the current page, use ionViewWillLeave to cleanup Subscriptions
+  ionViewWillLeave(): void {
+    // console.log('TravelListingPage [ionViewWillLeave]');
+    this.subscriptions.unsubscribe();
   }
 }

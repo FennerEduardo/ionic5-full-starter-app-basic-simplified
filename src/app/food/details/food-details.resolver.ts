@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
-import { FoodService } from '../food.service';
 import { Observable } from 'rxjs';
+
 import { DataStore } from '../../shell/data-store';
+import { FoodService } from '../food.service';
 import { FoodDetailsModel } from './food-details.model';
 
 @Injectable()

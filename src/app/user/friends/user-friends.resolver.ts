@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
+import { Observable } from 'rxjs';
+
+import { DataStore } from '../../shell/data-store';
 import { UserService } from '../user.service';
 import { UserFriendsModel } from './user-friends.model';
-import { Observable } from 'rxjs';
-import { DataStore } from '../../shell/data-store';
 
 @Injectable()
 export class UserFriendsResolver implements Resolve<any> {
