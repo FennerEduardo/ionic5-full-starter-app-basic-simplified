@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 
-import { DataStore } from '../../shell/data-store';
+import { IResolvedRouteData, ResolverHelper } from '../../utils/resolver-helper';
 import { FashionDetailsModel } from './fashion-details.model';
 
 @Component({
@@ -42,11 +42,9 @@ export class FashionDetailsPage implements OnInit {
     // On init, the route subscription is the active subscription
     this.subscriptions = this.route.data
     .subscribe(
-      (resolvedRouteData) => {
-        const detailsDataStore: DataStore<FashionDetailsModel> = resolvedRouteData['data'];
-
-        // Route subscription resolved, now the active subscription is the the one from the DataStore
-        this.subscriptions = detailsDataStore.state
+      (resolvedRouteData: IResolvedRouteData<FashionDetailsModel>) => {
+        // Route subscription resolved, now the active subscription is the Observable extracted from the resolved route data
+        this.subscriptions = ResolverHelper.extractData<FashionDetailsModel>(resolvedRouteData.data, FashionDetailsModel)
         .subscribe(
           (state) => {
             this.details = state;

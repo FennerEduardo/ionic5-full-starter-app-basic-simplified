@@ -7,11 +7,11 @@ import { UserService } from '../user.service';
 import { UserFriendsModel } from './user-friends.model';
 
 @Injectable()
-export class UserFriendsResolver implements Resolve<any> {
+export class UserFriendsResolver implements Resolve<DataStore<UserFriendsModel>> {
 
   constructor(private userService: UserService) { }
 
-  resolve() {
+  resolve(): DataStore<UserFriendsModel> {
     const dataSource: Observable<UserFriendsModel> = this.userService.getFriendsDataSource();
     const dataStore: DataStore<UserFriendsModel> = this.userService.getFriendsStore(dataSource);
 

@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { DataStore } from '../../shell/data-store';
+import { IResolvedRouteData, ResolverHelper } from '../../utils/resolver-helper';
 import { UserProfileModel } from './user-profile.model';
 
 @Component({
@@ -31,11 +31,9 @@ export class UserProfilePage implements OnInit {
     // On init, the route subscription is the active subscription
     this.subscriptions = this.route.data
     .subscribe(
-      (resolvedRouteData) => {
-        const profileDataStore: DataStore<UserProfileModel> = resolvedRouteData['data'];
-
-        // Route subscription resolved, now the active subscription is the the one from the DataStore
-        this.subscriptions = profileDataStore.state
+      (resolvedRouteData: IResolvedRouteData<UserProfileModel>) => {
+        // Route subscription resolved, now the active subscription is the Observable extracted from the resolved route data
+        this.subscriptions = ResolverHelper.extractData<UserProfileModel>(resolvedRouteData.data, UserProfileModel)
         .subscribe(
           (state) => {
             this.profile = state;

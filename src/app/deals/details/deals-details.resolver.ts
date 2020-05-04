@@ -7,11 +7,11 @@ import { DealsService } from '../deals.service';
 import { DealsDetailsModel } from './deals-details.model';
 
 @Injectable()
-export class DealsDetailsResolver implements Resolve<any> {
+export class DealsDetailsResolver implements Resolve<DataStore<DealsDetailsModel>> {
 
   constructor(private dealsService: DealsService) {}
 
-  resolve() {
+  resolve(): DataStore<DealsDetailsModel> {
     const dataSource: Observable<DealsDetailsModel> = this.dealsService.getDetailsDataSource();
     const dataStore: DataStore<DealsDetailsModel> = this.dealsService.getDetailsStore(dataSource);
 

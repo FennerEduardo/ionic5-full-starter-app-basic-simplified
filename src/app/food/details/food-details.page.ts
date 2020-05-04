@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { DataStore } from '../../shell/data-store';
+import { IResolvedRouteData, ResolverHelper } from '../../utils/resolver-helper';
 import { FoodDetailsModel } from './food-details.model';
 
 @Component({
@@ -29,11 +29,9 @@ export class FoodDetailsPage implements OnInit {
     // On init, the route subscription is the active subscription
     this.subscriptions = this.route.data
     .subscribe(
-      (resolvedRouteData) => {
-        const detailsDataStore: DataStore<FoodDetailsModel> = resolvedRouteData['data'];
-
-        // Route subscription resolved, now the active subscription is the the one from the DataStore
-        this.subscriptions = detailsDataStore.state
+      (resolvedRouteData: IResolvedRouteData<FoodDetailsModel>) => {
+        // Route subscription resolved, now the active subscription is the Observable extracted from the resolved route data
+        this.subscriptions = ResolverHelper.extractData<FoodDetailsModel>(resolvedRouteData.data, FoodDetailsModel)
         .subscribe(
           (state) => {
             this.details = state;

@@ -7,11 +7,11 @@ import { FoodService } from '../food.service';
 import { FoodDetailsModel } from './food-details.model';
 
 @Injectable()
-export class FoodDetailsResolver implements Resolve<any> {
+export class FoodDetailsResolver implements Resolve<DataStore<FoodDetailsModel>> {
 
   constructor(private foodService: FoodService) {}
 
-  resolve(route: ActivatedRouteSnapshot) {
+  resolve(route: ActivatedRouteSnapshot): DataStore<FoodDetailsModel> {
     const itemSlug = route.paramMap.get('productId');
 
     const dataSource: Observable<FoodDetailsModel> = this.foodService.getDetailsDataSource(itemSlug);

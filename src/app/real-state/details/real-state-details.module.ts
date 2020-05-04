@@ -8,9 +8,9 @@ import { IonicModule } from '@ionic/angular';
 
 import { ComponentsModule } from '../../components/components.module';
 
+import { RealStateService } from '../real-state.service';
 import { RealStateDetailsPage } from './real-state-details.page';
 import { RealStateDetailsResolver } from './real-state-details.resolver';
-import { RealStateService } from '../real-state.service';
 
 const routes: Routes = [
   {

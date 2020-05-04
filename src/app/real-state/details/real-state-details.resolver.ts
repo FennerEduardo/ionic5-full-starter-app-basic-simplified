@@ -7,11 +7,11 @@ import { RealStateService } from '../real-state.service';
 import { RealStateDetailsModel } from './real-state-details.model';
 
 @Injectable()
-export class RealStateDetailsResolver implements Resolve<any> {
+export class RealStateDetailsResolver implements Resolve<DataStore<RealStateDetailsModel>> {
 
   constructor(private realStateService: RealStateService) {}
 
-  resolve() {
+  resolve(): DataStore<RealStateDetailsModel> {
     const dataSource: Observable<RealStateDetailsModel> = this.realStateService.getDetailsDataSource();
     const dataStore: DataStore<RealStateDetailsModel> = this.realStateService.getDetailsStore(dataSource);
 

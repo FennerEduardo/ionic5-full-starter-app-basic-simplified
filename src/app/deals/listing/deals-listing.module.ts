@@ -9,9 +9,9 @@ import { IonicModule } from '@ionic/angular';
 import { ComponentsModule } from '../../components/components.module';
 import { PipesModule } from '../../pipes/pipes.module';
 
+import { DealsService } from '../deals.service';
 import { DealsListingPage } from './deals-listing.page';
 import { DealsListingResolver } from './deals-listing.resolver';
-import { DealsService } from '../deals.service';
 
 const routes: Routes = [
   {

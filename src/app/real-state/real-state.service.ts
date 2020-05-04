@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
+import { DataStore } from '../shell/data-store';
 import { RealStateListingModel } from './listing/real-state-listing.model';
 import { RealStateDetailsModel } from './details/real-state-details.model';
-import { DataStore } from '../shell/data-store';
 
 @Injectable()
 export class RealStateService {
@@ -15,7 +16,23 @@ export class RealStateService {
   constructor(private http: HttpClient) { }
 
   public getListingDataSource(): Observable<RealStateListingModel> {
-    return this.http.get<RealStateListingModel>('./assets/sample-data/real-state/listing.json');
+    return this.http.get<RealStateListingModel>('./assets/sample-data/real-state/listing.json')
+    .pipe(
+      map(
+        (data: RealStateListingModel) => {
+          // Note: HttpClient cannot know how to instantiate a class for the returned data
+          // We need to properly cast types from json data
+          const listing = new RealStateListingModel();
+
+          // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+          // Note: If you have non-enummerable properties, you can try a spread operator instead. listing = {...data};
+          // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+          Object.assign(listing, data);
+
+          return listing;
+        }
+      )
+    );
   }
 
   public getListingStore(dataSource: Observable<RealStateListingModel>): DataStore<RealStateListingModel> {
@@ -31,7 +48,23 @@ export class RealStateService {
   }
 
   public getDetailsDataSource(): Observable<RealStateDetailsModel> {
-    return this.http.get<RealStateDetailsModel>('./assets/sample-data/real-state/details.json');
+    return this.http.get<RealStateDetailsModel>('./assets/sample-data/real-state/details.json')
+    .pipe(
+      map(
+        (data: RealStateDetailsModel) => {
+          // Note: HttpClient cannot know how to instantiate a class for the returned data
+          // We need to properly cast types from json data
+          const details = new RealStateDetailsModel();
+
+          // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+          // Note: If you have non-enummerable properties, you can try a spread operator instead. details = {...data};
+          // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+          Object.assign(details, data);
+
+          return details;
+        }
+      )
+    );
   }
 
   public getDetailsStore(dataSource: Observable<RealStateDetailsModel>): DataStore<RealStateDetailsModel> {

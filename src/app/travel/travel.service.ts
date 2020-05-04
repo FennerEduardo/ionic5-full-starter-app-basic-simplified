@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { DataStore } from '../shell/data-store';
+import { map } from 'rxjs/operators';
 
+import { DataStore } from '../shell/data-store';
 import { TravelListingModel } from './listing/travel-listing.model';
 import { TravelDetailsModel } from './details/travel-details.model';
-import { map } from 'rxjs/operators';
 
 @Injectable()
 export class TravelService {

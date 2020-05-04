@@ -1,13 +1,16 @@
-import { IonicModule } from '@ionic/angular';
-import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
-import { UserFriendsPage } from './user-friends.page';
-import { UserService } from '../user.service';
-import { UserFriendsResolver } from './user-friends.resolver';
+import { IonicModule } from '@ionic/angular';
+
 import { ComponentsModule } from '../../components/components.module';
+
+import { UserService } from '../user.service';
+import { UserFriendsPage } from './user-friends.page';
+import { UserFriendsResolver } from './user-friends.resolver';
 
 const routes: Routes = [
   {
@@ -26,6 +29,7 @@ const routes: Routes = [
     FormsModule,
     ComponentsModule,
     RouterModule.forChild(routes),
+    HttpClientModule
   ],
   declarations: [UserFriendsPage],
   providers: [

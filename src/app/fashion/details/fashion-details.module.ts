@@ -8,9 +8,9 @@ import { IonicModule } from '@ionic/angular';
 
 import { ComponentsModule } from '../../components/components.module';
 
+import { FashionService } from '../fashion.service';
 import { FashionDetailsPage } from './fashion-details.page';
 import { FashionDetailsResolver } from './fashion-details.resolver';
-import { FashionService } from '../fashion.service';
 
 const routes: Routes = [
   {
