@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 
 @Component({
@@ -8,11 +8,17 @@ import { MenuController } from '@ionic/angular';
     './styles/page-not-found.page.scss'
   ]
 })
-export class PageNotFound implements OnInit {
+export class PageNotFound {
 
   constructor(public menu: MenuController) { }
 
-  ngOnInit(): void {
+  // Disable side menu for this page
+  ionViewDidEnter(): void {
     this.menu.enable(false);
+  }
+
+  // Restore to default when leaving this page
+  ionViewDidLeave(): void {
+    this.menu.enable(true);
   }
 }

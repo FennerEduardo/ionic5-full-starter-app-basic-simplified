@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ModalController, MenuController } from '@ionic/angular';
@@ -14,7 +14,7 @@ import { PasswordValidator } from '../validators/password.validator';
     './styles/signup.page.scss'
   ]
 })
-export class SignupPage implements OnInit {
+export class SignupPage {
   signupForm: FormGroup;
   matching_passwords_group: FormGroup;
 
@@ -59,8 +59,14 @@ export class SignupPage implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  // Disable side menu for this page
+  ionViewDidEnter(): void {
     this.menu.enable(false);
+  }
+
+  // Restore to default when leaving this page
+  ionViewDidLeave(): void {
+    this.menu.enable(true);
   }
 
   async showTermsModal() {

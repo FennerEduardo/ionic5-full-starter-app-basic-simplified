@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, HostBinding } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, HostBinding } from '@angular/core';
 
 import { IonSlides, MenuController } from '@ionic/angular';
 
@@ -11,7 +11,7 @@ import { IonSlides, MenuController } from '@ionic/angular';
     './styles/walkthrough.responsive.scss'
   ]
 })
-export class WalkthroughPage implements OnInit, AfterViewInit {
+export class WalkthroughPage implements AfterViewInit {
   slidesOptions: any = {
     zoom: {
       toggle: false // Disable zooming to prevent weird double tap zomming on slide images
@@ -26,8 +26,14 @@ export class WalkthroughPage implements OnInit, AfterViewInit {
 
   constructor(public menu: MenuController) { }
 
-  ngOnInit(): void {
+  // Disable side menu for this page
+  ionViewDidEnter(): void {
     this.menu.enable(false);
+  }
+
+  // Restore to default when leaving this page
+  ionViewDidLeave(): void {
+    this.menu.enable(true);
   }
 
   ngAfterViewInit(): void {

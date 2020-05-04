@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
@@ -10,8 +10,7 @@ import { MenuController } from '@ionic/angular';
     './styles/forgot-password.page.scss'
   ]
 })
-
-export class ForgotPasswordPage implements OnInit {
+export class ForgotPasswordPage {
   forgotPasswordForm: FormGroup;
 
   validation_messages = {
@@ -33,8 +32,14 @@ export class ForgotPasswordPage implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  // Disable side menu for this page
+  ionViewDidEnter(): void {
     this.menu.enable(false);
+  }
+
+  // Restore to default when leaving this page
+  ionViewDidLeave(): void {
+    this.menu.enable(true);
   }
 
   recoverPassword(): void {

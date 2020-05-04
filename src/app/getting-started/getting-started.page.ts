@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, HostBinding } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, HostBinding } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { IonSlides, MenuController } from '@ionic/angular';
@@ -12,7 +12,7 @@ import { IonSlides, MenuController } from '@ionic/angular';
     './styles/getting-started.responsive.scss'
   ]
 })
-export class GettingStartedPage implements OnInit, AfterViewInit {
+export class GettingStartedPage implements AfterViewInit {
   @ViewChild(IonSlides, { static: true }) slides: IonSlides;
   @HostBinding('class.last-slide-active') isLastSlide = false;
 
@@ -32,8 +32,14 @@ export class GettingStartedPage implements OnInit, AfterViewInit {
     });
   }
 
-  ngOnInit(): void {
+  // Disable side menu for this page
+  ionViewDidEnter(): void {
     this.menu.enable(false);
+  }
+
+  // Restore to default when leaving this page
+  ionViewDidLeave(): void {
+    this.menu.enable(true);
   }
 
   ngAfterViewInit(): void {
