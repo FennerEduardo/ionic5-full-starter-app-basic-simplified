@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { DataStore } from '../../shell/data-store';
+import { IResolvedRouteData, ResolverHelper } from '../../utils/resolver-helper';
 import { TravelListingModel } from './travel-listing.model';
 // import { delay, finalize } from 'rxjs/operators';
 
@@ -24,7 +24,9 @@ export class TravelListingPage implements OnInit {
     return (this.listing && this.listing.isShell) ? true : false;
   }
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     // On init, the route subscription is the active subscription
@@ -34,11 +36,9 @@ export class TravelListingPage implements OnInit {
     //   finalize(() => console.log('dataSubscription [finalize()]'))
     // )
     .subscribe(
-      (resolvedRouteData) => {
-        const listingDataStore: DataStore<TravelListingModel> = resolvedRouteData['data'];
-
-        // Route subscription resolved, now the active subscription is the the one from the DataStore
-        this.subscriptions = listingDataStore.state
+      (resolvedRouteData: IResolvedRouteData<TravelListingModel>) => {
+        // Route subscription resolved, now the active subscription is the Observable extracted from the resolved route data
+        this.subscriptions = ResolverHelper.extractData<TravelListingModel>(resolvedRouteData.data, TravelListingModel)
         // .pipe(
         //   delay(8000),
         //   finalize(() => console.log('listingDataStore.subscribe [finalize()]'))

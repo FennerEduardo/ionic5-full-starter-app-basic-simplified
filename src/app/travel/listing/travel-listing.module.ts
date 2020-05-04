@@ -8,9 +8,10 @@ import { IonicModule } from '@ionic/angular';
 
 import { ComponentsModule } from '../../components/components.module';
 
+import { TravelService } from '../travel.service';
 import { TravelListingPage } from './travel-listing.page';
 import { TravelListingResolver } from './travel-listing.resolver';
-import { TravelService } from '../travel.service';
+import { TravelListingPlainResolver } from './travel-listing.plain.resolver';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
     component: TravelListingPage,
     resolve: {
       data: TravelListingResolver
+      // data: TravelListingPlainResolver
     }
   }
 ];
@@ -31,9 +33,12 @@ const routes: Routes = [
     ComponentsModule,
     HttpClientModule
   ],
-  declarations: [TravelListingPage],
+  declarations: [
+    TravelListingPage
+  ],
   providers: [
     TravelListingResolver,
+    TravelListingPlainResolver,
     TravelService
   ]
 })

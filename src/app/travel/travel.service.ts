@@ -6,6 +6,7 @@ import { DataStore } from '../shell/data-store';
 
 import { TravelListingModel } from './listing/travel-listing.model';
 import { TravelDetailsModel } from './details/travel-details.model';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class TravelService {
@@ -15,7 +16,23 @@ export class TravelService {
   constructor(private http: HttpClient) { }
 
   public getListingDataSource(): Observable<TravelListingModel> {
-    return this.http.get<TravelListingModel>('./assets/sample-data/travel/listing.json');
+    return this.http.get<TravelListingModel>('./assets/sample-data/travel/listing.json')
+    .pipe(
+      map(
+        (data: TravelListingModel) => {
+          // Note: HttpClient cannot know how to instantiate a class for the returned data
+          // We need to properly cast types from json data
+          const listing = new TravelListingModel();
+
+          // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+          // Note: If you have non-enummerable properties, you can try a spread operator instead. listing = {...data};
+          // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+          Object.assign(listing, data);
+
+          return listing;
+        }
+      )
+    );
   }
 
   public getListingStore(dataSource: Observable<TravelListingModel>): DataStore<TravelListingModel> {
@@ -31,7 +48,23 @@ export class TravelService {
   }
 
   public getDetailsDataSource(): Observable<TravelDetailsModel> {
-    return this.http.get<TravelDetailsModel>('./assets/sample-data/travel/details.json');
+    return this.http.get<TravelDetailsModel>('./assets/sample-data/travel/details.json')
+    .pipe(
+      map(
+        (data: TravelDetailsModel) => {
+          // Note: HttpClient cannot know how to instantiate a class for the returned data
+          // We need to properly cast types from json data
+          const details = new TravelDetailsModel();
+
+          // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+          // Note: If you have non-enummerable properties, you can try a spread operator instead. details = {...data};
+          // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+          Object.assign(details, data);
+
+          return details;
+        }
+      )
+    );
   }
 
   public getDetailsStore(dataSource: Observable<TravelDetailsModel>): DataStore<TravelDetailsModel> {
@@ -45,5 +78,5 @@ export class TravelService {
     }
     return this.detailsDataStore;
   }
-
 }
+
