@@ -22,7 +22,6 @@ import { TimeAgoPipe } from './time-ago.pipe';
     FloorPipe,
     TimeDifferencePipe,
     TimeAgoPipe
-  ],
-  entryComponents: [],
+  ]
 })
 export class PipesModule {}
