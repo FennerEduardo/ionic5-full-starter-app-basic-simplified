@@ -32,7 +32,6 @@ import { RatingInputComponent } from './rating-input/rating-input.component';
     CountdownTimerComponent,
     CounterInputComponent,
     RatingInputComponent
-  ],
-  entryComponents: [],
+  ]
 })
 export class ComponentsModule {}

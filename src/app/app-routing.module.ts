@@ -23,7 +23,6 @@ const routes: Routes = [
     path: 'auth/signup',
     loadChildren: () => import('./signup/signup.module').then(m => m.SignupPageModule)
   },
-  // tslint:disable-next-line:max-line-length
   {
     path: 'auth/forgot-password',
     loadChildren: () => import('./forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
@@ -36,7 +35,6 @@ const routes: Routes = [
     path: 'contact-card',
     loadChildren: () => import('./contact-card/contact-card.module').then(m => m.ContactCardPageModule)
   },
-  // tslint:disable-next-line:max-line-length
   {
     path: 'forms-and-validations',
     loadChildren: () => import('./forms/validations/forms-validations.module').then(m => m.FormsValidationsPageModule)

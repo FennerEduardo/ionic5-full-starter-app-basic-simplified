@@ -26,7 +26,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ComponentsModule
   ],
-  declarations: [SignupPage, TermsOfServicePage, PrivacyPolicyPage],
-  entryComponents: [TermsOfServicePage, PrivacyPolicyPage]
+  declarations: [SignupPage, TermsOfServicePage, PrivacyPolicyPage]
 })
 export class SignupPageModule {}
