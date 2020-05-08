@@ -22,7 +22,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
     IonicModule.forRoot(),
     AppRoutingModule,
     ComponentsModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

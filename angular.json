@@ -31,7 +31,7 @@
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
               },
-              "src/manifest.json"
+              "src/manifest.webmanifest"
             ],
             "styles": [
               {
@@ -71,7 +71,8 @@
                   "type": "anyComponentStyle",
                   "maximumWarning": "6kb"
                 }
-              ]
+              ],
+              "ngswConfigPath": "ngsw-config.json"
             },
             "ci": {
               "budgets": [
