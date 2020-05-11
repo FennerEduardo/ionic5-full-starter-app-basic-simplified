@@ -22,10 +22,10 @@ export class GettingStartedPage implements AfterViewInit {
     this.gettingStartedForm = new FormGroup({
       browsingCategory: new FormControl('men'),
       followingInterests: new FormGroup({
-        tops: new FormControl(),
+        tops: new FormControl(true),
         dresses: new FormControl(),
         jeans: new FormControl(),
-        jackets: new FormControl(),
+        jackets: new FormControl(true),
         shoes: new FormControl(),
         glasses: new FormControl()
       })
