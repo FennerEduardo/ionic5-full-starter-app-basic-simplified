@@ -10,7 +10,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
@@ -37,15 +37,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     /* harmony import */
 
 
-    var _core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! ./core-80bde1aa.js */
-    "./node_modules/@ionic/core/dist/esm/core-80bde1aa.js");
-    /* harmony import */
-
-
-    var _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./config-3c7f3790.js */
-    "./node_modules/@ionic/core/dist/esm/config-3c7f3790.js");
+    var _index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! ./index-26ec602c.js */
+    "./node_modules/@ionic/core/dist/esm/index-26ec602c.js");
 
     var CELL_TYPE_ITEM = 'item';
     var CELL_TYPE_HEADER = 'header';
@@ -374,13 +368,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       return -1;
     };
 
+    var virtualScrollCss = "ion-virtual-scroll{display:block;position:relative;width:100%;contain:strict;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}ion-virtual-scroll>.virtual-loading{opacity:0}ion-virtual-scroll>.virtual-item{position:absolute !important;top:0 !important;right:0 !important;left:0 !important;-webkit-transition-duration:0ms;transition-duration:0ms;will-change:transform}";
+
     var VirtualScroll = /*#__PURE__*/function () {
       function VirtualScroll(hostRef) {
         var _this = this;
 
         _classCallCheck(this, VirtualScroll);
 
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         this.range = {
           offset: 0,
           length: 0
@@ -612,8 +608,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           } // schedule DOM operations into the stencil queue
 
 
-          Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["f"])(this.readVS.bind(this));
-          Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["w"])(this.writeVS.bind(this));
+          Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["f"])(this.readVS.bind(this));
+          Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["w"])(this.writeVS.bind(this));
         }
       }, {
         key: "readVS",
@@ -664,7 +660,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           } else if (this.domRender) {
             this.domRender(this.virtualDom);
           } else if (this.renderItem) {
-            this.el.forceUpdate();
+            Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this);
           }
         }
       }, {
@@ -800,11 +796,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         value: function render() {
           var _this5 = this;
 
-          return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
+          return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
             style: {
               height: "".concat(this.totalHeight, "px")
             }
-          }, this.renderItem && Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(VirtualProxy, {
+          }, this.renderItem && Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(VirtualProxy, {
             dom: this.virtualDom
           }, this.virtualDom.map(function (node) {
             return _this5.renderVirtualNode(node);
@@ -813,7 +809,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       }, {
         key: "el",
         get: function get() {
-          return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this);
+          return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this);
         }
       }], [{
         key: "watchers",
@@ -824,11 +820,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             "footerHeight": ["itemsChanged"],
             "items": ["itemsChanged"]
           };
-        }
-      }, {
-        key: "style",
-        get: function get() {
-          return "ion-virtual-scroll{display:block;position:relative;width:100%;contain:strict;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}ion-virtual-scroll>.virtual-loading{opacity:0}ion-virtual-scroll>.virtual-item{position:absolute!important;top:0!important;right:0!important;left:0!important;-webkit-transition-duration:0ms;transition-duration:0ms;will-change:transform}";
         }
       }]);
 
@@ -857,8 +848,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         });
       });
     };
-    /***/
 
+    VirtualScroll.style = virtualScrollCss;
+    /***/
   }
 }]);
 //# sourceMappingURL=76-es5.js.map

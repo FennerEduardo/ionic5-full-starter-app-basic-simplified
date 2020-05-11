@@ -14,7 +14,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
@@ -65,33 +65,33 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! ./core-80bde1aa.js */
-    "./node_modules/@ionic/core/dist/esm/core-80bde1aa.js");
+    var _index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! ./index-26ec602c.js */
+    "./node_modules/@ionic/core/dist/esm/index-26ec602c.js");
     /* harmony import */
 
 
-    var _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./config-3c7f3790.js */
-    "./node_modules/@ionic/core/dist/esm/config-3c7f3790.js");
+    var _ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./ionic-global-1bf1fa84.js */
+    "./node_modules/@ionic/core/dist/esm/ionic-global-1bf1fa84.js");
     /* harmony import */
 
 
-    var _helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! ./helpers-46f4a262.js */
-    "./node_modules/@ionic/core/dist/esm/helpers-46f4a262.js");
+    var _helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./helpers-d8b49b57.js */
+    "./node_modules/@ionic/core/dist/esm/helpers-d8b49b57.js");
     /* harmony import */
 
 
-    var _theme_18cbe2cc_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./theme-18cbe2cc.js */
-    "./node_modules/@ionic/core/dist/esm/theme-18cbe2cc.js");
+    var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./theme-c2dc54d9.js */
+    "./node_modules/@ionic/core/dist/esm/theme-c2dc54d9.js");
 
     var Route = /*#__PURE__*/function () {
       function Route(hostRef) {
         _classCallCheck(this, Route);
 
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         /**
          * Relative path that needs to match in order for this route to apply.
          *
@@ -100,7 +100,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
          */
 
         this.url = '';
-        this.ionRouteDataChanged = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionRouteDataChanged", 7);
+        this.ionRouteDataChanged = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionRouteDataChanged", 7);
       }
 
       _createClass(Route, [{
@@ -164,8 +164,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       function RouteRedirect(hostRef) {
         _classCallCheck(this, RouteRedirect);
 
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
-        this.ionRouteRedirectChanged = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionRouteRedirectChanged", 7);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        this.ionRouteRedirectChanged = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionRouteRedirectChanged", 7);
       }
 
       _createClass(RouteRedirect, [{
@@ -246,11 +246,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       return path;
     };
 
-    var writePath = function writePath(history, root, useHash, path, direction, state) {
+    var writePath = function writePath(history, root, useHash, path, direction, state, queryString) {
       var url = generatePath([].concat(_toConsumableArray(parsePath(root)), _toConsumableArray(path)));
 
       if (useHash) {
         url = '#' + url;
+      }
+
+      if (queryString !== undefined) {
+        url = url + '?' + queryString;
       }
 
       if (direction === ROUTER_INTENT_FORWARD) {
@@ -300,7 +304,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         return [''];
       }
 
-      var segments = path.split('/').map(function (s) {
+      var removeQueryString = path.split('?')[0];
+      var segments = removeQueryString.split('/').map(function (s) {
         return s.trim();
       }).filter(function (s) {
         return s.length > 0;
@@ -895,7 +900,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       function Router(hostRef) {
         _classCallCheck(this, Router);
 
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         this.previousPath = null;
         this.busy = false;
         this.state = 0;
@@ -923,8 +928,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
          */
 
         this.useHash = true;
-        this.ionRouteWillChange = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionRouteWillChange", 7);
-        this.ionRouteDidChange = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionRouteDidChange", 7);
+        this.ionRouteWillChange = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionRouteWillChange", 7);
+        this.ionRouteDidChange = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionRouteDidChange", 7);
       }
 
       _createClass(Router, [{
@@ -961,8 +966,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "componentDidLoad",
         value: function componentDidLoad() {
-          window.addEventListener('ionRouteRedirectChanged', Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["e"])(this.onRedirectChanged.bind(this), 10));
-          window.addEventListener('ionRouteDataChanged', Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["e"])(this.onRoutesChanged.bind(this), 100));
+          window.addEventListener('ionRouteRedirectChanged', Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["e"])(this.onRedirectChanged.bind(this), 10));
+          window.addEventListener('ionRouteDataChanged', Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["e"])(this.onRoutesChanged.bind(this), 100));
         }
       }, {
         key: "onPopState",
@@ -977,8 +982,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function onBackButton(ev) {
           var _this = this;
 
-          ev.detail.register(0, function () {
-            return _this.back();
+          ev.detail.register(0, function (processNextHandler) {
+            _this.back();
+
+            processNextHandler();
           });
         }
         /**
@@ -999,7 +1006,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           console.debug('[ion-router] URL pushed -> updating nav', url, direction);
           var path = parsePath(url);
-          this.setPath(path, direction);
+          var queryString = url.split('?')[1];
+          this.setPath(path, direction, queryString);
           return this.writeNavStateRoot(path, direction);
         }
         /**
@@ -1365,9 +1373,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }()
       }, {
         key: "setPath",
-        value: function setPath(path, direction) {
+        value: function setPath(path, direction, queryString) {
           this.state++;
-          writePath(window.history, this.root, this.useHash, path, direction, this.state);
+          writePath(window.history, this.root, this.useHash, path, direction, this.state, queryString);
         }
       }, {
         key: "getPath",
@@ -1395,12 +1403,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "el",
         get: function get() {
-          return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this);
+          return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this);
         }
       }]);
 
       return Router;
     }();
+
+    var routerLinkCss = ":host{--background:transparent;--color:var(--ion-color-primary, #3880ff);background:var(--background);color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}a{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit}";
 
     var RouterLink = /*#__PURE__*/function () {
       function RouterLink(hostRef) {
@@ -1408,7 +1418,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _classCallCheck(this, RouterLink);
 
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         /**
          * When using a router, it specifies the transition direction when navigating to
          * another page using `href`.
@@ -1417,7 +1427,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.routerDirection = 'forward';
 
         this.onClick = function (ev) {
-          Object(_theme_18cbe2cc_js__WEBPACK_IMPORTED_MODULE_3__["o"])(_this2.href, ev, _this2.routerDirection);
+          Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__["o"])(_this2.href, ev, _this2.routerDirection);
         };
       }
 
@@ -1426,28 +1436,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function render() {
           var _Object$assign;
 
-          var mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
+          var mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
           var attrs = {
             href: this.href,
             rel: this.rel,
             target: this.target
           };
-          return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
+          return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
             onClick: this.onClick,
-            "class": Object.assign(Object.assign({}, Object(_theme_18cbe2cc_js__WEBPACK_IMPORTED_MODULE_3__["c"])(this.color)), (_Object$assign = {}, _defineProperty(_Object$assign, mode, true), _defineProperty(_Object$assign, 'ion-activatable', true), _Object$assign))
-          }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("a", Object.assign({}, attrs), Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
-        }
-      }], [{
-        key: "style",
-        get: function get() {
-          return ":host{--background:transparent;--color:var(--ion-color-primary,#3880ff);background:var(--background);color:var(--color)}:host(.ion-color){color:var(--ion-color-base)}a{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit}";
+            "class": Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_3__["c"])(this.color)), (_Object$assign = {}, _defineProperty(_Object$assign, mode, true), _defineProperty(_Object$assign, 'ion-activatable', true), _Object$assign))
+          }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("a", Object.assign({}, attrs), Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
         }
       }]);
 
       return RouterLink;
     }();
-    /***/
 
+    RouterLink.style = routerLinkCss;
+    /***/
   }
 }]);
 //# sourceMappingURL=54-es5.js.map

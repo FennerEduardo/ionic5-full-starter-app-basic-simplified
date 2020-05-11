@@ -11,18 +11,26 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_refresher", function() { return Refresher; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_refresher_content", function() { return RefresherContent; });
-/* harmony import */ var _core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-80bde1aa.js */ "./node_modules/@ionic/core/dist/esm/core-80bde1aa.js");
-/* harmony import */ var _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./config-3c7f3790.js */ "./node_modules/@ionic/core/dist/esm/config-3c7f3790.js");
-/* harmony import */ var _helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-46f4a262.js */ "./node_modules/@ionic/core/dist/esm/helpers-46f4a262.js");
-/* harmony import */ var _animation_0084d55f_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animation-0084d55f.js */ "./node_modules/@ionic/core/dist/esm/animation-0084d55f.js");
-/* harmony import */ var _cubic_bezier_1d592096_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cubic-bezier-1d592096.js */ "./node_modules/@ionic/core/dist/esm/cubic-bezier-1d592096.js");
-/* harmony import */ var _index_c38df685_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index-c38df685.js */ "./node_modules/@ionic/core/dist/esm/index-c38df685.js");
-/* harmony import */ var _index_mjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index.mjs */ "./node_modules/@ionic/core/dist/esm/index.mjs");
-/* harmony import */ var _constants_3c3e1099_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./constants-3c3e1099.js */ "./node_modules/@ionic/core/dist/esm/constants-3c3e1099.js");
-/* harmony import */ var _index_70999d9c_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./index-70999d9c.js */ "./node_modules/@ionic/core/dist/esm/index-70999d9c.js");
-/* harmony import */ var _overlays_992cb809_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./overlays-992cb809.js */ "./node_modules/@ionic/core/dist/esm/overlays-992cb809.js");
-/* harmony import */ var _index_3476b023_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./index-3476b023.js */ "./node_modules/@ionic/core/dist/esm/index-3476b023.js");
-/* harmony import */ var _spinner_configs_28520d80_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./spinner-configs-28520d80.js */ "./node_modules/@ionic/core/dist/esm/spinner-configs-28520d80.js");
+/* harmony import */ var _index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-26ec602c.js */ "./node_modules/@ionic/core/dist/esm/index-26ec602c.js");
+/* harmony import */ var _ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-1bf1fa84.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-1bf1fa84.js");
+/* harmony import */ var _utils_6acbf959_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils-6acbf959.js */ "./node_modules/@ionic/core/dist/esm/utils-6acbf959.js");
+/* harmony import */ var _index_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.mjs */ "./node_modules/@ionic/core/dist/esm/index.mjs");
+/* harmony import */ var _helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./helpers-d8b49b57.js */ "./node_modules/@ionic/core/dist/esm/helpers-d8b49b57.js");
+/* harmony import */ var _animation_47fafd47_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./animation-47fafd47.js */ "./node_modules/@ionic/core/dist/esm/animation-47fafd47.js");
+/* harmony import */ var _index_e98418f5_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index-e98418f5.js */ "./node_modules/@ionic/core/dist/esm/index-e98418f5.js");
+/* harmony import */ var _ios_transition_fd5c1433_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ios.transition-fd5c1433.js */ "./node_modules/@ionic/core/dist/esm/ios.transition-fd5c1433.js");
+/* harmony import */ var _md_transition_b6943aed_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./md.transition-b6943aed.js */ "./node_modules/@ionic/core/dist/esm/md.transition-b6943aed.js");
+/* harmony import */ var _cubic_bezier_685f606a_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./cubic-bezier-685f606a.js */ "./node_modules/@ionic/core/dist/esm/cubic-bezier-685f606a.js");
+/* harmony import */ var _index_6f647ec8_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./index-6f647ec8.js */ "./node_modules/@ionic/core/dist/esm/index-6f647ec8.js");
+/* harmony import */ var _index_79d74e0b_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./index-79d74e0b.js */ "./node_modules/@ionic/core/dist/esm/index-79d74e0b.js");
+/* harmony import */ var _hardware_back_button_7b6ede21_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./hardware-back-button-7b6ede21.js */ "./node_modules/@ionic/core/dist/esm/hardware-back-button-7b6ede21.js");
+/* harmony import */ var _index_6941d9b4_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./index-6941d9b4.js */ "./node_modules/@ionic/core/dist/esm/index-6941d9b4.js");
+/* harmony import */ var _overlays_7e61a613_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./overlays-7e61a613.js */ "./node_modules/@ionic/core/dist/esm/overlays-7e61a613.js");
+/* harmony import */ var _spinner_configs_c78e170e_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./spinner-configs-c78e170e.js */ "./node_modules/@ionic/core/dist/esm/spinner-configs-c78e170e.js");
+
+
+
+
 
 
 
@@ -39,7 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 const HapticEngine = {
     getEngine() {
         const win = window;
-        return (win.TapticEngine) || (win.Capacitor && win.Capacitor.Plugins.Haptics);
+        return (win.TapticEngine) || (win.Capacitor && win.Capacitor.isPluginAvailable('Haptics') && win.Capacitor.Plugins.Haptics);
     },
     available() {
         return !!this.getEngine();
@@ -129,10 +137,10 @@ const createBaseAnimation = (pullingRefresherIcon) => {
     const spinnerArrowContainer = pullingRefresherIcon.querySelector('.spinner-arrow-container');
     const arrowContainer = pullingRefresherIcon.querySelector('.arrow-container');
     const arrow = (arrowContainer) ? arrowContainer.querySelector('ion-icon') : null;
-    const baseAnimation = Object(_animation_0084d55f_js__WEBPACK_IMPORTED_MODULE_3__["c"])()
+    const baseAnimation = Object(_animation_47fafd47_js__WEBPACK_IMPORTED_MODULE_5__["c"])()
         .duration(1000)
         .easing('ease-out');
-    const spinnerArrowContainerAnimation = Object(_animation_0084d55f_js__WEBPACK_IMPORTED_MODULE_3__["c"])()
+    const spinnerArrowContainerAnimation = Object(_animation_47fafd47_js__WEBPACK_IMPORTED_MODULE_5__["c"])()
         .addElement(spinnerArrowContainer)
         .keyframes([
         { offset: 0, opacity: '0.3' },
@@ -140,7 +148,7 @@ const createBaseAnimation = (pullingRefresherIcon) => {
         { offset: 0.55, opacity: '1' },
         { offset: 1, opacity: '1' }
     ]);
-    const circleInnerAnimation = Object(_animation_0084d55f_js__WEBPACK_IMPORTED_MODULE_3__["c"])()
+    const circleInnerAnimation = Object(_animation_47fafd47_js__WEBPACK_IMPORTED_MODULE_5__["c"])()
         .addElement(circle)
         .keyframes([
         { offset: 0, strokeDasharray: '1px, 200px' },
@@ -148,7 +156,7 @@ const createBaseAnimation = (pullingRefresherIcon) => {
         { offset: 0.55, strokeDasharray: '100px, 200px' },
         { offset: 1, strokeDasharray: '100px, 200px' }
     ]);
-    const circleOuterAnimation = Object(_animation_0084d55f_js__WEBPACK_IMPORTED_MODULE_3__["c"])()
+    const circleOuterAnimation = Object(_animation_47fafd47_js__WEBPACK_IMPORTED_MODULE_5__["c"])()
         .addElement(spinner)
         .keyframes([
         { offset: 0, transform: 'rotate(-90deg)' },
@@ -160,7 +168,7 @@ const createBaseAnimation = (pullingRefresherIcon) => {
      * without errors being thrown
      */
     if (arrowContainer && arrow) {
-        const arrowContainerAnimation = Object(_animation_0084d55f_js__WEBPACK_IMPORTED_MODULE_3__["c"])()
+        const arrowContainerAnimation = Object(_animation_47fafd47_js__WEBPACK_IMPORTED_MODULE_5__["c"])()
             .addElement(arrowContainer)
             .keyframes([
             { offset: 0, transform: 'rotate(0deg)' },
@@ -168,7 +176,7 @@ const createBaseAnimation = (pullingRefresherIcon) => {
             { offset: 0.55, transform: 'rotate(280deg)' },
             { offset: 1, transform: 'rotate(400deg)' }
         ]);
-        const arrowAnimation = Object(_animation_0084d55f_js__WEBPACK_IMPORTED_MODULE_3__["c"])()
+        const arrowAnimation = Object(_animation_47fafd47_js__WEBPACK_IMPORTED_MODULE_5__["c"])()
             .addElement(arrow)
             .keyframes([
             { offset: 0, transform: 'translateX(2px) scale(0)' },
@@ -182,7 +190,7 @@ const createBaseAnimation = (pullingRefresherIcon) => {
 };
 const createScaleAnimation = (pullingRefresherIcon) => {
     const height = pullingRefresherIcon.clientHeight;
-    const spinnerAnimation = Object(_animation_0084d55f_js__WEBPACK_IMPORTED_MODULE_3__["c"])()
+    const spinnerAnimation = Object(_animation_47fafd47_js__WEBPACK_IMPORTED_MODULE_5__["c"])()
         .addElement(pullingRefresherIcon)
         .keyframes([
         { offset: 0, transform: `scale(0) translateY(-${height + 20}px)` },
@@ -192,7 +200,7 @@ const createScaleAnimation = (pullingRefresherIcon) => {
 };
 const createTranslateAnimation = (pullingRefresherIcon) => {
     const height = pullingRefresherIcon.clientHeight;
-    const spinnerAnimation = Object(_animation_0084d55f_js__WEBPACK_IMPORTED_MODULE_3__["c"])()
+    const spinnerAnimation = Object(_animation_47fafd47_js__WEBPACK_IMPORTED_MODULE_5__["c"])()
         .addElement(pullingRefresherIcon)
         .keyframes([
         { offset: 0, transform: `translateY(-${height + 20}px)` },
@@ -201,7 +209,7 @@ const createTranslateAnimation = (pullingRefresherIcon) => {
     return createBaseAnimation(pullingRefresherIcon).addAnimation([spinnerAnimation]);
 };
 const createSnapBackAnimation = (pullingRefresherIcon) => {
-    return Object(_animation_0084d55f_js__WEBPACK_IMPORTED_MODULE_3__["c"])()
+    return Object(_animation_47fafd47_js__WEBPACK_IMPORTED_MODULE_5__["c"])()
         .duration(125)
         .addElement(pullingRefresherIcon)
         .fromTo('transform', 'translateY(var(--ion-pulling-refresher-translate, 100px))', 'translateY(0px)');
@@ -212,13 +220,13 @@ const setSpinnerOpacity = (spinner, opacity) => {
     spinner.style.setProperty('opacity', opacity.toString());
 };
 const handleScrollWhilePulling = (spinner, ticks, opacity, currentTickToShow) => {
-    Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
+    Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
         setSpinnerOpacity(spinner, opacity);
         ticks.forEach((el, i) => el.style.setProperty('opacity', (i <= currentTickToShow) ? '0.99' : '0'));
     });
 };
 const handleScrollWhileRefreshing = (spinner, lastVelocityY) => {
-    Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
+    Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
         // If user pulls down quickly, the spinner should spin faster
         spinner.style.setProperty('--refreshing-rotation-duration', (lastVelocityY >= 1.0) ? '0.5s' : '2s');
         spinner.style.setProperty('opacity', '1');
@@ -229,7 +237,7 @@ const translateElement = (el, value) => {
         return Promise.resolve();
     }
     const trans = transitionEndAsync(el);
-    Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
+    Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
         el.style.setProperty('transition', '0.2s all ease-out');
         if (value === undefined) {
             el.style.removeProperty('transform');
@@ -247,7 +255,7 @@ const shouldUseNativeRefresher = (referenceEl, mode) => {
     const refreshingSpinner = referenceEl.querySelector('ion-refresher-content .refresher-refreshing ion-spinner');
     return (pullingSpinner !== null &&
         refreshingSpinner !== null &&
-        ((mode === 'ios' && Object(_config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__["i"])('mobile') && referenceEl.style.webkitOverflowScrolling !== undefined) ||
+        ((mode === 'ios' && Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["i"])('mobile') && referenceEl.style.webkitOverflowScrolling !== undefined) ||
             mode === 'md'));
 };
 const transitionEndAsync = (el) => {
@@ -280,9 +288,13 @@ const transitionEnd = (el, callback) => {
     return unregister;
 };
 
+const refresherIosCss = "ion-refresher{left:0;top:0;display:none;position:absolute;width:100%;height:60px;pointer-events:none;z-index:-1}[dir=rtl] ion-refresher,:host-context([dir=rtl]) ion-refresher{left:unset;right:unset;right:0}ion-refresher.refresher-active{display:block}ion-refresher-content{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;height:100%}.refresher-pulling,.refresher-refreshing{display:none;width:100%}.refresher-pulling-icon,.refresher-refreshing-icon{-webkit-transform-origin:center;transform-origin:center;-webkit-transition:200ms;transition:200ms;font-size:30px;text-align:center}[dir=rtl] .refresher-pulling-icon,:host-context([dir=rtl]) .refresher-pulling-icon,[dir=rtl] .refresher-refreshing-icon,:host-context([dir=rtl]) .refresher-refreshing-icon{-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}.refresher-pulling-text,.refresher-refreshing-text{font-size:16px;text-align:center}ion-refresher-content .arrow-container{display:none}.refresher-pulling ion-refresher-content .refresher-pulling{display:block}.refresher-ready ion-refresher-content .refresher-pulling{display:block}.refresher-ready ion-refresher-content .refresher-pulling-icon{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.refresher-refreshing ion-refresher-content .refresher-refreshing{display:block}.refresher-cancelling ion-refresher-content .refresher-pulling{display:block}.refresher-cancelling ion-refresher-content .refresher-pulling-icon{-webkit-transform:scale(0);transform:scale(0)}.refresher-completing ion-refresher-content .refresher-refreshing{display:block}.refresher-completing ion-refresher-content .refresher-refreshing-icon{-webkit-transform:scale(0);transform:scale(0)}.refresher-native .refresher-pulling-text,.refresher-native .refresher-refreshing-text{display:none}.refresher-ios .refresher-pulling-icon,.refresher-ios .refresher-refreshing-icon{color:var(--ion-text-color, #000)}.refresher-ios .refresher-pulling-text,.refresher-ios .refresher-refreshing-text{color:var(--ion-text-color, #000)}.refresher-ios .refresher-refreshing .spinner-lines-ios line,.refresher-ios .refresher-refreshing .spinner-lines-small-ios line,.refresher-ios .refresher-refreshing .spinner-crescent circle{stroke:var(--ion-text-color, #000)}.refresher-ios .refresher-refreshing .spinner-bubbles circle,.refresher-ios .refresher-refreshing .spinner-circles circle,.refresher-ios .refresher-refreshing .spinner-dots circle{fill:var(--ion-text-color, #000)}ion-refresher.refresher-native{display:block;z-index:1}ion-refresher.refresher-native ion-spinner{margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){ion-refresher.refresher-native ion-spinner{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}.refresher-native .refresher-refreshing ion-spinner{--refreshing-rotation-duration:2s;display:none;-webkit-animation:var(--refreshing-rotation-duration) ease-out refresher-rotate forwards;animation:var(--refreshing-rotation-duration) ease-out refresher-rotate forwards}.refresher-native .refresher-refreshing{display:none;-webkit-animation:250ms linear refresher-pop forwards;animation:250ms linear refresher-pop forwards}.refresher-native.refresher-refreshing .refresher-pulling ion-spinner,.refresher-native.refresher-completing .refresher-pulling ion-spinner{display:none}.refresher-native.refresher-refreshing .refresher-refreshing ion-spinner,.refresher-native.refresher-completing .refresher-refreshing ion-spinner{display:block}.refresher-native.refresher-pulling .refresher-pulling ion-spinner{display:block}.refresher-native.refresher-pulling .refresher-refreshing ion-spinner{display:none}@-webkit-keyframes refresher-pop{0%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}50%{-webkit-transform:scale(1.2);transform:scale(1.2);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes refresher-pop{0%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}50%{-webkit-transform:scale(1.2);transform:scale(1.2);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}100%{-webkit-transform:scale(1);transform:scale(1)}}@-webkit-keyframes refresher-rotate{from{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(180deg);transform:rotate(180deg)}}@keyframes refresher-rotate{from{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(180deg);transform:rotate(180deg)}}";
+
+const refresherMdCss = "ion-refresher{left:0;top:0;display:none;position:absolute;width:100%;height:60px;pointer-events:none;z-index:-1}[dir=rtl] ion-refresher,:host-context([dir=rtl]) ion-refresher{left:unset;right:unset;right:0}ion-refresher.refresher-active{display:block}ion-refresher-content{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;height:100%}.refresher-pulling,.refresher-refreshing{display:none;width:100%}.refresher-pulling-icon,.refresher-refreshing-icon{-webkit-transform-origin:center;transform-origin:center;-webkit-transition:200ms;transition:200ms;font-size:30px;text-align:center}[dir=rtl] .refresher-pulling-icon,:host-context([dir=rtl]) .refresher-pulling-icon,[dir=rtl] .refresher-refreshing-icon,:host-context([dir=rtl]) .refresher-refreshing-icon{-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}.refresher-pulling-text,.refresher-refreshing-text{font-size:16px;text-align:center}ion-refresher-content .arrow-container{display:none}.refresher-pulling ion-refresher-content .refresher-pulling{display:block}.refresher-ready ion-refresher-content .refresher-pulling{display:block}.refresher-ready ion-refresher-content .refresher-pulling-icon{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.refresher-refreshing ion-refresher-content .refresher-refreshing{display:block}.refresher-cancelling ion-refresher-content .refresher-pulling{display:block}.refresher-cancelling ion-refresher-content .refresher-pulling-icon{-webkit-transform:scale(0);transform:scale(0)}.refresher-completing ion-refresher-content .refresher-refreshing{display:block}.refresher-completing ion-refresher-content .refresher-refreshing-icon{-webkit-transform:scale(0);transform:scale(0)}.refresher-native .refresher-pulling-text,.refresher-native .refresher-refreshing-text{display:none}.refresher-md .refresher-pulling-icon,.refresher-md .refresher-refreshing-icon{color:var(--ion-text-color, #000)}.refresher-md .refresher-pulling-text,.refresher-md .refresher-refreshing-text{color:var(--ion-text-color, #000)}.refresher-md .refresher-refreshing .spinner-lines-md line,.refresher-md .refresher-refreshing .spinner-lines-small-md line,.refresher-md .refresher-refreshing .spinner-crescent circle{stroke:var(--ion-text-color, #000)}.refresher-md .refresher-refreshing .spinner-bubbles circle,.refresher-md .refresher-refreshing .spinner-circles circle,.refresher-md .refresher-refreshing .spinner-dots circle{fill:var(--ion-text-color, #000)}ion-refresher.refresher-native{display:block;z-index:1}ion-refresher.refresher-native ion-spinner{margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;width:24px;height:24px;color:var(--ion-color-primary, #3880ff)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){ion-refresher.refresher-native ion-spinner{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}ion-refresher.refresher-native .spinner-arrow-container{display:inherit}ion-refresher.refresher-native .arrow-container{display:block;position:absolute;width:24px;height:24px}ion-refresher.refresher-native .arrow-container ion-icon{margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;left:0;right:0;bottom:-4px;position:absolute;color:var(--ion-color-primary, #3880ff);font-size:12px}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){ion-refresher.refresher-native .arrow-container ion-icon{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}ion-refresher.refresher-native.refresher-pulling ion-refresher-content .refresher-pulling,ion-refresher.refresher-native.refresher-ready ion-refresher-content .refresher-pulling{display:-ms-flexbox;display:flex}ion-refresher.refresher-native.refresher-refreshing ion-refresher-content .refresher-refreshing,ion-refresher.refresher-native.refresher-completing ion-refresher-content .refresher-refreshing,ion-refresher.refresher-native.refresher-cancelling ion-refresher-content .refresher-refreshing{display:-ms-flexbox;display:flex}ion-refresher.refresher-native .refresher-pulling-icon{-webkit-transform:translateY(calc(-100% - 10px));transform:translateY(calc(-100% - 10px))}ion-refresher.refresher-native .refresher-pulling-icon,ion-refresher.refresher-native .refresher-refreshing-icon{margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;border-radius:100%;padding-left:8px;padding-right:8px;padding-top:8px;padding-bottom:8px;display:-ms-flexbox;display:flex;border:1px solid #ececec;background:white;-webkit-box-shadow:0px 1px 6px rgba(0, 0, 0, 0.1);box-shadow:0px 1px 6px rgba(0, 0, 0, 0.1)}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){ion-refresher.refresher-native .refresher-pulling-icon,ion-refresher.refresher-native .refresher-refreshing-icon{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){ion-refresher.refresher-native .refresher-pulling-icon,ion-refresher.refresher-native .refresher-refreshing-icon{padding-left:unset;padding-right:unset;-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px}}";
+
 const Refresher = class {
     constructor(hostRef) {
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         this.appliedStyles = false;
         this.didStart = false;
         this.progress = 0;
@@ -349,9 +361,9 @@ const Refresher = class {
          * If `true`, the refresher will be hidden.
          */
         this.disabled = false;
-        this.ionRefresh = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionRefresh", 7);
-        this.ionPull = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionPull", 7);
-        this.ionStart = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionStart", 7);
+        this.ionRefresh = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionRefresh", 7);
+        this.ionPull = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionPull", 7);
+        this.ionStart = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionStart", 7);
     }
     disabledChanged() {
         if (this.gesture) {
@@ -359,7 +371,7 @@ const Refresher = class {
         }
     }
     checkNativeRefresher() {
-        const useNativeRefresher = shouldUseNativeRefresher(this.el, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this));
+        const useNativeRefresher = shouldUseNativeRefresher(this.el, Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this));
         if (useNativeRefresher && !this.nativeRefresher) {
             const contentEl = this.el.closest('ion-content');
             this.setupNativeRefresher(contentEl);
@@ -377,7 +389,7 @@ const Refresher = class {
     }
     async resetNativeRefresher(el, state) {
         this.state = state;
-        if (Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this) === 'ios') {
+        if (Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this) === 'ios') {
             await translateElement(el, undefined);
         }
         else {
@@ -396,13 +408,13 @@ const Refresher = class {
         const ticks = pullingSpinner.shadowRoot.querySelectorAll('svg');
         const MAX_PULL = this.scrollEl.clientHeight * 0.16;
         const NUM_TICKS = ticks.length;
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => ticks.forEach(el => el.style.setProperty('animation', 'none')));
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => ticks.forEach(el => el.style.setProperty('animation', 'none')));
         this.scrollListenerCallback = () => {
             // If pointer is not on screen or refresher is not active, ignore scroll
             if (!this.pointerDown && this.state === 1 /* Inactive */) {
                 return;
             }
-            Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["f"])(() => {
+            Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["f"])(() => {
                 // PTR should only be active when overflow scrolling at the top
                 const scrollTop = this.scrollEl.scrollTop;
                 const refresherHeight = this.el.clientHeight;
@@ -412,11 +424,11 @@ const Refresher = class {
                      * progressively fade refresher out/in
                      */
                     if (this.state === 8 /* Refreshing */) {
-                        const ratio = Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["c"])(0, scrollTop / (refresherHeight * 0.5), 1);
-                        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => setSpinnerOpacity(refreshingSpinner, 1 - ratio));
+                        const ratio = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_4__["c"])(0, scrollTop / (refresherHeight * 0.5), 1);
+                        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => setSpinnerOpacity(refreshingSpinner, 1 - ratio));
                         return;
                     }
-                    Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => setSpinnerOpacity(pullingSpinner, 0));
+                    Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => setSpinnerOpacity(pullingSpinner, 0));
                     return;
                 }
                 if (this.pointerDown) {
@@ -430,9 +442,9 @@ const Refresher = class {
                     }
                 }
                 // delay showing the next tick marks until user has pulled 30px
-                const opacity = Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["c"])(0, Math.abs(scrollTop) / refresherHeight, 0.99);
-                const pullAmount = this.progress = Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["c"])(0, (Math.abs(scrollTop) - 30) / MAX_PULL, 1);
-                const currentTickToShow = Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["c"])(0, Math.floor(pullAmount * NUM_TICKS), NUM_TICKS - 1);
+                const opacity = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_4__["c"])(0, Math.abs(scrollTop) / refresherHeight, 0.99);
+                const pullAmount = this.progress = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_4__["c"])(0, (Math.abs(scrollTop) - 30) / MAX_PULL, 1);
+                const currentTickToShow = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_4__["c"])(0, Math.floor(pullAmount * NUM_TICKS), NUM_TICKS - 1);
                 const shouldShowRefreshingSpinner = this.state === 8 /* Refreshing */ || currentTickToShow === NUM_TICKS - 1;
                 if (shouldShowRefreshingSpinner) {
                     if (this.pointerDown) {
@@ -458,7 +470,7 @@ const Refresher = class {
             });
         };
         this.scrollEl.addEventListener('scroll', this.scrollListenerCallback);
-        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-c38df685.js */ "./node_modules/@ionic/core/dist/esm/index-c38df685.js"))).createGesture({
+        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-6f647ec8.js */ "./node_modules/@ionic/core/dist/esm/index-6f647ec8.js"))).createGesture({
             el: this.scrollEl,
             gestureName: 'refresher',
             gesturePriority: 10,
@@ -481,7 +493,7 @@ const Refresher = class {
                     this.needsCompletion = false;
                 }
                 else if (this.didRefresh) {
-                    Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["f"])(() => translateElement(this.elementToTransform, `${this.el.clientHeight}px`));
+                    Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["f"])(() => translateElement(this.elementToTransform, `${this.el.clientHeight}px`));
                 }
             },
         });
@@ -492,14 +504,14 @@ const Refresher = class {
         const pullingRefresherIcon = this.el.querySelector('ion-refresher-content .refresher-pulling-icon');
         const refreshingCircle = refreshingSpinner.shadowRoot.querySelector('circle');
         if (circle !== null && refreshingCircle !== null) {
-            Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
+            Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
                 circle.style.setProperty('animation', 'none');
                 // This lines up the animation on the refreshing spinner with the pulling spinner
                 refreshingSpinner.style.setProperty('animation-delay', '-655ms');
                 refreshingCircle.style.setProperty('animation-delay', '-655ms');
             });
         }
-        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-c38df685.js */ "./node_modules/@ionic/core/dist/esm/index-c38df685.js"))).createGesture({
+        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-6f647ec8.js */ "./node_modules/@ionic/core/dist/esm/index-6f647ec8.js"))).createGesture({
             el: this.scrollEl,
             gestureName: 'refresher',
             gesturePriority: 10,
@@ -517,7 +529,7 @@ const Refresher = class {
                 if (!ev.data.didStart) {
                     ev.data.didStart = true;
                     this.state = 2 /* Pulling */;
-                    Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
+                    Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
                         const animationType = getRefresherAnimationType(contentEl);
                         const animation = createPullingAnimation(animationType, pullingRefresherIcon);
                         ev.data.animation = animation;
@@ -529,7 +541,7 @@ const Refresher = class {
                     return;
                 }
                 // Since we are using an easing curve, slow the gesture tracking down a bit
-                this.progress = Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["c"])(0, (ev.deltaY / 180) * 0.5, 1);
+                this.progress = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_4__["c"])(0, (ev.deltaY / 180) * 0.5, 1);
                 ev.data.animation.progressStep(this.progress);
                 this.ionPull.emit();
             },
@@ -537,7 +549,7 @@ const Refresher = class {
                 if (!ev.data.didStart) {
                     return;
                 }
-                Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => this.scrollEl.style.removeProperty('--overflow'));
+                Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => this.scrollEl.style.removeProperty('--overflow'));
                 if (this.progress <= 0.4) {
                     this.gesture.enable(false);
                     ev.data.animation
@@ -550,10 +562,10 @@ const Refresher = class {
                     });
                     return;
                 }
-                const progress = Object(_cubic_bezier_1d592096_js__WEBPACK_IMPORTED_MODULE_4__["g"])([0, 0], [0, 0], [1, 1], [1, 1], this.progress)[0];
+                const progress = Object(_cubic_bezier_685f606a_js__WEBPACK_IMPORTED_MODULE_9__["g"])([0, 0], [0, 0], [1, 1], [1, 1], this.progress)[0];
                 const snapBackAnimation = createSnapBackAnimation(pullingRefresherIcon);
                 this.animations.push(snapBackAnimation);
-                Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["w"])(async () => {
+                Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["w"])(async () => {
                     pullingRefresherIcon.style.setProperty('--ion-pulling-refresher-translate', `${(progress * 100)}px`);
                     ev.data.animation.progressEnd();
                     await snapBackAnimation.play();
@@ -571,7 +583,8 @@ const Refresher = class {
         this.nativeRefresher = true;
         const pullingSpinner = this.el.querySelector('ion-refresher-content .refresher-pulling ion-spinner');
         const refreshingSpinner = this.el.querySelector('ion-refresher-content .refresher-refreshing ion-spinner');
-        if (Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this) === 'ios') {
+        await contentEl.componentOnReady();
+        if (Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this) === 'ios') {
             this.setupiOSNativeRefresher(pullingSpinner, refreshingSpinner);
         }
         else {
@@ -593,11 +606,11 @@ const Refresher = class {
         }
         this.scrollEl = await contentEl.getScrollElement();
         this.backgroundContentEl = contentEl.shadowRoot.querySelector('#background-content');
-        if (shouldUseNativeRefresher(this.el, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this))) {
+        if (shouldUseNativeRefresher(this.el, Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this))) {
             this.setupNativeRefresher(contentEl);
         }
         else {
-            this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-c38df685.js */ "./node_modules/@ionic/core/dist/esm/index-c38df685.js"))).createGesture({
+            this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-6f647ec8.js */ "./node_modules/@ionic/core/dist/esm/index-6f647ec8.js"))).createGesture({
                 el: contentEl,
                 gestureName: 'refresher',
                 gesturePriority: 10,
@@ -634,7 +647,7 @@ const Refresher = class {
             this.needsCompletion = true;
             // Do not reset scroll el until user removes pointer from screen
             if (!this.pointerDown) {
-                this.resetNativeRefresher(this.elementToTransform, 32 /* Completing */);
+                Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_4__["r"])(() => Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_4__["r"])(() => this.resetNativeRefresher(this.elementToTransform, 32 /* Completing */)));
             }
         }
         else {
@@ -648,7 +661,7 @@ const Refresher = class {
         if (this.nativeRefresher) {
             // Do not reset scroll el until user removes pointer from screen
             if (!this.pointerDown) {
-                this.resetNativeRefresher(this.elementToTransform, 16 /* Cancelling */);
+                Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_4__["r"])(() => Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_4__["r"])(() => this.resetNativeRefresher(this.elementToTransform, 16 /* Cancelling */)));
             }
         }
         else {
@@ -816,11 +829,11 @@ const Refresher = class {
             return;
         }
         this.appliedStyles = (y > 0);
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["w"])(() => {
             if (this.scrollEl && this.backgroundContentEl) {
                 const scrollStyle = this.scrollEl.style;
                 const backgroundStyle = this.backgroundContentEl.style;
-                scrollStyle.transform = backgroundStyle.transform = ((y > 0) ? `translateY(${y}px) translateZ(0px)` : 'translateZ(0px)');
+                scrollStyle.transform = backgroundStyle.transform = ((y > 0) ? `translateY(${y}px) translateZ(0px)` : '');
                 scrollStyle.transitionDuration = backgroundStyle.transitionDuration = duration;
                 scrollStyle.transitionDelay = backgroundStyle.transitionDelay = delay;
                 scrollStyle.overflow = (overflowVisible ? 'hidden' : '');
@@ -828,8 +841,8 @@ const Refresher = class {
         });
     }
     render() {
-        const mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
-        return (Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["H"], { slot: "fixed", class: {
+        const mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        return (Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["H"], { slot: "fixed", class: {
                 [mode]: true,
                 // Used internally for styling
                 [`refresher-${mode}`]: true,
@@ -842,41 +855,44 @@ const Refresher = class {
                 'refresher-completing': this.state === 32 /* Completing */,
             } }));
     }
-    get el() { return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
     static get watchers() { return {
         "disabled": ["disabledChanged"]
     }; }
-    static get style() { return "ion-refresher{left:0;top:0;display:none;position:absolute;width:100%;height:60px;pointer-events:none;z-index:-1}:host-context([dir=rtl]) ion-refresher,[dir=rtl] ion-refresher{left:unset;right:unset;right:0}ion-refresher.refresher-active{display:block}ion-refresher-content{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;height:100%}.refresher-pulling,.refresher-refreshing{display:none;width:100%}.refresher-pulling-icon,.refresher-refreshing-icon{-webkit-transform-origin:center;transform-origin:center;-webkit-transition:.2s;transition:.2s;font-size:30px;text-align:center}:host-context([dir=rtl]) .refresher-pulling-icon,:host-context([dir=rtl]) .refresher-refreshing-icon,[dir=rtl] .refresher-pulling-icon,[dir=rtl] .refresher-refreshing-icon{-webkit-transform-origin:calc(100% - center);transform-origin:calc(100% - center)}.refresher-pulling-text,.refresher-refreshing-text{font-size:16px;text-align:center}ion-refresher-content .arrow-container{display:none}.refresher-pulling ion-refresher-content .refresher-pulling,.refresher-ready ion-refresher-content .refresher-pulling{display:block}.refresher-ready ion-refresher-content .refresher-pulling-icon{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.refresher-cancelling ion-refresher-content .refresher-pulling,.refresher-refreshing ion-refresher-content .refresher-refreshing{display:block}.refresher-cancelling ion-refresher-content .refresher-pulling-icon{-webkit-transform:scale(0);transform:scale(0)}.refresher-completing ion-refresher-content .refresher-refreshing{display:block}.refresher-completing ion-refresher-content .refresher-refreshing-icon{-webkit-transform:scale(0);transform:scale(0)}.refresher-native .refresher-pulling-text,.refresher-native .refresher-refreshing-text{display:none}.refresher-md .refresher-pulling-icon,.refresher-md .refresher-pulling-text,.refresher-md .refresher-refreshing-icon,.refresher-md .refresher-refreshing-text{color:var(--ion-text-color,#000)}.refresher-md .refresher-refreshing .spinner-crescent circle,.refresher-md .refresher-refreshing .spinner-lines-md line,.refresher-md .refresher-refreshing .spinner-lines-small-md line{stroke:var(--ion-text-color,#000)}.refresher-md .refresher-refreshing .spinner-bubbles circle,.refresher-md .refresher-refreshing .spinner-circles circle,.refresher-md .refresher-refreshing .spinner-dots circle{fill:var(--ion-text-color,#000)}ion-refresher.refresher-native{display:block;z-index:1}ion-refresher.refresher-native ion-spinner{margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;width:24px;height:24px;color:var(--ion-color-primary,#3880ff)}\@supports ((-webkit-margin-start:0) or (margin-inline-start:0)) or (-webkit-margin-start:0){ion-refresher.refresher-native ion-spinner{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}ion-refresher.refresher-native .spinner-arrow-container{display:inherit}ion-refresher.refresher-native .arrow-container{display:block;position:absolute;width:24px;height:24px}ion-refresher.refresher-native .arrow-container ion-icon{margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;left:0;right:0;bottom:-4px;position:absolute;color:var(--ion-color-primary,#3880ff);font-size:12px}\@supports ((-webkit-margin-start:0) or (margin-inline-start:0)) or (-webkit-margin-start:0){ion-refresher.refresher-native .arrow-container ion-icon{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto}}ion-refresher.refresher-native.refresher-cancelling ion-refresher-content .refresher-refreshing,ion-refresher.refresher-native.refresher-completing ion-refresher-content .refresher-refreshing,ion-refresher.refresher-native.refresher-pulling ion-refresher-content .refresher-pulling,ion-refresher.refresher-native.refresher-ready ion-refresher-content .refresher-pulling,ion-refresher.refresher-native.refresher-refreshing ion-refresher-content .refresher-refreshing{display:-ms-flexbox;display:flex}ion-refresher.refresher-native .refresher-pulling-icon{-webkit-transform:translateY(calc(-100% - 10px));transform:translateY(calc(-100% - 10px))}ion-refresher.refresher-native .refresher-pulling-icon,ion-refresher.refresher-native .refresher-refreshing-icon{margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;border-radius:100%;padding-left:8px;padding-right:8px;padding-top:8px;padding-bottom:8px;display:-ms-flexbox;display:flex;border:1px solid #ececec;background:#fff;-webkit-box-shadow:0 1px 6px rgba(0,0,0,.1);box-shadow:0 1px 6px rgba(0,0,0,.1)}\@supports ((-webkit-margin-start:0) or (margin-inline-start:0)) or (-webkit-margin-start:0){ion-refresher.refresher-native .refresher-pulling-icon,ion-refresher.refresher-native .refresher-refreshing-icon{margin-left:unset;margin-right:unset;-webkit-margin-start:auto;margin-inline-start:auto;-webkit-margin-end:auto;margin-inline-end:auto;padding-left:unset;padding-right:unset;-webkit-padding-start:8px;padding-inline-start:8px;-webkit-padding-end:8px;padding-inline-end:8px}}"; }
+};
+Refresher.style = {
+    /*STENCIL:MODE:ios*/ ios: refresherIosCss,
+    /*STENCIL:MODE:md*/ md: refresherMdCss
 };
 
 const RefresherContent = class {
     constructor(hostRef) {
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
     }
     componentWillLoad() {
         if (this.pullingIcon === undefined) {
-            const mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
+            const mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
             const overflowRefresher = this.el.style.webkitOverflowScrolling !== undefined ? 'lines' : 'arrow-down';
-            this.pullingIcon = _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__["b"].get('refreshingIcon', mode === 'ios' && Object(_config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__["i"])('mobile') ? _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__["b"].get('spinner', overflowRefresher) : 'circular');
+            this.pullingIcon = _ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('refreshingIcon', mode === 'ios' && Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["i"])('mobile') ? _ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('spinner', overflowRefresher) : 'circular');
         }
         if (this.refreshingSpinner === undefined) {
-            const mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
-            this.refreshingSpinner = _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__["b"].get('refreshingSpinner', _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__["b"].get('spinner', mode === 'ios' ? 'lines' : 'circular'));
+            const mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+            this.refreshingSpinner = _ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('refreshingSpinner', _ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('spinner', mode === 'ios' ? 'lines' : 'circular'));
         }
     }
     render() {
         const pullingIcon = this.pullingIcon;
-        const hasSpinner = pullingIcon != null && _spinner_configs_28520d80_js__WEBPACK_IMPORTED_MODULE_11__["S"][pullingIcon] !== undefined;
-        const mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
-        return (Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: mode }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "refresher-pulling" }, this.pullingIcon && hasSpinner &&
-            Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "refresher-pulling-icon" }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "spinner-arrow-container" }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-spinner", { name: this.pullingIcon, paused: true }), mode === 'md' && this.pullingIcon === 'circular' &&
-                Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "arrow-container" }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-icon", { name: "caret-back-sharp" })))), this.pullingIcon && !hasSpinner &&
-            Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "refresher-pulling-icon" }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-icon", { icon: this.pullingIcon, lazy: false })), this.pullingText &&
-            Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "refresher-pulling-text", innerHTML: Object(_index_3476b023_js__WEBPACK_IMPORTED_MODULE_10__["s"])(this.pullingText) })), Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "refresher-refreshing" }, this.refreshingSpinner &&
-            Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "refresher-refreshing-icon" }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-spinner", { name: this.refreshingSpinner })), this.refreshingText &&
-            Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "refresher-refreshing-text", innerHTML: Object(_index_3476b023_js__WEBPACK_IMPORTED_MODULE_10__["s"])(this.refreshingText) }))));
+        const hasSpinner = pullingIcon != null && _spinner_configs_c78e170e_js__WEBPACK_IMPORTED_MODULE_15__["S"][pullingIcon] !== undefined;
+        const mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        return (Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: mode }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "refresher-pulling" }, this.pullingIcon && hasSpinner &&
+            Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "refresher-pulling-icon" }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "spinner-arrow-container" }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-spinner", { name: this.pullingIcon, paused: true }), mode === 'md' && this.pullingIcon === 'circular' &&
+                Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "arrow-container" }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-icon", { name: "caret-back-sharp" })))), this.pullingIcon && !hasSpinner &&
+            Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "refresher-pulling-icon" }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-icon", { icon: this.pullingIcon, lazy: false })), this.pullingText &&
+            Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "refresher-pulling-text", innerHTML: Object(_index_79d74e0b_js__WEBPACK_IMPORTED_MODULE_11__["s"])(this.pullingText) })), Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "refresher-refreshing" }, this.refreshingSpinner &&
+            Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "refresher-refreshing-icon" }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-spinner", { name: this.refreshingSpinner })), this.refreshingText &&
+            Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "refresher-refreshing-text", innerHTML: Object(_index_79d74e0b_js__WEBPACK_IMPORTED_MODULE_11__["s"])(this.refreshingText) }))));
     }
-    get el() { return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
 };
 
 

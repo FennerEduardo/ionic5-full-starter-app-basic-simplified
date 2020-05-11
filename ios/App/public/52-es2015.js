@@ -11,32 +11,41 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_reorder", function() { return Reorder; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_reorder_group", function() { return ReorderGroup; });
-/* harmony import */ var _core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-80bde1aa.js */ "./node_modules/@ionic/core/dist/esm/core-80bde1aa.js");
-/* harmony import */ var _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./config-3c7f3790.js */ "./node_modules/@ionic/core/dist/esm/config-3c7f3790.js");
-/* harmony import */ var _haptic_c8f1473e_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./haptic-c8f1473e.js */ "./node_modules/@ionic/core/dist/esm/haptic-c8f1473e.js");
+/* harmony import */ var _index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-26ec602c.js */ "./node_modules/@ionic/core/dist/esm/index-26ec602c.js");
+/* harmony import */ var _ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-1bf1fa84.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-1bf1fa84.js");
+/* harmony import */ var _haptic_ccbda579_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./haptic-ccbda579.js */ "./node_modules/@ionic/core/dist/esm/haptic-ccbda579.js");
 
 
 
+
+const reorderIosCss = ":host([slot]){display:none;line-height:0;z-index:100}.reorder-icon{display:block;font-size:22px}.reorder-icon{font-size:34px;opacity:0.4}";
+
+const reorderMdCss = ":host([slot]){display:none;line-height:0;z-index:100}.reorder-icon{display:block;font-size:22px}.reorder-icon{font-size:31px;opacity:0.3}";
 
 const Reorder = class {
     constructor(hostRef) {
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
     }
     onClick(ev) {
         ev.preventDefault();
         ev.stopImmediatePropagation();
     }
     render() {
-        const mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
+        const mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
         const reorderIcon = mode === 'ios' ? 'reorder-three-outline' : 'reorder-two-sharp';
-        return (Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: mode }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-icon", { name: reorderIcon, lazy: false, class: "reorder-icon" }))));
+        return (Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: mode }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-icon", { name: reorderIcon, lazy: false, class: "reorder-icon", part: "icon" }))));
     }
-    static get style() { return ":host([slot]){display:none;line-height:0;z-index:100}.reorder-icon{display:block;font-size:22px;font-size:31px;opacity:.3}"; }
 };
+Reorder.style = {
+    /*STENCIL:MODE:ios*/ ios: reorderIosCss,
+    /*STENCIL:MODE:md*/ md: reorderMdCss
+};
+
+const reorderGroupCss = ".reorder-list-active>*{-webkit-transition:-webkit-transform 300ms;transition:-webkit-transform 300ms;transition:transform 300ms;transition:transform 300ms, -webkit-transform 300ms;will-change:transform}.reorder-enabled{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.reorder-enabled ion-reorder{display:block;cursor:-webkit-grab;cursor:grab;pointer-events:all;-ms-touch-action:none;touch-action:none}.reorder-selected,.reorder-selected ion-reorder{cursor:-webkit-grabbing;cursor:grabbing}.reorder-selected{position:relative;-webkit-transition:none !important;transition:none !important;-webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.4);box-shadow:0 0 10px rgba(0, 0, 0, 0.4);opacity:0.8;z-index:100}.reorder-visible ion-reorder .reorder-icon{-webkit-transform:translate3d(0,  0,  0);transform:translate3d(0,  0,  0)}";
 
 const ReorderGroup = class {
     constructor(hostRef) {
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         this.lastToIndex = -1;
         this.cachedHeights = [];
         this.scrollElTop = 0;
@@ -49,7 +58,7 @@ const ReorderGroup = class {
          * If `true`, the reorder will be hidden.
          */
         this.disabled = true;
-        this.ionItemReorder = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionItemReorder", 7);
+        this.ionItemReorder = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionItemReorder", 7);
     }
     disabledChanged() {
         if (this.gesture) {
@@ -61,7 +70,7 @@ const ReorderGroup = class {
         if (contentEl) {
             this.scrollEl = await contentEl.getScrollElement();
         }
-        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-c38df685.js */ "./node_modules/@ionic/core/dist/esm/index-c38df685.js"))).createGesture({
+        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-6f647ec8.js */ "./node_modules/@ionic/core/dist/esm/index-6f647ec8.js"))).createGesture({
             el: this.el,
             gestureName: 'reorder',
             gesturePriority: 110,
@@ -149,7 +158,7 @@ const ReorderGroup = class {
         this.selectedItemHeight = item.offsetHeight;
         this.state = 1 /* Active */;
         item.classList.add(ITEM_REORDER_SELECTED);
-        Object(_haptic_c8f1473e_js__WEBPACK_IMPORTED_MODULE_2__["a"])();
+        Object(_haptic_ccbda579_js__WEBPACK_IMPORTED_MODULE_2__["a"])();
     }
     onMove(ev) {
         const selectedItem = this.selectedItemEl;
@@ -168,7 +177,7 @@ const ReorderGroup = class {
         if (toIndex !== this.lastToIndex) {
             const fromIndex = indexForItem(selectedItem);
             this.lastToIndex = toIndex;
-            Object(_haptic_c8f1473e_js__WEBPACK_IMPORTED_MODULE_2__["b"])();
+            Object(_haptic_ccbda579_js__WEBPACK_IMPORTED_MODULE_2__["b"])();
             this.reorderMove(fromIndex, toIndex);
         }
         // Update selected item position
@@ -193,7 +202,7 @@ const ReorderGroup = class {
                 complete: this.completeSync.bind(this)
             });
         }
-        Object(_haptic_c8f1473e_js__WEBPACK_IMPORTED_MODULE_2__["c"])();
+        Object(_haptic_ccbda579_js__WEBPACK_IMPORTED_MODULE_2__["c"])();
     }
     completeSync(listOrReorder) {
         const selectedItemEl = this.selectedItemEl;
@@ -267,18 +276,17 @@ const ReorderGroup = class {
         return this.scrollEl.scrollTop - this.scrollElInitial;
     }
     render() {
-        const mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
-        return (Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: {
+        const mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        return (Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["H"], { class: {
                 [mode]: true,
                 'reorder-enabled': !this.disabled,
                 'reorder-list-active': this.state !== 0 /* Idle */,
             } }));
     }
-    get el() { return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
     static get watchers() { return {
         "disabled": ["disabledChanged"]
     }; }
-    static get style() { return ".reorder-list-active>*{-webkit-transition:-webkit-transform .3s;transition:-webkit-transform .3s;transition:transform .3s;transition:transform .3s,-webkit-transform .3s;will-change:transform}.reorder-enabled{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.reorder-enabled ion-reorder{display:block;cursor:-webkit-grab;cursor:grab;pointer-events:all;-ms-touch-action:none;touch-action:none}.reorder-selected,.reorder-selected ion-reorder{cursor:-webkit-grabbing;cursor:grabbing}.reorder-selected{position:relative;-webkit-transition:none!important;transition:none!important;-webkit-box-shadow:0 0 10px rgba(0,0,0,.4);box-shadow:0 0 10px rgba(0,0,0,.4);opacity:.8;z-index:100}.reorder-visible ion-reorder .reorder-icon{-webkit-transform:translateZ(0);transform:translateZ(0)}"; }
 };
 const indexForItem = (element) => {
     return element['$ionIndex'];
@@ -303,6 +311,7 @@ const reorderArray = (array, from, to) => {
     array.splice(to, 0, element);
     return array.slice();
 };
+ReorderGroup.style = reorderGroupCss;
 
 
 

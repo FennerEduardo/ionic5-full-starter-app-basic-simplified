@@ -1,20 +1,28 @@
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -55,12 +63,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return detachComponent;
     });
 
-    var attachComponent =
-    /*#__PURE__*/
-    function () {
-      var _ref = _asyncToGenerator(
-      /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee(delegate, container, component, cssClasses, componentProps) {
+    var attachComponent = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(delegate, container, component, cssClasses, componentProps) {
         var el;
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
@@ -230,160 +234,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
     /***/
 
-  },
-
-  /***/
-  "./node_modules/@ionic/core/dist/esm/index-729ec402.js":
-  /*!*************************************************************!*\
-    !*** ./node_modules/@ionic/core/dist/esm/index-729ec402.js ***!
-    \*************************************************************/
-
-  /*! exports provided: s */
-
-  /***/
-  function node_modulesIonicCoreDistEsmIndex729ec402Js(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "s", function () {
-      return sanitizeDOMString;
-    });
-    /**
-     * Does a simple sanitization of all elements
-     * in an untrusted string
-     */
-
-
-    var sanitizeDOMString = function sanitizeDOMString(untrustedString) {
-      try {
-        if (typeof untrustedString !== 'string' || untrustedString === '') {
-          return untrustedString;
-        }
-        /**
-         * Create a document fragment
-         * separate from the main DOM,
-         * create a div to do our work in
-         */
-
-
-        var documentFragment = document.createDocumentFragment();
-        var workingDiv = document.createElement('div');
-        documentFragment.appendChild(workingDiv);
-        workingDiv.innerHTML = untrustedString;
-        /**
-         * Remove any elements
-         * that are blocked
-         */
-
-        blockedTags.forEach(function (blockedTag) {
-          var getElementsToRemove = documentFragment.querySelectorAll(blockedTag);
-
-          for (var elementIndex = getElementsToRemove.length - 1; elementIndex >= 0; elementIndex--) {
-            var element = getElementsToRemove[elementIndex];
-
-            if (element.parentNode) {
-              element.parentNode.removeChild(element);
-            } else {
-              documentFragment.removeChild(element);
-            }
-            /**
-             * We still need to sanitize
-             * the children of this element
-             * as they are left behind
-             */
-
-
-            var childElements = getElementChildren(element);
-            /* tslint:disable-next-line */
-
-            for (var childIndex = 0; childIndex < childElements.length; childIndex++) {
-              sanitizeElement(childElements[childIndex]);
-            }
-          }
-        });
-        /**
-         * Go through remaining elements and remove
-         * non-allowed attribs
-         */
-        // IE does not support .children on document fragments, only .childNodes
-
-        var dfChildren = getElementChildren(documentFragment);
-        /* tslint:disable-next-line */
-
-        for (var childIndex = 0; childIndex < dfChildren.length; childIndex++) {
-          sanitizeElement(dfChildren[childIndex]);
-        } // Append document fragment to div
-
-
-        var fragmentDiv = document.createElement('div');
-        fragmentDiv.appendChild(documentFragment); // First child is always the div we did our work in
-
-        var getInnerDiv = fragmentDiv.querySelector('div');
-        return getInnerDiv !== null ? getInnerDiv.innerHTML : fragmentDiv.innerHTML;
-      } catch (err) {
-        console.error(err);
-        return '';
-      }
-    };
-    /**
-     * Clean up current element based on allowed attributes
-     * and then recursively dig down into any child elements to
-     * clean those up as well
-     */
-
-
-    var sanitizeElement = function sanitizeElement(element) {
-      // IE uses childNodes, so ignore nodes that are not elements
-      if (element.nodeType && element.nodeType !== 1) {
-        return;
-      }
-
-      for (var i = element.attributes.length - 1; i >= 0; i--) {
-        var attribute = element.attributes.item(i);
-        var attributeName = attribute.name; // remove non-allowed attribs
-
-        if (!allowedAttributes.includes(attributeName.toLowerCase())) {
-          element.removeAttribute(attributeName);
-          continue;
-        } // clean up any allowed attribs
-        // that attempt to do any JS funny-business
-
-
-        var attributeValue = attribute.value;
-        /* tslint:disable-next-line */
-
-        if (attributeValue != null && attributeValue.toLowerCase().includes('javascript:')) {
-          element.removeAttribute(attributeName);
-        }
-      }
-      /**
-       * Sanitize any nested children
-       */
-
-
-      var childElements = getElementChildren(element);
-      /* tslint:disable-next-line */
-
-      for (var _i = 0; _i < childElements.length; _i++) {
-        sanitizeElement(childElements[_i]);
-      }
-    };
-    /**
-     * IE doesn't always support .children
-     * so we revert to .childNodes instead
-     */
-
-
-    var getElementChildren = function getElementChildren(el) {
-      return el.children != null ? el.children : el.childNodes;
-    };
-
-    var allowedAttributes = ['class', 'id', 'href', 'src', 'name', 'slot'];
-    var blockedTags = ['script', 'style', 'iframe', 'meta', 'link', 'object', 'embed'];
-    /***/
   },
 
   /***/
@@ -594,12 +444,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     var SCHEME = /^[a-z][a-z0-9+\-.]*:/;
 
-    var openURL =
-    /*#__PURE__*/
-    function () {
-      var _ref3 = _asyncToGenerator(
-      /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee2(url, ev, direction) {
+    var openURL = /*#__PURE__*/function () {
+      var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url, ev, direction) {
         var router;
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
@@ -672,53 +518,49 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! rxjs/operators */
     "./node_modules/rxjs/_esm2015/operators/index.js");
     /* harmony import */
 
 
-    var dayjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var dayjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! dayjs */
     "./node_modules/dayjs/dayjs.min.js");
     /* harmony import */
 
 
-    var dayjs__WEBPACK_IMPORTED_MODULE_3___default =
-    /*#__PURE__*/
-    __webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_3__);
+    var dayjs__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_4__);
     /* harmony import */
 
 
-    var _listing_deals_listing_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! ./listing/deals-listing.model */
-    "./src/app/deals/listing/deals-listing.model.ts");
-    /* harmony import */
-
-
-    var _details_deals_details_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! ./details/deals-details.model */
-    "./src/app/deals/details/deals-details.model.ts");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../shell/data-store */
     "./src/app/shell/data-store.ts");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-    /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    var _listing_deals_listing_model__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ./listing/deals-listing.model */
+    "./src/app/deals/listing/deals-listing.model.ts");
+    /* harmony import */
 
-    var DealsService =
-    /*#__PURE__*/
-    function () {
+
+    var _details_deals_details_model__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ./details/deals-details.model */
+    "./src/app/deals/details/deals-details.model.ts");
+
+    var DealsService = /*#__PURE__*/function () {
       function DealsService(http) {
         _classCallCheck(this, DealsService);
 
@@ -730,20 +572,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         value: function getListingDataSource() {
           var _this = this;
 
-          return this.http.get('./assets/sample-data/deals/listing.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (listingData) {
-            // using rest operator to divide the data https://dev.to/napoleon039/how-to-use-the-spread-and-rest-operator-4jbb
-            var items = listingData.items,
-                otherData = tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"](listingData, ["items"]);
+          return this.http.get('./assets/sample-data/deals/listing.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (data) {
+            // Using rest operator to divide the data (see: https://dev.to/napoleon039/how-to-use-the-spread-and-rest-operator-4jbb)
+            var items = data.items,
+                otherData = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(data, ["items"]);
             var itemsWithRelativeDates = items.map(function (dealItem, index) {
               // Relative date (better to showcase UI micro-interactions)
-              return Object.assign({}, dealItem, {
+              return Object.assign(Object.assign({}, dealItem), {
                 expirationDate: _this.relativeDates[index]
               });
-            }); // using spread operator to concat the data https://dev.to/napoleon039/how-to-use-the-spread-and-rest-operator-4jbb
+            }); // Using spread operator to concat the data (see: https://dev.to/napoleon039/how-to-use-the-spread-and-rest-operator-4jbb)
 
-            return Object.assign({}, otherData, {
+            var updatedListingData = Object.assign(Object.assign({}, otherData), {
               items: itemsWithRelativeDates
-            });
+            }); // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+
+            var listing = new _listing_deals_listing_model__WEBPACK_IMPORTED_MODULE_6__["DealsListingModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. listing = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(listing, updatedListingData);
+            return listing;
           }));
         }
       }, {
@@ -752,8 +602,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.listingDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _listing_deals_listing_model__WEBPACK_IMPORTED_MODULE_4__["DealsListingModel"]();
-            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_6__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _listing_deals_listing_model__WEBPACK_IMPORTED_MODULE_6__["DealsListingModel"]();
+            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.listingDataStore.load(dataSource);
           }
@@ -763,19 +613,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "getDetailsDataSource",
         value: function getDetailsDataSource() {
-          return this.http.get('./assets/sample-data/deals/details.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (detailsData) {
-            var expirationDate = dayjs__WEBPACK_IMPORTED_MODULE_3__().add(1, 'day').add(8, 'hour').add(10, 'second').format('MM/DD/YYYY HH:mm:ss');
-            return Object.assign({}, detailsData, {
+          return this.http.get('./assets/sample-data/deals/details.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (data) {
+            var expirationDate = dayjs__WEBPACK_IMPORTED_MODULE_4__().add(1, 'day').add(8, 'hour').add(10, 'second').format('MM/DD/YYYY HH:mm:ss');
+            var updatedDetailsData = Object.assign(Object.assign({}, data), {
               expirationDate: expirationDate
-            });
+            }); // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+
+            var details = new _details_deals_details_model__WEBPACK_IMPORTED_MODULE_7__["DealsDetailsModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. details = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(details, updatedDetailsData);
+            return details;
           }));
         }
       }, {
         key: "getDetailsStore",
         value: function getDetailsStore(dataSource) {
           // Initialize the model specifying that it is a shell model
-          var shellModel = new _details_deals_details_model__WEBPACK_IMPORTED_MODULE_5__["DealsDetailsModel"]();
-          this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_6__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+          var shellModel = new _details_deals_details_model__WEBPACK_IMPORTED_MODULE_7__["DealsDetailsModel"]();
+          this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
           this.detailsDataStore.load(dataSource);
           return this.detailsDataStore;
@@ -783,21 +641,34 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "relativeDates",
         get: function get() {
-          return [dayjs__WEBPACK_IMPORTED_MODULE_3__().add(1, 'day').add(8, 'hour').add(10, 'second').format('MM/DD/YYYY HH:mm:ss'), dayjs__WEBPACK_IMPORTED_MODULE_3__().add(7, 'day').format('MM/DD/YYYY'), dayjs__WEBPACK_IMPORTED_MODULE_3__().subtract(1, 'month').format('MM/DD/YYYY'), dayjs__WEBPACK_IMPORTED_MODULE_3__().add(2, 'month').format('MM/DD/YYYY')];
+          return [dayjs__WEBPACK_IMPORTED_MODULE_4__().add(1, 'day').add(8, 'hour').add(10, 'second').format('MM/DD/YYYY HH:mm:ss'), dayjs__WEBPACK_IMPORTED_MODULE_4__().add(7, 'day').format('MM/DD/YYYY'), dayjs__WEBPACK_IMPORTED_MODULE_4__().subtract(1, 'month').format('MM/DD/YYYY'), dayjs__WEBPACK_IMPORTED_MODULE_4__().add(2, 'month').format('MM/DD/YYYY')];
         }
       }]);
 
       return DealsService;
     }();
 
-    DealsService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClient"]
-      }];
+    DealsService.ɵfac = function DealsService_Factory(t) {
+      return new (t || DealsService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]));
     };
 
-    DealsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClient"]])], DealsService);
+    DealsService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+      token: DealsService,
+      factory: DealsService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](DealsService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+        }];
+      }, null);
+    })();
     /***/
+
   },
 
   /***/
@@ -822,43 +693,35 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var dayjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var dayjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! dayjs */
     "./node_modules/dayjs/dayjs.min.js");
     /* harmony import */
 
 
-    var dayjs__WEBPACK_IMPORTED_MODULE_1___default =
-    /*#__PURE__*/
-    __webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_1__);
+    var dayjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_0__);
     /* harmony import */
 
 
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
-    var DealsDetailsModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE) {
+    var DealsDetailsModel = /*#__PURE__*/function (_shell_data_store__WE) {
       _inherits(DealsDetailsModel, _shell_data_store__WE);
+
+      var _super = _createSuper(DealsDetailsModel);
 
       function DealsDetailsModel() {
         var _this2;
 
         _classCallCheck(this, DealsDetailsModel);
 
-        _this2 = _possibleConstructorReturn(this, _getPrototypeOf(DealsDetailsModel).call(this));
+        _this2 = _super.call(this);
         _this2.showcaseImages = ['', '', '']; // Default mock value
         // expirationDate = '03/03/2019';
 
-        _this2.expirationDate = dayjs__WEBPACK_IMPORTED_MODULE_1__().add(5, 'day').format('MM/DD/YYYY HH:mm:ss');
+        _this2.expirationDate = dayjs__WEBPACK_IMPORTED_MODULE_0__().add(5, 'day').format('MM/DD/YYYY HH:mm:ss');
         _this2.relatedDeals = [{
           logo: '',
           name: '',
@@ -876,7 +739,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return DealsDetailsModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_2__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
     /***/
 
   },
@@ -909,25 +772,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var dayjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var dayjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! dayjs */
     "./node_modules/dayjs/dayjs.min.js");
     /* harmony import */
 
 
-    var dayjs__WEBPACK_IMPORTED_MODULE_1___default =
-    /*#__PURE__*/
-    __webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_1__);
+    var dayjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_0__);
     /* harmony import */
 
 
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -936,26 +791,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       // Default mock value
       // expirationDate = '12/01/2018';
-      this.expirationDate = dayjs__WEBPACK_IMPORTED_MODULE_1__().add(5, 'day').format('MM/DD/YYYY HH:mm:ss');
+      this.expirationDate = dayjs__WEBPACK_IMPORTED_MODULE_0__().add(5, 'day').format('MM/DD/YYYY HH:mm:ss');
     };
 
-    var DealsListingModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE2) {
+    var DealsListingModel = /*#__PURE__*/function (_shell_data_store__WE2) {
       _inherits(DealsListingModel, _shell_data_store__WE2);
+
+      var _super2 = _createSuper(DealsListingModel);
 
       function DealsListingModel() {
         var _this3;
 
         _classCallCheck(this, DealsListingModel);
 
-        _this3 = _possibleConstructorReturn(this, _getPrototypeOf(DealsListingModel).call(this));
+        _this3 = _super2.call(this);
         _this3.items = [new DealsItemModel(), new DealsItemModel(), new DealsItemModel(), new DealsItemModel()];
         return _this3;
       }
 
       return DealsListingModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_2__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
     /***/
 
   },
@@ -982,27 +837,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
-    var FashionDetailsModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE3) {
+    var FashionDetailsModel = /*#__PURE__*/function (_shell_data_store__WE3) {
       _inherits(FashionDetailsModel, _shell_data_store__WE3);
+
+      var _super3 = _createSuper(FashionDetailsModel);
 
       function FashionDetailsModel() {
         var _this4;
 
         _classCallCheck(this, FashionDetailsModel);
 
-        _this4 = _possibleConstructorReturn(this, _getPrototypeOf(FashionDetailsModel).call(this));
+        _this4 = _super3.call(this);
         _this4.showcaseImages = [{
           type: '',
           source: ''
@@ -1016,28 +865,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         _this4.colorVariants = [{
           name: '',
           value: '',
-          default: false
+          "default": false
         }, {
           name: '',
           value: '',
-          default: false
+          "default": false
         }, {
           name: '',
           value: '',
-          default: false
+          "default": false
         }];
         _this4.sizeVariants = [{
           name: '',
           value: '',
-          default: false
+          "default": false
         }, {
           name: '',
           value: '',
-          default: false
+          "default": false
         }, {
           name: '',
           value: '',
-          default: false
+          "default": false
         }];
         _this4.relatedProducts = [{
           id: null
@@ -1048,7 +897,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return FashionDetailsModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -1075,43 +924,41 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
     /* harmony import */
 
 
-    var _listing_fashion_listing_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
+
+
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../shell/data-store */
+    "./src/app/shell/data-store.ts");
+    /* harmony import */
+
+
+    var _listing_fashion_listing_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./listing/fashion-listing.model */
     "./src/app/fashion/listing/fashion-listing.model.ts");
     /* harmony import */
 
 
-    var _details_fashion_details_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _details_fashion_details_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./details/fashion-details.model */
     "./src/app/fashion/details/fashion-details.model.ts");
-    /* harmony import */
 
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! ../shell/data-store */
-    "./src/app/shell/data-store.ts");
-
-    var FashionService =
-    /*#__PURE__*/
-    function () {
+    var FashionService = /*#__PURE__*/function () {
       function FashionService(http) {
         _classCallCheck(this, FashionService);
 
@@ -1121,7 +968,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _createClass(FashionService, [{
         key: "getListingDataSource",
         value: function getListingDataSource() {
-          return this.http.get('./assets/sample-data/fashion/listing.json');
+          return this.http.get('./assets/sample-data/fashion/listing.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var listing = new _listing_fashion_listing_model__WEBPACK_IMPORTED_MODULE_4__["FashionListingModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. listing = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(listing, data);
+            return listing;
+          }));
         }
       }, {
         key: "getListingStore",
@@ -1129,8 +985,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.listingDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _listing_fashion_listing_model__WEBPACK_IMPORTED_MODULE_3__["FashionListingModel"]();
-            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _listing_fashion_listing_model__WEBPACK_IMPORTED_MODULE_4__["FashionListingModel"]();
+            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.listingDataStore.load(dataSource);
           }
@@ -1140,7 +996,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "getDetailsDataSource",
         value: function getDetailsDataSource() {
-          return this.http.get('./assets/sample-data/fashion/details.json');
+          return this.http.get('./assets/sample-data/fashion/details.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var details = new _details_fashion_details_model__WEBPACK_IMPORTED_MODULE_5__["FashionDetailsModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. details = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(details, data);
+            return details;
+          }));
         }
       }, {
         key: "getDetailsStore",
@@ -1148,8 +1013,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.detailsDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _details_fashion_details_model__WEBPACK_IMPORTED_MODULE_4__["FashionDetailsModel"]();
-            this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _details_fashion_details_model__WEBPACK_IMPORTED_MODULE_5__["FashionDetailsModel"]();
+            this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.detailsDataStore.load(dataSource);
           }
@@ -1161,14 +1026,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return FashionService;
     }();
 
-    FashionService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-      }];
+    FashionService.ɵfac = function FashionService_Factory(t) {
+      return new (t || FashionService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
     };
 
-    FashionService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], FashionService);
+    FashionService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: FashionService,
+      factory: FashionService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](FashionService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }];
+      }, null);
+    })();
     /***/
+
   },
 
   /***/
@@ -1199,13 +1077,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -1213,23 +1085,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _classCallCheck(this, FashionItemModel);
     };
 
-    var FashionListingModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE4) {
+    var FashionListingModel = /*#__PURE__*/function (_shell_data_store__WE4) {
       _inherits(FashionListingModel, _shell_data_store__WE4);
+
+      var _super4 = _createSuper(FashionListingModel);
 
       function FashionListingModel() {
         var _this5;
 
         _classCallCheck(this, FashionListingModel);
 
-        _this5 = _possibleConstructorReturn(this, _getPrototypeOf(FashionListingModel).call(this));
+        _this5 = _super4.call(this);
         _this5.items = [new FashionItemModel(), new FashionItemModel(), new FashionItemModel(), new FashionItemModel()];
         return _this5;
       }
 
       return FashionListingModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -1256,27 +1128,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
-    var FoodDetailsModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE5) {
+    var FoodDetailsModel = /*#__PURE__*/function (_shell_data_store__WE5) {
       _inherits(FoodDetailsModel, _shell_data_store__WE5);
+
+      var _super5 = _createSuper(FoodDetailsModel);
 
       function FoodDetailsModel() {
         var _this6;
 
         _classCallCheck(this, FoodDetailsModel);
 
-        _this6 = _possibleConstructorReturn(this, _getPrototypeOf(FoodDetailsModel).call(this));
+        _this6 = _super5.call(this);
         _this6.ratings = [{
           concept: '',
           rate: null
@@ -1391,7 +1257,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return FoodDetailsModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -1418,27 +1284,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
     /* harmony import */
 
 
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! rxjs/operators */
     "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
+
+
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../shell/data-store */
+    "./src/app/shell/data-store.ts");
     /* harmony import */
 
 
@@ -1451,16 +1317,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var _details_food_details_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./details/food-details.model */
     "./src/app/food/details/food-details.model.ts");
-    /* harmony import */
 
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! ../shell/data-store */
-    "./src/app/shell/data-store.ts");
-
-    var FoodService =
-    /*#__PURE__*/
-    function () {
+    var FoodService = /*#__PURE__*/function () {
       function FoodService(http) {
         _classCallCheck(this, FoodService);
 
@@ -1470,7 +1328,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _createClass(FoodService, [{
         key: "getListingDataSource",
         value: function getListingDataSource() {
-          return this.http.get('./assets/sample-data/food/listing.json');
+          return this.http.get('./assets/sample-data/food/listing.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var listing = new _listing_food_listing_model__WEBPACK_IMPORTED_MODULE_4__["FoodListingModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. listing = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(listing, data);
+            return listing;
+          }));
         }
       }, {
         key: "getListingStore",
@@ -1479,7 +1346,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           if (!this.listingDataStore) {
             // Initialize the model specifying that it is a shell model
             var shellModel = new _listing_food_listing_model__WEBPACK_IMPORTED_MODULE_4__["FoodListingModel"]();
-            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_6__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.listingDataStore.load(dataSource);
           }
@@ -1489,10 +1356,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "getDetailsDataSource",
         value: function getDetailsDataSource(slug) {
-          return this.http.get('./assets/sample-data/food/details.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["flatMap"])(function (details) {
+          return this.http.get('./assets/sample-data/food/details.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["flatMap"])(function (details) {
             return details.items.filter(function (item) {
               return item.slug === slug;
             });
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var details = new _details_food_details_model__WEBPACK_IMPORTED_MODULE_5__["FoodDetailsModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. details = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(details, data);
+            return details;
           }));
         }
       }, {
@@ -1500,7 +1376,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         value: function getDetailsStore(dataSource) {
           // Initialize the model specifying that it is a shell model
           var shellModel = new _details_food_details_model__WEBPACK_IMPORTED_MODULE_5__["FoodDetailsModel"]();
-          this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_6__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+          this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
           this.detailsDataStore.load(dataSource);
           return this.detailsDataStore;
@@ -1510,14 +1386,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return FoodService;
     }();
 
-    FoodService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-      }];
+    FoodService.ɵfac = function FoodService_Factory(t) {
+      return new (t || FoodService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
     };
 
-    FoodService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], FoodService);
+    FoodService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: FoodService,
+      factory: FoodService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](FoodService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }];
+      }, null);
+    })();
     /***/
+
   },
 
   /***/
@@ -1548,13 +1437,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -1565,70 +1448,64 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.pictures = ['', '', '', '', ''];
     };
 
-    var FoodListingModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE6) {
+    var FoodListingModel = /*#__PURE__*/function (_shell_data_store__WE6) {
       _inherits(FoodListingModel, _shell_data_store__WE6);
+
+      var _super6 = _createSuper(FoodListingModel);
 
       function FoodListingModel() {
         var _this7;
 
         _classCallCheck(this, FoodListingModel);
 
-        _this7 = _possibleConstructorReturn(this, _getPrototypeOf(FoodListingModel).call(this));
+        _this7 = _super6.call(this);
         _this7.items = [new FoodItemModel(), new FoodItemModel(), new FoodItemModel(), new FoodItemModel()];
         return _this7;
       }
 
       return FoodListingModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
 
   /***/
-  "./src/app/real-state/details/real-state-details.model.ts":
-  /*!****************************************************************!*\
-    !*** ./src/app/real-state/details/real-state-details.model.ts ***!
-    \****************************************************************/
+  "./src/app/real-estate/details/real-estate-details.model.ts":
+  /*!******************************************************************!*\
+    !*** ./src/app/real-estate/details/real-estate-details.model.ts ***!
+    \******************************************************************/
 
-  /*! exports provided: RealStateDetailsModel */
+  /*! exports provided: RealEstateDetailsModel */
 
   /***/
-  function srcAppRealStateDetailsRealStateDetailsModelTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppRealEstateDetailsRealEstateDetailsModelTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "RealStateDetailsModel", function () {
-      return RealStateDetailsModel;
+    __webpack_require__.d(__webpack_exports__, "RealEstateDetailsModel", function () {
+      return RealEstateDetailsModel;
     });
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
-    var RealStateDetailsModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE7) {
-      _inherits(RealStateDetailsModel, _shell_data_store__WE7);
+    var RealEstateDetailsModel = /*#__PURE__*/function (_shell_data_store__WE7) {
+      _inherits(RealEstateDetailsModel, _shell_data_store__WE7);
 
-      function RealStateDetailsModel() {
+      var _super7 = _createSuper(RealEstateDetailsModel);
+
+      function RealEstateDetailsModel() {
         var _this8;
 
-        _classCallCheck(this, RealStateDetailsModel);
+        _classCallCheck(this, RealEstateDetailsModel);
 
-        _this8 = _possibleConstructorReturn(this, _getPrototypeOf(RealStateDetailsModel).call(this));
+        _this8 = _super7.call(this);
         _this8.amenities = [{
           name: '',
           icon: ''
@@ -1651,52 +1528,46 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         return _this8;
       }
 
-      return RealStateDetailsModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+      return RealEstateDetailsModel;
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
 
   /***/
-  "./src/app/real-state/listing/real-state-listing.model.ts":
-  /*!****************************************************************!*\
-    !*** ./src/app/real-state/listing/real-state-listing.model.ts ***!
-    \****************************************************************/
+  "./src/app/real-estate/listing/real-estate-listing.model.ts":
+  /*!******************************************************************!*\
+    !*** ./src/app/real-estate/listing/real-estate-listing.model.ts ***!
+    \******************************************************************/
 
-  /*! exports provided: RealStateItemModel, RealStateListingModel */
+  /*! exports provided: RealEstateItemModel, RealEstateListingModel */
 
   /***/
-  function srcAppRealStateListingRealStateListingModelTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppRealEstateListingRealEstateListingModelTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "RealStateItemModel", function () {
-      return RealStateItemModel;
+    __webpack_require__.d(__webpack_exports__, "RealEstateItemModel", function () {
+      return RealEstateItemModel;
     });
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "RealStateListingModel", function () {
-      return RealStateListingModel;
+    __webpack_require__.d(__webpack_exports__, "RealEstateListingModel", function () {
+      return RealEstateListingModel;
     });
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
-    var RealStateItemModel = function RealStateItemModel() {
-      _classCallCheck(this, RealStateItemModel);
+    var RealEstateItemModel = function RealEstateItemModel() {
+      _classCallCheck(this, RealEstateItemModel);
 
       this.amenities = [{
         name: '',
@@ -1707,96 +1578,103 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }];
     };
 
-    var RealStateListingModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE8) {
-      _inherits(RealStateListingModel, _shell_data_store__WE8);
+    var RealEstateListingModel = /*#__PURE__*/function (_shell_data_store__WE8) {
+      _inherits(RealEstateListingModel, _shell_data_store__WE8);
 
-      function RealStateListingModel() {
+      var _super8 = _createSuper(RealEstateListingModel);
+
+      function RealEstateListingModel() {
         var _this9;
 
-        _classCallCheck(this, RealStateListingModel);
+        _classCallCheck(this, RealEstateListingModel);
 
-        _this9 = _possibleConstructorReturn(this, _getPrototypeOf(RealStateListingModel).call(this));
-        _this9.items = [new RealStateItemModel(), new RealStateItemModel(), new RealStateItemModel(), new RealStateItemModel()];
+        _this9 = _super8.call(this);
+        _this9.items = [new RealEstateItemModel(), new RealEstateItemModel(), new RealEstateItemModel(), new RealEstateItemModel()];
         return _this9;
       }
 
-      return RealStateListingModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+      return RealEstateListingModel;
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
 
   /***/
-  "./src/app/real-state/real-state.service.ts":
-  /*!**************************************************!*\
-    !*** ./src/app/real-state/real-state.service.ts ***!
-    \**************************************************/
+  "./src/app/real-estate/real-estate.service.ts":
+  /*!****************************************************!*\
+    !*** ./src/app/real-estate/real-estate.service.ts ***!
+    \****************************************************/
 
-  /*! exports provided: RealStateService */
+  /*! exports provided: RealEstateService */
 
   /***/
-  function srcAppRealStateRealStateServiceTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppRealEstateRealEstateServiceTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "RealStateService", function () {
-      return RealStateService;
+    __webpack_require__.d(__webpack_exports__, "RealEstateService", function () {
+      return RealEstateService;
     });
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
     /* harmony import */
 
 
-    var _listing_real_state_listing_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./listing/real-state-listing.model */
-    "./src/app/real-state/listing/real-state-listing.model.ts");
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
     /* harmony import */
 
 
-    var _details_real_state_details_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! ./details/real-state-details.model */
-    "./src/app/real-state/details/real-state-details.model.ts");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../shell/data-store */
     "./src/app/shell/data-store.ts");
+    /* harmony import */
 
-    var RealStateService =
-    /*#__PURE__*/
-    function () {
-      function RealStateService(http) {
-        _classCallCheck(this, RealStateService);
+
+    var _listing_real_estate_listing_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./listing/real-estate-listing.model */
+    "./src/app/real-estate/listing/real-estate-listing.model.ts");
+    /* harmony import */
+
+
+    var _details_real_estate_details_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./details/real-estate-details.model */
+    "./src/app/real-estate/details/real-estate-details.model.ts");
+
+    var RealEstateService = /*#__PURE__*/function () {
+      function RealEstateService(http) {
+        _classCallCheck(this, RealEstateService);
 
         this.http = http;
       }
 
-      _createClass(RealStateService, [{
+      _createClass(RealEstateService, [{
         key: "getListingDataSource",
         value: function getListingDataSource() {
-          return this.http.get('./assets/sample-data/real-state/listing.json');
+          return this.http.get('./assets/sample-data/real-estate/listing.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var listing = new _listing_real_estate_listing_model__WEBPACK_IMPORTED_MODULE_4__["RealEstateListingModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. listing = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(listing, data);
+            return listing;
+          }));
         }
       }, {
         key: "getListingStore",
@@ -1804,8 +1682,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.listingDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _listing_real_state_listing_model__WEBPACK_IMPORTED_MODULE_3__["RealStateListingModel"]();
-            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _listing_real_estate_listing_model__WEBPACK_IMPORTED_MODULE_4__["RealEstateListingModel"]();
+            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.listingDataStore.load(dataSource);
           }
@@ -1815,7 +1693,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "getDetailsDataSource",
         value: function getDetailsDataSource() {
-          return this.http.get('./assets/sample-data/real-state/details.json');
+          return this.http.get('./assets/sample-data/real-estate/details.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var details = new _details_real_estate_details_model__WEBPACK_IMPORTED_MODULE_5__["RealEstateDetailsModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. details = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(details, data);
+            return details;
+          }));
         }
       }, {
         key: "getDetailsStore",
@@ -1823,8 +1710,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.detailsDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _details_real_state_details_model__WEBPACK_IMPORTED_MODULE_4__["RealStateDetailsModel"]();
-            this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _details_real_estate_details_model__WEBPACK_IMPORTED_MODULE_5__["RealEstateDetailsModel"]();
+            this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.detailsDataStore.load(dataSource);
           }
@@ -1833,17 +1720,30 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }
       }]);
 
-      return RealStateService;
+      return RealEstateService;
     }();
 
-    RealStateService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-      }];
+    RealEstateService.ɵfac = function RealEstateService_Factory(t) {
+      return new (t || RealEstateService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
     };
 
-    RealStateService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], RealStateService);
+    RealEstateService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: RealEstateService,
+      factory: RealEstateService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](RealEstateService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }];
+      }, null);
+    })();
     /***/
+
   },
 
   /***/
@@ -1910,123 +1810,117 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../shell/data-store */
     "./src/app/shell/data-store.ts");
 
-    var ShowcaseShellModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE9) {
+    var ShowcaseShellModel = /*#__PURE__*/function (_shell_data_store__WE9) {
       _inherits(ShowcaseShellModel, _shell_data_store__WE9);
+
+      var _super9 = _createSuper(ShowcaseShellModel);
 
       function ShowcaseShellModel() {
         _classCallCheck(this, ShowcaseShellModel);
 
-        return _possibleConstructorReturn(this, _getPrototypeOf(ShowcaseShellModel).call(this));
+        return _super9.call(this);
       }
 
       return ShowcaseShellModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
 
-    var ShowcaseShellUserModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE10) {
+    var ShowcaseShellUserModel = /*#__PURE__*/function (_shell_data_store__WE10) {
       _inherits(ShowcaseShellUserModel, _shell_data_store__WE10);
+
+      var _super10 = _createSuper(ShowcaseShellUserModel);
 
       function ShowcaseShellUserModel() {
         _classCallCheck(this, ShowcaseShellUserModel);
 
-        return _possibleConstructorReturn(this, _getPrototypeOf(ShowcaseShellUserModel).call(this));
+        return _super10.call(this);
       }
 
       return ShowcaseShellUserModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
 
-    var ShowcaseCommentModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE11) {
+    var ShowcaseCommentModel = /*#__PURE__*/function (_shell_data_store__WE11) {
       _inherits(ShowcaseCommentModel, _shell_data_store__WE11);
+
+      var _super11 = _createSuper(ShowcaseCommentModel);
 
       function ShowcaseCommentModel() {
         _classCallCheck(this, ShowcaseCommentModel);
 
-        return _possibleConstructorReturn(this, _getPrototypeOf(ShowcaseCommentModel).call(this));
+        return _super11.call(this);
       }
 
       return ShowcaseCommentModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
 
-    var ShowcasePostModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE12) {
+    var ShowcasePostModel = /*#__PURE__*/function (_shell_data_store__WE12) {
       _inherits(ShowcasePostModel, _shell_data_store__WE12);
+
+      var _super12 = _createSuper(ShowcasePostModel);
 
       function ShowcasePostModel() {
         _classCallCheck(this, ShowcasePostModel);
 
-        return _possibleConstructorReturn(this, _getPrototypeOf(ShowcasePostModel).call(this));
+        return _super12.call(this);
       }
 
       return ShowcasePostModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
 
-    var ShowcaseTaskModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE13) {
+    var ShowcaseTaskModel = /*#__PURE__*/function (_shell_data_store__WE13) {
       _inherits(ShowcaseTaskModel, _shell_data_store__WE13);
+
+      var _super13 = _createSuper(ShowcaseTaskModel);
 
       function ShowcaseTaskModel() {
         _classCallCheck(this, ShowcaseTaskModel);
 
-        return _possibleConstructorReturn(this, _getPrototypeOf(ShowcaseTaskModel).call(this));
+        return _super13.call(this);
       }
 
       return ShowcaseTaskModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
 
-    var ShowcaseUser2Model =
-    /*#__PURE__*/
-    function (_shell_data_store__WE14) {
+    var ShowcaseUser2Model = /*#__PURE__*/function (_shell_data_store__WE14) {
       _inherits(ShowcaseUser2Model, _shell_data_store__WE14);
+
+      var _super14 = _createSuper(ShowcaseUser2Model);
 
       function ShowcaseUser2Model() {
         _classCallCheck(this, ShowcaseUser2Model);
 
-        return _possibleConstructorReturn(this, _getPrototypeOf(ShowcaseUser2Model).call(this));
+        return _super14.call(this);
       }
 
       return ShowcaseUser2Model;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
 
-    var ShowcaseCompanyModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE15) {
+    var ShowcaseCompanyModel = /*#__PURE__*/function (_shell_data_store__WE15) {
       _inherits(ShowcaseCompanyModel, _shell_data_store__WE15);
+
+      var _super15 = _createSuper(ShowcaseCompanyModel);
 
       function ShowcaseCompanyModel() {
         _classCallCheck(this, ShowcaseCompanyModel);
 
-        return _possibleConstructorReturn(this, _getPrototypeOf(ShowcaseCompanyModel).call(this));
+        return _super15.call(this);
       }
 
       return ShowcaseCompanyModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
 
-    var ShowcaseCombinedTaskUserModel =
-    /*#__PURE__*/
-    function (_ShowcaseTaskModel) {
+    var ShowcaseCombinedTaskUserModel = /*#__PURE__*/function (_ShowcaseTaskModel) {
       _inherits(ShowcaseCombinedTaskUserModel, _ShowcaseTaskModel);
+
+      var _super16 = _createSuper(ShowcaseCombinedTaskUserModel);
 
       function ShowcaseCombinedTaskUserModel() {
         _classCallCheck(this, ShowcaseCombinedTaskUserModel);
 
-        return _possibleConstructorReturn(this, _getPrototypeOf(ShowcaseCombinedTaskUserModel).call(this));
+        return _super16.call(this);
       }
 
       return ShowcaseCombinedTaskUserModel;
@@ -2057,65 +1951,57 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
     /* harmony import */
 
 
-    var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! rxjs */
     "./node_modules/rxjs/_esm2015/index.js");
     /* harmony import */
 
 
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! rxjs/operators */
     "./node_modules/rxjs/_esm2015/operators/index.js");
     /* harmony import */
 
 
-    var _showcase_shell_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _showcase_shell_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./showcase-shell.model */
     "./src/app/showcase/showcase-shell.model.ts");
     /* harmony import */
 
 
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../shell/data-store */
     "./src/app/shell/data-store.ts"); // tslint:disable-next-line:max-line-length
 
 
-    var ShowcaseService =
-    /*#__PURE__*/
-    function () {
+    var ShowcaseService = /*#__PURE__*/function () {
       function ShowcaseService(http) {
         _classCallCheck(this, ShowcaseService);
 
         this.http = http;
-        this.openDataStream = new rxjs__WEBPACK_IMPORTED_MODULE_3__["ReplaySubject"]();
+        this.openDataStream = new rxjs__WEBPACK_IMPORTED_MODULE_2__["ReplaySubject"]();
       }
 
       _createClass(ShowcaseService, [{
         key: "getDataSourceWithDelay",
         value: function getDataSourceWithDelay() {
-          return this.http.get('./assets/sample-data/showcase/shell.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (val) {
+          return this.http.get('./assets/sample-data/showcase/shell.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function (val) {
             console.log('getData STARTED'); // tslint:disable-next-line:no-console
 
             console.time('getData Roundtrip');
-          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["delay"])(5000), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["finalize"])(function () {
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["delay"])(5000), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["finalize"])(function () {
             console.log('getData COMPLETED'); // tslint:disable-next-line:no-console
 
             console.timeEnd('getData Roundtrip');
@@ -2132,8 +2018,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.showcaseDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _showcase_shell_model__WEBPACK_IMPORTED_MODULE_5__["ShowcaseShellModel"]();
-            this.showcaseDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_6__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _showcase_shell_model__WEBPACK_IMPORTED_MODULE_4__["ShowcaseShellModel"]();
+            this.showcaseDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.showcaseDataStore.load(dataSource);
           }
@@ -2143,16 +2029,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "getListDataSource",
         value: function getListDataSource() {
-          return this.http.get('https://reqres.in/api/users').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (result) {
+          return this.http.get('https://reqres.in/api/users').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (result) {
             return result['data'];
           }));
         }
       }, {
         key: "getPaginationDataSource",
         value: function getPaginationDataSource(page) {
-          return this.http.get('https://reqres.in/api/users?page=' + page).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (result) {
+          return this.http.get('https://reqres.in/api/users?page=' + page).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (result) {
             return result['data'];
-          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (results) {
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (results) {
             return results.length > 0;
           }));
         }
@@ -2178,9 +2064,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           var _this10 = this;
 
           return dependantDataSource.pipe( // Filter user values that are not shells. We need to add this filter if using the combinedUserDataStore timeline
-          Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (post) {
+          Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (post) {
             return !post.isShell;
-          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["concatMap"])(function (post) {
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["concatMap"])(function (post) {
             return _this10.http.get('https://jsonplaceholder.typicode.com/comments?postId=' + post.id);
           }));
         }
@@ -2194,7 +2080,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         key: "getUserSubsetData",
         value: function getUserSubsetData(userId) {
           var dataObservable = this.http.get('https://jsonplaceholder.typicode.com/users/' + userId);
-          return dataObservable.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (jsonResponse) {
+          return dataObservable.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (jsonResponse) {
             var filteredData = Object.assign({}, jsonResponse.company);
             return filteredData;
           }));
@@ -2210,29 +2096,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         value: function getCombinedTasksUserDataSource() {
           var _this11 = this;
 
-          return this.getTasks().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["concatMap"])(function (tasks) {
+          return this.getTasks().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["concatMap"])(function (tasks) {
             var completeTaskData = tasks.map(function (task) {
               // for each task retrun a new observable with the ShowcaseCombinedTaskUserModel
               var taskUser = _this11.getUser(task.userId);
 
-              return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["combineLatest"])([Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(task), taskUser]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (_ref4) {
+              return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["combineLatest"])([Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(task), taskUser]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (_ref4) {
                 var _ref5 = _slicedToArray(_ref4, 2),
                     taskData = _ref5[0],
                     user = _ref5[1];
 
-                return Object.assign({}, taskData, {
+                return Object.assign(Object.assign({}, taskData), {
                   user: user
                 });
               }));
             });
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["forkJoin"])(completeTaskData);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["forkJoin"])(completeTaskData);
           }));
         }
       }, {
         key: "getOpenDataStream",
         value: function getOpenDataStream() {
           var firstLoadData = this.getPaginationDataSource(1);
-          return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["merge"])(this.openDataStream.asObservable(), firstLoadData);
+          return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["merge"])(this.openDataStream.asObservable(), firstLoadData);
         }
       }, {
         key: "pushValuesToOpenStream",
@@ -2244,7 +2130,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         key: "getStackedValuesDataSource",
         value: function getStackedValuesDataSource() {
           var stackedValues = this.getStackedValues();
-          return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(stackedValues).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["delay"])(3000));
+          return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(stackedValues).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["delay"])(3000));
         }
       }, {
         key: "getStackedValues",
@@ -2268,14 +2154,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return ShowcaseService;
     }();
 
-    ShowcaseService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-      }];
+    ShowcaseService.ɵfac = function ShowcaseService_Factory(t) {
+      return new (t || ShowcaseService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
     };
 
-    ShowcaseService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], ShowcaseService);
+    ShowcaseService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: ShowcaseService,
+      factory: ShowcaseService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ShowcaseService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }];
+      }, null);
+    })();
     /***/
+
   },
 
   /***/
@@ -2300,27 +2199,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
-    var TravelDetailsModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE16) {
+    var TravelDetailsModel = /*#__PURE__*/function (_shell_data_store__WE16) {
       _inherits(TravelDetailsModel, _shell_data_store__WE16);
+
+      var _super17 = _createSuper(TravelDetailsModel);
 
       function TravelDetailsModel() {
         var _this12;
 
         _classCallCheck(this, TravelDetailsModel);
 
-        _this12 = _possibleConstructorReturn(this, _getPrototypeOf(TravelDetailsModel).call(this));
+        _this12 = _super17.call(this);
         _this12.tags = new Array(3).fill('');
         _this12.openHours = [{
           day: '',
@@ -2379,7 +2272,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return TravelDetailsModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -2412,13 +2305,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -2426,23 +2313,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _classCallCheck(this, TravelItemModel);
     };
 
-    var TravelListingModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE17) {
+    var TravelListingModel = /*#__PURE__*/function (_shell_data_store__WE17) {
       _inherits(TravelListingModel, _shell_data_store__WE17);
+
+      var _super18 = _createSuper(TravelListingModel);
 
       function TravelListingModel() {
         var _this13;
 
         _classCallCheck(this, TravelListingModel);
 
-        _this13 = _possibleConstructorReturn(this, _getPrototypeOf(TravelListingModel).call(this));
+        _this13 = _super18.call(this);
         _this13.items = [new TravelItemModel(), new TravelItemModel(), new TravelItemModel(), new TravelItemModel()];
         return _this13;
       }
 
       return TravelListingModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -2469,21 +2356,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
     /* harmony import */
 
 
@@ -2503,9 +2390,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /*! ./details/travel-details.model */
     "./src/app/travel/details/travel-details.model.ts");
 
-    var TravelService =
-    /*#__PURE__*/
-    function () {
+    var TravelService = /*#__PURE__*/function () {
       function TravelService(http) {
         _classCallCheck(this, TravelService);
 
@@ -2515,7 +2400,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _createClass(TravelService, [{
         key: "getListingDataSource",
         value: function getListingDataSource() {
-          return this.http.get('./assets/sample-data/travel/listing.json');
+          return this.http.get('./assets/sample-data/travel/listing.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var listing = new _listing_travel_listing_model__WEBPACK_IMPORTED_MODULE_4__["TravelListingModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. listing = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(listing, data);
+            return listing;
+          }));
         }
       }, {
         key: "getListingStore",
@@ -2534,7 +2428,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "getDetailsDataSource",
         value: function getDetailsDataSource() {
-          return this.http.get('./assets/sample-data/travel/details.json');
+          return this.http.get('./assets/sample-data/travel/details.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var details = new _details_travel_details_model__WEBPACK_IMPORTED_MODULE_5__["TravelDetailsModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. details = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(details, data);
+            return details;
+          }));
         }
       }, {
         key: "getDetailsStore",
@@ -2555,14 +2458,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return TravelService;
     }();
 
-    TravelService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-      }];
+    TravelService.ɵfac = function TravelService_Factory(t) {
+      return new (t || TravelService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
     };
 
-    TravelService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], TravelService);
+    TravelService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: TravelService,
+      factory: TravelService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](TravelService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }];
+      }, null);
+    })();
     /***/
+
   },
 
   /***/
@@ -2587,27 +2503,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
-    var UserFriendsModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE18) {
+    var UserFriendsModel = /*#__PURE__*/function (_shell_data_store__WE18) {
       _inherits(UserFriendsModel, _shell_data_store__WE18);
+
+      var _super19 = _createSuper(UserFriendsModel);
 
       function UserFriendsModel() {
         var _this14;
 
         _classCallCheck(this, UserFriendsModel);
 
-        _this14 = _possibleConstructorReturn(this, _getPrototypeOf(UserFriendsModel).call(this));
+        _this14 = _super19.call(this);
         _this14.friends = [{
           image: '',
           name: '',
@@ -2699,7 +2609,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return UserFriendsModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -2726,27 +2636,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
-    var UserProfileModel =
-    /*#__PURE__*/
-    function (_shell_data_store__WE19) {
+    var UserProfileModel = /*#__PURE__*/function (_shell_data_store__WE19) {
       _inherits(UserProfileModel, _shell_data_store__WE19);
+
+      var _super20 = _createSuper(UserProfileModel);
 
       function UserProfileModel() {
         var _this15;
 
         _classCallCheck(this, UserProfileModel);
 
-        _this15 = _possibleConstructorReturn(this, _getPrototypeOf(UserProfileModel).call(this));
+        _this15 = _super20.call(this);
         _this15.friends = [{
           image: '',
           name: ''
@@ -2765,7 +2669,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return UserProfileModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -2792,43 +2696,41 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
     /* harmony import */
 
 
-    var _profile_user_profile_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
+
+
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../shell/data-store */
+    "./src/app/shell/data-store.ts");
+    /* harmony import */
+
+
+    var _profile_user_profile_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./profile/user-profile.model */
     "./src/app/user/profile/user-profile.model.ts");
     /* harmony import */
 
 
-    var _friends_user_friends_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _friends_user_friends_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./friends/user-friends.model */
     "./src/app/user/friends/user-friends.model.ts");
-    /* harmony import */
 
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! ../shell/data-store */
-    "./src/app/shell/data-store.ts");
-
-    var UserService =
-    /*#__PURE__*/
-    function () {
+    var UserService = /*#__PURE__*/function () {
       function UserService(http) {
         _classCallCheck(this, UserService);
 
@@ -2838,7 +2740,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _createClass(UserService, [{
         key: "getProfileDataSource",
         value: function getProfileDataSource() {
-          return this.http.get('./assets/sample-data/user/user-profile.json');
+          return this.http.get('./assets/sample-data/user/user-profile.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var profile = new _profile_user_profile_model__WEBPACK_IMPORTED_MODULE_4__["UserProfileModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. profile = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(profile, data);
+            return profile;
+          }));
         }
       }, {
         key: "getProfileStore",
@@ -2846,8 +2757,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.profileDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _profile_user_profile_model__WEBPACK_IMPORTED_MODULE_3__["UserProfileModel"]();
-            this.profileDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _profile_user_profile_model__WEBPACK_IMPORTED_MODULE_4__["UserProfileModel"]();
+            this.profileDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.profileDataStore.load(dataSource);
           }
@@ -2857,7 +2768,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "getFriendsDataSource",
         value: function getFriendsDataSource() {
-          return this.http.get('./assets/sample-data/user/user-friends.json');
+          return this.http.get('./assets/sample-data/user/user-friends.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var friends = new _friends_user_friends_model__WEBPACK_IMPORTED_MODULE_5__["UserFriendsModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. friends = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(friends, data);
+            return friends;
+          }));
         }
       }, {
         key: "getFriendsStore",
@@ -2865,8 +2785,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.friendsDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _friends_user_friends_model__WEBPACK_IMPORTED_MODULE_4__["UserFriendsModel"]();
-            this.friendsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _friends_user_friends_model__WEBPACK_IMPORTED_MODULE_5__["UserFriendsModel"]();
+            this.friendsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.friendsDataStore.load(dataSource);
           }
@@ -2878,14 +2798,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return UserService;
     }();
 
-    UserService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-      }];
+    UserService.ɵfac = function UserService_Factory(t) {
+      return new (t || UserService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
     };
 
-    UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], UserService);
+    UserService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: UserService,
+      factory: UserService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }];
+      }, null);
+    })();
     /***/
+
   },
 
   /***/
@@ -2907,16 +2840,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     __webpack_require__.d(__webpack_exports__, "PasswordValidator", function () {
       return PasswordValidator;
     });
-    /* harmony import */
 
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-
-    var PasswordValidator =
-    /*#__PURE__*/
-    function () {
+    var PasswordValidator = /*#__PURE__*/function () {
       function PasswordValidator() {
         _classCallCheck(this, PasswordValidator);
       }

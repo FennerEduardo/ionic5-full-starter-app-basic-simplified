@@ -49,12 +49,12 @@ const routes: Routes = [
             loadChildren: () => import('../deals/details/deals-details.module').then(m => m.DealsDetailsPageModule)
           },
           {
-            path: 'real-state',
-            loadChildren: () => import('../real-state/listing/real-state-listing.module').then(m => m.RealStateListingPageModule)
+            path: 'real-estate',
+            loadChildren: () => import('../real-estate/listing/real-estate-listing.module').then(m => m.RealEstateListingPageModule)
           },
           {
-            path: 'real-state/:productId',
-            loadChildren: () => import('../real-state/details/real-state-details.module').then(m => m.RealStateDetailsPageModule)
+            path: 'real-estate/:productId',
+            loadChildren: () => import('../real-estate/details/real-estate-details.module').then(m => m.RealEstateDetailsPageModule)
           }
         ]
       },

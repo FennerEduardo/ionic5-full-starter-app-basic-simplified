@@ -29,48 +29,46 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! ./core-80bde1aa.js */
-    "./node_modules/@ionic/core/dist/esm/core-80bde1aa.js");
+    var _index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! ./index-26ec602c.js */
+    "./node_modules/@ionic/core/dist/esm/index-26ec602c.js");
     /* harmony import */
 
 
-    var _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./config-3c7f3790.js */
-    "./node_modules/@ionic/core/dist/esm/config-3c7f3790.js");
+    var _ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./ionic-global-1bf1fa84.js */
+    "./node_modules/@ionic/core/dist/esm/ionic-global-1bf1fa84.js");
     /* harmony import */
 
 
-    var _theme_18cbe2cc_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! ./theme-18cbe2cc.js */
-    "./node_modules/@ionic/core/dist/esm/theme-18cbe2cc.js");
+    var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./theme-c2dc54d9.js */
+    "./node_modules/@ionic/core/dist/esm/theme-c2dc54d9.js");
+
+    var textCss = ":host(.ion-color){color:var(--ion-color-base)}";
 
     var Text = /*#__PURE__*/function () {
       function Text(hostRef) {
         _classCallCheck(this, Text);
 
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
       }
 
       _createClass(Text, [{
         key: "render",
         value: function render() {
-          var mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
-          return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
-            "class": Object.assign(Object.assign({}, Object(_theme_18cbe2cc_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), _defineProperty({}, mode, true))
-          }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null));
-        }
-      }], [{
-        key: "style",
-        get: function get() {
-          return ":host(.ion-color){color:var(--ion-color-base)}";
+          var mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+          return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
+            "class": Object.assign(Object.assign({}, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_2__["c"])(this.color)), _defineProperty({}, mode, true))
+          }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null));
         }
       }]);
 
       return Text;
     }();
-    /***/
 
+    Text.style = textCss;
+    /***/
   }
 }]);
 //# sourceMappingURL=69-es5.js.map

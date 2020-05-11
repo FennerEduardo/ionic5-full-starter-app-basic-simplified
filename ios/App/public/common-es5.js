@@ -2,7 +2,7 @@ function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArra
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
@@ -14,7 +14,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
 function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
@@ -38,15 +38,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"], {
   /***/
-  "./node_modules/@ionic/core/dist/esm/framework-delegate-c2e2e1f4.js":
+  "./node_modules/@ionic/core/dist/esm/framework-delegate-d1eb6504.js":
   /*!**************************************************************************!*\
-    !*** ./node_modules/@ionic/core/dist/esm/framework-delegate-c2e2e1f4.js ***!
+    !*** ./node_modules/@ionic/core/dist/esm/framework-delegate-d1eb6504.js ***!
     \**************************************************************************/
 
   /*! exports provided: a, d */
 
   /***/
-  function node_modulesIonicCoreDistEsmFrameworkDelegateC2e2e1f4Js(module, __webpack_exports__, __webpack_require__) {
+  function node_modulesIonicCoreDistEsmFrameworkDelegateD1eb6504Js(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
@@ -141,15 +141,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
 
   /***/
-  "./node_modules/@ionic/core/dist/esm/haptic-c8f1473e.js":
+  "./node_modules/@ionic/core/dist/esm/haptic-ccbda579.js":
   /*!**************************************************************!*\
-    !*** ./node_modules/@ionic/core/dist/esm/haptic-c8f1473e.js ***!
+    !*** ./node_modules/@ionic/core/dist/esm/haptic-ccbda579.js ***!
     \**************************************************************/
 
   /*! exports provided: a, b, c, h */
 
   /***/
-  function node_modulesIonicCoreDistEsmHapticC8f1473eJs(module, __webpack_exports__, __webpack_require__) {
+  function node_modulesIonicCoreDistEsmHapticCcbda579Js(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
@@ -237,650 +237,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
 
   /***/
-  "./node_modules/@ionic/core/dist/esm/index-3476b023.js":
-  /*!*************************************************************!*\
-    !*** ./node_modules/@ionic/core/dist/esm/index-3476b023.js ***!
-    \*************************************************************/
-
-  /*! exports provided: s */
-
-  /***/
-  function node_modulesIonicCoreDistEsmIndex3476b023Js(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "s", function () {
-      return sanitizeDOMString;
-    });
-    /**
-     * Does a simple sanitization of all elements
-     * in an untrusted string
-     */
-
-
-    var sanitizeDOMString = function sanitizeDOMString(untrustedString) {
-      try {
-        if (typeof untrustedString !== 'string' || untrustedString === '') {
-          return untrustedString;
-        }
-        /**
-         * Create a document fragment
-         * separate from the main DOM,
-         * create a div to do our work in
-         */
-
-
-        var documentFragment = document.createDocumentFragment();
-        var workingDiv = document.createElement('div');
-        documentFragment.appendChild(workingDiv);
-        workingDiv.innerHTML = untrustedString;
-        /**
-         * Remove any elements
-         * that are blocked
-         */
-
-        blockedTags.forEach(function (blockedTag) {
-          var getElementsToRemove = documentFragment.querySelectorAll(blockedTag);
-
-          for (var elementIndex = getElementsToRemove.length - 1; elementIndex >= 0; elementIndex--) {
-            var element = getElementsToRemove[elementIndex];
-
-            if (element.parentNode) {
-              element.parentNode.removeChild(element);
-            } else {
-              documentFragment.removeChild(element);
-            }
-            /**
-             * We still need to sanitize
-             * the children of this element
-             * as they are left behind
-             */
-
-
-            var childElements = getElementChildren(element);
-            /* tslint:disable-next-line */
-
-            for (var childIndex = 0; childIndex < childElements.length; childIndex++) {
-              sanitizeElement(childElements[childIndex]);
-            }
-          }
-        });
-        /**
-         * Go through remaining elements and remove
-         * non-allowed attribs
-         */
-        // IE does not support .children on document fragments, only .childNodes
-
-        var dfChildren = getElementChildren(documentFragment);
-        /* tslint:disable-next-line */
-
-        for (var childIndex = 0; childIndex < dfChildren.length; childIndex++) {
-          sanitizeElement(dfChildren[childIndex]);
-        } // Append document fragment to div
-
-
-        var fragmentDiv = document.createElement('div');
-        fragmentDiv.appendChild(documentFragment); // First child is always the div we did our work in
-
-        var getInnerDiv = fragmentDiv.querySelector('div');
-        return getInnerDiv !== null ? getInnerDiv.innerHTML : fragmentDiv.innerHTML;
-      } catch (err) {
-        console.error(err);
-        return '';
-      }
-    };
-    /**
-     * Clean up current element based on allowed attributes
-     * and then recursively dig down into any child elements to
-     * clean those up as well
-     */
-
-
-    var sanitizeElement = function sanitizeElement(element) {
-      // IE uses childNodes, so ignore nodes that are not elements
-      if (element.nodeType && element.nodeType !== 1) {
-        return;
-      }
-
-      for (var i = element.attributes.length - 1; i >= 0; i--) {
-        var attribute = element.attributes.item(i);
-        var attributeName = attribute.name; // remove non-allowed attribs
-
-        if (!allowedAttributes.includes(attributeName.toLowerCase())) {
-          element.removeAttribute(attributeName);
-          continue;
-        } // clean up any allowed attribs
-        // that attempt to do any JS funny-business
-
-
-        var attributeValue = attribute.value;
-        /* tslint:disable-next-line */
-
-        if (attributeValue != null && attributeValue.toLowerCase().includes('javascript:')) {
-          element.removeAttribute(attributeName);
-        }
-      }
-      /**
-       * Sanitize any nested children
-       */
-
-
-      var childElements = getElementChildren(element);
-      /* tslint:disable-next-line */
-
-      for (var _i = 0; _i < childElements.length; _i++) {
-        sanitizeElement(childElements[_i]);
-      }
-    };
-    /**
-     * IE doesn't always support .children
-     * so we revert to .childNodes instead
-     */
-
-
-    var getElementChildren = function getElementChildren(el) {
-      return el.children != null ? el.children : el.childNodes;
-    };
-
-    var allowedAttributes = ['class', 'id', 'href', 'src', 'name', 'slot'];
-    var blockedTags = ['script', 'style', 'iframe', 'meta', 'link', 'object', 'embed'];
-    /***/
-  },
-
-  /***/
-  "./node_modules/@ionic/core/dist/esm/index-3528f139.js":
-  /*!*************************************************************!*\
-    !*** ./node_modules/@ionic/core/dist/esm/index-3528f139.js ***!
-    \*************************************************************/
-
-  /*! exports provided: d, g, l, s, t */
-
-  /***/
-  function node_modulesIonicCoreDistEsmIndex3528f139Js(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "d", function () {
-      return deepReady;
-    });
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "g", function () {
-      return getIonPageElement;
-    });
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "l", function () {
-      return lifecycle;
-    });
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "s", function () {
-      return setPageHidden;
-    });
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "t", function () {
-      return transition;
-    });
-    /* harmony import */
-
-
-    var _core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! ./core-80bde1aa.js */
-    "./node_modules/@ionic/core/dist/esm/core-80bde1aa.js");
-    /* harmony import */
-
-
-    var _constants_3c3e1099_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./constants-3c3e1099.js */
-    "./node_modules/@ionic/core/dist/esm/constants-3c3e1099.js");
-
-    var iosTransitionAnimation = function iosTransitionAnimation() {
-      return __webpack_require__.e(
-      /*! import() | ios-transition-1850e475-js */
-      "ios-transition-1850e475-js").then(__webpack_require__.bind(null,
-      /*! ./ios.transition-1850e475.js */
-      "./node_modules/@ionic/core/dist/esm/ios.transition-1850e475.js"));
-    };
-
-    var mdTransitionAnimation = function mdTransitionAnimation() {
-      return __webpack_require__.e(
-      /*! import() | md-transition-083fcf52-js */
-      "md-transition-083fcf52-js").then(__webpack_require__.bind(null,
-      /*! ./md.transition-083fcf52.js */
-      "./node_modules/@ionic/core/dist/esm/md.transition-083fcf52.js"));
-    };
-
-    var transition = function transition(opts) {
-      return new Promise(function (resolve, reject) {
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["w"])(function () {
-          beforeTransition(opts);
-          runTransition(opts).then(function (result) {
-            if (result.animation) {
-              result.animation.destroy();
-            }
-
-            afterTransition(opts);
-            resolve(result);
-          }, function (error) {
-            afterTransition(opts);
-            reject(error);
-          });
-        });
-      });
-    };
-
-    var beforeTransition = function beforeTransition(opts) {
-      var enteringEl = opts.enteringEl;
-      var leavingEl = opts.leavingEl;
-      setZIndex(enteringEl, leavingEl, opts.direction);
-
-      if (opts.showGoBack) {
-        enteringEl.classList.add('can-go-back');
-      } else {
-        enteringEl.classList.remove('can-go-back');
-      }
-
-      setPageHidden(enteringEl, false);
-
-      if (leavingEl) {
-        setPageHidden(leavingEl, false);
-      }
-    };
-
-    var runTransition = /*#__PURE__*/function () {
-      var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(opts) {
-        var animationBuilder, ani;
-        return regeneratorRuntime.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return getAnimationBuilder(opts);
-
-              case 2:
-                animationBuilder = _context2.sent;
-                ani = animationBuilder ? animation(animationBuilder, opts) : noAnimation(opts); // fast path for no animation
-
-                return _context2.abrupt("return", ani);
-
-              case 5:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2);
-      }));
-
-      return function runTransition(_x6) {
-        return _ref2.apply(this, arguments);
-      };
-    }();
-
-    var afterTransition = function afterTransition(opts) {
-      var enteringEl = opts.enteringEl;
-      var leavingEl = opts.leavingEl;
-      enteringEl.classList.remove('ion-page-invisible');
-
-      if (leavingEl !== undefined) {
-        leavingEl.classList.remove('ion-page-invisible');
-      }
-    };
-
-    var getAnimationBuilder = /*#__PURE__*/function () {
-      var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(opts) {
-        var getAnimation;
-        return regeneratorRuntime.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                if (!(!opts.leavingEl || !opts.animated || opts.duration === 0)) {
-                  _context3.next = 2;
-                  break;
-                }
-
-                return _context3.abrupt("return", undefined);
-
-              case 2:
-                if (!opts.animationBuilder) {
-                  _context3.next = 4;
-                  break;
-                }
-
-                return _context3.abrupt("return", opts.animationBuilder);
-
-              case 4:
-                if (!(opts.mode === 'ios')) {
-                  _context3.next = 10;
-                  break;
-                }
-
-                _context3.next = 7;
-                return iosTransitionAnimation();
-
-              case 7:
-                _context3.t0 = _context3.sent.iosTransitionAnimation;
-                _context3.next = 13;
-                break;
-
-              case 10:
-                _context3.next = 12;
-                return mdTransitionAnimation();
-
-              case 12:
-                _context3.t0 = _context3.sent.mdTransitionAnimation;
-
-              case 13:
-                getAnimation = _context3.t0;
-                return _context3.abrupt("return", getAnimation);
-
-              case 15:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3);
-      }));
-
-      return function getAnimationBuilder(_x7) {
-        return _ref3.apply(this, arguments);
-      };
-    }();
-
-    var animation = /*#__PURE__*/function () {
-      var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(animationBuilder, opts) {
-        var trans, didComplete;
-        return regeneratorRuntime.wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                _context4.next = 2;
-                return waitForReady(opts, true);
-
-              case 2:
-                trans = animationBuilder(opts.baseEl, opts);
-                fireWillEvents(opts.enteringEl, opts.leavingEl);
-                _context4.next = 6;
-                return playTransition(trans, opts);
-
-              case 6:
-                didComplete = _context4.sent;
-
-                if (opts.progressCallback) {
-                  opts.progressCallback(undefined);
-                }
-
-                if (didComplete) {
-                  fireDidEvents(opts.enteringEl, opts.leavingEl);
-                }
-
-                return _context4.abrupt("return", {
-                  hasCompleted: didComplete,
-                  animation: trans
-                });
-
-              case 10:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4);
-      }));
-
-      return function animation(_x8, _x9) {
-        return _ref4.apply(this, arguments);
-      };
-    }();
-
-    var noAnimation = /*#__PURE__*/function () {
-      var _ref5 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(opts) {
-        var enteringEl, leavingEl;
-        return regeneratorRuntime.wrap(function _callee5$(_context5) {
-          while (1) {
-            switch (_context5.prev = _context5.next) {
-              case 0:
-                enteringEl = opts.enteringEl;
-                leavingEl = opts.leavingEl;
-                _context5.next = 4;
-                return waitForReady(opts, false);
-
-              case 4:
-                fireWillEvents(enteringEl, leavingEl);
-                fireDidEvents(enteringEl, leavingEl);
-                return _context5.abrupt("return", {
-                  hasCompleted: true
-                });
-
-              case 7:
-              case "end":
-                return _context5.stop();
-            }
-          }
-        }, _callee5);
-      }));
-
-      return function noAnimation(_x10) {
-        return _ref5.apply(this, arguments);
-      };
-    }();
-
-    var waitForReady = /*#__PURE__*/function () {
-      var _ref6 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6(opts, defaultDeep) {
-        var deep, promises;
-        return regeneratorRuntime.wrap(function _callee6$(_context6) {
-          while (1) {
-            switch (_context6.prev = _context6.next) {
-              case 0:
-                deep = opts.deepWait !== undefined ? opts.deepWait : defaultDeep;
-                promises = deep ? [deepReady(opts.enteringEl), deepReady(opts.leavingEl)] : [shallowReady(opts.enteringEl), shallowReady(opts.leavingEl)];
-                _context6.next = 4;
-                return Promise.all(promises);
-
-              case 4:
-                _context6.next = 6;
-                return notifyViewReady(opts.viewIsReady, opts.enteringEl);
-
-              case 6:
-              case "end":
-                return _context6.stop();
-            }
-          }
-        }, _callee6);
-      }));
-
-      return function waitForReady(_x11, _x12) {
-        return _ref6.apply(this, arguments);
-      };
-    }();
-
-    var notifyViewReady = /*#__PURE__*/function () {
-      var _ref7 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7(viewIsReady, enteringEl) {
-        return regeneratorRuntime.wrap(function _callee7$(_context7) {
-          while (1) {
-            switch (_context7.prev = _context7.next) {
-              case 0:
-                if (!viewIsReady) {
-                  _context7.next = 3;
-                  break;
-                }
-
-                _context7.next = 3;
-                return viewIsReady(enteringEl);
-
-              case 3:
-              case "end":
-                return _context7.stop();
-            }
-          }
-        }, _callee7);
-      }));
-
-      return function notifyViewReady(_x13, _x14) {
-        return _ref7.apply(this, arguments);
-      };
-    }();
-
-    var playTransition = function playTransition(trans, opts) {
-      var progressCallback = opts.progressCallback;
-      var promise = new Promise(function (resolve) {
-        trans.onFinish(function (currentStep) {
-          return resolve(currentStep === 1);
-        });
-      }); // cool, let's do this, start the transition
-
-      if (progressCallback) {
-        // this is a swipe to go back, just get the transition progress ready
-        // kick off the swipe animation start
-        trans.progressStart(true);
-        progressCallback(trans);
-      } else {
-        // only the top level transition should actually start "play"
-        // kick it off and let it play through
-        // ******** DOM WRITE ****************
-        trans.play();
-      } // create a callback for when the animation is done
-
-
-      return promise;
-    };
-
-    var fireWillEvents = function fireWillEvents(enteringEl, leavingEl) {
-      lifecycle(leavingEl, _constants_3c3e1099_js__WEBPACK_IMPORTED_MODULE_1__["b"]);
-      lifecycle(enteringEl, _constants_3c3e1099_js__WEBPACK_IMPORTED_MODULE_1__["L"]);
-    };
-
-    var fireDidEvents = function fireDidEvents(enteringEl, leavingEl) {
-      lifecycle(enteringEl, _constants_3c3e1099_js__WEBPACK_IMPORTED_MODULE_1__["a"]);
-      lifecycle(leavingEl, _constants_3c3e1099_js__WEBPACK_IMPORTED_MODULE_1__["c"]);
-    };
-
-    var lifecycle = function lifecycle(el, eventName) {
-      if (el) {
-        var ev = new CustomEvent(eventName, {
-          bubbles: false,
-          cancelable: false
-        });
-        el.dispatchEvent(ev);
-      }
-    };
-
-    var shallowReady = function shallowReady(el) {
-      if (el && el.componentOnReady) {
-        return el.componentOnReady();
-      }
-
-      return Promise.resolve();
-    };
-
-    var deepReady = /*#__PURE__*/function () {
-      var _ref8 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8(el) {
-        var element, stencilEl;
-        return regeneratorRuntime.wrap(function _callee8$(_context8) {
-          while (1) {
-            switch (_context8.prev = _context8.next) {
-              case 0:
-                element = el;
-
-                if (!element) {
-                  _context8.next = 10;
-                  break;
-                }
-
-                if (!(element.componentOnReady != null)) {
-                  _context8.next = 8;
-                  break;
-                }
-
-                _context8.next = 5;
-                return element.componentOnReady();
-
-              case 5:
-                stencilEl = _context8.sent;
-
-                if (!(stencilEl != null)) {
-                  _context8.next = 8;
-                  break;
-                }
-
-                return _context8.abrupt("return");
-
-              case 8:
-                _context8.next = 10;
-                return Promise.all(Array.from(element.children).map(deepReady));
-
-              case 10:
-              case "end":
-                return _context8.stop();
-            }
-          }
-        }, _callee8);
-      }));
-
-      return function deepReady(_x15) {
-        return _ref8.apply(this, arguments);
-      };
-    }();
-
-    var setPageHidden = function setPageHidden(el, hidden) {
-      if (hidden) {
-        el.setAttribute('aria-hidden', 'true');
-        el.classList.add('ion-page-hidden');
-      } else {
-        el.hidden = false;
-        el.removeAttribute('aria-hidden');
-        el.classList.remove('ion-page-hidden');
-      }
-    };
-
-    var setZIndex = function setZIndex(enteringEl, leavingEl, direction) {
-      if (enteringEl !== undefined) {
-        enteringEl.style.zIndex = direction === 'back' ? '99' : '101';
-      }
-
-      if (leavingEl !== undefined) {
-        leavingEl.style.zIndex = '100';
-      }
-    };
-
-    var getIonPageElement = function getIonPageElement(element) {
-      if (element.classList.contains('ion-page')) {
-        return element;
-      }
-
-      var ionPage = element.querySelector(':scope > .ion-page, :scope > ion-nav, :scope > ion-tabs');
-
-      if (ionPage) {
-        return ionPage;
-      } // idk, return the original element so at least something animates and we don't have a null pointer
-
-
-      return element;
-    };
-    /***/
-
-  },
-
-  /***/
-  "./node_modules/@ionic/core/dist/esm/spinner-configs-28520d80.js":
+  "./node_modules/@ionic/core/dist/esm/spinner-configs-c78e170e.js":
   /*!***********************************************************************!*\
-    !*** ./node_modules/@ionic/core/dist/esm/spinner-configs-28520d80.js ***!
+    !*** ./node_modules/@ionic/core/dist/esm/spinner-configs-c78e170e.js ***!
     \***********************************************************************/
 
   /*! exports provided: S */
 
   /***/
-  function node_modulesIonicCoreDistEsmSpinnerConfigs28520d80Js(module, __webpack_exports__, __webpack_require__) {
+  function node_modulesIonicCoreDistEsmSpinnerConfigsC78e170eJs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
@@ -1003,15 +368,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
 
   /***/
-  "./node_modules/@ionic/core/dist/esm/theme-18cbe2cc.js":
+  "./node_modules/@ionic/core/dist/esm/theme-c2dc54d9.js":
   /*!*************************************************************!*\
-    !*** ./node_modules/@ionic/core/dist/esm/theme-18cbe2cc.js ***!
+    !*** ./node_modules/@ionic/core/dist/esm/theme-c2dc54d9.js ***!
     \*************************************************************/
 
   /*! exports provided: c, g, h, o */
 
   /***/
-  function node_modulesIonicCoreDistEsmTheme18cbe2ccJs(module, __webpack_exports__, __webpack_require__) {
+  function node_modulesIonicCoreDistEsmThemeC2dc54d9Js(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
@@ -1080,21 +445,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var SCHEME = /^[a-z][a-z0-9+\-.]*:/;
 
     var openURL = /*#__PURE__*/function () {
-      var _ref10 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9(url, ev, direction) {
+      var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url, ev, direction) {
         var router;
-        return regeneratorRuntime.wrap(function _callee9$(_context9) {
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
-            switch (_context9.prev = _context9.next) {
+            switch (_context2.prev = _context2.next) {
               case 0:
                 if (!(url != null && url[0] !== '#' && !SCHEME.test(url))) {
-                  _context9.next = 5;
+                  _context2.next = 5;
                   break;
                 }
 
                 router = document.querySelector('ion-router');
 
                 if (!router) {
-                  _context9.next = 5;
+                  _context2.next = 5;
                   break;
                 }
 
@@ -1102,21 +467,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   ev.preventDefault();
                 }
 
-                return _context9.abrupt("return", router.push(url, direction));
+                return _context2.abrupt("return", router.push(url, direction));
 
               case 5:
-                return _context9.abrupt("return", false);
+                return _context2.abrupt("return", false);
 
               case 6:
               case "end":
-                return _context9.stop();
+                return _context2.stop();
             }
           }
-        }, _callee9);
+        }, _callee2);
       }));
 
-      return function openURL(_x16, _x17, _x18) {
-        return _ref10.apply(this, arguments);
+      return function openURL(_x6, _x7, _x8) {
+        return _ref3.apply(this, arguments);
       };
     }();
     /***/
@@ -1153,47 +518,47 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! rxjs/operators */
     "./node_modules/rxjs/_esm2015/operators/index.js");
     /* harmony import */
 
 
-    var dayjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var dayjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! dayjs */
     "./node_modules/dayjs/dayjs.min.js");
     /* harmony import */
 
 
-    var dayjs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_3__);
+    var dayjs__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_4__);
     /* harmony import */
 
 
-    var _listing_deals_listing_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! ./listing/deals-listing.model */
-    "./src/app/deals/listing/deals-listing.model.ts");
-    /* harmony import */
-
-
-    var _details_deals_details_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! ./details/deals-details.model */
-    "./src/app/deals/details/deals-details.model.ts");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../shell/data-store */
     "./src/app/shell/data-store.ts");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-    /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    var _listing_deals_listing_model__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ./listing/deals-listing.model */
+    "./src/app/deals/listing/deals-listing.model.ts");
+    /* harmony import */
+
+
+    var _details_deals_details_model__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ./details/deals-details.model */
+    "./src/app/deals/details/deals-details.model.ts");
 
     var DealsService = /*#__PURE__*/function () {
       function DealsService(http) {
@@ -1207,20 +572,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         value: function getListingDataSource() {
           var _this = this;
 
-          return this.http.get('./assets/sample-data/deals/listing.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (listingData) {
-            // using rest operator to divide the data https://dev.to/napoleon039/how-to-use-the-spread-and-rest-operator-4jbb
-            var items = listingData.items,
-                otherData = tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"](listingData, ["items"]);
+          return this.http.get('./assets/sample-data/deals/listing.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (data) {
+            // Using rest operator to divide the data (see: https://dev.to/napoleon039/how-to-use-the-spread-and-rest-operator-4jbb)
+            var items = data.items,
+                otherData = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__rest"])(data, ["items"]);
             var itemsWithRelativeDates = items.map(function (dealItem, index) {
               // Relative date (better to showcase UI micro-interactions)
-              return Object.assign({}, dealItem, {
+              return Object.assign(Object.assign({}, dealItem), {
                 expirationDate: _this.relativeDates[index]
               });
-            }); // using spread operator to concat the data https://dev.to/napoleon039/how-to-use-the-spread-and-rest-operator-4jbb
+            }); // Using spread operator to concat the data (see: https://dev.to/napoleon039/how-to-use-the-spread-and-rest-operator-4jbb)
 
-            return Object.assign({}, otherData, {
+            var updatedListingData = Object.assign(Object.assign({}, otherData), {
               items: itemsWithRelativeDates
-            });
+            }); // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+
+            var listing = new _listing_deals_listing_model__WEBPACK_IMPORTED_MODULE_6__["DealsListingModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. listing = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(listing, updatedListingData);
+            return listing;
           }));
         }
       }, {
@@ -1229,8 +602,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.listingDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _listing_deals_listing_model__WEBPACK_IMPORTED_MODULE_4__["DealsListingModel"]();
-            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_6__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _listing_deals_listing_model__WEBPACK_IMPORTED_MODULE_6__["DealsListingModel"]();
+            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.listingDataStore.load(dataSource);
           }
@@ -1240,19 +613,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "getDetailsDataSource",
         value: function getDetailsDataSource() {
-          return this.http.get('./assets/sample-data/deals/details.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (detailsData) {
-            var expirationDate = dayjs__WEBPACK_IMPORTED_MODULE_3__().add(1, 'day').add(8, 'hour').add(10, 'second').format('MM/DD/YYYY HH:mm:ss');
-            return Object.assign({}, detailsData, {
+          return this.http.get('./assets/sample-data/deals/details.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (data) {
+            var expirationDate = dayjs__WEBPACK_IMPORTED_MODULE_4__().add(1, 'day').add(8, 'hour').add(10, 'second').format('MM/DD/YYYY HH:mm:ss');
+            var updatedDetailsData = Object.assign(Object.assign({}, data), {
               expirationDate: expirationDate
-            });
+            }); // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+
+            var details = new _details_deals_details_model__WEBPACK_IMPORTED_MODULE_7__["DealsDetailsModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. details = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(details, updatedDetailsData);
+            return details;
           }));
         }
       }, {
         key: "getDetailsStore",
         value: function getDetailsStore(dataSource) {
           // Initialize the model specifying that it is a shell model
-          var shellModel = new _details_deals_details_model__WEBPACK_IMPORTED_MODULE_5__["DealsDetailsModel"]();
-          this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_6__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+          var shellModel = new _details_deals_details_model__WEBPACK_IMPORTED_MODULE_7__["DealsDetailsModel"]();
+          this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
           this.detailsDataStore.load(dataSource);
           return this.detailsDataStore;
@@ -1260,21 +641,34 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "relativeDates",
         get: function get() {
-          return [dayjs__WEBPACK_IMPORTED_MODULE_3__().add(1, 'day').add(8, 'hour').add(10, 'second').format('MM/DD/YYYY HH:mm:ss'), dayjs__WEBPACK_IMPORTED_MODULE_3__().add(7, 'day').format('MM/DD/YYYY'), dayjs__WEBPACK_IMPORTED_MODULE_3__().subtract(1, 'month').format('MM/DD/YYYY'), dayjs__WEBPACK_IMPORTED_MODULE_3__().add(2, 'month').format('MM/DD/YYYY')];
+          return [dayjs__WEBPACK_IMPORTED_MODULE_4__().add(1, 'day').add(8, 'hour').add(10, 'second').format('MM/DD/YYYY HH:mm:ss'), dayjs__WEBPACK_IMPORTED_MODULE_4__().add(7, 'day').format('MM/DD/YYYY'), dayjs__WEBPACK_IMPORTED_MODULE_4__().subtract(1, 'month').format('MM/DD/YYYY'), dayjs__WEBPACK_IMPORTED_MODULE_4__().add(2, 'month').format('MM/DD/YYYY')];
         }
       }]);
 
       return DealsService;
     }();
 
-    DealsService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClient"]
-      }];
+    DealsService.ɵfac = function DealsService_Factory(t) {
+      return new (t || DealsService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]));
     };
 
-    DealsService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClient"]])], DealsService);
+    DealsService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+      token: DealsService,
+      factory: DealsService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](DealsService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+        }];
+      }, null);
+    })();
     /***/
+
   },
 
   /***/
@@ -1299,23 +693,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var dayjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var dayjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! dayjs */
     "./node_modules/dayjs/dayjs.min.js");
     /* harmony import */
 
 
-    var dayjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_1__);
+    var dayjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_0__);
     /* harmony import */
 
 
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -1333,7 +721,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         _this2.showcaseImages = ['', '', '']; // Default mock value
         // expirationDate = '03/03/2019';
 
-        _this2.expirationDate = dayjs__WEBPACK_IMPORTED_MODULE_1__().add(5, 'day').format('MM/DD/YYYY HH:mm:ss');
+        _this2.expirationDate = dayjs__WEBPACK_IMPORTED_MODULE_0__().add(5, 'day').format('MM/DD/YYYY HH:mm:ss');
         _this2.relatedDeals = [{
           logo: '',
           name: '',
@@ -1351,7 +739,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return DealsDetailsModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_2__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
     /***/
 
   },
@@ -1384,23 +772,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var dayjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var dayjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! dayjs */
     "./node_modules/dayjs/dayjs.min.js");
     /* harmony import */
 
 
-    var dayjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_1__);
+    var dayjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_0__);
     /* harmony import */
 
 
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -1409,7 +791,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       // Default mock value
       // expirationDate = '12/01/2018';
-      this.expirationDate = dayjs__WEBPACK_IMPORTED_MODULE_1__().add(5, 'day').format('MM/DD/YYYY HH:mm:ss');
+      this.expirationDate = dayjs__WEBPACK_IMPORTED_MODULE_0__().add(5, 'day').format('MM/DD/YYYY HH:mm:ss');
     };
 
     var DealsListingModel = /*#__PURE__*/function (_shell_data_store__WE2) {
@@ -1428,7 +810,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return DealsListingModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_2__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
     /***/
 
   },
@@ -1455,13 +837,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -1521,7 +897,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return FashionDetailsModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -1548,39 +924,39 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
     /* harmony import */
 
 
-    var _listing_fashion_listing_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
+
+
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../shell/data-store */
+    "./src/app/shell/data-store.ts");
+    /* harmony import */
+
+
+    var _listing_fashion_listing_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./listing/fashion-listing.model */
     "./src/app/fashion/listing/fashion-listing.model.ts");
     /* harmony import */
 
 
-    var _details_fashion_details_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _details_fashion_details_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./details/fashion-details.model */
     "./src/app/fashion/details/fashion-details.model.ts");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! ../shell/data-store */
-    "./src/app/shell/data-store.ts");
 
     var FashionService = /*#__PURE__*/function () {
       function FashionService(http) {
@@ -1592,7 +968,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _createClass(FashionService, [{
         key: "getListingDataSource",
         value: function getListingDataSource() {
-          return this.http.get('./assets/sample-data/fashion/listing.json');
+          return this.http.get('./assets/sample-data/fashion/listing.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var listing = new _listing_fashion_listing_model__WEBPACK_IMPORTED_MODULE_4__["FashionListingModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. listing = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(listing, data);
+            return listing;
+          }));
         }
       }, {
         key: "getListingStore",
@@ -1600,8 +985,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.listingDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _listing_fashion_listing_model__WEBPACK_IMPORTED_MODULE_3__["FashionListingModel"]();
-            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _listing_fashion_listing_model__WEBPACK_IMPORTED_MODULE_4__["FashionListingModel"]();
+            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.listingDataStore.load(dataSource);
           }
@@ -1611,7 +996,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "getDetailsDataSource",
         value: function getDetailsDataSource() {
-          return this.http.get('./assets/sample-data/fashion/details.json');
+          return this.http.get('./assets/sample-data/fashion/details.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var details = new _details_fashion_details_model__WEBPACK_IMPORTED_MODULE_5__["FashionDetailsModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. details = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(details, data);
+            return details;
+          }));
         }
       }, {
         key: "getDetailsStore",
@@ -1619,8 +1013,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.detailsDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _details_fashion_details_model__WEBPACK_IMPORTED_MODULE_4__["FashionDetailsModel"]();
-            this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _details_fashion_details_model__WEBPACK_IMPORTED_MODULE_5__["FashionDetailsModel"]();
+            this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.detailsDataStore.load(dataSource);
           }
@@ -1632,14 +1026,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return FashionService;
     }();
 
-    FashionService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-      }];
+    FashionService.ɵfac = function FashionService_Factory(t) {
+      return new (t || FashionService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
     };
 
-    FashionService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], FashionService);
+    FashionService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: FashionService,
+      factory: FashionService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](FashionService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }];
+      }, null);
+    })();
     /***/
+
   },
 
   /***/
@@ -1670,13 +1077,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -1700,7 +1101,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return FashionListingModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -1727,13 +1128,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -1862,7 +1257,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return FoodDetailsModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -1889,27 +1284,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
     /* harmony import */
 
 
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! rxjs/operators */
     "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
+
+
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../shell/data-store */
+    "./src/app/shell/data-store.ts");
     /* harmony import */
 
 
@@ -1922,12 +1317,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var _details_food_details_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./details/food-details.model */
     "./src/app/food/details/food-details.model.ts");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! ../shell/data-store */
-    "./src/app/shell/data-store.ts");
 
     var FoodService = /*#__PURE__*/function () {
       function FoodService(http) {
@@ -1939,7 +1328,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _createClass(FoodService, [{
         key: "getListingDataSource",
         value: function getListingDataSource() {
-          return this.http.get('./assets/sample-data/food/listing.json');
+          return this.http.get('./assets/sample-data/food/listing.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var listing = new _listing_food_listing_model__WEBPACK_IMPORTED_MODULE_4__["FoodListingModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. listing = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(listing, data);
+            return listing;
+          }));
         }
       }, {
         key: "getListingStore",
@@ -1948,7 +1346,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           if (!this.listingDataStore) {
             // Initialize the model specifying that it is a shell model
             var shellModel = new _listing_food_listing_model__WEBPACK_IMPORTED_MODULE_4__["FoodListingModel"]();
-            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_6__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.listingDataStore.load(dataSource);
           }
@@ -1958,10 +1356,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "getDetailsDataSource",
         value: function getDetailsDataSource(slug) {
-          return this.http.get('./assets/sample-data/food/details.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["flatMap"])(function (details) {
+          return this.http.get('./assets/sample-data/food/details.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["flatMap"])(function (details) {
             return details.items.filter(function (item) {
               return item.slug === slug;
             });
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var details = new _details_food_details_model__WEBPACK_IMPORTED_MODULE_5__["FoodDetailsModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. details = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(details, data);
+            return details;
           }));
         }
       }, {
@@ -1969,7 +1376,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         value: function getDetailsStore(dataSource) {
           // Initialize the model specifying that it is a shell model
           var shellModel = new _details_food_details_model__WEBPACK_IMPORTED_MODULE_5__["FoodDetailsModel"]();
-          this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_6__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+          this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
           this.detailsDataStore.load(dataSource);
           return this.detailsDataStore;
@@ -1979,14 +1386,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return FoodService;
     }();
 
-    FoodService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-      }];
+    FoodService.ɵfac = function FoodService_Factory(t) {
+      return new (t || FoodService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
     };
 
-    FoodService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], FoodService);
+    FoodService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: FoodService,
+      factory: FoodService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](FoodService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }];
+      }, null);
+    })();
     /***/
+
   },
 
   /***/
@@ -2017,13 +1437,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -2050,7 +1464,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return FoodListingModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -2077,13 +1491,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -2121,7 +1529,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return RealEstateDetailsModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -2154,13 +1562,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -2192,7 +1594,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return RealEstateListingModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -2219,39 +1621,39 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
     /* harmony import */
 
 
-    var _listing_real_estate_listing_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
+
+
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../shell/data-store */
+    "./src/app/shell/data-store.ts");
+    /* harmony import */
+
+
+    var _listing_real_estate_listing_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./listing/real-estate-listing.model */
     "./src/app/real-estate/listing/real-estate-listing.model.ts");
     /* harmony import */
 
 
-    var _details_real_estate_details_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _details_real_estate_details_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./details/real-estate-details.model */
     "./src/app/real-estate/details/real-estate-details.model.ts");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! ../shell/data-store */
-    "./src/app/shell/data-store.ts");
 
     var RealEstateService = /*#__PURE__*/function () {
       function RealEstateService(http) {
@@ -2263,7 +1665,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _createClass(RealEstateService, [{
         key: "getListingDataSource",
         value: function getListingDataSource() {
-          return this.http.get('./assets/sample-data/real-estate/listing.json');
+          return this.http.get('./assets/sample-data/real-estate/listing.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var listing = new _listing_real_estate_listing_model__WEBPACK_IMPORTED_MODULE_4__["RealEstateListingModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. listing = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(listing, data);
+            return listing;
+          }));
         }
       }, {
         key: "getListingStore",
@@ -2271,8 +1682,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.listingDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _listing_real_estate_listing_model__WEBPACK_IMPORTED_MODULE_3__["RealEstateListingModel"]();
-            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _listing_real_estate_listing_model__WEBPACK_IMPORTED_MODULE_4__["RealEstateListingModel"]();
+            this.listingDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.listingDataStore.load(dataSource);
           }
@@ -2282,7 +1693,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "getDetailsDataSource",
         value: function getDetailsDataSource() {
-          return this.http.get('./assets/sample-data/real-estate/details.json');
+          return this.http.get('./assets/sample-data/real-estate/details.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var details = new _details_real_estate_details_model__WEBPACK_IMPORTED_MODULE_5__["RealEstateDetailsModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. details = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(details, data);
+            return details;
+          }));
         }
       }, {
         key: "getDetailsStore",
@@ -2290,8 +1710,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.detailsDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _details_real_estate_details_model__WEBPACK_IMPORTED_MODULE_4__["RealEstateDetailsModel"]();
-            this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _details_real_estate_details_model__WEBPACK_IMPORTED_MODULE_5__["RealEstateDetailsModel"]();
+            this.detailsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.detailsDataStore.load(dataSource);
           }
@@ -2303,14 +1723,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return RealEstateService;
     }();
 
-    RealEstateService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-      }];
+    RealEstateService.ɵfac = function RealEstateService_Factory(t) {
+      return new (t || RealEstateService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
     };
 
-    RealEstateService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], RealEstateService);
+    RealEstateService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: RealEstateService,
+      factory: RealEstateService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](RealEstateService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }];
+      }, null);
+    })();
     /***/
+
   },
 
   /***/
@@ -2377,13 +1810,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -2399,7 +1826,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return ShowcaseShellModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
 
     var ShowcaseShellUserModel = /*#__PURE__*/function (_shell_data_store__WE10) {
       _inherits(ShowcaseShellUserModel, _shell_data_store__WE10);
@@ -2413,7 +1840,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return ShowcaseShellUserModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
 
     var ShowcaseCommentModel = /*#__PURE__*/function (_shell_data_store__WE11) {
       _inherits(ShowcaseCommentModel, _shell_data_store__WE11);
@@ -2427,7 +1854,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return ShowcaseCommentModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
 
     var ShowcasePostModel = /*#__PURE__*/function (_shell_data_store__WE12) {
       _inherits(ShowcasePostModel, _shell_data_store__WE12);
@@ -2441,7 +1868,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return ShowcasePostModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
 
     var ShowcaseTaskModel = /*#__PURE__*/function (_shell_data_store__WE13) {
       _inherits(ShowcaseTaskModel, _shell_data_store__WE13);
@@ -2455,7 +1882,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return ShowcaseTaskModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
 
     var ShowcaseUser2Model = /*#__PURE__*/function (_shell_data_store__WE14) {
       _inherits(ShowcaseUser2Model, _shell_data_store__WE14);
@@ -2469,7 +1896,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return ShowcaseUser2Model;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
 
     var ShowcaseCompanyModel = /*#__PURE__*/function (_shell_data_store__WE15) {
       _inherits(ShowcaseCompanyModel, _shell_data_store__WE15);
@@ -2483,7 +1910,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return ShowcaseCompanyModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
 
     var ShowcaseCombinedTaskUserModel = /*#__PURE__*/function (_ShowcaseTaskModel) {
       _inherits(ShowcaseCombinedTaskUserModel, _ShowcaseTaskModel);
@@ -2524,43 +1951,37 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
     /* harmony import */
 
 
-    var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! rxjs */
     "./node_modules/rxjs/_esm2015/index.js");
     /* harmony import */
 
 
-    var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! rxjs/operators */
     "./node_modules/rxjs/_esm2015/operators/index.js");
     /* harmony import */
 
 
-    var _showcase_shell_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _showcase_shell_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./showcase-shell.model */
     "./src/app/showcase/showcase-shell.model.ts");
     /* harmony import */
 
 
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../shell/data-store */
     "./src/app/shell/data-store.ts"); // tslint:disable-next-line:max-line-length
 
@@ -2570,17 +1991,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         _classCallCheck(this, ShowcaseService);
 
         this.http = http;
-        this.openDataStream = new rxjs__WEBPACK_IMPORTED_MODULE_3__["ReplaySubject"]();
+        this.openDataStream = new rxjs__WEBPACK_IMPORTED_MODULE_2__["ReplaySubject"]();
       }
 
       _createClass(ShowcaseService, [{
         key: "getDataSourceWithDelay",
         value: function getDataSourceWithDelay() {
-          return this.http.get('./assets/sample-data/showcase/shell.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["tap"])(function (val) {
+          return this.http.get('./assets/sample-data/showcase/shell.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["tap"])(function (val) {
             console.log('getData STARTED'); // tslint:disable-next-line:no-console
 
             console.time('getData Roundtrip');
-          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["delay"])(5000), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["finalize"])(function () {
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["delay"])(5000), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["finalize"])(function () {
             console.log('getData COMPLETED'); // tslint:disable-next-line:no-console
 
             console.timeEnd('getData Roundtrip');
@@ -2597,8 +2018,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.showcaseDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _showcase_shell_model__WEBPACK_IMPORTED_MODULE_5__["ShowcaseShellModel"]();
-            this.showcaseDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_6__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _showcase_shell_model__WEBPACK_IMPORTED_MODULE_4__["ShowcaseShellModel"]();
+            this.showcaseDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.showcaseDataStore.load(dataSource);
           }
@@ -2608,16 +2029,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "getListDataSource",
         value: function getListDataSource() {
-          return this.http.get('https://reqres.in/api/users').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (result) {
+          return this.http.get('https://reqres.in/api/users').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (result) {
             return result['data'];
           }));
         }
       }, {
         key: "getPaginationDataSource",
         value: function getPaginationDataSource(page) {
-          return this.http.get('https://reqres.in/api/users?page=' + page).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (result) {
+          return this.http.get('https://reqres.in/api/users?page=' + page).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (result) {
             return result['data'];
-          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (results) {
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (results) {
             return results.length > 0;
           }));
         }
@@ -2643,9 +2064,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           var _this10 = this;
 
           return dependantDataSource.pipe( // Filter user values that are not shells. We need to add this filter if using the combinedUserDataStore timeline
-          Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["filter"])(function (post) {
+          Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["filter"])(function (post) {
             return !post.isShell;
-          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["concatMap"])(function (post) {
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["concatMap"])(function (post) {
             return _this10.http.get('https://jsonplaceholder.typicode.com/comments?postId=' + post.id);
           }));
         }
@@ -2659,7 +2080,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         key: "getUserSubsetData",
         value: function getUserSubsetData(userId) {
           var dataObservable = this.http.get('https://jsonplaceholder.typicode.com/users/' + userId);
-          return dataObservable.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (jsonResponse) {
+          return dataObservable.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (jsonResponse) {
             var filteredData = Object.assign({}, jsonResponse.company);
             return filteredData;
           }));
@@ -2675,29 +2096,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         value: function getCombinedTasksUserDataSource() {
           var _this11 = this;
 
-          return this.getTasks().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["concatMap"])(function (tasks) {
+          return this.getTasks().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["concatMap"])(function (tasks) {
             var completeTaskData = tasks.map(function (task) {
               // for each task retrun a new observable with the ShowcaseCombinedTaskUserModel
               var taskUser = _this11.getUser(task.userId);
 
-              return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["combineLatest"])([Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(task), taskUser]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (_ref11) {
-                var _ref12 = _slicedToArray(_ref11, 2),
-                    taskData = _ref12[0],
-                    user = _ref12[1];
+              return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["combineLatest"])([Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(task), taskUser]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (_ref4) {
+                var _ref5 = _slicedToArray(_ref4, 2),
+                    taskData = _ref5[0],
+                    user = _ref5[1];
 
-                return Object.assign({}, taskData, {
+                return Object.assign(Object.assign({}, taskData), {
                   user: user
                 });
               }));
             });
-            return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["forkJoin"])(completeTaskData);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["forkJoin"])(completeTaskData);
           }));
         }
       }, {
         key: "getOpenDataStream",
         value: function getOpenDataStream() {
           var firstLoadData = this.getPaginationDataSource(1);
-          return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["merge"])(this.openDataStream.asObservable(), firstLoadData);
+          return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["merge"])(this.openDataStream.asObservable(), firstLoadData);
         }
       }, {
         key: "pushValuesToOpenStream",
@@ -2709,7 +2130,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         key: "getStackedValuesDataSource",
         value: function getStackedValuesDataSource() {
           var stackedValues = this.getStackedValues();
-          return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(stackedValues).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["delay"])(3000));
+          return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(stackedValues).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["delay"])(3000));
         }
       }, {
         key: "getStackedValues",
@@ -2733,14 +2154,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return ShowcaseService;
     }();
 
-    ShowcaseService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-      }];
+    ShowcaseService.ɵfac = function ShowcaseService_Factory(t) {
+      return new (t || ShowcaseService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
     };
 
-    ShowcaseService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], ShowcaseService);
+    ShowcaseService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: ShowcaseService,
+      factory: ShowcaseService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ShowcaseService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }];
+      }, null);
+    })();
     /***/
+
   },
 
   /***/
@@ -2765,13 +2199,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -2844,7 +2272,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return TravelDetailsModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -2877,13 +2305,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -2907,7 +2329,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return TravelListingModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -2934,21 +2356,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
     /* harmony import */
 
 
@@ -2978,7 +2400,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _createClass(TravelService, [{
         key: "getListingDataSource",
         value: function getListingDataSource() {
-          return this.http.get('./assets/sample-data/travel/listing.json');
+          return this.http.get('./assets/sample-data/travel/listing.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var listing = new _listing_travel_listing_model__WEBPACK_IMPORTED_MODULE_4__["TravelListingModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. listing = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(listing, data);
+            return listing;
+          }));
         }
       }, {
         key: "getListingStore",
@@ -2997,7 +2428,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "getDetailsDataSource",
         value: function getDetailsDataSource() {
-          return this.http.get('./assets/sample-data/travel/details.json');
+          return this.http.get('./assets/sample-data/travel/details.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var details = new _details_travel_details_model__WEBPACK_IMPORTED_MODULE_5__["TravelDetailsModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. details = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(details, data);
+            return details;
+          }));
         }
       }, {
         key: "getDetailsStore",
@@ -3018,14 +2458,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return TravelService;
     }();
 
-    TravelService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-      }];
+    TravelService.ɵfac = function TravelService_Factory(t) {
+      return new (t || TravelService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
     };
 
-    TravelService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], TravelService);
+    TravelService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: TravelService,
+      factory: TravelService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](TravelService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }];
+      }, null);
+    })();
     /***/
+
   },
 
   /***/
@@ -3050,13 +2503,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -3162,7 +2609,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return UserFriendsModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -3189,13 +2636,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! ../../shell/data-store */
     "./src/app/shell/data-store.ts");
 
@@ -3228,7 +2669,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return UserProfileModel;
-    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_1__["ShellModel"]);
+    }(_shell_data_store__WEBPACK_IMPORTED_MODULE_0__["ShellModel"]);
     /***/
 
   },
@@ -3255,39 +2696,39 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     /* harmony import */
 
 
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/common/http */
-    "./node_modules/@angular/common/fesm2015/http.js");
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
     /* harmony import */
 
 
-    var _profile_user_profile_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
+
+
+    var _shell_data_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../shell/data-store */
+    "./src/app/shell/data-store.ts");
+    /* harmony import */
+
+
+    var _profile_user_profile_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./profile/user-profile.model */
     "./src/app/user/profile/user-profile.model.ts");
     /* harmony import */
 
 
-    var _friends_user_friends_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _friends_user_friends_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./friends/user-friends.model */
     "./src/app/user/friends/user-friends.model.ts");
-    /* harmony import */
-
-
-    var _shell_data_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! ../shell/data-store */
-    "./src/app/shell/data-store.ts");
 
     var UserService = /*#__PURE__*/function () {
       function UserService(http) {
@@ -3299,7 +2740,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _createClass(UserService, [{
         key: "getProfileDataSource",
         value: function getProfileDataSource() {
-          return this.http.get('./assets/sample-data/user/user-profile.json');
+          return this.http.get('./assets/sample-data/user/user-profile.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var profile = new _profile_user_profile_model__WEBPACK_IMPORTED_MODULE_4__["UserProfileModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. profile = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(profile, data);
+            return profile;
+          }));
         }
       }, {
         key: "getProfileStore",
@@ -3307,8 +2757,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.profileDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _profile_user_profile_model__WEBPACK_IMPORTED_MODULE_3__["UserProfileModel"]();
-            this.profileDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _profile_user_profile_model__WEBPACK_IMPORTED_MODULE_4__["UserProfileModel"]();
+            this.profileDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.profileDataStore.load(dataSource);
           }
@@ -3318,7 +2768,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         key: "getFriendsDataSource",
         value: function getFriendsDataSource() {
-          return this.http.get('./assets/sample-data/user/user-friends.json');
+          return this.http.get('./assets/sample-data/user/user-friends.json').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            // Note: HttpClient cannot know how to instantiate a class for the returned data
+            // We need to properly cast types from json data
+            var friends = new _friends_user_friends_model__WEBPACK_IMPORTED_MODULE_5__["UserFriendsModel"](); // The Object.assign() method copies all enumerable own properties from one or more source objects to a target object.
+            // Note: If you have non-enummerable properties, you can try a spread operator instead. friends = {...data};
+            // (see: https://scotch.io/bar-talk/copying-objects-in-javascript#toc-using-spread-elements-)
+
+            Object.assign(friends, data);
+            return friends;
+          }));
         }
       }, {
         key: "getFriendsStore",
@@ -3326,8 +2785,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           // Use cache if available
           if (!this.friendsDataStore) {
             // Initialize the model specifying that it is a shell model
-            var shellModel = new _friends_user_friends_model__WEBPACK_IMPORTED_MODULE_4__["UserFriendsModel"]();
-            this.friendsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_5__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
+            var shellModel = new _friends_user_friends_model__WEBPACK_IMPORTED_MODULE_5__["UserFriendsModel"]();
+            this.friendsDataStore = new _shell_data_store__WEBPACK_IMPORTED_MODULE_3__["DataStore"](shellModel); // Trigger the loading mechanism (with shell) in the dataStore
 
             this.friendsDataStore.load(dataSource);
           }
@@ -3339,14 +2798,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return UserService;
     }();
 
-    UserService.ctorParameters = function () {
-      return [{
-        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
-      }];
+    UserService.ɵfac = function UserService_Factory(t) {
+      return new (t || UserService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
     };
 
-    UserService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])], UserService);
+    UserService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: UserService,
+      factory: UserService.ɵfac
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }];
+      }, null);
+    })();
     /***/
+
   },
 
   /***/
@@ -3368,12 +2840,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     __webpack_require__.d(__webpack_exports__, "PasswordValidator", function () {
       return PasswordValidator;
     });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
 
     var PasswordValidator = /*#__PURE__*/function () {
       function PasswordValidator() {

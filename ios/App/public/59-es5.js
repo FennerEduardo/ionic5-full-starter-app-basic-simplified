@@ -45,35 +45,46 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! ./core-80bde1aa.js */
-    "./node_modules/@ionic/core/dist/esm/core-80bde1aa.js");
+    var _index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! ./index-26ec602c.js */
+    "./node_modules/@ionic/core/dist/esm/index-26ec602c.js");
     /* harmony import */
 
 
-    var _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./config-3c7f3790.js */
-    "./node_modules/@ionic/core/dist/esm/config-3c7f3790.js");
+    var _ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./ionic-global-1bf1fa84.js */
+    "./node_modules/@ionic/core/dist/esm/ionic-global-1bf1fa84.js");
     /* harmony import */
 
 
-    var _helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! ./helpers-46f4a262.js */
-    "./node_modules/@ionic/core/dist/esm/helpers-46f4a262.js");
+    var _helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./helpers-d8b49b57.js */
+    "./node_modules/@ionic/core/dist/esm/helpers-d8b49b57.js");
     /* harmony import */
 
 
-    var _overlays_992cb809_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./overlays-992cb809.js */
-    "./node_modules/@ionic/core/dist/esm/overlays-992cb809.js");
+    var _hardware_back_button_7b6ede21_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./hardware-back-button-7b6ede21.js */
+    "./node_modules/@ionic/core/dist/esm/hardware-back-button-7b6ede21.js");
     /* harmony import */
 
 
-    var _theme_18cbe2cc_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! ./theme-18cbe2cc.js */
-    "./node_modules/@ionic/core/dist/esm/theme-18cbe2cc.js");
+    var _overlays_7e61a613_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./overlays-7e61a613.js */
+    "./node_modules/@ionic/core/dist/esm/overlays-7e61a613.js");
+    /* harmony import */
+
+
+    var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ./theme-c2dc54d9.js */
+    "./node_modules/@ionic/core/dist/esm/theme-c2dc54d9.js");
 
     var watchForOptions = function watchForOptions(containerEl, tagName, onChange) {
+      /* tslint:disable-next-line */
+      if (typeof MutationObserver === 'undefined') {
+        return;
+      }
+
       var mutation = new MutationObserver(function (mutationList) {
         onChange(getSelectedOption(mutationList, tagName));
       });
@@ -106,13 +117,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       });
     };
 
+    var selectIosCss = ":host{--placeholder-color:currentColor;--placeholder-opacity:0.33;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;font-family:var(--ion-font-family, inherit);overflow:hidden;z-index:2}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}:host(.in-item){position:static;max-width:45%}:host(.select-disabled){opacity:0.4;pointer-events:none}:host(.ion-focused) button{border:2px solid #5e9ed6}.select-placeholder{color:var(--placeholder-color);opacity:var(--placeholder-opacity)}button{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none}[dir=rtl] button,:host-context([dir=rtl]) button{left:unset;right:unset;right:0}button::-moz-focus-inner{border:0}.select-icon{position:relative;opacity:0.33}.select-text{-ms-flex:1;flex:1;min-width:16px;font-size:inherit;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.select-icon-inner{left:5px;top:50%;margin-top:-3px;position:absolute;width:0;height:0;border-top:5px solid;border-right:5px solid transparent;border-left:5px solid transparent;color:currentColor;pointer-events:none}[dir=rtl] .select-icon-inner,:host-context([dir=rtl]) .select-icon-inner{left:unset;right:unset;right:5px}:host{--padding-top:10px;--padding-end:10px;--padding-bottom:10px;--padding-start:20px}.select-icon{width:12px;height:18px}";
+    var selectMdCss = ":host{--placeholder-color:currentColor;--placeholder-opacity:0.33;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;position:relative;-ms-flex-align:center;align-items:center;font-family:var(--ion-font-family, inherit);overflow:hidden;z-index:2}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}:host(.in-item){position:static;max-width:45%}:host(.select-disabled){opacity:0.4;pointer-events:none}:host(.ion-focused) button{border:2px solid #5e9ed6}.select-placeholder{color:var(--placeholder-color);opacity:var(--placeholder-opacity)}button{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none}[dir=rtl] button,:host-context([dir=rtl]) button{left:unset;right:unset;right:0}button::-moz-focus-inner{border:0}.select-icon{position:relative;opacity:0.33}.select-text{-ms-flex:1;flex:1;min-width:16px;font-size:inherit;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.select-icon-inner{left:5px;top:50%;margin-top:-3px;position:absolute;width:0;height:0;border-top:5px solid;border-right:5px solid transparent;border-left:5px solid transparent;color:currentColor;pointer-events:none}[dir=rtl] .select-icon-inner,:host-context([dir=rtl]) .select-icon-inner{left:unset;right:unset;right:5px}:host{--padding-top:10px;--padding-end:0;--padding-bottom:11px;--padding-start:16px}.select-icon{width:19px;height:19px}";
+
     var Select = /*#__PURE__*/function () {
       function Select(hostRef) {
         var _this = this;
 
         _classCallCheck(this, Select);
 
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         this.inputId = "ion-sel-".concat(selectIds++);
         this.didInit = false;
         this.isExpanded = false;
@@ -148,10 +162,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this["interface"] = 'alert';
         /**
          * Any additional options that the `alert`, `action-sheet` or `popover` interface
-         * can take. See the [AlertController API docs](../../alert/AlertController/#create), the
-         * [ActionSheetController API docs](../../action-sheet/ActionSheetController/#create) and the
-         * [PopoverController API docs](../../popover/PopoverController/#create) for the
+         * can take. See the [ion-alert docs](../alert), the
+         * [ion-action-sheet docs](../action-sheet) and the
+         * [ion-popover docs](../popover) for the
          * create options for each interface.
+         *
+         * Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
          */
 
         this.interfaceOptions = {};
@@ -170,11 +186,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _this.ionBlur.emit();
         };
 
-        this.ionChange = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionChange", 7);
-        this.ionCancel = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionCancel", 7);
-        this.ionFocus = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionFocus", 7);
-        this.ionBlur = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionBlur", 7);
-        this.ionStyle = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionStyle", 7);
+        this.ionChange = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionChange", 7);
+        this.ionCancel = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionCancel", 7);
+        this.ionFocus = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionFocus", 7);
+        this.ionBlur = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionBlur", 7);
+        this.ionStyle = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionStyle", 7);
       }
 
       _createClass(Select, [{
@@ -433,7 +449,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 switch (_context4.prev = _context4.next) {
                   case 0:
                     interfaceOptions = this.interfaceOptions;
-                    mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
+                    mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
                     value = this.value;
                     popoverOpts = Object.assign(Object.assign({
                       mode: mode
@@ -449,7 +465,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                         options: this.createPopoverOptions(this.childOpts, value)
                       }
                     });
-                    return _context4.abrupt("return", _overlays_992cb809_js__WEBPACK_IMPORTED_MODULE_3__["c"].create(popoverOpts));
+                    return _context4.abrupt("return", _overlays_7e61a613_js__WEBPACK_IMPORTED_MODULE_4__["c"].create(popoverOpts));
 
                   case 5:
                   case "end":
@@ -474,7 +490,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               while (1) {
                 switch (_context5.prev = _context5.next) {
                   case 0:
-                    mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
+                    mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
                     interfaceOptions = this.interfaceOptions;
                     actionSheetOpts = Object.assign(Object.assign({
                       mode: mode
@@ -482,7 +498,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                       buttons: this.createActionSheetButtons(this.childOpts, this.value),
                       cssClass: ['select-action-sheet', interfaceOptions.cssClass]
                     });
-                    return _context5.abrupt("return", _overlays_992cb809_js__WEBPACK_IMPORTED_MODULE_3__["b"].create(actionSheetOpts));
+                    return _context5.abrupt("return", _overlays_7e61a613_js__WEBPACK_IMPORTED_MODULE_4__["b"].create(actionSheetOpts));
 
                   case 4:
                   case "end":
@@ -513,7 +529,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                     labelText = label ? label.textContent : null;
                     interfaceOptions = this.interfaceOptions;
                     inputType = this.multiple ? 'checkbox' : 'radio';
-                    mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
+                    mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
                     alertOpts = Object.assign(Object.assign({
                       mode: mode
                     }, interfaceOptions), {
@@ -533,7 +549,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                       }],
                       cssClass: ['select-alert', interfaceOptions.cssClass, this.multiple ? 'multiple-select-alert' : 'single-select-alert']
                     });
-                    return _context6.abrupt("return", _overlays_992cb809_js__WEBPACK_IMPORTED_MODULE_3__["a"].create(alertOpts));
+                    return _context6.abrupt("return", _overlays_7e61a613_js__WEBPACK_IMPORTED_MODULE_4__["a"].create(alertOpts));
 
                   case 7:
                   case "end":
@@ -566,7 +582,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getLabel",
         value: function getLabel() {
-          return Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["f"])(this.el);
+          return Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["f"])(this.el);
         }
       }, {
         key: "hasValue",
@@ -615,9 +631,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               isExpanded = this.isExpanded,
               value = this.value,
               el = this.el;
-          var mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
+          var mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
           var labelId = this.inputId + '-lbl';
-          var label = Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["f"])(el);
+          var label = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["f"])(el);
 
           if (label) {
             label.id = labelId;
@@ -631,29 +647,30 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             addPlaceholderClass = true;
           }
 
-          Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["a"])(true, el, name, parseValue(value), disabled);
+          Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["a"])(true, el, name, parseValue(value), disabled);
           var selectTextClasses = {
             'select-text': true,
             'select-placeholder': addPlaceholderClass
           };
-          return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
+          var textPart = addPlaceholderClass ? 'placeholder' : 'text';
+          return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
             onClick: this.onClick,
             role: "combobox",
             "aria-haspopup": "dialog",
             "aria-disabled": disabled ? 'true' : null,
             "aria-expanded": "".concat(isExpanded),
             "aria-labelledby": labelId,
-            "class": (_class = {}, _defineProperty(_class, mode, true), _defineProperty(_class, 'in-item', Object(_theme_18cbe2cc_js__WEBPACK_IMPORTED_MODULE_4__["h"])('ion-item', el)), _defineProperty(_class, 'select-disabled', disabled), _class)
-          }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
+            "class": (_class = {}, _defineProperty(_class, mode, true), _defineProperty(_class, 'in-item', Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_5__["h"])('ion-item', el)), _defineProperty(_class, 'select-disabled', disabled), _class)
+          }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
             "class": selectTextClasses,
-            part: "text"
-          }, selectText), Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
+            part: textPart
+          }, selectText), Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
             "class": "select-icon",
             role: "presentation",
             part: "icon"
-          }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
+          }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", {
             "class": "select-icon-inner"
-          })), Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("button", {
+          })), Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("button", {
             type: "button",
             onFocus: this.onFocus,
             onBlur: this.onBlur,
@@ -671,7 +688,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "el",
         get: function get() {
-          return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this);
+          return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this);
         }
       }], [{
         key: "watchers",
@@ -681,11 +698,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             "placeholder": ["disabledChanged"],
             "value": ["valueChanged"]
           };
-        }
-      }, {
-        key: "style",
-        get: function get() {
-          return ":host{--placeholder-color:currentColor;--placeholder-opacity:0.33;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);display:-ms-flexbox;display:flex;position:relative;font-family:var(--ion-font-family,inherit);overflow:hidden;z-index:2}\@supports ((-webkit-margin-start:0) or (margin-inline-start:0)) or (-webkit-margin-start:0){:host{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}:host(.in-item){position:static;max-width:45%}:host(.select-disabled){opacity:.4;pointer-events:none}:host(.ion-focused) button{border:2px solid #5e9ed6}.select-placeholder{color:var(--placeholder-color);opacity:var(--placeholder-opacity)}button{left:0;top:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;position:absolute;width:100%;height:100%;border:0;background:transparent;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none}:host-context([dir=rtl]) button,[dir=rtl] button{left:unset;right:unset;right:0}button::-moz-focus-inner{border:0}.select-icon{position:relative}.select-text{-ms-flex:1;flex:1;min-width:16px;font-size:inherit;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.select-icon-inner{left:5px;top:50%;margin-top:-3px;position:absolute;width:0;height:0;border-top:5px solid;border-right:5px solid transparent;border-left:5px solid transparent;color:currentColor;opacity:.33;pointer-events:none}:host-context([dir=rtl]) .select-icon-inner,[dir=rtl] .select-icon-inner{left:unset;right:unset;right:5px}:host{--padding-top:10px;--padding-end:10px;--padding-bottom:10px;--padding-start:20px}.select-icon{width:12px;height:18px}";
         }
       }]);
 
@@ -757,12 +769,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     };
 
     var selectIds = 0;
+    Select.style = {
+      /*STENCIL:MODE:ios*/
+      ios: selectIosCss,
+
+      /*STENCIL:MODE:md*/
+      md: selectMdCss
+    };
+    var selectOptionCss = ":host{display:none}";
 
     var SelectOption = /*#__PURE__*/function () {
       function SelectOption(hostRef) {
         _classCallCheck(this, SelectOption);
 
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         this.inputId = "ion-selopt-".concat(selectOptionIds++);
         /**
          * If `true`, the user cannot interact with the select option.
@@ -774,21 +794,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(SelectOption, [{
         key: "render",
         value: function render() {
-          return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
+          return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
             role: "option",
             id: this.inputId,
-            "class": Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this)
+            "class": Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this)
           });
         }
       }, {
         key: "el",
         get: function get() {
-          return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this);
-        }
-      }], [{
-        key: "style",
-        get: function get() {
-          return ":host{display:none}";
+          return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this);
         }
       }]);
 
@@ -796,12 +811,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     var selectOptionIds = 0;
+    SelectOption.style = selectOptionCss;
+    var selectPopoverCss = ".sc-ion-select-popover-h ion-list.sc-ion-select-popover{margin-left:0;margin-right:0;margin-top:-1px;margin-bottom:-1px}.sc-ion-select-popover-h ion-list-header.sc-ion-select-popover,.sc-ion-select-popover-h ion-label.sc-ion-select-popover{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}";
 
     var SelectPopover = /*#__PURE__*/function () {
       function SelectPopover(hostRef) {
         _classCallCheck(this, SelectPopover);
 
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         /** Array of options for the popover */
 
         this.options = [];
@@ -815,7 +832,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           });
 
           if (option) {
-            Object(_overlays_992cb809_js__WEBPACK_IMPORTED_MODULE_3__["s"])(option.handler);
+            Object(_overlays_7e61a613_js__WEBPACK_IMPORTED_MODULE_4__["s"])(option.handler);
           }
         }
       }, {
@@ -825,30 +842,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             return o.checked;
           });
           var checkedValue = checkedOption ? checkedOption.value : undefined;
-          return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
-            "class": Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this)
-          }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-list", null, this.header !== undefined && Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-list-header", null, this.header), (this.subHeader !== undefined || this.message !== undefined) && Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-item", null, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-label", {
+          return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["H"], {
+            "class": Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this)
+          }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-list", null, this.header !== undefined && Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-list-header", null, this.header), (this.subHeader !== undefined || this.message !== undefined) && Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-item", null, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-label", {
             "class": "ion-text-wrap"
-          }, this.subHeader !== undefined && Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("h3", null, this.subHeader), this.message !== undefined && Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("p", null, this.message))), Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-radio-group", {
+          }, this.subHeader !== undefined && Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("h3", null, this.subHeader), this.message !== undefined && Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("p", null, this.message))), Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-radio-group", {
             value: checkedValue
           }, this.options.map(function (option) {
-            return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-item", null, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-label", null, option.text), Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-radio", {
+            return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-item", null, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-label", null, option.text), Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-radio", {
               value: option.value,
               disabled: option.disabled
             }));
           }))));
         }
-      }], [{
-        key: "style",
-        get: function get() {
-          return ".sc-ion-select-popover-h ion-list.sc-ion-select-popover{margin-left:0;margin-right:0;margin-top:-1px;margin-bottom:-1px}.sc-ion-select-popover-h ion-label.sc-ion-select-popover, .sc-ion-select-popover-h ion-list-header.sc-ion-select-popover{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0}";
-        }
       }]);
 
       return SelectPopover;
     }();
-    /***/
 
+    SelectPopover.style = selectPopoverCss;
+    /***/
   }
 }]);
 //# sourceMappingURL=59-es5.js.map

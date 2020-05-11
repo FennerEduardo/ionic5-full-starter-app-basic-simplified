@@ -10,9 +10,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_virtual_scroll", function() { return VirtualScroll; });
-/* harmony import */ var _core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-80bde1aa.js */ "./node_modules/@ionic/core/dist/esm/core-80bde1aa.js");
-/* harmony import */ var _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./config-3c7f3790.js */ "./node_modules/@ionic/core/dist/esm/config-3c7f3790.js");
-
+/* harmony import */ var _index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-26ec602c.js */ "./node_modules/@ionic/core/dist/esm/index-26ec602c.js");
 
 
 const CELL_TYPE_ITEM = 'item';
@@ -266,9 +264,11 @@ const positionForIndex = (index, cells, heightIndex) => {
     return -1;
 };
 
+const virtualScrollCss = "ion-virtual-scroll{display:block;position:relative;width:100%;contain:strict;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}ion-virtual-scroll>.virtual-loading{opacity:0}ion-virtual-scroll>.virtual-item{position:absolute !important;top:0 !important;right:0 !important;left:0 !important;-webkit-transition-duration:0ms;transition-duration:0ms;will-change:transform}";
+
 const VirtualScroll = class {
     constructor(hostRef) {
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         this.range = { offset: 0, length: 0 };
         this.viewportHeight = 0;
         this.cells = [];
@@ -393,8 +393,8 @@ const VirtualScroll = class {
             this.timerUpdate = undefined;
         }
         // schedule DOM operations into the stencil queue
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["f"])(this.readVS.bind(this));
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["w"])(this.writeVS.bind(this));
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["f"])(this.readVS.bind(this));
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["w"])(this.writeVS.bind(this));
     }
     readVS() {
         const { contentEl, scrollEl, el } = this;
@@ -436,7 +436,7 @@ const VirtualScroll = class {
             this.domRender(this.virtualDom);
         }
         else if (this.renderItem) {
-            this.el.forceUpdate();
+            Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["i"])(this);
         }
     }
     updateCellHeight(cell, node) {
@@ -524,18 +524,17 @@ const VirtualScroll = class {
         }
     }
     render() {
-        return (Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["H"], { style: {
+        return (Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["H"], { style: {
                 height: `${this.totalHeight}px`
-            } }, this.renderItem && (Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(VirtualProxy, { dom: this.virtualDom }, this.virtualDom.map(node => this.renderVirtualNode(node))))));
+            } }, this.renderItem && (Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(VirtualProxy, { dom: this.virtualDom }, this.virtualDom.map(node => this.renderVirtualNode(node))))));
     }
-    get el() { return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
     static get watchers() { return {
         "itemHeight": ["itemsChanged"],
         "headerHeight": ["itemsChanged"],
         "footerHeight": ["itemsChanged"],
         "items": ["itemsChanged"]
     }; }
-    static get style() { return "ion-virtual-scroll{display:block;position:relative;width:100%;contain:strict;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}ion-virtual-scroll>.virtual-loading{opacity:0}ion-virtual-scroll>.virtual-item{position:absolute!important;top:0!important;right:0!important;left:0!important;-webkit-transition-duration:0ms;transition-duration:0ms;will-change:transform}"; }
 };
 const VirtualProxy = ({ dom }, children, utils) => {
     return utils.map(children, (child, i) => {
@@ -549,6 +548,7 @@ const VirtualProxy = ({ dom }, children, utils) => {
         return Object.assign(Object.assign({}, child), { vattrs: Object.assign(Object.assign({}, vattrs), { class: classes, style: Object.assign(Object.assign({}, vattrs.style), { transform: `translate3d(0,${node.top}px,0)` }) }) });
     });
 };
+VirtualScroll.style = virtualScrollCss;
 
 
 

@@ -12,14 +12,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_menu", function() { return Menu; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_menu_button", function() { return MenuButton; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ion_menu_toggle", function() { return MenuToggle; });
-/* harmony import */ var _core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-80bde1aa.js */ "./node_modules/@ionic/core/dist/esm/core-80bde1aa.js");
-/* harmony import */ var _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./config-3c7f3790.js */ "./node_modules/@ionic/core/dist/esm/config-3c7f3790.js");
-/* harmony import */ var _helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-46f4a262.js */ "./node_modules/@ionic/core/dist/esm/helpers-46f4a262.js");
-/* harmony import */ var _animation_0084d55f_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animation-0084d55f.js */ "./node_modules/@ionic/core/dist/esm/animation-0084d55f.js");
-/* harmony import */ var _cubic_bezier_1d592096_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cubic-bezier-1d592096.js */ "./node_modules/@ionic/core/dist/esm/cubic-bezier-1d592096.js");
-/* harmony import */ var _index_c38df685_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index-c38df685.js */ "./node_modules/@ionic/core/dist/esm/index-c38df685.js");
-/* harmony import */ var _index_70999d9c_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./index-70999d9c.js */ "./node_modules/@ionic/core/dist/esm/index-70999d9c.js");
-/* harmony import */ var _theme_18cbe2cc_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./theme-18cbe2cc.js */ "./node_modules/@ionic/core/dist/esm/theme-18cbe2cc.js");
+/* harmony import */ var _index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-26ec602c.js */ "./node_modules/@ionic/core/dist/esm/index-26ec602c.js");
+/* harmony import */ var _ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ionic-global-1bf1fa84.js */ "./node_modules/@ionic/core/dist/esm/ionic-global-1bf1fa84.js");
+/* harmony import */ var _helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers-d8b49b57.js */ "./node_modules/@ionic/core/dist/esm/helpers-d8b49b57.js");
+/* harmony import */ var _animation_47fafd47_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./animation-47fafd47.js */ "./node_modules/@ionic/core/dist/esm/animation-47fafd47.js");
+/* harmony import */ var _cubic_bezier_685f606a_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cubic-bezier-685f606a.js */ "./node_modules/@ionic/core/dist/esm/cubic-bezier-685f606a.js");
+/* harmony import */ var _index_6f647ec8_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./index-6f647ec8.js */ "./node_modules/@ionic/core/dist/esm/index-6f647ec8.js");
+/* harmony import */ var _hardware_back_button_7b6ede21_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./hardware-back-button-7b6ede21.js */ "./node_modules/@ionic/core/dist/esm/hardware-back-button-7b6ede21.js");
+/* harmony import */ var _index_6941d9b4_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./index-6941d9b4.js */ "./node_modules/@ionic/core/dist/esm/index-6941d9b4.js");
+/* harmony import */ var _theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./theme-c2dc54d9.js */ "./node_modules/@ionic/core/dist/esm/theme-c2dc54d9.js");
 
 
 
@@ -28,6 +29,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+const menuIosCss = ":host{--width:304px;--min-width:auto;--max-width:auto;--height:100%;--min-height:auto;--max-height:auto;--background:var(--ion-background-color, #fff);left:0;right:0;top:0;bottom:0;display:none;position:absolute;contain:strict}:host(.show-menu){display:block}.menu-inner{left:0;right:auto;top:0;bottom:0;-webkit-transform:translate3d(-9999px,  0,  0);transform:translate3d(-9999px,  0,  0);display:-ms-flexbox;display:flex;position:absolute;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:justify;justify-content:space-between;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);contain:strict}[dir=rtl] .menu-inner,:host-context([dir=rtl]) .menu-inner{left:unset;right:unset;left:auto;right:0}[dir=rtl] .menu-inner,:host-context([dir=rtl]) .menu-inner{-webkit-transform:translate3d(calc(-1 * -9999px),  0,  0);transform:translate3d(calc(-1 * -9999px),  0,  0)}:host(.menu-side-start) .menu-inner{--ion-safe-area-right:0px;right:auto;left:0}:host(.menu-side-end) .menu-inner{--ion-safe-area-left:0px;right:0;left:auto;}ion-backdrop{display:none;opacity:0.01;z-index:-1}@media (max-width: 340px){.menu-inner{--width:264px}}:host(.menu-type-reveal){z-index:0}:host(.menu-type-reveal.show-menu) .menu-inner{-webkit-transform:translate3d(0,  0,  0);transform:translate3d(0,  0,  0)}:host(.menu-type-overlay){z-index:1000}:host(.menu-type-overlay) .show-backdrop{display:block;cursor:pointer}:host(.menu-pane-visible){width:var(--width);min-width:var(--min-width);max-width:var(--max-width)}:host(.menu-pane-visible) .menu-inner{left:0;right:0;width:auto;-webkit-transform:none !important;transform:none !important;-webkit-box-shadow:none !important;box-shadow:none !important}:host(.menu-pane-visible) ion-backdrop{display:hidden !important;}:host(.menu-type-push){z-index:1000}:host(.menu-type-push) .show-backdrop{display:block}";
+
+const menuMdCss = ":host{--width:304px;--min-width:auto;--max-width:auto;--height:100%;--min-height:auto;--max-height:auto;--background:var(--ion-background-color, #fff);left:0;right:0;top:0;bottom:0;display:none;position:absolute;contain:strict}:host(.show-menu){display:block}.menu-inner{left:0;right:auto;top:0;bottom:0;-webkit-transform:translate3d(-9999px,  0,  0);transform:translate3d(-9999px,  0,  0);display:-ms-flexbox;display:flex;position:absolute;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:justify;justify-content:space-between;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);contain:strict}[dir=rtl] .menu-inner,:host-context([dir=rtl]) .menu-inner{left:unset;right:unset;left:auto;right:0}[dir=rtl] .menu-inner,:host-context([dir=rtl]) .menu-inner{-webkit-transform:translate3d(calc(-1 * -9999px),  0,  0);transform:translate3d(calc(-1 * -9999px),  0,  0)}:host(.menu-side-start) .menu-inner{--ion-safe-area-right:0px;right:auto;left:0}:host(.menu-side-end) .menu-inner{--ion-safe-area-left:0px;right:0;left:auto;}ion-backdrop{display:none;opacity:0.01;z-index:-1}@media (max-width: 340px){.menu-inner{--width:264px}}:host(.menu-type-reveal){z-index:0}:host(.menu-type-reveal.show-menu) .menu-inner{-webkit-transform:translate3d(0,  0,  0);transform:translate3d(0,  0,  0)}:host(.menu-type-overlay){z-index:1000}:host(.menu-type-overlay) .show-backdrop{display:block;cursor:pointer}:host(.menu-pane-visible){width:var(--width);min-width:var(--min-width);max-width:var(--max-width)}:host(.menu-pane-visible) .menu-inner{left:0;right:0;width:auto;-webkit-transform:none !important;transform:none !important;-webkit-box-shadow:none !important;box-shadow:none !important}:host(.menu-pane-visible) ion-backdrop{display:hidden !important;}:host(.menu-type-overlay) .menu-inner{-webkit-box-shadow:4px 0px 16px rgba(0, 0, 0, 0.18);box-shadow:4px 0px 16px rgba(0, 0, 0, 0.18)}";
 
 const iosEasing = 'cubic-bezier(0.32,0.72,0,1)';
 const mdEasing = 'cubic-bezier(0.0,0.0,0.2,1)';
@@ -35,12 +41,9 @@ const iosEasingReverse = 'cubic-bezier(1, 0, 0.68, 0.28)';
 const mdEasingReverse = 'cubic-bezier(0.4, 0, 0.6, 1)';
 const Menu = class {
     constructor(hostRef) {
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         this.lastOnEnd = 0;
-        this.blocker = _index_c38df685_js__WEBPACK_IMPORTED_MODULE_5__["GESTURE_CONTROLLER"].createBlocker({ disableScroll: true });
-        this.mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
-        this.easing = this.mode === 'ios' ? iosEasing : mdEasing;
-        this.easingReverse = this.mode === 'ios' ? iosEasingReverse : mdEasingReverse;
+        this.blocker = _index_6f647ec8_js__WEBPACK_IMPORTED_MODULE_5__["GESTURE_CONTROLLER"].createBlocker({ disableScroll: true });
         this.isAnimating = false;
         this._isOpen = false;
         this.isPaneVisible = false;
@@ -62,11 +65,11 @@ const Menu = class {
          * If a drag/swipe happens over this value, the menu is not triggered.
          */
         this.maxEdgeStart = 50;
-        this.ionWillOpen = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionWillOpen", 7);
-        this.ionWillClose = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionWillClose", 7);
-        this.ionDidOpen = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionDidOpen", 7);
-        this.ionDidClose = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionDidClose", 7);
-        this.ionMenuChange = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionMenuChange", 7);
+        this.ionWillOpen = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionWillOpen", 7);
+        this.ionWillClose = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionWillClose", 7);
+        this.ionDidOpen = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionDidOpen", 7);
+        this.ionDidClose = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionDidClose", 7);
+        this.ionMenuChange = Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "ionMenuChange", 7);
     }
     typeChanged(type, oldType) {
         const contentEl = this.contentEl;
@@ -91,14 +94,14 @@ const Menu = class {
         });
     }
     sideChanged() {
-        this.isEndSide = Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["i"])(this.side);
+        this.isEndSide = Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["i"])(this.side);
     }
     swipeGestureChanged() {
         this.updateState();
     }
     async connectedCallback() {
         if (this.type === undefined) {
-            this.type = _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__["b"].get('menuType', 'overlay');
+            this.type = _ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('menuType', 'overlay');
         }
         const el = this.el;
         const parent = el.parentNode;
@@ -127,12 +130,13 @@ AFTER:
         this.typeChanged(this.type, undefined);
         this.sideChanged();
         // register this menu with the app's menu controller
-        _index_70999d9c_js__WEBPACK_IMPORTED_MODULE_6__["m"]._register(this);
-        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-c38df685.js */ "./node_modules/@ionic/core/dist/esm/index-c38df685.js"))).createGesture({
+        _index_6941d9b4_js__WEBPACK_IMPORTED_MODULE_7__["m"]._register(this);
+        this.gesture = (await Promise.resolve(/*! import() */).then(__webpack_require__.bind(null, /*! ./index-6f647ec8.js */ "./node_modules/@ionic/core/dist/esm/index-6f647ec8.js"))).createGesture({
             el: document,
             gestureName: 'menu-swipe',
             gesturePriority: 30,
             threshold: 10,
+            blurOnStart: true,
             canStart: ev => this.canStart(ev),
             onWillStart: () => this.onWillStart(),
             onStart: () => this.onStart(),
@@ -147,7 +151,7 @@ AFTER:
     }
     disconnectedCallback() {
         this.blocker.destroy();
-        _index_70999d9c_js__WEBPACK_IMPORTED_MODULE_6__["m"]._unregister(this);
+        _index_6941d9b4_js__WEBPACK_IMPORTED_MODULE_7__["m"]._unregister(this);
         if (this.animation) {
             this.animation.destroy();
         }
@@ -215,7 +219,7 @@ AFTER:
      * If the operation can't be completed successfully, it returns `false`.
      */
     setOpen(shouldOpen, animated = true) {
-        return _index_70999d9c_js__WEBPACK_IMPORTED_MODULE_6__["m"]._setOpen(this, shouldOpen, animated);
+        return _index_6941d9b4_js__WEBPACK_IMPORTED_MODULE_7__["m"]._setOpen(this, shouldOpen, animated);
     }
     async _setOpen(shouldOpen, animated = true) {
         // If the menu is disabled or it is currently being animated, let's do nothing
@@ -242,17 +246,20 @@ AFTER:
             this.animation = undefined;
         }
         // Create new animation
-        this.animation = await _index_70999d9c_js__WEBPACK_IMPORTED_MODULE_6__["m"]._createAnimation(this.type, this);
-        if (!_config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__["b"].getBoolean('animated', true)) {
+        this.animation = await _index_6941d9b4_js__WEBPACK_IMPORTED_MODULE_7__["m"]._createAnimation(this.type, this);
+        if (!_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["c"].getBoolean('animated', true)) {
             this.animation.duration(0);
         }
         this.animation.fill('both');
     }
     async startAnimation(shouldOpen, animated) {
         const isReversed = !shouldOpen;
+        const mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        const easing = mode === 'ios' ? iosEasing : mdEasing;
+        const easingReverse = mode === 'ios' ? iosEasingReverse : mdEasingReverse;
         const ani = this.animation
             .direction((isReversed) ? 'reverse' : 'normal')
-            .easing((isReversed) ? this.easingReverse : this.easing)
+            .easing((isReversed) ? easingReverse : easing)
             .onFinish(() => {
             if (ani.getDirection() === 'reverse') {
                 ani.direction('normal');
@@ -272,14 +279,16 @@ AFTER:
         return this.swipeGesture && !this.isAnimating && this._isActive();
     }
     canStart(detail) {
-        if (!this.canSwipe()) {
+        // Do not allow swipe gesture if a modal is open
+        const isModalPresented = !!document.querySelector('ion-modal.show-modal');
+        if (isModalPresented || !this.canSwipe()) {
             return false;
         }
         if (this._isOpen) {
             return true;
             // TODO error
         }
-        else if (_index_70999d9c_js__WEBPACK_IMPORTED_MODULE_6__["m"]._getOpenSync()) {
+        else if (_index_6941d9b4_js__WEBPACK_IMPORTED_MODULE_7__["m"]._getOpenSync()) {
             return false;
         }
         return checkEdgeSide(window, detail.currentX, this.isEndSide, this.maxEdgeStart);
@@ -290,7 +299,7 @@ AFTER:
     }
     onStart() {
         if (!this.isAnimating || !this.animation) {
-            Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["b"])(false, 'isAnimating has to be true');
+            Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["b"])(false, 'isAnimating has to be true');
             return;
         }
         // the cloned animation should not use an easing curve during seek
@@ -298,7 +307,7 @@ AFTER:
     }
     onMove(detail) {
         if (!this.isAnimating || !this.animation) {
-            Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["b"])(false, 'isAnimating has to be true');
+            Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["b"])(false, 'isAnimating has to be true');
             return;
         }
         const delta = computeDelta(detail.deltaX, this._isOpen, this.isEndSide);
@@ -307,7 +316,7 @@ AFTER:
     }
     onEnd(detail) {
         if (!this.isAnimating || !this.animation) {
-            Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["b"])(false, 'isAnimating has to be true');
+            Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["b"])(false, 'isAnimating has to be true');
             return;
         }
         const isOpen = this._isOpen;
@@ -344,7 +353,7 @@ AFTER:
          * to the new easing curve, as `stepValue` is going to be given
          * in terms of a linear curve.
          */
-        newStepValue += Object(_cubic_bezier_1d592096_js__WEBPACK_IMPORTED_MODULE_4__["g"])([0, 0], [0.4, 0], [0.6, 1], [1, 1], Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["c"])(0, adjustedStepValue, 0.9999))[0] || 0;
+        newStepValue += Object(_cubic_bezier_685f606a_js__WEBPACK_IMPORTED_MODULE_4__["g"])([0, 0], [0.4, 0], [0.6, 1], [1, 1], Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["c"])(0, adjustedStepValue, 0.9999))[0] || 0;
         const playTo = (this._isOpen) ? !shouldComplete : shouldComplete;
         this.animation
             .easing('cubic-bezier(0.4, 0.0, 0.6, 1)')
@@ -352,7 +361,7 @@ AFTER:
             .progressEnd((playTo) ? 1 : 0, (this._isOpen) ? 1 - newStepValue : newStepValue, 300);
     }
     beforeAnimation(shouldOpen) {
-        Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["b"])(!this.isAnimating, '_before() should not be called while animating');
+        Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["b"])(!this.isAnimating, '_before() should not be called while animating');
         // this places the menu into the correct location before it animates in
         // this css class doesn't actually kick off any animations
         this.el.classList.add(SHOW_MENU);
@@ -369,7 +378,7 @@ AFTER:
         }
     }
     afterAnimation(isOpen) {
-        Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this.isAnimating, '_before() should be called while animating');
+        Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this.isAnimating, '_before() should be called while animating');
         // keep opening/closing the menu disabled for a touch more yet
         // only add listeners/css if it's enabled and isOpen
         // and only remove listeners/css if it's not open
@@ -414,36 +423,36 @@ AFTER:
             this.forceClosing();
         }
         if (!this.disabled) {
-            _index_70999d9c_js__WEBPACK_IMPORTED_MODULE_6__["m"]._setActiveMenu(this);
+            _index_6941d9b4_js__WEBPACK_IMPORTED_MODULE_7__["m"]._setActiveMenu(this);
         }
-        Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["b"])(!this.isAnimating, 'can not be animating');
+        Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["b"])(!this.isAnimating, 'can not be animating');
     }
     forceClosing() {
-        Object(_helpers_46f4a262_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this._isOpen, 'menu cannot be closed');
+        Object(_helpers_d8b49b57_js__WEBPACK_IMPORTED_MODULE_2__["b"])(this._isOpen, 'menu cannot be closed');
         this.isAnimating = true;
         const ani = this.animation.direction('reverse');
         ani.play({ sync: true });
         this.afterAnimation(false);
     }
     render() {
-        const { isEndSide, type, disabled, mode, isPaneVisible } = this;
-        return (Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "navigation", class: {
+        const { isEndSide, type, disabled, isPaneVisible } = this;
+        const mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        return (Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["H"], { role: "navigation", class: {
                 [mode]: true,
                 [`menu-type-${type}`]: true,
                 'menu-enabled': !disabled,
                 'menu-side-end': isEndSide,
                 'menu-side-start': !isEndSide,
                 'menu-pane-visible': isPaneVisible
-            } }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "menu-inner", ref: el => this.menuInnerEl = el }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)), Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", { ref: el => this.backdropEl = el, class: "menu-backdrop", tappable: false, stopPropagation: false })));
+            } }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("div", { class: "menu-inner", part: "container", ref: el => this.menuInnerEl = el }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)), Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-backdrop", { ref: el => this.backdropEl = el, class: "menu-backdrop", tappable: false, stopPropagation: false, part: "backdrop" })));
     }
-    get el() { return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
+    get el() { return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
     static get watchers() { return {
         "type": ["typeChanged"],
         "disabled": ["disabledChanged"],
         "side": ["sideChanged"],
         "swipeGesture": ["swipeGestureChanged"]
     }; }
-    static get style() { return ":host{--width:304px;--min-width:auto;--max-width:auto;--height:100%;--min-height:auto;--max-height:auto;--background:var(--ion-background-color,#fff);left:0;right:0;top:0;bottom:0;display:none;position:absolute;contain:strict}:host(.show-menu){display:block}.menu-inner{left:0;right:auto;top:0;bottom:0;-webkit-transform:translate3d(-9999px,0,0);transform:translate3d(-9999px,0,0);display:-ms-flexbox;display:flex;position:absolute;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:justify;justify-content:space-between;width:var(--width);min-width:var(--min-width);max-width:var(--max-width);height:var(--height);min-height:var(--min-height);max-height:var(--max-height);background:var(--background);contain:strict}:host-context([dir=rtl]) .menu-inner,[dir=rtl] .menu-inner{left:unset;right:unset;left:auto;right:0;-webkit-transform:translate3d(calc(-1 * -9999px),0,0);transform:translate3d(calc(-1 * -9999px),0,0)}:host(.menu-side-start) .menu-inner{--ion-safe-area-right:0px;right:auto;left:0}:host(.menu-side-end) .menu-inner{--ion-safe-area-left:0px;right:0;left:auto}ion-backdrop{display:none;opacity:.01;z-index:-1}\@media (max-width:340px){.menu-inner{--width:264px}}:host(.menu-type-reveal){z-index:0}:host(.menu-type-reveal.show-menu) .menu-inner{-webkit-transform:translateZ(0);transform:translateZ(0)}:host(.menu-type-overlay){z-index:1000}:host(.menu-type-overlay) .show-backdrop{display:block;cursor:pointer}:host(.menu-pane-visible){width:var(--width);min-width:var(--min-width);max-width:var(--max-width)}:host(.menu-pane-visible) .menu-inner{left:0;right:0;width:auto;-webkit-transform:none!important;transform:none!important;-webkit-box-shadow:none!important;box-shadow:none!important}:host(.menu-pane-visible) ion-backdrop{display:hidden!important}:host(.menu-type-overlay) .menu-inner{-webkit-box-shadow:4px 0 16px rgba(0,0,0,.18);box-shadow:4px 0 16px rgba(0,0,0,.18)}"; }
 };
 const computeDelta = (deltaX, isOpen, isEndSide) => {
     return Math.max(0, isOpen !== isEndSide ? -deltaX : deltaX);
@@ -459,16 +468,24 @@ const checkEdgeSide = (win, posX, isEndSide, maxEdgeStart) => {
 const SHOW_MENU = 'show-menu';
 const SHOW_BACKDROP = 'show-backdrop';
 const MENU_CONTENT_OPEN = 'menu-content-open';
+Menu.style = {
+    /*STENCIL:MODE:ios*/ ios: menuIosCss,
+    /*STENCIL:MODE:md*/ md: menuMdCss
+};
 
 // Given a menu, return whether or not the menu toggle should be visible
 const updateVisibility = async (menu) => {
-    const menuEl = await _index_70999d9c_js__WEBPACK_IMPORTED_MODULE_6__["m"].get(menu);
+    const menuEl = await _index_6941d9b4_js__WEBPACK_IMPORTED_MODULE_7__["m"].get(menu);
     return !!(menuEl && await menuEl.isActive());
 };
 
+const menuButtonIosCss = ":host{--background:transparent;--color-focused:currentColor;--border-radius:initial;--padding-top:0;--padding-bottom:0;color:var(--color);text-align:center;text-decoration:none;text-overflow:ellipsis;text-transform:none;white-space:nowrap;-webkit-font-kerning:none;font-kerning:none}.button-native{border-radius:var(--border-radius);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;border:0;outline:none;background:var(--background);line-height:1;cursor:pointer;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.button-native{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;z-index:1}ion-icon{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;pointer-events:none}:host(.menu-button-hidden){display:none}:host(.menu-button-disabled){cursor:default;opacity:0.5;pointer-events:none}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:\"\";opacity:0}@media (any-hover: hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity, 0)}}:host(.ion-color) .button-native{color:var(--ion-color-base)}:host(.in-toolbar:not(.in-toolbar-color)){color:var(--ion-toolbar-color, var(--color))}:host{--background-focused:currentColor;--background-focused-opacity:.1;--border-radius:4px;--color:var(--ion-color-primary, #3880ff);--padding-start:5px;--padding-end:5px;height:32px;font-size:31px}:host(.ion-activated){opacity:0.4}@media (any-hover: hover){:host(:hover){opacity:0.6}}";
+
+const menuButtonMdCss = ":host{--background:transparent;--color-focused:currentColor;--border-radius:initial;--padding-top:0;--padding-bottom:0;color:var(--color);text-align:center;text-decoration:none;text-overflow:ellipsis;text-transform:none;white-space:nowrap;-webkit-font-kerning:none;font-kerning:none}.button-native{border-radius:var(--border-radius);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;border:0;outline:none;background:var(--background);line-height:1;cursor:pointer;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}@supports ((-webkit-margin-start: 0) or (margin-inline-start: 0)) or (-webkit-margin-start: 0){.button-native{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;z-index:1}ion-icon{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;pointer-events:none}:host(.menu-button-hidden){display:none}:host(.menu-button-disabled){cursor:default;opacity:0.5;pointer-events:none}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native::after{background:var(--background-focused);opacity:var(--background-focused-opacity)}.button-native::after{left:0;right:0;top:0;bottom:0;position:absolute;content:\"\";opacity:0}@media (any-hover: hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native::after{background:var(--background-hover);opacity:var(--background-hover-opacity, 0)}}:host(.ion-color) .button-native{color:var(--ion-color-base)}:host(.in-toolbar:not(.in-toolbar-color)){color:var(--ion-toolbar-color, var(--color))}:host{--background-focused:currentColor;--background-focused-opacity:.12;--background-hover:currentColor;--background-hover-opacity:.04;--border-radius:50%;--color:initial;--padding-start:8px;--padding-end:8px;width:48px;height:48px;font-size:24px}:host(.ion-color.ion-focused)::after{background:var(--ion-color-base)}@media (any-hover: hover){:host(.ion-color:hover) .button-native::after{background:var(--ion-color-base)}}";
+
 const MenuButton = class {
     constructor(hostRef) {
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         this.visible = false;
         /**
          * If `true`, the user cannot interact with the menu button.
@@ -483,7 +500,7 @@ const MenuButton = class {
          */
         this.type = 'button';
         this.onClick = async () => {
-            return _index_70999d9c_js__WEBPACK_IMPORTED_MODULE_6__["m"].toggle(this.menu);
+            return _index_6941d9b4_js__WEBPACK_IMPORTED_MODULE_7__["m"].toggle(this.menu);
         };
     }
     componentDidLoad() {
@@ -494,21 +511,26 @@ const MenuButton = class {
     }
     render() {
         const { color, disabled } = this;
-        const mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
-        const menuIcon = _config_3c7f3790_js__WEBPACK_IMPORTED_MODULE_1__["b"].get('menuIcon', mode === 'ios' ? 'menu-outline' : 'menu-sharp');
+        const mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
+        const menuIcon = _ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["c"].get('menuIcon', mode === 'ios' ? 'menu-outline' : 'menu-sharp');
         const hidden = this.autoHide && !this.visible;
         const attrs = {
             type: this.type
         };
-        return (Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["H"], { onClick: this.onClick, "aria-disabled": disabled ? 'true' : null, "aria-hidden": hidden ? 'true' : null, class: Object.assign(Object.assign({ [mode]: true }, Object(_theme_18cbe2cc_js__WEBPACK_IMPORTED_MODULE_7__["c"])(color)), { 'button': true, 'menu-button-hidden': hidden, 'menu-button-disabled': disabled, 'in-toolbar': Object(_theme_18cbe2cc_js__WEBPACK_IMPORTED_MODULE_7__["h"])('ion-toolbar', this.el), 'ion-activatable': true, 'ion-focusable': true }) }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("button", Object.assign({}, attrs, { disabled: disabled, class: "button-native" }), Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", { class: "button-inner" }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-icon", { icon: menuIcon, mode: mode, lazy: false }))), mode === 'md' && Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-ripple-effect", { type: "unbounded" }))));
+        return (Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["H"], { onClick: this.onClick, "aria-disabled": disabled ? 'true' : null, "aria-hidden": hidden ? 'true' : null, class: Object.assign(Object.assign({ [mode]: true }, Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_8__["c"])(color)), { 'button': true, 'menu-button-hidden': hidden, 'menu-button-disabled': disabled, 'in-toolbar': Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_8__["h"])('ion-toolbar', this.el), 'in-toolbar-color': Object(_theme_c2dc54d9_js__WEBPACK_IMPORTED_MODULE_8__["h"])('ion-toolbar[color]', this.el), 'ion-activatable': true, 'ion-focusable': true }) }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("button", Object.assign({}, attrs, { disabled: disabled, class: "button-native" }), Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("span", { class: "button-inner" }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-icon", { icon: menuIcon, mode: mode, lazy: false }))), mode === 'md' && Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("ion-ripple-effect", { type: "unbounded" }))));
     }
-    get el() { return Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
-    static get style() { return ":host{--background:transparent;--color-focused:currentColor;--border-radius:initial;--padding-top:0;--padding-bottom:0;color:var(--color);text-align:center;text-decoration:none;text-overflow:ellipsis;text-transform:none;white-space:nowrap;-webkit-font-kerning:none;font-kerning:none}.button-native{border-radius:var(--border-radius);font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;letter-spacing:inherit;text-decoration:inherit;text-indent:inherit;text-overflow:inherit;text-transform:inherit;text-align:inherit;white-space:inherit;color:inherit;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:var(--padding-start);padding-right:var(--padding-end);padding-top:var(--padding-top);padding-bottom:var(--padding-bottom);-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;border:0;outline:none;background:var(--background);line-height:1;cursor:pointer;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}\@supports ((-webkit-margin-start:0) or (margin-inline-start:0)) or (-webkit-margin-start:0){.button-native{padding-left:unset;padding-right:unset;-webkit-padding-start:var(--padding-start);padding-inline-start:var(--padding-start);-webkit-padding-end:var(--padding-end);padding-inline-end:var(--padding-end)}}.button-inner{display:-ms-flexbox;display:flex;position:relative;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-ms-flex-negative:0;flex-shrink:0;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;z-index:1}ion-icon{margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;padding-left:0;padding-right:0;padding-top:0;padding-bottom:0;pointer-events:none}:host(.menu-button-hidden){display:none}:host(.menu-button-disabled){cursor:default;opacity:.5;pointer-events:none}:host(.ion-focused) .button-native{color:var(--color-focused)}:host(.ion-focused) .button-native:after{background:var(--background-focused);opacity:var(--background-focused-opacity)}.button-native:after{left:0;right:0;top:0;bottom:0;position:absolute;content:\"\";opacity:0}\@media (any-hover:hover){:host(:hover) .button-native{color:var(--color-hover)}:host(:hover) .button-native:after{background:var(--background-hover);opacity:var(--background-hover-opacity,0)}}:host(.ion-color) .button-native{color:var(--ion-color-base)}:host(.in-toolbar){color:var(--ion-toolbar-color,var(--color))}:host{--background-focused:currentColor;--background-focused-opacity:.12;--background-hover:currentColor;--background-hover-opacity:.04;--border-radius:50%;--color:initial;--padding-start:8px;--padding-end:8px;width:48px;height:48px;font-size:24px}:host(.ion-color.ion-focused):after{background:var(--ion-color-base)}\@media (any-hover:hover){:host(.ion-color:hover) .button-native:after{background:var(--ion-color-base)}}"; }
+    get el() { return Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["e"])(this); }
 };
+MenuButton.style = {
+    /*STENCIL:MODE:ios*/ ios: menuButtonIosCss,
+    /*STENCIL:MODE:md*/ md: menuButtonMdCss
+};
+
+const menuToggleCss = ":host(.menu-toggle-hidden){display:none}";
 
 const MenuToggle = class {
     constructor(hostRef) {
-        Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         this.visible = false;
         /**
          * Automatically hides the content when the corresponding menu is not active.
@@ -518,7 +540,7 @@ const MenuToggle = class {
          */
         this.autoHide = true;
         this.onClick = () => {
-            return _index_70999d9c_js__WEBPACK_IMPORTED_MODULE_6__["m"].toggle(this.menu);
+            return _index_6941d9b4_js__WEBPACK_IMPORTED_MODULE_7__["m"].toggle(this.menu);
         };
     }
     connectedCallback() {
@@ -528,15 +550,15 @@ const MenuToggle = class {
         this.visible = await updateVisibility(this.menu);
     }
     render() {
-        const mode = Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this);
+        const mode = Object(_ionic_global_1bf1fa84_js__WEBPACK_IMPORTED_MODULE_1__["b"])(this);
         const hidden = this.autoHide && !this.visible;
-        return (Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["H"], { onClick: this.onClick, "aria-hidden": hidden ? 'true' : null, class: {
+        return (Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["H"], { onClick: this.onClick, "aria-hidden": hidden ? 'true' : null, class: {
                 [mode]: true,
                 'menu-toggle-hidden': hidden,
-            } }, Object(_core_80bde1aa_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
+            } }, Object(_index_26ec602c_js__WEBPACK_IMPORTED_MODULE_0__["h"])("slot", null)));
     }
-    static get style() { return ":host(.menu-toggle-hidden){display:none}"; }
 };
+MenuToggle.style = menuToggleCss;
 
 
 
