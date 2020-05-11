@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ModalController, MenuController } from '@ionic/angular';
+import { ModalController, MenuController, IonRouterOutlet } from '@ionic/angular';
 
 import { TermsOfServicePage } from '../terms-of-service/terms-of-service.page';
 import { PrivacyPolicyPage } from '../privacy-policy/privacy-policy.page';
@@ -38,7 +38,8 @@ export class SignupPage {
   constructor(
     public router: Router,
     public modalController: ModalController,
-    public menu: MenuController
+    public menu: MenuController,
+    private routerOutlet: IonRouterOutlet
   ) {
     this.matching_passwords_group = new FormGroup({
       'password': new FormControl('', Validators.compose([
@@ -71,14 +72,18 @@ export class SignupPage {
 
   async showTermsModal() {
     const modal = await this.modalController.create({
-      component: TermsOfServicePage
+      component: TermsOfServicePage,
+      swipeToClose: true,
+      presentingElement: this.routerOutlet.nativeEl
     });
     return await modal.present();
   }
 
   async showPrivacyModal() {
     const modal = await this.modalController.create({
-      component: PrivacyPolicyPage
+      component: PrivacyPolicyPage,
+      swipeToClose: true,
+      presentingElement: this.routerOutlet.nativeEl
     });
     return await modal.present();
   }
