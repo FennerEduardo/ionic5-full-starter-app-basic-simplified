@@ -354,12 +354,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class RealEstateListingResolver {
-    constructor(RealEstateService) {
-        this.RealEstateService = RealEstateService;
+    constructor(realEstateService) {
+        this.realEstateService = realEstateService;
     }
     resolve() {
-        const dataSource = this.RealEstateService.getListingDataSource();
-        const dataStore = this.RealEstateService.getListingStore(dataSource);
+        const dataSource = this.realEstateService.getListingDataSource();
+        const dataStore = this.realEstateService.getListingStore(dataSource);
         return dataStore;
     }
 }

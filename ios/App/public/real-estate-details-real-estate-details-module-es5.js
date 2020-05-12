@@ -769,17 +769,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./src/app/real-estate/real-estate.service.ts");
 
     var RealEstateDetailsResolver = /*#__PURE__*/function () {
-      function RealEstateDetailsResolver(RealEstateService) {
+      function RealEstateDetailsResolver(realEstateService) {
         _classCallCheck(this, RealEstateDetailsResolver);
 
-        this.RealEstateService = RealEstateService;
+        this.realEstateService = realEstateService;
       }
 
       _createClass(RealEstateDetailsResolver, [{
         key: "resolve",
         value: function resolve() {
-          var dataSource = this.RealEstateService.getDetailsDataSource();
-          var dataStore = this.RealEstateService.getDetailsStore(dataSource);
+          var dataSource = this.realEstateService.getDetailsDataSource();
+          var dataStore = this.realEstateService.getDetailsStore(dataSource);
           return dataStore;
         }
       }]);

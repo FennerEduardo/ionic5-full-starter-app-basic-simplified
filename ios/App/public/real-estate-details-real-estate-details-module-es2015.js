@@ -390,12 +390,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class RealEstateDetailsResolver {
-    constructor(RealEstateService) {
-        this.RealEstateService = RealEstateService;
+    constructor(realEstateService) {
+        this.realEstateService = realEstateService;
     }
     resolve() {
-        const dataSource = this.RealEstateService.getDetailsDataSource();
-        const dataStore = this.RealEstateService.getDetailsStore(dataSource);
+        const dataSource = this.realEstateService.getDetailsDataSource();
+        const dataStore = this.realEstateService.getDetailsStore(dataSource);
         return dataStore;
     }
 }
