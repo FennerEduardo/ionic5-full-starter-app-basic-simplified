@@ -69,7 +69,7 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
+                  "maximumWarning": "50kb"
                 }
               ],
               "ngswConfigPath": "ngsw-config.json"
@@ -78,7 +78,7 @@
               "budgets": [
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
+                  "maximumWarning": "50kb"
                 }
               ],
               "progress": false
