@@ -7,6 +7,20 @@
   --page-background: var(--app-background-shade);
 }
 
+// Use a colored border-top to fix weird transitions between toolbars that have different background colors
+ion-header {
+  ion-toolbar {
+    --background: transparent;
+  }
+}
+ion-content {
+  position: absolute;
+  top: 0;
+  border-top: var(--app-header-height);
+  border-top-style: solid;
+  border-top-color: var(--ion-color-primary);
+}
+
 // Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
 .forms-validations-content {
   --background: var(--page-background);
