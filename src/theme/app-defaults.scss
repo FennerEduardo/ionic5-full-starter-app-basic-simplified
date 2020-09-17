@@ -2,3 +2,13 @@ ion-title {
   font-weight: 400;
   letter-spacing: 0.4px;
 }
+
+// Override Ionic styles
+.input-clear-icon {
+  // Change these properties so the Ionic close icon aligns with show/hide password
+  &.sc-ion-input-ios,
+  &.sc-ion-input-md {
+    width: calc(1.2rem);
+    margin-inline-start: .5rem;
+  }
+}
