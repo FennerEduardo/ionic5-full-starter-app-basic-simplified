@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 
 import { IResolvedRouteData, ResolverHelper } from '../../utils/resolver-helper';
 import { FashionDetailsModel } from './fashion-details.model';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-fashion-details',
@@ -39,42 +40,39 @@ export class FashionDetailsPage implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // On init, the route subscription is the active subscription
-    this.subscriptions = this.route.data
-    .subscribe(
-      (resolvedRouteData: IResolvedRouteData<FashionDetailsModel>) => {
-        // Route subscription resolved, now the active subscription is the Observable extracted from the resolved route data
-        this.subscriptions = ResolverHelper.extractData<FashionDetailsModel>(resolvedRouteData.data, FashionDetailsModel)
-        .subscribe(
-          (state) => {
-            this.details = state;
 
-            this.colorVariants = this.details.colorVariants
-            .map(item =>
-              ({
-                name: item.name,
-                type: 'radio',
-                label: item.name,
-                value: item.value,
-                checked: item.default
-              })
-            );
-            this.sizeVariants = this.details.sizeVariants
-            .map(item =>
-              ({
-                name: item.name,
-                type: 'radio',
-                label: item.name,
-                value: item.value,
-                checked: item.default
-              })
-            );
-          },
-          (error) => {}
-        );
-      },
-      (error) => {}
-    );
+    this.subscriptions = this.route.data
+    .pipe(
+      // Extract data for this page
+      switchMap((resolvedRouteData: IResolvedRouteData<FashionDetailsModel>) => {
+        return ResolverHelper.extractData<FashionDetailsModel>(resolvedRouteData.data, FashionDetailsModel);
+      })
+    )
+    .subscribe((state) => {
+      this.details = state;
+
+      this.colorVariants = this.details.colorVariants
+      .map(item =>
+        ({
+          name: item.name,
+          type: 'radio',
+          label: item.name,
+          value: item.value,
+          checked: item.default
+        })
+      );
+
+      this.sizeVariants = this.details.sizeVariants
+      .map(item =>
+        ({
+          name: item.name,
+          type: 'radio',
+          label: item.name,
+          value: item.value,
+          checked: item.default
+        })
+      );
+    }, (error) => console.log(error));
   }
 
   async openColorChooser() {

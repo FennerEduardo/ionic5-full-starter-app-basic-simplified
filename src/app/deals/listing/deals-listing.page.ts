@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 
 import { IResolvedRouteData, ResolverHelper } from '../../utils/resolver-helper';
 import { DealsListingModel } from './deals-listing.model';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-deals-listing',
@@ -27,21 +28,16 @@ export class DealsListingPage implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // On init, the route subscription is the active subscription
     this.subscriptions = this.route.data
-    .subscribe(
-      (resolvedRouteData: IResolvedRouteData<DealsListingModel>) => {
-        // Route subscription resolved, now the active subscription is the Observable extracted from the resolved route data
-        this.subscriptions = ResolverHelper.extractData<DealsListingModel>(resolvedRouteData.data, DealsListingModel)
-        .subscribe(
-          (state) => {
-            this.listing = state;
-          },
-          (error) => {}
-        );
-      },
-      (error) => {}
-    );
+    .pipe(
+      // Extract data for this page
+      switchMap((resolvedRouteData: IResolvedRouteData<DealsListingModel>) => {
+        return ResolverHelper.extractData<DealsListingModel>(resolvedRouteData.data, DealsListingModel);
+      })
+    )
+    .subscribe((state) => {
+      this.listing = state;
+    }, (error) => console.log(error));
   }
 
   // NOTE: Ionic only calls ngOnDestroy if the page was popped (ex: when navigating back)
