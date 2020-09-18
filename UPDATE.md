@@ -40,3 +40,19 @@ npm install --save-dev husky@4.3
 
 npm install --save-dev codelyzer@latest
 ```
+
+---
+
+# Server Side Rendering
+``` bash
+ng add @nguniversal/express-engine
+```
+
+``` bash
+npm install --save @ionic/angular-server
+```
+
+<!-- Required by @angular/platform-server (from @ionic/angular-server) -->
+``` bash
+npm install --save @angular/animations
+```
