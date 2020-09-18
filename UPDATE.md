@@ -62,8 +62,9 @@ npm install --save @angular/animations
 # Capacitor
 <!-- Need to update to latest version to fix SSR issue -->
 ``` bash
+npm install --save-dev @capacitor/cli@latest
+npm install --save @capacitor/core@latest
+
 npm install --save @capacitor/android@latest
 npm install --save @capacitor/ios@latest
-npm install --save @capacitor/cli@latest
-npm install --save @capacitor/core@latest
 ```
