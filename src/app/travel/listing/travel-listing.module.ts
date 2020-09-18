@@ -30,8 +30,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    ComponentsModule,
-    HttpClientModule
+    ComponentsModule
+    // HttpClientModule
   ],
   declarations: [
     TravelListingPage

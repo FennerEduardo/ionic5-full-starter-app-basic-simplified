@@ -27,7 +27,7 @@ import { AppShellConfig } from './config/app-shell.config';
   ],
   imports: [
     CommonModule,
-    HttpClientModule,
+    // HttpClientModule,
     IonicModule
   ],
   exports: [

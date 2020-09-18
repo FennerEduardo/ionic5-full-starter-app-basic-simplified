@@ -91,7 +91,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), HttpClientModule],
+  imports: [
+    RouterModule.forChild(routes),
+    // HttpClientModule
+  ],
   exports: [RouterModule],
   providers: [ ]
 })
