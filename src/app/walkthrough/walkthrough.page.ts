@@ -1,4 +1,5 @@
-import { Component, AfterViewInit, ViewChild, HostBinding } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, AfterViewInit, ViewChild, HostBinding, PLATFORM_ID, Inject } from '@angular/core';
 
 import { IonSlides, MenuController } from '@ionic/angular';
 
@@ -24,7 +25,10 @@ export class WalkthroughPage implements AfterViewInit {
 
   @HostBinding('class.last-slide-active') isLastSlide = false;
 
-  constructor(public menu: MenuController) { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: object,
+    public menu: MenuController
+  ) { }
 
   // Disable side menu for this page
   ionViewDidEnter(): void {
@@ -37,23 +41,26 @@ export class WalkthroughPage implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // ViewChild is set
-    this.slides.isBeginning().then(isBeginning => {
-      this.isFirstSlide = isBeginning;
-    });
-    this.slides.isEnd().then(isEnd => {
-      this.isLastSlide = isEnd;
-    });
-
-    // Subscribe to changes
-    this.slides.ionSlideWillChange.subscribe(changes => {
+    // Accessing slides in server platform throw errors
+    if (isPlatformBrowser(this.platformId)) {
+      // ViewChild is set
       this.slides.isBeginning().then(isBeginning => {
         this.isFirstSlide = isBeginning;
       });
       this.slides.isEnd().then(isEnd => {
         this.isLastSlide = isEnd;
       });
-    });
+
+      // Subscribe to changes
+      this.slides.ionSlideWillChange.subscribe(changes => {
+        this.slides.isBeginning().then(isBeginning => {
+          this.isFirstSlide = isBeginning;
+        });
+        this.slides.isEnd().then(isEnd => {
+          this.isLastSlide = isEnd;
+        });
+      });
+    }
   }
 
   skipWalkthrough(): void {
