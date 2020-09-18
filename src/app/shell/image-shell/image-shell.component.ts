@@ -46,7 +46,8 @@ export class ImageShellComponent {
     // Show loading indicator
     // When using SSR (Server Side Rendering), avoid the loading animation while the image resource is being loaded
     if (isPlatformServer(this.platformId)) {
-      this.imageLoaded = true;
+      // this.imageLoaded = true;
+      this._imageLoaded();
     } else {
       this.imageLoaded = false;
     }
