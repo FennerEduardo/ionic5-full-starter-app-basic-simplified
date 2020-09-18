@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 
 import { IResolvedRouteData, ResolverHelper } from '../../utils/resolver-helper';
 import { TravelListingModel } from './travel-listing.model';
-// import { delay, finalize } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-travel-listing',
@@ -29,36 +29,22 @@ export class TravelListingPage implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // On init, the route subscription is the active subscription
+
     this.subscriptions = this.route.data
-    // .pipe(
-    //   delay(2000),
-    //   finalize(() => console.log('dataSubscription [finalize()]'))
-    // )
-    .subscribe(
-      (resolvedRouteData: IResolvedRouteData<TravelListingModel>) => {
-        // Route subscription resolved, now the active subscription is the Observable extracted from the resolved route data
-        this.subscriptions = ResolverHelper.extractData<TravelListingModel>(resolvedRouteData.data, TravelListingModel)
-        // .pipe(
-        //   delay(8000),
-        //   finalize(() => console.log('listingDataStore.subscribe [finalize()]'))
-        // )
-        .subscribe(
-          (state) => {
-            // console.log('GOT STATE');
-            this.listing = state;
-          },
-          (error) => {}
-        );
-      },
-      (error) => {}
-    );
+    .pipe(
+      // Extract data for this page
+      switchMap((resolvedRouteData: IResolvedRouteData<TravelListingModel>) => {
+        return ResolverHelper.extractData<TravelListingModel>(resolvedRouteData.data, TravelListingModel);
+      })
+    )
+    .subscribe((state) => {
+      this.listing = state;
+    }, (error) => console.log(error));
   }
 
   // NOTE: Ionic only calls ngOnDestroy if the page was popped (ex: when navigating back)
   // Since ngOnDestroy might not fire when you navigate from the current page, use ionViewWillLeave to cleanup Subscriptions
   ionViewWillLeave(): void {
-    // console.log('TravelListingPage [ionViewWillLeave]');
     this.subscriptions.unsubscribe();
   }
 }

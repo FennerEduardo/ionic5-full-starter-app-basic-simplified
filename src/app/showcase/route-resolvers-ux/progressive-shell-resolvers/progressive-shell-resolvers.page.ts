@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 // You can also use a Class object as a shell model
 import { ShowcaseShellModel } from '../../showcase-shell.model';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-showcase-progressive-shell-resolvers',
@@ -18,16 +19,13 @@ export class ProgressiveShellResovlersPage implements OnInit {
   ngOnInit(): void {
     console.log('Showcase Progressive Shell Resovlers - ngOnInit()');
 
-    this.route.data.subscribe((resolvedRouteData) => {
-      const dataStore = resolvedRouteData['data'];
-
-      dataStore.state.subscribe(
-        (state) => {
-          this.routeResolveData = state;
-        },
-        (error) => {}
-      );
-    },
-    (error) => {});
+    this.route.data
+    .pipe(
+      // Extract data for this page
+      switchMap((resolvedRouteData) => resolvedRouteData['data'].state)
+    )
+    .subscribe((state: any) => {
+      this.routeResolveData = state;
+    }, (error) => console.log(error));
   }
 }

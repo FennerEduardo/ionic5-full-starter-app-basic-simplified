@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 
 import { IResolvedRouteData, ResolverHelper } from '../../utils/resolver-helper';
 import { UserFriendsModel } from './user-friends.model';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-friends',
@@ -35,24 +36,19 @@ export class UserFriendsPage implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // On init, the route subscription is the active subscription
     this.subscriptions = this.route.data
-    .subscribe(
-      (resolvedRouteData: IResolvedRouteData<UserFriendsModel>) => {
-        // Route subscription resolved, now the active subscription is the Observable extracted from the resolved route data
-        this.subscriptions = ResolverHelper.extractData<UserFriendsModel>(resolvedRouteData.data, UserFriendsModel)
-        .subscribe(
-          (state) => {
-            this.data = state;
-            this.friendsList = this.data.friends;
-            this.followersList = this.data.followers;
-            this.followingList = this.data.following;
-          },
-          (error) => {}
-        );
-      },
-      (error) => {}
-    );
+    .pipe(
+      // Extract data for this page
+      switchMap((resolvedRouteData: IResolvedRouteData<UserFriendsModel>) => {
+        return ResolverHelper.extractData<UserFriendsModel>(resolvedRouteData.data, UserFriendsModel);
+      })
+    )
+    .subscribe((state) => {
+      this.data = state;
+      this.friendsList = this.data.friends;
+      this.followersList = this.data.followers;
+      this.followingList = this.data.following;
+    }, (error) => console.log(error));
   }
 
   segmentChanged(ev): void {
