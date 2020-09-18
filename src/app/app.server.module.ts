@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
+// Tell Ionic components how to render on the server
+import { IonicServerModule } from '@ionic/angular-server';
+
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
 import { UniversalInterceptor } from './universal-interceptor';
@@ -10,7 +13,8 @@ import { UniversalInterceptor } from './universal-interceptor';
   imports: [
     AppModule,
     ServerModule,
-    ServerTransferStateModule
+    ServerTransferStateModule,
+    IonicServerModule
   ],
   providers: [
     {
