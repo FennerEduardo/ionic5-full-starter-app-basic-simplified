@@ -67,7 +67,13 @@
   <meta name="theme-color" content="#000000">
 </head>
 <body>
+  <!-- Ver: https://github.com/mhartington/StarTrack-ng/blob/master/src/index.html -->
+  <!-- Esto lo agregamos para llegar a 100% PWA en lighthouse (Does not provide fallback content when JavaScript is not available) -->
+  <noscript>
+    <h3 style="color: #32db64; font-family: sans-serif; font-weight: 600; margin: 2rem;">
+      Sorry, but app is not available without javascript
+    </h3>
+  </noscript>
   <app-root></app-root>
-  <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 </html>

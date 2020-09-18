@@ -19,6 +19,8 @@ Run `ionic serve` to start a live-reload dev server
 
 Run `npm run dev:ssr`
 
+In production, run `npm run build:ssr && npm run serve:ssr`
+
 ### To test the app as a Native App
 
 This project uses [Capacitor](https://capacitor.ionicframework.com/docs/) (spiritual successor to Cordova).
