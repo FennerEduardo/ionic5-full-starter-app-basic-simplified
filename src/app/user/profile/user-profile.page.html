@@ -74,7 +74,7 @@
       <a class="heading-call-to-action" [routerLink]="['/app/user/friends']">See all</a>
     </ion-row>
     <ion-row class="friends-row">
-      <ion-col class="friend-item" size="2" *ngFor="let friend of profile.friends">
+      <ion-col class="friend-item" *ngFor="let friend of profile.friends">
         <app-aspect-ratio [ratio]="{w: 1, h: 1}">
           <app-image-shell class="friend-picture" [src]="friend.image"></app-image-shell>
         </app-aspect-ratio>
@@ -91,7 +91,7 @@
       <a class="heading-call-to-action">See all</a>
     </ion-row>
     <ion-row class="pictures-row">
-      <ion-col class="picture-item" size="2" *ngFor="let photo of profile.photos">
+      <ion-col class="picture-item" *ngFor="let photo of profile.photos">
         <app-image-shell [display]="'cover'" [src]="photo.image" class="user-photo-image">
           <app-aspect-ratio [ratio]="{w:1, h:1}">
           </app-aspect-ratio>
