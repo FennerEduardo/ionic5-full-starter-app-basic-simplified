@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 
 import { TabsPage } from './tabs.page';
 
@@ -92,8 +91,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(routes),
-    // HttpClientModule
+    RouterModule.forChild(routes)
   ],
   exports: [RouterModule],
   providers: [ ]
