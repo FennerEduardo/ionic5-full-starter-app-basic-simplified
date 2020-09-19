@@ -1,4 +1,5 @@
 ion-title {
+  // Adding !important to force precedence in SSR
   font-weight: 400 !important;
   letter-spacing: 0.4px;
 }
