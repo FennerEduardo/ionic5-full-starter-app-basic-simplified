@@ -12,19 +12,21 @@ app-counter-input {
   justify-content: flex-end;
 
   ion-button.counter-icon {
-    --background: var(--counter-background);
-    --background-activated: var(--counter-color);
-    --color: var(--counter-color);
-    --color-activated: var(--counter-color-activated);
-    --border-width: 1px;
-    --border-style: solid;
-    --border-color: var(--counter-border-color);
-    --box-shadow: none;
-    --border-radius: var(--counter-border-radius-outer) var(--counter-border-radius-inner) var(--counter-border-radius-inner) var(--counter-border-radius-outer);
-    --padding-bottom: 3px;
-    --padding-end: 3px;
-    --padding-start: 3px;
-    --padding-top: 3px;
+    &.button-solid {
+      --background: var(--counter-background);
+      --background-activated: var(--counter-color);
+      --color: var(--counter-color);
+      --color-activated: var(--counter-color-activated);
+      --border-width: 1px;
+      --border-style: solid;
+      --border-color: var(--counter-border-color);
+      --box-shadow: none;
+      --border-radius: var(--counter-border-radius-outer) var(--counter-border-radius-inner) var(--counter-border-radius-inner) var(--counter-border-radius-outer);
+      --padding-bottom: 3px;
+      --padding-end: 3px;
+      --padding-start: 3px;
+      --padding-top: 3px;
+    }
 
     margin: 0px;
   }
