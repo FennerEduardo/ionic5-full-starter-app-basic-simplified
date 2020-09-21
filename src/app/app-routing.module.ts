@@ -62,7 +62,12 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {
+      // This value is required for server-side rendering to work.
+      initialNavigation: 'enabled',
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled'
+    })
   ],
   exports: [RouterModule]
 })
