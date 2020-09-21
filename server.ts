@@ -9,6 +9,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import * as MobileDetect from 'mobile-detect';
 
 import { AppServerModule } from './src/main.server';
+import { APP_ROUTES } from './static-paths';
 
 
 // The Express app is exported so that it can be used by serverless Functions.
@@ -32,32 +33,64 @@ export function app(): express.Express {
     maxAge: '1y'
   }));
 
-  // All regular routes use the Universal engine
-  server.get('*', (req, res) => {
+  // Check request user-agent and set the platform mode accordingly
+  server.use((req, res, next) => {
     // Use Mobile Detect to set Ionic Config depending on the device
     const mobileDetect = new MobileDetect(req.headers['user-agent']);
 
-    // This method returns the name of the mobile device ('iPhone', etc) or null if it's not a mobile device
+    // This method returns the detected operating system string or null
     // (see: https://github.com/hgoebl/mobile-detect.js)
-    const mobileDevice = mobileDetect.mobile();
+    const mobileDevice = mobileDetect.os();
 
     // Add custom header to the response we send to our Angular app. We will get this custom header in the AppModule
     res.set('mobile-device', mobileDevice);
 
-    // res.location(req.originalUrl).render(
-    res.render(
-      indexHtml,
-      {
-        req,
-        res,
-        providers: [
-          {
-            provide: APP_BASE_HREF,
-            useValue: req.baseUrl
-          }
-        ]
-      }
-    );
+    next();
+  });
+
+
+  // To enable proper 404 redirects in non existent routes we need to specify the existing routes and then
+  // add a '*' route for all the non existent routes to be treated with a 404 status
+  console.log('Enabled ROUTES:');
+  APP_ROUTES.forEach(route => {
+    console.log(route);
+    server.get(`${route}`, (req, res) => {
+      // tslint:disable-next-line:no-console
+      console.time(`GET: ${req.originalUrl}`);
+
+      res.render(
+        indexHtml,
+        {
+          req,
+          res,
+          providers: [
+            {
+              provide: APP_BASE_HREF,
+              useValue: req.baseUrl
+            }
+          ]
+        }
+      );
+
+      // tslint:disable-next-line:no-console
+      console.timeEnd(`GET: ${req.originalUrl}`);
+    });
+  });
+
+  // Properly handle 404's
+  server.get('*', (req, res) => {
+    // tslint:disable-next-line:no-console
+    console.log(req.originalUrl);
+    // tslint:disable-next-line:no-console
+    console.time(`GET: ${req.originalUrl} [404]`);
+    res.status(404).render(indexHtml, {
+      req,
+      res,
+      requestUrl: '/page-not-found',
+      providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }]
+    });
+    // tslint:disable-next-line:no-console
+    console.timeEnd(`GET: ${req.originalUrl} [404]`);
   });
 
   return server;
