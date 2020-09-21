@@ -7,7 +7,7 @@ import { IonicServerModule } from '@ionic/angular-server';
 
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
-import { UniversalInterceptor } from './universal-interceptor';
+import { UniversalInterceptor } from './utils/universal-interceptor';
 
 @NgModule({
   imports: [
