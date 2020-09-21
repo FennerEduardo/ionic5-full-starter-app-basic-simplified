@@ -3,10 +3,13 @@ import 'zone.js/dist/zone-node';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { join } from 'path';
+import { existsSync } from 'fs';
+
+import { APP_BASE_HREF } from '@angular/common';
+import * as MobileDetect from 'mobile-detect';
 
 import { AppServerModule } from './src/main.server';
-import { APP_BASE_HREF } from '@angular/common';
-import { existsSync } from 'fs';
+
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -31,7 +34,30 @@ export function app(): express.Express {
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
-    res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
+    // Use Mobile Detect to set Ionic Config depending on the device
+    const mobileDetect = new MobileDetect(req.headers['user-agent']);
+
+    // This method returns the name of the mobile device ('iPhone', etc) or null if it's not a mobile device
+    // (see: https://github.com/hgoebl/mobile-detect.js)
+    const mobileDevice = mobileDetect.mobile();
+
+    // Add custom header to the response we send to our Angular app. We will get this custom header in the AppModule
+    res.set('mobile-device', mobileDevice);
+
+    // res.location(req.originalUrl).render(
+    res.render(
+      indexHtml,
+      {
+        req,
+        res,
+        providers: [
+          {
+            provide: APP_BASE_HREF,
+            useValue: req.baseUrl
+          }
+        ]
+      }
+    );
   });
 
   return server;
