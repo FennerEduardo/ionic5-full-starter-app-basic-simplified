@@ -8,6 +8,12 @@ const routes: Routes = [
     path: '',
     component: TabsPage,
     children: [
+      // /app/ redirect
+      {
+        path: '',
+        redirectTo: 'categories',
+        pathMatch: 'full'
+      },
       {
         path: 'categories',
         children: [
@@ -78,14 +84,8 @@ const routes: Routes = [
             loadChildren: () => import('../notifications/notifications.module').then(m => m.NotificationsPageModule)
           }
         ]
-      },
+      }
     ]
-  },
-  // /app/ redirect
-  {
-    path: '',
-    redirectTo: 'app/categories',
-    pathMatch: 'full'
   }
 ];
 
