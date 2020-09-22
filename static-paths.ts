@@ -1,12 +1,24 @@
+export const REDIRECT_ROUTES = [
+  {
+    from: '/',
+    to: '/walkthrough'
+  },
+  {
+    from: '/app',
+    to: '/app/categories'
+  },
+  {
+    from: '/showcase',
+    to: '/showcase/app-shell'
+  }
+];
+
 export const APP_ROUTES = [
-  '/',
   '/walkthrough',
   '/getting-started',
   '/auth/login',
   '/auth/signup',
   '/auth/forgot-password',
-  // Should redirect or point the canonical to /app/categories
-  '/app',
   '/app/categories',
   '/app/categories/fashion',
   '/app/categories/fashion/:productId',
@@ -25,8 +37,6 @@ export const APP_ROUTES = [
   '/forms-and-validations',
   '/forms-filters',
   '/page-not-found',
-  // Should redirect or point the canonical to /showcase/app-shell
-  '/showcase',
   '/showcase/app-shell',
   '/showcase/app-shell/aspect-ratio',
   '/showcase/app-shell/image-shell',

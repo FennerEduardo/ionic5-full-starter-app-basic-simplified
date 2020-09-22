@@ -9,7 +9,8 @@ import { APP_BASE_HREF } from '@angular/common';
 import * as MobileDetect from 'mobile-detect';
 
 import { AppServerModule } from './src/main.server';
-import { APP_ROUTES } from './static-paths';
+import { APP_ROUTES, REDIRECT_ROUTES } from './static-paths';
+import { stringify } from 'querystring';
 
 
 // The Express app is exported so that it can be used by serverless Functions.
@@ -48,6 +49,22 @@ export function app(): express.Express {
     next();
   });
 
+  // Add simple health check
+  server.get('/health', (req, res, next) => {
+    console.log('Checking app health ...');
+    res.sendStatus(200);
+  });
+
+  console.log('Redirect ROUTES:');
+  REDIRECT_ROUTES.forEach((route: ({from: string, to: string})) => {
+    console.log(route);
+    server.get(`${route.from}`, (req, res) => {
+      // tslint:disable-next-line:no-console
+      console.log(`GET: ${req.originalUrl}`);
+      console.log(`Redirecting to: ${route.to}`);
+      res.redirect(301, route.to);
+    });
+  });
 
   // To enable proper 404 redirects in non existent routes we need to specify the existing routes and then
   // add a '*' route for all the non existent routes to be treated with a 404 status
