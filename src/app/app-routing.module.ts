@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { RedirectGuard } from './utils/redirect-guard';
-
 const routes: Routes = [
   {
     path: '',
-    // Workaround (see: https://github.com/angular/angular/issues/18605#issuecomment-656868276)
-    children: [],
-    // In order to have dynamic redirects, we need to use a guard to redirect instead of redirectTo
-    canActivate: [RedirectGuard]
+    redirectTo: '/walkthrough',
+    pathMatch: 'full'
   },
   {
     path: 'walkthrough',
