@@ -1,11 +1,10 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
-import { makeStateKey, TransferState } from '@angular/platform-browser';
+import { isPlatformServer } from '@angular/common';
 
 import { DataStore } from '../shell/data-store';
 import { TransferStateHelper } from '../utils/transfer-state-helper';
@@ -17,12 +16,8 @@ export class FashionService {
   private listingDataStore: DataStore<FashionListingModel>;
   private detailsDataStore: DataStore<FashionDetailsModel>;
 
-  private listingDataKey = makeStateKey('fashion-listing');
-  private detailsDataKey = makeStateKey('fashion-details');
-
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,
-    private state: TransferState,
     private transferStateHelper: TransferStateHelper,
     private http: HttpClient
   ) { }
@@ -46,28 +41,12 @@ export class FashionService {
       )
     );
 
-    if (isPlatformServer(this.platformId)) {
-      return rawDataSource.pipe(
-        tap(
-          (data: FashionListingModel) => {
-            this.state.set(this.listingDataKey, data);
-          }
-        )
-      );
-    } else if (isPlatformBrowser(this.platformId)) {
-      // Check if we have cached data in the TransferState
-      const cachedListingData = this.state.get(this.listingDataKey, null);
+    // This method tapps into the raw data source and stores the resolved data in the TransferState, then when
+    // transitioning from the server rendered view to the browser, checks if we already loaded the data in the server to prevent
+    // duplicate http requests.
+    const cachedDataSource = this.transferStateHelper.checkDataSourceState('fashion-listing-state', rawDataSource);
 
-      if (cachedListingData) {
-        const cachedDataSource = of(cachedListingData);
-        // Set a flag to track if the dataSource is being cached in the server state or not
-        Object.assign(cachedDataSource, {ssr_state: true});
-
-        return cachedDataSource;
-      } else {
-        return rawDataSource;
-      }
-    }
+    return cachedDataSource;
   }
 
   public getListingStore(dataSource: Observable<FashionListingModel>): DataStore<FashionListingModel> {
