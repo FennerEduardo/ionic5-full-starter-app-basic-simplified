@@ -10,7 +10,6 @@ import * as MobileDetect from 'mobile-detect';
 
 import { AppServerModule } from './src/main.server';
 import { APP_ROUTES, REDIRECT_ROUTES } from './static-paths';
-import { stringify } from 'querystring';
 
 
 // The Express app is exported so that it can be used by serverless Functions.
@@ -29,6 +28,7 @@ export function app(): express.Express {
 
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
+
   // Serve static files from /browser
   server.get('*.*', express.static(distFolder, {
     maxAge: '1y',
@@ -98,8 +98,8 @@ export function app(): express.Express {
 
   // Properly handle 404's
   server.get('*', (req, res) => {
-    // tslint:disable-next-line:no-console
     console.log(req.originalUrl);
+
     // tslint:disable-next-line:no-console
     console.time(`GET: ${req.originalUrl} [404]`);
     res.status(404).render(indexHtml, {
