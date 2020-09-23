@@ -31,7 +31,9 @@ export function app(): express.Express {
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
   server.get('*.*', express.static(distFolder, {
-    maxAge: '1y'
+    maxAge: '1y',
+    // Avoid static assets errors invoke the next middleware (see: https://expressjs.com/en/4x/api.html#express.static)
+    fallthrough: false
   }));
 
   // Check request user-agent and set the platform mode accordingly
