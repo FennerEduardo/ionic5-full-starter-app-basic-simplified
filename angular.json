@@ -33,6 +33,11 @@
               },
               "src/manifest.webmanifest"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src"
+              ]
+            },
             "styles": [
               {
                 "input": "src/theme/variables.scss"
