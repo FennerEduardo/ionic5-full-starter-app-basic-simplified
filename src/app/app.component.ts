@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Plugins } from '@capacitor/core';
+import { SeoService } from './utils/seo/seo.service';
 const { SplashScreen } = Plugins;
 
 @Component({
@@ -62,7 +63,8 @@ export class AppComponent {
    }
  ];
 
-  constructor() {
+  // inject seo service to set meta tags
+  constructor(private seoService: SeoService) {
     this.initializeApp();
   }
 
