@@ -61,7 +61,7 @@ export class FashionService {
       if (isPlatformServer(this.platformId) || dataSource['ssr_state']) {
         // Trigger loading mechanism with 0 delay (this will prevent the shell to be shown)
         this.listingDataStore.load(dataSource, 0);
-      } else { // Typically browser transitions
+      } else { // On browser transitions
         // Trigger the loading mechanism (with shell)
         this.listingDataStore.load(dataSource);
       }
@@ -109,7 +109,7 @@ export class FashionService {
       if (isPlatformServer(this.platformId) || dataSource['ssr_state']) {
         // Trigger loading mechanism with 0 delay (this will prevent the shell to be shown)
         this.detailsDataStore.load(dataSource, 0);
-      } else { // Typically browser transitions
+      } else { // On browser transitions
         // Trigger the loading mechanism (with shell)
         this.detailsDataStore.load(dataSource);
       }
