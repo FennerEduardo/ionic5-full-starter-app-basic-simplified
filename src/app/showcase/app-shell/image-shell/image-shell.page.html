@@ -15,6 +15,7 @@
       This component enables to preload an image with an elegant shell.
     </p>
   </section>
+
   <section class="showcase-section">
     <h5>Set different animation options</h5>
     <p>
@@ -48,6 +49,7 @@
       </app-aspect-ratio>
     </div>
   </section>
+
   <section class="showcase-section">
     <p>
       You can add/remove the following <b>Classes</b> to adjust the shell element behavior:
@@ -65,6 +67,7 @@
       </app-aspect-ratio>
     </div>
   </section>
+
   <section class="showcase-section">
     <p>
       You can also override these <b>CSS 4 variables</b> to adjust the shell element style
@@ -144,6 +147,7 @@ app-image-shell &#123;
       </ion-col>
     </ion-row>
   </section>
+
   <section class="showcase-section">
     <h2>Cover Image Display</h2>
     <p>
@@ -165,6 +169,7 @@ app-image-shell &#123;
       </app-aspect-ratio>
     </app-image-shell>
   </section>
+
   <section class="showcase-section">
     <h2>Usage</h2>
     <p>
@@ -239,6 +244,40 @@ app-image-shell[display="cover"] &#123;
       </app-image-shell>
     </div>
   </section>
+
+  <section class="showcase-section">
+    <h2>Image load ERROR</h2>
+    <p>
+      In case the image url is incorrect or the server has any problem, we should show a message accordingly instead of an infinite loading animation.
+    </p>
+    <p>
+      <b>Notice:</b> Images with <b>cover</b> display may have text above them. For usability reasons we disabled the error message to avoid confusion.
+    </p>
+<pre>
+<b>&lt;app-aspect-ratio [ratio]="&#123;w:3, h:2&#125;"&gt;</b>
+  &lt;app-image-shell animation="spinner" [src]="'./assets/non-existent-image.jpg'" [alt]=""&gt;&lt;/app-image-shell&gt;
+<b>&lt;/app-aspect-ratio&gt;</b>
+</pre>
+    <div style="width:60%; margin: 0px auto;">
+      <app-aspect-ratio [ratio]="{w:3, h:2}">
+        <app-image-shell animation="spinner" [src]="'./assets/non-existent-image.jpg'" [alt]=""></app-image-shell>
+      </app-aspect-ratio>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <h2>Image lazy loading</h2>
+    <p>
+      By default we enabled the Image element <b>loading</b> attribute.
+    </p>
+    <p>
+      It's used to instruct the browser to defer loading of images that are off-screen until the user scrolls near them.
+    </p>
+    <p>
+      <b>Notice:</b> This does not work on images with <b>cover</b> display because we use a hidden aux image. As it's hidden, if set loading to 'lazy' it won't ever trigger the loading mechanism.
+    </p>
+  </section>
+
   <section class="showcase-section">
     <h2>Maintain Aspect Ratio</h2>
     <p>
