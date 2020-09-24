@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { map, flatMap } from 'rxjs/operators';
+import { map, mergeMap } from 'rxjs/operators';
 
 import { DataStore } from '../shell/data-store';
 import { FoodListingModel } from './listing/food-listing.model';
@@ -50,7 +50,7 @@ export class FoodService {
   public getDetailsDataSource(slug: string): Observable<FoodDetailsModel> {
     return this.http.get<{items: Array<FoodDetailsModel>}>('./assets/sample-data/food/details.json')
     .pipe(
-      flatMap(details => details.items.filter(item => item.slug === slug)),
+      mergeMap(details => details.items.filter(item => item.slug === slug)),
       map(
         (data: FoodDetailsModel) => {
           // Note: HttpClient cannot know how to instantiate a class for the returned data

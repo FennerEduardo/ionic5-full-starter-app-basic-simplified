@@ -42,7 +42,6 @@ export class FoodListingPage implements OnInit {
   // NOTE: Ionic only calls ngOnDestroy if the page was popped (ex: when navigating back)
   // Since ngOnDestroy might not fire when you navigate from the current page, use ionViewWillLeave to cleanup Subscriptions
   ionViewWillLeave(): void {
-    // console.log('TravelListingPage [ionViewWillLeave]');
     this.subscriptions.unsubscribe();
   }
 }
