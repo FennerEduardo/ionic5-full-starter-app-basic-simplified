@@ -10,7 +10,7 @@
 <ion-content class="fashion-listing-content">
   <ng-container *ngIf="listing?.items">
     <ion-row class="items-row">
-      <ion-col size="6" class="listing-item" *ngFor="let item of listing.items">
+      <ion-col size="6" class="listing-item" *ngFor="let item of listing?.items">
         <div class="item-image-wrapper">
           <a class="image-anchor" [routerLink]="['/app/categories/fashion/', item.slug]">
             <app-aspect-ratio [ratio]="{w: 3, h: 4}">
