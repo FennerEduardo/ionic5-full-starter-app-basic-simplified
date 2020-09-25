@@ -253,6 +253,12 @@ app-image-shell[display="cover"] &#123;
     <p>
       <b>Notice:</b> Images with <b>cover</b> display may have text above them. For usability reasons we disabled the error message to avoid confusion.
     </p>
+    <h5>Set message color</h5>
+<pre>
+app-image-shell &#123;
+  --image-shell-color: #ff0000;
+&#125;
+</pre>
 <pre>
 <b>&lt;app-aspect-ratio [ratio]="&#123;w:3, h:2&#125;"&gt;</b>
   &lt;app-image-shell animation="spinner" [src]="'./assets/non-existent-image.jpg'" [alt]=""&gt;&lt;/app-image-shell&gt;
@@ -260,7 +266,23 @@ app-image-shell[display="cover"] &#123;
 </pre>
     <div style="width:60%; margin: 0px auto;">
       <app-aspect-ratio [ratio]="{w:3, h:2}">
-        <app-image-shell animation="spinner" [src]="'./assets/non-existent-image.jpg'" [alt]=""></app-image-shell>
+        <app-image-shell animation="spinner" [src]="'./assets/non-existent-image.jpg'" [alt]="" style="--image-shell-color: #ff0000;"></app-image-shell>
+      </app-aspect-ratio>
+    </div>
+    <h5>Use other properties</h5>
+<pre>
+app-image-shell &#123;
+  --image-shell-border-radius: 10px;
+&#125;
+</pre>
+<pre>
+<b>&lt;app-aspect-ratio [ratio]="&#123;w:3, h:2&#125;"&gt;</b>
+  &lt;app-image-shell animation="gradient" [src]="'./assets/non-existent-image.jpg'" [alt]=""&gt;&lt;/app-image-shell&gt;
+<b>&lt;/app-aspect-ratio&gt;</b>
+</pre>
+    <div style="width:60%; margin: 0px auto;">
+      <app-aspect-ratio [ratio]="{w:3, h:2}">
+        <app-image-shell animation="gradient" [src]="'./assets/non-existent-image.jpg'" [alt]="" style="--image-shell-border-radius: 10px;"></app-image-shell>
       </app-aspect-ratio>
     </div>
   </section>
