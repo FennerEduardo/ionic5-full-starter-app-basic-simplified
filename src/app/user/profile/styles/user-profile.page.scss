@@ -189,7 +189,7 @@
 
     .friend-item {
       --col-item-width: 2;
-      // Override ion-col styles
+      // SSR fix: Override ion-col styles
       flex: 0 0 calc(calc(var(--col-item-width) / var(--ion-grid-columns, 12)) * 100%);
       width: calc(calc(var(--col-item-width) / var(--ion-grid-columns, 12)) * 100%);
       max-width: calc(calc(var(--col-item-width) / var(--ion-grid-columns, 12)) * 100%);
@@ -234,7 +234,7 @@
 
     .picture-item {
       --col-item-width: 2;
-      // Override ion-col styles
+      // SSR fix: Override ion-col styles
       flex: 0 0 calc(calc(var(--col-item-width) / var(--ion-grid-columns, 12)) * 100%);
       width: calc(calc(var(--col-item-width) / var(--ion-grid-columns, 12)) * 100%);
       max-width: calc(calc(var(--col-item-width) / var(--ion-grid-columns, 12)) * 100%);
