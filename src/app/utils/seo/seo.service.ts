@@ -1,9 +1,10 @@
-import { Injectable, OnDestroy, Inject } from '@angular/core';
+import { Injectable, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { DOCUMENT, PlatformLocation } from '@angular/common';
 import { SeoDataModel } from './seo-data.model';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class SeoService implements OnDestroy {
     private meta: Meta,
     private title: Title,
     @Inject(DOCUMENT) private document: Document,
+    @Inject(PLATFORM_ID) private platformId: string,
     private platformLocation: PlatformLocation
   ) {
     this._routerSubscription = this.router.events
@@ -95,7 +97,9 @@ export class SeoService implements OnDestroy {
   }
 
   getCurrentUrl(platformLocation: any) {
-    return platformLocation.location.origin + platformLocation.location.pathname;
+    if (isPlatformBrowser(this.platformId)) {
+      return platformLocation.location.origin + platformLocation.location.pathname;
+    }
   }
 
   ngOnDestroy(): void {
