@@ -31,7 +31,8 @@ export class TravelDetailsPage implements OnInit {
     .pipe(
       // Extract data for this page
       switchMap((resolvedRouteData: IResolvedRouteData<TravelDetailsModel>) => {
-        return ResolverHelper.extractData<TravelDetailsModel>(resolvedRouteData.data, TravelDetailsModel);
+        // tslint:disable-next-line:no-string-literal
+        return ResolverHelper.extractData<TravelDetailsModel>(resolvedRouteData.data['dataStore'], TravelDetailsModel);
       })
     )
     .subscribe((state) => {
@@ -42,7 +43,6 @@ export class TravelDetailsPage implements OnInit {
   // NOTE: Ionic only calls ngOnDestroy if the page was popped (ex: when navigating back)
   // Since ngOnDestroy might not fire when you navigate from the current page, use ionViewWillLeave to cleanup Subscriptions
   ionViewWillLeave(): void {
-    // console.log('TravelListingPage [ionViewWillLeave]');
     this.subscriptions.unsubscribe();
   }
 }

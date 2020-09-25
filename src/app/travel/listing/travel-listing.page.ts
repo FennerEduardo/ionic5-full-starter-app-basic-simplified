@@ -34,7 +34,8 @@ export class TravelListingPage implements OnInit {
     .pipe(
       // Extract data for this page
       switchMap((resolvedRouteData: IResolvedRouteData<TravelListingModel>) => {
-        return ResolverHelper.extractData<TravelListingModel>(resolvedRouteData.data, TravelListingModel);
+        // tslint:disable-next-line:no-string-literal
+        return ResolverHelper.extractData<TravelListingModel>(resolvedRouteData.data['dataStore'], TravelListingModel);
       })
     )
     .subscribe((state) => {
