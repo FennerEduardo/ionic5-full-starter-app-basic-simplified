@@ -43,7 +43,7 @@
             </ion-row>
           </ion-row>
         </ion-col>
-        <ion-col class="stats-col" size="2">
+        <ion-col class="stats-col">
           <span class="item-rating" [attr.ratingBase]="item.rating | floor">
             <app-text-shell [data]="item.rating"></app-text-shell>
           </span>
@@ -54,7 +54,7 @@
         </ion-col>
       </ion-row>
       <ion-row class="pictures-row">
-        <ion-col class="picture-wrapper" size="2" *ngFor="let picture of item.pictures.slice(0, 5); let i = index">
+        <ion-col class="picture-wrapper" *ngFor="let picture of item.pictures.slice(0, 5); let i = index">
           <app-aspect-ratio [ratio]="{w: 1, h: 1}">
             <app-image-shell class="picture-image" [src]="picture" [alt]="'food image'"></app-image-shell>
           </app-aspect-ratio>
