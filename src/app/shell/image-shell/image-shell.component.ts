@@ -54,12 +54,9 @@ export class ImageShellComponent {
     // When using SSR (Server Side Rendering), avoid the loading animation while the image resource is being loaded
     const imageState = this.transferStateHelper.checkImageShellState('shell-images-state', this._src);
 
-    console.log('imageState', imageState, this._src);
-
     if (imageState === ImageShellState.SSR || imageState === ImageShellState.BROWSER_FROM_SSR) {
       this._imageProcessedInServer();
     } else {
-      // TODO: revisar esto. Quizas deberia tener estilos especiales si es SSR?
       if (this._display === 'cover') {
         // Unset the background-image until the image is loaded
         this.backgroundImage = 'unset';
@@ -86,8 +83,6 @@ export class ImageShellComponent {
   }
 
   _imageLoaded(): void {
-    console.log('_imageLoaded', this._src);
-
     this.imageLoaded = true;
 
     // If it's a cover image then set the background-image property accordingly
@@ -102,8 +97,6 @@ export class ImageShellComponent {
     // (see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Image_loading_errors)
     // Avoid that shell case
     if (this._src && this._src !== '') {
-      console.log('_imageLoadError', this._src, this._alt, event);
-
       this.imageLoaded = false;
       this.imageSSR = false;
 

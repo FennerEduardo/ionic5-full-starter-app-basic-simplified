@@ -34,12 +34,9 @@ import { environment } from '../environments/environment';
             if (response && response !== null) {
               // Get custom header from the response sent from the server.ts
               const mobileDeviceHeader = response.get('mobile-device');
-              console.log('mobileDeviceHeader', mobileDeviceHeader);
 
               // Set Ionic config mode?
             }
-          } else {
-            console.log('Not in server');
           }
         };
       },

@@ -18,6 +18,6 @@ export class TabsPage  {
   }
 
   ionTabsDidChange(event) {
-    console.log('ionTabsDidChange', event);
+    // console.log('ionTabsDidChange', event);
   }
 }
