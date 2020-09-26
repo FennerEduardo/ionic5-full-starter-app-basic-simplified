@@ -64,8 +64,8 @@ export class SeoService implements OnDestroy {
       }
 
       // Set Canonical URL
-      // If you don't want to set cannonical URL comment the following line
-      this.updateCanonicalUrl(this.getCurrentUrl(this.platformLocation));
+      // * Note: This is an advanced use case. If you want to set cannonical URL un-comment the following line
+      // this.updateCanonicalUrl(this.getCurrentUrl(this.platformLocation));
     });
   }
 
