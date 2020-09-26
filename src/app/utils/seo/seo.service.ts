@@ -1,16 +1,18 @@
-import { Injectable, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, OnDestroy, Inject, PLATFORM_ID, Optional } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
 import { filter, map, mergeMap } from 'rxjs/operators';
-import { DOCUMENT, PlatformLocation } from '@angular/common';
+import { APP_BASE_HREF, DOCUMENT, PlatformLocation } from '@angular/common';
 import { SeoDataModel } from './seo-data.model';
 import { isPlatformBrowser } from '@angular/common';
+import { REQUEST } from '@nguniversal/express-engine/tokens';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SeoService implements OnDestroy {
   _routerSubscription: any;
+  canonicalUrl = 'https://YOUR-CANONICAL-URL.com';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -19,6 +21,8 @@ export class SeoService implements OnDestroy {
     private title: Title,
     @Inject(DOCUMENT) private document: Document,
     @Inject(PLATFORM_ID) private platformId: string,
+    @Optional() @Inject(REQUEST) private request: Request,
+    @Optional() @Inject(APP_BASE_HREF) private baseHref: string,
     private platformLocation: PlatformLocation
   ) {
     this._routerSubscription = this.router.events
@@ -98,7 +102,9 @@ export class SeoService implements OnDestroy {
 
   getCurrentUrl(platformLocation: any) {
     if (isPlatformBrowser(this.platformId)) {
-      return platformLocation.location.origin + platformLocation.location.pathname;
+      return this.canonicalUrl + platformLocation.location.pathname;
+    } else {
+      return this.canonicalUrl + this.baseHref + this.request['path'];
     }
   }
 

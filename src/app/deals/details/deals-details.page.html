@@ -75,7 +75,7 @@
 
   <div class="related-deals-wrapper" *ngIf="details?.relatedDeals && details.relatedDeals.length > 0">
     <h3 class="related-deals-title">More hot deals</h3>
-    <ion-row class="related-deal" *ngFor="let deal of details.relatedDeals">
+    <ion-row class="related-deal" *ngFor="let deal of details?.relatedDeals">
       <ion-col class="deal-logo-wrapper" size="4">
         <app-aspect-ratio [ratio]="{w: 1, h: 1}">
           <app-image-shell [src]="deal.logo" [alt]="'deals logo'" class="related-deal-logo" animation="spinner"></app-image-shell>

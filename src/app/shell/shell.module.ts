@@ -1,7 +1,6 @@
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AspectRatioComponent } from './aspect-ratio/aspect-ratio.component';
 import { ImageShellComponent } from './image-shell/image-shell.component';
@@ -27,7 +26,6 @@ import { AppShellConfig } from './config/app-shell.config';
   ],
   imports: [
     CommonModule,
-    HttpClientModule,
     IonicModule
   ],
   exports: [

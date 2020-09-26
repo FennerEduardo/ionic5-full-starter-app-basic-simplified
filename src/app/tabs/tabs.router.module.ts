@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 
 import { TabsPage } from './tabs.page';
 
@@ -9,6 +8,12 @@ const routes: Routes = [
     path: '',
     component: TabsPage,
     children: [
+      // /app/ redirect
+      {
+        path: '',
+        redirectTo: 'categories',
+        pathMatch: 'full'
+      },
       {
         path: 'categories',
         children: [
@@ -79,19 +84,15 @@ const routes: Routes = [
             loadChildren: () => import('../notifications/notifications.module').then(m => m.NotificationsPageModule)
           }
         ]
-      },
+      }
     ]
-  },
-  // /app/ redirect
-  {
-    path: '',
-    redirectTo: 'app/categories',
-    pathMatch: 'full'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), HttpClientModule],
+  imports: [
+    RouterModule.forChild(routes)
+  ],
   exports: [RouterModule],
   providers: [ ]
 })

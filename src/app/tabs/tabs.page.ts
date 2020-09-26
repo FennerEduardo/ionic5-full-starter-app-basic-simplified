@@ -16,4 +16,8 @@ export class TabsPage  {
   ionViewWillEnter() {
     this.menu.enable(true);
   }
+
+  ionTabsDidChange(event) {
+    // console.log('ionTabsDidChange', event);
+  }
 }

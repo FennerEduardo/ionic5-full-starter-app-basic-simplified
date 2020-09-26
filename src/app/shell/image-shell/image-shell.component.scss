@@ -1,6 +1,7 @@
 :host {
   --image-shell-loading-background: #EEE;
   --image-shell-border-radius: 0px;
+  --image-shell-color: #333;
 
   display: block;
   position: relative;
@@ -37,8 +38,11 @@
       width: 100%;
       height: 100%;
       border-radius: var(--image-shell-border-radius);
+      // Image should fill the space while loading
+      display: block;
     }
 
+    &.img-ssr,
     &.img-loaded {
       // Hide loading background once the image has loaded
       &::before {
@@ -50,8 +54,34 @@
         visibility: visible;
       }
     }
+
+    &.img-error {
+      & > .inner-img {
+        // For the Alt text
+        color: var(--image-shell-color);
+        font-size: 12px;
+      }
+
+      // Add placeholder background
+      &::after {
+        content: attr(data-error);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        color: var(--image-shell-color);
+        background-color: var(--image-shell-loading-background);
+        font-size: 12px;
+      }
+    }
   }
 
+  // * NOTE: we didn't add .img-error styles for 'cover' display on purpose.
   // If it is display: cover
   &[display="cover"] {
     background-size: cover;
@@ -68,6 +98,7 @@
       visibility: hidden;
     }
 
+    &.img-ssr,
     &.img-loaded {
       // Hide loading background once the image has loaded
       &::before {
@@ -89,8 +120,10 @@
     animation: animateBackground 2s ease-in-out infinite;
   }
 
-  &.img-loaded {
-    // Reset background animation once the image has loaded
+  &.img-ssr,
+  &.img-loaded,
+  &.img-error {
+    // Reset background animation
     &::before {
       background: none;
       animation: 0;
@@ -124,7 +157,9 @@
     color: var(--image-shell-spinner-color);
   }
 
-  &.img-loaded {
+  &.img-ssr,
+  &.img-loaded,
+  &.img-error {
     & > .spinner {
       display: none;
       visibility: hidden;
@@ -135,7 +170,9 @@
 :host(.add-overlay) {
   --image-shell-overlay-background: rgba(0, 0, 0, .4);
 
-  &.img-loaded {
+  &.img-ssr,
+  &.img-loaded,
+  &.img-error {
     // Add background overlay after the image has loaded
     &::before {
       display: block;

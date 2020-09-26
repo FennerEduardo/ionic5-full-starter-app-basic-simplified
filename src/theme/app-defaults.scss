@@ -1,6 +1,7 @@
 ion-title {
-  font-weight: 400;
-  letter-spacing: 0.4px;
+  // Adding !important to force precedence in SSR
+  font-weight: 400 !important;
+  letter-spacing: 0.4px !important;
 }
 
 // Override Ionic styles

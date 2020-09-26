@@ -1,6 +1,6 @@
-import { Component, Input, HostBinding, PLATFORM_ID, Inject } from '@angular/core';
-import { isPlatformServer } from '@angular/common';
+import { Component, Input, HostBinding } from '@angular/core';
 
+import { ImageShellState, TransferStateHelper } from '../../utils/transfer-state-helper';
 import { AppShellConfig } from '../config/app-shell.config';
 
 @Component({
@@ -17,9 +17,17 @@ export class ImageShellComponent {
   // tslint:disable-next-line:variable-name
   _alt = '';
   // tslint:disable-next-line:variable-name
+  _loadingStrategy: 'lazy' | 'eager' = 'lazy';
+  // _loadingStrategy: 'lazy' | 'eager' = 'eager';
+  // tslint:disable-next-line:variable-name
   _display = '';
 
+  // @HostBinding('class.img-ssr') imageSSR2 = true;
+  @HostBinding('class.img-ssr') imageSSR = false;
   @HostBinding('class.img-loaded') imageLoaded = false;
+  @HostBinding('class.img-error') imageError = false;
+
+  @HostBinding('attr.data-error') errorMessage = 'Could not load image';
 
   @HostBinding('style.backgroundImage') backgroundImage: string;
 
@@ -27,6 +35,11 @@ export class ImageShellComponent {
   @Input()
   set display(val: string) {
     this._display = (val !== undefined && val !== null) ? val : '';
+
+    // For display 'cover' we use a hidden aux image. As it's hidden, if set loading to 'lazy' it won't ever trigger the loading mechanism
+    if (this._display === 'cover') {
+      this._loadingStrategy = 'eager';
+    }
   }
   get display(): string {
     return this._display;
@@ -38,17 +51,16 @@ export class ImageShellComponent {
       this._src = (val !== undefined && val !== null) ? val : '';
     }
 
-    if (this._display === 'cover') {
-      // Unset the background-image
-      this.backgroundImage = 'unset';
-    }
-
-    // Show loading indicator
     // When using SSR (Server Side Rendering), avoid the loading animation while the image resource is being loaded
-    if (isPlatformServer(this.platformId)) {
-      this.imageLoaded = true;
+    const imageState = this.transferStateHelper.checkImageShellState('shell-images-state', this._src);
+
+    if (imageState === ImageShellState.SSR || imageState === ImageShellState.BROWSER_FROM_SSR) {
+      this._imageProcessedInServer();
     } else {
-      this.imageLoaded = false;
+      if (this._display === 'cover') {
+        // Unset the background-image until the image is loaded
+        this.backgroundImage = 'unset';
+      }
     }
   }
 
@@ -58,15 +70,39 @@ export class ImageShellComponent {
   }
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: string
-  ) {}
+    private transferStateHelper: TransferStateHelper
+  ) { }
 
-  _imageLoaded() {
+  _imageProcessedInServer(): void {
+    this.imageSSR = true;
+
+    // Also set backgroundImage so it's ready when transitioning from SSR to the browser
+    if (this._display === 'cover') {
+      this.backgroundImage = 'url(' + this._src + ')';
+    }
+  }
+
+  _imageLoaded(): void {
     this.imageLoaded = true;
 
     // If it's a cover image then set the background-image property accordingly
     if (this._display === 'cover') {
+      // Now that the image is loaded, set the background image
       this.backgroundImage = 'url(' + this._src + ')';
+    }
+  }
+
+  _imageLoadError(event: Event): void {
+    // Image error event get's called when the src is empty. We use emty values for the shell.
+    // (see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#Image_loading_errors)
+    // Avoid that shell case
+    if (this._src && this._src !== '') {
+      this.imageLoaded = false;
+      this.imageSSR = false;
+
+      setTimeout(() => {
+        this.imageError = true;
+      }, 500);
     }
   }
 }

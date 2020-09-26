@@ -7,7 +7,8 @@ import { counterRangeValidator } from '../../components/counter-input/counter-in
   selector: 'forms-filters-page',
   templateUrl: './forms-filters.page.html',
   styleUrls: [
-    './styles/forms-filters.page.scss'
+    './styles/forms-filters.page.scss',
+    './styles/forms-filters.ssr.scss'
   ]
 })
 export class FormsFiltersPage {

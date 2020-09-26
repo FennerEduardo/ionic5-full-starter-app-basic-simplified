@@ -38,10 +38,20 @@ export class DataStore<T> {
     );
   }
 
-  load(dataSourceObservable: Observable<T>): void {
-    const dataSourceWithShellObservable = DataStore.AppendShell(dataSourceObservable, this.shellModel, this.networkDelay);
+  load(dataSourceObservable: Observable<T>, networkDelay?: number): void {
+    // tslint:disable-next-line:no-shadowed-variable
+    const delay = (typeof networkDelay === 'number') ? networkDelay : this.networkDelay;
 
-    dataSourceWithShellObservable
+    let processedDataSource: Observable<any>;
+
+    // If no network delay, then don't show shell
+    if (delay === 0) {
+      processedDataSource = dataSourceObservable;
+    } else {
+      processedDataSource = DataStore.AppendShell(dataSourceObservable, this.shellModel, delay);
+    }
+
+    processedDataSource
     .subscribe((dataValue: T & ShellModel) => {
       this.timeline.next(dataValue);
     });

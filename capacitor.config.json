@@ -3,7 +3,7 @@
   "appName": "Ionic5FullApp",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "www",
+  "webDir": "dist/app/browser",
   "plugins": {
     "SplashScreen": {
       "launchAutoHide": false

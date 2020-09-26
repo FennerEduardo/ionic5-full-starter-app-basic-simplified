@@ -116,6 +116,12 @@
     }
 
     .stats-col {
+      --col-item-width: 2;
+      // SSR fix: Override ion-col styles
+      flex: 0 0 calc(calc(var(--col-item-width) / var(--ion-grid-columns, 12)) * 100%);
+      width: calc(calc(var(--col-item-width) / var(--ion-grid-columns, 12)) * 100%);
+      max-width: calc(calc(var(--col-item-width) / var(--ion-grid-columns, 12)) * 100%);
+
       padding-left: calc(var(--page-margin) / 2);
 
       .item-rating {
@@ -175,6 +181,12 @@
     margin: 0px calc(var(--page-pictures-gutter) * -1);
 
     .picture-wrapper {
+      --col-item-width: 2;
+      // SSR fix: Override ion-col styles
+      flex: 0 0 calc(calc(var(--col-item-width) / var(--ion-grid-columns, 12)) * 100%);
+      width: calc(calc(var(--col-item-width) / var(--ion-grid-columns, 12)) * 100%);
+      max-width: calc(calc(var(--col-item-width) / var(--ion-grid-columns, 12)) * 100%);
+
       padding: 0px var(--page-pictures-gutter);
 
       .has-more-pictures {

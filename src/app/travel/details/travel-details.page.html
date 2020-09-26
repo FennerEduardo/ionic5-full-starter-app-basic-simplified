@@ -91,7 +91,7 @@
     <div class="location-header">
       <h3 class="detail-title">Where?</h3>
       <span class="location-address">
-        <app-text-shell [data]="details.location?.address"></app-text-shell>
+        <app-text-shell [data]="details?.location?.address"></app-text-shell>
       </span>
     </div>
     <!-- <app-aspect-ratio [ratio]="{w: 64, h: 30}">
@@ -99,7 +99,7 @@
       </app-image-shell>
     </app-aspect-ratio> -->
     <app-aspect-ratio [ratio]="{w: 64, h: 30}">
-      <app-image-shell class="location-image" animation="spinner" [src]="details.location?.mapImage"></app-image-shell>
+      <app-image-shell class="location-image" animation="spinner" [src]="details?.location?.mapImage"></app-image-shell>
     </app-aspect-ratio>
   </div>
   <div class="suggested-places-wrapper" *ngIf="details?.whereToStay && details.whereToStay.length > 0">

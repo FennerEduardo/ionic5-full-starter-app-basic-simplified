@@ -1,10 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { isPlatformServer } from '@angular/common';
+
 import { DataStore } from '../shell/data-store';
+import { TransferStateHelper } from '../utils/transfer-state-helper';
 import { FashionListingModel } from './listing/fashion-listing.model';
 import { FashionDetailsModel } from './details/fashion-details.model';
 
@@ -13,10 +16,14 @@ export class FashionService {
   private listingDataStore: DataStore<FashionListingModel>;
   private detailsDataStore: DataStore<FashionDetailsModel>;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: object,
+    private transferStateHelper: TransferStateHelper,
+    private http: HttpClient
+  ) { }
 
   public getListingDataSource(): Observable<FashionListingModel> {
-    return this.http.get<FashionListingModel>('./assets/sample-data/fashion/listing.json')
+    const rawDataSource = this.http.get<FashionListingModel>('./assets/sample-data/fashion/listing.json')
     .pipe(
       map(
         (data: FashionListingModel) => {
@@ -33,22 +40,38 @@ export class FashionService {
         }
       )
     );
+
+    // This method tapps into the raw data source and stores the resolved data in the TransferState, then when
+    // transitioning from the server rendered view to the browser, checks if we already loaded the data in the server to prevent
+    // duplicate http requests.
+    const cachedDataSource = this.transferStateHelper.checkDataSourceState('fashion-listing-state', rawDataSource);
+
+    return cachedDataSource;
   }
 
   public getListingStore(dataSource: Observable<FashionListingModel>): DataStore<FashionListingModel> {
-    // Use cache if available
+    // Check if we already loaded this object
     if (!this.listingDataStore) {
       // Initialize the model specifying that it is a shell model
       const shellModel: FashionListingModel = new FashionListingModel();
       this.listingDataStore = new DataStore(shellModel);
-      // Trigger the loading mechanism (with shell) in the dataStore
-      this.listingDataStore.load(dataSource);
+
+      // If running in the server, then don't add shell to the Data Store
+      // If we already loaded the Data Source in the server, then don't show a shell when transitioning back to the broswer from the server
+      if (isPlatformServer(this.platformId) || dataSource['ssr_state']) {
+        // Trigger loading mechanism with 0 delay (this will prevent the shell to be shown)
+        this.listingDataStore.load(dataSource, 0);
+      } else { // On browser transitions
+        // Trigger the loading mechanism (with shell)
+        this.listingDataStore.load(dataSource);
+      }
     }
+
     return this.listingDataStore;
   }
 
   public getDetailsDataSource(): Observable<FashionDetailsModel> {
-    return this.http.get<FashionDetailsModel>('./assets/sample-data/fashion/details.json')
+    const rawDataSource = this.http.get<FashionDetailsModel>('./assets/sample-data/fashion/details.json')
     .pipe(
       map(
         (data: FashionDetailsModel) => {
@@ -65,18 +88,33 @@ export class FashionService {
         }
       )
     );
+
+    // This method tapps into the raw data source and stores the resolved data in the TransferState, then when
+    // transitioning from the server rendered view to the browser, checks if we already loaded the data in the server to prevent
+    // duplicate http requests.
+    const cachedDataSource = this.transferStateHelper.checkDataSourceState('fashion-details-state', rawDataSource);
+
+    return cachedDataSource;
   }
 
   public getDetailsStore(dataSource: Observable<FashionDetailsModel>): DataStore<FashionDetailsModel> {
-    // Use cache if available
+    // Check if we already loaded this object
     if (!this.detailsDataStore) {
       // Initialize the model specifying that it is a shell model
       const shellModel: FashionDetailsModel = new FashionDetailsModel();
       this.detailsDataStore = new DataStore(shellModel);
-      // Trigger the loading mechanism (with shell) in the dataStore
-      this.detailsDataStore.load(dataSource);
+
+      // If running in the server, then don't add shell to the Data Store
+      // If we already loaded the Data Source in the server, then don't show a shell when transitioning back to the broswer from the server
+      if (isPlatformServer(this.platformId) || dataSource['ssr_state']) {
+        // Trigger loading mechanism with 0 delay (this will prevent the shell to be shown)
+        this.detailsDataStore.load(dataSource, 0);
+      } else { // On browser transitions
+        // Trigger the loading mechanism (with shell)
+        this.detailsDataStore.load(dataSource);
+      }
     }
+
     return this.detailsDataStore;
   }
-
 }

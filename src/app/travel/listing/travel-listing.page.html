@@ -9,7 +9,7 @@
 
 <ion-content>
   <ng-container *ngIf="listing?.items">
-    <div class="listing-item" *ngFor="let item of listing.items">
+    <div class="listing-item" *ngFor="let item of listing?.items">
       <ion-row class="image-row">
         <ion-col size="12">
           <a [routerLink]="['/app/categories/travel/', item.slug]">

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Ionic5FullApp</title>
+  <title>Ionic Full Starter App</title>
 
   <base href="/"/>
 
@@ -10,8 +10,8 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
 
-  <meta name="description" content="Ionic 5 Full Starter App Template made by IonicThemes">
-
+  <meta name="description" content="Ionic 5 Full Starter App Template - by IonicThemes">
+  <meta name="keywords" content="">
   <!-- favicon -->
   <!-- If you have a multi size .ico file -->
   <link rel="shortcut icon" sizes="64x64 48x48 32x32 24x24 16x16" href="assets/icon/favicon.ico">
@@ -65,9 +65,38 @@
 
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#000000">
-<link rel="stylesheet" href="styles.438e930485ff795cea38.css"></head>
+
+  <!-- SEO meta tags -->
+
+  <!-- Schema -->
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+  <meta name="DC.title" content="Your App Title">
+  <meta name="DC.description" content="Your app description">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@yourTwAccount">
+  <meta name="twitter:creator" content="@yourTwAccount">
+  <meta name="twitter:title" content="Your App Title">
+  <meta name="twitter:description" content="Your app description">
+  <meta name="twitter:image" content="">
+
+  <!-- Facebook / Open Graph -->
+  <meta property="og:title" content="Your App Title">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="">
+  <meta property="og:description" content="Your app description">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="YourSiteName">
+</head>
 <body>
+  <!-- Ver: https://github.com/mhartington/StarTrack-ng/blob/master/src/index.html -->
+  <!-- Esto lo agregamos para llegar a 100% PWA en lighthouse (Does not provide fallback content when JavaScript is not available) -->
+  <noscript>
+    <h3 style="color: #32db64; font-family: sans-serif; font-weight: 600; margin: 2rem;">
+      Sorry, but app is not available without javascript
+    </h3>
+  </noscript>
   <app-root></app-root>
-  <noscript>Please enable JavaScript to continue using this application.</noscript>
-<script src="runtime-es2015.b805e3f1dc44ac22feef.js" type="module"></script><script src="runtime-es5.b805e3f1dc44ac22feef.js" nomodule defer></script><script src="polyfills-es5.7cb497a7a5a9e4da179c.js" nomodule defer></script><script src="polyfills-es2015.de6e18ceeb61ef33dffd.js" type="module"></script><script src="main-es2015.dc192ea5b92be25d7de3.js" type="module"></script><script src="main-es5.dc192ea5b92be25d7de3.js" nomodule defer></script></body>
+<script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule defer></script><script src="polyfills-es5.js" nomodule defer></script><script src="polyfills-es2015.js" type="module"></script><script src="styles-es2015.js" type="module"></script><script src="styles-es5.js" nomodule defer></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule defer></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule defer></script></body>
 </html>

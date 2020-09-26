@@ -86,7 +86,7 @@
     <div class="location-header">
       <h3 class="detail-title">Address</h3>
       <span class="location-address">
-        <app-text-shell [data]="details.location?.address"></app-text-shell>
+        <app-text-shell [data]="details?.location?.address"></app-text-shell>
       </span>
     </div>
     <!-- <app-aspect-ratio [ratio]="{w: 64, h: 20}">
@@ -94,7 +94,7 @@
       </app-image-shell>
     </app-aspect-ratio> -->
     <app-aspect-ratio [ratio]="{w: 64, h: 20}">
-      <app-image-shell class="location-image" animation="spinner" [src]="details.location?.mapImage" [alt]="'location map'"></app-image-shell>
+      <app-image-shell class="location-image" animation="spinner" [src]="details?.location?.mapImage" [alt]="'location map'"></app-image-shell>
     </app-aspect-ratio>
   </div>
   <ion-row class="details-tags">
@@ -108,7 +108,7 @@
   <div class="users-pictures-wrapper">
     <h3 class="detail-title">User's photos</h3>
     <ion-row class="pictures-row">
-      <ion-col class="picture-wrapper" size="2" *ngFor="let picture of details?.usersPictures?.slice(0, 5); let i = index">
+      <ion-col class="picture-wrapper" *ngFor="let picture of details?.usersPictures?.slice(0, 5); let i = index">
         <app-aspect-ratio [ratio]="{w: 1, h: 1}">
           <app-image-shell class="user-picture-image" [src]="picture" [alt]="'user image'"></app-image-shell>
         </app-aspect-ratio>
@@ -142,7 +142,7 @@
     <div class="reviews-list">
       <div class="review-item" *ngFor="let review of details?.reviews">
         <ion-row class="review-user">
-          <ion-col size="2" class="user-image-wrapper">
+          <ion-col class="user-image-wrapper">
             <app-aspect-ratio [ratio]="{w: 1, h: 1}">
               <app-image-shell class="review-user-image" [src]="review.user.image" [alt]="'review user image'"></app-image-shell>
             </app-aspect-ratio>

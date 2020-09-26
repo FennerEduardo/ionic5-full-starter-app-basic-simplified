@@ -1,18 +1,10 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 import { Observable, Subject, interval } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-// TODO:  dayjs is throwing this ERROR:
-//        error TS2339: Property 'to' does not exist on type 'Dayjs'.
-// Luckily there's a PR that apparently fixes this (https://github.com/iamkun/dayjs/issues/297#issuecomment-442748858)
-
-// When fixed, uncomment this
-// import * as dayjs from 'dayjs';
-
-// When fixed, remove this
-import * as _dayjs from 'dayjs';
-const dayjs: any = _dayjs;
+import * as dayjs from 'dayjs';
 
 @Component({
   selector: 'app-countdown-timer',
@@ -94,25 +86,36 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
     }
   }
 
-  constructor() { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: object,
+  ) { }
 
   ngOnInit(): void {
-    this._updateInterval.pipe(takeUntil(this._unsubscribeSubject)).subscribe(
-      (val) => {
-        const secondsLeft = this._endingTime.diff(dayjs(), 'second');
-
-        this._daysLeft = Math.floor(this._dayModulus(secondsLeft) / this._dayDivisor);
-        this._hoursLeft = Math.floor(this._hourModulus(secondsLeft) / this._hourDivisor);
-        this._minutesLeft = Math.floor(this._minuteModulus(secondsLeft) / this._minuteDivisor);
-        this._secondsLeft = Math.floor(this._secondModulus(secondsLeft) / this._secondDivisor);
-      },
-      (error) => console.error(error)
-      // () => console.log('[takeUntil] complete')
-    );
+    // I believe if we run this on SSR, it won't ever trigger the change detection and thus the server will be stuck loading
+    if (isPlatformBrowser(this.platformId)) {
+      this._updateInterval.pipe(takeUntil(this._unsubscribeSubject)).subscribe(
+        (val) => {
+          this.updateValues();
+        },
+        (error) => console.error(error),
+        () => console.log('[takeUntil] complete')
+      );
+    } else {
+      this.updateValues();
+    }
   }
 
   ngOnDestroy(): void {
     this._unsubscribeSubject.next();
     this._unsubscribeSubject.complete();
+  }
+
+  updateValues(): void {
+    const secondsLeft = this._endingTime.diff(dayjs(), 'second');
+
+    this._daysLeft = Math.floor(this._dayModulus(secondsLeft) / this._dayDivisor);
+    this._hoursLeft = Math.floor(this._hourModulus(secondsLeft) / this._hourDivisor);
+    this._minutesLeft = Math.floor(this._minuteModulus(secondsLeft) / this._minuteDivisor);
+    this._secondsLeft = Math.floor(this._secondModulus(secondsLeft) / this._secondDivisor);
   }
 }
