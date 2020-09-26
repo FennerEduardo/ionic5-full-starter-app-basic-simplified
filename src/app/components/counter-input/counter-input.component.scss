@@ -34,6 +34,10 @@ app-counter-input {
   .counter-value {
     color: var(--counter-color);
     margin: 0px 10px;
+    width: 2.2ch;
+    text-align: center;
+    font-feature-settings: 'tnum';
+    font-variant-numeric: tabular-nums;
   }
 
   &:not([basic]) {
