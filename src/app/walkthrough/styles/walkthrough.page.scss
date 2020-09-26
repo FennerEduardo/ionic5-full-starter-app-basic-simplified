@@ -45,7 +45,7 @@ ion-content {
     width: 100%;
     padding: 0px;
     // Header space
-    padding-top: var(--app-header-height);
+    padding-top: calc(var(--app-header-height) + var(--ion-safe-area-top));
     // .swiper-pagination space
     border-bottom: var(--page-swiper-pagination-space) solid transparent;
     background-clip: padding-box;
@@ -179,8 +179,11 @@ ion-content {
 
       .login-button {
         --color: var(--ion-color-secondary);
-
         margin: 0px;
+
+        &:focus {
+          outline: none;
+        }
       }
     }
   }
