@@ -26,7 +26,7 @@ ion-header {
 ion-content {
   position: absolute;
   top: 0;
-  border-top: var(--app-header-height);
+  border-top: calc(var(--app-header-height) + var(--ion-safe-area-top));
   border-top-style: solid;
   border-top-color: var(--ion-color-primary);
 }
