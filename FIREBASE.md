@@ -1,3 +1,6 @@
+# Prepare assets to deploy
+Before deploying the app to Firebase Hosting, run `ionic build --prod`
+
 # Multiple Environments with Firebase
 For managing one site across different environments, we recommend multiple projects for promoting best practices of each environment having its own set of Firebase resources.
 
