@@ -4,6 +4,10 @@ export const REDIRECT_ROUTES = [
     to: '/walkthrough'
   },
   {
+    from: '/auth',
+    to: '/auth/login'
+  },
+  {
     from: '/app',
     to: '/app/categories'
   },
