@@ -9,7 +9,6 @@ import { map } from 'rxjs/operators';
 import { SeoDataModel } from '../../utils/seo/seo-data.model';
 
 @Injectable()
-// export class TravelDetailsResolver implements Resolve<DataStore<TravelDetailsModel>> {
 export class TravelDetailsResolver implements Resolve<any> {
 
   constructor(private travelService: TravelService) {}
@@ -18,7 +17,7 @@ export class TravelDetailsResolver implements Resolve<any> {
 
     const dataSource: Observable<TravelDetailsModel> = this.travelService.getDetailsDataSource();
 
-    // Typically, SEO titles, descriptions, etc depnd on the data being resolved for a specific route
+    // Typically, SEO titles, descriptions, etc depend on the data being resolved for a specific route
     const seoObservable: Observable<SeoDataModel> = dataSource.pipe(
       map(data => {
         const seo = new SeoDataModel();
