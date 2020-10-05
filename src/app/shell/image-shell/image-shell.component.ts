@@ -1,7 +1,7 @@
 import { Component, Input, HostBinding } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 import { ImageShellState, TransferStateHelper } from '../../utils/transfer-state-helper';
-import { AppShellConfig } from '../config/app-shell.config';
 
 @Component({
   selector: 'app-image-shell',
@@ -9,8 +9,8 @@ import { AppShellConfig } from '../config/app-shell.config';
   styleUrls: ['./image-shell.component.scss']
 })
 export class ImageShellComponent {
-  // To debug shell styles, change configuration in the assets/app-shell.config.json file
-  private debugDisplay = (AppShellConfig.settings && AppShellConfig.settings.debug) ? AppShellConfig.settings.debug : false;
+  // To debug shell styles, change configuration in the environment file
+  private debugDisplay = (environment.appShellConfig && environment.appShellConfig.debug) ? environment.appShellConfig.debug : false;
 
   // tslint:disable-next-line:variable-name
   _src = '';
@@ -18,11 +18,9 @@ export class ImageShellComponent {
   _alt = '';
   // tslint:disable-next-line:variable-name
   _loadingStrategy: 'lazy' | 'eager' = 'lazy';
-  // _loadingStrategy: 'lazy' | 'eager' = 'eager';
   // tslint:disable-next-line:variable-name
   _display = '';
 
-  // @HostBinding('class.img-ssr') imageSSR2 = true;
   @HostBinding('class.img-ssr') imageSSR = false;
   @HostBinding('class.img-loaded') imageLoaded = false;
   @HostBinding('class.img-error') imageError = false;

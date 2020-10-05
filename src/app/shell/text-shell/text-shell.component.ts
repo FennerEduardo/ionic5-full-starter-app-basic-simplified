@@ -1,6 +1,5 @@
 import { Component, Input, HostBinding } from '@angular/core';
-
-import { AppShellConfig } from '../config/app-shell.config';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-text-shell',
@@ -8,8 +7,8 @@ import { AppShellConfig } from '../config/app-shell.config';
   styleUrls: ['./text-shell.component.scss']
 })
 export class TextShellComponent {
-  // To debug shell styles, change configuration in the assets/app-shell.config.json file
-  private debugMode = (AppShellConfig.settings && AppShellConfig.settings.debug) ? AppShellConfig.settings.debug : false;
+  // To debug shell styles, change configuration in the environment file
+  private debugMode = (environment.appShellConfig && environment.appShellConfig.debug) ? environment.appShellConfig.debug : false;
 
   // tslint:disable-next-line:variable-name
   _data: '';

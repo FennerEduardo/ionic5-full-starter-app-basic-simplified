@@ -1,7 +1,6 @@
 import { Observable, of, combineLatest, ReplaySubject } from 'rxjs';
 import { delay, map, startWith } from 'rxjs/operators';
-
-import { AppShellConfig } from './config/app-shell.config';
+import { environment } from '../../environments/environment';
 
 export class ShellModel {
   isShell = false;
@@ -9,9 +8,9 @@ export class ShellModel {
 
 export class DataStore<T> {
   // We wait on purpose 2 secs on local environment when fetching from json to simulate the backend roundtrip.
-  // However, in production you should set this delay to 0 in the assets/config/app-shell.config.prod.json file.
+  // However, in production you should set this delay to 0 in the environment.prod file.
   // tslint:disable-next-line:max-line-length
-  private networkDelay = (AppShellConfig.settings && AppShellConfig.settings.networkDelay) ? AppShellConfig.settings.networkDelay : 0;
+  private networkDelay = (environment.appShellConfig && environment.appShellConfig.networkDelay) ? environment.appShellConfig.networkDelay : 0;
 
   private timeline: ReplaySubject<T & ShellModel> = new ReplaySubject(1);
 
