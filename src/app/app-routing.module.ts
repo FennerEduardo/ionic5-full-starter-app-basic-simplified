@@ -53,10 +53,6 @@ const routes: Routes = [
     loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
   },
   {
-    path: 'showcase',
-    loadChildren: () => import('./showcase/showcase.module').then(m => m.ShowcasePageModule)
-  },
-  {
     path: '**',
     redirectTo: 'page-not-found'
   }
@@ -64,7 +60,6 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      // This value is required for server-side rendering to work.
       initialNavigation: 'enabled',
       scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled'

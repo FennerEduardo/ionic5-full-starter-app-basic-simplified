@@ -8,8 +8,8 @@
 </ion-header>
 
 <ion-content class="deals-listing-content">
-  <ng-container *ngIf="listing?.items">
-    <div class="listing-item" *ngFor="let item of listing?.items" [ngClass]="{'ended': ((item.expirationDate | appTimeDifference) < 0), 'imminent-end': ((item.expirationDate | appTimeDifference) > 0 && (item.expirationDate | appTimeDifference) <= 2), 'ends-soon': ((item.expirationDate | appTimeDifference) > 0 && (item.expirationDate | appTimeDifference) > 2 && (item.expirationDate | appTimeDifference) < 10), 'distant-end': ((item.expirationDate | appTimeDifference) >= 10)}">
+  <ng-container *ngIf="items">
+    <div class="listing-item" *ngFor="let item of items" [ngClass]="{'ended': ((item.expirationDate | appTimeDifference) < 0), 'imminent-end': ((item.expirationDate | appTimeDifference) > 0 && (item.expirationDate | appTimeDifference) <= 2), 'ends-soon': ((item.expirationDate | appTimeDifference) > 0 && (item.expirationDate | appTimeDifference) > 2 && (item.expirationDate | appTimeDifference) < 10), 'distant-end': ((item.expirationDate | appTimeDifference) >= 10)}">
       <ion-row class="top-row">
         <ion-col class="logo-col" size="6">
           <app-aspect-ratio [ratio]="{w: 128, h: 32}">

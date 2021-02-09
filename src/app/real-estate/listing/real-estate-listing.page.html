@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content class="real-estate-listing-content">
-  <div class="listing-item" *ngFor="let item of listing?.items">
+  <div class="listing-item" *ngFor="let item of items">
     <ion-row class="image-row">
       <ion-col size="12">
         <a class="image-anchor" [routerLink]="['/app/categories/real-estate/', item.slug]">

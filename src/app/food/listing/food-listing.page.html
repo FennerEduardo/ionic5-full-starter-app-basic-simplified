@@ -8,8 +8,8 @@
 </ion-header>
 
 <ion-content class="food-listing-content">
-  <ng-container *ngIf="listing?.items">
-    <div class="listing-item" *ngFor="let item of listing?.items">
+  <ng-container *ngIf="items">
+    <div class="listing-item" *ngFor="let item of items">
       <div class="cover-wrapper">
         <a class="cover-anchor" [routerLink]="['/app/categories/food/', item.slug]">
           <app-image-shell class="cover-image add-overlay" animation="spinner" [display]="'cover'" [src]="item.image">
