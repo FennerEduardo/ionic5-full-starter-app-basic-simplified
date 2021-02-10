@@ -6,7 +6,6 @@ import { IonicModule } from '@ionic/angular';
 import { FirebaseSignInPage } from './firebase-sign-in.page';
 import { ComponentsModule } from '../../../components/components.module';
 import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
-
 import { map } from 'rxjs/operators';
 
 // Firebase guard to redirect logged in users to profile

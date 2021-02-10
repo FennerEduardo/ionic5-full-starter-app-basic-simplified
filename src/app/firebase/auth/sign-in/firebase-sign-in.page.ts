@@ -54,10 +54,10 @@ export class FirebaseSignInPage implements OnDestroy {
     // signInWithRedirect() is only used when client is in web but not desktop
     this.authRedirectResult = this.authService.getRedirectResult()
     .subscribe(result => {
-      if (result.user) {
-        this.redirectLoggedUserToProfilePage();
-      } else if (result.error) {
+      if (result.error) {
         this.manageAuthWithProvidersErrors(result.error);
+      } else {
+        this.redirectLoggedUserToProfilePage();
       }
     });
 
@@ -94,9 +94,9 @@ export class FirebaseSignInPage implements OnDestroy {
 
   async presentLoading(authProvider?: string) {
     const authProviderCapitalized = authProvider[0].toUpperCase() + authProvider.slice(1);
-
     this.loadingController.create({
-      message: authProvider ? 'Signing in with ' + authProviderCapitalized : 'Signin in ...'
+      message: authProvider ? 'Signing in with ' + authProviderCapitalized : 'Signin in ...',
+      duration: 4000
     }).then((loader) => {
       const currentUrl = this.location.path();
       if (currentUrl.includes('auth-redirect')) {
@@ -179,7 +179,6 @@ export class FirebaseSignInPage implements OnDestroy {
 
     this.authService.signInWithTwitter()
     .subscribe((result) => {
-
       // This gives you a Twitter Access Token. You can use it to access the Twitter API.
       // var token = result.credential.accessToken;
       this.redirectLoggedUserToProfilePage();

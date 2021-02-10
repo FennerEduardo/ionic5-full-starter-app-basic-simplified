@@ -117,6 +117,10 @@ DEPENDENCIES:
   - "Capacitor (from `../../node_modules/@capacitor/ios`)"
   - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
   - CapacitorFirebaseAuth (from `../../node_modules/capacitor-firebase-auth`)
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - Firebase/Auth
+  - Firebase/Core
 
 SPEC REPOS:
   trunk:
@@ -174,6 +178,6 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
 
-PODFILE CHECKSUM: 60215ef956398eaa9d1042d6d2bfe94691bae8b1
+PODFILE CHECKSUM: dfaf280b218404d11cce19d803c1c58629bc0a9e
 
 COCOAPODS: 1.9.1

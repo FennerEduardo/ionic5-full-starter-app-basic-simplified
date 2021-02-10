@@ -33,7 +33,15 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb[661697104401356]</string>
+				<string>com.googleusercontent.apps.813357714189-c3madg4ahabkurf8sukhkd39ebeua7g1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb661697104401356</string>
 			</array>
 		</dict>
 	</array>

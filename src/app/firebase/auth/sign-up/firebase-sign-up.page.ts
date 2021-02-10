@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
     './styles/firebase-sign-up.page.scss'
   ]
 })
-export class FirebaseSignUpPage implements OnInit {
+export class FirebaseSignUpPage implements OnInit, OnDestroy {
   signupForm: FormGroup;
   matching_passwords_group: FormGroup;
   submitError: string;
@@ -69,10 +69,10 @@ export class FirebaseSignUpPage implements OnInit {
     // signInWithRedirect() is only used when client is in web but not desktop
     this.authRedirectResult = this.authService.getRedirectResult()
     .subscribe(result => {
-      if (result.user) {
-        this.redirectLoggedUserToProfilePage();
-      } else if (result.error) {
+      if (result.error) {
         this.manageAuthWithProvidersErrors(result.error);
+      } else {
+        this.redirectLoggedUserToProfilePage();
       }
     });
 
@@ -111,7 +111,8 @@ export class FirebaseSignUpPage implements OnInit {
   async presentLoading(authProvider?: string) {
     const authProviderCapitalized = authProvider[0].toUpperCase() + authProvider.slice(1);
     this.redirectLoader = await this.loadingController.create({
-      message: authProvider ? 'Signing up with ' + authProviderCapitalized : 'Signin up ...'
+      message: authProvider ? 'Signing up with ' + authProviderCapitalized : 'Signin up ...',
+      duration: 4000
     });
     await this.redirectLoader.present();
   }
@@ -151,6 +152,7 @@ export class FirebaseSignUpPage implements OnInit {
       })
       .catch(error => {
         this.submitError = error.message;
+        this.dismissLoading();
       });
   }
 
@@ -196,5 +198,9 @@ export class FirebaseSignUpPage implements OnInit {
       console.log(error);
       this.manageAuthWithProvidersErrors(error.message);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.dismissLoading();
   }
 }

@@ -37,9 +37,8 @@ export class FirebaseAuthService {
         this.angularFire.getRedirectResult()
         .then((result) => {
           // result.credential.accessToken gives you the Provider Access Token. You can use it to access the Provider API.
-          if (result.user) {
-            this.userProviderAdditionalInfo = result.additionalUserInfo.profile;
-            this.redirectResult.next(result);
+          if (this.currentUser) {
+            this.redirectResult.next(this.currentUser);
           }
         }, (error) => {
           this.redirectResult.next({error: error.code});
@@ -95,7 +94,6 @@ export class FirebaseAuthService {
           provider.addScope(scope);
         });
       }
-
       if (this.platform.is('desktop')) {
         return from(this.angularFire.signInWithPopup(provider));
       } else {
