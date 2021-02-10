@@ -13,7 +13,7 @@ export const environment = {
   },
   appShellConfig: {
     debug: false,
-    networkDelay: 500
+    networkDelay: 0
   }
 };
 
