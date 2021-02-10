@@ -46,7 +46,7 @@ export class FirebaseUpdateUserModal implements OnInit {
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ])),
       phone: new FormControl(this.user.phone, Validators.required),
-      birthdate: new FormControl(dayjs.unix(this.user.birthdate).format('DD/MMMM/YYYY'), Validators.required),
+      birthdate: new FormControl(dayjs.unix(this.user.birthdate).format(), Validators.required),
       skills: new FormArray([], CheckboxCheckedValidator.minSelectedCheckboxes(1)),
       spanish: new FormControl(this.user.languages.spanish),
       english: new FormControl(this.user.languages.english),
