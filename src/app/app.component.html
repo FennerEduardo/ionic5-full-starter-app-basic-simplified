@@ -82,6 +82,19 @@
         </ion-list>
         <ion-list>
           <ion-list-header>
+            <ion-label>Showcase</ion-label>
+          </ion-list-header>
+          <ion-menu-toggle autoHide="false">
+            <ion-item [routerLink]="['/showcase/custom-components']">
+              <ion-icon slot="start" name="color-wand-outline"></ion-icon>
+              <ion-label>
+                Custom Components
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+        <ion-list>
+          <ion-list-header>
             <ion-label>Account</ion-label>
           </ion-list-header>
           <ion-menu-toggle autoHide="false" *ngFor="let p of accountPages; let i = index">
