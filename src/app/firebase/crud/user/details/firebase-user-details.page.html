@@ -22,10 +22,10 @@
     </ion-col>
     <ion-col class="user-details-col" size="12">
       <h2 class="user-name">
-        <app-text-shell animation="bouncing" [data]="user?.name?.concat(' ').concat(user?.lastname)"></app-text-shell>
+        {{user?.name?.concat(' ').concat(user?.lastname)}}
       </h2>
       <span class="user-age">
-        <app-text-shell animation="bouncing" [data]="user?.age?.toString().concat(' years young')"></app-text-shell>
+        {{user?.age?.toString().concat(' years young')}}
       </span>
     </ion-col>
     <ion-col class="actions-col" size="12">
@@ -81,7 +81,7 @@
     <ion-list class="experience-list" lines="none">
       <ion-item class="experience-item" *ngFor="let skill of user?.skills">
         <label class="experience-label">
-          <app-text-shell animation="bouncing" [data]="skill?.name"></app-text-shell>
+          {{skill?.name}}
         </label>
         <ion-icon class="experience-list-icon" slot="start" name="checkmark" color="secondary"></ion-icon>
       </ion-item>
@@ -96,7 +96,7 @@
           <app-image-shell [display]="'cover'" class="related-user-picture" [src]="user.avatar" [routerLink]="['/firebase/crud/details', user.id]"></app-image-shell>
         </app-aspect-ratio>
         <span class="related-user-name">
-          <app-text-shell [data]="user.name"></app-text-shell>
+          {{user.name}}
         </span>
       </ion-col>
     </ion-row>

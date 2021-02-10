@@ -19,14 +19,14 @@
   <ion-row class="user-details">
     <ion-col class="ion-no-padding details-wrapper">
       <h2 class="user-name">
-        <app-text-shell [data]="user?.name"></app-text-shell>
+        {{user?.name}}
         <ion-icon name="checkmark-circle" color="bright-pink"></ion-icon>
       </h2>
       <span class="user-role">
-        <app-text-shell [data]="user?.role"></app-text-shell>
+        {{user?.role}}
       </span>
       <p class="user-description">
-        <app-text-shell lines="3" [data]="user?.description"></app-text-shell>
+        {{user?.description}}
       </p>
     </ion-col>
   </ion-row>
@@ -35,19 +35,19 @@
     <ion-col size="12">
       <h4 class="preference-name">Mobile</h4>
       <p class="preference-value">
-        <app-text-shell [data]="user?.phoneNumber"></app-text-shell>
+        {{user?.description}}
       </p>
     </ion-col>
     <ion-col size="12">
       <h4 class="preference-name">Email</h4>
       <p class="preference-value">
-        <app-text-shell [data]="user?.email"></app-text-shell>
+        {{user?.email}}
       </p>
     </ion-col>
     <ion-col size="12">
       <h4 class="preference-name">Auth Provider</h4>
       <p class="preference-value">
-        <app-text-shell [data]="user?.provider"></app-text-shell>
+        {{user?.provider}}
       </p>
     </ion-col>
     <ion-col size="12">

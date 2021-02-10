@@ -51,10 +51,10 @@
         <ion-col class="user-data-wrapper">
           <div class="user-info">
             <h3 class="user-name">
-              <app-text-shell animation="bouncing" [data]="item.name?.concat(' ').concat(item.lastname)"></app-text-shell>
+              {{item.name?.concat(' ').concat(item.lastname)}}
             </h3>
             <h5 class="user-age">
-              <app-text-shell animation="bouncing" [data]="item.age?.toString().concat(' years old')"></app-text-shell>
+              {{item.age?.toString().concat(' years old')}}
             </h5>
           </div>
         </ion-col>
