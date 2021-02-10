@@ -63,6 +63,25 @@
         </ion-list>
         <ion-list>
           <ion-list-header>
+            <ion-label>Integrations</ion-label>
+          </ion-list-header>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerLink]="['/firebase/auth/sign-in']">
+              <ion-icon slot="start" name="logo-firebase"></ion-icon>
+              <ion-label>
+                Firebase Auth
+              </ion-label>
+            </ion-item>
+            <ion-item [routerLink]="['/firebase/crud/listing']">
+              <ion-icon slot="start" name="logo-firebase"></ion-icon>
+              <ion-label>
+                Firebase CRUD
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+        <ion-list>
+          <ion-list-header>
             <ion-label>Account</ion-label>
           </ion-list-header>
           <ion-menu-toggle autoHide="false" *ngFor="let p of accountPages; let i = index">

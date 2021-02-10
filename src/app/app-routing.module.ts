@@ -53,6 +53,19 @@ const routes: Routes = [
     loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
   },
   {
+    path: 'firebase',
+    redirectTo: 'firebase/auth/sign-in',
+    pathMatch: 'full'
+  },
+  {
+    path: 'firebase/auth',
+    loadChildren: () => import('./firebase/auth/firebase-auth.module').then(m => m.FirebaseAuthModule)
+  },
+  {
+    path: 'firebase/crud',
+    loadChildren: () => import('./firebase/crud/firebase-crud.module').then(m => m.FirebaseCrudModule)
+  },
+  {
     path: '**',
     redirectTo: 'page-not-found'
   }

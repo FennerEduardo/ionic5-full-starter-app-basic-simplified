@@ -4,6 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 export const environment = {
   production: false,
+  firebase: {
+    apiKey: 'AIzaSyC5QK355uuknu0_ldVxFqqNqgp9oJi_eLc',
+    authDomain: 'ion4fullpwa.firebaseapp.com',
+    databaseURL: 'https://ion4fullpwa.firebaseio.com',
+    projectId: 'ion4fullpwa',
+    storageBucket: 'ion4fullpwa.appspot.com'
+  },
   appShellConfig: {
     debug: false,
     networkDelay: 500
