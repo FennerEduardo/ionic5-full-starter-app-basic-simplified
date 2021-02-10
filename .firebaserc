@@ -1,6 +1,7 @@
 {
   "projects": {
     "dev": "dev-ion4fullpwa",
-    "prod": "ion4fullpwa"
+    "prod": "ion4fullpwa",
+    "beginners": "ion5fullapp-beginners"
   }
 }
