@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ModalController, IonRouterOutlet } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 
 import { Observable, ReplaySubject } from 'rxjs';
 import { switchMap, map } from 'rxjs/operators';
-
-import { FirebaseCreateUserModal } from '../user/create/firebase-create-user.modal';
 import { FirebaseCrudService } from '../firebase-crud.service';
 
 
@@ -31,9 +28,7 @@ export class FirebaseListingPage implements OnInit {
 
   constructor(
     public firebaseCrudService: FirebaseCrudService,
-    public modalController: ModalController,
-    private route: ActivatedRoute,
-    private routerOutlet: IonRouterOutlet
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -72,15 +67,6 @@ export class FirebaseListingPage implements OnInit {
     },
       (error) => console.log(error)
     );
-  }
-
-  async openFirebaseCreateModal() {
-    const modal = await this.modalController.create({
-      component: FirebaseCreateUserModal,
-      swipeToClose: true,
-      presentingElement: this.routerOutlet.nativeEl
-    });
-    await modal.present();
   }
 
   searchList() {

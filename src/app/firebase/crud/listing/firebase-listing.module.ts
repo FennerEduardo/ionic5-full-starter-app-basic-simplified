@@ -7,7 +7,6 @@ import { FirebaseListingPage } from './firebase-listing.page';
 import { FirebaseListingResolver } from './firebase-listing.resolver';
 import { ComponentsModule } from '../../../components/components.module';
 import { FirebaseCrudService } from '../firebase-crud.service';
-import { FirebaseCrudSharedModule } from '../firebase-crud-shared.module';
 
 const routes: Routes = [
   {
@@ -26,8 +25,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     IonicModule,
     ComponentsModule,
-    RouterModule.forChild(routes),
-    FirebaseCrudSharedModule
+    RouterModule.forChild(routes)
   ],
   declarations: [
     FirebaseListingPage

@@ -20,10 +20,6 @@ const firebaseRoutes: Routes = [
       {
         path: 'listing',
         loadChildren: () => import('./../crud/listing/firebase-listing.module').then(m => m.FirebaseListingPageModule)
-      },
-      {
-        path: 'details/:id',
-        loadChildren: () => import('./../crud/user/firebase-user-details.module').then(m => m.FirebaseUserDetailsPageModule)
       }
     ]
   }
