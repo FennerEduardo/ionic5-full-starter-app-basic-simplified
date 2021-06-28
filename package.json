@@ -53,7 +53,7 @@
     "@capacitor/cli": "^2.4.1",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-angular": "^11.0.0",
-    "@ionic/angular-toolkit": "^2.3.3",
+    "@ionic/angular-toolkit": "^4.0.0",
     "@types/node": "^12.11.1",
     "@webcomponents/webcomponentsjs": "^2.4.3",
     "codelyzer": "^6.0.0",
