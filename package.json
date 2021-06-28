@@ -16,15 +16,15 @@
     "lint": "ng lint"
   },
   "dependencies": {
-    "@angular/animations": "^10.1.2",
-    "@angular/common": "^10.1.2",
-    "@angular/core": "^10.1.2",
+    "@angular/animations": "^12.1.0",
+    "@angular/common": "^12.1.0",
+    "@angular/core": "^12.1.0",
     "@angular/fire": "^6.1.4",
-    "@angular/forms": "^10.1.2",
-    "@angular/platform-browser": "^10.1.2",
-    "@angular/platform-browser-dynamic": "^10.1.2",
-    "@angular/router": "^10.1.2",
-    "@angular/service-worker": "^10.1.2",
+    "@angular/forms": "^12.1.0",
+    "@angular/platform-browser": "^12.1.0",
+    "@angular/platform-browser-dynamic": "^12.1.0",
+    "@angular/router": "^12.1.0",
+    "@angular/service-worker": "^12.1.0",
     "@capacitor/android": "^2.4.1",
     "@capacitor/core": "^2.4.1",
     "@capacitor/ios": "^2.4.1",
@@ -39,17 +39,17 @@
     "npm": "^6.14.8",
     "rxjs": "6.6.3",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.3"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/architect": "^0.1001.2",
-    "@angular-devkit/build-angular": "^0.1001.2",
-    "@angular-devkit/core": "^10.1.2",
-    "@angular-devkit/schematics": "^10.1.2",
-    "@angular/cli": "^10.1.2",
-    "@angular/compiler": "^10.1.2",
-    "@angular/compiler-cli": "^10.1.2",
-    "@angular/language-service": "~10.1.2",
+    "@angular-devkit/architect": "^0.1201.0",
+    "@angular-devkit/build-angular": "^12.1.0",
+    "@angular-devkit/core": "^12.1.0",
+    "@angular-devkit/schematics": "^12.1.0",
+    "@angular/cli": "^12.1.0",
+    "@angular/compiler": "^12.1.0",
+    "@angular/compiler-cli": "^12.1.0",
+    "@angular/language-service": "~12.1.0",
     "@capacitor/cli": "^2.4.1",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-angular": "^11.0.0",
@@ -60,6 +60,6 @@
     "husky": "^4.3.0",
     "ts-node": "^8.10.1",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.2"
+    "typescript": "~4.3.4"
   }
 }
