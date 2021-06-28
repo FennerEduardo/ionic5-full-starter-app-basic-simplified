@@ -5,14 +5,14 @@ import { FirebaseProfileModel } from './profile/firebase-profile.model';
 import { Platform } from '@ionic/angular';
 import { filter, map } from 'rxjs/operators';
 
-import { User, auth } from 'firebase/app';
+import firebase from 'firebase/app';
 import { cfaSignIn, cfaSignOut } from 'capacitor-firebase-auth';
 import { isPlatformBrowser } from '@angular/common';
 
 @Injectable()
 export class FirebaseAuthService {
 
-  currentUser: User;
+  currentUser: firebase.User;
   userProviderAdditionalInfo: any;
   redirectResult: Subject<any> = new Subject<any>();
 
@@ -75,11 +75,11 @@ export class FirebaseAuthService {
     }
   }
 
-  signInWithEmail(email: string, password: string): Promise<auth.UserCredential> {
+  signInWithEmail(email: string, password: string): Promise<firebase.auth.UserCredential> {
     return this.angularFire.signInWithEmailAndPassword(email, password);
   }
 
-  signUpWithEmail(email: string, password: string): Promise<auth.UserCredential> {
+  signUpWithEmail(email: string, password: string): Promise<firebase.auth.UserCredential> {
     return this.angularFire.createUserWithEmailAndPassword(email, password);
   }
 
@@ -87,7 +87,7 @@ export class FirebaseAuthService {
     if (this.platform.is('capacitor')) {
       return cfaSignIn(providerName);
     } else {
-      const provider = new auth.OAuthProvider(providerName);
+      const provider = new firebase.auth.OAuthProvider(providerName);
 
       if (scopes) {
         scopes.forEach(scope => {
@@ -104,18 +104,18 @@ export class FirebaseAuthService {
   }
 
   signInWithFacebook() {
-    const provider = new auth.FacebookAuthProvider();
+    const provider = new firebase.auth.FacebookAuthProvider();
     return this.socialSignIn(provider.providerId);
   }
 
   signInWithGoogle() {
-    const provider = new auth.GoogleAuthProvider();
+    const provider = new firebase.auth.GoogleAuthProvider();
     const scopes = ['profile', 'email'];
     return this.socialSignIn(provider.providerId, scopes);
   }
 
   signInWithTwitter() {
-    const provider = new auth.TwitterAuthProvider();
+    const provider = new firebase.auth.TwitterAuthProvider();
     return this.socialSignIn(provider.providerId);
   }
 
@@ -127,8 +127,8 @@ export class FirebaseAuthService {
     } else {
       return this.angularFire.user
       .pipe(
-        filter((user: User) => user !== null),
-        map((user: User) => {
+        filter((user: firebase.User) => user !== null),
+        map((user: firebase.User) => {
           return this.setUserModelForProfile();
         })
       );
