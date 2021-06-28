@@ -127,7 +127,7 @@ export class FirebaseAuthService {
     } else {
       return this.angularFire.user
       .pipe(
-        filter((user: User) => user != null),
+        filter((user: User) => user !== null),
         map((user: User) => {
           return this.setUserModelForProfile();
         })
