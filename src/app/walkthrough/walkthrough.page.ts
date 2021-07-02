@@ -53,6 +53,9 @@ export class WalkthroughPage implements AfterViewInit, OnInit {
     // Accessing slides in server platform throw errors
     if (isPlatformBrowser(this.platformId)) {
       // ViewChild is set
+
+      this.slides.ionSlidesDidLoad.subscribe(() => this.slides.update());
+
       this.slides.isBeginning().then(isBeginning => {
         this.isFirstSlide = isBeginning;
       });
