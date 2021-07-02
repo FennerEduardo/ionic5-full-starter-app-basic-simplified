@@ -200,6 +200,19 @@ export class FirebaseSignUpPage implements OnInit, OnDestroy {
     });
   }
 
+  doAppleSignup(): void {
+    this.resetSubmitError();
+    this.prepareForAuthWithProvidersRedirection('apple');
+
+    this.authService.signInWithApple()
+    .subscribe((result) => {
+      this.redirectLoggedUserToProfilePage();
+    }, (error) => {
+      console.log(error);
+      this.manageAuthWithProvidersErrors(error.message);
+    });
+  }
+
   ngOnDestroy(): void {
     this.dismissLoading();
   }

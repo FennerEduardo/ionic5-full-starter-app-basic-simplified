@@ -9,9 +9,9 @@
       "launchAutoHide": false
     },
     "CapacitorFirebaseAuth": {
-      "providers": ["google.com", "twitter.com", "facebook.com"],
+      "providers": ["google.com", "twitter.com", "facebook.com", "apple.com"],
       "languageCode": "en",
-      "nativeAuth": false  
+      "nativeAuth": false
     }
   }
 }

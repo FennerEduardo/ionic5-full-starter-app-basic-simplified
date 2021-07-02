@@ -187,4 +187,17 @@ export class FirebaseSignInPage implements OnDestroy {
       this.manageAuthWithProvidersErrors(error.message);
     });
   }
+
+  doAppleLogin(): void {
+    this.resetSubmitError();
+    this.prepareForAuthWithProvidersRedirection('apple');
+
+    this.authService.signInWithApple()
+    .subscribe((result) => {
+      this.redirectLoggedUserToProfilePage();
+    }, (error) => {
+      console.log(error);
+      this.manageAuthWithProvidersErrors(error.message);
+    });
+  }
 }

@@ -105,7 +105,8 @@ export class FirebaseAuthService {
 
   signInWithFacebook() {
     const provider = new firebase.auth.FacebookAuthProvider();
-    return this.socialSignIn(provider.providerId);
+    const scopes = ['email'];
+    return this.socialSignIn(provider.providerId, scopes);
   }
 
   signInWithGoogle() {
@@ -116,7 +117,14 @@ export class FirebaseAuthService {
 
   signInWithTwitter() {
     const provider = new firebase.auth.TwitterAuthProvider();
-    return this.socialSignIn(provider.providerId);
+    const scopes = ['name', 'email'];
+    return this.socialSignIn(provider.providerId, scopes);
+  }
+
+  signInWithApple() {
+    const provider = new firebase.auth.OAuthProvider('apple.com');
+    const scopes = ['name', 'email'];
+    return this.socialSignIn(provider.providerId, scopes);
   }
 
   public getProfileData(): Observable<any> {
