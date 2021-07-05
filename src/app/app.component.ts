@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Plugins } from '@capacitor/core';
-
-const { SplashScreen, Storage } = Plugins;
+import { SplashScreen } from '@capacitor/splash-screen';
+import { Storage } from '@capacitor/storage';
 
 @Component({
   selector: 'app-root',

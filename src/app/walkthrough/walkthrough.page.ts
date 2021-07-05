@@ -1,8 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, AfterViewInit, ViewChild, HostBinding, PLATFORM_ID, Inject, OnInit } from '@angular/core';
 import { IonSlides, MenuController } from '@ionic/angular';
-import { Plugins } from '@capacitor/core';
-const { Storage } = Plugins;
+import { Storage } from '@capacitor/storage';
 
 @Component({
   selector: 'app-walkthrough',
