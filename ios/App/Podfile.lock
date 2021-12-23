@@ -4,11 +4,11 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
-  - Capacitor (3.0.2):
+  - Capacitor (3.3.3):
     - CapacitorCordova
-  - CapacitorApp (1.0.2):
+  - CapacitorApp (1.0.7):
     - Capacitor
-  - CapacitorCordova (3.0.2)
+  - CapacitorCordova (3.3.3)
   - CapacitorFirebaseAuth (3.0.0-rc.0):
     - Capacitor
     - FBSDKCoreKit
@@ -16,13 +16,17 @@ PODS:
     - Firebase/Auth
     - Firebase/Core
     - GoogleSignIn
-  - CapacitorHaptics (1.0.2):
+  - CapacitorGeolocation (1.3.0):
     - Capacitor
-  - CapacitorKeyboard (1.0.2):
+  - CapacitorHaptics (1.1.3):
     - Capacitor
-  - CapacitorSplashScreen (1.0.2):
+  - CapacitorKeyboard (1.2.0):
     - Capacitor
-  - CapacitorStatusBar (1.0.2):
+  - CapacitorShare (1.0.7):
+    - Capacitor
+  - CapacitorSplashScreen (1.2.0):
+    - Capacitor
+  - CapacitorStatusBar (1.0.6):
     - Capacitor
   - CapacitorStorage (1.0.2):
     - Capacitor
@@ -139,8 +143,10 @@ DEPENDENCIES:
   - "CapacitorApp (from `../../node_modules/@capacitor/app`)"
   - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
   - CapacitorFirebaseAuth (from `../../node_modules/capacitor-firebase-auth`)
+  - "CapacitorGeolocation (from `../../node_modules/@capacitor/geolocation`)"
   - "CapacitorHaptics (from `../../node_modules/@capacitor/haptics`)"
   - "CapacitorKeyboard (from `../../node_modules/@capacitor/keyboard`)"
+  - "CapacitorShare (from `../../node_modules/@capacitor/share`)"
   - "CapacitorSplashScreen (from `../../node_modules/@capacitor/splash-screen`)"
   - "CapacitorStatusBar (from `../../node_modules/@capacitor/status-bar`)"
   - "CapacitorStorage (from `../../node_modules/@capacitor/storage`)"
@@ -179,10 +185,14 @@ EXTERNAL SOURCES:
     :path: "../../node_modules/@capacitor/ios"
   CapacitorFirebaseAuth:
     :path: "../../node_modules/capacitor-firebase-auth"
+  CapacitorGeolocation:
+    :path: "../../node_modules/@capacitor/geolocation"
   CapacitorHaptics:
     :path: "../../node_modules/@capacitor/haptics"
   CapacitorKeyboard:
     :path: "../../node_modules/@capacitor/keyboard"
+  CapacitorShare:
+    :path: "../../node_modules/@capacitor/share"
   CapacitorSplashScreen:
     :path: "../../node_modules/@capacitor/splash-screen"
   CapacitorStatusBar:
@@ -192,15 +202,17 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
-  Capacitor: df6bc94955ecbe567904f1f2fe09c237f66d0de9
-  CapacitorApp: 4a7a55cb30ac30af4e4801d4d6e51f4d03aa75e6
-  CapacitorCordova: e2f9a64e0b1a47b6efed76aecbd042c40b477ee3
+  Capacitor: 0b3475cfa2f6849a6d83ee14836a592a6ada3b28
+  CapacitorApp: 5aef6129d5e78c23783b48209290da90f835d7ec
+  CapacitorCordova: ae44f9ca2af48db94caa11420148d8ed14e55217
   CapacitorFirebaseAuth: 4bc5a775a5755f4ba6813258351ba11a40cec1bc
-  CapacitorHaptics: 2ba8b0f0fd40d5590baa756cd2c91a3d082106f8
-  CapacitorKeyboard: 25f67ec7f6c3ae9a956af8bb6ea0bade18257005
-  CapacitorSplashScreen: 2db63fc283a33e70c59854d4f0cdd94c156b2d08
-  CapacitorStatusBar: 5f78c4275b059bf5c0bcf059d9fafc4f1b620d5b
-  CapacitorStorage: abebe1d9cbfc3eba54638b58499ed492f49a9cbc
+  CapacitorGeolocation: a722dc495a068b04fa8626710bf110de2eb9762b
+  CapacitorHaptics: 02ed2c6a2410f80fb37dc508e2c5aa9cd2c684e0
+  CapacitorKeyboard: f94b9a920070b15d520973954ca6b3b39cc7dd21
+  CapacitorShare: be9d87857694b2118e47fe0d7d1e050f6a2f48e9
+  CapacitorSplashScreen: 431e9cc86e6f9443ac70fe5bb827afc787d6f2fa
+  CapacitorStatusBar: 18a81121a25117a50a9ca3be0d0de85a1e49c7e5
+  CapacitorStorage: d088d31c7a2a256da7f1bf0722b64542dcbaf66a
   FBSDKCoreKit: 38c9e29a3f1436362acacff6486d3a28628c288f
   FBSDKCoreKit_Basics: 06780a4a12e16596bde8406add02c6aa1bf38616
   FBSDKLoginKit: 8243e04c590c38b85c69fcf09d1234514d2475c3
@@ -219,6 +231,6 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: f4cdda1bac4701a037b821315e0f0ecd336b790b
+PODFILE CHECKSUM: 42f8927942c487a74276055a08cfc320f3ead569
 
 COCOAPODS: 1.10.1
